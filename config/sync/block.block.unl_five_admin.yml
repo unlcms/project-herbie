@@ -1,4 +1,4 @@
-uuid: e783bbdd-0d2b-4b1b-9b84-8c19e0b71bfc
+uuid: 79253056-efc2-4482-b30c-9ae06ddc3c75
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - stark
+    - unl_five
 _core:
   default_config_hash: OFEDxrButmQ8Vac1kiVr1gtw6vYKuSJPr9cJQZVKCKg
-id: stark_admin
-theme: stark
+id: unl_five_admin
+theme: unl_five
 region: sidebar_first
 weight: 1
 provider: null

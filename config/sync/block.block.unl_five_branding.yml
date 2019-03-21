@@ -1,15 +1,15 @@
-uuid: 3a89cc29-c2a5-47f5-b3b2-f982d9c8cede
+uuid: 805cd203-b83c-4229-b633-60183d7eb837
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - unl_five
 _core:
   default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
-id: stark_branding
-theme: stark
+id: unl_five_branding
+theme: unl_five
 region: header
 weight: 0
 provider: null
