@@ -8,8 +8,8 @@ _core:
   default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
 id: unl_five_local_actions
 theme: unl_five
-region: content
-weight: -10
+region: content_top
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:
