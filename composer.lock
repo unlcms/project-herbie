@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "55abb086a1953f413b0c09f91b3a7ed6",
+    "content-hash": "3c2fca2268f618d6a071483c0e5206a3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5790,6 +5790,32 @@
             "time": "2018-11-28T16:01:15+00:00"
         },
         {
+            "name": "unlcms/unl_five",
+            "version": "dev-8.x-5.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_five.git",
+                "reference": "acdd71638a509251d30205858ccfbfec47372619"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/acdd71638a509251d30205858ccfbfec47372619",
+                "reference": "acdd71638a509251d30205858ccfbfec47372619",
+                "shasum": ""
+            },
+            "type": "drupal-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "UNLedu Framework 5.0 theme.",
+            "time": "2019-01-09T16:24:29+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.6.1",
             "source": {
@@ -8405,7 +8431,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "unlcms/unl_cas": 20
+        "unlcms/unl_cas": 20,
+        "unlcms/unl_five": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
