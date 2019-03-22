@@ -1,0 +1,25 @@
+uuid: 7bdd554f-2bb8-4269-8f8d-c7d461576f54
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - unl_five
+id: mainnavigation
+theme: unl_five
+region: navlinks
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

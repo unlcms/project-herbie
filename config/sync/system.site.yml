@@ -1,0 +1,14 @@
+uuid: eecd1590-1638-42e1-af8a-98b82ca069b0
+name: CMS
+mail: ericrasmussen1@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

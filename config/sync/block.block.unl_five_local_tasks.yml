@@ -1,0 +1,22 @@
+uuid: 7557182d-3b9e-49cc-9c94-1f711d8ab9cf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_five
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: unl_five_local_tasks
+theme: unl_five
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

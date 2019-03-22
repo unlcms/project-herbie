@@ -1,0 +1,20 @@
+uuid: 0cc5bfdb-0d0a-4a20-97e8-1c7cd273c83d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_five
+id: unl_five_breadcrumbs
+theme: unl_five
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
