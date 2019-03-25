@@ -21,6 +21,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
+        "drupal/block_type_templates": "^1.0@alpha",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
@@ -78,6 +79,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/block_type_templates": {
+                "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
+            }
         },
         "drupal-scaffold": {
             "initial": {
