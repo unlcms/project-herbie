@@ -1,21 +1,34 @@
 module:
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_tools: 0
+  allowed_formats: 0
   block: 0
+  block_type_templates: 0
   breakpoint: 0
   ckeditor: 0
+  config: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
   filter: 0
   image: 0
+  imagemagick: 0
   layout_discovery: 0
   link: 0
   media: 0
+  menu_block: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -27,12 +40,14 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  token: 0
   toolbar: 0
   unl_cas: 0
   unl_user: 0
   user: 0
   views_ui: 0
   menu_link_content: 1
+  pathauto: 1
   views: 10
   herbie: 1000
 theme:
