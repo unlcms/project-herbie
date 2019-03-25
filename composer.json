@@ -25,6 +25,7 @@
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
         "drupal/diff": "^1.0@RC",
+        "drupal/token": "^1.5",
         "drush/drush": "^9.0.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
         "unlcms/unl_five": "dev-8.x-5.0.x",
