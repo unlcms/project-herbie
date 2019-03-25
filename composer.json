@@ -23,6 +23,7 @@
         "drupal/admin_toolbar": "^1.26",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/ctools": "^3.2",
         "drupal/diff": "^1.0@RC",
         "drush/drush": "^9.0.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
