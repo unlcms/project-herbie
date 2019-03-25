@@ -19,7 +19,6 @@
             "package": {
                 "name": "unl/wdntemplates",
                 "version": "5.0",
-                "type": "drupal-library-wdn",
                 "dist": {
                     "type": "zip",
                     "url": "https://github.com/unl/wdntemplates/archive/5.0.zip",
@@ -99,7 +98,6 @@
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/wdn": ["type:drupal-library-wdn"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "patches": {

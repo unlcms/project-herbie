@@ -21,16 +21,31 @@ class UnlScriptHandler {
     $drupalFinder = new DrupalFinder();
     $drupalFinder->locateRoot(getcwd());
     $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
 
-    if (!$fs->exists($drupalRoot . '/wdn')) {
-      $io->writeError('<error>WDN directory is missing</error>.');
+    // Symlink /vendor/unl/wdntemplates to web/wdn.
+    $fs->symlink('../vendor/unl/wdntemplates/wdn', 'web/wdn');
+    $io->write("WDN directory symlinked at " . $drupalRoot . "/wdn");
+
+    // Check if NPM is installed.
+    if (empty(exec("which npm"))) {
+      $io->write("NPM is not installed");
+      return;
     }
 
-    $fs->mirror($drupalRoot . '/wdn/wdn', $drupalRoot . '/wdn-temp');
-    $fs->remove($drupalRoot . '/wdn');
-    $fs->rename($drupalRoot . '/wdn-temp', $drupalRoot . '/wdn');
-    $io->write("WDN directory deployed at " . $drupalRoot . "/wdn");
+    // Install NPM project.
+    exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
+    $io->write("Node project installed at " . $composerRoot . "/vendor/unl/wdntemplates");
 
+    // Check if Grunt CLI is installed.
+    if (empty(exec("which grunt"))) {
+      $io->write("Grunt CLI is not installed. Run 'npm install -g grunt-cli'");
+      return;
+    }
+
+    // Run Grunt default task.
+    exec("cd $composerRoot/vendor/unl/wdntemplates; grunt");
+    $io->write("Grunt default task run at " . $composerRoot . "/vendor/unl/wdntemplates");
   }
 
 }
