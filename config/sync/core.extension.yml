@@ -20,8 +20,11 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
   filter: 0
   image: 0
+  imagemagick: 0
   layout_discovery: 0
   link: 0
   media: 0
