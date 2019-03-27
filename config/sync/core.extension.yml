@@ -13,6 +13,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dcf_layouts: 0
   diff: 0
   dynamic_page_cache: 0
   editor: 0
@@ -25,6 +26,7 @@ module:
   filter: 0
   image: 0
   imagemagick: 0
+  layout_builder: 0
   layout_discovery: 0
   link: 0
   media: 0
