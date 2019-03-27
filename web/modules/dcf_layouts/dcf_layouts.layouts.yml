@@ -25,7 +25,7 @@ dcf_twocol_section:
     second:
       label: Second
 
-layout_threecol_section:
+dcf_threecol_section:
   label: 'DCF Three column'
   path: layouts
   template: layout--dcf-threecol-section
@@ -42,7 +42,7 @@ layout_threecol_section:
     third:
       label: Third
 
-layout_fourcol_section:
+dcf_fourcol_section:
   label: 'DCF Four column'
   path: layouts
   template: layout--dcf-fourcol-section
