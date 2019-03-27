@@ -19,9 +19,9 @@
             "package": {
                 "name": "unl/wdntemplates",
                 "version": "5.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/unl/wdntemplates/archive/5.0.zip",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/unl/wdntemplates.git",
                     "reference": "5.0"
                 }
             }
@@ -79,11 +79,15 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-package-install": [
+            "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
+        ],
+        "post-package-update": [
             "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
         ]
     },

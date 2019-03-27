@@ -2,23 +2,30 @@
 
 namespace DrupalProject\composer;
 
-use Composer\Script\Event;
+use Composer\Installer\PackageEvent;
 use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * UNL-specific composer scripts.
+ * UNL-specific composer package scripts.
  */
 class UnlScriptHandler {
 
   /**
    * Deploys the wdn directory to the correct path.
+   *
+   * @param \Composer\Installer\PackageEvent $event
+   *   Package event.
    */
-  public static function deployWdn(Event $event) {
+  public static function deployWdn(PackageEvent $event) {
+    $package = self::getPackageName($event);
 
     // Check if dev dependencies are being installed.
     // WDN is deployed in a different manner on production.
-    if ($event->isDevMode()) {
+    // Check the current package is 'unl/wdntemplates'.
+    if ($event->isDevMode()
+      && $package == 'unl/wdntemplates'
+      ) {
       $io = $event->getIO();
 
       $fs = new Filesystem();
@@ -31,6 +38,10 @@ class UnlScriptHandler {
       $fs->symlink('../vendor/unl/wdntemplates/wdn', 'web/wdn');
       $io->write("WDN directory symlinked at " . $drupalRoot . "/wdn");
 
+      // Execute git pull (composer may have installed from cache).
+      $io->write("Excecuting git pull at " . $composerRoot . "/vendor/unl/wdntemplates");
+      system("cd $composerRoot/vendor/unl/wdntemplates; git pull");
+
       // Check if NPM is installed.
       if (empty(exec("which npm"))) {
         $io->write("NPM is not installed");
@@ -38,8 +49,8 @@ class UnlScriptHandler {
       }
 
       // Install NPM project.
+      $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
       exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
-      $io->write("Node project installed at " . $composerRoot . "/vendor/unl/wdntemplates");
 
       // Check if Grunt CLI is installed.
       if (empty(exec("which grunt"))) {
@@ -48,10 +59,32 @@ class UnlScriptHandler {
       }
 
       // Run Grunt default task.
+      $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
       exec("cd $composerRoot/vendor/unl/wdntemplates; grunt");
-      $io->write("Grunt default task run at " . $composerRoot . "/vendor/unl/wdntemplates");
     }
 
+  }
+
+  /**
+   * Returns the package name associated with $event.
+   *
+   * @param \Composer\Installer\PackageEvent $event
+   *   Package event.
+   *
+   * @return string
+   *   Package name
+   *
+   * @see https://stackoverflow.com/questions/47046250/how-do-you-get-the-package-name-from-a-composer-event/47065343#47065343
+   */
+  public static function getPackageName(PackageEvent $event) {
+    /** @var InstallOperation|UpdateOperation $operation */
+    $operation = $event->getOperation();
+
+    $package = method_exists($operation, 'getPackage')
+      ? $operation->getPackage()
+      : $operation->getInitialPackage();
+
+    return $package->getName();
   }
 
 }
