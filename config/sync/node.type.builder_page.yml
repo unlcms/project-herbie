@@ -1,0 +1,18 @@
+uuid: 983be688-787e-48ef-a84b-20e77618e26d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Builder page'
+type: builder_page
+description: 'Choose custom grid layouts for one-off <em>builder pages</em>.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
