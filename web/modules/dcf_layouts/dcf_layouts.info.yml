@@ -1,0 +1,11 @@
+name: 'DCF Layouts'
+description: 'Layouts that use Digital Campus Framework markup.'
+package: DCF
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - layout_builder

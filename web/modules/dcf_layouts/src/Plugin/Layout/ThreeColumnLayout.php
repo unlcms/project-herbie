@@ -3,12 +3,12 @@
 namespace Drupal\dcf_layouts\Plugin\Layout;
 
 /**
- * Configurable two column layout plugin class.
+ * Configurable three column layout plugin class.
  *
  * @internal
  *   Plugin classes are internal.
  */
-class TwoColumnLayout extends DcfLayoutBase {
+class ThreeColumnLayout extends DcfLayoutBase {
 
   /**
    * {@inheritdoc}
@@ -28,9 +28,13 @@ class TwoColumnLayout extends DcfLayoutBase {
     $build['first']['#attributes']['class'][] = 'dcf-col-100%';
     $build['first']['#attributes']['class'][] = 'dcf-1st@md';
 
-    $build['second']['#attributes']['class'][] = 'dcf-col-'.$widths[1].'%-end@md';
+    $build['second']['#attributes']['class'][] = 'dcf-col-'.$widths[1].'%@md';
     $build['second']['#attributes']['class'][] = 'dcf-col-100%';
     $build['second']['#attributes']['class'][] = 'dcf-2nd@md';
+
+    $build['third']['#attributes']['class'][] = 'dcf-col-'.$widths[2].'%-end@md';
+    $build['third']['#attributes']['class'][] = 'dcf-col-100%';
+    $build['third']['#attributes']['class'][] = 'dcf-3rd@md';
 
     return $build;
   }
@@ -40,11 +44,10 @@ class TwoColumnLayout extends DcfLayoutBase {
    */
   protected function getWidthOptions() {
     return [
-      '50-50' => '50%/50%',
-      '33-67' => '33%/67%',
-      '67-33' => '67%/33%',
-      '25-75' => '25%/75%',
-      '75-25' => '75%/25%',
+      '25-50-25' => '25%/50%/25%',
+      '33-34-33' => '33%/34%/33%',
+      '25-25-50' => '25%/25%/50%',
+      '50-25-25' => '50%/25%/25%',
     ];
   }
 
