@@ -18,17 +18,18 @@ class TwoColumnLayout extends DcfLayoutBase {
     $build['#attributes']['class'] = [
       'dcf-grid',
       'dcf-col-gap-vw',
+      'dcf-row-gap-5',
       'layout',
       $this->getPluginDefinition()->getTemplate(),
     ];
 
     $widths = explode('-', $this->configuration['column_widths']);
 
-    $build['first']['#attributes']['class'][] = 'dcf-col-'.$widths[0].'%-start@md';
+    $build['first']['#attributes']['class'][] = 'dcf-col-' . $widths[0] . '%-start@md';
     $build['first']['#attributes']['class'][] = 'dcf-col-100%';
     $build['first']['#attributes']['class'][] = 'dcf-1st@md';
 
-    $build['second']['#attributes']['class'][] = 'dcf-col-'.$widths[1].'%-end@md';
+    $build['second']['#attributes']['class'][] = 'dcf-col-' . $widths[1] . '%-end@md';
     $build['second']['#attributes']['class'][] = 'dcf-col-100%';
     $build['second']['#attributes']['class'][] = 'dcf-2nd@md';
 

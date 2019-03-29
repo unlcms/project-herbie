@@ -16,26 +16,12 @@ class ThreeColumnLayout extends DcfLayoutBase {
   public function build(array $regions) {
     $build = parent::build($regions);
     $build['#attributes']['class'] = [
-      'dcf-grid',
+      'dcf-grid-thirds@md',
       'dcf-col-gap-vw',
+      'dcf-row-gap-5',
       'layout',
       $this->getPluginDefinition()->getTemplate(),
     ];
-
-    $widths = explode('-', $this->configuration['column_widths']);
-
-    $build['first']['#attributes']['class'][] = 'dcf-col-'.$widths[0].'%-start@md';
-    $build['first']['#attributes']['class'][] = 'dcf-col-100%';
-    $build['first']['#attributes']['class'][] = 'dcf-1st@md';
-
-    $build['second']['#attributes']['class'][] = 'dcf-col-'.$widths[1].'%@md';
-    $build['second']['#attributes']['class'][] = 'dcf-col-100%';
-    $build['second']['#attributes']['class'][] = 'dcf-2nd@md';
-
-    $build['third']['#attributes']['class'][] = 'dcf-col-'.$widths[2].'%-end@md';
-    $build['third']['#attributes']['class'][] = 'dcf-col-100%';
-    $build['third']['#attributes']['class'][] = 'dcf-3rd@md';
-
     return $build;
   }
 
@@ -44,10 +30,7 @@ class ThreeColumnLayout extends DcfLayoutBase {
    */
   protected function getWidthOptions() {
     return [
-      '25-50-25' => '25%/50%/25%',
-      '33-34-33' => '33%/34%/33%',
-      '25-25-50' => '25%/25%/50%',
-      '50-25-25' => '50%/25%/25%',
+      '33-33-33' => '33%/33%/33%',
     ];
   }
 

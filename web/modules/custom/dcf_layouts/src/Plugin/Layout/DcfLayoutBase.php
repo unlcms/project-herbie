@@ -61,6 +61,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $build['#attributes']['class'] = [
       'dcf-grid',
       'dcf-col-gap-vw',
+      'dcf-row-gap-5',
       'layout',
       $this->getPluginDefinition()->getTemplate(),
     ];

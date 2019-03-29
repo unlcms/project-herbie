@@ -1,5 +1,5 @@
 dcf_onecol_section:
-  label: 'DCF One column'
+  label: 'One column (DCF)'
   path: layouts
   template: layout--dcf-onecol-section
   category: 'Columns: 1'
@@ -11,7 +11,7 @@ dcf_onecol_section:
       label: First
 
 dcf_twocol_section:
-  label: 'DCF Two column'
+  label: 'Two column (DCF)'
   path: layouts
   template: layout--dcf-twocol-section
   class: '\Drupal\dcf_layouts\Plugin\Layout\TwoColumnLayout'
@@ -26,7 +26,7 @@ dcf_twocol_section:
       label: Second
 
 dcf_threecol_section:
-  label: 'DCF Three column'
+  label: 'Three column (DCF)'
   path: layouts
   template: layout--dcf-threecol-section
   class: '\Drupal\dcf_layouts\Plugin\Layout\ThreeColumnLayout'
@@ -43,9 +43,10 @@ dcf_threecol_section:
       label: Third
 
 dcf_fourcol_section:
-  label: 'DCF Four column'
+  label: 'Four column (DCF)'
   path: layouts
   template: layout--dcf-fourcol-section
+  class: '\Drupal\dcf_layouts\Plugin\Layout\FourColumnLayout'
   category: 'Columns: 4'
   default_region: first
   icon_map:

@@ -8,4 +8,4 @@ core: 8.x
 version: 1.x
 
 dependencies:
-  - layout_discovery
+  - drupal:layout_discovery

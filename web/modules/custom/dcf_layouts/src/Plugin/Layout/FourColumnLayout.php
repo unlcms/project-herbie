@@ -19,15 +19,10 @@ class FourColumnLayout extends DcfLayoutBase {
       'dcf-grid-halves@sm',
       'dcf-grid-fourths@lg',
       'dcf-col-gap-vw',
+      'dcf-row-gap-5',
       'layout',
       $this->getPluginDefinition()->getTemplate(),
     ];
-
-    $build['first']['#attributes']['class'][] = 'dcf-col';
-    $build['second']['#attributes']['class'][] = 'dcf-col';
-    $build['third']['#attributes']['class'][] = 'dcf-col';
-    $build['fourth']['#attributes']['class'][] = 'dcf-col';
-
     return $build;
   }
 
