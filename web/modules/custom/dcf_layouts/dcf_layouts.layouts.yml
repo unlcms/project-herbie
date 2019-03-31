@@ -1,0 +1,62 @@
+dcf_onecol_section:
+  label: 'One column (DCF)'
+  path: layouts
+  template: layout--dcf-onecol-section
+  category: 'Columns: 1'
+  default_region: first
+  icon_map:
+    - [first]
+  regions:
+    first:
+      label: First
+
+dcf_twocol_section:
+  label: 'Two column (DCF)'
+  path: layouts
+  template: layout--dcf-twocol-section
+  class: '\Drupal\dcf_layouts\Plugin\Layout\TwoColumnLayout'
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+dcf_threecol_section:
+  label: 'Three column (DCF)'
+  path: layouts
+  template: layout--dcf-threecol-section
+  class: '\Drupal\dcf_layouts\Plugin\Layout\ThreeColumnLayout'
+  category: 'Columns: 3'
+  default_region: second
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+
+dcf_fourcol_section:
+  label: 'Four column (DCF)'
+  path: layouts
+  template: layout--dcf-fourcol-section
+  class: '\Drupal\dcf_layouts\Plugin\Layout\FourColumnLayout'
+  category: 'Columns: 4'
+  default_region: first
+  icon_map:
+    - [first, second, third, fourth]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth
