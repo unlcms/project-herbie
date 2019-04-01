@@ -23,6 +23,7 @@
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
         "drupal/block_type_templates": "^1.0@alpha",
+        "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
