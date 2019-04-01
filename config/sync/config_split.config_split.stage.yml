@@ -1,0 +1,15 @@
+uuid: 111d089b-d9cc-4d86-b191-d161cde5ed20
+langcode: en
+status: false
+dependencies: {  }
+id: stage
+label: Stage
+description: ''
+folder: ../config/stage
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
