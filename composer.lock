@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a597e3661b9b09428e2caaecb0deb87",
+    "content-hash": "9f72606177d4789d8101332eaf84b748",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2424,6 +2424,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
