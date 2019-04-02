@@ -61,7 +61,8 @@
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php"
+            "scripts/composer/ScriptHandler.php",
+            "scripts/composer/UnlScriptHandler.php"
         ],
         "files": ["load.environment.php"]
     },
@@ -77,6 +78,12 @@
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-package-install": [
+            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
+        ],
+        "post-package-update": [
+            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
         ]
     },
     "extra": {
