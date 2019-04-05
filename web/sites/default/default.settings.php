@@ -251,7 +251,7 @@ $databases = [];
  *   );
  * @endcode
  */
-$config_directories = [];
+$config_directories["sync"] = "../config/sync";
 
 /**
  * Settings:
