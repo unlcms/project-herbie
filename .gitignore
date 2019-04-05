@@ -31,3 +31,8 @@
 
 # Ignore UNL's unl/wdntemplates directory
 /web/wdn
+
+# Ignore production versions of sample files
+/web/.htaccess
+/web/.htaccess-subsite-map.txt
+/web/sites/sites.php
