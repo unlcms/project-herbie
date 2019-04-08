@@ -20,6 +20,7 @@ permissions:
   - 'access user profiles'
   - 'administer account settings'
   - 'administer blocks'
+  - 'administer configuration split'
   - 'administer content types'
   - 'administer display modes'
   - 'administer filters'
