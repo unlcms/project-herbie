@@ -755,6 +755,11 @@ $settings['file_scan_ignore_directories'] = [
 $settings['entity_update_batch_size'] = 50;
 
 /**
+ * Load Herbie profile configuration.
+ */
+include $app_root . '/profiles/herbie/includes/settings.php.inc';
+
+/**
  * Load local development override configuration, if available.
  *
  * Use settings.local.php to override variables on secondary (staging,

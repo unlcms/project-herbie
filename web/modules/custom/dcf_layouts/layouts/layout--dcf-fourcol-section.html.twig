@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a DCF four-column 25%-25%-25%-25% layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div{{ attributes }}>
+
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('dcf-col', 'layout__region', 'layout__region--first') }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('dcf-col', 'layout__region', 'layout__region--second') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.third %}
+      <div {{ region_attributes.third.addClass('dcf-col', 'layout__region', 'layout__region--third') }}>
+        {{ content.third }}
+      </div>
+    {% endif %}
+
+    {% if content.fourth %}
+      <div {{ region_attributes.fourth.addClass('dcf-col', 'layout__region', 'layout__region--fourth') }}>
+        {{ content.fourth }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

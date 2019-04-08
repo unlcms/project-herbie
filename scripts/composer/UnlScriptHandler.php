@@ -12,6 +12,37 @@ use Symfony\Component\Filesystem\Filesystem;
 class UnlScriptHandler {
 
   /**
+   * Deploys custom patches to core scaffold files.
+   * 
+   * @param \Composer\Installer\PackageEvent $event
+   *   Package event.
+   */
+  public static function patchCore(PackageEvent $event) {
+    $package = self::getPackageName($event);
+
+
+    if ($package == 'drupal/core') {
+      $io = $event->getIO();
+      $fs = new Filesystem();
+      $drupalFinder = new DrupalFinder();
+      $drupalFinder->locateRoot(getcwd());
+      $drupalRoot = $drupalFinder->getDrupalRoot();
+
+      $io->write("Patching 'sites/default/default.settings.php'");
+      $fs->chmod($drupalRoot . '/sites/default', 0777);
+      $fs->chmod($drupalRoot . '/sites/default/default.settings.php', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/default.settings.php.patch");
+      $fs->chmod($drupalRoot . '/sites/default/default.settings.php', 0644);
+      $fs->chmod($drupalRoot . '/sites/default', 0755);
+
+      if (strpos($patch_output, 'sites/default/default.settings.php.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/sites/default/default.settings.php.rej');
+        $fs->remove($drupalRoot . '/sites/default/default.settings.php.rej');
+      }
+    }
+  }
+
+  /**
    * Deploys the wdn directory to the correct path.
    *
    * @param \Composer\Installer\PackageEvent $event
@@ -62,7 +93,6 @@ class UnlScriptHandler {
       $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
       exec("cd $composerRoot/vendor/unl/wdntemplates; grunt");
     }
-
   }
 
   /**
