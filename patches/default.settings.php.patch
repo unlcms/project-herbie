@@ -1,5 +1,5 @@
 diff --git a/sites/default/default.settings.php b/sites/default/default.settings.php
-index ae64d2f..8c2f9d7 100644
+index ae64d2f..216de3f 100644
 --- a/sites/default/default.settings.php
 +++ b/sites/default/default.settings.php
 @@ -754,6 +754,11 @@
@@ -14,3 +14,15 @@ index ae64d2f..8c2f9d7 100644
  /**
   * Load local development override configuration, if available.
   *
+@@ -764,7 +769,7 @@
+  *
+  * Keep this code block at the end of this file to take full effect.
+  */
+-#
+-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+-#   include $app_root . '/' . $site_path . '/settings.local.php';
+-# }
++
++if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
++  include $app_root . '/' . $site_path . '/settings.local.php';
++}
