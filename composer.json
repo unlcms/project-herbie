@@ -94,13 +94,12 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-package-install": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore",
-            "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
+            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
         ],
         "post-package-update": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore",
-            "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
-        ]
+            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
+        ],
+        "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },
     "extra": {
         "composer-exit-on-patch-failure": true,

@@ -4,6 +4,8 @@
 
 First you need the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip). This should reside at `web/wdn`
 
+The UNLedu Web Framework can also be installed using `composer install-wdn`.
+
 You also need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
 > Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
