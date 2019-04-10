@@ -3,6 +3,7 @@
 namespace DrupalProject\composer;
 
 use Composer\Installer\PackageEvent;
+use Composer\Script\Event;
 use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -19,7 +20,7 @@ class UnlScriptHandler {
    */
   public static function patchCore(PackageEvent $event) {
     $package = self::getPackageName($event);
-    
+
 
     if ($package == 'drupal/core') {
       $io = $event->getIO();
@@ -40,6 +41,50 @@ class UnlScriptHandler {
         $fs->remove($drupalRoot . '/sites/default/default.settings.php.rej');
       }
     }
+  }
+
+  /**
+   * Deploys the wdn directory to the correct path.
+   *
+   * @param \Composer\Script\Event $event
+   *   Event.
+   */
+  public static function deployWdn(Event $event) {
+    $io = $event->getIO();
+
+    $fs = new Filesystem();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
+
+    // Symlink /vendor/unl/wdntemplates to web/wdn.
+    $fs->symlink('../vendor/unl/wdntemplates/wdn', 'web/wdn');
+    $io->write("WDN directory symlinked at " . $drupalRoot . "/wdn");
+
+    // Execute git pull (composer may have installed from cache).
+    $io->write("Excecuting git pull at " . $composerRoot . "/vendor/unl/wdntemplates");
+    system("cd $composerRoot/vendor/unl/wdntemplates; git pull");
+
+    // Check if NPM is installed.
+    if (empty(exec("which npm"))) {
+      $io->write("NPM is not installed");
+      return;
+    }
+
+    // Install NPM project.
+    $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
+    exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
+
+    // Check if Grunt CLI is installed.
+    if (empty(exec("which grunt"))) {
+      $io->write("Grunt CLI is not installed. Run 'npm install -g grunt-cli'");
+      return;
+    }
+
+    // Run Grunt default task.
+    $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
+    exec("cd $composerRoot/vendor/unl/wdntemplates; grunt");
   }
 
   /**
