@@ -17,7 +17,20 @@
         {
             "type": "vcs",
             "url": "https://github.com/unlcms/project-herbie-composer-plugin.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "unl/wdntemplates",
+                "version": "5.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/unl/wdntemplates.git",
+                    "reference": "5.0"
+                }
+            }
         }
+
     ],
     "require": {
         "php": ">=5.6",
@@ -49,6 +62,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "unl/wdntemplates": "^5.0",
         "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
@@ -84,7 +98,8 @@
         ],
         "post-package-update": [
             "DrupalProject\\composer\\UnlScriptHandler::patchCore"
-        ]
+        ],
+        "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
