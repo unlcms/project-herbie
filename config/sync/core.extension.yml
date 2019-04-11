@@ -4,6 +4,7 @@ module:
   admin_toolbar_tools: 0
   allowed_formats: 0
   block: 0
+  block_content: 0
   block_type_templates: 0
   breakpoint: 0
   ckeditor: 0
