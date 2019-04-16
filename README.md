@@ -1,16 +1,24 @@
 # Drupal 8 at UNL (Project Herbie)
 
-## Installation
+## Requirements
 
-First you need the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip). This should reside at `web/wdn`
+See [Drupal 8 System Requirements](https://www.drupal.org/docs/8/system-requirements/)
 
-You also need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+While it is possible to run Drupal on a variety of web servers, database servers, etc., the officially supported configuration at UNL is as follows:
+
+- Linux (any modern, supported distribution)
+- PHP 7.0 or greater
+- Apache 2.4.6 or greater
+- MariaDB 5.5.60 or greater
+
+Composer, PHP's dependency manager, is necessary to install this project. See [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
 > Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) 
-for your setup.
+It may be necessary to replace `composer` with `php composer.phar` (or similar).
 
-After that you can create the project:
+## Installation
+
+Navigate to the project root and install the project:
 
 ```
 composer install
@@ -21,9 +29,6 @@ Copy the sample .htaccess file to its usable name:
 ```
 cp web/.htaccess.sample web/.htaccess
 ```
-
-Then navigate to `http://example.unl.edu/project-herbie/web` in your browser and follow the installation instructions, selecting "Use existing configuration" as the installation profile. 
-
 
 ## Running multisite
 
@@ -40,5 +45,38 @@ Add the following line to your Apache's configuration file (httpd.conf) where <D
   RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 ```
 
-
 Enable the UNL Multisite module on the main site. It should only be enabled on the main site.
+
+
+### Install the UNLedu Web Framework
+
+There are two methods to install the UNLedu Web Framework:
+
+1. automated
+2. manual
+
+#### Automated
+
+The unl/wdntemplates package is already downloaded to /vendor/unl/wdntemplates/. Run the following command:
+
+```
+composer install-wdn
+```
+
+This command will create a symlink of /vendor/unl/wdntemplates/wdn at web/wdn.
+
+The wdntemplates package is a Node.js project that uses Grunt. This command will also install the Node.js project and run the default Grunt task.
+
+To receive upstream updates, navigate to /vendor/wdn/ and run `git pull`.
+
+#### Manual
+
+Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip) to `web/wdn`
+
+### Install Drupal
+
+Navigate to `http://example.unl.edu/project-herbie/web` in your browser.
+
+See [Installing Drupal 8](https://www.drupal.org/docs/8/install)
+
+When asked to select an Installation Profile, select "Use existing configuration"

@@ -1,0 +1,28 @@
+diff --git a/sites/default/default.settings.php b/sites/default/default.settings.php
+index ae64d2f..216de3f 100644
+--- a/sites/default/default.settings.php
++++ b/sites/default/default.settings.php
+@@ -754,6 +754,11 @@
+  */
+ $settings['entity_update_batch_size'] = 50;
+ 
++/**
++ * Load Herbie profile configuration.
++ */
++include $app_root . '/profiles/herbie/includes/settings.php.inc';
++
+ /**
+  * Load local development override configuration, if available.
+  *
+@@ -764,7 +769,7 @@
+  *
+  * Keep this code block at the end of this file to take full effect.
+  */
+-#
+-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+-#   include $app_root . '/' . $site_path . '/settings.local.php';
+-# }
++
++if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
++  include $app_root . '/' . $site_path . '/settings.local.php';
++}
