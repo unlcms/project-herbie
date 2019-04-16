@@ -24,12 +24,6 @@ Navigate to the project root and install the project:
 composer install
 ```
 
-Copy the sample .htaccess file to its usable name:
-
-```
-cp web/.htaccess.sample web/.htaccess
-```
-
 ## Running multisite
 
 The unl_multisite module allows additional sites to be run from subdirectories such as http://example.unl.edu/site2. This is not required to run the base site installation.
