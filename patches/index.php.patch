@@ -1,0 +1,14 @@
+diff --git a/web/index.php b/web/index.php
+index 19163f6..750dc28 100644
+--- a/web/index.php
++++ b/web/index.php
+@@ -16,9 +16,6 @@
+ $kernel = new DrupalKernel('prod', $autoloader);
+ 
+ $request = Request::createFromGlobals();
++
++require_once './modules/contrib/unl_multisite/bootstrap.inc';
++
+ $response = $kernel->handle($request);
+ $response->send();
+ 
