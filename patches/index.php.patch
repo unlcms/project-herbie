@@ -2,7 +2,7 @@ diff --git a/web/index.php b/web/index.php
 index 19163f6..750dc28 100644
 --- a/web/index.php
 +++ b/web/index.php
-@@ -16,9 +16,6 @@
+@@ -16,6 +16,9 @@
  $kernel = new DrupalKernel('prod', $autoloader);
  
  $request = Request::createFromGlobals();
