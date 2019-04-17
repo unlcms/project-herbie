@@ -46,6 +46,7 @@
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
         "drupal/diff": "^1.0@RC",
+        "drupal/embed": "^1.0",
         "drupal/field_group": "^1.0",
         "drupal/imagemagick": "^2.4",
         "drupal/layout_builder_restrictions": "^1.5",
