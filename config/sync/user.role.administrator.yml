@@ -26,6 +26,7 @@ permissions:
   - 'administer configuration split'
   - 'administer content types'
   - 'administer display modes'
+  - 'administer embed buttons'
   - 'administer filters'
   - 'administer image styles'
   - 'administer media'
