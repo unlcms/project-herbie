@@ -88,6 +88,17 @@ class UnlScriptHandler {
         $io->write('Removing ' . $drupalRoot . '/.htaccess.rej');
         $fs->remove($drupalRoot . '/.htaccess.rej');
       }
+
+      $io->write("Patching 'sites/example.sites.php' (for unl_multisite)");
+      $fs->chmod($drupalRoot . '/sites', 0777);
+      $fs->chmod($drupalRoot . '/sites/example.sites.php', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/unl_multisite-example.sites.php.patch");
+      $fs->chmod($drupalRoot . '/sites/example.sites.php', 0644);
+      $fs->chmod($drupalRoot . '/sites', 0755);
+      if (strpos($patch_output, 'sites/example.sites.php.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/sites/example.sites.php.rej');
+        $fs->remove($drupalRoot . '/sites/example.sites.php.rej');
+      }
     }
   }
 

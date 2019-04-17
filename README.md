@@ -36,8 +36,10 @@ cp web/.htaccess-subsite-map.txt.sample web/.htaccess-subsite-map.txt
 Add the following line to your Apache's configuration file (httpd.conf) where <DRUPAL_ROOT> is the file system path to the Drupal web root. Restart Apache afterward.
 
 ```
-  RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
+RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 ```
+
+Set up a cron job on the server to execute `php web/modules/contrib/unl_multisite/cron.php` on a regular basis.
 
 Enable the UNL Multisite module on the main site. It should only be enabled on the main site.
 
