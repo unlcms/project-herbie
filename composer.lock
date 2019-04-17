@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8645431c6ac0ef402af2ee6e1bca0d4e",
+    "content-hash": "6ab5b324c69b108c1ee0eb0c1e8accfa",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3297,6 +3297,9 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "3021505 - Use array for class attribute in EntityEmbedBuilder.php": "https://www.drupal.org/files/issues/2018-12-19/entity-embed-3021505-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
