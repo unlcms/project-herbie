@@ -46,6 +46,8 @@ settings:
       styles: ''
     language:
       language_list: un
+    customconfig:
+      ckeditor_custom_config: 'forcePasteAsPlainText = true'
 image_upload:
   status: false
   scheme: public
