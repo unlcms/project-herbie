@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "942e187ab1181ceee86ab141098e2644",
+    "content-hash": "0a714fe8bc5d26ff9824944c008138f5",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7411,6 +7411,16 @@
             "time": "2019-03-01T17:43:52+00:00"
         },
         {
+            "name": "unl/wdntemplates",
+            "version": "5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unl/wdntemplates.git",
+                "reference": "develop"
+            },
+            "type": "library"
+        },
+        {
             "name": "unlcms/project-herbie-composer-plugin",
             "version": "1.0.0",
             "source": {
@@ -10180,16 +10190,6 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-04-04T09:56:43+00:00"
-        },
-        {
-            "name": "unl/wdntemplates",
-            "version": "5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "5.0"
-            },
-            "type": "library"
         },
         {
             "name": "webflo/drupal-core-require-dev",
