@@ -1,10 +1,10 @@
 diff --git a/sites/default/default.settings.php b/sites/default/default.settings.php
-index ae64d2f..216de3f 100644
+index 5922cb1..65a27a9 100644
 --- a/sites/default/default.settings.php
 +++ b/sites/default/default.settings.php
-@@ -754,6 +754,11 @@
+@@ -763,6 +763,11 @@
   */
- $settings['entity_update_batch_size'] = 50;
+ $settings['entity_update_backup'] = TRUE;
  
 +/**
 + * Load Herbie profile configuration.
@@ -14,15 +14,13 @@ index ae64d2f..216de3f 100644
  /**
   * Load local development override configuration, if available.
   *
-@@ -764,7 +769,7 @@
-  *
+@@ -774,6 +779,6 @@
   * Keep this code block at the end of this file to take full effect.
   */
--#
+ #
 -# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 -#   include $app_root . '/' . $site_path . '/settings.local.php';
 -# }
-+
 +if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 +  include $app_root . '/' . $site_path . '/settings.local.php';
 +}
