@@ -52,6 +52,7 @@
         "drupal/entity_embed": "1.x-dev",
         "drupal/field_group": "^1.0",
         "drupal/imagemagick": "^2.4",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_restrictions": "^1.5",
         "drupal/menu_block": "^1.5",
         "drupal/pathauto": "^1.3",
