@@ -27,4 +27,6 @@ hidden:
   created: true
   field_media_file: true
   name: true
+  s_m_file_size: true
+  s_m_mime_type: true
   uid: true

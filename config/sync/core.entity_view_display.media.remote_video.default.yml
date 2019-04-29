@@ -1,0 +1,189 @@
+uuid: a10138b9-afe6-43ad-b85e-ff43be8106df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.m_rv_default_name
+    - field.field.media.remote_video.m_rv_html_representation
+    - field.field.media.remote_video.m_rv_source_url
+    - field.field.media.remote_video.m_rv_suggested_cache_lifetime
+    - field.field.media.remote_video.m_rv_thumbnail_height
+    - field.field.media.remote_video.m_rv_thumbnail_local_uri
+    - field.field.media.remote_video.m_rv_thumbnail_width
+    - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.m_rv_author_name
+    - field.field.media.remote_video.m_rv_author_url
+    - field.field.media.remote_video.m_rv_provider_name
+    - field.field.media.remote_video.m_rv_provider_url
+    - field.field.media.remote_video.m_rv_resource_title
+    - field.field.media.remote_video.m_rv_resource_type
+    - field.field.media.remote_video.s_m_width
+    - image.style.thumbnail
+    - media.type.remote_video
+  module:
+    - image
+    - media
+    - user
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_media_oembed_video:
+    type: oembed
+    weight: 6
+    label: above
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    region: content
+  m_rv_author_name:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_author_url:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_default_name:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_html_representation:
+    weight: 21
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_provider_name:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_provider_url:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_resource_title:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_resource_type:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_source_url:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_suggested_cache_lifetime:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_thumbnail_height:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_thumbnail_local_uri:
+    weight: 15
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  m_rv_thumbnail_width:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  s_m_height:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  s_m_width:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  thumbnail:
+    type: image
+    weight: 5
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    region: content
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  name: true

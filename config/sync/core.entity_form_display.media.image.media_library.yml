@@ -33,5 +33,9 @@ content:
 hidden:
   created: true
   path: true
+  s_m_file_size: true
+  s_m_height: true
+  s_m_mime_type: true
+  s_m_width: true
   status: true
   uid: true

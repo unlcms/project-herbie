@@ -1,0 +1,21 @@
+uuid: 5b70a69b-9102-4295-bfb3-bb5523c3e2a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_rv_author_name
+field_name: m_rv_author_name
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
