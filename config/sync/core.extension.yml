@@ -34,6 +34,7 @@ module:
   filter: 0
   image: 0
   imagemagick: 0
+  inline_entity_form: 0
   layout_builder: 0
   layout_builder_restrictions: 0
   layout_discovery: 0
