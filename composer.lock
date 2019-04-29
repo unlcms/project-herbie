@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a714fe8bc5d26ff9824944c008138f5",
+    "content-hash": "cdabf10953591265a728a9910beadc98",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7501,12 +7501,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "35f44ba4c2fe2f5f4b78240cdc4a725aafbc1feb"
+                "reference": "e38468eae8ea2e62c1d8a226d3f506374f09ed3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/35f44ba4c2fe2f5f4b78240cdc4a725aafbc1feb",
-                "reference": "35f44ba4c2fe2f5f4b78240cdc4a725aafbc1feb",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/e38468eae8ea2e62c1d8a226d3f506374f09ed3e",
+                "reference": "e38468eae8ea2e62c1d8a226d3f506374f09ed3e",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -7519,7 +7519,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-03-22T16:50:06+00:00"
+            "time": "2019-04-29T15:42:36+00:00"
         },
         {
             "name": "unlcms/unl_user",
