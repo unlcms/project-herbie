@@ -27,6 +27,7 @@ permissions:
   - 'administer content types'
   - 'administer display modes'
   - 'administer embed buttons'
+  - 'administer entity browsers'
   - 'administer filters'
   - 'administer image styles'
   - 'administer media'
