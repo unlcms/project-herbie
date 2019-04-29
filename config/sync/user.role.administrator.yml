@@ -86,6 +86,7 @@ permissions:
   - 'synchronize configuration'
   - 'update any media'
   - 'update media'
+  - 'use text format standard'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view builder_page revisions'
