@@ -24,6 +24,18 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
    * @var string
    *   The machine name of the class vocabulary.
    */
+  protected $packageVid;
+
+  /**
+   * The custom class vocabulary, used for a better UX for editors.
+   *
+   * Editors will select a user-friendly term name when adding the layout, and
+   * behind the scenes that term contains a field with the list of actual
+   * classes that will be added to the layout.
+   *
+   * @var string
+   *   The machine name of the class vocabulary.
+   */
   protected $classVid;
 
   /**
@@ -60,6 +72,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     // Assumption is that this vocabulary exists, and has s_t_class field.
     // @TODO: move to a configuration form.
+    $this->packageVid = 'dcf_band_packages';
     $this->classVid = 'dcf_band_classes';
     $this->titleClassVid = 'dcf_title_classes';
     $this->classField = 's_t_class';
@@ -85,11 +98,10 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $width_classes = array_keys($this->getWidthOptions());
     return parent::defaultConfiguration() + [
       'column_widths' => array_shift($width_classes),
-      'extra_classes' => '',
-      'terms' => '',
       'title' => '',
       'title_terms' => '',
-      'title_classes' => '',
+      'package' => '',
+      'terms' => '',
     ];
   }
 
@@ -113,7 +125,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#type' => 'textfield',
       '#title' => $this->t('Title'),
       '#default_value' => $configuration['title'],
-      '#description' => $this->t('Custom title for this section.'),
+      '#description' => $this->t('Optional heading for this section.'),
     ];
 
     $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($this->getTitleVid());
@@ -138,8 +150,26 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       ],
     ];
 
+    // Allow editors to select a band class package.
+    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($this->getPackageVid());
+    $options = [];
+    foreach ($terms as $term) {
+      $options[$term->tid] = $term->name;
+    }
+
+    $form['package'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Section style package'),
+      '#default_value' => $configuration['package'],
+      '#options' => $options,
+      '#description' => $this->t('Package of classes to apply to section.'),
+      '#empty_option' => $this->t('- None -'),
+      '#empty_value' => '',
+      '#multiple' => FALSE,
+    ];
+
     // Allow editors to select html classes using user-friendly term names.
-    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($this->getVid());
+    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($this->getClassVid());
     $options = [];
     foreach ($terms as $term) {
       $options[$term->tid] = $term->name;
@@ -154,6 +184,11 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#empty_option' => $this->t('- None -'),
       '#empty_value' => '',
       '#multiple' => TRUE,
+      '#states' => [
+        'visible' => [
+          'select[name="layout_settings[package]"]' => ['value' => ''],
+        ],
+      ],
     ];
 
     return $form;
@@ -172,9 +207,8 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $this->configuration['column_widths'] = $form_state->getValue('column_widths');
     $this->configuration['title'] = $form_state->getValue('title');
     $this->configuration['title_terms'] = $form_state->getValue('title_terms');
-    $this->configuration['title_classes'] = $form_state->getValue('title_classes');
-    $this->configuration['terms'] = $form_state->getValue('terms');
-    $this->configuration['extra_classes'] = $form_state->getValue('extra_classes');
+    $this->configuration['package'] = $form_state->getValue('package');
+    $this->configuration['terms'] = empty($this->configuration['package']) ? $form_state->getValue('terms') : [];
   }
 
   /**
@@ -202,9 +236,9 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       $build['#settings'] = $settings;
     }
 
-    // Add vocabulary classes to any other classes.
+    // Add band/section classes from the package, or custom classes.
     $more_classes = [];
-    $terms = (array) $configuration['terms'];
+    $terms = (array) (!empty($configuration['package']) ? $configuration['package'] : $configuration['terms']);
     foreach ($terms as $term_id) {
       if ($term = $storage->load($term_id)) {
         $value = $term->{$this->classField}->value;
@@ -228,9 +262,16 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
   }
 
   /**
+   * The custom class package vocabulary.
+   */
+  public function getPackageVid() {
+    return $this->packageVid;
+  }
+
+  /**
    * The custom class vocabulary.
    */
-  public function getVid() {
+  public function getClassVid() {
     return $this->classVid;
   }
 
