@@ -15,11 +15,6 @@ class OneColumnLayout extends DcfLayoutBase {
    */
   public function build(array $regions) {
     $build = parent::build($regions);
-    $build['#attributes']['class'] = [
-      'layout',
-      $this->getPluginDefinition()->getTemplate(),
-    ];
-
     return $build;
   }
 
