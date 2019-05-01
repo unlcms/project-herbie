@@ -36,6 +36,7 @@ settings:
           name: Media
           items:
             - Blockquote
+            - Table
         -
           name: Tools
           items:
