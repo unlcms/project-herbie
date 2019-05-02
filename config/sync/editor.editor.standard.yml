@@ -49,6 +49,9 @@ settings:
       language_list: un
     customconfig:
       ckeditor_custom_config: 'forcePasteAsPlainText = true'
+    ckeditor_dcf_base:
+      enabled_plugins:
+        ckeditor_dcf_table: ckeditor_dcf_table
 image_upload:
   status: false
   scheme: public
