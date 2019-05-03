@@ -30,6 +30,7 @@ permissions:
   - 'administer entity browsers'
   - 'administer filters'
   - 'administer image styles'
+  - 'administer linkit profiles'
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
