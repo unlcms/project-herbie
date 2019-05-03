@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ckeditor_dcf\Plugin\CKEditorPlugin;
+namespace Drupal\dcf_ckeditor\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
@@ -9,10 +9,10 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\editor\Entity\Editor;
 
 /**
- * Defines the "CKEditor DCF Base" plugin.
+ * Defines the "DCF Base" plugin.
  *
  * @CKEditorPlugin(
- *   id = "ckeditor_dcf_base",
+ *   id = "dcf_base",
  *   label = @Translation("Digital Campus Framework")
  * )
  */
@@ -59,13 +59,13 @@ class DcfBasePlugin extends CKEditorPluginBase implements CKEditorPluginConfigur
   public function settingsForm(array $form, FormStateInterface $form_state, Editor $editor) {
     // Each plugin provided by this module should be provided as an option.
     $options = [
-      'ckeditor_dcf_table' => t('DCF Table'),
+      'dcf_table' => t('DCF Table'),
     ];
 
     $config = ['enabled_plugins' => ''];
     $settings = $editor->getSettings();
-    if (isset($settings['plugins']['ckeditor_dcf_base'])) {
-      $config = $settings['plugins']['ckeditor_dcf_base'];
+    if (isset($settings['plugins']['dcf_base'])) {
+      $config = $settings['plugins']['dcf_base'];
     }
 
     // Load Editor settings.
@@ -76,7 +76,7 @@ class DcfBasePlugin extends CKEditorPluginBase implements CKEditorPluginConfigur
       '#options' => $options,
       '#title' => $this->t('Enabled DCF Plugins'),
       '#default_value' => $config['enabled_plugins'],
-      '#description' => $this->t('CKEditor DCF plugins that should be enabled for this editor.'),
+      '#description' => $this->t('DCF CKEditorplugins that should be enabled for this editor.'),
       '#element_validate' => [
         [$this, 'validateEnabledPlugins'],
       ],
@@ -103,7 +103,7 @@ class DcfBasePlugin extends CKEditorPluginBase implements CKEditorPluginConfigur
           'editor',
           'settings',
           'plugins',
-          'ckeditor_dcf_base',
+          'dcf_base',
           'enabled_plugins',
           $k,
         ], (string) $v);

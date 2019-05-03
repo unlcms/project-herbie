@@ -1,16 +1,16 @@
 <?php
 
-namespace Drupal\ckeditor_dcf\Plugin\CKEditorPlugin;
+namespace Drupal\dcf_ckeditor\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginContextualInterface;
 use Drupal\editor\Entity\Editor;
 
 /**
- * Defines the "CKEditor DCF Table" plugin.
+ * Defines the "DCF Table" plugin.
  *
  * @CKEditorPlugin(
- *   id = "ckeditor_dcf_table",
+ *   id = "dcf_table",
  *   label = @Translation("DCF Table")
  * )
  */
@@ -20,8 +20,8 @@ class DcfTable extends CKEditorPluginBase implements CKEditorPluginContextualInt
    * {@inheritdoc}
    */
   public function getFile() {
-    $module_path = drupal_get_path('module', 'ckeditor_dcf');
-    return $module_path . '/js/plugin/ckeditor_dcf_table/plugin.js';
+    $module_path = drupal_get_path('module', 'dcf_ckeditor');
+    return $module_path . '/js/plugin/dcf_table/plugin.js';
   }
 
   /**
@@ -29,8 +29,8 @@ class DcfTable extends CKEditorPluginBase implements CKEditorPluginContextualInt
    */
   public function isEnabled(Editor $editor) {
     $settings = $editor->getSettings();
-    if (isset($settings['plugins']['ckeditor_dcf_base']['enabled_plugins']['ckeditor_dcf_table'])
-      && $settings['plugins']['ckeditor_dcf_base']['enabled_plugins']['ckeditor_dcf_table'] != '0'
+    if (isset($settings['plugins']['dcf_base']['enabled_plugins']['dcf_table'])
+      && $settings['plugins']['dcf_base']['enabled_plugins']['dcf_table'] != '0'
       ) {
       return TRUE;
     }

@@ -1,7 +1,7 @@
-# Plugin \Drupal\ckeditor_config\Plugin\CKEditorPlugin\DcfBasePlugin
-ckeditor.plugin.ckeditor_dcf_base:
+# Plugin \Drupal\dcf_ckeditor\Plugin\CKEditorPlugin\DcfBasePlugin
+ckeditor.plugin.dcf_base:
   type: mapping
-  label: 'CKEditor DCF Base configuration'
+  label: 'DCF CKEditor Base configuration'
   mapping:
     enabled_plugins:
       type: sequence

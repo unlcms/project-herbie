@@ -1,5 +1,5 @@
 (function ($, CKEDITOR) {
-  CKEDITOR.plugins.add( 'ckeditor_dcf_table',{
+  CKEDITOR.plugins.add( 'dcf_table',{
     init: function( editor ) {
       CKEDITOR.on('instanceReady', function( ev ) {
         // 'saveSnapshot' event fires on both element insert and style selection.
