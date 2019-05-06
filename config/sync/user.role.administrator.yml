@@ -25,6 +25,7 @@ permissions:
   - 'administer blocks'
   - 'administer configuration split'
   - 'administer content types'
+  - 'administer dcf classes'
   - 'administer display modes'
   - 'administer filters'
   - 'administer image styles'
