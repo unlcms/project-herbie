@@ -1,0 +1,7 @@
+dcf_classes.classes:
+  path: '/admin/config/content/dcf/classes'
+  defaults:
+    _form: '\Drupal\dcf_classes\Form\Settings'
+    _title: 'DCF Classes'
+  requirements:
+    _permission: 'administer classes'
