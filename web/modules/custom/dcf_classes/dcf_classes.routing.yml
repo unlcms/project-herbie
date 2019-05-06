@@ -4,4 +4,4 @@ dcf_classes.classes:
     _form: '\Drupal\dcf_classes\Form\Settings'
     _title: 'DCF Classes'
   requirements:
-    _permission: 'administer classes'
+    _permission: 'administer dcf classes'
