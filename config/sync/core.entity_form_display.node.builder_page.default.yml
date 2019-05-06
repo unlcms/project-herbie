@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.builder_page.body
+    - field.field.node.builder_page.layout_builder__layout
     - node.type.builder_page
   module:
     - path
