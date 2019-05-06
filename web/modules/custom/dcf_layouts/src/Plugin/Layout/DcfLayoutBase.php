@@ -5,31 +5,11 @@ namespace Drupal\dcf_layouts\Plugin\Layout;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Layout\LayoutDefault;
 use Drupal\Core\Plugin\PluginFormInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Base class of layouts with configurable widths.
  */
-abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterface, ContainerFactoryPluginInterface {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition
-    );
-  }
+abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterface {
 
   /**
    * {@inheritdoc}
