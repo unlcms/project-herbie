@@ -22,6 +22,7 @@ module:
   datetime_range: 0
   dblog: 0
   dcf_classes: 0
+  dcf_ckeditor: 0
   dcf_layouts: 0
   diff: 0
   dynamic_page_cache: 0
@@ -55,6 +56,7 @@ module:
   token: 0
   toolbar: 0
   unl_cas: 0
+  unl_five_ckeditor: 0
   unl_user: 0
   user: 0
   views_ui: 0
