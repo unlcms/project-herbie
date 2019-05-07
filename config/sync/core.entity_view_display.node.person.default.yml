@@ -1,0 +1,79 @@
+uuid: ac5d1302-4e53-40dd-96e0-76cf0e4c8646
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.n_person_bio
+    - field.field.node.person.n_person_email
+    - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_unldirectoryreference
+    - field.field.node.person.n_person_website
+    - node.type.person
+  module:
+    - link
+    - telephone
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  n_person_bio:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  n_person_email:
+    weight: 107
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  n_person_phone:
+    weight: 104
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  n_person_position:
+    weight: 103
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  n_person_unldirectoryreference:
+    weight: 102
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  n_person_website:
+    weight: 106
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

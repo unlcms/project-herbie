@@ -1,0 +1,26 @@
+uuid: 239448de-ded6-4c6c-aedc-2c24053f0974
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_unldirectoryreference
+    - node.type.person
+  module:
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  n_person_phone: true
+  n_person_position: true
+  n_person_unldirectoryreference: true

@@ -1,0 +1,166 @@
+uuid: 2f1c8ba6-6685-40d9-b631-c8dd03830f9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_imageurl
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_bio
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_courses
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_education
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_grants
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_honors
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_papers
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_performances
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledgepresentations
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_mail
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_primaryaffiliation
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_telephonenumber
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_title
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_uid
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_unldirectoryaddress
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_unlhrprimarydepartment
+  module:
+    - external_entities
+    - telephone
+    - text
+id: unl_directory_entry.unl_directory_entry.default
+targetEntityType: unl_directory_entry
+bundle: unl_directory_entry
+mode: default
+content:
+  ee_unldir_imageurl:
+    weight: -3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  ee_unldir_knowledge_bio:
+    weight: -2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  ee_unldir_knowledge_courses:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledge_education:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledge_grants:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledge_honors:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledge_papers:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledge_performances:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_knowledgepresentations:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  ee_unldir_mail:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  ee_unldir_primaryaffiliation:
+    weight: -4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  ee_unldir_telephonenumber:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  ee_unldir_title:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  ee_unldir_uid:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  ee_unldir_unldirectoryaddress:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  ee_unldir_unlhrprimarydepartment:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
