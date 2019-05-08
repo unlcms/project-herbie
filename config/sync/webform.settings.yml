@@ -136,6 +136,7 @@ element:
     machine_name: machine_name
     password: password
     password_confirm: password_confirm
+    processed_text: processed_text
     search: search
     table: table
     tableselect: tableselect
@@ -172,9 +173,9 @@ element:
     webform_toggles: webform_toggles
     webform_video_file: webform_video_file
 html_editor:
-  tidy: true
+  tidy: false
   disabled: false
-  element_format: ''
+  element_format: webform
   mail_format: ''
   make_unused_managed_files_temporary: true
 file:
@@ -182,7 +183,7 @@ file:
   delete_temporary_managed_files: true
   file_public: false
   file_private_redirect: true
-  file_private_redirect_message: 'Please login to access the uploaded file.'
+  file_private_redirect_message: '<p>Please login to access the uploaded file.</p>'
   default_max_filesize: ''
   default_managed_file_extensions: 'gif jpg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 ogg wav bz2 dmg gz jar rar sit svg tar zip'
   default_audio_file_extensions: 'mp3 ogg wav'

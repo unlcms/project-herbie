@@ -106,6 +106,7 @@ permissions:
   - 'update any media'
   - 'update media'
   - 'use text format standard'
+  - 'use text format webform'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any webform submission'

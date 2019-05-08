@@ -13,4 +13,5 @@ permissions:
   - 'access webform submission user'
   - 'edit own webform'
   - 'use text format standard'
+  - 'use text format webform'
   - 'view media'
