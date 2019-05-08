@@ -1,0 +1,236 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+{{ attach_library('unl_five_herbie/person') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page and view_mode != "full" %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes }}>
+    <div class="dcf-grid dcf-col-gap-vw record-container">
+
+      <div class="dcf-col-100% dcf-col-25%-start@md directory-knowledge-summary">
+        <div class="vcard faculty dcf-measure" data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
+          <span class="card-profile dcf-d-block dcf-mb-3 dcf-h-10 dcf-w-10 dcf-ratio dcf-ratio-1x1">
+            {% if node.field_person_portrait.value %}
+              {{ content.field_person_portrait }}
+            {% else  %}
+              <img class="photo profile_pic dcf-ratio-child dcf-circle dcf-d-block dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}" alt="Avatar for {{ label }}" />
+            {% endif %}
+          </span>
+          <div class="vcardInfo unl-font-sans">
+            <h1 class="headline dcf-mb-0 dcf-txt-h2">
+              <span class="fn" itemprop="name">{{ label }}</span>
+            </h1>
+            <div class="eppa dcf-mt-3 dcf-mb-3 dcf-txt-2xs dcf-uppercase unl-ls-1 unl-dark-gray">
+              {{ node.n_person_unldirectoryreference.entity.ee_unldir_primaryaffiliation.value }}
+            </div>
+            <ul class="roles dcf-list-bare dcf-m-0">
+              <li class="org parent-unl">
+                <span class="title dcf-txt-sm" itemprop="jobTitle">
+                  {% if node.n_person_position.value %}
+                    {{ content.n_person_position }}
+                  {% else %}
+                    {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
+                  {% endif %}
+                </span>
+                <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                  <span class="organization-unit dcf-d-block dcf-txt-sm">
+                    <span itemprop="name">{{ node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value }}</span>
+                  </span>
+                  <span class="organization-name dcf-d-none" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">University of Nebraska–Lincoln</span>
+                  </span>
+                </span>
+              </li>
+            </ul>
+
+            {% if node.n_person_address[0].value or node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[0].value %}
+              <div class="adr work attribute dcf-txt-sm" itemprop="workLocation" itemscope itemtype="http://schema.org/Place">
+                <span class="icon-map-pin" aria-hidden="true"></span>
+                <span class="type dcf-d-none">Work</span>
+                  {% if node.n_person_address.value %}
+                    {% for i, value in node.n_person_address %}
+                      {% if i == 0 %}
+                        <span class="street-address">
+                          {{  node.n_person_address[i].value }}
+                        </span>
+                      {% endif %}
+                      {% if i == 1  %}
+                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span class="locality" itemprop="addressLocality">{{ node.n_person_address[i].value }}</span>
+                      {% endif %}
+                      {% if i == 2  %}
+                        <abbr class="region" title="Nebraska" itemprop="addressRegion">{{ node.n_person_address[i].value }}</abbr>
+                      {% endif %}
+                      {% if i == 3  %}
+                        <span class="postal-code" itemprop="postalCode">{{ node.n_person_address[i].value }}</span>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% else  %}
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress %}
+                      {% if i == 0 %}
+                        <span class="street-address">{{ node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[i].value }}</span>
+                      {% endif %}
+                      {% if i == 1  %}
+                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span class="locality" itemprop="addressLocality">{{  node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[i].value }}</span>
+                      {% endif %}
+                      {% if i == 2  %}
+                        <abbr class="region" title="Nebraska" itemprop="addressRegion">{{  node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[i].value }}</abbr>
+                      {% endif %}
+                      {% if i == 3  %}
+                        <span class="postal-code" itemprop="postalCode">{{  node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[i].value }}</span>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+              </div>
+            {% endif %}
+
+            {% if node.n_person_phone.value or node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value %}
+              <div class="tel work attribute dcf-txt-sm">
+                <span class="icon-phone" aria-hidden="true"></span>
+                <span class="type dcf-d-none">Work</span>
+                {% if node.n_person_phone.value %}
+                  <span class="value dcf-mr-1">
+                    <a href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}">
+                      <span itemprop="telephone">{{ node.n_person_phone.value }}</span>
+                    </a>
+                  </span>
+                  {% if node.n_person_phone.value|slice(0,7) == '402-472' %}
+                    <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus {{ node.n_person_phone.value|replace({'402-472-':'2-'}) }}</small>
+                  {% endif %}
+                {% else %}
+                  <span class="value dcf-mr-1">
+                    <a href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}">
+                      <span itemprop="telephone">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({'402472':'402-472-'})  }}</span>
+                    </a>
+                  </span>
+                  {% if node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0,6) == '402472' %}
+                    <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({'402472':'402-472-'}) }}">On-campus {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({'402472':'2-'}) }}</small>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if node.n_person_email.value or node.n_person_unldirectoryreference.entity.ee_unldir_mail.value %}
+              <div class="attribute dcf-txt-sm">
+                <span class="icon-email" aria-hidden="true"></span>
+                {% if node.n_person_email.value %}
+                  <a class="email" href="mailto:{{ node.n_person_email.value|lower }}" itemprop="email">{{ node.n_person_email.value|lower }}</a>
+                {%  else %}
+                  <a class="email" href="mailto:{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+      {% if node.n_person_bio.value or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses.value is not iterable or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers.value is not iterable or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances.value is not iterable or
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations.value is not iterable
+      %}
+        <div class="dcf-col-100% dcf-col-75%-end@md">
+          <div class="card">
+            <div class="card-content">
+              {% if node.n_person_bio.value is not empty or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-bio dcf-mt-7">
+                  {% if node.n_person_bio.value is not empty %}
+                    {{ content.n_person_bio }}
+                  {%  else %}
+                    {{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value }}
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-education dcf-mt-7">
+                  <h2 class="directory-knowledge-section-heading dcf-relative dcf-txt-h4 dcf-regular"><span class="dcf-absolute dcf-pin-left unl-dark-gray icon-academic-cap" aria-hidden="true"></span><span class="dcf-sr-only">icon-academic-cap</span>Education</h2>
+                  <ul class="directory-knowledge-section-inner dcf-list-bare dcf-ml-7">
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education %}
+                      <li class="directory-knowledge-item">{{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education[i].value }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-courses dcf-mt-7">
+                  <h2 class="directory-knowledge-section-heading dcf-relative dcf-txt-h4 dcf-regular"><span class="dcf-absolute dcf-pin-left unl-dark-gray icon-chat-user" aria-hidden="true"></span><span class="dcf-sr-only">icon-chat-user</span>Courses</h2>
+                  <ul class="directory-knowledge-section-inner dcf-list-bare dcf-ml-7">
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses %}
+                      <li class="directory-knowledge-item">{{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses[i].value }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-papers dcf-mt-7">
+                  <h2 class="directory-knowledge-section-heading dcf-relative dcf-txt-h4 dcf-regular"><span class="dcf-absolute dcf-pin-left unl-dark-gray icon-document" aria-hidden="true"></span><span class="dcf-sr-only">icon-document</span>Publications and Other Intellectual Contributions</h2>
+                  <ul class="directory-knowledge-section-inner dcf-list-bare dcf-ml-7">
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers %}
+                      <li class="directory-knowledge-item">{{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers[i].value }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-performances dcf-mt-7">
+                  <h2 class="directory-knowledge-section-heading dcf-relative dcf-txt-h4 dcf-regular"><span class="dcf-absolute dcf-pin-left unl-dark-gray icon-column" aria-hidden="true"></span><span class="dcf-sr-only">icon-column</span>Artistic &amp; Professional Performances &amp; Exhibitions</h2>
+                  <ul class="directory-knowledge-section-inner dcf-list-bare dcf-ml-7">
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances %}
+                      <li class="directory-knowledge-item">{{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances[i].value }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations.value is not iterable %}
+                <div class="directory-knowledge-section directory-knowledge-section-presentations dcf-mt-7">
+                  <h2 class="directory-knowledge-section-heading dcf-relative dcf-txt-h4 dcf-regular"><span class="dcf-absolute dcf-pin-left unl-dark-gray icon-keynote" aria-hidden="true"></span><span class="dcf-sr-only">icon-keynote</span>Presentations</h2>
+                  <ul class="directory-knowledge-section-inner dcf-list-bare dcf-ml-7">
+                    {% for i, value in node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations %}
+                      <li class="directory-knowledge-item">{{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations[i].value }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</article>

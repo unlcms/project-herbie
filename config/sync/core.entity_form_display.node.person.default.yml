@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.person.n_person_address
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -21,9 +22,10 @@ third_party_settings:
     group_unl_directory_overrides:
       children:
         - n_person_position
+        - n_person_bio
         - n_person_phone
         - n_person_email
-        - n_person_bio
+        - n_person_address
         - n_person_website
       parent_name: ''
       weight: 20
@@ -45,8 +47,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  n_person_address:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   n_person_bio:
-    weight: 11
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -55,7 +65,7 @@ content:
     type: text_textarea_with_summary
     region: content
   n_person_email:
-    weight: 10
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -63,7 +73,7 @@ content:
     type: email_default
     region: content
   n_person_phone:
-    weight: 9
+    weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -87,7 +97,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   n_person_website:
-    weight: 12
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''

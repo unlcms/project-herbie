@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.person.n_person_address
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -25,6 +26,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  n_person_address:
+    weight: 108
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   n_person_bio:
     weight: 105
     label: hidden
