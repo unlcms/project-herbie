@@ -112,30 +112,74 @@ purge:
 element:
   empty_message: '{Empty}'
   allowed_tags: admin
-  wrapper_classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  horizontal_rule_classes: "webform-horizontal-rule--solid\nwebform-horizontal-rule--dashed\nwebform-horizontal-rule--dotted\nwebform-horizontal-rule--gradient\nwebform-horizontal-rule--thin\nwebform-horizontal-rule--medium\nwebform-horizontal-rule--thick\nwebform-horizontal-rule--flaired\nwebform-horizontal-rule--glyph\n"
+  wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  horizontal_rule_classes: "webform-horizontal-rule--solid\r\nwebform-horizontal-rule--dashed\r\nwebform-horizontal-rule--dotted\r\nwebform-horizontal-rule--gradient\r\nwebform-horizontal-rule--thin\r\nwebform-horizontal-rule--medium\r\nwebform-horizontal-rule--thick\r\nwebform-horizontal-rule--flaired\r\nwebform-horizontal-rule--glyph\r\n"
   default_description_display: ''
   default_more_title: More
   default_section_title_tag: h2
-  default_empty_option: true
-  default_empty_option_required: ''
-  default_empty_option_optional: ''
   default_icheck: ''
   default_google_maps_api_key: ''
   default_algolia_places_app_id: ''
   default_algolia_places_api_key: ''
+  default_empty_option: true
+  default_empty_option_required: ''
+  default_empty_option_optional: ''
   excluded_elements:
+    captcha: captcha
+    color: color
+    container: container
+    entity_autocomplete: entity_autocomplete
+    item: item
+    label: label
+    language_select: language_select
+    machine_name: machine_name
     password: password
     password_confirm: password_confirm
+    search: search
+    table: table
+    tableselect: tableselect
+    text_format: text_format
+    value: value
+    webform_actions: webform_actions
+    webform_audio_file: webform_audio_file
+    webform_autocomplete: webform_autocomplete
+    webform_codemirror: webform_codemirror
+    webform_computed_token: webform_computed_token
+    webform_computed_twig: webform_computed_twig
+    webform_contact: webform_contact
+    webform_custom_composite: webform_custom_composite
+    webform_email_multiple: webform_email_multiple
+    webform_entity_checkboxes: webform_entity_checkboxes
+    webform_entity_radios: webform_entity_radios
+    webform_entity_select: webform_entity_select
+    webform_horizontal_rule: webform_horizontal_rule
+    webform_link: webform_link
     webform_location_geocomplete: webform_location_geocomplete
+    webform_location_places: webform_location_places
+    webform_mapping: webform_mapping
+    webform_message: webform_message
+    webform_rating: webform_rating
+    webform_section: webform_section
+    webform_signature: webform_signature
+    webform_table_sort: webform_table_sort
+    webform_tableselect_sort: webform_tableselect_sort
+    webform_term_checkboxes: webform_term_checkboxes
+    webform_term_select: webform_term_select
+    webform_terms_of_service: webform_terms_of_service
+    webform_time: webform_time
+    webform_toggle: webform_toggle
+    webform_toggles: webform_toggles
+    webform_video_file: webform_video_file
 html_editor:
+  tidy: true
   disabled: false
   element_format: ''
   mail_format: ''
-  tidy: true
   make_unused_managed_files_temporary: true
 file:
+  make_unused_managed_files_temporary: true
+  delete_temporary_managed_files: true
   file_public: false
   file_private_redirect: true
   file_private_redirect_message: 'Please login to access the uploaded file.'
@@ -145,8 +189,6 @@ file:
   default_document_file_extensions: 'txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods'
   default_image_file_extensions: 'gif jpg png'
   default_video_file_extensions: 'avi mov mp4 ogg wav webm'
-  make_unused_managed_files_temporary: true
-  delete_temporary_managed_files: true
 format: {  }
 mail:
   roles: {  }
