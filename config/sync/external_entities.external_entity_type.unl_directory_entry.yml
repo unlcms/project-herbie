@@ -14,22 +14,22 @@ field_mappings:
     value: displayName
   ee_unldir_imageurl:
     value: imageURL
-  ee_unldir_knowledge_bio:
-    value: bio
-  ee_unldir_knowledge_courses:
-    value: courses
-  ee_unldir_knowledge_education:
-    value: education
-  ee_unldir_knowledge_grants:
-    value: grants
-  ee_unldir_knowledge_honors:
-    value: honors
-  ee_unldir_knowledge_papers:
-    value: papers
-  ee_unldir_knowledge_performances:
-    value: performances
   ee_unldir_knowledgepresentations:
-    value: presentations
+    value: knowledge/presentations
+  ee_unldir_knowledge_bio:
+    value: knowledge/bio
+  ee_unldir_knowledge_courses:
+    value: knowledge/courses
+  ee_unldir_knowledge_education:
+    value: knowledge/education
+  ee_unldir_knowledge_grants:
+    value: knowledge/grants
+  ee_unldir_knowledge_honors:
+    value: knowledge/honors
+  ee_unldir_knowledge_papers:
+    value: knowledge/papers
+  ee_unldir_knowledge_performances:
+    value: knowledge/performances
   ee_unldir_mail:
     value: mail
   ee_unldir_primaryaffiliation:
