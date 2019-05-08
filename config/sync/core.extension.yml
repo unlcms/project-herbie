@@ -57,8 +57,6 @@ module:
   user: 0
   views_ui: 0
   webform: 0
-  webform_attachment: 0
-  webform_image_select: 0
   webform_submission_log: 0
   webform_ui: 0
   menu_link_content: 1
