@@ -55,6 +55,7 @@
         "drupal/token": "^1.5",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
+        "oomphinc/composer-installers-extender": "^1.1",
         "unl/wdntemplates": "^5.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
@@ -108,6 +109,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "installer-types": ["library"],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
