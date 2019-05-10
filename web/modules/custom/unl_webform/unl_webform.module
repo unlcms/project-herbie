@@ -1,0 +1,228 @@
+<?php
+
+/**
+ * @file
+ * Modifies Webform UI to pare down options and enforce defaults.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the Webform UI element form.
+ */
+function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Get info about the Webform element.
+  $build_info = $form_state->getBuildInfo();
+  $element = $build_info['callback_object']->getElement();
+  $element_type = $element['#type'];
+  // Add element type to $form array to make it available to
+  // validate function(s).
+  $form['element_type'] = $element_type;
+
+  // Get Webform settings.
+  $config = \Drupal::service('config.factory')->get('webform.settings');
+
+  /* Global modifications. */
+
+  // Remove most of the advanced configuration.
+  unset($form['properties']['wrapper_attributes']);
+  unset($form['properties']['element_attributes']);
+  unset($form['properties']['label_attributes']);
+  unset($form['properties']['admin']);
+  unset($form['properties']['custom']);
+  unset($form['properties']['display']['format_attributes']);
+
+  // Remove option to display title after element.
+  unset($form['properties']['form']['display_container']['title_display']['#options']['after']);
+
+  // Remove Help and More description options.
+  unset($form['properties']['element_description']['help']);
+  unset($form['properties']['element_description']['more']);
+  // Override description to remove references to 'help' and 'more'.
+  $form['properties']['element_description']['#title'] = t('Element description');
+
+  // Remove invisible and tooltip description display options.
+  unset($form['properties']['form']['display_container']['description_display']['#options']['invisible']);
+  unset($form['properties']['form']['display_container']['description_display']['#options']['tooltip']);
+
+  // For elements rendered as fieldsets, remove the option to make
+  // the title (<legend>) invisible.
+  $fieldset_elements = [
+    'checkboxes',
+    'details',
+    'fieldset',
+    'radios',
+    'telephone_advanced',
+    'webform_address',
+    'webform_buttons',
+    'webform_buttons_other',
+    'webform_checkboxes_other',
+    'webform_name',
+    'webform_radios_other',
+    'webform_select_other',
+    'webform_telephone',
+  ];
+  if (in_array($element_type, $fieldset_elements)) {
+    unset($form['properties']['form']['display_container']['title_display']['#options']['invisible']);
+    // Default value may be set to 'invisible'.
+    if ($form['properties']['form']['display_container']['title_display']['#default_value'] == 'invisible') {
+      $form['properties']['form']['display_container']['title_display']['#default_value'] = NULL;
+    }
+  }
+
+  // Only allow field prefix and field suffix on textfield and number elements.
+  $elements_allowed_prefix_suffix = [
+    'textfield',
+    'number',
+  ];
+  if (!in_array($element_type, $elements_allowed_prefix_suffix)) {
+    unset($form['properties']['form']['field_container']);
+  }
+
+  // Remove field prefix and field suffix option from options elements
+  // with 'other' option. Used by all '[type] other' elements, such as
+  // 'Radios other' and 'Select other'.
+  unset($form['properties']['options_other']['other__field_container']);
+
+  // Remove Options display options (e.g. one-column, two-column).
+  unset($form['properties']['options']['options_display_container']['options_display']);
+  // Remove option to display option descriptions as 'help'
+  // Leaves only option as 'description'.
+  unset($form['properties']['options']['options_display_container']['options_description_display']['#options']['help']);
+
+  /* Field-specific modifications. */
+
+  // Address field.
+  if ($element_type == 'webform_address') {
+    // Remove help field.
+    unset($form['properties']['composite']['element']['address']['labels']['data']['address__help']);
+    unset($form['properties']['composite']['element']['address_2']['labels']['data']['address_2__help']);
+    unset($form['properties']['composite']['element']['city']['labels']['data']['city__help']);
+    unset($form['properties']['composite']['element']['state_province']['labels']['data']['state_province__help']);
+    unset($form['properties']['composite']['element']['postal_code']['labels']['data']['postal_code__help']);
+    unset($form['properties']['composite']['element']['country']['labels']['data']['country__help']);
+
+    // Remove option to display title after element.
+    unset($form['properties']['composite']['element']['address']['labels']['data']['address__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['address_2']['labels']['data']['address_2__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['city']['labels']['data']['city__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['state_province']['labels']['data']['state_province__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['postal_code']['labels']['data']['postal_code__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['country']['labels']['data']['country__title_display']['#options']['after']);
+  }
+
+  // Name field.
+  if ($element_type == 'webform_name') {
+    // Remove help field.
+    unset($form['properties']['composite']['element']['title']['labels']['data']['title__help']);
+    unset($form['properties']['composite']['element']['first']['labels']['data']['first__help']);
+    unset($form['properties']['composite']['element']['middle']['labels']['data']['middle__help']);
+    unset($form['properties']['composite']['element']['last']['labels']['data']['last__help']);
+    unset($form['properties']['composite']['element']['suffix']['labels']['data']['suffix__help']);
+    unset($form['properties']['composite']['element']['degree']['labels']['data']['degree__help']);
+
+    // Remove option to display title after element.
+    unset($form['properties']['composite']['element']['title']['labels']['data']['title__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['first']['labels']['data']['first__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['middle']['labels']['data']['middle__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['last']['labels']['data']['last__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['suffix']['labels']['data']['suffix__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['degree']['labels']['data']['degree__title_display']['#options']['after']);
+  }
+
+  // Telephone Advanced field.
+  if ($element_type == 'webform_telephone') {
+    // Remove help field.
+    unset($form['properties']['composite']['element']['type']['labels']['data']['type__help']);
+    unset($form['properties']['composite']['element']['phone']['labels']['data']['phone__help']);
+    unset($form['properties']['composite']['element']['ext']['labels']['data']['ext__help']);
+
+    // Remove option to display title after element.
+    unset($form['properties']['composite']['element']['type']['labels']['data']['type__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['phone']['labels']['data']['phone__title_display']['#options']['after']);
+    unset($form['properties']['composite']['element']['ext']['labels']['data']['ext__title_display']['#options']['after']);
+  }
+
+  // Upload fields.
+  if ($element_type == 'managed_file'
+    || $element_type == 'webform_document_file'
+    || $element_type == 'webform_image_file'
+    ) {
+    // Remove some description placement options.
+    unset($form['properties']['file']['file_help']['#options']['help']);
+    unset($form['properties']['file']['file_help']['#options']['more']);
+    unset($form['properties']['file']['file_help']['#options']['none']);
+
+    // Remove preview.
+    unset($form['properties']['file']['file_preview']);
+
+    // Remove file rename option.
+    unset($form['properties']['file']['file_name']);
+
+    // Set allowed extensions.
+    switch ($element_type) {
+      case ('managed_file'):
+        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_managed_file_extensions');
+        break;
+
+      case ('webform_document_file'):
+        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_document_file_extensions');
+        break;
+
+      case ('webform_image_file'):
+        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_image_file_extensions');
+        break;
+    }
+    $form['properties']['file']['file_extensions']['#disabled'] = TRUE;
+
+    // Set Santize option to always on.
+    $form['properties']['file']['sanitize']['#default_value'] = TRUE;
+    $form['properties']['file']['sanitize']['#disabled'] = TRUE;
+
+    // Set max file size to 10M.
+    $form['properties']['file']['max_filesize']['#default_value'] = $config->get('file.default_max_filesize');
+    $form['properties']['file']['max_filesize']['#disabled'] = TRUE;
+
+    // Remove upload button option.
+    unset($form['properties']['file']['button']);
+    unset($form['properties']['file']['button__title']);
+    unset($form['properties']['file']['button__attributes']);
+  }
+
+  // Add custom validation.
+  array_unshift($form['#validate'], 'unl_webform_webform_ui_element_form_validate');
+}
+
+/**
+ * Validation function for unl_webform_form_webform_ui_element_form_alter().
+ */
+function unl_webform_webform_ui_element_form_validate($form, FormStateInterface &$form_state) {
+  $element_type = $form['element_type'];
+
+  // Get Webform settings.
+  $config = \Drupal::service('config.factory')->get('webform.settings');
+
+  if ($element_type == 'managed_file'
+    || $element_type == 'webform_document_file'
+    || $element_type == 'webform_image_file'
+    ) {
+    // Enforce defaults.
+    $form_state->setValue(['properties', 'sanitize'], TRUE);
+    $form_state->setValue(['properties', 'max_filesize'], $config->get('file.default_max_filesize'));
+    switch ($element_type) {
+      case ('managed_file'):
+        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_managed_file_extensions'));
+        break;
+
+      case ('webform_document_file'):
+        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_document_file_extensions'));
+        break;
+
+      case ('webform_image_file'):
+        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_image_file_extensions'));
+        break;
+    }
+  }
+}
