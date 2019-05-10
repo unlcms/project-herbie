@@ -41,6 +41,18 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jackocnr/intl-tel-input",
+                "version": "master",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v15.0.1.zip",
+                    "reference": "master"
+                }
+            }
         }
 
     ],
@@ -67,6 +79,7 @@
         "drupal/token": "^1.5",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
+        "jackocnr/intl-tel-input": "^15.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "robinherbots/jquery.inputmask": "^4.0",
         "unl/wdntemplates": "^5.0",
@@ -130,7 +143,9 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"],
-            "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"]
+            "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"],
+            "web/libraries/jquery.intl-tel-input": ["jackocnr/intl-tel-input"]
+            
         },
         "patches": {
             "drupal/block_type_templates": {

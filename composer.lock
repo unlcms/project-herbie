@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82bbeb1ffe72bc3ae08d57045d3b4257",
+    "content-hash": "e38cd901c3b7dca2f5db24f666efab09",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4490,6 +4490,48 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "jackocnr/intl-tel-input",
+            "version": "15.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jackocnr/intl-tel-input.git",
+                "reference": "13198e56ed22a1f8bd59d2424b535e5145135719"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jackocnr/intl-tel-input/zipball/13198e56ed22a1f8bd59d2424b535e5145135719",
+                "reference": "13198e56ed22a1f8bd59d2424b535e5145135719",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jack O'Connor",
+                    "homepage": "http://jackocnr.com"
+                }
+            ],
+            "description": "A JavaScript plugin for entering and validating international telephone numbers",
+            "homepage": "https://github.com/jackocnr/intl-tel-input",
+            "keywords": [
+                "code",
+                "country",
+                "dial",
+                "flag",
+                "i18n",
+                "input",
+                "international",
+                "mobile",
+                "number",
+                "tel",
+                "telephone"
+            ],
+            "time": "2019-04-16T16:55:47+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
