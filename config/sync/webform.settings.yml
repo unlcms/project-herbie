@@ -137,6 +137,7 @@ element:
     password: password
     password_confirm: password_confirm
     processed_text: processed_text
+    range: range
     search: search
     table: table
     tableselect: tableselect
