@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e38cd901c3b7dca2f5db24f666efab09",
+    "content-hash": "63d54f7bdb8fe6f0142fb6997904267d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5503,6 +5503,16 @@
             "time": "2018-10-13T15:16:03+00:00"
         },
         {
+            "name": "ractoon/jQuery-Text-Counter",
+            "version": "master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip",
+                "reference": "master"
+            },
+            "type": "library"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "2.0.5",
             "source": {
@@ -6620,7 +6630,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
