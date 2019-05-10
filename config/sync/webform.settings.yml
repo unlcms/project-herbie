@@ -217,9 +217,19 @@ ui:
   description_help: true
 libraries:
   excluded_libraries:
+    - algolia.places
+    - ckeditor.autogrow
+    - ckeditor.codemirror
+    - ckeditor.fakeobjects
+    - ckeditor.image
+    - ckeditor.link
+    - codemirror
     - jquery.chosen
+    - jquery.geocomplete
     - jquery.icheck
+    - jquery.rateit
     - jquery.toggles
+    - signature_pad
 requirements:
   cdn: true
   bootstrap: true
