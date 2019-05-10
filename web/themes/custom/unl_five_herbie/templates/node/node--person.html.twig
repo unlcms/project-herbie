@@ -12,29 +12,16 @@
 {{ attach_library('classy/node') }}
 {{ attach_library('unl_five_herbie/person') }}
 <article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if not page and view_mode != "full" %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
   <div{{ content_attributes }}>
-    <div class="dcf-grid dcf-col-gap-vw record-container">
 
+  {% if page and view_mode == "full" %}
+    <div class="dcf-grid dcf-col-gap-vw record-container">
       <div class="dcf-col-100% dcf-col-25%-start@md directory-knowledge-summary">
+  {% else %}
+    <div class="record-container">
+      <div class="directory-knowledge-summary">
+  {% endif %}
+
         <div class="vcard faculty dcf-measure" data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
           <span class="card-profile dcf-d-block dcf-mb-3 dcf-h-10 dcf-w-10 dcf-ratio dcf-ratio-1x1">
             {% if node.field_person_portrait.value %}
@@ -44,9 +31,19 @@
             {% endif %}
           </span>
           <div class="vcardInfo unl-font-sans">
-            <h1 class="headline dcf-mb-0 dcf-txt-h2">
-              <span class="fn" itemprop="name">{{ label }}</span>
-            </h1>
+
+            {{ title_prefix }}
+            {% if page and view_mode == "full" %}
+              <h1 class="headline dcf-mb-0 dcf-txt-h2">
+                <span class="fn" itemprop="name">{{ label }}</span>
+              </h1>
+            {% else %}
+              <h2 class="dcf-mb-0"{{ title_attributes }}>
+                <a href="{{ url }}" rel="bookmark" class="fn" itemprop="name">{{ label }}</a>
+              </h2>
+            {% endif %}
+            {{ title_suffix }}
+
             <div class="eppa dcf-mt-3 dcf-mb-3 dcf-txt-2xs dcf-uppercase unl-ls-1 unl-dark-gray">
               {{ node.n_person_unldirectoryreference.entity.ee_unldir_primaryaffiliation.value }}
             </div>
@@ -155,13 +152,14 @@
         </div>
       </div>
 
-      {% if node.n_person_bio.value or
+      {% if (node.n_person_bio.value or
             node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable or
             node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable or
             node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses.value is not iterable or
             node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers.value is not iterable or
             node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances.value is not iterable or
-            node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations.value is not iterable
+            node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations.value is not iterable)
+            and page and view_mode == "full"
       %}
         <div class="dcf-col-100% dcf-col-75%-end@md">
           <div class="card">
@@ -231,6 +229,6 @@
       {% endif %}
 
     </div>
-  </div>
 
+  </div>
 </article>
