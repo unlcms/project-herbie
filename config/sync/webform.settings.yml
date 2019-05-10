@@ -150,11 +150,13 @@ element:
     webform_computed_twig: webform_computed_twig
     webform_contact: webform_contact
     webform_custom_composite: webform_custom_composite
+    webform_email_confirm: webform_email_confirm
     webform_email_multiple: webform_email_multiple
     webform_entity_checkboxes: webform_entity_checkboxes
     webform_entity_radios: webform_entity_radios
     webform_entity_select: webform_entity_select
     webform_horizontal_rule: webform_horizontal_rule
+    webform_likert: webform_likert
     webform_link: webform_link
     webform_location_geocomplete: webform_location_geocomplete
     webform_location_places: webform_location_places
