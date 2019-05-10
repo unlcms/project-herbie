@@ -116,6 +116,9 @@
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "patches": {
+            "drupal/core": {
+                "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch"
+            },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
             },

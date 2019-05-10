@@ -1,0 +1,22 @@
+uuid: ba02f26a-00f3-49ef-9c0a-bbb33953dc75
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+  theme:
+    - unl_five
+id: booknavigation
+theme: unl_five
+region: sidebar_second
+weight: 0
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book navigation'
+  provider: book
+  label_display: '0'
+  block_mode: 'book pages'
+  show_top_item: 1
+visibility: {  }
