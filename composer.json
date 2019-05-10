@@ -29,6 +29,18 @@
                     "reference": "develop"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "robinherbots/jquery.inputmask",
+                "version": "master",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/robinherbots/jquery.inputmask/archive/4.0.6.zip",
+                    "reference": "master"
+                }
+            }
         }
 
     ],
@@ -56,6 +68,7 @@
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
         "oomphinc/composer-installers-extender": "^1.1",
+        "robinherbots/jquery.inputmask": "^4.0",
         "unl/wdntemplates": "^5.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
@@ -116,7 +129,8 @@
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "drush/Commands/{$name}": ["type:drupal-drush"],
+            "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"]
         },
         "patches": {
             "drupal/block_type_templates": {
