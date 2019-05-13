@@ -65,6 +65,18 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "nigelotoole/progress-tracker",
+                "version": "master",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/nigelotoole/progress-tracker/archive/v1.4.0.zip",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
@@ -91,6 +103,7 @@
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
         "jackocnr/intl-tel-input": "^15.0",
+        "nigelotoole/progress-tracker": "master",
         "oomphinc/composer-installers-extender": "^1.1",
         "ractoon/jquery-text-counter": "master",
         "robinherbots/jquery.inputmask": "^4.0",
@@ -157,7 +170,8 @@
             "drush/Commands/{$name}": ["type:drupal-drush"],
             "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"],
             "web/libraries/jquery.intl-tel-input": ["jackocnr/intl-tel-input"],
-            "web/libraries/jquery.textcounter": ["ractoon/jQuery-Text-Counter"]
+            "web/libraries/jquery.textcounter": ["ractoon/jQuery-Text-Counter"],
+            "web/libraries/progress-tracker": ["nigelotoole/progress-tracker"]
         },
         "patches": {
             "drupal/block_type_templates": {
