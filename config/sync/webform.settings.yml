@@ -231,6 +231,7 @@ libraries:
     - jquery.geocomplete
     - jquery.icheck
     - jquery.rateit
+    - jquery.timepicker
     - jquery.toggles
     - signature_pad
 requirements:
