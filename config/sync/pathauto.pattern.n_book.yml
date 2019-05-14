@@ -7,16 +7,16 @@ dependencies:
 id: n_book
 label: 'Book node'
 type: 'canonical_entities:node'
-pattern: '[node:book:root]/[node:title]'
+pattern: '[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  4dad87ba-7c07-48c0-8dae-25c9225522f2:
+  8a2d12b0-c87e-439d-95ca-147d1f476e07:
     id: node_type
     bundles:
       book: book
     negate: false
     context_mapping:
       node: node
-    uuid: 4dad87ba-7c07-48c0-8dae-25c9225522f2
+    uuid: 8a2d12b0-c87e-439d-95ca-147d1f476e07
 selection_logic: and
 weight: -5
 relationships: {  }
