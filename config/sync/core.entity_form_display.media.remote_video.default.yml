@@ -4,24 +4,25 @@ status: true
 dependencies:
   config:
     - field.field.media.remote_video.field_media_oembed_video
-    - field.field.media.remote_video.m_rv_author_name
-    - field.field.media.remote_video.m_rv_author_url
     - field.field.media.remote_video.m_rv_default_name
     - field.field.media.remote_video.m_rv_html_representation
-    - field.field.media.remote_video.m_rv_provider_name
-    - field.field.media.remote_video.m_rv_provider_url
-    - field.field.media.remote_video.m_rv_resource_title
-    - field.field.media.remote_video.m_rv_resource_type
     - field.field.media.remote_video.m_rv_source_url
     - field.field.media.remote_video.m_rv_suggested_cache_lifetime
     - field.field.media.remote_video.m_rv_thumbnail_height
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.m_rv_author_name
+    - field.field.media.remote_video.m_rv_author_url
+    - field.field.media.remote_video.m_rv_provider_name
+    - field.field.media.remote_video.m_rv_provider_url
+    - field.field.media.remote_video.m_rv_resource_title
+    - field.field.media.remote_video.m_rv_resource_type
     - field.field.media.remote_video.s_m_width
     - media.type.remote_video
   module:
     - media
+    - path
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
@@ -29,7 +30,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -41,16 +42,142 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  m_rv_author_name:
+    weight: 103
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_author_url:
+    weight: 104
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_default_name:
+    weight: 108
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_html_representation:
+    weight: 115
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_provider_name:
+    weight: 105
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_provider_url:
+    weight: 106
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_resource_title:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_resource_type:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_source_url:
+    weight: 112
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_suggested_cache_lifetime:
+    weight: 107
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_height:
+    weight: 111
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_local_uri:
+    weight: 109
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_width:
+    weight: 110
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  s_m_height:
+    weight: 113
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  s_m_width:
+    weight: 114
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 100
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -58,20 +185,4 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
-  m_rv_author_name: true
-  m_rv_author_url: true
-  m_rv_default_name: true
-  m_rv_html_representation: true
-  m_rv_provider_name: true
-  m_rv_provider_url: true
-  m_rv_resource_title: true
-  m_rv_resource_type: true
-  m_rv_source_url: true
-  m_rv_suggested_cache_lifetime: true
-  m_rv_thumbnail_height: true
-  m_rv_thumbnail_local_uri: true
-  m_rv_thumbnail_width: true
   name: true
-  path: true
-  s_m_height: true
-  s_m_width: true
