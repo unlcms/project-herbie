@@ -116,6 +116,9 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
     unset($form['properties']['form']['field_container']);
   }
 
+  // Remove placeholder option.
+  unset($form['properties']['form']['placeholder']);
+
   // Remove field prefix and field suffix option from options elements
   // with 'other' option. Used by all '[type] other' elements, such as
   // 'Radios other' and 'Select other'.
