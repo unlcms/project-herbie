@@ -13,7 +13,6 @@ use Drupal\Core\Form\FormStateInterface;
  * Alters the Webform UI element type select form.
  */
 function unl_webform_form_webform_ui_element_type_select_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  $chris = $form;
   // Loop through $form array.
   foreach ($form as $key => $value) {
     // Groups are identifiable by keys that are integers.
@@ -87,6 +86,33 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   // Remove invisible and tooltip description display options.
   unset($form['properties']['form']['display_container']['description_display']['#options']['invisible']);
   unset($form['properties']['form']['display_container']['description_display']['#options']['tooltip']);
+
+  // Defintion list of elements rendered as a fieldset.
+  $fieldset_elements = [
+    'checkboxes',
+    'details',
+    'fieldset',
+    'radios',
+    'telephone_advanced',
+    'webform_address',
+    'webform_buttons',
+    'webform_buttons_other',
+    'webform_checkboxes_other',
+    'webform_name',
+    'webform_radios_other',
+    'webform_select_other',
+    'webform_telephone',
+  ];
+
+  // For elements rendered as fieldsets, force description to 'before'.
+  if (in_array($element_type, $fieldset_elements)) {
+    if (isset($form['properties']['form']['display_container']['description_display'])) {
+      // Remove option to display title after element or to hide title.
+      unset($form['properties']['form']['display_container']['description_display']['#empty_option']);
+      unset($form['properties']['form']['display_container']['description_display']['#options']['after']);
+      $form['properties']['form']['display_container']['description_display']['#default_value'] = 'before';
+    }
+  }
 
   // Only allow field prefix and field suffix on textfield and number elements.
   $elements_allowed_prefix_suffix = [
