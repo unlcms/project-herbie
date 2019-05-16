@@ -210,6 +210,12 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
     unset($form['properties']['file']['button__attributes']);
   }
 
+  if ($element_type == 'date') {
+    // Remove option to use jQuery UI datepicker.
+    unset($form['properties']['date']['datepicker']);
+    unset($form['properties']['date']['datepicker_button']);
+  }
+
   // Add custom validation.
   array_unshift($form['#validate'], 'unl_webform_webform_ui_element_form_validate');
 }
