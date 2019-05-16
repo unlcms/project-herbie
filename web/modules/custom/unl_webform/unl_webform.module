@@ -69,8 +69,13 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   unset($form['properties']['custom']);
   unset($form['properties']['display']['format_attributes']);
 
-  // Remove option to display title after element.
+  // Remove option to display title after element or to hide title.
   unset($form['properties']['form']['display_container']['title_display']['#options']['after']);
+  unset($form['properties']['form']['display_container']['title_display']['#options']['invisible']);
+  // Default value may be set to 'invisible'.
+  if ($form['properties']['form']['display_container']['title_display']['#default_value'] == 'invisible') {
+    $form['properties']['form']['display_container']['title_display']['#default_value'] = NULL;
+  }
 
   // Remove Help and More description options.
   unset($form['properties']['element_description']['help']);
@@ -81,31 +86,6 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   // Remove invisible and tooltip description display options.
   unset($form['properties']['form']['display_container']['description_display']['#options']['invisible']);
   unset($form['properties']['form']['display_container']['description_display']['#options']['tooltip']);
-
-  // For elements rendered as fieldsets, remove the option to make
-  // the title (<legend>) invisible.
-  $fieldset_elements = [
-    'checkboxes',
-    'details',
-    'fieldset',
-    'radios',
-    'telephone_advanced',
-    'webform_address',
-    'webform_buttons',
-    'webform_buttons_other',
-    'webform_checkboxes_other',
-    'webform_name',
-    'webform_radios_other',
-    'webform_select_other',
-    'webform_telephone',
-  ];
-  if (in_array($element_type, $fieldset_elements)) {
-    unset($form['properties']['form']['display_container']['title_display']['#options']['invisible']);
-    // Default value may be set to 'invisible'.
-    if ($form['properties']['form']['display_container']['title_display']['#default_value'] == 'invisible') {
-      $form['properties']['form']['display_container']['title_display']['#default_value'] = NULL;
-    }
-  }
 
   // Only allow field prefix and field suffix on textfield and number elements.
   $elements_allowed_prefix_suffix = [
