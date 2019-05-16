@@ -12,7 +12,8 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * Alters the Webform UI element type select form.
  */
-function unl_webform_webform_ui_element_type_select_form_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+function unl_webform_form_webform_ui_element_type_select_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $chris = $form;
   // Loop through $form array.
   foreach ($form as $key => $value) {
     // Groups are identifiable by keys that are integers.
