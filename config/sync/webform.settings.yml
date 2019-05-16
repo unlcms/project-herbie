@@ -146,6 +146,8 @@ element:
     webform_actions: webform_actions
     webform_audio_file: webform_audio_file
     webform_autocomplete: webform_autocomplete
+    webform_buttons: webform_buttons
+    webform_buttons_other: webform_buttons_other
     webform_codemirror: webform_codemirror
     webform_computed_token: webform_computed_token
     webform_computed_twig: webform_computed_twig
