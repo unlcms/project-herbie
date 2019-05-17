@@ -36,6 +36,7 @@ settings:
           name: Media
           items:
             - Blockquote
+            - Table
         -
           name: Tools
           items:
@@ -50,7 +51,10 @@ settings:
     language:
       language_list: un
     customconfig:
-      ckeditor_custom_config: 'forcePasteAsPlainText = true'
+      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = showborders"
+    dcf_base:
+      enabled_plugins:
+        dcf_table: dcf_table
 image_upload:
   status: false
   scheme: public
