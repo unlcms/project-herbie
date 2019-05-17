@@ -11,6 +11,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access webform submission user'
+  - 'bypass honeypot protection'
   - 'edit own webform'
   - 'use text format standard'
   - 'use text format webform'
