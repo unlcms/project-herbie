@@ -209,18 +209,17 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
     // Set allowed extensions.
     switch ($element_type) {
       case ('managed_file'):
-        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_managed_file_extensions');
+        $form['properties']['file']['file_extensions']['#description'] = t('Separate extensions with a space and do not include the leading dot.<br/><br/>Defaults to and <strong>is limited to</strong>: <em class="placeholder">gif jpg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 ogg wav bz2 dmg gz jar rar sit svg tar zip</em>');
         break;
 
       case ('webform_document_file'):
-        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_document_file_extensions');
+        $form['properties']['file']['file_extensions']['#description'] = t('Separate extensions with a space and do not include the leading dot.<br/><br/>Defaults to and <strong>is limited to</strong>: <em class="placeholder">txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods</em>');
         break;
 
       case ('webform_image_file'):
-        $form['properties']['file']['file_extensions']['#default_value'] = $config->get('file.default_image_file_extensions');
+        $form['properties']['file']['file_extensions']['#description'] = t('Separate extensions with a space and do not include the leading dot.<br/><br/>Defaults to and <strong>is limited to</strong>: <em class="placeholder">gif jpg png</em>');
         break;
     }
-    $form['properties']['file']['file_extensions']['#disabled'] = TRUE;
 
     // Set Santize option to always on.
     $form['properties']['file']['sanitize']['#default_value'] = TRUE;
@@ -262,18 +261,55 @@ function unl_webform_webform_ui_element_form_validate($form, FormStateInterface 
     // Enforce defaults.
     $form_state->setValue(['properties', 'sanitize'], TRUE);
     $form_state->setValue(['properties', 'max_filesize'], $config->get('file.default_max_filesize'));
-    switch ($element_type) {
-      case ('managed_file'):
-        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_managed_file_extensions'));
-        break;
 
-      case ('webform_document_file'):
-        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_document_file_extensions'));
-        break;
+    // Validate file extensions.
+    $extensions = explode(' ', $form_state->getValue(['properties', 'file_extensions']));
+    $sanitized_extensions = unl_webform_upload_file_extension_whitelist($element_type, $extensions);
+    $removed_extensions = array_diff($extensions, $sanitized_extensions);
 
-      case ('webform_image_file'):
-        $form_state->setValue(['properties', 'file_extensions'], $config->get('file.default_image_file_extensions'));
-        break;
+    if ($removed_extensions) {
+      $message = 'The following file extensions are not allowed: ';
+      foreach ($removed_extensions as $extension) {
+        $message .= $extension . ' ';
+      }
+      $message = rtrim($message);
+      $form_state->setErrorByName('properties][file_extensions', $message);
     }
   }
+}
+
+/**
+ * Checks an array of file upload extensions against a whitelist.
+ *
+ * @param string $element_type
+ *   The webform element type.
+ * @param array $extensions
+ *   An array of extensions being checked against the whitelist.
+ *
+ * @return array
+ *   A sanitized copy of the parameter $extensions array.
+ */
+function unl_webform_upload_file_extension_whitelist(string $element_type, array $extensions) {
+  // Get Webform settings.
+  $config = \Drupal::service('config.factory')->get('webform.settings');
+
+  $return = NULL;
+  switch ($element_type) {
+    case ('managed_file'):
+      $allowed_extensions = explode(' ', $config->get('file.default_managed_file_extensions'));
+      $return = array_intersect($allowed_extensions, $extensions);
+      break;
+
+    case ('webform_document_file'):
+      $allowed_extensions = explode(' ', $config->get('file.default_document_file_extensions'));
+      $return = array_intersect($allowed_extensions, $extensions);
+      break;
+
+    case ('webform_image_file'):
+      $allowed_extensions = explode(' ', $config->get('file.default_image_file_extensions'));
+      $return = array_intersect($allowed_extensions, $extensions);
+      break;
+  }
+
+  return $return;
 }
