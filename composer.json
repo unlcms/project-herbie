@@ -49,6 +49,7 @@
         "drupal/diff": "^1.0@RC",
         "drupal/field_group": "^1.0",
         "drupal/imagemagick": "^2.4",
+        "drupal/layout_builder_modal": "^1.0@alpha",
         "drupal/layout_builder_restrictions": "^1.5",
         "drupal/menu_block": "^1.5",
         "drupal/pathauto": "^1.3",
