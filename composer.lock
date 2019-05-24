@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d57107eb67245cec56f9ab1c728e1035",
+    "content-hash": "e55649d3f4f70ec9a7fa24f4a943f03b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3534,6 +3534,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

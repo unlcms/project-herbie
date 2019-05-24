@@ -122,6 +122,9 @@
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
+            },
+            "drupal/layout_builder_modal": {
+                "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
             }
         },
         "drupal-scaffold": {
