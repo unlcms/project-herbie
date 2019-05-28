@@ -40,6 +40,7 @@
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
         "drupal/block_type_templates": "^1.0@alpha",
+        "drupal/body_scroll_lock": "^1.0",
         "drupal/ckeditor_config": "^2.0@RC",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
