@@ -125,6 +125,9 @@
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
+            },
+            "drupal/core": {
+                "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
             }
         },
         "drupal-scaffold": {
