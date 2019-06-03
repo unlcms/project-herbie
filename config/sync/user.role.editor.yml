@@ -11,6 +11,7 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access toolbar'
+  - 'administer main menu items'
   - 'configure editable builder_page node layout overrides'
   - 'create builder_page content'
   - 'create url aliases'
