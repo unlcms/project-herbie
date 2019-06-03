@@ -18,5 +18,5 @@ settings:
   provider: book
   label_display: '0'
   block_mode: 'book pages'
-  show_top_item: 1
+  show_top_item: true
 visibility: {  }
