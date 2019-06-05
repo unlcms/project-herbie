@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: remote_video
-label: 'Remove Video'
+label: 'Remote Video'
 description: ''
 source: 'oembed:video'
 queue_thumbnail_downloads: false
@@ -11,7 +11,7 @@ new_revision: false
 source_configuration:
   thumbnails_directory: 'public://oembed_thumbnails'
   providers:
-    - UNL MediaHub
+    - 'UNL MediaHub'
   source_field: field_media_oembed_video
 field_map:
   type: m_rv_resource_type
