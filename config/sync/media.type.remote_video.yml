@@ -11,8 +11,7 @@ new_revision: false
 source_configuration:
   thumbnails_directory: 'public://oembed_thumbnails'
   providers:
-    - YouTube
-    - Vimeo
+    - UNL MediaHub
   source_field: field_media_oembed_video
 field_map:
   type: m_rv_resource_type
