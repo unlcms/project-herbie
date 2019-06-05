@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ecae0f0019c0209d468d26af0acf1d2",
+    "content-hash": "4b6f94a2771c52137066ad5dc7ef8c19",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3055,6 +3055,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch"
                 }
             },
             "autoload": {
