@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: administrator
 label: Administrator
-weight: 2
+weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -18,11 +18,13 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'add content to books'
   - 'administer account settings'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
   - 'administer blocks'
+  - 'administer book outlines'
   - 'administer configuration split'
   - 'administer content types'
   - 'administer display modes'
@@ -67,6 +69,7 @@ permissions:
   - 'create and edit custom blocks'
   - 'create builder_page content'
   - 'create media'
+  - 'create new books'
   - 'create url aliases'
   - 'customize shortcut links'
   - 'delete all revisions'
