@@ -61,6 +61,7 @@ module:
   toolbar: 0
   unl_cas: 0
   unl_five_ckeditor: 0
+  unl_mediahub: 0
   unl_user: 0
   user: 0
   views_ui: 0
