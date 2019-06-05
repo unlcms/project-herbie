@@ -25,3 +25,11 @@ function unl_mediahub_oembed_providers_alter(array &$providers) {
     ],
   ];
 }
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function unl_mediahub_media_source_info_alter(array &$sources) {
+  // Overwrite default providers.
+  $sources['oembed:video']['providers'] = ['UNL MediaHub'];
+}
