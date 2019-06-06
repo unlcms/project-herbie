@@ -72,7 +72,7 @@ class Settings extends ConfigFormBase {
 
     $settings = $this->config('dcf_classes.classes');
 
-    // Heading
+    // Heading.
     $heading_array = preg_split("[\n|\r]", $values['heading']);
     foreach ($heading_array as $key => $class) {
       if (empty($class)) {
@@ -82,7 +82,7 @@ class Settings extends ConfigFormBase {
     $heading_array = array_filter(array_values($heading_array));
     $settings->set('heading', $heading_array);
 
-    // Section
+    // Section.
     $section_array = preg_split("[\n|\r]", $values['section']);
     foreach ($section_array as $key => $class) {
       if (empty($class)) {
@@ -92,7 +92,7 @@ class Settings extends ConfigFormBase {
     $section_array = array_filter(array_values($section_array));
     $settings->set('section', $section_array);
 
-    // Section packages
+    // Section packages.
     $section_packages_array = preg_split("[\n|\r]", $values['section_packages']);
     $section_packages = [];
     foreach ($section_packages_array as $package) {
