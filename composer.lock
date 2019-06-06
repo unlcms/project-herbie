@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8af227f6b805f7ee23ba848827a5d878",
+    "content-hash": "6662d75d009ff5b89c07812beba2b289",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4957,11 +4957,10 @@
         },
         {
             "name": "nigelotoole/progress-tracker",
-            "version": "master",
+            "version": "1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nigelotoole/progress-tracker/archive/v1.4.0.zip",
-                "reference": "master"
+                "url": "https://github.com/NigelOToole/progress-tracker/archive/v1.4.0.zip"
             },
             "type": "library"
         },
