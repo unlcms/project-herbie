@@ -81,7 +81,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#title' => $this->t('Section style package'),
       '#default_value' => $configuration['section_package'],
       '#options' => $options,
-      '#description' => $this->t('Package of classes to apply to section.'),
+      '#description' => $this->t('Package of classes to apply to the section.'),
       '#empty_option' => $this->t('- None -'),
       '#empty_value' => '',
       '#multiple' => FALSE,
