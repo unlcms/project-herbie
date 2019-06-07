@@ -46,11 +46,10 @@
             "type": "package",
             "package": {
                 "name": "jackocnr/intl-tel-input",
-                "version": "master",
+                "version": "15.0.1",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v15.0.1.zip",
-                    "reference": "master"
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v15.0.1.zip"
                 }
             }
         },
@@ -101,7 +100,7 @@
         "drupal/token": "^1.5",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
-        "jackocnr/intl-tel-input": "^15.0",
+        "jackocnr/intl-tel-input": "15.0.1",
         "nigelotoole/progress-tracker": "1.4.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "ractoon/jquery-text-counter": "^0.8.0",
