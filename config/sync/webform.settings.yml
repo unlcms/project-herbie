@@ -229,9 +229,11 @@ libraries:
     - ckeditor.image
     - ckeditor.link
     - codemirror
+    - jquery.chosen
     - jquery.geocomplete
     - jquery.icheck
     - jquery.rateit
+    - jquery.select2
     - jquery.timepicker
     - jquery.toggles
     - signature_pad
