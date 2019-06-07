@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c710a12075f53b5a802b75431232e4a",
+    "content-hash": "9a8273bbbfe661cb5d19ac69cffc03ab",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3055,6 +3055,11 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
+                    "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
+                    "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
                 }
             },
             "autoload": {
@@ -7752,12 +7757,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "e38468eae8ea2e62c1d8a226d3f506374f09ed3e"
+                "reference": "de7256aee0a825d67fc82ccb57b318f6f6d3d934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/e38468eae8ea2e62c1d8a226d3f506374f09ed3e",
-                "reference": "e38468eae8ea2e62c1d8a226d3f506374f09ed3e",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/de7256aee0a825d67fc82ccb57b318f6f6d3d934",
+                "reference": "de7256aee0a825d67fc82ccb57b318f6f6d3d934",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -7770,7 +7775,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-04-29T15:42:36+00:00"
+            "time": "2019-05-31T18:52:43+00:00"
         },
         {
             "name": "unlcms/unl_user",
