@@ -17,3 +17,10 @@ else {
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = TRUE;
 }
+
+/**
+ * Private file path:
+ *
+ * A local file system path where private files will be stored.
+ */
+$settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';

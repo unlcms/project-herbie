@@ -31,6 +31,7 @@ module:
   file_mdm: 0
   file_mdm_exif: 0
   filter: 0
+  honeypot: 0
   image: 0
   imagemagick: 0
   layout_builder: 0
@@ -55,8 +56,12 @@ module:
   unl_cas: 0
   unl_five_ckeditor: 0
   unl_user: 0
+  unl_webform: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_submission_log: 0
+  webform_ui: 0
   menu_link_content: 1
   pathauto: 1
   views: 10

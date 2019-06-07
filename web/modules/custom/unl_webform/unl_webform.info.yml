@@ -1,0 +1,11 @@
+name: 'UNL Webform'
+description: 'Modifies Webform UI to pare down options and enforce defaults'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:webform
