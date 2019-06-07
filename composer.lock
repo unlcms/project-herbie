@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6662d75d009ff5b89c07812beba2b289",
+    "content-hash": "b8c53f2fb6d47faae2c0d4b1e01f1112",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5576,12 +5576,11 @@
             "time": "2018-10-13T15:16:03+00:00"
         },
         {
-            "name": "ractoon/jQuery-Text-Counter",
-            "version": "master",
+            "name": "ractoon/jquery-text-counter",
+            "version": "0.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip",
-                "reference": "master"
+                "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip"
             },
             "type": "library"
         },

@@ -58,11 +58,10 @@
             "type": "package",
             "package": {
                 "name": "ractoon/jquery-text-counter",
-                "version": "master",
+                "version": "0.8.0",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip",
-                    "reference": "master"
+                    "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip"
                 }
             }
         },
@@ -105,7 +104,7 @@
         "jackocnr/intl-tel-input": "^15.0",
         "nigelotoole/progress-tracker": "1.4.0",
         "oomphinc/composer-installers-extender": "^1.1",
-        "ractoon/jquery-text-counter": "master",
+        "ractoon/jquery-text-counter": "^0.8.0",
         "robinherbots/jquery.inputmask": "^4.0",
         "unl/wdntemplates": "^5.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
