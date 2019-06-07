@@ -1,0 +1,12 @@
+name: 'UNL Webform Test'
+description: 'Provides testing capabilities for UNL Webform'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:webform
+  - drupal:unl_webform

@@ -1,0 +1,24 @@
+uuid: bd299859-bc1a-44cd-945b-c9bf895f5602
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+_core:
+  default_config_hash: rYbAZX1eKDo7CVRnBnpYgdmk8HQo5IcKhzePCx9LCZY
+id: node.book.promote
+field_name: promote
+entity_type: node
+bundle: book
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
