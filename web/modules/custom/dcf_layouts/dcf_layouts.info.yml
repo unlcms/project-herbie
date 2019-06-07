@@ -9,3 +9,4 @@ version: 1.x
 
 dependencies:
   - drupal:layout_discovery
+  - dcf_classes:dcf_classes
