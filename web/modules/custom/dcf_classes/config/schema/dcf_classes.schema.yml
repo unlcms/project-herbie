@@ -15,7 +15,6 @@ dcf_classes.classes:
     section_packages:
       type: mapping
       label: 'Section packages'
-      mapping:
-        classes:
-          type: string
-          label: 'Section classes'
+      sequence:
+        type: string
+        label: 'Section classes'
