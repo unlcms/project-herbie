@@ -103,7 +103,7 @@
         "jackocnr/intl-tel-input": "15.0.1",
         "nigelotoole/progress-tracker": "1.4.0",
         "oomphinc/composer-installers-extender": "^1.1",
-        "ractoon/jquery-text-counter": "^0.8.0",
+        "ractoon/jquery-text-counter": "0.8.0",
         "robinherbots/jquery.inputmask": "^4.0",
         "unl/wdntemplates": "^5.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
@@ -168,7 +168,7 @@
             "drush/Commands/{$name}": ["type:drupal-drush"],
             "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"],
             "web/libraries/jquery.intl-tel-input": ["jackocnr/intl-tel-input"],
-            "web/libraries/jquery.textcounter": ["ractoon/jQuery-Text-Counter"],
+            "web/libraries/jquery.textcounter": ["ractoon/jquery-text-counter"],
             "web/libraries/progress-tracker": ["nigelotoole/progress-tracker"]
         },
         "patches": {
