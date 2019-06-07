@@ -21,6 +21,11 @@ class RouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('webform.help.video')) {
       $route->setRequirements(['_access' => 'FALSE']);
     }
+    // Make Access tab on webform entity inaccessible.
+    // Webform should make this a permission.
+    if ($route = $collection->get('entity.webform.settings_access')) {
+      $route->setRequirements(['_access' => 'FALSE']);
+    }
   }
-
+  
 }
