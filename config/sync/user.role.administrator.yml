@@ -32,6 +32,7 @@ permissions:
   - 'administer book outlines'
   - 'administer configuration split'
   - 'administer content types'
+  - 'administer dcf classes'
   - 'administer display modes'
   - 'administer filters'
   - 'administer honeypot'

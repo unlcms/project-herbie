@@ -2,6 +2,7 @@ dcf_onecol_section:
   label: 'One column (DCF)'
   path: layouts
   template: layout--dcf-onecol-section
+  class: '\Drupal\dcf_layouts\Plugin\Layout\OneColumnLayout'
   category: 'Columns: 1'
   default_region: first
   icon_map:

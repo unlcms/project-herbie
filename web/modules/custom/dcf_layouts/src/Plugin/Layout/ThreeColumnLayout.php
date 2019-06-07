@@ -15,13 +15,11 @@ class ThreeColumnLayout extends DcfLayoutBase {
    */
   public function build(array $regions) {
     $build = parent::build($regions);
-    $build['#attributes']['class'] = [
+    $build['#attributes']['class'] = array_merge($build['#attributes']['class'], [
       'dcf-grid-thirds@md',
       'dcf-col-gap-vw',
       'dcf-row-gap-5',
-      'layout',
-      $this->getPluginDefinition()->getTemplate(),
-    ];
+    ]);
     return $build;
   }
 

@@ -8,6 +8,9 @@ module:
   block_type_templates: 0
   book: 0
   breakpoint: 0
+  chosen: 0
+  chosen_field: 0
+  chosen_lib: 0
   ckeditor: 0
   ckeditor_config: 0
   config: 0
@@ -19,6 +22,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dcf_classes: 0
   dcf_ckeditor: 0
   dcf_layouts: 0
   diff: 0

@@ -33,6 +33,21 @@
         {
             "type": "package",
             "package": {
+                "name": "harvesthq/chosen",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "robinherbots/jquery.inputmask",
                 "version": "4.0.6",
                 "dist": {
@@ -83,6 +98,7 @@
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
         "drupal/block_type_templates": "^1.0@alpha",
+        "drupal/chosen": "^2.7",
         "drupal/ckeditor_config": "^2.0@RC",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
@@ -99,6 +115,7 @@
         "drupal/token": "^1.5",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
+        "harvesthq/chosen": "^1.8",
         "jackocnr/intl-tel-input": "15.0.1",
         "nigelotoole/progress-tracker": "1.4.0",
         "oomphinc/composer-installers-extender": "^1.1",
