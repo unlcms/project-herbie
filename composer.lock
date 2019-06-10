@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a62a4f97f0ea5ca86ccff4e59ff4113",
+    "content-hash": "6900d4233362c5aff3868b44cd2e3b4c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3492,11 +3492,17 @@
         },
         {
             "name": "drupal/entity_embed",
-            "version": "dev-1.x",
+            "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_embed.git",
-                "reference": "0f1ac9cf4592e7027338a062174a14ae2f3e1639"
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "6a650cd587285e6fcc61fa084f3580bcd37009d4"
             },
             "require": {
                 "drupal/core": "^8.4.0",
@@ -3511,11 +3517,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc1+0-dev",
-                    "datestamp": "1560007985",
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1560008285",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3559,8 +3565,7 @@
                 "source": "https://git.drupalcode.org/project/entity_embed",
                 "issues": "https://www.drupal.org/project/issues/entity_embed",
                 "irc": "irc://irc.freenode.org/drupal-media"
-            },
-            "time": "2019-06-10T15:49:12+00:00"
+            }
         },
         {
             "name": "drupal/field_group",
@@ -10739,7 +10744,7 @@
         "drupal/block_type_templates": 15,
         "drupal/ckeditor_config": 5,
         "drupal/diff": 5,
-        "drupal/entity_embed": 20,
+        "drupal/entity_embed": 5,
         "drupal/inline_entity_form": 5,
         "drupal/media_entity_browser": 20,
         "unlcms/unl_cas": 20,
