@@ -1,5 +1,5 @@
 diff --git a/core/modules/media/src/Entity/Media.php b/core/modules/media/src/Entity/Media.php
-index 2617980eed..90b64e8a69 100644
+index 2617980eed..6eb187aa27 100644
 --- a/core/modules/media/src/Entity/Media.php
 +++ b/core/modules/media/src/Entity/Media.php
 @@ -7,6 +7,7 @@
@@ -10,7 +10,7 @@ index 2617980eed..90b64e8a69 100644
  use Drupal\media\MediaInterface;
  use Drupal\media\MediaSourceEntityConstraintsInterface;
  use Drupal\media\MediaSourceFieldConstraintsInterface;
-@@ -372,6 +373,11 @@ public function prepareSave() {
+@@ -372,10 +373,15 @@ public function prepareSave() {
          // Try to set fields provided by the media source and mapped in
          // media type config.
          foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
@@ -22,3 +22,8 @@ index 2617980eed..90b64e8a69 100644
            // Only save value in entity field if empty. Do not overwrite existing
            // data.
            if ($translation->hasField($entity_field_name) && ($translation->get($entity_field_name)->isEmpty() || $translation->hasSourceFieldChanged())) {
+-            $translation->set($entity_field_name, $media_source->getMetadata($translation, $metadata_attribute_name));
++            $translation->set($entity_field_name, $meta_data);
+           }
+         }
+ 

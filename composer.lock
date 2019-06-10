@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22237b6fe4d5a4dd365b9140c1e1e6a3",
+    "content-hash": "8a62a4f97f0ea5ca86ccff4e59ff4113",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3060,7 +3060,7 @@
                     "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                     "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                     "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
-                    "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-3.patch"
+                    "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch"
                 }
             },
             "autoload": {
@@ -3496,7 +3496,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_embed.git",
-                "reference": "739d603b3e52384e2766cca31893c73d37767b81"
+                "reference": "0f1ac9cf4592e7027338a062174a14ae2f3e1639"
             },
             "require": {
                 "drupal/core": "^8.4.0",
@@ -3511,8 +3511,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta3+14-dev",
-                    "datestamp": "1559332384",
+                    "version": "8.x-1.0-rc1+0-dev",
+                    "datestamp": "1560007985",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3560,7 +3560,7 @@
                 "issues": "https://www.drupal.org/project/issues/entity_embed",
                 "irc": "irc://irc.freenode.org/drupal-media"
             },
-            "time": "2019-06-04T07:26:25+00:00"
+            "time": "2019-06-10T15:49:12+00:00"
         },
         {
             "name": "drupal/field_group",
