@@ -46,6 +46,7 @@ permissions:
   - 'administer nodes'
   - 'administer pathauto'
   - 'administer permissions'
+  - 'administer responsive images'
   - 'administer shortcuts'
   - 'administer site configuration'
   - 'administer software updates'
