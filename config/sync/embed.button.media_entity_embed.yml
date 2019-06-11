@@ -3,7 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.narrow
+    - core.entity_view_mode.media.remote_video
+    - core.entity_view_mode.media.wide
     - entity_browser.browser.media_entity_browser
+    - media.type.image
+    - media.type.remote_video
   module:
     - entity_embed
     - media
@@ -14,9 +19,13 @@ id: media_entity_embed
 type_id: entity
 type_settings:
   entity_type: media
-  bundles: {  }
+  bundles:
+    - image
+    - remote_video
   display_plugins:
-    - 'entity_reference:entity_reference_entity_view'
+    - 'view_mode:media.narrow'
+    - 'view_mode:media.remote_video'
+    - 'view_mode:media.wide'
   entity_browser: media_entity_browser
   entity_browser_settings:
     display_review: false
