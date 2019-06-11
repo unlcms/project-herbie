@@ -4,20 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.m_rv_author_name
+    - field.field.media.remote_video.m_rv_author_url
     - field.field.media.remote_video.m_rv_default_name
     - field.field.media.remote_video.m_rv_html_representation
+    - field.field.media.remote_video.m_rv_provider_name
+    - field.field.media.remote_video.m_rv_provider_url
+    - field.field.media.remote_video.m_rv_resource_title
+    - field.field.media.remote_video.m_rv_resource_type
     - field.field.media.remote_video.m_rv_source_url
     - field.field.media.remote_video.m_rv_suggested_cache_lifetime
     - field.field.media.remote_video.m_rv_thumbnail_height
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
-    - field.field.media.remote_video.m_rv_author_name
-    - field.field.media.remote_video.m_rv_author_url
-    - field.field.media.remote_video.m_rv_provider_name
-    - field.field.media.remote_video.m_rv_provider_url
-    - field.field.media.remote_video.m_rv_resource_title
-    - field.field.media.remote_video.m_rv_resource_type
     - field.field.media.remote_video.s_m_width
     - image.style.thumbnail
     - media.type.remote_video
