@@ -5,38 +5,26 @@
  * This is the module provides media functionality.
  */
 
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\Entity\Media;
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_entity_embed_display_plugins_for_context_alter().
  */
-function unl_media_form_entity_embed_dialog_alter(array &$form, FormStateInterface &$form_state, string $form_id) {
-  $storage = $form_state->getStorage();
-
-  // This is multi-step form.
-  if ($storage['step'] == 'embed') {
-    $entity_type = $storage['entity']->getEntityTypeId();
-    $bundle = $storage['entity']->bundle();
-
-    if ($entity_type == 'media') {
-      // Remove view mode options not whitelisted herein.
-      $options =& $form['attributes']['data-entity-embed-display']['#options'];
-
-      switch ($bundle) {
-        case 'image':
-          $allowed_view_mode_options = [
-            'view_mode:media.narrow' => $options['view_mode:media.narrow'],
-            'view_mode:media.wide' => $options['view_mode:media.wide'],
-          ];
-          break;
-
-        case 'remote_video':
-          $allowed_view_mode_options = [
-            'view_mode:media.remote_video' => $options['view_mode:media.remote_video'],
-          ];
-          break;
-      }
-      $options = array_intersect_key($allowed_view_mode_options, $options);
-    }
+function unl_media_entity_embed_display_plugins_for_context_alter(array &$definitions, array $contexts) {
+  // Do nothing if no entity is provided.
+  if (!isset($contexts['entity'])) {
+    return;
   }
+  $entity = $contexts['entity'];
+
+  // For video, limit the available options to the media player.
+  if ($entity instanceof Media && in_array($entity->bundle(), ['remote_video'])) {
+    $definitions = array_intersect_key($definitions, array_flip(['view_mode:media.remote_video']));
+  }
+
+  // For images, limit the available options to the media player.
+  if ($entity instanceof Media && in_array($entity->bundle(), ['image'])) {
+    $definitions = array_intersect_key($definitions, array_flip(['view_mode:media.narrow', 'view_mode:media.wide']));
+  }
+
 }
