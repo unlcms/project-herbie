@@ -1,0 +1,15 @@
+uuid: 638d7941-36d6-49a3-83f2-75e17ce7feba
+langcode: en
+status: true
+dependencies: {  }
+name: inline_720
+label: 'Inline 720'
+effects:
+  e84ae792-7614-479d-b945-5a501724d0cf:
+    uuid: e84ae792-7614-479d-b945-5a501724d0cf
+    id: image_scale
+    weight: 1
+    data:
+      width: 720
+      height: null
+      upscale: true

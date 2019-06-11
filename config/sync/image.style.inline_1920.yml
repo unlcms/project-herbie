@@ -1,0 +1,15 @@
+uuid: c34358e5-ba4f-4df0-ad67-97c678d882f7
+langcode: en
+status: true
+dependencies: {  }
+name: inline_1920
+label: 'Inline 1920'
+effects:
+  b7ad1cbf-7cac-495b-817b-1b74445555b6:
+    uuid: b7ad1cbf-7cac-495b-817b-1b74445555b6
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: true

@@ -1,0 +1,15 @@
+uuid: e38c7b97-5948-4528-8a28-1ed84071caf2
+langcode: en
+status: true
+dependencies: {  }
+name: inline_480
+label: 'Inline 480'
+effects:
+  808547f1-4c54-4647-bf6a-110268dc0ff9:
+    uuid: 808547f1-4c54-4647-bf6a-110268dc0ff9
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: true

@@ -10,9 +10,10 @@ dependencies:
     - field.field.media.image.s_m_mime_type
     - field.field.media.image.s_m_width
     - media.type.image
+    - responsive_image.styles.wide
   module:
-    - image
     - layout_builder
+    - responsive_image
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -26,10 +27,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: wide
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
     region: content
 hidden:
   created: true

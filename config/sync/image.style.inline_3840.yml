@@ -1,0 +1,15 @@
+uuid: 1e7ecb9d-a97a-440d-b2f6-3270c9461d72
+langcode: en
+status: true
+dependencies: {  }
+name: inline_3840
+label: 'Inline 3840'
+effects:
+  ed6ae605-0ff6-416e-9c49-eaaffb9db47e:
+    uuid: ed6ae605-0ff6-416e-9c49-eaaffb9db47e
+    id: image_scale
+    weight: 1
+    data:
+      width: 3840
+      height: null
+      upscale: true

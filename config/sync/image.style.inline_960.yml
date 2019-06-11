@@ -1,0 +1,15 @@
+uuid: 60bdc900-a817-4143-9cea-8e696da41cf3
+langcode: en
+status: true
+dependencies: {  }
+name: inline_960
+label: 'Inline 960'
+effects:
+  c70aa7bc-a113-45c7-8397-90b731c47b42:
+    uuid: c70aa7bc-a113-45c7-8397-90b731c47b42
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: null
+      upscale: true
