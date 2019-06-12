@@ -1,0 +1,405 @@
+uuid: e9678b8f-e14f-4780-b378-f9ad2b230202
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 2
+template: false
+archive: false
+id: unl_webform_test
+title: 'UNL Webform Test'
+description: ''
+category: ''
+elements: |
+  page_1:
+    '#type': webform_wizard_page
+    '#title': 'Page 1'
+    details_here_:
+      '#type': details
+      '#title': 'Details here!'
+      '#description': "<p>Lorem <strong>ipsum dolor </strong>sit amet, consectetur adipiscing elit. Aenean ullamcorper convallis risus, eu hendrerit ligula venenatis sit amet. <em>Donec quis varius erat. </em>Vestibulum placerat euismod ex. Etiam et lorem tincidunt, placerat diam vel, <s>efficitur mauris</s>. H<sub>2</sub>0 x<sup>2</sup></p>\r\n\r\n<p>Fusce non nisl nunc. <a href=\"/node\">Mauris </a>congue ex ullamcorper quam ornare, nec fringilla tellus convallis. In convallis congue tempor.</p>\r\n\r\n<ul>\r\n\t<li>Ut dapibus non massa</li>\r\n\t<li>Quis sollicitudin.</li>\r\n</ul>\r\n\r\n<p>Pellentesque pellentesque at tellus vel suscipit. Vestibulum tristique posuere turpis at eleifend.</p>"
+    number:
+      '#type': number
+      '#title': Number
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    e_mail:
+      '#type': email
+      '#title': E-mail
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    fieldset:
+      '#type': fieldset
+      '#title': Fieldset
+      '#description': '<p>Fieldset description</p>'
+      '#description_display': before
+      text_field:
+        '#type': textfield
+        '#title': 'Text field'
+        '#description': '<p>Description goes here!</p>'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_2:
+        '#type': textfield
+        '#title': 'Text field 2'
+        '#required': true
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_inline_label:
+        '#type': textfield
+        '#title': 'Text field inline label'
+        '#title_display': inline
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_inline_label_2:
+        '#type': textfield
+        '#title': 'Text field inline label 2'
+        '#title_display': inline
+        '#required': true
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_with_prefix_and_suffix:
+        '#type': textfield
+        '#title': 'Text field with prefix and suffix'
+        '#field_prefix': prefix
+        '#field_suffix': suffix
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_input_hiding_:
+        '#type': textfield
+        '#title': 'Text field (input hiding)'
+        '#input_hide': true
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_read_only_:
+        '#type': textfield
+        '#title': 'Text field (read only)'
+        '#readonly': true
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_disabled_:
+        '#type': textfield
+        '#title': 'Text field (disabled)'
+        '#disabled': true
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_input_mask_zip_code_:
+        '#type': textfield
+        '#title': 'Text field (input mask - ZIP code)'
+        '#input_mask': '99999[-9999]'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_autocomplete_disabled_:
+        '#type': textfield
+        '#title': 'Text field (autocomplete disabled)'
+        '#autocomplete': 'off'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      text_field_multiple_:
+        '#type': textfield
+        '#title': 'Text field (multiple)'
+        '#multiple': true
+        '#description': '<p>This field can accept multiple values.</p>'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    text_area:
+      '#type': textarea
+      '#title': 'Text Area'
+      '#title_display': before
+      '#counter_type': character
+      '#counter_minimum': '1'
+      '#counter_maximum': '10000'
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    telephone:
+      '#type': tel
+      '#title': Telephone
+      '#title_display': before
+      '#international': true
+      '#international_initial_country': US
+    select:
+      '#type': select
+      '#title': Select
+      '#options': country_names
+    select_other:
+      '#type': webform_select_other
+      '#title': 'Select Other'
+      '#title_display': inline
+      '#options': months
+      '#other__counter_type': character
+      '#other__counter_minimum': '1'
+      '#other__counter_maximum': '255'
+    select_select2_:
+      '#type': select
+      '#title': 'Select (Select2)'
+      '#options': country_names
+      '#select2': true
+    select_chosen_:
+      '#type': select
+      '#title': 'Select (Chosen)'
+      '#options': country_names
+      '#chosen': true
+    select_multi:
+      '#type': select
+      '#title': 'Select Multi'
+      '#multiple': true
+      '#options': country_names
+    select_multi_select2_:
+      '#type': select
+      '#title': 'Select Multi (Select2)'
+      '#multiple': true
+      '#options': country_names
+      '#select2': true
+    select_multi_chosen_:
+      '#type': select
+      '#title': 'Select Multi (Chosen)'
+      '#multiple': true
+      '#options': country_names
+      '#chosen': true
+    checkbox:
+      '#type': checkbox
+      '#title': Checkbox
+      '#title_display': inline
+    checkboxes:
+      '#type': checkboxes
+      '#title': Checkboxes
+      '#description': '<p>Description goes here</p>'
+      '#title_display': inline
+      '#description_display': before
+      '#options':
+        1: 'Option 1'
+        2: 'Option 2'
+    checkboxes_other:
+      '#type': webform_checkboxes_other
+      '#title': 'Checkboxes Other'
+      '#title_display': inline
+      '#options':
+        1: 'Option 1'
+        2: 'Option 2'
+    radios:
+      '#type': radios
+      '#title': Radios
+      '#title_display': inline
+      '#options': days
+    radios_other:
+      '#type': webform_radios_other
+      '#title': 'Radios other'
+      '#options': months
+    hidden:
+      '#type': hidden
+      '#title': Hidden
+      '#default_value': chris
+    url:
+      '#type': url
+      '#title': URL
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    address_field:
+      '#type': webform_address
+      '#title': 'Address Field'
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#address__description': 'Address description'
+    name:
+      '#type': webform_name
+      '#title': Name
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    tele_advanced:
+      '#type': webform_telephone
+      '#title': 'Telephone Advanced'
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    markup:
+      '#type': webform_markup
+      '#markup': '<p>This is a markup field. It can hold markup. It''s like a Detail field, but without the show/hide capability (or the title).</p>'
+    date:
+      '#type': date
+      '#title': Date
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    date_time:
+      '#type': datetime
+      '#title': Date/time
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#date_time_step': '60'
+    date_list:
+      '#type': datelist
+      '#title': 'Date List'
+      '#title_display': before
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    document_file:
+      '#type': webform_document_file
+      '#title': 'Document file'
+      '#title_display': before
+      '#sanitize': true
+    file:
+      '#type': managed_file
+      '#title': File
+      '#title_display': before
+      '#sanitize': true
+    image_file:
+      '#type': webform_image_file
+      '#title': 'Image File'
+      '#title_display': before
+      '#sanitize': true
+    flexbox:
+      '#type': webform_flexbox
+      nested_field:
+        '#type': textfield
+        '#title': 'Nested Field'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      nested_field_2:
+        '#type': textfield
+        '#title': 'Nested Field 2'
+        '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+  page_2:
+    '#type': webform_wizard_page
+    '#title': 'Page 2'
+    text_field_page_2:
+      '#type': textfield
+      '#title': 'Text Field'
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

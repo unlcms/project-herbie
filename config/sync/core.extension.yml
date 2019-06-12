@@ -8,6 +8,9 @@ module:
   block_type_templates: 0
   book: 0
   breakpoint: 0
+  chosen: 0
+  chosen_field: 0
+  chosen_lib: 0
   ckeditor: 0
   ckeditor_config: 0
   config: 0
@@ -19,6 +22,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dcf_classes: 0
   dcf_ckeditor: 0
   dcf_layouts: 0
   diff: 0
@@ -35,6 +39,7 @@ module:
   file_mdm: 0
   file_mdm_exif: 0
   filter: 0
+  honeypot: 0
   image: 0
   imagemagick: 0
   inline_entity_form: 0
@@ -66,8 +71,12 @@ module:
   unl_media: 0
   unl_mediahub: 0
   unl_user: 0
+  unl_webform: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_submission_log: 0
+  webform_ui: 0
   menu_link_content: 1
   pathauto: 1
   views: 10

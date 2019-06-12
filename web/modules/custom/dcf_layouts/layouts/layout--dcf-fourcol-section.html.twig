@@ -11,31 +11,43 @@
  */
 #}
 {% if content %}
-  <div{{ attributes }}>
+  {% if settings.extra_classes %}
+    <div class="{{ settings.extra_classes }}">
+  {% endif %}
 
-    {% if content.first %}
-      <div {{ region_attributes.first.addClass('dcf-col', 'layout__region', 'layout__region--first') }}>
-        {{ content.first }}
-      </div>
+    {% if settings.title %}
+      <h2 class="{{ settings.title_classes}}">{{ settings.title }}</h2>
     {% endif %}
 
-    {% if content.second %}
-      <div {{ region_attributes.second.addClass('dcf-col', 'layout__region', 'layout__region--second') }}>
-        {{ content.second }}
-      </div>
-    {% endif %}
+    <div{{ attributes }}>
 
-    {% if content.third %}
-      <div {{ region_attributes.third.addClass('dcf-col', 'layout__region', 'layout__region--third') }}>
-        {{ content.third }}
-      </div>
-    {% endif %}
+      {% if content.first %}
+        <div {{ region_attributes.first.addClass('dcf-col', 'layout__region', 'layout__region--first') }}>
+          {{ content.first }}
+        </div>
+      {% endif %}
 
-    {% if content.fourth %}
-      <div {{ region_attributes.fourth.addClass('dcf-col', 'layout__region', 'layout__region--fourth') }}>
-        {{ content.fourth }}
-      </div>
-    {% endif %}
+      {% if content.second %}
+        <div {{ region_attributes.second.addClass('dcf-col', 'layout__region', 'layout__region--second') }}>
+          {{ content.second }}
+        </div>
+      {% endif %}
 
-  </div>
+      {% if content.third %}
+        <div {{ region_attributes.third.addClass('dcf-col', 'layout__region', 'layout__region--third') }}>
+          {{ content.third }}
+        </div>
+      {% endif %}
+
+      {% if content.fourth %}
+        <div {{ region_attributes.fourth.addClass('dcf-col', 'layout__region', 'layout__region--fourth') }}>
+          {{ content.fourth }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  {% if settings.extra_classes %}
+    </div>
+  {% endif %}
 {% endif %}
