@@ -5,6 +5,7 @@
  * This is the module provides media functionality.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
 
 /**
@@ -27,6 +28,50 @@ function unl_media_entity_embed_display_plugins_for_context_alter(array &$defini
     $definitions = array_intersect_key($definitions, array_flip(['view_mode:media.narrow', 'view_mode:media.wide']));
   }
 
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_media_form_entity_embed_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $storage = $form_state->getStorage();
+  $bundle = $storage['entity']->bundle();
+
+  // The 'entity_embed_dialog' form is a multi-step form.
+  if ($storage['step'] == 'embed') {
+    if ($bundle == 'image') {
+      $form['attributes']['data-align']['#states'] = [
+        'visible' => [
+          ':input[name="attributes[data-entity-embed-display]"]' => ['value' => 'view_mode:media.narrow'],
+        ],
+      ];
+    }
+    elseif ($bundle == 'remote_video') {
+      // Videos are always 100% side.
+      unset($form['attributes']['data-align']);
+    }
+  }
+
+  $form['#validate'][] = '_unl_media_entity_embed_dialog_validate';
+}
+
+/**
+ * Validation function for the 'entity_embed_dialog' form.
+ */
+function _unl_media_entity_embed_dialog_validate($form, FormStateInterface &$form_state) {
+  $storage = $form_state->getStorage();
+  $bundle = $storage['entity']->bundle();
+  $values = $form_state->getValues();
+
+  // The 'entity_embed_dialog' form is a multi-step form.
+  if ($storage['step'] == 'embed') {
+    if ($bundle == 'image') {
+      // If view mode is set to 'wide', then unset data-align.
+      if ($values['attributes']['data-entity-embed-display'] == 'view_mode:media.wide') {
+        $form_state->setValue(['attributes', 'data-align'], '');
+      }
+    }
+  }
 }
 
 /**
