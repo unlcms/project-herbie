@@ -28,3 +28,37 @@ function unl_media_entity_embed_display_plugins_for_context_alter(array &$defini
   }
 
 }
+
+/**
+ * Implements template_preprocess_filter_caption().
+ */
+function unl_media_preprocess_filter_caption(&$variables) {
+  // For <drupal-entity> elements rendered with captions, get the view
+  // mode and add a corresponding class to the <figure> element.
+  //
+  // Convert the markup to a DOM element.
+  $element_string = $variables['node']->__toString();
+  $dom = new DOMDocument();
+  $dom->loadHTML($element_string);
+  // Only proceed if element is <drupal-entity>.
+  $element = $dom->getElementsByTagName("drupal-entity");
+  if ($element->count() != 0) {
+    $element = $element->item(0);
+    $embed_display = $element->getAttribute('data-entity-embed-display');
+
+    // Get view mode from embed display string.
+    $embed_display_parts = explode('.', $embed_display);
+    $variables['classes'] = trim($variables['classes'] . ' figure-embedded-entity view-mode--' . $embed_display_parts[1]);
+  }
+
+}
+
+/**
+ * Implements template_preprocess_entity_embed_container().
+ */
+function unl_media_preprocess_entity_embed_container(&$variables) {
+  // Add the view mode as a class to the entity embed container.
+  if (isset($variables['element']['entity']['#view_mode'])) {
+    $variables['attributes']['class'][] = 'view-mode--' . $variables['element']['entity']['#view_mode'];
+  }
+}
