@@ -1,0 +1,31 @@
+name: UNLedu 5.0 Project Herbie
+type: theme
+description: 'Subtheme for unl_five.'
+core: 8.x
+base theme: unl_five
+
+libraries:
+  - unl_five_herbie/global-styling
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+
+regions:
+  page_top: Page top
+  page_bottom: Page bottom
+
+  header: Header
+  breadcrumb: Breadcrumbs
+  pagetitle: Page Title
+  navlinks: Navigation links
+  content_top: Content top
+  sidebar_first: Sidebar first
+  content: Content
+  sidebar_second: Sidebar second
+  content_bottom: Content bottom
+
+  contactinfo: Contact info
+  socialmedia: Social media
+  leftcollinks: Related links
