@@ -207,6 +207,9 @@
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
             },
+            "drupal/entity_embed": {
+                "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
+            },
             "drupal/linkit": {
                 "3040749 - Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch"
             }

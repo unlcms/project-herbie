@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9f3b62cd8ad22c502d2c87bdce440c8",
+    "content-hash": "88eb986b0c0fab098c1faa0f167820c2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3678,6 +3678,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
