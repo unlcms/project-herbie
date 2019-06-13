@@ -35,10 +35,11 @@ function unl_media_entity_embed_display_plugins_for_context_alter(array &$defini
  */
 function unl_media_form_entity_embed_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
   $storage = $form_state->getStorage();
-  $bundle = $storage['entity']->bundle();
 
   // The 'entity_embed_dialog' form is a multi-step form.
   if ($storage['step'] == 'embed') {
+    $bundle = $storage['entity']->bundle();
+
     if ($bundle == 'image') {
       $form['attributes']['data-align']['#states'] = [
         'visible' => [
@@ -60,11 +61,12 @@ function unl_media_form_entity_embed_dialog_alter(&$form, FormStateInterface &$f
  */
 function _unl_media_entity_embed_dialog_validate($form, FormStateInterface &$form_state) {
   $storage = $form_state->getStorage();
-  $bundle = $storage['entity']->bundle();
   $values = $form_state->getValues();
 
   // The 'entity_embed_dialog' form is a multi-step form.
   if ($storage['step'] == 'embed') {
+    $bundle = $storage['entity']->bundle();
+
     if ($bundle == 'image') {
       // If view mode is set to 'wide', then unset data-align.
       if ($values['attributes']['data-entity-embed-display'] == 'view_mode:media.wide') {
