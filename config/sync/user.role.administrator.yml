@@ -124,5 +124,6 @@ permissions:
   - 'view any webform submission'
   - 'view builder_page revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view own webform submission'
   - 'view the administration theme'
