@@ -1,0 +1,8 @@
+name: 'UNL Utility'
+description: 'Utility functions for Project Herbie'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x

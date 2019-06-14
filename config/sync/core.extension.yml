@@ -71,6 +71,7 @@ module:
   unl_media: 0
   unl_mediahub: 0
   unl_user: 0
+  unl_utility: 0
   unl_webform: 0
   user: 0
   views_ui: 0
