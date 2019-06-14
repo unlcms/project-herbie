@@ -10,3 +10,4 @@ version: 1.x
 dependencies:
   - drupal:entity_embed
   - drupal:media
+  - drupal:unl_utility

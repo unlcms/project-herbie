@@ -7,6 +7,53 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
+use Drupal\unl_utility\UNLUtilityTrait;
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Media edit forms have unique form id's
+  $media_edit_form_ids = [
+    'media_file_edit_form',
+    'media_image_edit_form',
+    'media_remote_video_edit_form'
+  ];
+  if (in_array($form_id, $media_edit_form_ids)) {
+    // Get entity ID to pass to view.
+    $entity = UNLUtilityTrait::getRouteEntity();
+    $entity_id = $entity->id();
+
+    $form['media_metadata'] = [
+      '#type' => 'details',
+      '#title' => t('Media Metadata'),
+      '#group' => 'advanced',
+      '#weight' => 99,
+      '#attributes' => [
+        'class' => ['media-metadata']
+      ],
+    ];
+    $form['#attached']['library'][] = 'unl_media/media_metadata';
+
+    switch ($form_id) {
+      case ('media_file_edit_form'):
+        $form['media_metadata']['view'] = [
+          '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'file', $entity_id)),
+        ];
+        break;
+      case ('media_image_edit_form'):
+        $form['media_metadata']['view'] = [
+          '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'image', $entity_id)),
+        ];
+        break;
+      case ('media_remote_video_edit_form'):
+        $form['media_metadata']['view'] = [
+          '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'remote_video', $entity_id)),
+        ];
+        break;
+    }
+  }
+}
 
 /**
  * Implements hook_entity_embed_display_plugins_for_context_alter().
