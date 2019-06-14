@@ -1,9 +1,8 @@
 .media-metadata .views-row {
     display: table;
+    width: 100%;
     word-break: break-word;
 }
-
-
 
 .media-metadata .views-field {
     display: table-row;
@@ -15,9 +14,9 @@
 
 .media-metadata .views-label {
     display: table-cell;
-  width: 50%;
-  padding: 10px;
-  font-weight: bold;
+    width: 50%;
+    padding: 10px;
+    font-weight: bold;
 }
 
 .media-metadata .field-content {
