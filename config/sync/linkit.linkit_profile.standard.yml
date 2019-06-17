@@ -8,17 +8,6 @@ id: standard
 label: Standard
 description: 'Linkit profile for the <em>Standard</em> text format'
 matchers:
-  fcab5e68-0b19-43f4-8899-83158cbc3f57:
-    uuid: fcab5e68-0b19-43f4-8899-83158cbc3f57
-    id: 'entity:media'
-    weight: 0
-    settings:
-      metadata: 'Media id: [media:mid]'
-      bundles:
-        file: file
-      group_by_bundle: false
-      substitution_type: canonical
-      limit: 100
   febe5175-934c-4722-8699-0ed2925301bf:
     uuid: febe5175-934c-4722-8699-0ed2925301bf
     id: 'entity:node'
@@ -28,5 +17,16 @@ matchers:
       metadata: 'Node id: [node:nid]'
       bundles: {  }
       group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+  fcab5e68-0b19-43f4-8899-83158cbc3f57:
+    uuid: fcab5e68-0b19-43f4-8899-83158cbc3f57
+    id: 'entity:media'
+    weight: 0
+    settings:
+      metadata: 'Media id: [media:mid]'
+      bundles:
+        file: file
+      group_by_bundle: false
       substitution_type: canonical
       limit: 100
