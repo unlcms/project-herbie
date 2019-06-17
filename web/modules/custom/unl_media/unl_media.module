@@ -14,11 +14,11 @@ use Drupal\unl_utility\UNLUtilityTrait;
  */
 function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
   // Alter media edit forms: media_BUNDLE_edit_form.
-  // Media edit forms have unique form id's
+  // Media edit forms have unique form id's.
   $media_edit_form_ids = [
     'media_file_edit_form',
     'media_image_edit_form',
-    'media_remote_video_edit_form'
+    'media_remote_video_edit_form',
   ];
   if (in_array($form_id, $media_edit_form_ids)) {
     // Get entity ID to pass to view.
@@ -31,7 +31,7 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
       '#group' => 'advanced',
       '#weight' => 99,
       '#attributes' => [
-        'class' => ['media-metadata']
+        'class' => ['media-metadata'],
       ],
     ];
     $form['#attached']['library'][] = 'unl_media/media_metadata';
@@ -42,11 +42,13 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
           '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'file', $entity_id)),
         ];
         break;
+
       case ('media_image_edit_form'):
         $form['media_metadata']['view'] = [
           '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'image', $entity_id)),
         ];
         break;
+
       case ('media_remote_video_edit_form'):
         $form['media_metadata']['view'] = [
           '#markup' => \Drupal::service('renderer')->render(views_embed_view('media_metadata', 'remote_video', $entity_id)),
