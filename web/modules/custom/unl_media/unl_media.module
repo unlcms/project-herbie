@@ -13,6 +13,7 @@ use Drupal\unl_utility\UNLUtilityTrait;
  * Implements hook_form_alter().
  */
 function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Alter media edit forms: media_BUNDLE_edit_form.
   // Media edit forms have unique form id's
   $media_edit_form_ids = [
     'media_file_edit_form',
@@ -53,6 +54,14 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
         break;
     }
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_media_editor_link_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Replace default help text.
+  $form['attributes']['href']['#description'] = t('<Link options:<br><strong>Local content and existing documents:</strong> Start typing to select an autocomplete option<br><strong>New document:</strong> <a href="@file_url" target="_blank">Upload a new document</a><br><strong>External URLs:</strong> Type full URL', ['@file_url' => '/media/add/file']);
 }
 
 /**
