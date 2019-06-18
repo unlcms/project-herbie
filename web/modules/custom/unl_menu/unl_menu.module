@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * This module extends menu functionality provided by core.
+ */
+
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\link\LinkItemInterface;
+use Drupal\unl_utility\UNLUtilityTrait;
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function unl_menu_entity_form_display_alter(EntityFormDisplayInterface &$form_display, array $context) {
+  // For menu link items, override default form to only allow internal links.
+  if ($context['entity_type'] == 'menu_link_content' && $context['form_mode'] == 'default') {
+    // Load field defitions.
+    $field_definitions = $form_display->get('fieldDefinitions');
+    // Load item defintion for 'link'.
+    $link_item_definition = $field_definitions['link']->getItemDefinition();
+    // Override 'link_type' setting to only allow internal links in menu.
+    $link_item_definition->setSetting('link_type', LinkItemInterface::LINK_INTERNAL);
+    // Update field defintions with overriden link field definition.
+    $field_definitions['link']->setItemDefinition($link_item_definition);
+    // Update form display with updated field definitions.
+    $form_display->set('fieldDefinitions', $field_definitions);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_menu_form_menu_link_content_menu_link_content_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $form['#validate'][] = '_unl_menu_menu_link_content_menu_link_content_form_validate';
+}
+
+/**
+ * Validation function for the 'menu_link_content_menu_link_content_form' form.
+ */
+function _unl_menu_menu_link_content_menu_link_content_form_validate($form, FormStateInterface &$form_state) {
+  $values = $form_state->getValues();
+
+  // Clear certain errors which may already be set.
+  UNLUtilityTrait::formStateClearError($form_state, 'link][0');
+  UNLUtilityTrait::formStateClearError($form_state, 'link][0][uri');
+
+  $uri = $values['link'][0]['uri'];
+
+  // If internal link lacks leading forward slash, then add it to
+  // avoid a fatal error later.
+  if (substr($uri, 0, 9) === 'internal:') {
+    $uri_parts = explode(':', $uri);
+    if (substr($uri_parts[1], 0, 1) !== '/') {
+      $uri_parts[1] = ':/' . $uri_parts[1];
+      $uri = $uri_parts[0] . $uri_parts[1];
+    }
+  }
+
+  // Generate URL object from URI string.
+  $url = Url::fromUri($uri);
+
+  // If URL isn't routed, then this is an automatic fail.
+  // This also catches non-existant content. E.g. "/node/2" when there
+  // is no node with nid of 2.
+  if (!$url->isRouted()) {
+    $form_state->setErrorByName('link', 'Only nodes and the front page ("<front>") can be linked in a menu item.');
+    return;
+  }
+
+  $route = Url::fromUri($uri)->getRouteName();
+
+  // Only allow certain, routed URLs.
+  $allowed_routes = [
+    '<front>',
+    'entity.node.canonical',
+  ];
+  if (!in_array($route, $allowed_routes)) {
+    $form_state->setErrorByName('link', 'Only nodes and the front page ("<front>") can be linked in a menu item.');
+  }
+}
