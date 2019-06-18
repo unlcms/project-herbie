@@ -112,6 +112,7 @@
         "drupal/entity_usage": "^2.0@alpha",
         "drupal/field_group": "^1.0",
         "drupal/honeypot": "^1.29",
+        "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_restrictions": "^1.5",
