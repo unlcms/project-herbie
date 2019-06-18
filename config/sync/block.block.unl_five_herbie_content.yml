@@ -1,0 +1,20 @@
+uuid: e6e4357d-236c-49c1-a60c-6c9fe1de97af
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_five_herbie
+id: unl_five_herbie_content
+theme: unl_five_herbie
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
