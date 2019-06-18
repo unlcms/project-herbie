@@ -1,7 +1,9 @@
 uuid: 604bec19-dff6-423f-a3ca-3eb48aafe494
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 _core:
   default_config_hash: Y9NmnZHQq20ASSyTNA6JnwtWrJJiSajOehGDtmUFdM0
 name: medium
@@ -10,8 +12,14 @@ effects:
   bddf0d06-42f9-4c75-a700-a33cafa25ea0:
     uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
     id: image_scale
-    weight: 0
+    weight: -9
     data:
       width: 220
       height: 220
       upscale: false
+  d3e33661-70e3-4ee3-a113-173a9d7e047c:
+    uuid: d3e33661-70e3-4ee3-a113-173a9d7e047c
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true
