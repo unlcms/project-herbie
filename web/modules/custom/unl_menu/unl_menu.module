@@ -56,6 +56,8 @@ function _unl_menu_menu_link_content_menu_link_content_form_validate($form, Form
     if (substr($uri_parts[1], 0, 1) !== '/') {
       $uri_parts[1] = ':/' . $uri_parts[1];
       $uri = $uri_parts[0] . $uri_parts[1];
+      // Update $form_state.
+      $form_state->setValue(['link', 0, 'uri'], $uri);
     }
   }
 
