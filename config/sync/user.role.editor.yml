@@ -1,0 +1,31 @@
+uuid: 9785a012-13f3-431d-9439-f7d19859f9ec
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'access webform overview'
+    - 'administer main menu items'
+  - 'configure editable builder_page node layout overrides'
+  - 'create builder_page content'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any builder_page content'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete builder_page revisions'
+  - 'edit any builder_page content'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'revert builder_page revisions'
+  - 'view any webform submission'
+  - 'view builder_page revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

@@ -6,9 +6,14 @@ _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access contextual links'
+  - 'access webform submission user'
+  - 'bypass honeypot protection'
+  - 'edit own webform'
   - 'use text format standard'
+  - 'use text format webform'
   - 'view media'
