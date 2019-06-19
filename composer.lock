@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a8273bbbfe661cb5d19ac69cffc03ab",
+    "content-hash": "3bc83c96a1b903c9447ca85d1e8fa5d5",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2355,6 +2355,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/choosen-offcanvas-css-improvements-3062839-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6813,7 +6816,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
