@@ -12,7 +12,7 @@ permissions:
   - 'access media overview'
   - 'access toolbar'
   - 'access webform overview'
-    - 'administer main menu items'
+  - 'administer main menu items'
   - 'configure editable builder_page node layout overrides'
   - 'create builder_page content'
   - 'create url aliases'
