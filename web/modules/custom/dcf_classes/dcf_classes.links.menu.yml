@@ -1,0 +1,5 @@
+dcf_classes.classes:
+  title: 'DCF classes'
+  parent: system.admin_config_content
+  description: 'Set available DCF classes for use in Layout Builder, etc.'
+  route_name: dcf_classes.classes
