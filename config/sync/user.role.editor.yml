@@ -8,9 +8,11 @@ weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block content overview'
   - 'access content overview'
   - 'access media overview'
   - 'access toolbar'
+  - 'administer block content types'
   - 'configure editable builder_page node layout overrides'
   - 'create builder_page content'
   - 'create url aliases'
@@ -20,4 +22,5 @@ permissions:
   - 'revert builder_page revisions'
   - 'view builder_page revisions'
   - 'view own unpublished content'
+  - 'view restricted block content'
   - 'view the administration theme'

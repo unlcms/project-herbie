@@ -8,6 +8,7 @@ weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
@@ -20,6 +21,7 @@ permissions:
   - 'access user profiles'
   - 'add content to books'
   - 'administer account settings'
+  - 'administer block content types'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
@@ -93,4 +95,5 @@ permissions:
   - 'view all revisions'
   - 'view builder_page revisions'
   - 'view own unpublished content'
+  - 'view restricted block content'
   - 'view the administration theme'
