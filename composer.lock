@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2720f8d113f69a4eb88d98c92a61f5c",
+    "content-hash": "42854f3064acc420fb988c9815f15437",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2304,6 +2304,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
