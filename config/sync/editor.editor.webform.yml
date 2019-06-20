@@ -1,0 +1,55 @@
+uuid: e5398c07-387c-4376-aff8-039f4a2f808e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.webform
+  module:
+    - ckeditor
+format: webform
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Tools
+          items:
+            - SpecialChar
+            - ShowBlocks
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    customconfig:
+      ckeditor_custom_config: 'forcePasteAsPlainText = true'
+    dcf_base:
+      enabled_plugins:
+        dcf_table: '0'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
