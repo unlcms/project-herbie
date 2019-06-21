@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acb4498161899daf073e244538e8c83b",
+    "content-hash": "cfcfd14a770dd063ceffaed84b1be3bd",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3896,7 +3896,7 @@
             "description": "Manage which fields & layouts are available in Layout Builder",
             "homepage": "https://www.drupal.org/project/layout_builder_restrictions",
             "support": {
-                "source": "http://cgit.drupalcode.org/layout_builder_restrictions"
+                "source": "https://git.drupalcode.org/project/layout_builder_restrictions"
             }
         },
         {
@@ -8022,7 +8022,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "5.0"
+                "reference": "develop"
             },
             "type": "library"
         },
@@ -8131,12 +8131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "16dd246bd76f58b3abc162380eeddffe8b77ec08"
+                "reference": "de665ce19e9dc120025e97f1cddc961536c97c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/16dd246bd76f58b3abc162380eeddffe8b77ec08",
-                "reference": "16dd246bd76f58b3abc162380eeddffe8b77ec08",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/de665ce19e9dc120025e97f1cddc961536c97c6d",
+                "reference": "de665ce19e9dc120025e97f1cddc961536c97c6d",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -8149,7 +8149,7 @@
                 }
             ],
             "description": "Admin interface to create and manage multiple site installations.",
-            "time": "2019-04-17T19:16:29+00:00"
+            "time": "2019-04-24T20:35:51+00:00"
         },
         {
             "name": "unlcms/unl_user",
