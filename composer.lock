@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a1a9d77ec51e5b7398e0691f860b9d3",
+    "content-hash": "32cec477722dc7e2ac3cb294a0b3cccc",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4364,7 +4364,8 @@
                     }
                 },
                 "patches_applied": {
-                    "3040749 - Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch"
+                    "3040749 - Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch",
+                    "3063393 - Remove '/edit' from media entity paths": "patches/linkit-media_entity_update_canonical_path-3063393-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
