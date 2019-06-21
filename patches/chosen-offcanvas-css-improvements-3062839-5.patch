@@ -74,7 +74,7 @@ index 5999dc9..6d627c2 100644
 +}
 +
 +#drupal-off-canvas .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
-+  background: url(chosen-sprite.png) -42px 1px no-repeat;
++  background: url("/libraries/chosen/chosen-sprite.png") -42px 1px no-repeat;
 +  font-size: 1px;
 +  height: 12px;
 +}
