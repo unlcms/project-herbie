@@ -199,6 +199,9 @@
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
             },
+            "drupal/chosen": {
+                "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
+            },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
             },

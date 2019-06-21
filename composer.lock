@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4a4a4bff446dd7c90142b29ea484a01",
+    "content-hash": "acb4498161899daf073e244538e8c83b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2404,6 +2404,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
