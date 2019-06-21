@@ -1,0 +1,22 @@
+diff --git a/layout_builder_modal.module b/layout_builder_modal.module
+index 6342e53..2172b87 100644
+--- a/layout_builder_modal.module
++++ b/layout_builder_modal.module
+@@ -19,7 +19,7 @@ function layout_builder_modal_contextual_links_alter(array &$links, $group, arra
+       'width' => $config->get('modal_width'),
+       'height' => $config->get('modal_height'),
+       'target' => 'layout-builder-modal',
+-      'autoResize' => FALSE,
++      'autoResize' => TRUE,
+       'modal' => TRUE,
+     ]);
+     unset($links['layout_builder_block_update']['localized_options']['attributes']['data-dialog-renderer']);
+@@ -60,7 +60,7 @@ function layout_builder_modal_link_alter(&$variables) {
+     'width' => $config->get('modal_width'),
+     'height' => $config->get('modal_height'),
+     'target' => 'layout-builder-modal',
+-    'autoResize' => FALSE,
++    'autoResize' => TRUE,
+     'modal' => TRUE,
+   ]);
+ 

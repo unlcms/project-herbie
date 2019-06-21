@@ -1,0 +1,8 @@
+name: 'DCF CKEditor'
+type: module
+description: 'Extends CKEditor to support the Digital Campus Framework (DCF).'
+package: DCF
+core: 8.x
+
+dependencies:
+  - drupal:ckeditor
