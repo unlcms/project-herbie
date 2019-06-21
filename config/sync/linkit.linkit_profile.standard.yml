@@ -28,5 +28,5 @@ matchers:
       bundles:
         file: file
       group_by_bundle: false
-      substitution_type: canonical
+      substitution_type: media
       limit: 100
