@@ -60,7 +60,7 @@ storage_client_config:
   parameters:
     list: {  }
     single: {  }
-persistent_cache_max_age: 0
+persistent_cache_max_age: 3600
 annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null
