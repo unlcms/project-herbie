@@ -59,6 +59,7 @@ module:
   toolbar: 0
   unl_cas: 0
   unl_five_ckeditor: 0
+  unl_menu: 0
   unl_user: 0
   unl_utility: 0
   unl_webform: 0
