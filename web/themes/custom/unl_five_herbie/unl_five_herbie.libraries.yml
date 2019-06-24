@@ -1,0 +1,5 @@
+person:
+  version: VERSION
+  css:
+    theme:
+      css/theme/person.css: {}

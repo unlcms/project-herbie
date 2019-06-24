@@ -1,0 +1,25 @@
+uuid: 1aeeea0a-dd21-439a-906a-d09ab0516ac9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_five_herbie
+_core:
+  default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
+id: unl_five_herbie_branding
+theme: unl_five_herbie
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
