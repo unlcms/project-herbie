@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a75abe0db4e15306ba102ca2f11c2f1",
+    "content-hash": "518f25b4999609d84f0f4320d77ae55c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3918,17 +3918,17 @@
         },
         {
             "name": "drupal/layout_builder_restrictions",
-            "version": "1.5.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_builder_restrictions.git",
-                "reference": "8.x-1.5"
+                "reference": "8.x-2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_builder_restrictions-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "adce3039434d7b33af58a10a6eb524b2ce59411f"
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_restrictions-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "1d15acaf6ae2da688087576c716cb2c7e9719abc"
             },
             "require": {
                 "drupal/core": "^8.5.0-rc1"
@@ -3939,11 +3939,11 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1553098084",
+                    "version": "8.x-2.1",
+                    "datestamp": "1560794285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3962,12 +3962,16 @@
                 {
                     "name": "mark_fullmer",
                     "homepage": "https://www.drupal.org/user/2612816"
+                },
+                {
+                    "name": "twfahey",
+                    "homepage": "https://www.drupal.org/user/3403722"
                 }
             ],
             "description": "Manage which fields & layouts are available in Layout Builder",
             "homepage": "https://www.drupal.org/project/layout_builder_restrictions",
             "support": {
-                "source": "http://cgit.drupalcode.org/layout_builder_restrictions"
+                "source": "https://git.drupalcode.org/project/layout_builder_restrictions"
             }
         },
         {

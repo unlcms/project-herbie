@@ -48,12 +48,13 @@ third_party_settings:
             weight: 1
         third_party_settings: {  }
   layout_builder_restrictions:
-    allowed_blocks: {  }
-    allowed_layouts:
-      - dcf_onecol_section
-      - dcf_twocol_section
-      - dcf_threecol_section
-      - dcf_fourcol_section
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts:
+        - dcf_onecol_section
+        - dcf_twocol_section
+        - dcf_threecol_section
+        - dcf_fourcol_section
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page

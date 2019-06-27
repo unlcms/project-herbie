@@ -112,7 +112,7 @@
         "drupal/honeypot": "^1.29",
         "drupal/imagemagick": "^2.4",
         "drupal/layout_builder_modal": "^1.0@alpha",
-        "drupal/layout_builder_restrictions": "^1.5",
+        "drupal/layout_builder_restrictions": "^2.0",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/pathauto": "^1.3",
