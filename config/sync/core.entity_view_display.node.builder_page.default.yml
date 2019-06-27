@@ -49,7 +49,21 @@ third_party_settings:
         third_party_settings: {  }
   layout_builder_restrictions:
     entity_view_mode_restriction:
-      allowed_blocks: {  }
+      allowed_blocks:
+        'Chaos Tools': {  }
+        Content: {  }
+        'Content fields':
+          - 'field_block:node:builder_page:body'
+        'Custom block types':
+          - content
+        Forms: {  }
+        'Inline blocks': {  }
+        'Lists (Views)': {  }
+        Menus: {  }
+        System: {  }
+        User: {  }
+        'User fields': {  }
+        core: {  }
       allowed_layouts:
         - dcf_onecol_section
         - dcf_twocol_section
