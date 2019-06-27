@@ -1,0 +1,20 @@
+uuid: 7fbfe6d2-1584-43ee-9ff6-76bb37be3ede
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.ee_unldir_imageurl
+  module:
+    - external_entities
+id: unl_directory_entry.unl_directory_entry.ee_unldir_imageurl
+field_name: ee_unldir_imageurl
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: imageURL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -29,6 +29,8 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
+  external_entities: 0
+  external_entities_unldirectory: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -78,6 +80,7 @@ theme:
   unl_five: 0
   classy: 0
   seven: 0
+  unl_five_herbie: 0
 profile: herbie
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

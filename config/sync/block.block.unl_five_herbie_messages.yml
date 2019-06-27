@@ -1,0 +1,22 @@
+uuid: f4d9dd06-3a02-405b-904d-d16361c3a40e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_five_herbie
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: unl_five_herbie_messages
+theme: unl_five_herbie
+region: content_top
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
