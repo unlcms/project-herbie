@@ -1,0 +1,66 @@
+uuid: 17184e12-bfe6-458f-98d1-e4063e7276bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - entity_browser.browser.media_entity_browser_modal
+    - field.field.block_content.hero.b_hero_media
+    - field.field.block_content.hero.b_hero_overline
+    - field.field.block_content.hero.b_hero_size
+    - field.field.block_content.hero.b_hero_subhead
+    - field.field.block_content.hero.b_hero_title
+  module:
+    - entity_browser
+id: block_content.hero.default
+targetEntityType: block_content
+bundle: hero
+mode: default
+content:
+  b_hero_media:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_entity_browser_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_replace: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_library
+      field_widget_remove: false
+    third_party_settings: {  }
+    region: content
+  b_hero_overline:
+    weight: 2
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  b_hero_size:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  b_hero_subhead:
+    weight: 4
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  b_hero_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  info: true

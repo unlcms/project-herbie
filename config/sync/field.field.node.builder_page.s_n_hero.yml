@@ -1,0 +1,28 @@
+uuid: 1dc966ac-ade4-4984-bb29-3746426c4707
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.node.s_n_hero
+    - node.type.builder_page
+id: node.builder_page.s_n_hero
+field_name: s_n_hero
+entity_type: node
+bundle: builder_page
+label: Hero
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      hero: hero
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

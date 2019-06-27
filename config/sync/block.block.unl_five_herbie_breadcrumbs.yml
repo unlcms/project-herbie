@@ -8,8 +8,8 @@ dependencies:
     - unl_five_herbie
 id: unl_five_herbie_breadcrumbs
 theme: unl_five_herbie
-region: breadcrumb
-weight: 0
+region: hero
+weight: -3
 provider: null
 plugin: system_breadcrumb_block
 settings:

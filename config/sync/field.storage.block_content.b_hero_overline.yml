@@ -1,0 +1,21 @@
+uuid: cc53b8f2-5ecd-499c-8181-7057be7ac9f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.b_hero_overline
+field_name: b_hero_overline
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

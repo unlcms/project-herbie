@@ -1,0 +1,19 @@
+uuid: 1e43f504-8df1-47cb-a019-4d4b188d3849
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.b_hero_overline
+id: block_content.hero.b_hero_overline
+field_name: b_hero_overline
+entity_type: block_content
+bundle: hero
+label: 'Hero overline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
