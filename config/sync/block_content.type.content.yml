@@ -1,0 +1,8 @@
+uuid: 348ed4e7-92e5-46e7-a278-a17f7ddcd520
+langcode: en
+status: true
+dependencies: {  }
+id: content
+label: Content
+revision: 0
+description: 'A generic content block with a WYSIWYG editor'
