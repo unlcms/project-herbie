@@ -21,16 +21,6 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings: {  }
         components:
-          ae9af1b1-c381-413a-bba7-7f121832993c:
-            uuid: ae9af1b1-c381-413a-bba7-7f121832993c
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:builder_page:links'
-            additional: {  }
-            weight: 0
           18ed6349-0c0a-455d-b5c1-20569003edd0:
             uuid: 18ed6349-0c0a-455d-b5c1-20569003edd0
             region: content
