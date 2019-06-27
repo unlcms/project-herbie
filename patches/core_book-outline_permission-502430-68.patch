@@ -1,0 +1,260 @@
+diff --git a/core/modules/book/book.install b/core/modules/book/book.install
+index 7704483365..d0e43d3e79 100644
+--- a/core/modules/book/book.install
++++ b/core/modules/book/book.install
+@@ -133,3 +133,19 @@ function book_schema() {
+ 
+   return $schema;
+ }
++
++/**
++ * Update Book permissions.
++ *
++ * Grant 'add any content to books' permission to all roles with 'administer
++ * book outlines' permission for backward compatibility.
++ */
++function book_update_8001() {
++  $roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
++  foreach ($roles as $role) {
++    if ($role->hasPermission('administer book outlines')) {
++      $role->grantPermission('add any content to books');
++      $role->save();
++    }
++  }
++}
+diff --git a/core/modules/book/book.module b/core/modules/book/book.module
+index 8bb1bb38a5..1143fd65bf 100644
+--- a/core/modules/book/book.module
++++ b/core/modules/book/book.module
+@@ -5,7 +5,9 @@
+  * Allows users to create and organize related content in an outline.
+  */
+ 
++use Drupal\book\Access\BookNodeOutlineAccessCheck;
+ use Drupal\book\BookManager;
++use Drupal\Core\Access\AccessResultAllowed;
+ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Render\Element;
+@@ -137,15 +139,11 @@ function book_node_links_alter(array &$links, NodeInterface $node, array &$conte
+ function book_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+   $node = $form_state->getFormObject()->getEntity();
+   $account = \Drupal::currentUser();
+-  $access = $account->hasPermission('administer book outlines');
+-  if (!$access) {
+-    if ($account->hasPermission('add content to books') && ((!empty($node->book['bid']) && !$node->isNew()) || book_type_is_allowed($node->getType()))) {
+-      // Already in the book hierarchy, or this node type is allowed.
+-      $access = TRUE;
+-    }
+-  }
+ 
+-  if ($access) {
++  $access_check = new BookNodeOutlineAccessCheck($account);
++  $access_return = $access_check->access($node);
++
++  if ($access_return instanceof AccessResultAllowed) {
+     $collapsed = !($node->isNew() && !empty($node->book['pid']));
+     $form = \Drupal::service('book.manager')->addFormElements($form, $form_state, $node, $account, $collapsed);
+     // The "js-hide" class hides submit button when Javascript is enabled.
+diff --git a/core/modules/book/book.permissions.yml b/core/modules/book/book.permissions.yml
+index e3ec489f0c..4811dde9fb 100644
+--- a/core/modules/book/book.permissions.yml
++++ b/core/modules/book/book.permissions.yml
+@@ -4,6 +4,8 @@ create new books:
+   title: 'Create new books'
+ add content to books:
+   title: 'Add content and child pages to books and manage their hierarchies.'
++add any content to books:
++  title: 'Add non-book content to outlines.'
+ access printer-friendly version:
+   title: 'View printer-friendly books'
+   description: 'View a book page and all of its sub-pages as a single document for ease of printing. Can be performance heavy.'
+diff --git a/core/modules/book/book.routing.yml b/core/modules/book/book.routing.yml
+index 772a6cf391..979177d8d6 100644
+--- a/core/modules/book/book.routing.yml
++++ b/core/modules/book/book.routing.yml
+@@ -37,8 +37,8 @@ entity.node.book_outline_form:
+     _entity_form: 'node.book_outline'
+     _title: 'Outline'
+   requirements:
+-    _permission: 'administer book outlines'
+     _entity_access: 'node.view'
++    _access_node_book_outline: 'TRUE'
+     node: \d+
+   options:
+     _node_operation_route: TRUE
+@@ -61,7 +61,7 @@ entity.node.book_remove_form:
+   options:
+     _node_operation_route: TRUE
+   requirements:
+-    _permission: 'administer book outlines'
+     _entity_access: 'node.view'
++    _access_node_book_outline: 'TRUE'
+     _access_book_removable: 'TRUE'
+     node: \d+
+diff --git a/core/modules/book/book.services.yml b/core/modules/book/book.services.yml
+index 740252e85b..5a8612edc3 100644
+--- a/core/modules/book/book.services.yml
++++ b/core/modules/book/book.services.yml
+@@ -23,6 +23,11 @@ services:
+     arguments: ['@book.manager']
+     tags:
+       - { name: access_check, applies_to: _access_book_removable }
++  access_check.book.node_outline:
++    class: Drupal\book\Access\BookNodeOutlineAccessCheck
++    arguments: ['@current_user']
++    tags:
++      - { name: access_check, applies_to: _access_node_book_outline }
+   cache_context.route.book_navigation:
+     class: Drupal\book\Cache\BookNavigationCacheContext
+     arguments: ['@request_stack']
+diff --git a/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
+new file mode 100644
+index 0000000000..74e21f8a08
+--- /dev/null
++++ b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
+@@ -0,0 +1,50 @@
++<?php
++
++namespace Drupal\book\Access;
++
++use Drupal\Core\Access\AccessResult;
++use Drupal\Core\Routing\Access\AccessInterface;
++use Drupal\Core\Session\AccountInterface;
++use Drupal\node\NodeInterface;
++
++/**
++ * Determines if a node's outline settings can be accessed.
++ */
++class BookNodeOutlineAccessCheck implements AccessInterface {
++
++  /**
++   * Current logged in user.
++   *
++   * @var \Drupal\Core\Session\AccountInterface
++   */
++  protected $currentUser;
++
++  /**
++   * Constructs a BookNodeOutlineAccessCheck object.
++   *
++   * @param \Drupal\Core\Session\AccountInterface $current_user
++   *   The current logged in user.
++   */
++  public function __construct(AccountInterface $current_user) {
++    $this->currentUser = $current_user;
++  }
++
++  /**
++   * Checks if user has permission to access a node's book settings.
++   *
++   * @param \Drupal\node\NodeInterface $node
++   *   The node requested to be removed from its book.
++   *
++   * @return \Drupal\Core\Access\AccessResultInterface
++   *   The access result.
++   */
++  public function access(NodeInterface $node) {
++    // Allow access if
++    // 1) user has 'add any content to books' permission, or
++    // 2) user has 'add content to books' permission, and
++    // 2a) the node is already in a book hierarchy, or
++    // 2b) the node type is allowed as book content.
++    return AccessResult::allowedIf($this->currentUser->hasPermission('add any content to books') || ($this->currentUser->hasPermission('add content to books') && ((!empty($node->book['bid']) && !$node->isNew()) || book_type_is_allowed($node->getType()))))->addCacheableDependency($node);
++  }
++
++}
+diff --git a/core/modules/book/tests/src/Functional/BookTest.php b/core/modules/book/tests/src/Functional/BookTest.php
+index 38fdf54ac5..04904aa471 100644
+--- a/core/modules/book/tests/src/Functional/BookTest.php
++++ b/core/modules/book/tests/src/Functional/BookTest.php
+@@ -50,15 +50,34 @@ protected function setUp() {
+     parent::setUp();
+     $this->drupalPlaceBlock('system_breadcrumb_block');
+     $this->drupalPlaceBlock('page_title_block');
++    $this->drupalPlaceBlock('local_tasks_block');
+ 
+     // node_access_test requires a node_access_rebuild().
+     node_access_rebuild();
+ 
+     // Create users.
+-    $this->bookAuthor = $this->drupalCreateUser(['create new books', 'create book content', 'edit own book content', 'add content to books']);
++    $this->bookAuthor = $this->drupalCreateUser([
++      'create new books',
++      'create book content',
++      'edit own book content',
++      'add content to books',
++    ]);
+     $this->webUser = $this->drupalCreateUser(['access printer-friendly version', 'node test view']);
+     $this->webUserWithoutNodeAccess = $this->drupalCreateUser(['access printer-friendly version']);
+-    $this->adminUser = $this->drupalCreateUser(['create new books', 'create book content', 'edit any book content', 'delete any book content', 'add content to books', 'administer blocks', 'administer permissions', 'administer book outlines', 'node test view', 'administer content types', 'administer site configuration']);
++    $this->adminUser = $this->drupalCreateUser([
++      'create new books',
++      'create book content',
++      'edit any book content',
++      'delete any book content',
++      'add content to books',
++      'add any content to books',
++      'administer blocks',
++      'administer permissions',
++      'administer book outlines',
++      'node test view',
++      'administer content types',
++      'administer site configuration',
++    ]);
+   }
+ 
+   /**
+@@ -440,6 +459,52 @@ public function testBookOutline() {
+     // Test the form itself.
+     $this->drupalGet('node/' . $node->id() . '/edit');
+     $this->assertOptionSelected('edit-book-bid', $node->id());
++
++    // Create a new node that is not of book type.
++    $this->drupalLogin($this->adminUser);
++    $this->drupalCreateContentType(['type' => 'page']);
++    $non_book_node = $this->drupalCreateNode(['type' => 'page']);
++
++    // Create a non-book node and place in an outline.
++    $non_book_node_in_outline = $this->drupalCreateNode([
++      'type' => 'page',
++      'book' => [
++        'bid' => 'new',
++      ],
++    ]);
++
++    // Admin user has edit book field on all nodes.
++    $this->drupalGet('node/' . $non_book_node->id() . '/edit');
++    $this->assertFieldById('edit-book-bid');
++    // Admin user has access to outline path on all nodes.
++    $this->assertLinkByHref('node/' . $non_book_node->id() . '/outline');
++
++    // Book author user only has edit book field on allowed book type nodes.
++    $this->drupalLogin($this->bookAuthor);
++    $this->drupalGet('node/' . $non_book_node->id() . '/edit');
++    $this->assertNoFieldById('edit-book-bid');
++    // Book author user only has outline access on allowed book type nodes.
++    $this->assertNoLinkByHref('node/' . $non_book_node->id() . '/outline');
++
++    // Update bookAuthor permissions to edit page content type
++    // and view test nodes.
++    $this->bookAuthor = $this->drupalCreateUser([
++      'create new books',
++      'create book content',
++      'edit own book content',
++      'add content to books',
++      'node test view',
++      'edit any page content',
++    ]);
++    $this->drupalLogin($this->bookAuthor);
++
++    // Book author user has edit book field on non-book nodes if node is in
++    // an outline already.
++    $this->drupalGet('node/' . $non_book_node_in_outline->id() . '/edit');
++    $this->assertText('This is the top-level page in this book');
++    // Book author user has access to outline path if a node is already in
++    // an outline already.
++    $this->assertLinkByHref('node/' . $non_book_node_in_outline->id() . '/outline');
+   }
+ 
+   /**
