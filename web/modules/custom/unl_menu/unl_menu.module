@@ -75,11 +75,10 @@ function _unl_menu_menu_link_content_menu_link_content_form_validate($form, Form
   $route = Url::fromUri($uri)->getRouteName();
 
   // Only allow certain, routed URLs.
-  $allowed_routes = [
-    '<front>',
-    'entity.node.canonical',
+  $disallowed_routes = [
+    'entity.media.canonical',
   ];
-  if (!in_array($route, $allowed_routes)) {
-    $form_state->setErrorByName('link', 'Only nodes and the front page ("<front>") can be linked in a menu item.');
+  if (in_array($route, $disallowed_routes)) {
+    $form_state->setErrorByName('link', t('The path <em>@uri</em> is not allowed.', ['@uri' => $uri_parts[1]]));
   }
 }
