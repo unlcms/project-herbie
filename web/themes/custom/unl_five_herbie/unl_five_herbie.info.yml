@@ -4,6 +4,9 @@ description: 'Subtheme for unl_five.'
 core: 8.x
 base theme: unl_five
 
+libraries:
+  - unl_five_herbie/global-styling
+
 libraries-override:
   core/classList: false
   core/html5shiv: false

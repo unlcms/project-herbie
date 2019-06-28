@@ -1,0 +1,31 @@
+uuid: 09882158-4347-4129-87bd-ab21d0ee9271
+langcode: en
+status: true
+dependencies: {  }
+id: remote_video
+label: 'Remote Video'
+description: ''
+source: 'oembed:video'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  thumbnails_directory: 'public://oembed_thumbnails'
+  providers:
+    - 'UNL MediaHub'
+  source_field: field_media_oembed_video
+field_map:
+  type: m_rv_resource_type
+  title: m_rv_resource_title
+  author_name: m_rv_author_name
+  author_url: m_rv_author_url
+  provider_name: m_rv_provider_name
+  provider_url: m_rv_provider_url
+  cache_age: m_rv_suggested_cache_lifetime
+  default_name: m_rv_default_name
+  thumbnail_uri: m_rv_thumbnail_local_uri
+  thumbnail_width: m_rv_thumbnail_width
+  thumbnail_height: m_rv_thumbnail_height
+  url: m_rv_source_url
+  width: s_m_width
+  height: s_m_height
+  html: m_rv_html_representation

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * This is the module provides integration with UNL MediaHub.
+ */
+
+/**
+ * Implements hook_oembed_providers_alter().
+ */
+function unl_mediahub_oembed_providers_alter(array &$providers) {
+  // Add UNL MediaHub as oEmbed provider.
+  $providers[] = [
+    'provider_name' => 'UNL MediaHub',
+    'provider_url' => 'https://mediahub.unl.edu',
+    'endpoints' => [
+      [
+        'schemes' => [
+          'https://mediahub.unl.edu/media/*',
+          'http://mediahub.unl.edu/media/*',
+        ],
+        'url' => 'https://mediahub.unl.edu/oembed',
+        'discovery' => 'false',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function unl_mediahub_media_source_info_alter(array &$sources) {
+  // Overwrite default providers.
+  $sources['oembed:video']['providers'] = ['UNL MediaHub'];
+}

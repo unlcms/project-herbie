@@ -1,0 +1,209 @@
+diff --git a/block_content_permissions.module b/block_content_permissions.module
+index 7cda48e..c2100d0 100644
+--- a/block_content_permissions.module
++++ b/block_content_permissions.module
+@@ -108,3 +108,29 @@ function block_content_permissions_views_query_alter(ViewExecutable $view, Query
+     }
+   }
+ }
++
++/**
++ * Implements hook_local_tasks_alter().
++ */
++function block_content_permissions_local_tasks_alter(&$local_tasks) {
++  // Move block content page and rename.
++  $local_tasks['entity.block_content.collection']['base_route'] = 'system.admin_content';
++  $local_tasks['entity.block_content.collection']['title'] = t('Custom blocks');
++  // Remove local task for block type page.
++  unset($local_tasks['entity.block_content_type.collection']);
++}
++
++/**
++ * Implements hook_menu_links_discovered_alter().
++ */
++function block_content_permissions_menu_links_discovered_alter(&$links) {
++  // Add menu link for block type page.
++  $links['entity.block_content_type.collection'] = [
++    'title' => t('Block types'),
++    'route_name' => 'entity.block_content_type.collection',
++    'description' => t('Manage block types.'),
++    'parent' => 'system.admin_structure',
++    'provider' => 'block_content',
++    'id' => 'entity.block_content_type.collection',
++  ];
++}
+diff --git a/block_content_permissions.permissions.yml b/block_content_permissions.permissions.yml
+index df646c5..1de6b5a 100644
+--- a/block_content_permissions.permissions.yml
++++ b/block_content_permissions.permissions.yml
+@@ -1,3 +1,6 @@
++access block content overview:
++  title: 'Access the Block Content overview page'
++  description: ''
+ administer block content types:
+   title: 'Administer block content types'
+   description: 'Maintain the types of block content available.'
+diff --git a/block_content_permissions.services.yml b/block_content_permissions.services.yml
+index 3a33c01..9c4daa4 100644
+--- a/block_content_permissions.services.yml
++++ b/block_content_permissions.services.yml
+@@ -1,4 +1,8 @@
+ services:
++  block_content_permissions.overrider:
++    class: \Drupal\block_content_permissions\Overrides
++    tags:
++      - {name: config.factory.override, priority: 5}
+   block_content_permissions.route_subscriber:
+     class: Drupal\block_content_permissions\Routing\RouteSubscriber
+     tags:
+diff --git a/src/AccessControlHandler.php b/src/AccessControlHandler.php
+index 832d457..3ba7b5b 100644
+--- a/src/AccessControlHandler.php
++++ b/src/AccessControlHandler.php
+@@ -93,17 +93,6 @@ class AccessControlHandler implements ContainerInjectionInterface {
+     return $this->currentUser;
+   }
+ 
+-  /**
+-   * Access check for the block content type administer pages and forms.
+-   *
+-   * @return \Drupal\Core\Access\AccessResult
+-   *   An access result.
+-   */
+-  public function blockContentTypeAdministerAccess() {
+-    $account = $this->currentUser();
+-    return AccessResult::allowedIfHasPermission($account, 'administer block content types');
+-  }
+-
+   /**
+    * Access check for the block content add page.
+    *
+diff --git a/src/Overrides.php b/src/Overrides.php
+new file mode 100644
+index 0000000..145b35d
+--- /dev/null
++++ b/src/Overrides.php
+@@ -0,0 +1,49 @@
++<?php
++
++namespace Drupal\block_content_permissions;
++
++use Drupal\Core\Cache\CacheableMetadata;
++use Drupal\Core\Config\ConfigFactoryOverrideInterface;
++use Drupal\Core\Config\StorageInterface;
++
++/**
++ * Overrides for the block content permissions.
++ */
++class Overrides implements ConfigFactoryOverrideInterface {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function loadOverrides($names) {
++    $overrides = [];
++    if (in_array('views.view.block_content', $names)) {
++      $overrides['views.view.block_content']['display']['default']['display_options']['title'] = 'Custom blocks';
++      $overrides['views.view.block_content']['display']['default']['display_options']['access']['options']['perm'] = 'access block content overview';
++      $overrides['views.view.block_content']['display']['page_1']['display_options']['path'] = 'admin/content/block-content';
++    }
++
++    return $overrides;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getCacheSuffix() {
++    return 'Overrider';
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getCacheableMetadata($name) {
++    return new CacheableMetadata();
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function createConfigObject($name, $collection = StorageInterface::DEFAULT_COLLECTION) {
++    return NULL;
++  }
++
++}
+diff --git a/src/Routing/RouteSubscriber.php b/src/Routing/RouteSubscriber.php
+index b38dc3e..1bcc53d 100644
+--- a/src/Routing/RouteSubscriber.php
++++ b/src/Routing/RouteSubscriber.php
+@@ -22,24 +22,17 @@ class RouteSubscriber extends RouteSubscriberBase {
+    * {@inheritdoc}
+    */
+   public function alterRoutes(RouteCollection $collection) {
+-    // Change access callback for the block content type pages.
+-    $routeNames = [
+-      'entity.block_content_type.collection',
+-      'block_content.type_add',
+-    ];
+-    foreach ($routeNames as $name) {
+-      if ($route = $collection->get($name)) {
+-        $route->addRequirements([
+-          '_custom_access' => $this->AccessControlHandlerClassName . '::blockContentTypeAdministerAccess',
+-        ]);
+-        // Remove required "administer blocks" permission.
+-        $this->removePermissionRequirement($route);
+-      }
++    // Move block content listing page; replace permission requirement.
++    if ($route = $collection->get('entity.block_content.collection')) {
++      $route->setPath('admin/content/block-content');
++      $route->setDefault(
++        '_title', 'Custom blocks'
++      );
++      $route->addRequirements([
++        '_permission' => 'access block content overview',
++      ]);
+     }
+ 
+-    /* Change access callback for the block content collection page. */
+-    /* "entity.block_content.collection" route name does not work. */
+-
+     // Change access and controller callback for the block content add page.
+     if ($route = $collection->get('block_content.add_page')) {
+       $route->addRequirements([
+@@ -61,6 +54,35 @@ class RouteSubscriber extends RouteSubscriberBase {
+       // Remove required "administer blocks" permission.
+       $this->removePermissionRequirement($route);
+     }
++
++    // Move block type listing page; replace permission requirement.
++    if ($route = $collection->get('entity.block_content_type.collection')) {
++      $route->setPath('admin/structure/block-types');
++      $route->setDefault(
++        '_title', 'Block types'
++      );
++      $route->addRequirements([
++        '_permission' => 'administer block content types',
++      ]);
++    }
++
++    // Replacement permission requirement for add block type route.
++    if ($route = $collection->get('block_content.type_add')) {
++      $route->addRequirements([
++        '_permission' => 'administer block content types',
++      ]);
++    }
++
++    // Move block type type edit page.
++    if ($route = $collection->get('entity.block_content_type.edit_form')) {
++      $route->setPath('admin/structure/block-types/manage/{block_content_type}');
++    }
++
++    // Move block type type delete page.
++    if ($route = $collection->get('entity.block_content_type.delete_form')) {
++      $route->setPath('admin/structure/block-types/manage/{block_content_type}/delete');
++    }
++
+   }
+ 
+   /**

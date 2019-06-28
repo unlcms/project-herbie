@@ -1,0 +1,10 @@
+uuid: f7d2d951-ac35-4a4b-bbc9-4b9a93bf1600
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.remote_video
+label: 'Remote Video'
+targetEntityType: media
+cache: true
