@@ -2323,8 +2323,6 @@
             "homepage": "https://www.drupal.org/project/block_type_templates",
             "support": {
                 "source": "http://cgit.drupalcode.org/block_type_templates"
-<<<<<<< HEAD
-=======
             }
         },
         {
@@ -2374,7 +2372,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/body_scroll_lock",
                 "issues": "https://www.drupal.org/project/issues/body_scroll_lock"
->>>>>>> e0802afcff981dedf9f1bc8ef30f4ffdfa53c59a
             }
         },
         {
