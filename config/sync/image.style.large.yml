@@ -1,7 +1,9 @@
 uuid: ae001af2-2266-4157-aa03-a753cb77c59d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 _core:
   default_config_hash: J2n0RpFzS0-bgSyxjs6rSdgxB1rb-bTAgqywNx_964M
 name: large
@@ -10,8 +12,14 @@ effects:
   ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d:
     uuid: ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d
     id: image_scale
-    weight: 0
+    weight: -9
     data:
       width: 480
       height: 480
       upscale: false
+  3b2e375e-d2c8-485c-80b9-2b49e7fbc9aa:
+    uuid: 3b2e375e-d2c8-485c-80b9-2b49e7fbc9aa
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

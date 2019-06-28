@@ -1,0 +1,25 @@
+uuid: 05e9287c-feea-471a-8f4c-b19b8e0e184c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_unldirectoryreference
+    - node.type.person
+id: node.person.n_person_unldirectoryreference
+field_name: n_person_unldirectoryreference
+entity_type: node
+bundle: person
+label: 'UNL Directory Reference'
+description: 'For fastest results, enter a My.UNL ID such as <em>hhusker1</em>. Searching by name may return a limited set of results.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:unl_directory_entry'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

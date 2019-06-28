@@ -1,0 +1,25 @@
+uuid: b094ffbc-f997-4fe0-a38e-5e60b4ccd63b
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+_core:
+  default_config_hash: kyNpSwmg-lAVp2WSkg0mEkXaF6nvxrj_xxHqM6iPoCU
+name: media_entity_browser_thumbnail
+label: 'Media Entity Browser thumbnail'
+effects:
+  1d899e87-51e4-4467-90db-e516c31d4688:
+    uuid: 1d899e87-51e4-4467-90db-e516c31d4688
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 350
+      height: 200
+      anchor: center-center
+  490c0ca0-de16-4f9e-b307-be10f901042f:
+    uuid: 490c0ca0-de16-4f9e-b307-be10f901042f
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

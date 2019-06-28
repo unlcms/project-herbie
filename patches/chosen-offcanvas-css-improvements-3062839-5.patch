@@ -1,0 +1,81 @@
+diff --git a/css/chosen-drupal.css b/css/chosen-drupal.css
+index 5999dc9..6d627c2 100644
+--- a/css/chosen-drupal.css
++++ b/css/chosen-drupal.css
+@@ -38,3 +38,76 @@
+   display: block;
+   clear: both;
+ }
++
++/* Slide out settings tray: "input" element. */
++
++#drupal-off-canvas .chosen-container {
++  display: block !important;
++  padding: 0 !important;
++}
++
++#drupal-off-canvas .chosen-choices {
++  background-color: #eee !important;
++  border-color: #333 !important;
++  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
++  color: #595959;
++  margin: 5px 0 0 0;
++  padding: 0 5px;
++}
++
++#drupal-off-canvas .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
++  background-color: #eee !important;
++  border-color: #333 !important;
++  box-sizing: border-box;
++  border-width: 1px;
++  color: #595959;
++  display: block;
++  font-family: inherit;
++  font-size: 14px;
++  line-height: 16px;
++  max-width: 100%;
++  padding: 6px;
++}
++
++/* Slide out settings tray: drop-down. */
++
++#drupal-off-canvas .chosen-container .chosen-results li {
++  margin: 0;
++  padding: 5px 6px;
++}
++
++#drupal-off-canvas .chosen-container .chosen-results li.highlighted {
++  background-color: #3875d7;
++  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
++  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
++  color: #fff;
++}
++
++/* Slide out settings tray: selected item. */
++
++#drupal-off-canvas .chosen-container-multi .chosen-choices li.search-choice {
++  background-clip: padding-box;
++  background-color: #eeeeee;
++  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), to(#eee));
++  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
++  background-size: 100% 19px;
++  background-repeat: repeat-x;
++  border: 1px solid #aaa;
++  box-shadow: 0 0 2px #fff inset,0 1px 0 rgba(0,0,0,0.05);
++  -webkit-box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
++  color: #333;
++  margin: 3px 5px 3px 0;
++  padding: 3px 20px 3px 5px;
++}
++
++#drupal-off-canvas .chosen-container-multi .chosen-choices li.search-choice span {
++  background: transparent;
++  color: #333;
++}
++
++#drupal-off-canvas .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
++  background: url("/libraries/chosen/chosen-sprite.png") -42px 1px no-repeat;
++  font-size: 1px;
++  height: 12px;
++}
++

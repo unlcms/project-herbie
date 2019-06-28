@@ -1,0 +1,23 @@
+uuid: 13d765ee-0f3a-4722-8824-0d55f4b813df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_website
+    - node.type.person
+  module:
+    - link
+id: node.person.n_person_website
+field_name: n_person_website
+entity_type: node
+bundle: person
+label: 'Personal website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
