@@ -1,0 +1,13 @@
+diff --git a/js/plugins/drupalentity/plugin.js b/js/plugins/drupalentity/plugin.js
+index 2548fe2..895a75b 100644
+--- a/js/plugins/drupalentity/plugin.js
++++ b/js/plugins/drupalentity/plugin.js
+@@ -83,7 +83,7 @@
+           return ourFocusedWidget;
+         }
+         // If drupalimage is loaded, call that next, to not break its link command integration.
+-        if (CKEDITOR.plugins.drupalimage) {
++        if (originalGetFocusedWidget) {
+           return originalGetFocusedWidget(editor);
+         }
+         return null;

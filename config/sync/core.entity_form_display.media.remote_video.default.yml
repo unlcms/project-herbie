@@ -1,0 +1,217 @@
+uuid: 879f691a-8f16-48d4-a3bd-e145ac3fd4c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.m_rv_author_name
+    - field.field.media.remote_video.m_rv_author_url
+    - field.field.media.remote_video.m_rv_default_name
+    - field.field.media.remote_video.m_rv_html_representation
+    - field.field.media.remote_video.m_rv_provider_name
+    - field.field.media.remote_video.m_rv_provider_url
+    - field.field.media.remote_video.m_rv_resource_title
+    - field.field.media.remote_video.m_rv_resource_type
+    - field.field.media.remote_video.m_rv_source_url
+    - field.field.media.remote_video.m_rv_suggested_cache_lifetime
+    - field.field.media.remote_video.m_rv_thumbnail_height
+    - field.field.media.remote_video.m_rv_thumbnail_local_uri
+    - field.field.media.remote_video.m_rv_thumbnail_width
+    - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_width
+    - media.type.remote_video
+  module:
+    - field_group
+    - media
+    - path
+third_party_settings:
+  field_group:
+    group_m_remote_video_attributes:
+      children:
+        - m_rv_resource_type
+        - m_rv_resource_title
+        - m_rv_author_name
+        - m_rv_author_url
+        - m_rv_provider_name
+        - m_rv_provider_url
+        - m_rv_suggested_cache_lifetime
+        - m_rv_default_name
+        - m_rv_thumbnail_local_uri
+        - m_rv_thumbnail_width
+        - m_rv_thumbnail_height
+        - m_rv_source_url
+        - s_m_height
+        - s_m_width
+        - m_rv_html_representation
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hidden
+        description: ''
+        required_fields: true
+      label: Attributes
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_oembed_video:
+    type: oembed_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  m_rv_author_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_author_url:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_default_name:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_html_representation:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_provider_name:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_provider_url:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_resource_title:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_resource_type:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_source_url:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_suggested_cache_lifetime:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_height:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_local_uri:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  m_rv_thumbnail_width:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  s_m_height:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  s_m_width:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  name: true

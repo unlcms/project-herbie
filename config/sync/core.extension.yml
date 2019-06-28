@@ -25,10 +25,16 @@ module:
   dblog: 0
   dcf_classes: 0
   dcf_ckeditor: 0
+  dcf_classes: 0
   dcf_layouts: 0
   diff: 0
   dynamic_page_cache: 0
   editor: 0
+  embed: 0
+  entity_browser: 0
+  entity_browser_entity_form: 0
+  entity_embed: 0
+  entity_usage: 0
   external_entities: 0
   external_entities_unldirectory: 0
   field: 0
@@ -37,22 +43,29 @@ module:
   file: 0
   file_mdm: 0
   file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   honeypot: 0
   image: 0
+  image_effects: 0
   imagemagick: 0
+  inline_entity_form: 0
   layout_builder: 0
   layout_builder_modal: 0
   layout_builder_restrictions: 0
   layout_discovery: 0
   link: 0
+  linkit: 0
   media: 0
+  media_entity_browser: 0
+  media_library: 0
   menu_block: 0
   menu_ui: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
+  responsive_image: 0
   shortcut: 0
   syslog: 0
   system: 0
@@ -63,7 +76,10 @@ module:
   toolbar: 0
   unl_cas: 0
   unl_five_ckeditor: 0
+  unl_media: 0
+  unl_mediahub: 0
   unl_user: 0
+  unl_utility: 0
   unl_webform: 0
   user: 0
   views_ui: 0
