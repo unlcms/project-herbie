@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32cec477722dc7e2ac3cb294a0b3cccc",
+    "content-hash": "487da1ac393e916f0510a170e8165033",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2171,7 +2171,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.26",
-                    "datestamp": "1558552081",
+                    "datestamp": "1549559402",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2272,7 +2272,7 @@
             "description": "Limit which text formats are available for each field instance.",
             "homepage": "https://www.drupal.org/project/allowed_formats",
             "support": {
-                "source": "https://git.drupalcode.org/project/allowed_formats"
+                "source": "http://cgit.drupalcode.org/allowed_formats"
             }
         },
         {
@@ -2322,7 +2322,56 @@
             "description": "Adds a theme suggestion for a template per block type.",
             "homepage": "https://www.drupal.org/project/block_type_templates",
             "support": {
-                "source": "https://git.drupalcode.org/project/block_type_templates"
+                "source": "http://cgit.drupalcode.org/block_type_templates"
+            }
+        },
+        {
+            "name": "drupal/body_scroll_lock",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/body_scroll_lock.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/body_scroll_lock-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "2c1810b347b576522dd314b9c7fdd8548cfb02d1"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1558767188",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kay Leung",
+                    "homepage": "https://www.drupal.org/u/droplet",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Disable body-level scrolling when a dialog is open as a modal.",
+            "homepage": "https://www.drupal.org/project/body_scroll_lock",
+            "support": {
+                "source": "https://git.drupalcode.org/project/body_scroll_lock",
+                "issues": "https://www.drupal.org/project/issues/body_scroll_lock"
             }
         },
         {
@@ -2355,6 +2404,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2503,7 +2555,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-rc1",
-                    "datestamp": "1557181381",
+                    "datestamp": "1556038981",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3673,7 +3725,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1560008285",
+                    "datestamp": "1560529385",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3757,7 +3809,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha8",
-                    "datestamp": "1541781780",
+                    "datestamp": "1561364886",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -3786,6 +3838,77 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_usage",
                 "issues": "http://drupal.org/project/issues/entity_usage"
+            }
+        },
+        {
+            "name": "drupal/external_entities",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/external_entities.git",
+                "reference": "8.x-2.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/external_entities-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "63860675daaffa88ef8244e927712cbf1dbb5859"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1560935889",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hanno",
+                    "homepage": "https://www.drupal.org/user/18826"
+                },
+                {
+                    "name": "Jelle_S",
+                    "homepage": "https://www.drupal.org/user/829198"
+                },
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                },
+                {
+                    "name": "attiks",
+                    "homepage": "https://www.drupal.org/user/105002"
+                },
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "rodrigoaguilera",
+                    "homepage": "https://www.drupal.org/user/408170"
+                },
+                {
+                    "name": "rp7",
+                    "homepage": "https://www.drupal.org/user/219330"
+                }
+            ],
+            "description": "Allows using remote entities, for example through a REST interface.",
+            "homepage": "https://www.drupal.org/project/external_entities",
+            "support": {
+                "source": "https://git.drupalcode.org/project/external_entities"
             }
         },
         {
@@ -3848,7 +3971,7 @@
             "description": "Provides the field_group module.",
             "homepage": "https://www.drupal.org/project/field_group",
             "support": {
-                "source": "https://git.drupalcode.org/project/field_group"
+                "source": "http://cgit.drupalcode.org/field_group"
             }
         },
         {
@@ -3901,7 +4024,7 @@
             "description": "Provides a service to manage file metadata.",
             "homepage": "https://www.drupal.org/project/file_mdm",
             "support": {
-                "source": "https://git.drupalcode.org/project/file_mdm"
+                "source": "http://cgit.drupalcode.org/file_mdm"
             }
         },
         {
@@ -3941,7 +4064,7 @@
             "description": "Provides a file metadata plugin for EXIF image information.",
             "homepage": "https://www.drupal.org/project/file_mdm",
             "support": {
-                "source": "https://git.drupalcode.org/project/file_mdm"
+                "source": "http://cgit.drupalcode.org/file_mdm"
             }
         },
         {
@@ -4135,7 +4258,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.4",
-                    "datestamp": "1559221681",
+                    "datestamp": "1550680836",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4195,7 +4318,7 @@
             "description": "Provides an image toolkit to integrate ImageMagick with the Image API.",
             "homepage": "https://www.drupal.org/project/imagemagick",
             "support": {
-                "source": "https://git.drupalcode.org/project/imagemagick"
+                "source": "http://cgit.drupalcode.org/imagemagick"
             }
         },
         {
@@ -4273,6 +4396,71 @@
             }
         },
         {
+            "name": "drupal/layout_builder_modal",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/layout_builder_modal.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_modal-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "976dfb4a433f3f3f766e45113ba8fff55bc18b0b"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1557170581",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "patches_applied": {
+                    "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John Svensson",
+                    "homepage": "https://www.drupal.org/u/johndevman",
+                    "email": "john@kodamera.se",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Emil Johnsson",
+                    "homepage": "https://www.drupal.org/u/johnzzon",
+                    "email": "emil@kodamera.se",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Henrik Larsson",
+                    "email": "henrik@kodamera.se",
+                    "homepage": "https://www.drupal.org/u/henriklarsson",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Open blocks in a modal in the Layout Builder UI.",
+            "homepage": "https://www.drupal.org/project/layout_builder_modal",
+            "support": {
+                "source": "http://cgit.drupalcode.org/layout_builder_modal",
+                "issues": "https://www.drupal.org/project/issues/layout_builder_modal"
+            }
+        },
+        {
             "name": "drupal/layout_builder_restrictions",
             "version": "1.5.0",
             "source": {
@@ -4318,10 +4506,6 @@
                 {
                     "name": "mark_fullmer",
                     "homepage": "https://www.drupal.org/user/2612816"
-                },
-                {
-                    "name": "twfahey",
-                    "homepage": "https://www.drupal.org/user/3403722"
                 }
             ],
             "description": "Manage which fields & layouts are available in Layout Builder",
@@ -4452,6 +4636,57 @@
             "time": "2019-01-04T04:57:51+00:00"
         },
         {
+            "name": "drupal/menu_admin_per_menu",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_admin_per_menu.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_admin_per_menu-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "27dbef0025146a382feab67db5e93eaf280b8de4"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1507184944",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anrikun",
+                    "homepage": "https://www.drupal.org/user/410199"
+                },
+                {
+                    "name": "mkdok",
+                    "homepage": "https://www.drupal.org/user/3308753"
+                }
+            ],
+            "description": "Allows to give roles per menu admin permissions without giving them full administer menu permission.",
+            "homepage": "https://www.drupal.org/project/menu_admin_per_menu",
+            "support": {
+                "source": "https://git.drupalcode.org/project/menu_admin_per_menu"
+            }
+        },
+        {
             "name": "drupal/menu_block",
             "version": "1.5.0",
             "source": {
@@ -4511,7 +4746,7 @@
             "description": "Provides configurable blocks of menu links.",
             "homepage": "https://www.drupal.org/project/menu_block",
             "support": {
-                "source": "https://git.drupalcode.org/project/menu_block"
+                "source": "http://cgit.drupalcode.org/menu_block"
             }
         },
         {
@@ -4639,7 +4874,7 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "https://git.drupalcode.org/project/token"
+                "source": "http://cgit.drupalcode.org/token"
             }
         },
         {
@@ -4681,7 +4916,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.2",
-                    "datestamp": "1557418583",
+                    "datestamp": "1553801966",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7482,7 +7717,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -8515,6 +8750,35 @@
                 "reference": "develop"
             },
             "type": "library"
+        },
+        {
+            "name": "unlcms/external_entities_unldirectory",
+            "version": "dev-8.x-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/external_entities_unldirectory.git",
+                "reference": "2f21ee3b632ef09bed11177bda7c01af6c05d42a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/2f21ee3b632ef09bed11177bda7c01af6c05d42a",
+                "reference": "2f21ee3b632ef09bed11177bda7c01af6c05d42a",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/external_entities": "2.0.*"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Reference UNL Directory data as external entities.",
+            "time": "2019-05-31T18:15:08+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -9712,7 +9976,7 @@
             "time": "2019-01-14T23:55:14+00:00"
         },
         {
-            "name": "mikey179/vfsstream",
+            "name": "mikey179/vfsStream",
             "version": "v1.6.6",
             "source": {
                 "type": "git",
@@ -11336,8 +11600,11 @@
         "drupal/diff": 5,
         "drupal/entity_embed": 5,
         "drupal/entity_usage": 15,
+        "drupal/external_entities": 15,
         "drupal/inline_entity_form": 5,
+        "drupal/layout_builder_modal": 15,
         "drupal/media_entity_browser": 20,
+        "unlcms/external_entities_unldirectory": 20,
         "unlcms/unl_cas": 20,
         "unlcms/unl_five": 20
     },
