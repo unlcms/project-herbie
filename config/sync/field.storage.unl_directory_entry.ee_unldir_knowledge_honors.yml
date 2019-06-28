@@ -1,0 +1,19 @@
+uuid: e6955837-be13-4dd2-954a-28e489eda460
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: unl_directory_entry.ee_unldir_knowledge_honors
+field_name: ee_unldir_knowledge_honors
+entity_type: unl_directory_entry
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

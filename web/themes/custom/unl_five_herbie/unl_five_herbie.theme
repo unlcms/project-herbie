@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * Implements template_preprocess_page().
+ */
+function unl_five_herbie_preprocess_page(&$variables) {
+  // Hide the hero region page title on Person nodes.
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameters()->get('node');
+  if ($node) {
+    $bundle = $node->bundle();
+
+    switch ($bundle) {
+      case ('person'):
+        $variables['unl_no_page_title'] = TRUE;
+        break;
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_region().
  */
 function unl_five_herbie_preprocess_region(&$variables) {

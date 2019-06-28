@@ -3,3 +3,8 @@ global-styling:
   css:
     theme:
       css/media.css: {}
+person:
+  version: VERSION
+  css:
+    theme:
+      css/theme/person.css: {}

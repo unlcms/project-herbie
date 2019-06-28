@@ -1,0 +1,19 @@
+uuid: 4b82789f-4700-42d4-9986-504a1e936987
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_address
+    - node.type.person
+id: node.person.n_person_address
+field_name: n_person_address
+entity_type: node
+bundle: person
+label: Address
+description: "<b>Format:</b><br> \r\nBuilding Abbreviation Room Number<br> \r\nCity<br> \r\nState<br> \r\nZip Code<br> "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
