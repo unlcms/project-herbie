@@ -97,6 +97,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
+        "drupal/block_content_permissions": "^1.6",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
@@ -207,6 +208,9 @@
                 "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
+            },
+            "drupal/block_content_permissions": {
+                "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
             },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
