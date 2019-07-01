@@ -8231,12 +8231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "de665ce19e9dc120025e97f1cddc961536c97c6d"
+                "reference": "ffbd0ccb83ec38771e428ab0d71eeb8822e91b53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/de665ce19e9dc120025e97f1cddc961536c97c6d",
-                "reference": "de665ce19e9dc120025e97f1cddc961536c97c6d",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/ffbd0ccb83ec38771e428ab0d71eeb8822e91b53",
+                "reference": "ffbd0ccb83ec38771e428ab0d71eeb8822e91b53",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -8249,7 +8249,7 @@
                 }
             ],
             "description": "Admin interface to create and manage multiple site installations.",
-            "time": "2019-04-24T20:35:51+00:00"
+            "time": "2019-07-01T17:52:52+00:00"
         },
         {
             "name": "unlcms/unl_user",
