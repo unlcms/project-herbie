@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a899703e70bd3ace00b4e49e50d2dae1",
+    "content-hash": "99b9d68813dec53fc0ea6fd7a26892cf",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3919,6 +3919,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-inline_entity_form_alter_check_type_sooner-3065268-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
