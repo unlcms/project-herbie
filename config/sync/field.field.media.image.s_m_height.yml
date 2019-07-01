@@ -1,0 +1,19 @@
+uuid: fcd2a498-970f-4695-9ff6-63c7f41cf318
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_height
+    - media.type.image
+id: media.image.s_m_height
+field_name: s_m_height
+entity_type: media
+bundle: image
+label: Height
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: a6109145-a59b-445b-8c16-dce08805e08d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_rv_thumbnail_width
+field_name: m_rv_thumbnail_width
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

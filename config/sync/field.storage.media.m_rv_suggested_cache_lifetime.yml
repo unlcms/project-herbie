@@ -1,0 +1,21 @@
+uuid: f4c76255-3ce0-4910-bdaa-d648b738a0cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_rv_suggested_cache_lifetime
+field_name: m_rv_suggested_cache_lifetime
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

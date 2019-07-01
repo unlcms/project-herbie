@@ -1,0 +1,5 @@
+media_metadata:
+  version: VERSION
+  css:
+    theme:
+      css/media_metadata.css: {}

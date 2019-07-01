@@ -97,6 +97,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
+        "drupal/block_content_permissions": "^1.6",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
@@ -107,12 +108,20 @@
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
         "drupal/diff": "^1.0@RC",
+        "drupal/embed": "^1.0",
+        "drupal/entity_browser": "^2.1",
+        "drupal/entity_embed": "^1.0@RC",
+        "drupal/entity_usage": "^2.0@alpha",
         "drupal/external_entities": "^2.0@alpha",
         "drupal/field_group": "^1.0",
         "drupal/honeypot": "^1.29",
+        "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_modal": "^1.0@alpha",
-        "drupal/layout_builder_restrictions": "^1.5",
+        "drupal/layout_builder_restrictions": "^2.0",
+        "drupal/linkit": "^5.0",
+        "drupal/media_entity_browser": "2.x-dev#ff5532ec8a7a8aff89415624de1b17d7697557ad",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/pathauto": "^1.3",
@@ -197,7 +206,12 @@
             "drupal/core": {
                 "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                 "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
+                "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
+                "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
+            },
+            "drupal/block_content_permissions": {
+                "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
             },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
@@ -207,6 +221,13 @@
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
+            },
+            "drupal/entity_embed": {
+                "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
+            },
+            "drupal/linkit": {
+              "3040749 - Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch",
+              "3063393 - Remove '/edit' from media entity paths": "patches/linkit-media_entity_update_canonical_path-3063393-2.patch"
             },
             "drupal/layout_builder_modal": {
                 "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
