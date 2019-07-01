@@ -1,0 +1,10 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/media.css: {}
+person:
+  version: VERSION
+  css:
+    theme:
+      css/theme/person.css: {}

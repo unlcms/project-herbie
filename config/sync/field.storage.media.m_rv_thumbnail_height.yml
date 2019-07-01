@@ -1,0 +1,21 @@
+uuid: b9b2867d-1dbb-4825-ac80-92cfe93dba76
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_rv_thumbnail_height
+field_name: m_rv_thumbnail_height
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: bc0b097b-61e6-48a6-96cf-9462ada5bff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.ee_unldir_knowledgepresentations
+  module:
+    - external_entities
+id: unl_directory_entry.unl_directory_entry.ee_unldir_knowledgepresentations
+field_name: ee_unldir_knowledgepresentations
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: knowledge_presentations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

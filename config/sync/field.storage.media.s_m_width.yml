@@ -1,0 +1,21 @@
+uuid: cfdc0932-47a3-4305-9b45-5ff1bbd93604
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.s_m_width
+field_name: s_m_width
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+/* Remove whitespace under element */
+.embedded-entity .contextual-region {
+  display: grid;
+}
+
+/* Set width for embedded entity and for optional figure element */
+.embedded-entity.view-mode--narrow,
+.figure-embedded-entity.view-mode--narrow {
+  width: 50%;
+}
+
+.embedded-entity.view-mode--wide,
+.figure-embedded-entity.view-mode--wide {
+  width: 100%;
+}
+
+/* If figure element wraps embedded entity, then set size is set there */
+.figure-embedded-entity .embedded-entity {
+  width: 100%;
+}
+
+.embedded-entity.view-mode--narrow img,
+.embedded-entity.view-mode--wide img {
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+uuid: 954e4721-8b2a-4376-a271-fd7608e181d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_rv_resource_title
+field_name: m_rv_resource_title
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

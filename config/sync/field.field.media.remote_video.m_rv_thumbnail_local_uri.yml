@@ -1,0 +1,19 @@
+uuid: 60b26564-b5f8-427a-a7cc-b06ea6f5d5a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.m_rv_thumbnail_local_uri
+    - media.type.remote_video
+id: media.remote_video.m_rv_thumbnail_local_uri
+field_name: m_rv_thumbnail_local_uri
+entity_type: media
+bundle: remote_video
+label: 'Local URI of the thumbnail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

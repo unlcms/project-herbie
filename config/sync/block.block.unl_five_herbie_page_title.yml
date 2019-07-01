@@ -1,0 +1,20 @@
+uuid: 7b7ad9a8-bf0c-4980-a9b8-bd1ad6ca418f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_five_herbie
+_core:
+  default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
+id: unl_five_herbie_page_title
+theme: unl_five_herbie
+region: pagetitle
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 64262172-1bd8-49d6-94a2-6b8ffa47268b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.s_m_mime_type
+field_name: s_m_mime_type
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

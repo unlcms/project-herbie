@@ -1,0 +1,19 @@
+uuid: abf89caa-7599-49c4-ae4e-ea686562a4c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_mime_type
+    - media.type.file
+id: media.file.s_m_mime_type
+field_name: s_m_mime_type
+entity_type: media
+bundle: file
+label: 'MIME type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
