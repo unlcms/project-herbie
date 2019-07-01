@@ -23,7 +23,7 @@ index 7704483365..d0e43d3e79 100644
 +  }
 +}
 diff --git a/core/modules/book/book.module b/core/modules/book/book.module
-index 8bb1bb38a5..1143fd65bf 100644
+index 8bb1bb38a5..0a4afc3a0c 100644
 --- a/core/modules/book/book.module
 +++ b/core/modules/book/book.module
 @@ -5,7 +5,9 @@
@@ -36,6 +36,15 @@ index 8bb1bb38a5..1143fd65bf 100644
  use Drupal\Core\Entity\EntityInterface;
  use Drupal\Core\Form\FormStateInterface;
  use Drupal\Core\Render\Element;
+@@ -30,7 +32,7 @@ function book_help($route_name, RouteMatchInterface $route_match) {
+       $output .= '<dl>';
+       $output .= '<dt>' . t('Adding and managing book content') . '</dt>';
+       $output .= '<dd>' . t('Books have a hierarchical structure, called a <em>book outline</em>. Each book outline can have nested pages up to nine levels deep. Multiple content types can be configured to behave as a book outline. From the content edit form, it is possible to add a page to a book outline or create a new book.') . '</dd>';
+-      $output .= '<dd>' . t('You can assign separate permissions for <em>creating new books</em> as well as <em>creating</em>, <em>editing</em> and <em>deleting</em> book content. Users with the <em>Administer book outlines</em> permission can add <em>any</em> type of content to a book by selecting the appropriate book outline while editing the content. They can also view a list of all books, and edit and rearrange section titles on the <a href=":admin-book">Book list page</a>.', [':admin-book' => Url::fromRoute('book.admin')->toString()]) . '</dd>';
++      $output .= '<dd>' . t('You can assign separate permissions for <em>creating new books</em> as well as <em>creating</em>, <em>editing</em> and <em>deleting</em> book content. Users with the <em>Add content and child pages to books and manage their hierarchies</em> permission can add book content to a book by selecting the appropriate book outline while editing the content. Users with the <em>Add non-book content to outlines</em> permission can add <em>any</em> type of content to a book. Users with the <em>Administer book outlines</em> permission can view a list of all books, and edit and rearrange section titles on the <a href=":admin-book">Book list page</a>.', [':admin-book' => Url::fromRoute('book.admin')->toString()]) . '</dd>';
+       $output .= '<dt>' . t('Configuring content types for books') . '</dt>';
+       $output .= '<dd>' . t('The <em>Book page</em> content type is the initial content type enabled for book outlines. On the <a href=":admin-settings">Book settings page</a> you can configure content types that can used in book outlines.', [':admin-settings' => Url::fromRoute('book.settings')->toString()]) . '</dd>';
+       $output .= '<dd>' . t('Users with the <em>Add content and child pages to books</em> permission will see a link to <em>Add child page</em> when viewing a content item that is part of a book outline. This link will allow users to create a new content item of the content type you select on the <a href=":admin-settings">Book settings page</a>. By default this is the <em>Book page</em> content type.', [':admin-settings' => Url::fromRoute('book.settings')->toString()]) . '</dd>';
 @@ -137,15 +139,11 @@ function book_node_links_alter(array &$links, NodeInterface $node, array &$conte
  function book_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
    $node = $form_state->getFormObject()->getEntity();
@@ -57,15 +66,18 @@ index 8bb1bb38a5..1143fd65bf 100644
      $form = \Drupal::service('book.manager')->addFormElements($form, $form_state, $node, $account, $collapsed);
      // The "js-hide" class hides submit button when Javascript is enabled.
 diff --git a/core/modules/book/book.permissions.yml b/core/modules/book/book.permissions.yml
-index e3ec489f0c..4811dde9fb 100644
+index e3ec489f0c..184385e515 100644
 --- a/core/modules/book/book.permissions.yml
 +++ b/core/modules/book/book.permissions.yml
-@@ -4,6 +4,8 @@ create new books:
+@@ -3,7 +3,10 @@ administer book outlines:
+ create new books:
    title: 'Create new books'
  add content to books:
-   title: 'Add content and child pages to books and manage their hierarchies.'
+-  title: 'Add content and child pages to books and manage their hierarchies.'
++  title: 'Add content and child pages to books and manage their hierarchies'
 +add any content to books:
-+  title: 'Add non-book content to outlines.'
++  title: 'Add non-book content to outlines'
++  description: 'This permission is only considered if a role is already granted the <em>Add content and child pages to books and manage their hierarchies</em> permission.'
  access printer-friendly version:
    title: 'View printer-friendly books'
    description: 'View a book page and all of its sub-pages as a single document for ease of printing. Can be performance heavy.'
@@ -110,10 +122,10 @@ index 740252e85b..5a8612edc3 100644
      arguments: ['@request_stack']
 diff --git a/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
 new file mode 100644
-index 0000000000..74e21f8a08
+index 0000000000..453cc3e10c
 --- /dev/null
 +++ b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
-@@ -0,0 +1,50 @@
+@@ -0,0 +1,66 @@
 +<?php
 +
 +namespace Drupal\book\Access;
@@ -155,20 +167,49 @@ index 0000000000..74e21f8a08
 +   *   The access result.
 +   */
 +  public function access(NodeInterface $node) {
-+    // Allow access if
-+    // 1) user has 'add any content to books' permission, or
-+    // 2) user has 'add content to books' permission, and
-+    // 2a) the node is already in a book hierarchy, or
-+    // 2b) the node type is allowed as book content.
-+    return AccessResult::allowedIf($this->currentUser->hasPermission('add any content to books') || ($this->currentUser->hasPermission('add content to books') && ((!empty($node->book['bid']) && !$node->isNew()) || book_type_is_allowed($node->getType()))))->addCacheableDependency($node);
++    // If content type is allowed book type, then check for 'add content to
++    // books' permission.
++    if (book_type_is_allowed($node->getType())) {
++      return AccessResult::allowedIf($this->currentUser->hasPermission('add content to books'));
++    }
++    // If content type is not allowed book type, then check additional
++    // permissions and scenarios.
++    else {
++      // If the user has the 'add content to books' permission and the node
++      // is already in a book outline, then grant access.
++      if ($this->currentUser->hasPermission('add content to books') && (!empty($node->book['bid']) && !$node->isNew())) {
++        return AccessResult::allowed();
++      }
++      // If the user has the 'add content to books' and the 'add any content
++      // to books' permissions, then grant access.
++      elseif ($this->currentUser->hasPermission('add content to books') && $this->currentUser->hasPermission('add any content to books')) {
++        return AccessResult::allowed();
++      }
++
++    }
++    return AccessResult::forbidden();
++
 +  }
 +
 +}
+diff --git a/core/modules/book/src/Form/BookSettingsForm.php b/core/modules/book/src/Form/BookSettingsForm.php
+index 3189ef519e..e83b725b0e 100644
+--- a/core/modules/book/src/Form/BookSettingsForm.php
++++ b/core/modules/book/src/Form/BookSettingsForm.php
+@@ -37,7 +37,7 @@ class BookSettingsForm extends ConfigFormBase {
+       '#title' => $this->t('Content types allowed in book outlines'),
+       '#default_value' => $config->get('allowed_types'),
+       '#options' => $types,
+-      '#description' => $this->t('Users with the %outline-perm permission can add all content types.', ['%outline-perm' => $this->t('Administer book outlines')]),
++      '#description' => $this->t('Users with the %outline-perm permission can add all content types.', ['%outline-perm' => $this->t('Add non-book content to outlines')]),
+       '#required' => TRUE,
+     ];
+     $form['book_child_type'] = [
 diff --git a/core/modules/book/tests/src/Functional/BookTest.php b/core/modules/book/tests/src/Functional/BookTest.php
 index 38fdf54ac5..04904aa471 100644
 --- a/core/modules/book/tests/src/Functional/BookTest.php
 +++ b/core/modules/book/tests/src/Functional/BookTest.php
-@@ -50,15 +50,34 @@ protected function setUp() {
+@@ -50,15 +50,34 @@ class BookTest extends BrowserTestBase {
      parent::setUp();
      $this->drupalPlaceBlock('system_breadcrumb_block');
      $this->drupalPlaceBlock('page_title_block');
@@ -205,7 +246,7 @@ index 38fdf54ac5..04904aa471 100644
    }
  
    /**
-@@ -440,6 +459,52 @@ public function testBookOutline() {
+@@ -440,6 +459,52 @@ class BookTest extends BrowserTestBase {
      // Test the form itself.
      $this->drupalGet('node/' . $node->id() . '/edit');
      $this->assertOptionSelected('edit-book-bid', $node->id());

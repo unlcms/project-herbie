@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a87ad9739ab17be6daba65142a91cef5",
+    "content-hash": "7557beb3c5eb0add063d2cf2667ce40e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3271,7 +3271,7 @@
                 "patches_applied": {
                     "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                     "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
-                    "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-68.patch",
+                    "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
                 }
             },
