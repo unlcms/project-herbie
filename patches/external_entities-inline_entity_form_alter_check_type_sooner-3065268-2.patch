@@ -1,0 +1,19 @@
+diff --git a/external_entities.module b/external_entities.module
+index eeb5c66..961fc68 100755
+--- a/external_entities.module
++++ b/external_entities.module
+@@ -171,10 +171,12 @@ function external_entities_field_storage_config_edit_form_validate_cardinality(a
+  * Implements hook_inline_entity_form_entity_form_alter().
+  */
+ function external_entities_inline_entity_form_entity_form_alter(&$entity_form, FormStateInterface $form_state) {
+-  /* @var \Drupal\Core\Entity\FieldableEntityInterface $annotation_entity */
+   $annotation_entity = $entity_form['#entity'];
++  if (!$annotation_entity instanceof ExternalEntityInterface) {
++    return;
++  }
+   $external_entity = $form_state->getFormObject()->getEntity();
+-  if ($annotation_entity->isNew() && $external_entity instanceof ExternalEntityInterface) {
++  if ($annotation_entity->isNew()) {
+     $external_entity_type = $external_entity->getExternalEntityType();
+     if ($external_entity_type->isAnnotatable()
+       && $entity_form['#entity_type'] === $external_entity_type->getAnnotationEntityTypeId()
