@@ -119,7 +119,7 @@
         "drupal/imagemagick": "^2.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_modal": "^1.0@alpha",
-        "drupal/layout_builder_restrictions": "^1.5",
+        "drupal/layout_builder_restrictions": "^2.0",
         "drupal/linkit": "^5.0",
         "drupal/media_entity_browser": "2.x-dev#ff5532ec8a7a8aff89415624de1b17d7697557ad",
         "drupal/menu_admin_per_menu": "^1.0",

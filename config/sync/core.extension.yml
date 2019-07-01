@@ -24,7 +24,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  dcf_classes: 0
   dcf_ckeditor: 0
   dcf_classes: 0
   dcf_layouts: 0
