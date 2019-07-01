@@ -139,6 +139,7 @@
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
         "unlcms/unl_five": "dev-8.x-5.0.x",
+        "unlcms/unl_multisite": "dev-8.x-1.x",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
