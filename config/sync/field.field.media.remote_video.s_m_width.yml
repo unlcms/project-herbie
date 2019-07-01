@@ -1,0 +1,19 @@
+uuid: 1952fa23-d448-4a0a-a5ae-8dd901284d7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_width
+    - media.type.remote_video
+id: media.remote_video.s_m_width
+field_name: s_m_width
+entity_type: media
+bundle: remote_video
+label: Width
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

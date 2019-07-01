@@ -1,0 +1,11 @@
+name: 'UNL MediaHub'
+description: 'Provides integration with UNL MediaHub'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:media

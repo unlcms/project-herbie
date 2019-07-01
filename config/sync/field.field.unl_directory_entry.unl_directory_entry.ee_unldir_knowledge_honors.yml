@@ -1,0 +1,20 @@
+uuid: ca701685-9376-461c-89ac-55a83712d023
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.ee_unldir_knowledge_honors
+  module:
+    - external_entities
+id: unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_honors
+field_name: ee_unldir_knowledge_honors
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: knowledge_honors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

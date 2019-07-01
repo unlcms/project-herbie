@@ -1,0 +1,20 @@
+uuid: 4234bc61-c184-4291-b5a7-4c7be40bea1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.ee_unldir_knowledge_grants
+  module:
+    - external_entities
+id: unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_grants
+field_name: ee_unldir_knowledge_grants
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: knowledge_grants
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

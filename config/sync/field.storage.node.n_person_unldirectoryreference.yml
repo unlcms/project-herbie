@@ -1,0 +1,20 @@
+uuid: e434498b-509b-41d4-8b7a-897e781d8b88
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+    - node
+id: node.n_person_unldirectoryreference
+field_name: n_person_unldirectoryreference
+entity_type: node
+type: entity_reference
+settings:
+  target_type: unl_directory_entry
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

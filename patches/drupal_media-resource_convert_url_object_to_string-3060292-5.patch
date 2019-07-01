@@ -1,0 +1,29 @@
+diff --git a/core/modules/media/src/Entity/Media.php b/core/modules/media/src/Entity/Media.php
+index 2617980eed..6eb187aa27 100644
+--- a/core/modules/media/src/Entity/Media.php
++++ b/core/modules/media/src/Entity/Media.php
+@@ -7,6 +7,7 @@
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Field\BaseFieldDefinition;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\Core\Url;
+ use Drupal\media\MediaInterface;
+ use Drupal\media\MediaSourceEntityConstraintsInterface;
+ use Drupal\media\MediaSourceFieldConstraintsInterface;
+@@ -372,10 +373,15 @@ public function prepareSave() {
+         // Try to set fields provided by the media source and mapped in
+         // media type config.
+         foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
++          // If metadata is a URL object, then convert to a string.
++          $meta_data = $media_source->getMetadata($translation, $metadata_attribute_name);
++          if ($meta_data instanceof Url) {
++            $meta_data = $meta_data->toString();
++          }
+           // Only save value in entity field if empty. Do not overwrite existing
+           // data.
+           if ($translation->hasField($entity_field_name) && ($translation->get($entity_field_name)->isEmpty() || $translation->hasSourceFieldChanged())) {
+-            $translation->set($entity_field_name, $media_source->getMetadata($translation, $metadata_attribute_name));
++            $translation->set($entity_field_name, $meta_data);
+           }
+         }
+ 

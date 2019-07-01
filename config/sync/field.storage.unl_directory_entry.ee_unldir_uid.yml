@@ -1,0 +1,21 @@
+uuid: ddf0e1b2-0f62-4b59-a8fc-4a125ded0cc7
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: unl_directory_entry.ee_unldir_uid
+field_name: ee_unldir_uid
+entity_type: unl_directory_entry
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

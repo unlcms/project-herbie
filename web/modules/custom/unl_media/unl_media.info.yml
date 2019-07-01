@@ -1,0 +1,13 @@
+name: 'UNL Media'
+description: 'Provides media functionality'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:entity_embed
+  - drupal:media
+  - drupal:unl_utility

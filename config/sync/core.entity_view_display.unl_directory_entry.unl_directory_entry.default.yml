@@ -1,0 +1,158 @@
+uuid: 31078ca6-eeca-4a50-9d47-e5874b186b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_imageurl
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_bio
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_courses
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_education
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_grants
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_honors
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_papers
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledge_performances
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_knowledgepresentations
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_mail
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_primaryaffiliation
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_telephonenumber
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_title
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_uid
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_unldirectoryaddress
+    - field.field.unl_directory_entry.unl_directory_entry.ee_unldir_unlhrprimarydepartment
+  module:
+    - external_entities
+    - telephone
+    - text
+id: unl_directory_entry.unl_directory_entry.default
+targetEntityType: unl_directory_entry
+bundle: unl_directory_entry
+mode: default
+content:
+  ee_unldir_imageurl:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  ee_unldir_knowledge_bio:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  ee_unldir_knowledge_courses:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledge_education:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledge_grants:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledge_honors:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledge_papers:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledge_performances:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_knowledgepresentations:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  ee_unldir_mail:
+    weight: 13
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  ee_unldir_primaryaffiliation:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  ee_unldir_telephonenumber:
+    weight: 14
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  ee_unldir_title:
+    weight: 15
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  ee_unldir_uid:
+    weight: 16
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  ee_unldir_unldirectoryaddress:
+    weight: 17
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  ee_unldir_unlhrprimarydepartment:
+    weight: 18
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  title:
+    type: string
+    label: hidden
+    region: content
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }
