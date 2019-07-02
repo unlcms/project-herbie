@@ -16,6 +16,9 @@ $autoloader = require_once 'autoload.php';
 $kernel = new DrupalKernel('prod', $autoloader);
 
 $request = Request::createFromGlobals();
+
+require_once './modules/contrib/unl_multisite/bootstrap.inc';
+
 $response = $kernel->handle($request);
 $response->send();
 

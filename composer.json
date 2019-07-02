@@ -97,6 +97,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
+        "drupal/block_content_permissions": "^1.6",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
@@ -118,7 +119,7 @@
         "drupal/imagemagick": "^2.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_modal": "^1.0@alpha",
-        "drupal/layout_builder_restrictions": "^1.5",
+        "drupal/layout_builder_restrictions": "^2.0",
         "drupal/linkit": "^5.0",
         "drupal/media_entity_browser": "2.x-dev#ff5532ec8a7a8aff89415624de1b17d7697557ad",
         "drupal/menu_admin_per_menu": "^1.0",
@@ -138,6 +139,7 @@
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
         "unlcms/unl_five": "dev-8.x-5.0.x",
+        "unlcms/unl_multisite": "dev-8.x-1.x",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -208,6 +210,9 @@
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
             },
+            "drupal/block_content_permissions": {
+                "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
+            },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
             },
@@ -219,6 +224,9 @@
             },
             "drupal/entity_embed": {
                 "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
+            },
+            "drupal/external_entities": {
+                "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-inline_entity_form_alter_check_type_sooner-3065268-2.patch"
             },
             "drupal/linkit": {
               "3040749 - Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch",

@@ -8,6 +8,7 @@ weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block content overview'
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access media overview'
@@ -15,6 +16,7 @@ permissions:
   - 'access media_entity_browser_modal entity browser pages'
   - 'access toolbar'
   - 'access webform overview'
+  - 'administer block content types'
   - 'administer main menu items'
   - 'configure editable builder_page node layout overrides'
   - 'create builder_page content'
@@ -47,6 +49,7 @@ permissions:
   - 'view any webform submission'
   - 'view builder_page revisions'
   - 'view own unpublished content'
+  - 'view restricted block content'
   - 'view own unpublished media'
   - 'view person revisions'
   - 'view the administration theme'

@@ -22,16 +22,6 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings: {  }
         components:
-          ae9af1b1-c381-413a-bba7-7f121832993c:
-            uuid: ae9af1b1-c381-413a-bba7-7f121832993c
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:builder_page:links'
-            additional: {  }
-            weight: 0
           18ed6349-0c0a-455d-b5c1-20569003edd0:
             uuid: 18ed6349-0c0a-455d-b5c1-20569003edd0
             region: content
@@ -67,12 +57,27 @@ third_party_settings:
             weight: 2
         third_party_settings: {  }
   layout_builder_restrictions:
-    allowed_blocks: {  }
-    allowed_layouts:
-      - dcf_onecol_section
-      - dcf_twocol_section
-      - dcf_threecol_section
-      - dcf_fourcol_section
+    entity_view_mode_restriction:
+      allowed_blocks:
+        'Chaos Tools': {  }
+        Content: {  }
+        'Content fields':
+          - 'field_block:node:builder_page:body'
+        'Custom block types':
+          - content
+        Forms: {  }
+        'Inline blocks': {  }
+        'Lists (Views)': {  }
+        Menus: {  }
+        System: {  }
+        User: {  }
+        'User fields': {  }
+        core: {  }
+      allowed_layouts:
+        - dcf_onecol_section
+        - dcf_twocol_section
+        - dcf_threecol_section
+        - dcf_fourcol_section
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page

@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
+  - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
@@ -28,6 +29,7 @@ permissions:
   - 'access webform submission user'
   - 'add content to books'
   - 'administer account settings'
+  - 'administer block content types'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
@@ -142,6 +144,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view own webform submission'
+  - 'view restricted block content'
   - 'view own webform submission'
   - 'view person revisions'
   - 'view the administration theme'

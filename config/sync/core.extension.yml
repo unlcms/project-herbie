@@ -5,6 +5,7 @@ module:
   allowed_formats: 0
   block: 0
   block_content: 0
+  block_content_permissions: 0
   block_type_templates: 0
   body_scroll_lock: 0
   book: 0
@@ -23,7 +24,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  dcf_classes: 0
   dcf_ckeditor: 0
   dcf_classes: 0
   dcf_layouts: 0
