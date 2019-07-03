@@ -37,24 +37,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          40989b6d-3145-40e8-a048-679a6adb62b9:
-            uuid: 40989b6d-3145-40e8-a048-679a6adb62b9
-            region: content
-            configuration:
-              id: 'field_block:node:builder_page:s_n_hero'
-              label: Hero
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 2
         third_party_settings: {  }
   layout_builder_restrictions:
     entity_view_mode_restriction:
