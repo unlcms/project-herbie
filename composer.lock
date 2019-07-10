@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3a17d7aef2b15ee14e11c43397c204a",
+    "content-hash": "279055c21b292ab9a4b74986d5c81bae",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4914,6 +4914,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "2901390 - Integrity constraint violation: 1048 Column 'langcode' cannot be null": "patches/2901390-n24.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
