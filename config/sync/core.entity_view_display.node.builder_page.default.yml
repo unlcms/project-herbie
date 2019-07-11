@@ -45,9 +45,11 @@ third_party_settings:
         'Content fields':
           - 'field_block:node:builder_page:body'
         'Custom block types':
+          - card
           - content
         Forms: {  }
-        'Inline blocks': {  }
+        'Inline blocks':
+          - 'inline_block:card'
         'Lists (Views)': {  }
         Menus: {  }
         System: {  }
