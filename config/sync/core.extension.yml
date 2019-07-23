@@ -79,6 +79,7 @@ module:
   unl_five_ckeditor: 0
   unl_media: 0
   unl_mediahub: 0
+  unl_twig: 0
   unl_user: 0
   unl_utility: 0
   unl_webform: 0
