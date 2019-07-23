@@ -1,0 +1,31 @@
+uuid: 98ae664c-ce45-4e92-8383-ea1d0f301797
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.2_1_1440x720
+    - image.style.2_1_1920x960
+    - image.style.2_1_240x120
+    - image.style.2_1_2880x1440
+    - image.style.2_1_3840x1920
+    - image.style.2_1_480x240
+    - image.style.2_1_960x480
+id: card_block
+label: 'Card Block'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 2_1_1440x720
+        - 2_1_1920x960
+        - 2_1_240x120
+        - 2_1_2880x1440
+        - 2_1_3840x1920
+        - 2_1_480x240
+        - 2_1_960x480
+breakpoint_group: responsive_image
+fallback_image_style: 2_1_3840x1920

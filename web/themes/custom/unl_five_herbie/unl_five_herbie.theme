@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Contains theme functions for unl_five_herbie.
+ */
+
+/**
  * Implements template_preprocess_page().
  */
 function unl_five_herbie_preprocess_page(&$variables) {
@@ -48,6 +53,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
     case 'b_card_subhead':
     case 'b_card_body':
     case 'b_card_cta':
+    case 'b_card_image':
       // Add to all Card fields.
       $variables['items'][0]['content']['section_classes'] = $section_classes;
       $variables['items'][0]['content']['dark_backgrounds'] = unl_five_definitions('dark_backgrounds');
@@ -101,6 +107,14 @@ function unl_five_herbie_preprocess_layout(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements template_preprocess_responsive_image_formatter().
+ */
+function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables) {
+  // Pass field name to Twig as data- attribute.
+  $variables['responsive_image']['#attributes']['data-field-name'] = $variables['item']->getFieldDefinition()->get('field_name');
 }
 
 /**

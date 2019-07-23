@@ -13,10 +13,11 @@ dependencies:
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
+    - responsive_image.styles.card_block
   module:
-    - image
     - link
     - options
+    - responsive_image
     - text
 id: block_content.card.default
 targetEntityType: block_content
@@ -80,10 +81,10 @@ content:
     weight: 6
     label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: card_block
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
     region: content
   b_card_overline:
     weight: 5

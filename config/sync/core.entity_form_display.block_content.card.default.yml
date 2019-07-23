@@ -13,7 +13,7 @@ dependencies:
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
-    - image.style.thumbnail
+    - image.style.2_1_240x120
   module:
     - image
     - link
@@ -70,8 +70,8 @@ content:
   b_card_image:
     weight: 7
     settings:
+      preview_image_style: 2_1_240x120
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
