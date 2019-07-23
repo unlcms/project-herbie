@@ -75,6 +75,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unl_blocks: 0
   unl_cas: 0
   unl_five_ckeditor: 0
   unl_media: 0
