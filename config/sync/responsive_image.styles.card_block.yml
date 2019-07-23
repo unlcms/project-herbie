@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.2_1_1440x720
-    - image.style.2_1_1920x960
-    - image.style.2_1_240x120
-    - image.style.2_1_2880x1440
-    - image.style.2_1_3840x1920
-    - image.style.2_1_480x240
-    - image.style.2_1_960x480
+    - image.style.16_9_1440x810
+    - image.style.16_9_1920x1080
+    - image.style.16_9_240x135
+    - image.style.16_9_2880x1620
+    - image.style.16_9_3840x2160
+    - image.style.16_9_480x270
+    - image.style.16_9_960x540
 id: card_block
 label: 'Card Block'
 image_style_mappings:
@@ -20,12 +20,12 @@ image_style_mappings:
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
-        - 2_1_1440x720
-        - 2_1_1920x960
-        - 2_1_240x120
-        - 2_1_2880x1440
-        - 2_1_3840x1920
-        - 2_1_480x240
-        - 2_1_960x480
+        - 16_9_1440x810
+        - 16_9_1920x1080
+        - 16_9_240x135
+        - 16_9_2880x1620
+        - 16_9_3840x2160
+        - 16_9_480x270
+        - 16_9_960x540
 breakpoint_group: responsive_image
-fallback_image_style: 2_1_3840x1920
+fallback_image_style: 16_9_3840x2160

@@ -13,7 +13,7 @@ dependencies:
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
-    - image.style.2_1_240x120
+    - image.style.16_9_240x135
   module:
     - image
     - link
@@ -70,7 +70,7 @@ content:
   b_card_image:
     weight: 7
     settings:
-      preview_image_style: 2_1_240x120
+      preview_image_style: 16_9_240x135
       progress_indicator: throbber
     third_party_settings: {  }
     type: image_image
