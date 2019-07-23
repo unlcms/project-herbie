@@ -1,0 +1,15 @@
+uuid: 9b1912f6-1ec0-4395-aefe-898d47e0216c
+langcode: en
+status: true
+dependencies: {  }
+name: 2_1_960x480
+label: '2:1 (960x480)'
+effects:
+  ea32ac66-153b-4fe8-89b2-c45c30682da1:
+    uuid: ea32ac66-153b-4fe8-89b2-c45c30682da1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 480
+      anchor: center-center
