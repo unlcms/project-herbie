@@ -1,0 +1,15 @@
+uuid: 92a9b01d-da87-444a-b3ce-8c0bb3298719
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_960x720
+label: '4:3 (960x720)'
+effects:
+  9089253e-e189-4c41-bde1-397b4252e712:
+    uuid: 9089253e-e189-4c41-bde1-397b4252e712
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 720
+      anchor: center-center
