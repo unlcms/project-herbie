@@ -38,18 +38,17 @@
 #}
 {% set element_attributes = create_attribute() %}
 {% set element_attributes = element_attributes.addClass('dcf-txt-h4') %}
+{% set link_attributes = create_attribute() %}
 
 {% for item in items %}
   {% if item.content.card_presentation == 'transparent' and item.content.section_classes|intersect(item.content.dark_backgrounds) is not empty %}
-    {% set element_attributes = element_attributes.addClass('unl-cream') %}
+    {% set link_attributes = link_attributes.addClass('dcf-inverse') %}
   {% endif %}
   {% if item.content.subhead is not empty %}
     {% set element_attributes = element_attributes.addClass('dcf-mb-0') %}
   {% endif %}
   {% if item.content.headline_link is not empty %}
-    <a href="{{ item.content.headline_link }}">
-      <h3 {{element_attributes}}>{{ item.content }}</h3>
-    </a>
+    <h3 {{element_attributes}}><a {{ link_attributes }}href="{{ item.content.headline_link }}">{{ item.content }}</a></h3>
   {% else %}
     <h3 {{element_attributes}}>{{ item.content }}</h3>
   {% endif %}

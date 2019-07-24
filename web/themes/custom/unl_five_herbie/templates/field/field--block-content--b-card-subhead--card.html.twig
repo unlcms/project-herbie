@@ -37,7 +37,7 @@
  */
 #}
 {% set element_attributes = create_attribute() %}
-{% set element_attributes = element_attributes.addClass(['dcf-subhead', 'unl-font-sans', 'unl-dark-gray']) %}
+{% set element_attributes = element_attributes.addClass(['dcf-subhead', 'dcf-mt-3', 'dcf-mb-5', 'unl-font-sans', 'unl-dark-gray']) %}
 
 {% for item in items %}
   {% if item.content.card_presentation == 'transparent' and item.content.section_classes|intersect(item.content.dark_backgrounds) is not empty %}

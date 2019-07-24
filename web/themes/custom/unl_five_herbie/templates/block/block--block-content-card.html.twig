@@ -32,9 +32,12 @@
 {% set card_presentation = render_var(content.b_card_card_presentation.0) %}
 {% if card_presentation == 'solid' %}
   {% set attributes = attributes.addClass(['unl-frame-quad', 'unl-bg-cream']) %}
-  {% set inner_wrapper_attributes = inner_wrapper_attributes.addClass(['dcf-pt-8', 'dcf-pr-7', 'dcf-pb-8', 'dcf-pl-7']) %}
+  {% set inner_wrapper_attributes = inner_wrapper_attributes.addClass(['dcf-pt-7', 'dcf-pr-7', 'dcf-pb-8', 'dcf-pl-7']) %}
 {% elseif card_presentation == 'transparent' and content.section_classes|intersect(content.dark_backgrounds) is not empty%}
   {% set attributes = attributes.addClass('unl-cream') %}
+  {% if content.b_card_image.0 %}
+    {% set inner_wrapper_attributes = inner_wrapper_attributes.addClass('dcf-pt-5') %}
+  {% endif %}
 {% endif %}
 
 <div {{ attributes.addClass(['dcf-d-flex', 'dcf-flex-col', 'dcf-relative']) }}>
