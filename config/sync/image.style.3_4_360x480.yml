@@ -1,0 +1,15 @@
+uuid: 2f5707f0-d032-4412-9805-dae27d2db870
+langcode: en
+status: true
+dependencies: {  }
+name: 3_4_360x480
+label: '3:4 (360x480)'
+effects:
+  7d54329d-0b37-4295-a825-f251f1b8b290:
+    uuid: 7d54329d-0b37-4295-a825-f251f1b8b290
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 480
+      anchor: center-center
