@@ -41,6 +41,65 @@ class UnlScriptHandler {
         $fs->remove($drupalRoot . '/sites/default/default.settings.php.rej');
       }
     }
+
+    /**
+     * Patches to support unl_multisite
+     * Requires edits to the following files (as described in the README at https://github.com/unlcms/unl_multisite)
+     * 1) index.php
+     * 2) sites/default/default.settings.php
+     * 3) .htaccess
+     */
+    if ($package == 'drupal/core') {
+      $io = $event->getIO();
+      $fs = new Filesystem();
+      $drupalFinder = new DrupalFinder();
+      $drupalFinder->locateRoot(getcwd());
+      $drupalRoot = $drupalFinder->getDrupalRoot();
+
+      $io->write("Patching 'index.php' (for unl_multisite)");
+      $fs->chmod($drupalRoot, 0777);
+      $fs->chmod($drupalRoot . '/index.php', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/index.php.patch");
+      $fs->chmod($drupalRoot . '/index.php', 0644);
+      $fs->chmod($drupalRoot, 0755);
+      if (strpos($patch_output, 'web/index.php.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/web/index.php.rej');
+        $fs->remove($drupalRoot . '/web/index.php.rej');
+      }
+
+      $io->write("Patching 'sites/default/default.settings.php' (for unl_multisite)");
+      $fs->chmod($drupalRoot . '/sites/default', 0777);
+      $fs->chmod($drupalRoot . '/sites/default/default.settings.php', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/default.settings.php-config_directories.patch");
+      $fs->chmod($drupalRoot . '/sites/default/default.settings.php', 0644);
+      $fs->chmod($drupalRoot . '/sites/default', 0755);
+      if (strpos($patch_output, 'sites/default/default.settings.php.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/sites/default/default.settings.php.rej');
+        $fs->remove($drupalRoot . '/sites/default/default.settings.php.rej');
+      }
+
+      $io->write("Patching '.htaccess' (for unl_multisite)");
+      $fs->chmod($drupalRoot, 0777);
+      $fs->chmod($drupalRoot . '/.htaccess', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/.htaccess.patch");
+      $fs->chmod($drupalRoot . '/.htaccess', 0644);
+      $fs->chmod($drupalRoot, 0755);
+      if (strpos($patch_output, '.htaccess.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/.htaccess.rej');
+        $fs->remove($drupalRoot . '/.htaccess.rej');
+      }
+
+      $io->write("Patching 'sites/example.sites.php' (for unl_multisite)");
+      $fs->chmod($drupalRoot . '/sites', 0777);
+      $fs->chmod($drupalRoot . '/sites/example.sites.php', 0777);
+      $patch_output = shell_exec("cd $drupalRoot; patch -p1 < ../patches/unl_multisite-example.sites.php.patch");
+      $fs->chmod($drupalRoot . '/sites/example.sites.php', 0644);
+      $fs->chmod($drupalRoot . '/sites', 0755);
+      if (strpos($patch_output, 'sites/example.sites.php.rej') !== false ) {
+        $io->write('Removing ' . $drupalRoot . '/sites/example.sites.php.rej');
+        $fs->remove($drupalRoot . '/sites/example.sites.php.rej');
+      }
+    }
   }
 
   /**

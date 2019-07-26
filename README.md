@@ -24,6 +24,26 @@ Navigate to the project root and install the project:
 composer install
 ```
 
+## Running multisite
+
+The unl_multisite module allows additional sites to be run from subdirectories such as http://example.unl.edu/site2. This is not required to run the base site installation.
+
+```
+cp web/sites/example.sites.php web/sites/sites.php
+cp web/.htaccess-subsite-map.txt.sample web/.htaccess-subsite-map.txt
+```
+
+Add the following line to your Apache's configuration file (httpd.conf) where <DRUPAL_ROOT> is the file system path to the Drupal web root. Restart Apache afterward.
+
+```
+RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
+```
+
+Set up a cron job on the server to execute `php web/modules/contrib/unl_multisite/cron.php` on a regular basis.
+
+Enable the UNL Multisite module on the main site. It should only be enabled on the main site.
+
+
 ### Install the UNLedu Web Framework
 
 There are two methods to install the UNLedu Web Framework:
@@ -50,6 +70,8 @@ To receive upstream updates, navigate to /vendor/wdn/ and run `git pull`.
 Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip) to `web/wdn`
 
 ### Install Drupal
+
+Navigate to `http://example.unl.edu/project-herbie/web` in your browser.
 
 See [Installing Drupal 8](https://www.drupal.org/docs/8/install)
 
