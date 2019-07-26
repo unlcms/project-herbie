@@ -27,6 +27,7 @@ permissions:
   - 'access webform overview'
   - 'access webform submission log'
   - 'access webform submission user'
+  - 'add any content to books'
   - 'add content to books'
   - 'administer account settings'
   - 'administer block content types'
