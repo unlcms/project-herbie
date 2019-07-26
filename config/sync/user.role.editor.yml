@@ -58,7 +58,7 @@ permissions:
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view own unpublished content'
-  - 'view restricted block content'
   - 'view own unpublished media'
   - 'view person revisions'
+  - 'view restricted block content'
   - 'view the administration theme'
