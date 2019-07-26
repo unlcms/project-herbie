@@ -10,6 +10,7 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
+    block_body: block_body
     standard: '0'
     webform: '0'
     plain_text: '0'
