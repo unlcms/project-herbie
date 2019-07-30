@@ -51,7 +51,7 @@
 
 {% for item in items %}
   {# For transparent cards with dark section backgrounds #}
-  {% if item.content.card_presentation == 'transparent' and item.content.section_classes|intersect(item.content.dark_backgrounds) is not empty %}
+  {% if item.content.card_presentation == 'transparent' and 'dcf-inverse' in item.content.section_classes %}
     {% if item.content['cta_style'] == 'primary' %}
       {% set bg_color = item.content.section_classes|intersect(item.content.dark_backgrounds)|first %}
       {% set element_attributes = element_attributes.addClass(bg_color_mapping[bg_color]) %}

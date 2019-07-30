@@ -32,8 +32,6 @@ function unl_five_herbie_preprocess_block(&$variables) {
 
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
     $variables['content']['section_classes'] = $section_classes;
-
-    $variables['content']['dark_backgrounds'] = unl_five_definitions('dark_backgrounds');
   }
 }
 
@@ -56,7 +54,6 @@ function unl_five_herbie_preprocess_field(&$variables) {
     case 'b_card_image':
       // Add to all Card fields.
       $variables['items'][0]['content']['section_classes'] = $section_classes;
-      $variables['items'][0]['content']['dark_backgrounds'] = unl_five_definitions('dark_backgrounds');
 
       $card_presentation = $variables['element']['#object']->get('b_card_card_presentation')->getValue();
       $variables['items'][0]['content']['card_presentation'] = isset($card_presentation[0]['value']) ? $card_presentation[0]['value'] : '';
@@ -115,28 +112,4 @@ function unl_five_herbie_preprocess_layout(&$variables) {
 function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables) {
   // Pass field name to Twig as data- attribute.
   $variables['responsive_image']['#attributes']['data-field-name'] = $variables['item']->getFieldDefinition()->get('field_name');
-}
-
-/**
- * Helper function to store re-usable defintions.
- *
- * @param string $def
- *   The name of the definition being requested.
- *
- * @return mixed
- *   A string or array if the definition exists; otherwise NULL.
- */
-function unl_five_definitions($def) {
-  switch ($def) {
-    case ('dark_backgrounds'):
-      return [
-        'unl-bg-scarlet',
-        'unl-bg-darkest-gray',
-        'unl-bg-darker-gray',
-        'unl-bg-dark-gray',
-      ];
-
-    default:
-      return NULL;
-  }
 }

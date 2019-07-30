@@ -36,7 +36,13 @@
  * @see template_preprocess_field()
  */
 #}
+{% set wrapper_attributes = create_attribute() %}
 
 {% for item in items %}
+  {% if item.content.card_presentation == 'solid' and 'dcf-inverse' in item.content.section_classes %}
+    {% set wrapper_attributes = wrapper_attributes.addClass('unl-darker-gray') %}
+  {% endif %}
+  <div{{ wrapper_attributes }}>
   {{ item.content }}
+  </div>
 {% endfor %}

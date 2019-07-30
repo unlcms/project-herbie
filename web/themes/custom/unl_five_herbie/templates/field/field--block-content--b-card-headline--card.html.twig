@@ -41,7 +41,7 @@
 {% set link_attributes = create_attribute() %}
 
 {% for item in items %}
-  {% if item.content.card_presentation == 'transparent' and item.content.section_classes|intersect(item.content.dark_backgrounds) is not empty %}
+  {% if item.content.card_presentation == 'transparent' and 'dcf-inverse' in item.content.section_classes %}
     {% set link_attributes = link_attributes.addClass('dcf-inverse') %}
   {% endif %}
   {% if item.content.subhead is not empty %}
