@@ -5,6 +5,7 @@ namespace Drupal\dcf_layouts\Plugin\Layout;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Layout\LayoutDefault;
 use Drupal\Core\Plugin\PluginFormInterface;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Base class of layouts with configurable widths.
@@ -138,23 +139,25 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $configuration = $this->getConfiguration();
 
     // Add classes to section title.
-    $title_classes = (array) $configuration['title_classes'];
-    $settings = $build['#settings'];
-    $settings['title_classes'] = implode(' ', $title_classes);
-    $build['#settings'] = $settings;
+    if (!empty($configuration['title_classes'])) {
+      $build['#settings']['title_attributes'] = new Attribute();
+      $build['#settings']['title_attributes']->addClass($configuration['title_classes']);
+    }
 
     // Add section classes from the package, or custom classes.
     if (!empty($configuration['section_package'])) {
       $config_dcf_classes = \Drupal::config('dcf_classes.classes');
       $section_packages = $config_dcf_classes->get('section_packages');
-      $section_classes = $section_packages[$configuration['section_package']];
+      $section_classes = explode(' ', $section_packages[$configuration['section_package']]);
     }
     else {
       $section_classes = $configuration['section_classes'];
     }
-    $settings = $build['#settings'];
-    $settings['extra_classes'] = implode(' ', (array) $section_classes);
-    $build['#settings'] = $settings;
+
+    if (!empty($section_classes)) {
+      $build['#settings']['section_attributes'] = new Attribute();
+      $build['#settings']['section_attributes']->addClass($section_classes);
+    }
 
     // Add default classes.
     if (!isset($build['#attributes']['class'])) {
