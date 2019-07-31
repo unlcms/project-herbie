@@ -111,6 +111,30 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       ],
     ];
 
+    // Allow editors to set the vertical margin between blocks.
+    $options = [
+      'dcf-mt-1' => 'dcf-mt-1',
+      'dcf-mt-2' => 'dcf-mt-2',
+      'dcf-mt-3' => 'dcf-mt-3',
+      'dcf-mt-4' => 'dcf-mt-4',
+      'dcf-mt-5' => 'dcf-mt-5',
+      'dcf-mt-6' => 'dcf-mt-6',
+      'dcf-mt-7' => 'dcf-mt-7',
+      'dcf-mt-8' => 'dcf-mt-8',
+      'dcf-mt-9' => 'dcf-mt-9',
+      'dcf-mt-10' => 'dcf-mt-10',
+    ];
+
+    $form['block_margin'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Block margin'),
+      '#default_value' => $configuration['block_margin'],
+      '#options' => $options,
+      '#description' => $this->t('The amount of vertical margin between blocks.'),
+      '#empty_option' => $this->t('- None -'),
+      '#empty_value' => '',
+    ];
+
     return $form;
   }
 
@@ -129,6 +153,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $this->configuration['title_classes'] = $form_state->getValue('title_classes');
     $this->configuration['section_package'] = $form_state->getValue('section_package');
     $this->configuration['section_classes'] = empty($this->configuration['section_package']) ? $form_state->getValue('section_classes') : [];
+    $this->configuration['block_margin'] = $form_state->getValue('block_margin');
   }
 
   /**
@@ -159,7 +184,27 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       $build['#settings']['section_attributes']->addClass($section_classes);
     }
 
-    // Add default classes.
+    // Add designated margin-top to each block, except the first block in a region.
+    // Margin-top is used instead of margin-bottom because it's possible to know
+    // the first item during the loop; however, it's not possible to know the last
+    // item until the loop has completed.
+    if (!empty($configuration['block_margin'])) {
+      foreach($build as $region_id => $region) {
+        if (substr( $region_id, 0, 1 ) !== "#") {
+          $block_count = 0;
+          foreach ($region as $block_id => $block) {
+            if (substr( $block_id, 0, 1 ) !== "#") {
+              if ($block_count > 0) {
+                $build[$region_id][$block_id]['#attributes']['class'][] = $configuration['block_margin'];
+              }
+              $block_count++;
+            }
+          }
+        }
+      }
+    }
+
+    // Add layout default classes.
     if (!isset($build['#attributes']['class'])) {
       $build['#attributes']['class'] = [];
     }
