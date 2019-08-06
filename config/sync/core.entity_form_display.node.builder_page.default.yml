@@ -53,9 +53,9 @@ content:
       label_singular: Hero
       label_plural: Heroes
       collapsible: true
-      collapsed: true
       allow_new: true
       match_operator: CONTAINS
+      collapsed: false
       allow_existing: false
       allow_duplicate: false
     third_party_settings:
