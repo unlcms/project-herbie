@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: dcf-hero-sm
-      label: dcf-hero-sm
+      label: 'Small (dcf-hero-sm)'
     -
       value: dcf-hero-md
-      label: dcf-hero-md
+      label: 'Medium (dcf-hero-md)'
     -
       value: dcf-hero-lg
-      label: dcf-hero-lg
+      label: 'Large (dcf-hero-lg)'
   allowed_values_function: ''
 module: options
 locked: false
