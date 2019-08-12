@@ -41,6 +41,8 @@
 {% endif %}
 
 <div {{ attributes.addClass(['dcf-d-flex', 'dcf-flex-col', 'dcf-relative']) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
   <div {{ inner_wrapper_attributes }}>
 
     {% if content.b_card_overline.0 or content.b_card_subhead.0 %}
