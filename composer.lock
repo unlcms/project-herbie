@@ -2333,17 +2333,17 @@
         },
         {
             "name": "drupal/block_form_alter",
-            "version": "1.0.0-beta2",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/block_form_alter.git",
-                "reference": "8.x-1.0-beta2"
+                "reference": "8.x-1.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/block_form_alter-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "5870af0ac8b9f40919fac5168f3c47f0f66df076"
+                "url": "https://ftp.drupal.org/files/projects/block_form_alter-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "421b542926c85cd18a43c89090028b05f6265ad2"
             },
             "require": {
                 "drupal/core": "*"
@@ -2354,8 +2354,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1563576181",
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1565635687",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
