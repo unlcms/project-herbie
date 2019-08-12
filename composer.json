@@ -118,6 +118,7 @@
         "drupal/honeypot": "^1.29",
         "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
+        "drupal/inline_block_title_automatic": "^1.0@alpha",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/layout_builder_modal": "^1.0@alpha",
         "drupal/layout_builder_restrictions": "^2.0",

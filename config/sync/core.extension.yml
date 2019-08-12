@@ -50,6 +50,7 @@ module:
   image: 0
   image_effects: 0
   imagemagick: 0
+  inline_block_title_automatic: 0
   inline_entity_form: 0
   layout_builder: 0
   layout_builder_modal: 0

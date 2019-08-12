@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9de3e76c85a45bddbab9282c51ef920c",
+    "content-hash": "f6b946b63b6b29327e7732fd358ccae6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4428,6 +4428,53 @@
             "homepage": "https://www.drupal.org/project/imagemagick",
             "support": {
                 "source": "http://cgit.drupalcode.org/imagemagick"
+            }
+        },
+        {
+            "name": "drupal/inline_block_title_automatic",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/inline_block_title_automatic.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/inline_block_title_automatic-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "b38fed4d0cf021261f18ae0bfb57a2e81ed5d376"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1562806086",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "Remove the choice to define titles for block_content entities in layout builder.",
+            "homepage": "https://www.drupal.org/project/inline_block_title_automatic",
+            "support": {
+                "source": "https://git.drupalcode.org/project/inline_block_title_automatic"
             }
         },
         {
@@ -9858,7 +9905,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
@@ -11860,6 +11907,7 @@
         "drupal/entity_embed": 5,
         "drupal/entity_usage": 15,
         "drupal/external_entities": 15,
+        "drupal/inline_block_title_automatic": 15,
         "drupal/inline_entity_form": 5,
         "drupal/layout_builder_modal": 15,
         "drupal/media_entity_browser": 20,
