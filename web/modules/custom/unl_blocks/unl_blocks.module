@@ -15,12 +15,18 @@ function unl_blocks_block_type_form_alter(array &$form, FormStateInterface &$for
     unset($form['b_card_cta_style']['widget']['#options']['_none']);
     $form['b_card_cta_style']['#states'] = [
       'visible' => [
-        'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+        [
+          'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+          'input[name="settings[block_form][b_card_cta][0][uri]"' => ['filled' => TRUE],
+        ]
       ],
     ];
     $form['b_card_cta_style']['widget']['#states'] = [
       'required' => [
-        'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+        [
+          'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+          'input[name="settings[block_form][b_card_cta][0][uri]"' => ['filled' => TRUE],
+        ]
       ],
     ];
 
