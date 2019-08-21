@@ -1,0 +1,14 @@
+name: 'UNL Blocks'
+description: 'Block customizations and functionality for Project Herbie'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:block
+  - drupal:block_content
+  - drupal:block_form_alter
+  - drupal:layout_builder

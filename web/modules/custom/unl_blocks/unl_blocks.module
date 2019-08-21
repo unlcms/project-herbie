@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * This is the module provides block customizations and functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function unl_blocks_block_type_form_alter(array &$form, FormStateInterface &$form_state, string $block_type) {
+  if ($block_type == 'card') {
+    unset($form['b_card_cta_style']['widget']['#options']['_none']);
+    $form['b_card_cta_style']['#states'] = [
+      'visible' => [
+        [
+          'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+          'input[name="settings[block_form][b_card_cta][0][uri]"' => ['filled' => TRUE],
+        ]
+      ],
+    ];
+    $form['b_card_cta_style']['widget']['#states'] = [
+      'required' => [
+        [
+          'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
+          'input[name="settings[block_form][b_card_cta][0][uri]"' => ['filled' => TRUE],
+        ]
+      ],
+    ];
+
+    $form['#validate'][] = '_unl_blocks_card_form_validate';
+  }
+}
+
+/**
+ * Validation callback function for Card block type form.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function _unl_blocks_card_form_validate(array &$form, FormStateInterface &$form_state) {
+  $values = $form_state->getValues();
+  if (!empty($values['b_card_cta_style'][0]['value']) && empty($values['b_card_cta_style'][0]['value'])) {
+    $form_state->setErrorByName('b_card_cta_style', t('CTA Style field is required'));
+  }
+}

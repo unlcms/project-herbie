@@ -1,0 +1,23 @@
+uuid: 9cba726f-0ca4-4262-815f-d3491ce7fce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_cta_style
+  module:
+    - options
+id: block_content.card.b_card_cta_style
+field_name: b_card_cta_style
+entity_type: block_content
+bundle: card
+label: 'CTA Style'
+description: 'The button style to be used for the <em>CTA Button</em>'
+required: false
+translatable: false
+default_value:
+  -
+    value: primary
+default_value_callback: ''
+settings: {  }
+field_type: list_string
