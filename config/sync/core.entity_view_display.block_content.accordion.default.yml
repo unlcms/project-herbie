@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.accordion
     - field.field.block_content.accordion.b_accordion_item
+    - field.field.block_content.accordion.b_accordion_title
   module:
     - entity_reference_revisions
 id: block_content.accordion.default
@@ -14,11 +15,19 @@ mode: default
 content:
   b_accordion_item:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  b_accordion_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }

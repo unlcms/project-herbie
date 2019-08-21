@@ -28,17 +28,11 @@
 <div{{ attributes.addClass('dcf-d-flex').addClass('dcf-jc-center').addClass('dcf-pt-9').addClass('dcf-pb-9') }}>
   <div class="dcf-w-100% dcf-w-max-lg">
     {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
+      <h2>{{ content.b_accordion_title }}</h2>
     {{ title_suffix }}
     {% block content %}
-      {% if label %}
-        <div class="dcf-mt-6">
-      {% else %}
-        <div>
-      {% endif %}
-        {{ content }}
+      <div class="dcf-mt-6">
+        {{ content.b_accordion_item }}
       </div>
     {% endblock %}
   </div>
