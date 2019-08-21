@@ -1,0 +1,15 @@
+uuid: 59296f35-7719-49bd-8581-7891c0d2849b
+langcode: en
+status: true
+dependencies: {  }
+name: 9_16_810x1440
+label: '9:16 (810x1440)'
+effects:
+  104588c0-ac62-466e-a216-0eeaa1da9b9d:
+    uuid: 104588c0-ac62-466e-a216-0eeaa1da9b9d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 810
+      height: 1440
+      anchor: center-center

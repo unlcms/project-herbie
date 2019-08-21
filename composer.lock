@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd0bb18a85a85c58489a696721d1b0e6",
+    "content-hash": "f6b946b63b6b29327e7732fd358ccae6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2332,6 +2332,55 @@
             }
         },
         {
+            "name": "drupal/block_form_alter",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/block_form_alter.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_form_alter-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "421b542926c85cd18a43c89090028b05f6265ad2"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1565635687",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/u/chris-burge",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides block form alter functions.",
+            "homepage": "https://www.drupal.org/project/block_form_alter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/block_form_alter",
+                "issues": "https://www.drupal.org/project/issues/block_form_alter"
+            }
+        },
+        {
             "name": "drupal/block_type_templates",
             "version": "1.0.0-alpha2",
             "source": {
@@ -4379,6 +4428,53 @@
             "homepage": "https://www.drupal.org/project/imagemagick",
             "support": {
                 "source": "http://cgit.drupalcode.org/imagemagick"
+            }
+        },
+        {
+            "name": "drupal/inline_block_title_automatic",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/inline_block_title_automatic.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/inline_block_title_automatic-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "b38fed4d0cf021261f18ae0bfb57a2e81ed5d376"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1562806086",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "Remove the choice to define titles for block_content entities in layout builder.",
+            "homepage": "https://www.drupal.org/project/inline_block_title_automatic",
+            "support": {
+                "source": "https://git.drupalcode.org/project/inline_block_title_automatic"
             }
         },
         {
@@ -8822,7 +8918,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "5.0"
+                "reference": "develop"
             },
             "type": "library"
         },
@@ -9458,6 +9554,66 @@
     ],
     "packages-dev": [
         {
+            "name": "ajgl/breakpoint-twig-extension",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ajgarlag/AjglBreakpointTwigExtension.git",
+                "reference": "13ee39406dc3d959c5704b462a3dbc3cbf088f16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajgarlag/AjglBreakpointTwigExtension/zipball/13ee39406dc3d959c5704b462a3dbc3cbf088f16",
+                "reference": "13ee39406dc3d959c5704b462a3dbc3cbf088f16",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "twig/twig": "^1.14|^2.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^2.7|^3.2|^4.1",
+                "symfony/phpunit-bridge": "^3.4|^4.1",
+                "symfony/twig-bundle": "^2.7|^3.2|^4.1"
+            },
+            "suggest": {
+                "ext-xdebug": "The Xdebug extension is required for the breakpoint to work",
+                "symfony/framework-bundle": "The framework bundle to integrate the extension into Symfony",
+                "symfony/twig-bundle": "The twig bundle to integrate the extension into Symfony"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ajgl\\Twig\\Extension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio J. García Lagar",
+                    "email": "aj@garcialagar.es",
+                    "homepage": "http://aj.garcialagar.es",
+                    "role": "developer"
+                }
+            ],
+            "description": "Twig extension to set breakpoints",
+            "homepage": "https://github.com/ajgarlag/AjglBreakpointTwigExtension",
+            "keywords": [
+                "Xdebug",
+                "breakpoint",
+                "twig"
+            ],
+            "time": "2019-04-10T11:41:26+00:00"
+        },
+        {
             "name": "behat/mink",
             "version": "dev-master",
             "source": {
@@ -9749,7 +9905,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
@@ -9780,6 +9936,54 @@
                 "standards"
             ],
             "time": "2019-06-14T15:06:06+00:00"
+        },
+        {
+            "name": "drupal/twig_xdebug",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_xdebug.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_xdebug-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "006f842aa8810a0e0d8e087cf73b400706f5c52b"
+            },
+            "require": {
+                "ajgl/breakpoint-twig-extension": "^0.3.4",
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1556130181",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "charginghawk",
+                    "homepage": "https://www.drupal.org/user/2626341"
+                }
+            ],
+            "description": "Enables Xdebug breakpoints in Twig.",
+            "homepage": "https://www.drupal.org/project/twig_xdebug",
+            "support": {
+                "source": "https://git.drupalcode.org/project/twig_xdebug"
+            }
         },
         {
             "name": "fabpot/goutte",
@@ -11696,12 +11900,14 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/block_form_alter": 10,
         "drupal/block_type_templates": 15,
         "drupal/ckeditor_config": 5,
         "drupal/diff": 5,
         "drupal/entity_embed": 5,
         "drupal/entity_usage": 15,
         "drupal/external_entities": 15,
+        "drupal/inline_block_title_automatic": 15,
         "drupal/inline_entity_form": 5,
         "drupal/layout_builder_modal": 15,
         "drupal/media_entity_browser": 20,
