@@ -163,9 +163,12 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $build = parent::build($regions);
     $configuration = $this->getConfiguration();
 
+    // Initialize attributes.
+    $build['#settings']['section_attributes'] = new Attribute();
+    $build['#settings']['title_attributes'] = new Attribute();
+
     // Add classes to section title.
     if (!empty($configuration['title_classes'])) {
-      $build['#settings']['title_attributes'] = new Attribute();
       $build['#settings']['title_attributes']->addClass($configuration['title_classes']);
     }
 
@@ -180,7 +183,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     }
 
     if (!empty($section_classes)) {
-      $build['#settings']['section_attributes'] = new Attribute();
       $build['#settings']['section_attributes']->addClass($section_classes);
     }
 
