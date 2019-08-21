@@ -1,0 +1,15 @@
+uuid: b5e172c1-6bf5-49ea-ae05-97fde68f991c
+langcode: en
+status: true
+dependencies: {  }
+name: 9_16_2160x3840
+label: '9:16 (2160x3840)'
+effects:
+  452a540e-7fe3-4d81-934f-5d7df3515b08:
+    uuid: 452a540e-7fe3-4d81-934f-5d7df3515b08
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2160
+      height: 3840
+      anchor: center-center

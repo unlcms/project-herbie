@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Contains theme functions for unl_five_herbie.
+ */
+
+/**
  * Implements template_preprocess_page().
  */
 function unl_five_herbie_preprocess_page(&$variables) {
@@ -16,4 +21,95 @@ function unl_five_herbie_preprocess_page(&$variables) {
         break;
     }
   }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function unl_five_herbie_preprocess_block(&$variables) {
+  if (isset($variables['content']['#block_content'])) {
+    $bundle = $variables['content']['#block_content']->bundle();
+
+    $section_classes = $variables['content']['#block_content']->__get('#section_classes');
+    $variables['content']['section_classes'] = $section_classes;
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function unl_five_herbie_preprocess_field(&$variables) {
+  $field_name = $variables['field_name'];
+
+  // $section_classes is NULL if nothing is returned.
+  $section_classes = $variables['element']['#object']->__get('#section_classes');
+
+  switch ($field_name) {
+    // Card block type.
+    case 'b_card_overline':
+    case 'b_card_headline':
+    case 'b_card_subhead':
+    case 'b_card_body':
+    case 'b_card_cta':
+    case 'b_card_image':
+      // Add to all Card fields.
+      $variables['items'][0]['content']['section_classes'] = $section_classes;
+
+      $card_presentation = $variables['element']['#object']->get('b_card_card_presentation')->getValue();
+      $variables['items'][0]['content']['card_presentation'] = isset($card_presentation[0]['value']) ? $card_presentation[0]['value'] : '';
+
+      // Loop through individual Card fields.
+      switch ($field_name) {
+        case 'b_card_headline':
+          $headline_link = $variables['element']['#object']->get('b_card_headline_link')->first();
+          $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
+          $variables['items'][0]['content']['headline_link'] = $headline_link;
+
+          $overline = $variables['element']['#object']->get('b_card_overline')->getValue();
+          $variables['items'][0]['content']['overline'] = isset($overline[0]['value']) ? $overline[0]['value'] : '';
+
+          $subhead = $variables['element']['#object']->get('b_card_subhead')->getValue();
+          $variables['items'][0]['content']['subhead'] = isset($subhead[0]['value']) ? $subhead[0]['value'] : '';
+          break;
+
+        case 'b_card_cta':
+          $cta_style = $variables['element']['#object']->get('b_card_cta_style')->getValue();
+          $variables['items'][0]['content']['cta_style'] = isset($cta_style[0]['value']) ? $cta_style[0]['value'] : '';
+          break;
+      }
+
+      break;
+  }
+}
+
+/**
+ * Implements template_preprocess_layout().
+ */
+function unl_five_herbie_preprocess_layout(&$variables) {
+  // Make section classes array available to each block in the layout.
+  if (isset($variables['settings']['section_classes']) && !empty($variables['settings']['section_classes'])) {
+    $section_classes = $variables['settings']['section_classes'];
+
+    // Loop through each region.
+    foreach ($variables['content'] as $region_id => $region) {
+      if (substr($region_id, 0, 1) !== '#') {
+        // Loop through each block.
+        foreach ($region as $block_id => $block) {
+          if (substr($block_id, 0, 1) !== '#') {
+            if (isset($variables['content'][$region_id][$block_id]['content']['#block_content'])) {
+              $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_classes', $section_classes);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_responsive_image_formatter().
+ */
+function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables) {
+  // Pass field name to Twig as data- attribute.
+  $variables['responsive_image']['#attributes']['data-field-name'] = $variables['item']->getFieldDefinition()->get('field_name');
 }

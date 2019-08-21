@@ -1,0 +1,105 @@
+uuid: 6d7041ca-a4b7-4de9-8732-3790d7fd1623
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.field.block_content.card.b_card_body
+    - field.field.block_content.card.b_card_card_presentation
+    - field.field.block_content.card.b_card_cta
+    - field.field.block_content.card.b_card_cta_style
+    - field.field.block_content.card.b_card_headline
+    - field.field.block_content.card.b_card_headline_link
+    - field.field.block_content.card.b_card_image
+    - field.field.block_content.card.b_card_overline
+    - field.field.block_content.card.b_card_subhead
+    - responsive_image.styles.card_block
+  module:
+    - link
+    - options
+    - responsive_image
+    - text
+id: block_content.card.default
+targetEntityType: block_content
+bundle: card
+mode: default
+content:
+  b_card_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  b_card_card_presentation:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  b_card_cta:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  b_card_cta_style:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  b_card_headline:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  b_card_headline_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  b_card_image:
+    weight: 6
+    label: hidden
+    settings:
+      responsive_image_style: card_block
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  b_card_overline:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  b_card_subhead:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

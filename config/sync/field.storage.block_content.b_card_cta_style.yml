@@ -1,0 +1,27 @@
+uuid: 842791f5-f26f-4de7-92c3-abaee9a04490
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_card_cta_style
+field_name: b_card_cta_style
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: primary
+      label: Primary
+    -
+      value: secondary
+      label: Secondary
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

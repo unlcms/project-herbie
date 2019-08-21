@@ -6,6 +6,7 @@ module:
   block: 0
   block_content: 0
   block_content_permissions: 0
+  block_form_alter: 0
   block_type_templates: 0
   body_scroll_lock: 0
   book: 0
@@ -50,6 +51,7 @@ module:
   image: 0
   image_effects: 0
   imagemagick: 0
+  inline_block_title_automatic: 0
   inline_entity_form: 0
   layout_builder: 0
   layout_builder_modal: 0
@@ -76,10 +78,12 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unl_blocks: 0
   unl_cas: 0
   unl_five_ckeditor: 0
   unl_media: 0
   unl_mediahub: 0
+  unl_twig: 0
   unl_user: 0
   unl_utility: 0
   unl_webform: 0

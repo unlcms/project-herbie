@@ -1,0 +1,15 @@
+uuid: 97929ed0-b91c-4c49-9df3-522cafa9802e
+langcode: en
+status: true
+dependencies: {  }
+name: 9_16_1620x2880
+label: '9:16 (1620x2880)'
+effects:
+  c917546c-e1e1-4582-a8e3-da295a872695:
+    uuid: c917546c-e1e1-4582-a8e3-da295a872695
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1620
+      height: 2880
+      anchor: center-center

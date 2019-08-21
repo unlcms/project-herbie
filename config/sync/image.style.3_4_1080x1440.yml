@@ -1,0 +1,15 @@
+uuid: 3bfaec9c-b725-47b4-befe-40389fe2ebac
+langcode: en
+status: true
+dependencies: {  }
+name: 3_4_1080x1440
+label: '3:4 (1080x1440)'
+effects:
+  faa254e9-2692-4e05-a8da-f66c050b4fa0:
+    uuid: faa254e9-2692-4e05-a8da-f66c050b4fa0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1080
+      height: 1440
+      anchor: center-center
