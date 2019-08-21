@@ -1,0 +1,23 @@
+uuid: 25ff5896-b56e-450c-928c-347c51f867ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_card_presentation
+  module:
+    - options
+id: block_content.card.b_card_card_presentation
+field_name: b_card_card_presentation
+entity_type: block_content
+bundle: card
+label: 'Card Presentation'
+description: 'Designates if the card should be displayed 1) with a transparent background or 2) with a solid background'
+required: true
+translatable: false
+default_value:
+  -
+    value: transparent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+uuid: df40941a-5bf7-4a52-8929-9835b7b2726e
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_2880x2160
+label: '4:3 (2880x2160)'
+effects:
+  1cbb142b-343d-4926-9244-ac645600f868:
+    uuid: 1cbb142b-343d-4926-9244-ac645600f868
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2880
+      height: 2160
+      anchor: center-center

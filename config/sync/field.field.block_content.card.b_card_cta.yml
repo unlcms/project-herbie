@@ -1,0 +1,23 @@
+uuid: f93348ba-cfa7-4237-9ff6-257f71a04498
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_cta
+  module:
+    - link
+id: block_content.card.b_card_cta
+field_name: b_card_cta
+entity_type: block_content
+bundle: card
+label: 'CTA Button'
+description: 'A call-to-action link, such as "Register Now" or "Schedule a Visit". Non-descriptive language, such as "Click here", should be avoided.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
