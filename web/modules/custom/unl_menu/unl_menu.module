@@ -68,13 +68,13 @@ function _unl_menu_menu_link_content_menu_link_content_form_validate($form, Form
   // This also catches non-existant content. E.g. "/node/2" when there
   // is no node with nid of 2.
   if (!$url->isRouted()) {
-    $form_state->setErrorByName('link', 'Only nodes and the front page ("<front>") can be linked in a menu item.');
+    $form_state->setErrorByName('link', t('The path <em>@uri</em> is not allowed.', ['@uri' => $uri_parts[1]]));
     return;
   }
 
   $route = Url::fromUri($uri)->getRouteName();
 
-  // Only allow certain, routed URLs.
+  // Disallow certain, routed URLs.
   $disallowed_routes = [
     'entity.media.canonical',
   ];
