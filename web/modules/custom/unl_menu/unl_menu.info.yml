@@ -1,0 +1,11 @@
+name: 'UNL Menu'
+description: 'Extends menu functionality provided by core'
+package: UNL
+
+type: module
+core: 8.x
+
+version: 1.x
+
+dependencies:
+  - drupal:menu_link_content
