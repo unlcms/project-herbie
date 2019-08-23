@@ -34,6 +34,7 @@ permissions:
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
+  - 'administer block_content_type labels'
   - 'administer blocks'
   - 'administer book outlines'
   - 'administer configuration split'
