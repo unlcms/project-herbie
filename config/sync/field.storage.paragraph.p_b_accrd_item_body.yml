@@ -1,0 +1,19 @@
+uuid: 2c6657b1-4e8b-4011-8a95-8f91e292eff0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.p_b_accrd_item_body
+field_name: p_b_accrd_item_body
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

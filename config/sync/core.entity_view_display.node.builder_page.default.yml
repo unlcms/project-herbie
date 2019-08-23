@@ -52,11 +52,13 @@ third_party_settings:
         'Content fields':
           - 'field_block:node:builder_page:body'
         'Custom block types':
-          - card
+          - accordion
           - content
         Forms: {  }
         'Inline blocks':
+          - 'inline_block:accordion'
           - 'inline_block:card'
+          - 'inline_block:content'
         'Lists (Views)': {  }
         Menus: {  }
         System: {  }

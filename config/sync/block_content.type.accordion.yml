@@ -1,0 +1,8 @@
+uuid: 721cf0a3-7249-4b69-a173-a17eaddd35f8
+langcode: en
+status: true
+dependencies: {  }
+id: accordion
+label: Accordion
+revision: 0
+description: 'A list of accordion items that can be expanded and collapsed'
