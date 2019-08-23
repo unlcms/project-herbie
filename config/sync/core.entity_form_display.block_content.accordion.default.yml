@@ -1,0 +1,44 @@
+uuid: cea213f0-1053-4c4a-8ca9-d4f6f2b11273
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.accordion
+    - field.field.block_content.accordion.b_accordion_item
+    - field.field.block_content.accordion.b_accordion_title
+  module:
+    - paragraphs
+id: block_content.accordion.default
+targetEntityType: block_content
+bundle: accordion
+mode: default
+content:
+  b_accordion_item:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Item
+      title_plural: Items
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: accordion_item
+    third_party_settings: {  }
+    region: content
+  b_accordion_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
