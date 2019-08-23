@@ -53,14 +53,22 @@ function unl_five_herbie_preprocess_block(&$variables) {
  * Implements template_preprocess_field().
  */
 function unl_five_herbie_preprocess_field(&$variables) {
-  if ($variables['field_name'] == 'b_hero_image') {
+  $field_name = $variables['field_name'];
+
+  /**
+   * Image field in Hero block type.
+   */
+  if ($field_name == 'b_hero_image') {
     // Add needed classes to the <img> tag inside a Hero block.
     foreach ($variables['items'] as $key => $item) {
       $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
     }
   }
 
-  if ($variables['field_name'] == 's_n_hero') {
+  /**
+   * Entity reference field that references a Hero block.
+   */
+  if ($field_name == 's_n_hero') {
     // Provide Breadcrumbs and Page title variables for field--s-n-hero.html.twig.
     $request     = \Drupal::request();
     $route_match = \Drupal::routeMatch();
@@ -77,13 +85,15 @@ function unl_five_herbie_preprocess_field(&$variables) {
     $variables['hero_size_class'] = $variables['items'][0]['content']['b_hero_size'][0]['#markup'];
    }
 
-  $field_name = $variables['field_name'];
+
+  /**
+   * Card block type.
+   */
 
   // $section_classes is NULL if nothing is returned.
   $section_classes = $variables['element']['#object']->__get('#section_classes');
 
   switch ($field_name) {
-    // Card block type.
     case 'b_card_overline':
     case 'b_card_headline':
     case 'b_card_subhead':
@@ -143,7 +153,6 @@ function unl_five_herbie_preprocess_layout(&$variables) {
     }
   }
 }
-
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for media templates.
