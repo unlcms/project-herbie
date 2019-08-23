@@ -1,0 +1,15 @@
+uuid: a7cc2a15-8cb3-425a-b3a8-a56cd1e074df
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_240x180
+label: '4:3 (240x180)'
+effects:
+  7c91af11-2888-4151-8f79-e498c896111c:
+    uuid: 7c91af11-2888-4151-8f79-e498c896111c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 240
+      height: 180
+      anchor: center-center

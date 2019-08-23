@@ -1,0 +1,15 @@
+uuid: d9973c4d-d713-42fc-aaf8-71532fd9454f
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_1920x1440
+label: '4:3 (1920x1440)'
+effects:
+  2a6115bc-c19e-4c59-915e-efce65a4d67c:
+    uuid: 2a6115bc-c19e-4c59-915e-efce65a4d67c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1440
+      anchor: center-center

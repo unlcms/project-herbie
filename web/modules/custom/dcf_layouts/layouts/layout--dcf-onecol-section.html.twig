@@ -11,12 +11,18 @@
  */
 #}
 {% if content %}
-  {% if settings.extra_classes %}
-    <div class="{{ settings.extra_classes }}">
+{% set section_attributes = settings.section_attributes %}
+{% set title_attributes = settings.title_attributes %}
+
+  {% if section_attributes %}
+    <div{{ section_attributes }}>
+    {% if settings.title and section_attributes.hasClass('dcf-inverse') %}
+      {% set title_attributes = title_attributes.addClass('dcf-inverse') %}
+    {% endif %}
   {% endif %}
 
     {% if settings.title %}
-      <h2 class="{{ settings.title_classes}}">{{ settings.title }}</h2>
+      <h2{{ title_attributes }}>{{ settings.title }}</h2>
     {% endif %}
 
     <div{{ attributes }}>
@@ -29,7 +35,7 @@
 
     </div>
 
-  {% if settings.extra_classes %}
+  {% if section_attributes %}
     </div>
   {% endif %}
 {% endif %}

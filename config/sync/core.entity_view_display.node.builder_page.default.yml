@@ -8,9 +8,9 @@ dependencies:
     - field.field.node.builder_page.s_n_hero
     - node.type.builder_page
   module:
+    - dcf_layouts
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -19,24 +19,31 @@ third_party_settings:
     enabled: true
     sections:
       -
-        layout_id: layout_onecol
-        layout_settings: {  }
+        layout_id: dcf_onecol_section
+        layout_settings:
+          column_widths: '100'
+          title: ''
+          title_classes: {  }
+          section_package: ''
+          section_classes: {  }
         components:
-          18ed6349-0c0a-455d-b5c1-20569003edd0:
-            uuid: 18ed6349-0c0a-455d-b5c1-20569003edd0
-            region: content
+          df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
+            uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
+            region: first
             configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
               id: 'field_block:node:builder_page:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
               formatter:
                 label: hidden
                 type: text_default
                 settings: {  }
                 third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: 0
         third_party_settings: {  }
   layout_builder_restrictions:
     entity_view_mode_restriction:
@@ -46,9 +53,11 @@ third_party_settings:
         'Content fields':
           - 'field_block:node:builder_page:body'
         'Custom block types':
+          - card
           - content
         Forms: {  }
-        'Inline blocks': {  }
+        'Inline blocks':
+          - 'inline_block:card'
         'Lists (Views)': {  }
         Menus: {  }
         System: {  }
