@@ -53,12 +53,10 @@ function unl_five_herbie_preprocess_block(&$variables) {
  * Implements template_preprocess_field().
  */
 function unl_five_herbie_preprocess_field(&$variables) {
-  if ($variables['field_name'] == 'field_media_image') {
-    // Add needed classes to a media image's <img> tag inside a Hero block.
-    if ($variables['element']['#object']->_referringItem->getEntity()->bundle() == 'hero') {
-      foreach ($variables['items'] as $key => $item) {
-        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
-      }
+  if ($variables['field_name'] == 'b_hero_image') {
+    // Add needed classes to the <img> tag inside a Hero block.
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
     }
   }
 

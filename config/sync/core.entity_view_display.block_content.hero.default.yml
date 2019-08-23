@@ -4,26 +4,28 @@ status: true
 dependencies:
   config:
     - block_content.type.hero
-    - field.field.block_content.hero.b_hero_media
+    - field.field.block_content.hero.b_hero_image
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
+    - responsive_image.styles.wide
   module:
     - options
+    - responsive_image
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero
 mode: default
 content:
-  b_hero_media:
-    type: entity_reference_entity_view
-    weight: 1
+  b_hero_image:
+    weight: 0
     label: hidden
     settings:
-      view_mode: wide
-      link: false
+      responsive_image_style: wide
+      image_link: ''
     third_party_settings: {  }
+    type: responsive_image
     region: content
   b_hero_overline:
     weight: 2
@@ -34,7 +36,7 @@ content:
     type: string
     region: content
   b_hero_size:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
