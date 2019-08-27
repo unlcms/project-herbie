@@ -1,0 +1,8 @@
+uuid: 98fe1a19-9213-4424-8d58-b910f7b090fa
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+revision: 1
+description: 'Hero banner that appears at the top of a page.'

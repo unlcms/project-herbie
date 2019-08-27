@@ -8,8 +8,8 @@ _core:
   default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
 id: unl_five_herbie_page_title
 theme: unl_five_herbie
-region: pagetitle
-weight: -3
+region: hero
+weight: -2
 provider: null
 plugin: page_title_block
 settings:

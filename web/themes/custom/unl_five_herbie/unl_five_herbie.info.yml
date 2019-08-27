@@ -17,9 +17,8 @@ regions:
   page_bottom: Page bottom
 
   header: Header
-  breadcrumb: Breadcrumbs
-  pagetitle: Page Title
   navlinks: Navigation links
+  hero: Hero
   content_top: Content top
   sidebar_first: Sidebar first
   content: Content

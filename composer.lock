@@ -4733,7 +4733,7 @@
             "description": "Manage which fields & layouts are available in Layout Builder",
             "homepage": "https://www.drupal.org/project/layout_builder_restrictions",
             "support": {
-                "source": "https://git.drupalcode.org/project/layout_builder_restrictions"
+                "source": "http://cgit.drupalcode.org/layout_builder_restrictions"
             }
         },
         {
@@ -5112,7 +5112,7 @@
             "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
-                "source": "https://git.drupalcode.org/project/pathauto"
+                "source": "http://cgit.drupalcode.org/pathauto"
             }
         },
         {
@@ -9175,12 +9175,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "de7256aee0a825d67fc82ccb57b318f6f6d3d934"
+                "reference": "2fb3c61e326ccd98e6df905eeb80720a4454493e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/de7256aee0a825d67fc82ccb57b318f6f6d3d934",
-                "reference": "de7256aee0a825d67fc82ccb57b318f6f6d3d934",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/2fb3c61e326ccd98e6df905eeb80720a4454493e",
+                "reference": "2fb3c61e326ccd98e6df905eeb80720a4454493e",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9193,7 +9193,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-05-31T18:52:43+00:00"
+            "time": "2019-06-27T23:29:06+00:00"
         },
         {
             "name": "unlcms/unl_multisite",

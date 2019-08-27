@@ -1,0 +1,29 @@
+{% for item in items %}
+  <!-- InstanceBeginEditable name="hero" -->
+  <div class="dcf-hero unl-hero-notch-stripe dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-mb-6 unl-bg-darker-gray{% if unl_hide_page_title %} dcf-sr-only{% endif %}"{{ item.attributes }}>
+    <!-- InstanceEndEditable -->
+    <div class="dcf-hero-group-1">
+      {{ breadcrumbs }}
+      {% if unl_no_page_title is not defined %}
+        <header class="dcf-page-title" id="dcf-page-title">
+          <!-- InstanceBeginEditable name="pagetitle" -->
+          {{ item.content.b_hero_overline }}
+          {% if item.content.b_hero_title.0 %}
+            {{ item.content.b_hero_title }}
+          {% else %}
+            <h1>{{ page_title }}</h1>
+          {% endif %}
+          {{ item.content.b_hero_subhead }}
+          <!-- InstanceEndEditable -->
+        </header>
+      {% endif %}
+      <!-- InstanceBeginEditable name="herogroup1" -->
+      <!-- InstanceEndEditable -->
+    </div>
+    <!-- InstanceBeginEditable name="herogroup2" -->
+    <div class="dcf-hero-group-2 dcf-w-100% {{ hero_size_class }}">
+      {{ item.content.b_hero_image }}
+    </div>
+    <!-- InstanceEndEditable -->
+  </div>
+{% endfor %}

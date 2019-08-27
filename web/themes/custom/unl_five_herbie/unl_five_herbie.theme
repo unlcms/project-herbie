@@ -24,6 +24,20 @@ function unl_five_herbie_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_region().
+ */
+function unl_five_herbie_preprocess_region(&$variables) {
+  // Add the Hero field (s_n_hero) to the hero region template, region--hero.html.twig.
+  if ($variables['region'] == 'hero') {
+    $current_route = \Drupal::routeMatch();
+    $node = $current_route->getParameters()->get('node');
+    if ($node && $node->hasField('s_n_hero') && !$node->get('s_n_hero')->isEmpty()) {
+      $variables['s_n_hero'] = $node->get('s_n_hero')->view(['label' => 'hidden', 'type' => 'entity_reference_entity_view']);
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
@@ -41,11 +55,45 @@ function unl_five_herbie_preprocess_block(&$variables) {
 function unl_five_herbie_preprocess_field(&$variables) {
   $field_name = $variables['field_name'];
 
+  /**
+   * Image field in Hero block type.
+   */
+  if ($field_name == 'b_hero_image') {
+    // Add needed classes to the <img> tag inside a Hero block.
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
+    }
+  }
+
+  /**
+   * Entity reference field that references a Hero block.
+   */
+  if ($field_name == 's_n_hero') {
+    // Provide Breadcrumbs and Page title variables for field--s-n-hero.html.twig.
+    $request     = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $variables['page_title'] = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+    $breadcrumb_block = \Drupal\block\Entity\Block::load('breadcrumbs');
+    $breadcrumb_block_content = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($breadcrumb_block);
+    $variables['breadcrumbs'] = $breadcrumb_block_content;
+
+    // Set a variable with the b_hero_size CSS class since rendering the field
+    // directly into the template will include breaking HTML comments if twig debugging is enabled.
+    $variables['hero_size_class'] = $variables['items'][0]['content']['b_hero_size'][0]['#markup'];
+   }
+
+
+  /**
+   * Card block type.
+   */
+
   // $section_classes is NULL if nothing is returned.
   $section_classes = $variables['element']['#object']->__get('#section_classes');
 
   switch ($field_name) {
-    // Card block type.
     case 'b_card_overline':
     case 'b_card_headline':
     case 'b_card_subhead':
@@ -104,6 +152,19 @@ function unl_five_herbie_preprocess_layout(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for media templates.
+ */
+function unl_five_herbie_theme_suggestions_media_alter(array &$suggestions, array $variables) {
+  // Add a template suggestion so that media in a specific block can be targeted.
+  // This allows a template such as media__hero.html.twig for removing all wrappers,
+  // including the contextual link wrapper, that interfere with 5.0 CSS.
+  // https://drupal.stackexchange.com/a/245683
+  $media = $variables['elements']['#media'];
+  $parent = $media->_referringItem->getEntity();
+  $suggestions[] = 'media__' . $parent->bundle();
 }
 
 /**

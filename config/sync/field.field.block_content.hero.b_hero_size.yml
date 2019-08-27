@@ -1,0 +1,23 @@
+uuid: 5b0a2a19-5f85-4cf5-b0bb-9f0dc1ab2dcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.b_hero_size
+  module:
+    - options
+id: block_content.hero.b_hero_size
+field_name: b_hero_size
+entity_type: block_content
+bundle: hero
+label: 'Hero size'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: dcf-hero-md
+default_value_callback: ''
+settings: {  }
+field_type: list_string
