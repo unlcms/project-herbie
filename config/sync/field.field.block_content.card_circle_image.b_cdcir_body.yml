@@ -1,0 +1,28 @@
+uuid: b2263fad-7a40-49a5-a7ba-14f0fc484577
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card_circle_image
+    - field.storage.block_content.b_cdcir_body
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    block_body: '0'
+    standard: '0'
+    webform: '0'
+    plain_text: '0'
+id: block_content.card_circle_image.b_cdcir_body
+field_name: b_cdcir_body
+entity_type: block_content
+bundle: card_circle_image
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

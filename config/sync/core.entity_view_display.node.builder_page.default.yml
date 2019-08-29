@@ -54,11 +54,13 @@ third_party_settings:
           - 'field_block:node:builder_page:body'
         'Custom block types':
           - accordion
+          - card_circle_image
           - content
         Forms: {  }
         'Inline blocks':
           - 'inline_block:accordion'
           - 'inline_block:card'
+          - 'inline_block:card_circle_image'
           - 'inline_block:content'
         'Lists (Views)': {  }
         Menus: {  }
