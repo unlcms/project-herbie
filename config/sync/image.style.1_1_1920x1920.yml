@@ -1,0 +1,15 @@
+uuid: 1aa742c7-ff75-4dde-9838-00300bb0689b
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_1920x1920
+label: '1:1 (1920x1920)'
+effects:
+  b5e03d09-58d6-4b04-b260-7b784ad7cf2b:
+    uuid: b5e03d09-58d6-4b04-b260-7b784ad7cf2b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1920
+      anchor: center-center
