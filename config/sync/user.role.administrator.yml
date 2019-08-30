@@ -159,6 +159,7 @@ permissions:
   - 'update any media'
   - 'update media'
   - 'use text format block_body'
+  - 'use text format block_body_centered'
   - 'use text format standard'
   - 'use text format webform'
   - 'view all media revisions'
