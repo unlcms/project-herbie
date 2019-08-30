@@ -37,7 +37,7 @@ function unl_five_herbie_preprocess_region(&$variables) {
   }
 }
 
-/**
+/*
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
@@ -55,7 +55,7 @@ function unl_five_herbie_preprocess_block(&$variables) {
 function unl_five_herbie_preprocess_field(&$variables) {
   $field_name = $variables['field_name'];
 
-  /**
+  /*
    * Image field in Hero block type.
    */
   if ($field_name == 'b_hero_image') {
@@ -65,7 +65,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
     }
   }
 
-  /**
+  /*
    * Entity reference field that references a Hero block.
    */
   if ($field_name == 's_n_hero') {
@@ -86,10 +86,9 @@ function unl_five_herbie_preprocess_field(&$variables) {
    }
 
 
-  /**
+  /*
    * Card block type.
    */
-
   // $section_classes is NULL if nothing is returned.
   $section_classes = $variables['element']['#object']->__get('#section_classes');
 
@@ -123,6 +122,29 @@ function unl_five_herbie_preprocess_field(&$variables) {
         case 'b_card_cta':
           $cta_style = $variables['element']['#object']->get('b_card_cta_style')->getValue();
           $variables['items'][0]['content']['cta_style'] = isset($cta_style[0]['value']) ? $cta_style[0]['value'] : '';
+          break;
+      }
+
+      break;
+  }
+
+  /*
+   * Card + Cirle Image block type.
+   */
+  switch ($field_name) {
+    case 'b_cdcir_headline':
+    case 'b_cdcir_body':
+    case 'b_cdcir_cta':
+    case 'b_cdcir_image':
+      // Add to all Card fields.
+      $variables['items'][0]['content']['section_classes'] = $section_classes;
+
+      // Loop through individual Card + Circle Image fields.
+      switch ($field_name) {
+        case 'b_cdcir_headline':
+          $headline_link = $variables['element']['#object']->get('b_cdcir_headline_link')->first();
+          $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
+          $variables['items'][0]['content']['headline_link'] = $headline_link;
           break;
       }
 
