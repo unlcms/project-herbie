@@ -1,5 +1,5 @@
 status: 1
-pattern: 'Hero [block_content:b_hero_title]'
+pattern: '(Hero) [block_content:b_hero_title]'
 escape: false
 dependencies:
   config:
