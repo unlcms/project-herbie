@@ -6,7 +6,8 @@ id: development
 label: Development
 description: ''
 folder: ../config/development
-module: {  }
+module:
+  twig_xdebug: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }
