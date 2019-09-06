@@ -1,0 +1,15 @@
+uuid: deef0e20-084f-4ef3-8625-9ca3b5590901
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_2880x2880
+label: '1:1 (2880x2880)'
+effects:
+  17bb988e-6e32-4f54-b8b5-db58b824c169:
+    uuid: 17bb988e-6e32-4f54-b8b5-db58b824c169
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2880
+      height: 2880
+      anchor: center-center

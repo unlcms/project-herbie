@@ -1,0 +1,15 @@
+uuid: 7daf43e1-2b75-48d1-8dcb-1425e95745a2
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_960x960
+label: '1:1 (960x960)'
+effects:
+  06cf3d5b-9d57-42eb-8850-98ab13e35146:
+    uuid: 06cf3d5b-9d57-42eb-8850-98ab13e35146
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 960
+      anchor: center-center

@@ -1,0 +1,70 @@
+uuid: b7119f2c-f1b6-4a58-946b-567095c76da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card_circle_image
+    - field.field.block_content.card_circle_image.b_cdcir_body
+    - field.field.block_content.card_circle_image.b_cdcir_cta
+    - field.field.block_content.card_circle_image.b_cdcir_headline
+    - field.field.block_content.card_circle_image.b_cdcir_headline_link
+    - field.field.block_content.card_circle_image.b_cdcir_image
+    - responsive_image.styles.card_circle_image_block
+  module:
+    - link
+    - responsive_image
+    - text
+id: block_content.card_circle_image.default
+targetEntityType: block_content
+bundle: card_circle_image
+mode: default
+content:
+  b_cdcir_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  b_cdcir_cta:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  b_cdcir_headline:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  b_cdcir_headline_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  b_cdcir_image:
+    weight: 3
+    label: hidden
+    settings:
+      responsive_image_style: card_circle_image_block
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+hidden: {  }

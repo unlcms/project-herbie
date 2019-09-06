@@ -1,0 +1,53 @@
+uuid: 52496a32-4e0a-4d38-8a86-94fa50dce19e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.block_body_centered
+  module:
+    - ckeditor
+format: block_body_centered
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Tools
+          items:
+            - SpecialChar
+            - ShowBlocks
+  plugins:
+    stylescombo:
+      styles: ''
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: standard
+    language:
+      language_list: un
+    customconfig:
+      ckeditor_custom_config: 'forcePasteAsPlainText = true'
+    dcf_base:
+      enabled_plugins:
+        dcf_table: '0'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
