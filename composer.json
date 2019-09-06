@@ -151,7 +151,7 @@
     },
     "require-dev": {
         "drupal/twig_xdebug": "^1.1",
-        "webflo/drupal-core-require-dev": "^8.6.0"
+        "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
         "drupal/drupal": "*"
