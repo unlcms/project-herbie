@@ -134,10 +134,19 @@ function unl_five_herbie_preprocess_field(&$variables) {
  * Implements template_preprocess_layout().
  */
 function unl_five_herbie_preprocess_layout(&$variables) {
-  // Make section classes array available to each block in the layout.
-  if (isset($variables['settings']['section_classes']) && !empty($variables['settings']['section_classes'])) {
+  // If a DCF section style package is used, then populate $section_classes
+  // with its classes.
+  if (isset($variables['settings']['section_package']) && !empty($variables['settings']['section_package'])) {
+    $config_dcf_classes = \Drupal::config('dcf_classes.classes');
+    $section_packages = $config_dcf_classes->get('section_packages');
+    $section_classes = explode(' ', $section_packages[$variables['settings']['section_package']]);
+  }
+  elseif (isset($variables['settings']['section_classes']) && !empty($variables['settings']['section_classes'])) {
     $section_classes = $variables['settings']['section_classes'];
+  }
 
+  // Make section classes array available to each block in the layout.
+  if (isset($section_classes) && !empty($section_classes)) {
     // Loop through each region.
     foreach ($variables['content'] as $region_id => $region) {
       if (substr($region_id, 0, 1) !== '#') {
