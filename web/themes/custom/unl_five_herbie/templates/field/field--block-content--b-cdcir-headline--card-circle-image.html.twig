@@ -42,6 +42,7 @@
 
 {% for item in items %}
   {% if 'dcf-inverse' in item.content.section_classes %}
+    {% set element_attributes = element_attributes.addClass('dcf-inverse') %}
     {% set link_attributes = link_attributes.addClass('dcf-inverse') %}
   {% endif %}
   {% if item.content.headline_link is not empty %}
