@@ -54,6 +54,7 @@ third_party_settings:
           - 'field_block:node:builder_page:body'
         'Custom block types':
           - accordion
+          - card
           - card_circle_image
           - content
         Forms: {  }

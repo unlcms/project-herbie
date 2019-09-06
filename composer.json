@@ -97,6 +97,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
+        "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.6",
         "drupal/block_form_alter": "^1.0@beta",
         "drupal/block_type_templates": "^1.0@alpha",
@@ -150,7 +151,7 @@
     },
     "require-dev": {
         "drupal/twig_xdebug": "^1.1",
-        "webflo/drupal-core-require-dev": "^8.6.0"
+        "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
         "drupal/drupal": "*"
