@@ -17,9 +17,9 @@ class UnlTwigExtension extends \Twig_Extension {
   /**
    * {@inheritdoc}
    */
-  public function getFilters() {
+  public function getFunctions() {
     return [
-      new \Twig_SimpleFilter('intersect', 'array_intersect'),
+      new \Twig_SimpleFunction('intersect', 'array_intersect'),
     ];
   }
 
