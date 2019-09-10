@@ -1,5 +1,5 @@
 services:
-  unl_twig..twig_extension:
-    class: Drupal\unl_twig\unlTwigExtension
+  unl_twig.twig_extension:
+    class: Drupal\unl_twig\UnlTwigExtension
     tags:
       - { name: twig.extension }
