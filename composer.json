@@ -109,6 +109,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
+        "drupal/dcf": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
         "drupal/embed": "^1.0",
         "drupal/entity_browser": "^2.1",
