@@ -151,6 +151,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "drupal/config_inspector": "^1.0@beta",
         "drupal/twig_xdebug": "^1.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
