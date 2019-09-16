@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80b183ea0b74da1d1af75232296acc0f",
+    "content-hash": "5fefd0d9cc8ac40f9e2b638dcdeb6fa3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2884,6 +2884,69 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/config_ignore",
                 "issues": "http://drupal.org/project/config_ignore",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/config_role_split",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_role_split.git",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_role_split-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "f6ccd4935907a557a25fbc19f8a14fe9a75e1606"
+            },
+            "require": {
+                "drupal/config_filter": "*",
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1503218943",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Fabian Bircher",
+                    "homepage": "https://www.drupal.org/u/bircher",
+                    "email": "opensource@fabianbircher.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Nuvole Web",
+                    "email": "info@nuvole.org",
+                    "homepage": "http://nuvole.org",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Config Role Split: Configuration filter for splitting permissions off roles",
+            "homepage": "https://www.drupal.org/project/config_role_split",
+            "keywords": [
+                "Drupal",
+                "configuration",
+                "configuration management"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_role_split",
+                "issues": "https://www.drupal.org/project/issues/config_role_split",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
@@ -12234,6 +12297,7 @@
         "drupal/block_form_alter": 10,
         "drupal/block_type_templates": 15,
         "drupal/ckeditor_config": 5,
+        "drupal/config_role_split": 10,
         "drupal/dcf": 10,
         "drupal/diff": 5,
         "drupal/entity_embed": 5,
