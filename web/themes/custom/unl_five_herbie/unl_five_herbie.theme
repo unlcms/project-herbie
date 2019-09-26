@@ -58,7 +58,10 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
   // can be used in Layout Builder with different color sections.
   $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
   $variables['content']['news_recent_block_output'] = $block->build();
-  $variables['content']['news_recent_block_title'] = $block->getPluginDefinition()['admin_label'];
+
+  $view = \Drupal\views\Views::getView('news_recent');
+  $view->setDisplay('block_1');
+  $variables['content']['news_recent_title'] = $view->getTitle();
 }
 
 /**
