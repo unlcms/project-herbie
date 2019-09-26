@@ -1,0 +1,40 @@
+uuid: 3afbe778-0632-4ffa-9ee5-4b17c7627951
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_recent
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - unl_five_herbie
+id: views_block__news_recent_block_1
+theme: unl_five_herbie
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'views_block:news_recent-block_1'
+settings:
+  id: 'views_block:news_recent-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
