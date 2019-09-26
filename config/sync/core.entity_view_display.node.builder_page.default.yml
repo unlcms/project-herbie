@@ -63,7 +63,8 @@ third_party_settings:
           - 'inline_block:card'
           - 'inline_block:card_circle_image'
           - 'inline_block:content'
-        'Lists (Views)': {  }
+        'Lists (Views)':
+          - 'views_block:news_recent-block_1'
         Menus: {  }
         System: {  }
         User: {  }
