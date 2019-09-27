@@ -193,9 +193,25 @@ function unl_five_herbie_preprocess_layout(&$variables) {
             if (isset($variables['content'][$region_id][$block_id]['content']['#block_content'])) {
               $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_classes', $section_classes);
             }
+            elseif (isset($variables['content'][$region_id][$block_id]['content']['#view'])) {
+              $variables['content'][$region_id][$block_id]['content']['#view']->storage->set('#section_classes', $section_classes);
+            }
           }
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_fields().
+ */
+function unl_five_herbie_preprocess_views_view_fields(&$variables) {
+  // Apply .dcf-inverse to View fields if view is being included in a dark Layout Builder section.
+  $section_classes = $variables['view']->storage->get('#section_classes');
+  if (in_array('dcf-inverse', $section_classes)) {
+    foreach ($variables['fields'] as $field) {
+      $field->element_attributes->addClass('class', 'dcf-inverse');
     }
   }
 }
