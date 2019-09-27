@@ -52,12 +52,35 @@ section:
   - dcf-pb-8
   - dcf-pb-9
   - dcf-pb-10
+  - dcf-mt-0
+  - dcf-mt-1
+  - dcf-mt-2
+  - dcf-mt-3
+  - dcf-mt-4
+  - dcf-mt-5
+  - dcf-mt-6
+  - dcf-mt-7
+  - dcf-mt-8
+  - dcf-mt-9
+  - dcf-mt-10
+  - dcf-mb-0
+  - dcf-mb-1
+  - dcf-mb-2
+  - dcf-mb-3
+  - dcf-mb-4
+  - dcf-mb-5
+  - dcf-mb-6
+  - dcf-mb-7
+  - dcf-mb-8
+  - dcf-mb-9
+  - dcf-mb-10
+  - dcf-clearfix
 section_packages:
-  Cream: 'dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-5 dcf-pb-5'
-  Scarlet: 'dcf-bleed dcf-wrapper unl-bg-scarlet dcf-inverse dcf-pt-5 dcf-pb-5'
-  'Darkest Gray': 'dcf-bleed dcf-wrapper unl-bg-darkest-gray dcf-inverse dcf-pt-5 dcf-pb-5'
-  'Darker Gray': 'dcf-bleed dcf-wrapper unl-bg-darker-gray dcf-inverse dcf-pt-5 dcf-pb-5'
-  'Dark Gray': 'dcf-bleed dcf-wrapper unl-bg-dark-gray dcf-inverse dcf-pt-5 dcf-pb-5'
-  'Light Gray': 'dcf-bleed dcf-wrapper unl-bg-light-gray dcf-pt-5 dcf-pb-5'
-  'Lighter Gray': 'dcf-bleed dcf-wrapper unl-bg-lighter-gray dcf-pt-5 dcf-pb-5'
-  'Lightest Gray': 'dcf-bleed dcf-wrapper unl-bg-lightest-gray dcf-pt-5 dcf-pb-5'
+  Cream: 'dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  Scarlet: 'dcf-bleed dcf-wrapper unl-bg-scarlet dcf-inverse dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Darkest Gray': 'dcf-bleed dcf-wrapper unl-bg-darkest-gray dcf-inverse dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Darker Gray': 'dcf-bleed dcf-wrapper unl-bg-darker-gray dcf-inverse dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Dark Gray': 'dcf-bleed dcf-wrapper unl-bg-dark-gray dcf-inverse dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Light Gray': 'dcf-bleed dcf-wrapper unl-bg-light-gray dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Lighter Gray': 'dcf-bleed dcf-wrapper unl-bg-lighter-gray dcf-pt-7 dcf-pb-7 dcf-clearfix'
+  'Lightest Gray': 'dcf-bleed dcf-wrapper unl-bg-lightest-gray dcf-pt-7 dcf-pb-7 dcf-clearfix'
