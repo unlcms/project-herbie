@@ -42,10 +42,19 @@ function unl_five_herbie_preprocess_region(&$variables) {
  */
 function unl_five_herbie_preprocess_block(&$variables) {
   if (isset($variables['content']['#block_content'])) {
-    $bundle = $variables['content']['#block_content']->bundle();
-
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
     $variables['content']['section_classes'] = $section_classes;
+  }
+  elseif (isset($variables['content']['#view'])) {
+    $section_classes = $variables['content']['#view']->storage->get('#section_classes');
+  }
+  elseif (isset($variables['content']['#object'])) {
+    $section_classes = $variables['content']['#object']->__get('#section_classes');
+  }
+
+  // Set dcf-inverse on the main heading label in the block template.
+  if (isset($section_classes) && in_array('dcf-inverse', $section_classes)) {
+    $variables['title_attributes']['class'][] = 'dcf-inverse';
   }
 }
 
@@ -195,6 +204,9 @@ function unl_five_herbie_preprocess_layout(&$variables) {
             }
             elseif (isset($variables['content'][$region_id][$block_id]['content']['#view'])) {
               $variables['content'][$region_id][$block_id]['content']['#view']->storage->set('#section_classes', $section_classes);
+            }
+            elseif (isset($variables['content'][$region_id][$block_id]['content']['#object'])) {
+              $variables['content'][$region_id][$block_id]['content']['#object']->__set('#section_classes', $section_classes);
             }
           }
         }
