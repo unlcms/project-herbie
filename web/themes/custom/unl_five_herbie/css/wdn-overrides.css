@@ -49,3 +49,17 @@
 p:last-child {
   margin-bottom: 0;
 }
+
+/* In lieu of adding .dcf-inverse to <a> when a field in a view
+   has "Link to the Content" checked, due to difficulty. */
+h1.dcf-inverse a,
+h2.dcf-inverse a,
+h3.dcf-inverse a,
+h4.dcf-inverse a,
+h5.dcf-inverse a,
+h6.dcf-inverse a,
+p.dcf-inverse a,
+/* "More link" in Views */
+.dcf-inverse .more-link a {
+  color: #fefdfa !important;
+}
