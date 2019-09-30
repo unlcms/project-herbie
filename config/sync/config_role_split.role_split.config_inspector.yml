@@ -1,0 +1,11 @@
+uuid: a51c07ea-ddc8-4535-9e06-cacd8804b28f
+langcode: en
+status: true
+dependencies: {  }
+id: config_inspector
+label: 'Config Inspector'
+weight: 0
+mode: split
+roles:
+  administrator:
+    - 'inspect configuration'

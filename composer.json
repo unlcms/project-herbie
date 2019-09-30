@@ -105,6 +105,7 @@
         "drupal/chosen": "^2.7",
         "drupal/ckeditor_config": "^2.0@RC",
         "drupal/config_ignore": "^2.1",
+        "drupal/config_role_split": "^1.0@beta",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
@@ -151,6 +152,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "drupal/config_inspector": "^1.0@beta",
         "drupal/twig_xdebug": "^1.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },

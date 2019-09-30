@@ -37,6 +37,7 @@ permissions:
   - 'administer block_content_type labels'
   - 'administer blocks'
   - 'administer book outlines'
+  - 'administer config role split'
   - 'administer configuration split'
   - 'administer content types'
   - 'administer dcf classes'
