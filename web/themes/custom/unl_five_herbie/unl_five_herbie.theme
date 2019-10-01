@@ -42,11 +42,35 @@ function unl_five_herbie_preprocess_region(&$variables) {
  */
 function unl_five_herbie_preprocess_block(&$variables) {
   if (isset($variables['content']['#block_content'])) {
-    $bundle = $variables['content']['#block_content']->bundle();
-
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
     $variables['content']['section_classes'] = $section_classes;
   }
+  elseif (isset($variables['content']['#view'])) {
+    $section_classes = $variables['content']['#view']->storage->get('#section_classes');
+  }
+  elseif (isset($variables['content']['#object'])) {
+    $section_classes = $variables['content']['#object']->__get('#section_classes');
+  }
+
+  // Set dcf-inverse on the main heading label in the block template.
+  if (isset($section_classes) && in_array('dcf-inverse', $section_classes)) {
+    $variables['title_attributes']['class'][] = 'dcf-inverse';
+  }
+}
+
+/**
+ * Implements template_preprocess_node__TYPE().
+ */
+function unl_five_herbie_preprocess_node__news(&$variables) {
+  // Insert an instance news_recent block_1 into the News node template. Rather than use
+  // a standard block, this is done to keep the CSS wrappers separate so the same block_1
+  // can be used in Layout Builder with different color sections.
+  $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
+  $variables['content']['news_recent_block_output'] = $block->build();
+
+  $view = \Drupal\views\Views::getView('news_recent');
+  $view->setDisplay('block_1');
+  $variables['content']['news_recent_title'] = $view->getTitle();
 }
 
 /**
@@ -178,9 +202,28 @@ function unl_five_herbie_preprocess_layout(&$variables) {
             if (isset($variables['content'][$region_id][$block_id]['content']['#block_content'])) {
               $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_classes', $section_classes);
             }
+            elseif (isset($variables['content'][$region_id][$block_id]['content']['#view'])) {
+              $variables['content'][$region_id][$block_id]['content']['#view']->storage->set('#section_classes', $section_classes);
+            }
+            elseif (isset($variables['content'][$region_id][$block_id]['content']['#object'])) {
+              $variables['content'][$region_id][$block_id]['content']['#object']->__set('#section_classes', $section_classes);
+            }
           }
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_fields().
+ */
+function unl_five_herbie_preprocess_views_view_fields(&$variables) {
+  // Apply .dcf-inverse to View fields if view is being included in a dark Layout Builder section.
+  $section_classes = $variables['view']->storage->get('#section_classes');
+  if (in_array('dcf-inverse', $section_classes)) {
+    foreach ($variables['fields'] as $field) {
+      $field->element_attributes->addClass('class', 'dcf-inverse');
     }
   }
 }

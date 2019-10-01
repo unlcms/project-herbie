@@ -1,0 +1,34 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-mb-8">
+      <div class="dcf-col-100% dcf-col-33%-start@md">
+        {{ content.n_news_image }}
+      </div>
+      <div class="dcf-col-100% dcf-col-67%-end@md">
+        {{ title_prefix }}
+        <h2{{ title_attributes.addClass('dcf-mb-0') }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+        {% set createdDate = node.getCreatedTime|date('F j, Y') %}
+        <h3 class="dcf-subhead dcf-mt-1">{{ createdDate }}</h3>
+        {{ title_suffix }}
+
+        <div{{ content_attributes }}>
+          {{ content.body }}
+        </div>
+      </div>
+    </div>
+
+</article>

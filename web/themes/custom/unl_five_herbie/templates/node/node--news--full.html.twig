@@ -1,0 +1,40 @@
+{%
+  set classes = [
+  'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div{{ content_attributes }}>
+    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
+      <div class="dcf-col-100% dcf-col-67%-start@md">
+        {{ content.n_news_image }}
+      </div>
+      <div class="dcf-col-100% dcf-col-33%-end@md">
+        <div class="dcf-figcaption dcf-txt-2xs dcf-italic dcf-mb-4">{{ content.n_news_image_credit }}</div>
+        <div class="dcf-figcaption dcf-mb-4">{{ content.n_news_image_cutline }}</div>
+      </div>
+    </div>
+    <div class="dcf-mt-7 dcf-w-max-xl">
+      {% set createdDate = node.getCreatedTime|date('F j, Y') %}
+      <p class="dcf-subhead">{{ createdDate }}</p>
+      {{ content.body }}
+    </div>
+  </div>
+
+</article>
+
+<div class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-8 unl-bg-lighter-gray dcf-mt-10 dcf-mb-10">
+  <h2 class="dcf-txt-h6 dcf-regular dcf-uppercase dcf-mb-6">{{ content.news_recent_title }}</h2>
+  {{ content.news_recent_block_output }}
+</div>

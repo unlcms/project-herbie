@@ -1,0 +1,19 @@
+uuid: d2b685d0-9216-4c8a-8420-b83d01e02891
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_image_credit
+    - node.type.news
+id: node.news.n_news_image_credit
+field_name: n_news_image_credit
+entity_type: node
+bundle: news
+label: 'Lead image credit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

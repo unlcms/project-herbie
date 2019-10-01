@@ -1,0 +1,21 @@
+uuid: a5db49bf-5d90-4170-b660-78510fe964c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_news_image_cutline
+field_name: n_news_image_cutline
+entity_type: node
+type: string
+settings:
+  max_length: 512
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
