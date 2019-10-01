@@ -26,6 +26,7 @@ third_party_settings:
           title_classes: {  }
           section_package: ''
           section_classes: {  }
+          block_margin: ''
         components:
           df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
             uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
