@@ -22,6 +22,7 @@ permissions:
   - 'administer main menu items'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
+  - 'create and edit custom blocks'
   - 'create book content'
   - 'create builder_page content'
   - 'create card block content'
