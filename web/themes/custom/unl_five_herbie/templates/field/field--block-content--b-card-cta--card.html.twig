@@ -51,17 +51,18 @@
 
 {% for item in items %}
   {# For transparent cards with dark section backgrounds #}
-  {% if item.content.card_presentation == 'transparent' and 'dcf-inverse' in item.content.section_classes %}
-    {% if item.content['cta_style'] == 'primary' %}
-      {% set bg_color = item.content.section_classes|intersect(item.content.dark_backgrounds)|first %}
-      {% set element_attributes = element_attributes.addClass(bg_color_mapping[bg_color]) %}
+  {% if item.data.card_presentation == 'transparent' and 'dcf-inverse' in item.data.section_classes %}
+    {% if item.data.cta_style == 'primary' %}
+      {% set section_classes = array_flip(item.data.section_classes) %}
+      {% set bg_color = intersect_key(bg_color_mapping, section_classes)|first %}
+      {% set element_attributes = element_attributes.addClass(bg_color) %}
       {% set element_attributes = element_attributes.addClass('dcf-btn-inverse-primary') %}
     {% elseif item.content['cta_style'] == 'secondary' %}
       {% set element_attributes = element_attributes.addClass('dcf-btn-inverse-secondary') %}
     {% endif %}
   {# For every other scenario #}
   {% else %}
-    {% if item.content['cta_style'] == 'primary' %}
+    {% if item.data.cta_style == 'primary' %}
       {% set element_attributes = element_attributes.addClass('dcf-btn-primary') %}
     {% elseif item.content['cta_style'] == 'secondary' %}
       {% set element_attributes = element_attributes.addClass('dcf-btn-secondary') %}
