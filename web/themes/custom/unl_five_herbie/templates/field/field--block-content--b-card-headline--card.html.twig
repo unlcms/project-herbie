@@ -41,15 +41,15 @@
 {% set link_attributes = create_attribute() %}
 
 {% for item in items %}
-  {% if item.content.card_presentation == 'transparent' and 'dcf-inverse' in item.content.section_classes %}
+  {% if item.data.card_presentation == 'transparent' and 'dcf-inverse' in item.data.section_classes %}
     {% set element_attributes = element_attributes.addClass('dcf-inverse') %}
     {% set link_attributes = link_attributes.addClass('dcf-inverse') %}
   {% endif %}
-  {% if item.content.subhead is not empty %}
+  {% if item.data.subhead is not empty %}
     {% set element_attributes = element_attributes.addClass('dcf-mb-0') %}
   {% endif %}
-  {% if item.content.headline_link is not empty %}
-    <h3 {{element_attributes}}><a {{ link_attributes }}href="{{ item.content.headline_link }}">{{ item.content }}</a></h3>
+  {% if item.data.headline_link is not empty %}
+    <h3 {{element_attributes}}><a {{ link_attributes }}href="{{ item.data.headline_link }}">{{ item.content }}</a></h3>
   {% else %}
     <h3 {{element_attributes}}>{{ item.content }}</h3>
   {% endif %}

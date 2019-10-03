@@ -33,7 +33,7 @@
 {% if card_presentation == 'solid' %}
   {% set attributes = attributes.addClass(['unl-frame-quad', 'unl-bg-cream']) %}
   {% set inner_wrapper_attributes = inner_wrapper_attributes.addClass(['dcf-pt-7', 'dcf-pr-7', 'dcf-pb-8', 'dcf-pl-7']) %}
-{% elseif card_presentation == 'transparent' and 'dcf-inverse' in content.section_classes %} 
+{% elseif card_presentation == 'transparent' and 'dcf-inverse' in data.section_classes %} 
   {% set attributes = attributes.addClass('unl-cream') %}
   {% if content.b_card_image.0 %}
     {% set inner_wrapper_attributes = inner_wrapper_attributes.addClass('dcf-pt-5') %}
