@@ -38,7 +38,7 @@ function unl_five_herbie_preprocess_region(&$variables) {
 function unl_five_herbie_preprocess_block(&$variables) {
   if (isset($variables['content']['#block_content'])) {
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
-    $variables['content']['section_classes'] = $section_classes;
+    $variables['data']['section_classes'] = $section_classes;
   }
   elseif (isset($variables['content']['#view'])) {
     $section_classes = $variables['content']['#view']->storage->get('#section_classes');
@@ -101,7 +101,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
     // Set a variable with the b_hero_size CSS class since rendering the field
     // directly into the template will include breaking HTML comments if twig debugging is enabled.
-    $variables['hero_size_class'] = $variables['items'][0]['content']['b_hero_size'][0]['#markup'];
+    $variables['hero_size_class'] = $variables['items'][0]['data']['b_hero_size'][0]['#markup'];
    }
 
 
@@ -119,28 +119,28 @@ function unl_five_herbie_preprocess_field(&$variables) {
     case 'b_card_cta':
     case 'b_card_image':
       // Add to all Card fields.
-      $variables['items'][0]['content']['section_classes'] = $section_classes;
+      $variables['items'][0]['data']['section_classes'] = $section_classes;
 
       $card_presentation = $variables['element']['#object']->get('b_card_card_presentation')->getValue();
-      $variables['items'][0]['content']['card_presentation'] = isset($card_presentation[0]['value']) ? $card_presentation[0]['value'] : '';
+      $variables['items'][0]['data']['card_presentation'] = isset($card_presentation[0]['value']) ? $card_presentation[0]['value'] : '';
 
       // Loop through individual Card fields.
       switch ($field_name) {
         case 'b_card_headline':
           $headline_link = $variables['element']['#object']->get('b_card_headline_link')->first();
           $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
-          $variables['items'][0]['content']['headline_link'] = $headline_link;
+          $variables['items'][0]['data']['headline_link'] = $headline_link;
 
           $overline = $variables['element']['#object']->get('b_card_overline')->getValue();
-          $variables['items'][0]['content']['overline'] = isset($overline[0]['value']) ? $overline[0]['value'] : '';
+          $variables['items'][0]['data']['overline'] = isset($overline[0]['value']) ? $overline[0]['value'] : '';
 
           $subhead = $variables['element']['#object']->get('b_card_subhead')->getValue();
-          $variables['items'][0]['content']['subhead'] = isset($subhead[0]['value']) ? $subhead[0]['value'] : '';
+          $variables['items'][0]['data']['subhead'] = isset($subhead[0]['value']) ? $subhead[0]['value'] : '';
           break;
 
         case 'b_card_cta':
           $cta_style = $variables['element']['#object']->get('b_card_cta_style')->getValue();
-          $variables['items'][0]['content']['cta_style'] = isset($cta_style[0]['value']) ? $cta_style[0]['value'] : '';
+          $variables['items'][0]['data']['cta_style'] = isset($cta_style[0]['value']) ? $cta_style[0]['value'] : '';
           break;
       }
 
@@ -156,14 +156,14 @@ function unl_five_herbie_preprocess_field(&$variables) {
     case 'b_cdcir_cta':
     case 'b_cdcir_image':
       // Add to all Card fields.
-      $variables['items'][0]['content']['section_classes'] = $section_classes;
+      $variables['items'][0]['data']['section_classes'] = $section_classes;
 
       // Loop through individual Card + Circle Image fields.
       switch ($field_name) {
         case 'b_cdcir_headline':
           $headline_link = $variables['element']['#object']->get('b_cdcir_headline_link')->first();
           $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
-          $variables['items'][0]['content']['headline_link'] = $headline_link;
+          $variables['items'][0]['data']['headline_link'] = $headline_link;
           break;
       }
 

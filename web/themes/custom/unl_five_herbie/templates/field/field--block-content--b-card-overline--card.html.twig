@@ -40,7 +40,7 @@
 {% set element_attributes = element_attributes.addClass(['dcf-subhead', 'unl-font-sans', 'unl-dark-gray']) %}
 
 {% for item in items %}
-  {% if item.content.card_presentation == 'transparent' and 'dcf-inverse' in item.content.section_classes %}
+  {% if item.data.card_presentation == 'transparent' and 'dcf-inverse' in item.data.section_classes %}
     {% set element_attributes = element_attributes.removeClass('unl-dark-gray') %}
   {% endif %}
   <p {{ element_attributes }}>{{ item.content }}</p>

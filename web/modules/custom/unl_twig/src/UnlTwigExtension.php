@@ -20,6 +20,8 @@ class UnlTwigExtension extends \Twig_Extension {
   public function getFunctions() {
     return [
       new \Twig_SimpleFunction('intersect', 'array_intersect'),
+      new \Twig_SimpleFunction('intersect_key', 'array_intersect_key'),
+      new \Twig_SimpleFunction('array_flip', 'array_flip'),
     ];
   }
 

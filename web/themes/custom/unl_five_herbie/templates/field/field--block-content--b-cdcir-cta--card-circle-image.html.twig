@@ -50,7 +50,7 @@
 %}
 
 {% for item in items %}
-  {% if 'dcf-inverse' in item.content.section_classes %}
+  {% if 'dcf-inverse' in item.data.section_classes %}
     {% set element_attributes = element_attributes.addClass('dcf-inverse') %}
   {% endif %}
   <a href="{{ item.content['#url'] }}" {{ element_attributes }}>{{ item.content['#title'] }}</a>
