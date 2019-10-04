@@ -144,10 +144,10 @@ function unl_media_preprocess_filter_caption(&$variables) {
   // Convert the markup to a DOM element.
   $element_string = $variables['node']->__toString();
   $dom = new DOMDocument();
-  $dom->loadHTML($element_string);
+  @$dom->loadHTML($element_string);
   // Only proceed if element is <drupal-entity>.
   $element = $dom->getElementsByTagName("drupal-entity");
-  if ($element->count() != 0) {
+  if (method_exists($element,'count') && $element->count() != 0) {
     $element = $element->item(0);
     $embed_display = $element->getAttribute('data-entity-embed-display');
 
