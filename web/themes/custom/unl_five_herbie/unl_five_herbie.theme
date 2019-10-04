@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements template_preprocess_page().
+ * Implements template_preprocess_region().
  */
-function unl_five_herbie_preprocess_page(&$variables) {
+function unl_five_herbie_preprocess_region(&$variables) {
   // Hide the hero region page title on Person nodes.
   $current_route = \Drupal::routeMatch();
   $node = $current_route->getParameters()->get('node');
@@ -21,12 +21,7 @@ function unl_five_herbie_preprocess_page(&$variables) {
         break;
     }
   }
-}
 
-/**
- * Implements template_preprocess_region().
- */
-function unl_five_herbie_preprocess_region(&$variables) {
   // Add the Hero field (s_n_hero) to the hero region template, region--hero.html.twig.
   if ($variables['region'] == 'hero') {
     $current_route = \Drupal::routeMatch();
