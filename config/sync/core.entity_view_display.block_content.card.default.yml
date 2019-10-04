@@ -15,6 +15,7 @@ dependencies:
     - field.field.block_content.card.b_card_subhead
     - responsive_image.styles.card_block
   module:
+    - dcf_lazyload
     - link
     - options
     - responsive_image
@@ -83,7 +84,10 @@ content:
     settings:
       responsive_image_style: card_block
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      dcf_lazyload:
+        dcf_lazyload_enable: true
+        dcf_lazyload_sizes: true
     type: responsive_image
     region: content
   b_card_overline:

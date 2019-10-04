@@ -12,6 +12,7 @@ dependencies:
     - media.type.image
     - responsive_image.styles.wide
   module:
+    - dcf_lazyload
     - layout_builder
     - responsive_image
 third_party_settings:
@@ -29,7 +30,10 @@ content:
     settings:
       responsive_image_style: wide
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      dcf_lazyload:
+        dcf_lazyload_enable: true
+        dcf_lazyload_sizes: true
     type: responsive_image
     region: content
 hidden:
