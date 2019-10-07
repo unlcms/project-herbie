@@ -171,7 +171,6 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view own webform submission'
-  - 'view own webform submission'
   - 'view person revisions'
   - 'view restricted block content'
   - 'view the administration theme'
