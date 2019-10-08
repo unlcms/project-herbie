@@ -9361,12 +9361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "2fb3c61e326ccd98e6df905eeb80720a4454493e"
+                "reference": "dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/2fb3c61e326ccd98e6df905eeb80720a4454493e",
-                "reference": "2fb3c61e326ccd98e6df905eeb80720a4454493e",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef",
+                "reference": "dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9379,7 +9379,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-06-27T23:29:06+00:00"
+            "time": "2019-10-03T21:15:17+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
