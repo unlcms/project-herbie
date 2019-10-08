@@ -9,8 +9,10 @@ folder: ../config/development
 module:
   config_inspector: 0
   twig_xdebug: 0
+  update: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - update.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
