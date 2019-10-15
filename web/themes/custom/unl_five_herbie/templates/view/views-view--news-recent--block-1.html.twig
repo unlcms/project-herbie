@@ -7,6 +7,7 @@
   dom_id ? 'js-view-dom-id-' ~ dom_id,
 ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -30,7 +31,11 @@
   {% endif %}
 
   {% if rows %}
-    <div class="view-content dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-5">
+    {% if view.getItemsPerPage() == 4 %}
+      <div class="view-content dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-5">
+    {% elseif view.getItemsPerPage() == 3 %}
+      <div class="view-content dcf-grid-halves@sm dcf-grid-thirds@lg dcf-col-gap-vw dcf-row-gap-5">
+    {% endif %}
       {{ rows }}
     </div>
   {% elseif empty %}

@@ -64,10 +64,11 @@ third_party_settings:
           - 'inline_block:card'
           - 'inline_block:card_circle_image'
           - 'inline_block:content'
-        'Lists (Views)':
-          - 'views_block:news_recent-block_1'
+        'Lists (Views)': {  }
         Menus: {  }
         System: {  }
+        UNL:
+          - unl_recent_news
         User: {  }
         'User fields': {  }
         core: {  }
