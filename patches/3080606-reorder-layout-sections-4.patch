@@ -1,0 +1,388 @@
+diff --git a/core/modules/layout_builder/css/layout-builder.css b/core/modules/layout_builder/css/layout-builder.css
+index c98b894b09..43919914f5 100644
+--- a/core/modules/layout_builder/css/layout-builder.css
++++ b/core/modules/layout_builder/css/layout-builder.css
+@@ -184,11 +184,12 @@
+ 
+ /**
+  * @todo remove in https://www.drupal.org/project/drupal/issues/3042127
+- *   This rule ensures the row weight dropdowns in the Move Block dialog
++ *   Ensure the row weight dropdowns in the Move Block & Sections dialogs
+  *   maintain the background color of their container when they are hovered
+  *   over or are inside the active row.
+  */
+-#drupal-off-canvas .layout-builder-components-table__row .form-item {
++#drupal-off-canvas .layout-builder-components-table__row .form-item,
++#drupal-off-canvas .layout-builder-sections-table__row .form-item {
+   background-color: transparent;
+ }
+ 
+@@ -216,6 +217,7 @@
+  * unsaved changes until "Save layout" is submitted.
+  * @todo create issue for todo.
+  */
+-.layout-builder-components-table .tabledrag-changed-warning {
++.layout-builder-components-table .tabledrag-changed-warning,
++.layout-builder-sections-table .tabledrag-changed-warning {
+   display: none !important;
+ }
+diff --git a/core/modules/layout_builder/layout_builder.routing.yml b/core/modules/layout_builder/layout_builder.routing.yml
+index b59e2a036d..bb1fb35b5d 100644
+--- a/core/modules/layout_builder/layout_builder.routing.yml
++++ b/core/modules/layout_builder/layout_builder.routing.yml
+@@ -39,6 +39,19 @@ layout_builder.configure_section:
+       section_storage:
+         layout_builder_tempstore: TRUE
+ 
++layout_builder.move_sections_form:
++  path: '/layout_builder/move/sections/{section_storage_type}/{section_storage}'
++  defaults:
++    _title_callback: '\Drupal\layout_builder\Form\MoveSectionsForm::title'
++    _form: '\Drupal\layout_builder\Form\MoveSectionsForm'
++  requirements:
++    _layout_builder_access: 'view'
++  options:
++    _admin_route: TRUE
++    parameters:
++      section_storage:
++        layout_builder_tempstore: TRUE
++
+ layout_builder.remove_section:
+   path: '/layout_builder/remove/section/{section_storage_type}/{section_storage}/{delta}'
+   defaults:
+diff --git a/core/modules/layout_builder/src/Form/DefaultsEntityForm.php b/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
+index 8fb71c52f9..a4f4a86608 100644
+--- a/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
++++ b/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
+@@ -171,6 +171,32 @@ protected function actions(array $form, FormStateInterface $form_state) {
+       '#submit' => ['::redirectOnSubmit'],
+       '#redirect' => 'discard_changes',
+     ];
++    $actions['move_sections'] = [
++      '#type' => 'container',
++      '#attributes' => [
++        'class' => ['js-show'],
++      ],
++      'open_sections_move' => [
++        '#type' => 'link',
++        '#title' => $this->t('Move sections'),
++        '#url' => \Drupal\Core\Url::fromRoute('layout_builder.move_sections_form',
++          [
++            'section_storage_type' => $this->sectionStorage->getStorageType(),
++            'section_storage' => $this->sectionStorage->getStorageId(),
++          ],
++          [
++            'attributes' => [
++              'class' => [
++                'use-ajax',
++              ],
++              'data-dialog-type' => 'dialog',
++              'data-dialog-renderer' => 'off_canvas',
++            ],
++          ]
++        ),
++        '#id' => 'layout-builder-move-sections'
++      ]
++    ];
+     $actions['preview_toggle'] = $this->buildContentPreviewToggle();
+     return $actions;
+   }
+diff --git a/core/modules/layout_builder/src/Form/MoveSectionsForm.php b/core/modules/layout_builder/src/Form/MoveSectionsForm.php
+new file mode 100644
+index 0000000000..66dd750155
+--- /dev/null
++++ b/core/modules/layout_builder/src/Form/MoveSectionsForm.php
+@@ -0,0 +1,228 @@
++<?php
++/**
++ * @file
++ * Contains \Drupal\boardspot\Form\InviteForm.
++ */
++
++namespace Drupal\layout_builder\Form;
++
++use Drupal\Core\Ajax\AjaxFormHelperTrait;
++use Drupal\Core\Form\FormBase;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\layout_builder\Controller\LayoutRebuildTrait;
++use Drupal\layout_builder\LayoutBuilderHighlightTrait;
++use Drupal\layout_builder\LayoutTempstoreRepositoryInterface;
++use Drupal\layout_builder\SectionStorageInterface;
++use \Drupal\layout_builder\Section;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Provides a form for moving a section.
++ *
++ * @internal
++ *   Form classes are internal.
++ */
++class MoveSectionsForm extends FormBase {
++
++  use AjaxFormHelperTrait;
++  use LayoutBuilderHighlightTrait;
++  use LayoutRebuildTrait;
++
++  /**
++   * The section storage.
++   *
++   * @var \Drupal\layout_builder\SectionStorageInterface
++   */
++  protected $sectionStorage;
++
++  /**
++   * The Layout Tempstore.
++   *
++   * @var \Drupal\layout_builder\LayoutTempstoreRepositoryInterface
++   */
++  protected $layoutTempstore;
++
++  /**
++   * Constructs a new MoveSectionsForm.
++   *
++   * @param \Drupal\layout_builder\LayoutTempstoreRepositoryInterface $layout_tempstore_repository
++   *   The layout tempstore.
++   */
++  public function __construct(LayoutTempstoreRepositoryInterface $layout_tempstore_repository) {
++    $this->layoutTempstore = $layout_tempstore_repository;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container) {
++    return new static(
++      $container->get('layout_builder.tempstore_repository')
++    );
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getFormId() {
++    return 'layout_builder_section_move';
++  }
++
++  /**
++   * Builds the move section form.
++   *
++   * @param array $form
++   *   An associative array containing the structure of the form.
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The current state of the form.
++   * @param \Drupal\layout_builder\SectionStorageInterface $section_storage
++   *   The section storage being configured.
++   *
++   * @return array
++   *   The form array.
++   */
++  public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
++    $parameters = array_slice(func_get_args(), 2);
++    foreach ($parameters as $parameter) {
++      if (is_null($parameter)) {
++        throw new \InvalidArgumentException('MoveSectionsForm requires all parameters.');
++      }
++    }
++
++    $this->sectionStorage = $section_storage;
++
++    $storage_label = $section_storage->label();
++    $aria_label = $this->t('Sections in @storage_label layout', ['@storage_label' => $storage_label]);
++
++    $form['sections_wrapper']['sections'] = [
++      '#type' => 'table',
++      '#header' => [
++        $this->t('Sections'),
++        $this->t('Delta'),
++      ],
++      '#tabledrag' => [
++        [
++          'action' => 'order',
++          'relationship' => 'sibling',
++          'group' => 'table-sort-delta',
++        ],
++      ],
++      '#theme_wrappers' => [
++        'container' => [
++          '#attributes' => [
++            'id' => 'layout-builder-sections-table',
++            'class' => ['layout-builder-sections-table'],
++            'aria-label' => $aria_label,
++          ],
++        ],
++      ],
++    ];
++
++    /** @var Section[] $sections */
++    $sections = $section_storage->getSections();
++
++    foreach($sections as $section_delta => $section) {
++      $row_classes = [
++        'draggable',
++        'layout-builder-sections-table__row',
++      ];
++
++      $layout_settings = $section->getLayoutSettings();
++      $section_label = !empty($layout_settings['label']) ? $layout_settings['label'] : $this->t('Section @section', ['@section' => $section_delta + 1]);
++
++      $label = [
++        '#markup' => $section_label,
++        '#wrapper_attributes' => ['class' => ['layout-builder-sections-table__section-label'] ]
++      ];
++
++      $form['sections_wrapper']['sections'][$section_delta] = [
++        '#attributes' => ['class' => $row_classes],
++        'label' => $label,
++        'delta' => [
++          '#type' => 'select',
++          '#options' => range(0, count($sections) -1),
++          '#default_value' => $section_delta,
++          '#title' => $this->t('Delta for @section section', ['@section' => $section_label]),
++          '#title_display' => 'invisible',
++          '#attributes' => [
++            'class' => ['table-sort-delta']
++          ],
++        ],
++      ];
++
++    }
++
++    $form['actions']['submit'] = [
++      '#type' => 'submit',
++      '#value' => $this->t('Move'),
++      '#button_type' => 'primary',
++    ];
++
++    $form['#attributes']['data-add-layout-builder-wrapper'] = 'layout-builder--move-sections-active';
++
++    if ($this->isAjax()) {
++      $form['actions']['submit']['#ajax']['callback'] = '::ajaxSubmit';
++    }
++    return $form;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state) {
++
++    $new_deltas = $this->getNewDeltas($form_state);
++    if (count($new_deltas)) {
++      $sections = $this->sectionStorage->getSections();
++      $deltas = array_combine(array_keys($new_deltas), array_column($new_deltas, 'delta'));
++      asort($deltas);
++      $order = array_keys($deltas);
++      $sections = array_map(function($delta) use ($sections) {
++        return $sections[$delta];
++      }, $order);
++      $this->sectionStorage->removeAllSections();
++      foreach ($sections as $section) {
++        $this->sectionStorage->appendSection($section);
++      }
++      $this->layoutTempstore->set($this->sectionStorage);
++    }
++
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function successfulAjaxSubmit(array $form, FormStateInterface $form_state) {
++    return $this->rebuildAndClose($this->sectionStorage);
++  }
++
++  /**
++   * Gets the submitted section deltas.
++   *
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The form state.
++   *
++   * @return array
++   *   The section deltas.
++   */
++  protected function getNewDeltas(FormStateInterface $form_state) {
++    if ($form_state->hasValue('sections')) {
++      return (array) $form_state->getValue('sections');
++    }
++    return [];
++  }
++
++  /**
++   * Provides a title callback.
++   *
++   * @param \Drupal\layout_builder\SectionStorageInterface $section_storage
++   *   The section storage.
++   *
++   * @return string
++   *   The title for the move section form.
++   */
++  public function title(SectionStorageInterface $section_storage) {
++    $storage_label = $section_storage->label();
++    return $this->t('Move @storage_label sections', ['@storage_label' => $storage_label]);
++  }
++}
+diff --git a/core/modules/layout_builder/src/Form/OverridesEntityForm.php b/core/modules/layout_builder/src/Form/OverridesEntityForm.php
+index 29f940bdcc..8bbc26b7f1 100644
+--- a/core/modules/layout_builder/src/Form/OverridesEntityForm.php
++++ b/core/modules/layout_builder/src/Form/OverridesEntityForm.php
+@@ -207,6 +207,32 @@ protected function actions(array $form, FormStateInterface $form_state) {
+       '#submit' => ['::redirectOnSubmit'],
+       '#redirect' => 'revert',
+     ];
++    $actions['move_sections'] = [
++      '#type' => 'container',
++      '#attributes' => [
++        'class' => ['js-show'],
++      ],
++      'open_sections_move' => [
++        '#type' => 'link',
++        '#title' => $this->t('Move sections'),
++        '#url' => \Drupal\Core\Url::fromRoute('layout_builder.move_sections_form',
++          [
++            'section_storage_type' => $this->sectionStorage->getStorageType(),
++            'section_storage' => $this->sectionStorage->getStorageId(),
++          ],
++          [
++            'attributes' => [
++              'class' => [
++                'use-ajax',
++              ],
++              'data-dialog-type' => 'dialog',
++              'data-dialog-renderer' => 'off_canvas',
++            ],
++          ]
++        ),
++        '#id' => 'layout-builder-move-sections'
++      ]
++    ];
+     $actions['preview_toggle'] = $this->buildContentPreviewToggle();
+     return $actions;
+   }
+diff --git a/core/themes/stable/css/layout_builder/layout-builder.css b/core/themes/stable/css/layout_builder/layout-builder.css
+index 06b32a0eb4..ddf71602b8 100644
+--- a/core/themes/stable/css/layout_builder/layout-builder.css
++++ b/core/themes/stable/css/layout_builder/layout-builder.css
+@@ -184,11 +184,12 @@
+ 
+ /**
+  * @todo remove in https://www.drupal.org/project/drupal/issues/3042127
+- *   This rule ensures the row weight dropdowns in the Move Block dialog
++ *   Ensure the row weight dropdowns in the Move Block & Sections dialogs
+  *   maintain the background color of their container when they are hovered
+  *   over or are inside the active row.
+  */
+-#drupal-off-canvas .layout-builder-components-table__row .form-item {
++#drupal-off-canvas .layout-builder-components-table__row .form-item,
++#drupal-off-canvas .layout-builder-sections-table__row .form-item {
+   background-color: transparent;
+ }
+ 
+@@ -216,6 +217,7 @@
+  * unsaved changes until "Save layout" is submitted.
+  * @todo create issue for todo.
+  */
+-.layout-builder-components-table .tabledrag-changed-warning {
++.layout-builder-components-table .tabledrag-changed-warning,
++.layout-builder-sections-table .tabledrag-changed-warning {
+   display: none !important;
+ }
