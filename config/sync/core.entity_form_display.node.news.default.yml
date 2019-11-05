@@ -30,6 +30,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Lead image'
+      region: content
 id: node.news.default
 targetEntityType: node
 bundle: news
