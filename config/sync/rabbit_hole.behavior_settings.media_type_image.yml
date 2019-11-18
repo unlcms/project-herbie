@@ -1,0 +1,11 @@
+uuid: 6b4033c2-be48-44d2-be65-4e8d3fdb6b8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: media_type_image
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
