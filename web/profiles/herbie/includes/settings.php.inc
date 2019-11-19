@@ -33,7 +33,7 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
  * for all PHP processes, including http requests, it is increased here (if
  * needed) only for command line usage.
  */
-if (PHP_SAPI == "cli") {
+if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
   // https://www.php.net/ini_get
   function return_bytes($val) {
     $val = trim($val);
