@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
-    - image.style.thumbnail
+    - image.style.16_9_240x135
     - node.type.news
   module:
     - field_group
@@ -53,8 +53,8 @@ content:
   n_news_image:
     weight: 9
     settings:
+      preview_image_style: 16_9_240x135
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
