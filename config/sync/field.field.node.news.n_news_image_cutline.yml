@@ -10,7 +10,7 @@ field_name: n_news_image_cutline
 entity_type: node
 bundle: news
 label: 'Lead image cutline'
-description: ''
+description: 'A caption or description for the <em>Lead image</em>.'
 required: false
 translatable: false
 default_value: {  }

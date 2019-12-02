@@ -10,7 +10,7 @@ field_name: n_news_image_credit
 entity_type: node
 bundle: news
 label: 'Lead image credit'
-description: ''
+description: 'A credit line for the <em>Lead image</em>. E.g "Herbie Husker | University Communication".'
 required: false
 translatable: false
 default_value: {  }
