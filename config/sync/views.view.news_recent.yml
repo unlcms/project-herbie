@@ -172,7 +172,7 @@ display:
       display_extenders: {  }
       use_more: true
       use_more_always: true
-      use_more_text: more
+      use_more_text: 'more<span class="visually-hidden">news items</span>'
       link_url: ''
       link_display: '0'
     cache_metadata:
