@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * This module extends views functionality provided by core.
+ */
+
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements template_preprocess_container().
+ */
+function unl_views_preprocess_container(&$variables) {
+  // By default, HTML in the use_more_text variable (used in Views) is escaped.
+  // The code below is a workaround. We're effectively replacing the title
+  // with a filtered but not escaped copy of the user input.
+  if ($variables['element']['#type'] == 'more_link' && isset($variables['element']['#view'])) {
+    $display = $variables['element']['#view']->storage->get('display');
+    $use_more_text = Xss::filterAdmin($display['default']['display_options']['use_more_text']);
+    $variables['children'] = $variables['element'];
+    $variables['children']['#title'] = Markup::create($use_more_text);
+    unset($variables['children']['#children']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_views_form_views_ui_edit_display_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Modify the description for use_more_text.
+  $description = $form['options']['use_more_text']['#description']->__toString();
+  $form['options']['use_more_text']['#description'] = $description . ' ' . t('This field accepts HTML as is allowed by Xss::filterAdmin.');
+}
