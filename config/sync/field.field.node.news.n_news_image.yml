@@ -12,7 +12,7 @@ field_name: n_news_image
 entity_type: node
 bundle: news
 label: 'Lead image'
-description: ''
+description: 'Images should conform to a 16:9 aspect ratio. Automatic cropping will be applied to images.'
 required: false
 translatable: false
 default_value: {  }

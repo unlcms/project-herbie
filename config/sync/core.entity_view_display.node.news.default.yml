@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
     - node.type.news
-    - responsive_image.styles.wide
+    - responsive_image.styles.news_lead_image
   module:
     - layout_builder
     - layout_builder_restrictions
@@ -46,7 +46,7 @@ content:
     region: content
     label: hidden
     settings:
-      responsive_image_style: wide
+      responsive_image_style: news_lead_image
       image_link: ''
     third_party_settings: {  }
   n_news_image_credit:

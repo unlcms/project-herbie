@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.storage.node.n_news_image
     - node.type.news
-    - responsive_image.styles.card_block
+    - responsive_image.styles.news_lead_image
   module:
     - node
     - responsive_image
@@ -271,7 +271,7 @@ display:
           click_sort_column: target_id
           type: responsive_image
           settings:
-            responsive_image_style: card_block
+            responsive_image_style: news_lead_image
             image_link: content
           group_column: ''
           group_columns: {  }
