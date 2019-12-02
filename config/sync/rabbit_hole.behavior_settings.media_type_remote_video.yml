@@ -1,0 +1,11 @@
+uuid: 3e519b6a-438a-4047-ab2c-44b304a9ad53
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media_type_remote_video
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301

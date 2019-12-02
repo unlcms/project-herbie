@@ -1,0 +1,11 @@
+uuid: c81904cc-21c9-43ff-b979-786d6873136e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+id: media_type_file
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
