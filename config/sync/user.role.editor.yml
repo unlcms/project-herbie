@@ -67,6 +67,7 @@ permissions:
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert person revisions'
+  - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
   - 'update any card_circle_image block content'
