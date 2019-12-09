@@ -52,6 +52,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Attributes
+      region: content
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video

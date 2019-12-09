@@ -36,6 +36,7 @@ third_party_settings:
         open: false
         required_fields: true
       label: '(Optional) UNL Directory Overrides'
+      region: content
 id: node.person.default
 targetEntityType: node
 bundle: person

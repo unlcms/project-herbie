@@ -71,7 +71,9 @@ module:
   page_cache: 0
   paragraphs_type_permissions: 0
   path: 0
+  rabbit_hole: 0
   responsive_image: 0
+  rh_media: 0
   shortcut: 0
   syslog: 0
   system: 0
@@ -82,6 +84,7 @@ module:
   toolbar: 0
   unl_blocks: 0
   unl_cas: 0
+  unl_config: 0
   unl_five_ckeditor: 0
   unl_media: 0
   unl_mediahub: 0

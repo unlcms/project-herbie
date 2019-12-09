@@ -151,6 +151,8 @@ permissions:
   - 'link to any page'
   - 'notify of path changes'
   - 'perform batch updates entity usage'
+  - 'rabbit hole administer media'
+  - 'rabbit hole bypass media'
   - 'revert all revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
