@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * This is the module customizes the configuration UI for UNLCMS.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Form: system_site_information_settings.
+ * Route: system.site_information_settings.
+ * Path: admin/config/system/site-information.
+ */
+function unl_config_form_system_site_information_settings_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $user = \Drupal::currentUser();
+
+  // Disable certain configuration fields for non-administrators.
+  if (!$user->hasPermission('administer site configuration')) {
+    $form['error_page']['site_403']['#disabled'] = TRUE;
+    $form['error_page']['site_404']['#disabled'] = TRUE;
+  }
+
+}
