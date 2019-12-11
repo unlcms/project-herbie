@@ -30,6 +30,8 @@ function unl_views_preprocess_container(&$variables) {
  */
 function unl_views_form_views_ui_edit_display_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
   // Modify the description for use_more_text.
-  $description = $form['options']['use_more_text']['#description']->__toString();
-  $form['options']['use_more_text']['#description'] = $description . ' ' . t('This field accepts HTML as is allowed by Xss::filterAdmin.');
+  if (isset($form['options']['use_more_text'])) {
+    $description = $form['options']['use_more_text']['#description']->__toString();
+    $form['options']['use_more_text']['#description'] = $description . ' ' . t('This field accepts HTML as is allowed by Xss::filterAdmin.');
+  }
 }
