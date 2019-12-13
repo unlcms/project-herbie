@@ -1,5 +1,9 @@
 ignored_config_entities:
-  - 'webform.webform.*'
+  0: 'webform.webform.*'
+  2: 'system.site:name'
+  4: 'system.site:mail'
+  6: 'system.site:slogan'
+  8: 'system.site:page.front'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 enable_export_filtering: '1'
