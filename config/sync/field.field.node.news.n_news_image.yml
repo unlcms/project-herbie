@@ -12,7 +12,7 @@ field_name: n_news_image
 entity_type: node
 bundle: news
 label: 'Lead image'
-description: ''
+description: 'Images should conform to a 16:9 aspect ratio. Automatic cropping will be applied to images.'
 required: false
 translatable: false
 default_value: {  }
@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   file_directory: 'node/news/image/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg webp'
-  max_filesize: '10 MB'
+  max_filesize: '40 MB'
   max_resolution: 5000x5000
   min_resolution: ''
   alt_field: true

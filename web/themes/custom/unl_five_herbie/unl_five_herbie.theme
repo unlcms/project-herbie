@@ -5,6 +5,8 @@
  * Contains theme functions for unl_five_herbie.
  */
 
+use Drupal\views\Views;
+
 /**
  * Implements template_preprocess_region().
  */
@@ -57,13 +59,14 @@ function unl_five_herbie_preprocess_block(&$variables) {
  * Implements template_preprocess_node__TYPE().
  */
 function unl_five_herbie_preprocess_node__news(&$variables) {
-  // Insert an instance news_recent block_1 into the News node template. Rather than use
-  // a standard block, this is done to keep the CSS wrappers separate so the same block_1
-  // can be used in Layout Builder with different color sections.
+  // Insert an instance news_recent block_1 into the News node template. Rather
+  // than use a standard block, this is done to keep the CSS wrappers separate
+  // so the same block_1 can be used in Layout Builder with different
+  // color sections.
   $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
   $variables['content']['news_recent_block_output'] = $block->build();
 
-  $view = \Drupal\views\Views::getView('news_recent');
+  $view = Views::getView('news_recent');
   $view->setDisplay('block_1');
   $variables['content']['news_recent_title'] = $view->getTitle();
 }
@@ -214,7 +217,8 @@ function unl_five_herbie_preprocess_layout(&$variables) {
  * Implements template_preprocess_views_view_fields().
  */
 function unl_five_herbie_preprocess_views_view_fields(&$variables) {
-  // Apply .dcf-inverse to View fields if view is being included in a dark Layout Builder section.
+  // Apply .dcf-inverse to View fields if view is being included in a dark
+  // Layout Builder section.
   $section_classes = $variables['view']->storage->get('#section_classes');
   if (in_array('dcf-inverse', $section_classes)) {
     foreach ($variables['fields'] as $field) {

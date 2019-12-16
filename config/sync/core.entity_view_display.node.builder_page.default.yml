@@ -49,6 +49,8 @@ third_party_settings:
   layout_builder_restrictions:
     entity_view_mode_restriction:
       allowed_blocks:
+        'Aggregated Content':
+          - unl_recent_news
         'Chaos Tools': {  }
         Content: {  }
         'Content fields':
@@ -64,8 +66,7 @@ third_party_settings:
           - 'inline_block:card'
           - 'inline_block:card_circle_image'
           - 'inline_block:content'
-        'Lists (Views)':
-          - 'views_block:news_recent-block_1'
+        'Lists (Views)': {  }
         Menus: {  }
         System: {  }
         User: {  }
