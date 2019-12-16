@@ -12,7 +12,7 @@ use Drupal\views\Views;
  * @Block(
  *   id = "unl_recent_news",
  *   admin_label = @Translation("Recent News"),
- *   category = @Translation("UNL"),
+ *   category = @Translation("Aggregated Content"),
  * )
  */
 class RecentNewsBlock extends BlockBase {
