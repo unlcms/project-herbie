@@ -1,0 +1,49 @@
+uuid: d28ee631-03bb-496c-a52a-70b199dd4f13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
+    - paragraphs.paragraphs_type.contact_info_physical_address
+  module:
+    - options
+id: paragraph.contact_info_physical_address.default
+targetEntityType: paragraph
+bundle: contact_info_physical_address
+mode: default
+content:
+  p_b_cinfo_padd_city:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_padd_postal_code:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_padd_st_address:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_padd_state:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

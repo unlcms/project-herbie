@@ -1,0 +1,9 @@
+uuid: bfcf89e0-2d13-4c98-9cfe-3c54c8a45e76
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_fax
+label: 'Contact Info Fax'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

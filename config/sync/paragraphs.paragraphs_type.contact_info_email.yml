@@ -1,0 +1,9 @@
+uuid: 2ea94864-b17d-4619-983f-2a9caaae9b24
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_email
+label: 'Contact Info Email'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

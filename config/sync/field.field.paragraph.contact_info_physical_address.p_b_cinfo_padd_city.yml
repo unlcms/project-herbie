@@ -1,0 +1,19 @@
+uuid: baebf919-c70e-4105-94bf-8d9bb879fd9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_padd_city
+    - paragraphs.paragraphs_type.contact_info_physical_address
+id: paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+field_name: p_b_cinfo_padd_city
+entity_type: paragraph
+bundle: contact_info_physical_address
+label: City
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

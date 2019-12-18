@@ -1,0 +1,19 @@
+uuid: 99b53375-9fa6-42c7-becc-9f2e5bbfa44d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_poadd_city
+    - paragraphs.paragraphs_type.contact_info_post_office_box_add
+id: paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_city
+field_name: p_b_cinfo_poadd_city
+entity_type: paragraph
+bundle: contact_info_post_office_box_add
+label: City
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 1f1b3006-683d-4788-b171-aa70caba1899
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_heading.p_b_cinfo_heading_heading
+    - paragraphs.paragraphs_type.contact_info_heading
+id: paragraph.contact_info_heading.default
+targetEntityType: paragraph
+bundle: contact_info_heading
+mode: default
+content:
+  p_b_cinfo_heading_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
