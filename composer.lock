@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2de850391a94a0fa45792c20ad75cda",
+    "content-hash": "557b98fcda582b7da5eab3c60d54e8da",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3508,7 +3508,8 @@
                     "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
                     "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
                     "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
-                    "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch"
+                    "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
+                    "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch"
                 }
             },
             "autoload": {
@@ -9432,12 +9433,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef"
+                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef",
-                "reference": "dc9f1be3d40a5e4f0b8b16b65bb778621e1075ef",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/a4dbf5e48d4c796e781c7e2759c02fe841d81954",
+                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9450,7 +9451,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-10-03T21:15:17+00:00"
+            "time": "2019-12-17T22:48:10+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
