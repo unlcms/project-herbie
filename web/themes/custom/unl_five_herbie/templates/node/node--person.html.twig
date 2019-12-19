@@ -27,7 +27,7 @@
             {% if node.field_person_portrait.value %}
               {{ content.field_person_portrait }}
             {% else  %}
-              <img class="photo profile_pic dcf-ratio-child dcf-circle dcf-d-block dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}" alt="Avatar for {{ label }}" />
+              <img class="photo profile_pic dcf-ratio-child dcf-circle dcf-d-block dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}?s=large" alt="Avatar for {{ label }}" />
             {% endif %}
           </span>
           <div class="vcardInfo unl-font-sans">
