@@ -24,8 +24,10 @@
 
         <div class="vcard faculty dcf-measure" data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
           <span class="card-profile dcf-d-block dcf-mb-3 dcf-h-10 dcf-w-10 dcf-ratio dcf-ratio-1x1">
-            {% if node.field_person_portrait.value %}
-              {{ content.field_person_portrait }}
+            {% if node.n_person_photo.value %}
+              {% set fid = node.n_person_photo.target_id %}
+              {% set alt = 'Avatar for ' ~ node.label  %}
+              {{ drupal_image(fid, '1_1_240x240', {alt: alt, itemprop: 'image', class: 'photo profile_pic dcf-ratio-child dcf-circle dcf-d-block dcf-obj-fit-cover'}) }}
             {% else  %}
               <img class="photo profile_pic dcf-ratio-child dcf-circle dcf-d-block dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}?s=large" alt="Avatar for {{ label }}" />
             {% endif %}
