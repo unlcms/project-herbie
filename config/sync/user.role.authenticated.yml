@@ -19,3 +19,4 @@ permissions:
   - 'use text format standard'
   - 'use text format webform'
   - 'view media'
+  - 'view paragraph content accordion_item'
