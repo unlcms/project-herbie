@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b948c2074acca60ae77cb6f74806c2f",
+    "content-hash": "6fd9fcb9f9bf307bd6505d052b8906ce",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4755,11 +4755,14 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1527030784",
+                    "datestamp": "1568446684",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2927884 - Remove revision log messages from entities other than nodes": "patches/inline_entity_form-remove_log_message-2927884-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4776,12 +4779,24 @@
                     "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
+                    "name": "geek.merlin aka axel.rutz",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
                     "name": "joachim",
                     "homepage": "https://www.drupal.org/user/107701"
                 },
                 {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
+                },
+                {
                     "name": "kaythay",
                     "homepage": "https://www.drupal.org/user/2182186"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
                 },
                 {
                     "name": "rszrama",
@@ -12430,7 +12445,6 @@
         "drupal/entity_usage": 15,
         "drupal/external_entities": 15,
         "drupal/inline_block_title_automatic": 15,
-        "drupal/inline_entity_form": 5,
         "drupal/layout_builder_modal": 15,
         "drupal/media_entity_browser": 20,
         "drupal/rabbit_hole": 10,

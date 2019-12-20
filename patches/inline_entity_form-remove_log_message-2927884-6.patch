@@ -1,0 +1,48 @@
+diff --git a/src/Form/EntityInlineForm.php b/src/Form/EntityInlineForm.php
+index 1ff5073..9057bb7 100644
+--- a/src/Form/EntityInlineForm.php
++++ b/src/Form/EntityInlineForm.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\inline_entity_form\Form;
+ 
+ use Drupal\Core\Entity\ContentEntityInterface;
++use Drupal\Core\Entity\ContentEntityTypeInterface;
+ use Drupal\Core\Entity\Entity\EntityFormDisplay;
+ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Entity\EntityFieldManagerInterface;
+@@ -183,6 +184,14 @@ class EntityInlineForm implements InlineFormInterface {
+       }
+     }
+ 
++    // Hide the log message field for revisionable entity types. It cannot be
++    // disabled in UI and does not make sense in inline entity form context.
++    if (($this->entityType instanceof ContentEntityTypeInterface)) {
++      if ($log_message_key = $this->entityType->getRevisionMetadataKey('revision_log_message')) {
++        $entity_form[$log_message_key]['#access'] = FALSE;
++      }
++    }
++
+     // Determine the children of the entity form before it has been altered.
+     $children_before = Element::children($entity_form);
+ 
+diff --git a/src/Form/NodeInlineForm.php b/src/Form/NodeInlineForm.php
+index 4f6c377..1c00b6a 100644
+--- a/src/Form/NodeInlineForm.php
++++ b/src/Form/NodeInlineForm.php
+@@ -45,16 +45,4 @@ class NodeInlineForm extends EntityInlineForm {
+     return $fields;
+   }
+ 
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function entityForm(array $entity_form, FormStateInterface $form_state) {
+-    $entity_form = parent::entityForm($entity_form, $form_state);
+-    // Remove the "Revision log" textarea,  it can't be disabled in the
+-    // form display and doesn't make sense in the inline form context.
+-    $entity_form['revision_log']['#access'] = FALSE;
+-
+-    return $entity_form;
+-  }
+-
+ }
