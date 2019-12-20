@@ -7,12 +7,15 @@ dependencies:
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
+    - image.style.1_1_240x240
     - node.type.person
   module:
     - field_group
+    - image
     - link
     - path
     - telephone
@@ -23,6 +26,7 @@ third_party_settings:
       children:
         - n_person_position
         - n_person_bio
+        - n_person_photo
         - n_person_phone
         - n_person_email
         - n_person_address
@@ -49,7 +53,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   n_person_address:
-    weight: 12
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -66,7 +70,7 @@ content:
     type: text_textarea_with_summary
     region: content
   n_person_email:
-    weight: 11
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -74,11 +78,19 @@ content:
     type: email_default
     region: content
   n_person_phone:
-    weight: 10
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+    region: content
+  n_person_photo:
+    weight: 10
+    settings:
+      preview_image_style: 1_1_240x240
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
     region: content
   n_person_position:
     weight: 8
@@ -98,7 +110,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   n_person_website:
-    weight: 13
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''

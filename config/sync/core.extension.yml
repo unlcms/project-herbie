@@ -82,6 +82,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  twig_tweak: 0
   unl_blocks: 0
   unl_cas: 0
   unl_config: 0

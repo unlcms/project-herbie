@@ -7,11 +7,14 @@ dependencies:
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
+    - image.style.1_1_240x240
     - node.type.person
   module:
+    - image
     - link
     - telephone
     - text
@@ -55,6 +58,15 @@ content:
       title: ''
     third_party_settings: {  }
     type: telephone_link
+    region: content
+  n_person_photo:
+    weight: 109
+    label: hidden
+    settings:
+      image_style: 1_1_240x240
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   n_person_position:
     weight: 103
