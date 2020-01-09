@@ -9,6 +9,9 @@
     'clearfix',
   ]
 %}
+{% set n_news_image_credit = content.n_news_image_credit|render %}
+{% set n_news_image_cutline = content.n_news_image_cutline|render %}
+
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
 
@@ -16,15 +19,31 @@
   {{ title_suffix }}
 
   <div{{ content_attributes }}>
-    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
-      <div class="dcf-col-100% dcf-col-67%-start@md">
-        {{ content.n_news_image }}
+    {#
+      Use <figure> syntax if either the credit or cutline are present;
+      otherwise, use <div>'s
+    #}
+    {% if n_news_image_credit is empty and n_news_image_cutline is empty %}
+      <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
+        <div class="dcf-col-100% dcf-col-67%-start@md">
+          {{ content.n_news_image }}
+        </div>
       </div>
-      <div class="dcf-col-100% dcf-col-33%-end@md">
-        <div class="dcf-figcaption dcf-txt-2xs dcf-italic dcf-mb-4">{{ content.n_news_image_credit }}</div>
-        <div class="dcf-figcaption dcf-mb-4">{{ content.n_news_image_cutline }}</div>
-      </div>
-    </div>
+    {% else %}
+      <figure class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
+        <div class="dcf-col-100% dcf-col-67%-start@md">
+          {{ content.n_news_image }}
+        </div>
+        <figcaption class="dcf-figcaption dcf-col-100% dcf-col-33%-end@md">
+          {% if n_news_image_credit is not empty %}
+            <div class="dcf-italic dcf-mb-4">{{ content.n_news_image_credit }}</div>
+          {% endif %}
+          {% if n_news_image_cutline is not empty %}
+            <div class="dcf-mb-4">{{ content.n_news_image_cutline }}</div>
+          {% endif %}
+        </figcaption>
+      </figure>
+    {% endif %}
     <div class="dcf-mt-7 dcf-w-max-xl">
       {% set createdDate = node.getCreatedTime|date('F j, Y') %}
       <p class="dcf-subhead">{{ createdDate }}</p>

@@ -1,29 +1,29 @@
-uuid: b90d9842-9f51-46a6-9882-a18cf0321366
+uuid: 79f48c36-c2ec-451c-854c-f9c45b84c2de
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.n_news_image
-    - node.type.news
+    - field.storage.node.n_person_photo
+    - node.type.person
   module:
     - image
-id: node.news.n_news_image
-field_name: n_news_image
+id: node.person.n_person_photo
+field_name: n_person_photo
 entity_type: node
-bundle: news
-label: 'Lead image'
-description: 'Images should conform to a 16:9 aspect ratio. Automatic cropping will be applied to images.'
+bundle: person
+label: Photo
+description: 'Images should conform to a 1:1 aspect ratio. Automatic cropping will be applied to images.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: 'node/news/image/[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg webp'
+  file_directory: 'node/person/photo/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
   max_filesize: '40 MB'
   max_resolution: 5000x5000
-  min_resolution: ''
-  alt_field: true
+  min_resolution: 240x240
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false

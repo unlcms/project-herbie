@@ -11,6 +11,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view media'
+  - 'view paragraph content accordion_item'
   - 'view paragraph content contact_info_contact_point'
   - 'view paragraph content contact_info_email'
   - 'view paragraph content contact_info_fax'

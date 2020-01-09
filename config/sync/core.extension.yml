@@ -82,6 +82,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  twig_tweak: 0
   unl_blocks: 0
   unl_cas: 0
   unl_config: 0
@@ -89,9 +90,11 @@ module:
   unl_media: 0
   unl_mediahub: 0
   unl_menu: 0
+  unl_news: 0
   unl_twig: 0
   unl_user: 0
   unl_utility: 0
+  unl_views: 0
   unl_webform: 0
   user: 0
   views_ui: 0

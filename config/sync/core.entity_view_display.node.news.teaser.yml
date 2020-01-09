@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
     - node.type.news
-    - responsive_image.styles.card_block
+    - responsive_image.styles.news_lead_image
   module:
     - responsive_image
     - text
@@ -38,7 +38,7 @@ content:
     region: content
     label: hidden
     settings:
-      responsive_image_style: card_block
+      responsive_image_style: news_lead_image
       image_link: content
     third_party_settings: {  }
 hidden:
