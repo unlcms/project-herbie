@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * This module extends Pathauto functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\pathauto\PathautoPatternInterface;
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function unl_pathauto_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
+  // For Builder Pages, if no menu item exists, then use the [node:title]
+  // token instead of menu-based tokens.
+  if ($context['module'] == 'node' && $context['bundle'] == 'builder_page') {
+    $menu = $context['data']['node']->__get('menu');
+    if ($menu['enabled'] === 0) {
+      $pattern->setPattern('[node:title]');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_pathauto_form_pathauto_pattern_form_alter(&$form, FormStateInterface $form_state) {
+  $build_info = $form_state->getBuildInfo();
+  $pattern_entity = $build_info['callback_object']->getEntity();
+  $selection_criteria = $pattern_entity->get('selection_criteria');
+
+  // Loop through selection criteria to find if this form is being used for the
+  // builder_page node bundle. If so, then add markup to top of page.
+  foreach ($selection_criteria as $criterion) {
+    if ($criterion['id'] == 'node_type'
+      && in_array('builder_page', $criterion['bundles'])
+      ) {
+      $form['chris'] = [
+        '#weight' => -10,
+        '#markup' => t('<p><strong>In the event a Builder Page node does not have a menu title, then [node:title] is used instead as the pattern. This behavior is controlled by the UNL Pathauto module.</strong></p>'),
+      ];
+      break;
+    }
+  }
+}
