@@ -16,6 +16,13 @@ else {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = TRUE;
+
+  // This will prevent Drupal from setting read-only permissions on sites/default.
+  $settings['skip_permissions_hardening'] = TRUE;
+
+  // This will ensure the site can only be accessed through the intended host
+  // names. Additional host patterns can be added for custom configurations.
+  $settings['trusted_host_patterns'] = ['.*'];
 }
 
 /**
