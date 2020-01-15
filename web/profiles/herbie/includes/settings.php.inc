@@ -6,16 +6,20 @@ if ($environment == 'production') {
   $config['config_split.config_split.production']['status'] = TRUE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
+  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 }
 elseif ($environment == 'stage') {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = FALSE;
+  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 }
 else {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = TRUE;
+  // For local development, the temp directory should be set
+  // in settings.local.php.
 }
 
 /**
