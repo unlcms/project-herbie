@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Location of the site configuration files
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+/*
+ * Set environment-specific configuration.
+ */
 $environment = getenv('UNLCMSENV');
 
 if ($environment == 'production') {
@@ -22,14 +30,14 @@ else {
   // in settings.local.php.
 }
 
-/**
+/*
  * Private file path:
  *
  * A local file system path where private files will be stored.
  */
 $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
 
-/**
+/*
  * Increase PHP's memory_limit for Drush.
  *
  * Drush site install needs more than the typical hosting default of 128M for
