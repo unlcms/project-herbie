@@ -1,7 +1,7 @@
-diff --git a/web/index.php b/web/index.php
+diff --git a/index.php b/index.php
 index 19163f6..750dc28 100644
---- a/web/index.php
-+++ b/web/index.php
+--- a/index.php
++++ b/index.php
 @@ -16,6 +16,9 @@
  $kernel = new DrupalKernel('prod', $autoloader);
  

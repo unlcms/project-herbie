@@ -742,11 +742,6 @@ $settings['entity_update_batch_size'] = 50;
 $settings['entity_update_backup'] = TRUE;
 
 /**
- * Load Herbie profile configuration.
- */
-include $app_root . '/profiles/herbie/includes/settings.php.inc';
-
-/**
  * Load local development override configuration, if available.
  *
  * Use settings.local.php to override variables on secondary (staging,
@@ -757,6 +752,18 @@ include $app_root . '/profiles/herbie/includes/settings.php.inc';
  * Keep this code block at the end of this file to take full effect.
  */
 #
+# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+#   include $app_root . '/' . $site_path . '/settings.local.php';
+# }
+
+/*
+ * Load Herbie profile configuration.
+ */
+include $app_root . '/profiles/herbie/includes/settings.php.inc';
+
+/*
+ * Load local settings.
+ */
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }

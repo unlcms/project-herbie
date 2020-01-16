@@ -1,7 +1,7 @@
-diff --git a/web/sites/example.sites.php b/web/sites/example.sites.php
+diff --git a/sites/example.sites.php b/sites/example.sites.php
 index daaf682..686a831 100644
---- a/web/sites/example.sites.php
-+++ b/web/sites/example.sites.php
+--- a/sites/example.sites.php
++++ b/sites/example.sites.php
 @@ -55,3 +55,13 @@
   * @see \Drupal\Core\DrupalKernel::getSitePath()
   * @see https://www.drupal.org/documentation/install/multi-site

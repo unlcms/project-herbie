@@ -172,11 +172,10 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
-        "post-package-install": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
-        ],
-        "post-package-update": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
+        "post-drupal-scaffold-cmd": [
+            "cd web && patch -p1 < ../patches/custom-index.php.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess.patch",
+            "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },
@@ -242,6 +241,11 @@
             }
         },
         "drupal-scaffold": {
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": {
+                  "append": "patches/default.settings.php.append.php"
+                }
+            },
             "locations": {
                 "web-root": "web/"
             },
