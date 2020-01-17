@@ -1,9 +1,34 @@
 ignored_config_entities:
-  0: 'webform.webform.*'
-  2: 'system.site:name'
-  4: 'system.site:mail'
-  6: 'system.site:slogan'
-  8: 'system.site:page.front'
+  0: 'block.block.*'
+  2: ~block.block.booknavigation
+  4: ~block.block.breadcrumbs
+  6: ~block.block.mainnavigation
+  8: ~block.block.mainpagecontent
+  10: ~block.block.seven_local_actions
+  12: ~block.block.seven_local_tasks
+  14: ~block.block.seven_messages
+  16: ~block.block.seven_page_title
+  18: ~block.block.seven_secondary_local_tasks
+  20: ~block.block.unl_five_branding
+  22: ~block.block.unl_five_breadcrumbs
+  24: ~block.block.unl_five_content
+  26: ~block.block.unl_five_herbie_branding
+  28: ~block.block.unl_five_herbie_breadcrumbs
+  30: ~block.block.unl_five_herbie_content
+  32: ~block.block.unl_five_herbie_local_actions
+  34: ~block.block.unl_five_herbie_local_tasks
+  36: ~block.block.unl_five_herbie_mainnavigation
+  38: ~block.block.unl_five_herbie_messages
+  40: ~block.block.unl_five_herbie_page_title
+  42: ~block.block.unl_five_local_actions
+  44: ~block.block.unl_five_local_tasks
+  46: ~block.block.unl_five_messages
+  48: ~block.block.unl_five_page_title
+  50: 'webform.webform.*'
+  52: 'system.site:name'
+  54: 'system.site:mail'
+  56: 'system.site:slogan'
+  58: 'system.site:page.front'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 enable_export_filtering: '1'

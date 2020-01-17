@@ -1,14 +1,13 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
     "repositories": [
         {
             "type": "composer",
@@ -91,10 +90,9 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
-        "composer/installers": "^1.2",
+        "php": ">=7.1",
+        "composer/installers": "^1.6",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/allowed_formats": "^1.1",
         "drupal/auto_entitylabel": "^3.0@beta",
@@ -108,7 +106,8 @@
         "drupal/config_role_split": "^1.0@beta",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.7.0",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "8.8.1",
         "drupal/ctools": "^3.2",
         "drupal/dcf": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
@@ -156,7 +155,7 @@
     "require-dev": {
         "drupal/config_inspector": "^1.0@beta",
         "drupal/twig_xdebug": "^1.1",
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "drupal/core-dev": "^8.8"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -168,29 +167,15 @@
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php",
             "scripts/composer/UnlScriptHandler.php"
         ],
         "files": ["load.environment.php"]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-package-install": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
-        ],
-        "post-package-update": [
-            "DrupalProject\\composer\\UnlScriptHandler::patchCore"
+        "post-drupal-scaffold-cmd": [
+            "cd web && patch -p1 < ../patches/custom-index.php.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess.patch",
+            "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },
@@ -207,6 +192,8 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"],
             "web/libraries/jquery.intl-tel-input": ["jackocnr/intl-tel-input"],
             "web/libraries/jquery.textcounter": ["ractoon/jquery-text-counter"],
@@ -238,7 +225,7 @@
                 "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
             },
             "drupal/external_entities": {
-                "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-inline_entity_form_alter_check_type_sooner-3065268-2.patch"
+                "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
             },
             "drupal/inline_entity_form": {
                 "2927884 - Remove revision log messages from entities other than nodes": "patches/inline_entity_form-remove_log_message-2927884-6.patch"
@@ -254,6 +241,14 @@
             }
         },
         "drupal-scaffold": {
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": {
+                  "append": "patches/default.settings.php.append.php"
+                }
+            },
+            "locations": {
+                "web-root": "web/"
+            },
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
