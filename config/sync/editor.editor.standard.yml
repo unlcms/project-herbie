@@ -35,7 +35,6 @@ settings:
         -
           name: Media
           items:
-            - media_entity_embed
             - Blockquote
             - Table
         -

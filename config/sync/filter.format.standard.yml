@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - editor
-    - entity_embed
     - linkit
 name: Standard
 format: standard
@@ -35,7 +34,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<p> <br> <a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id> <h3 id> <s> <sup> <sub> <table class> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+      allowed_html: '<p> <br> <a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id> <h3 id> <s> <sup> <sub> <table class> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -67,12 +66,6 @@ filters:
     provider: filter
     status: false
     weight: -43
-    settings: {  }
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: true
-    weight: -44
     settings: {  }
   linkit:
     id: linkit
