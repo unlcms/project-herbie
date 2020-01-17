@@ -71,6 +71,7 @@ module:
   page_cache: 0
   paragraphs_type_permissions: 0
   path: 0
+  path_alias: 0
   rabbit_hole: 0
   responsive_image: 0
   rh_media: 0

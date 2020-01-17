@@ -21,6 +21,7 @@ third_party_settings:
       -
         layout_id: dcf_onecol_section
         layout_settings:
+          label: ''
           column_widths: '100'
           title: ''
           title_classes: {  }
