@@ -14,7 +14,6 @@ description: 'Find and manage custom blocks.'
 tag: default
 base_table: block_content_field_data
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -25,7 +24,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer blocks'
+          perm: 'access block content overview'
       cache:
         type: tag
         options: {  }
@@ -378,6 +377,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -419,6 +420,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -457,6 +460,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -473,7 +478,7 @@ display:
           entity_field: reusable
           plugin_id: boolean
       sorts: {  }
-      title: 'Custom block library'
+      title: 'Custom blocks'
       header: {  }
       footer: {  }
       empty:
@@ -518,7 +523,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/structure/block/block-content
+      path: admin/content/block-content
       menu:
         type: tab
         title: 'Custom block library'
