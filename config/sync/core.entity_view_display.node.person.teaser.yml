@@ -67,4 +67,5 @@ content:
     third_party_settings: {  }
 hidden:
   n_person_bio: true
+  n_person_photo: true
   n_person_website: true
