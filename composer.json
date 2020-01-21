@@ -207,7 +207,8 @@
                 "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
-                "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch"
+                "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
+                "3100066 - 'Convert line breaks into HTML' filter should exclude <drupal-media> tag": "patches/3100066-2.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
