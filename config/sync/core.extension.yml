@@ -73,6 +73,7 @@ module:
   path: 0
   path_alias: 0
   rabbit_hole: 0
+  redirect: 0
   responsive_image: 0
   rh_media: 0
   shortcut: 0
