@@ -36,7 +36,7 @@ function unl_pathauto_form_pathauto_pattern_form_alter(&$form, FormStateInterfac
     if ($criterion['id'] == 'node_type'
       && in_array('builder_page', $criterion['bundles'])
       ) {
-      $form['chris'] = [
+      $form['unl_pathauto_notice'] = [
         '#weight' => -10,
         '#markup' => t('<p><strong>In the event a Builder Page node does not have a menu title, then [node:title] is used instead as the pattern. This behavior is controlled by the UNL Pathauto module.</strong></p>'),
       ];
