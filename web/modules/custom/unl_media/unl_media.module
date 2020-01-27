@@ -13,6 +13,9 @@ use Drupal\unl_utility\UNLUtilityTrait;
  * Implements hook_form_alter().
  */
 function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Adds a media_metadata form element to media edit forms that renders a view
+  // with meta data about the media entity.
+  //
   // Alter media edit forms: media_BUNDLE_edit_form.
   // Media edit forms have unique form id's.
   $media_edit_form_ids = [
@@ -61,109 +64,109 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
 /**
  * Implements hook_form_FORM_ID_alter().
  */
+function unl_media_form_editor_media_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $storage = $form_state->getStorage();
+  $media_uuid = $storage['media_embed_element']['data-entity-uuid'];
+  $media_loaded_by_uuid = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties(['uuid' => $media_uuid]);
+  $media_loaded_by_uuid = reset($media_loaded_by_uuid);
+  $bundle = $media_loaded_by_uuid->bundle();
+  // Add bundle to $form_state storage.
+  $storage['bundle'] = $bundle;
+  $form_state->setStorage($storage);
+
+  if ($bundle == 'image') {
+    // Limit options to certain view modes.
+    // Can be removed when Media Library Extras has committed
+    // https://www.drupal.org/project/media_library_extras/issues/3108619
+    $form['view_mode']['#options'] = [
+      'narrow' => 'Narrow',
+      'wide' => 'Wide'
+    ];
+    // Hide align field for 'Wide' view mode, which is 100% wide.
+   $form['align']['#states'] = [
+      'invisible' => [
+        ':input[name="attributes[data-view-mode]"]' => ['value' => 'wide'],
+      ],
+    ];
+  }
+  if ($bundle == 'remote_video') {
+    // Limit options to certain view modes.
+    // Can be removed when Media Library Extras has committed
+    // https://www.drupal.org/project/media_library_extras/issues/3108619
+    $form['view_mode']['#options'] = [
+      'remote_video' => 'Remote Video',
+    ];
+    // Videos are always 100% wide.
+    unset($form['align']);
+  }
+
+  $form['#validate'][] = '_unl_media_media_embed_dialog_validate';
+}
+
+/**
+ * Validation function for the 'editor_media_dialog' form.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function _unl_media_media_embed_dialog_validate($form, FormStateInterface &$form_state) {
+  $storage = $form_state->getStorage();
+  $bundle = $storage['bundle'];
+  $values = $form_state->getValues();
+
+  if ($bundle == 'image') {
+    // If view mode is set to 'wide', then set data-align to "none".
+    if ($values['attributes']['data-view-mode'] == 'wide') {
+      $form_state->setValue(['attributes', 'data-align'], 'none');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function unl_media_form_editor_link_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
   // Replace default help text.
   $form['attributes']['href']['#description'] = t('<Link options:<br><strong>Local content and existing documents:</strong> Start typing to select an autocomplete option<br><strong>New document:</strong> <a href="@file_url" target="_blank">Upload a new document</a><br><strong>External URLs:</strong> Type full URL', ['@file_url' => '/media/add/file']);
 }
 
 /**
- * Implements hook_entity_embed_display_plugins_for_context_alter().
+ * Implements template_preprocess_responsive_image_formatter().
  */
-function unl_media_entity_embed_display_plugins_for_context_alter(array &$definitions, array $contexts) {
-  // Do nothing if no entity is provided.
-  if (!isset($contexts['entity'])) {
-    return;
-  }
-  $entity = $contexts['entity'];
-
-  // For video, limit the available options to the media player.
-  if ($entity instanceof Media && in_array($entity->bundle(), ['remote_video'])) {
-    $definitions = array_intersect_key($definitions, array_flip(['view_mode:media.remote_video']));
-  }
-
-  // For images, limit the available options to the media player.
-  if ($entity instanceof Media && in_array($entity->bundle(), ['image'])) {
-    $definitions = array_intersect_key($definitions, array_flip(['view_mode:media.narrow', 'view_mode:media.wide']));
-  }
-
+function unl_media_preprocess_responsive_image_formatter(&$variables) {
+  // Add custom attribute to responsive images with responsive image style key.
+  $variables['responsive_image']['#attributes']['data-responsive-image-style'] = $variables['responsive_image_style_id'];
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements template_preprocess_media().
  */
-function unl_media_form_entity_embed_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  $storage = $form_state->getStorage();
-
-  // The 'entity_embed_dialog' form is a multi-step form.
-  if ($storage['step'] == 'embed') {
-    $bundle = $storage['entity']->bundle();
-
-    if ($bundle == 'image') {
-      $form['attributes']['data-align']['#states'] = [
-        'visible' => [
-          ':input[name="attributes[data-entity-embed-display]"]' => ['value' => 'view_mode:media.narrow'],
-        ],
-      ];
-    }
-    elseif ($bundle == 'remote_video') {
-      // Videos are always 100% side.
-      unset($form['attributes']['data-align']);
-    }
-  }
-
-  $form['#validate'][] = '_unl_media_entity_embed_dialog_validate';
-}
-
-/**
- * Validation function for the 'entity_embed_dialog' form.
- */
-function _unl_media_entity_embed_dialog_validate($form, FormStateInterface &$form_state) {
-  $storage = $form_state->getStorage();
-  $values = $form_state->getValues();
-
-  // The 'entity_embed_dialog' form is a multi-step form.
-  if ($storage['step'] == 'embed') {
-    $bundle = $storage['entity']->bundle();
-
-    if ($bundle == 'image') {
-      // If view mode is set to 'wide', then unset data-align.
-      if ($values['attributes']['data-entity-embed-display'] == 'view_mode:media.wide') {
-        $form_state->setValue(['attributes', 'data-align'], '');
-      }
-    }
-  }
+function unl_media_preprocess_media(&$variables) {
+  $view_mode = $variables['view_mode'];
+  $variables['attributes']['class'][] = 'media-entity';
+  $variables['attributes']['class'][] = 'view-mode--' . $view_mode;
 }
 
 /**
  * Implements template_preprocess_filter_caption().
  */
 function unl_media_preprocess_filter_caption(&$variables) {
-  // For <drupal-entity> elements rendered with captions, get the view
+  // For <drupal-media> elements rendered with captions, get the view
   // mode and add a corresponding class to the <figure> element.
   //
   // Convert the markup to a DOM element.
   $element_string = $variables['node']->__toString();
   $dom = new DOMDocument();
   @$dom->loadHTML($element_string);
-  // Only proceed if element is <drupal-entity>.
-  $element = $dom->getElementsByTagName("drupal-entity");
+  // Only proceed if element is <drupal-media>.
+  $element = $dom->getElementsByTagName("drupal-media");
   if (method_exists($element,'count') && $element->count() != 0) {
     $element = $element->item(0);
-    $embed_display = $element->getAttribute('data-entity-embed-display');
+    $data_view_mode = $element->getAttribute('data-view-mode');
 
-    // Get view mode from embed display string.
-    $embed_display_parts = explode('.', $embed_display);
-    $variables['classes'] = trim($variables['classes'] . ' figure-embedded-entity view-mode--' . $embed_display_parts[1]);
-  }
-
-}
-
-/**
- * Implements template_preprocess_entity_embed_container().
- */
-function unl_media_preprocess_entity_embed_container(&$variables) {
-  // Add the view mode as a class to the entity embed container.
-  if (isset($variables['element']['entity']['#view_mode'])) {
-    $variables['attributes']['class'][] = 'view-mode--' . $variables['element']['entity']['#view_mode'];
+    // Set classes on caption element.
+    $variables['classes'] = trim($variables['classes'] . ' figure--embedded-media view-mode--' . $data_view_mode);
   }
 }
