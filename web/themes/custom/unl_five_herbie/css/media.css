@@ -23,3 +23,9 @@
 .embedded-entity.view-mode--wide img {
   width: 100%;
 }
+
+/* Set remote video iframe width and height to fill width. */
+.media-entity.view-mode--remote_video iframe {
+  width: 100%;
+  height: 100%;
+}
