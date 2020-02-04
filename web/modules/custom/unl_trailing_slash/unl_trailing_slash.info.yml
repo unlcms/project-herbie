@@ -1,0 +1,4 @@
+name: UNL Trailing Slash
+type: module
+description: Adds a trailing slash at the end of all paths
+core_version_requirement: ^8 || ^9
