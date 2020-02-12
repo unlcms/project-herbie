@@ -15,8 +15,12 @@ class TrailingSlashOutboundPathProcessor implements OutboundPathProcessorInterfa
    * {@inheritdoc}
    */
   public function processOutbound($path, &$options = [], Request $request = NULL, BubbleableMetadata $bubbleable_metadata = NULL) {
-    // Add trailing slash to all paths if one is not present.
-    return rtrim($path, '/') . '/';
+    $path = rtrim($path, '/');
+    // If the path does not end in a file extension, then add a trailing slash.
+    if (!pathinfo($path, PATHINFO_EXTENSION)) {
+      $path = $path . '/';
+    }
+    return $path;
   }
 
 }
