@@ -1,0 +1,25 @@
+uuid: d2645644-cb1f-476f-81e1-db7a52018636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_margin_markup
+    - paragraphs.paragraphs_type.contact_info_margin
+  module:
+    - markup
+id: paragraph.contact_info_margin.p_b_cinfo_margin_markup
+field_name: p_b_cinfo_margin_markup
+entity_type: paragraph
+bundle: contact_info_margin
+label: Markup
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<p>(Inserts 1em of margin)</p>\r\n"
+    format: standard
+field_type: markup
