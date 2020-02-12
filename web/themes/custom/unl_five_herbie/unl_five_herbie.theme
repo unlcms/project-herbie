@@ -38,6 +38,12 @@ function unl_five_herbie_preprocess_region(&$variables) {
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
+  // Set $bundle var for custom block entities.
+  $bundle = NULL;
+  if (isset($variables['content']['#block_content'])) {
+    $bundle = $variables['content']['#block_content']->bundle();
+  }
+
   if (isset($variables['content']['#block_content'])) {
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
     $variables['data']['section_classes'] = $section_classes;
@@ -53,6 +59,12 @@ function unl_five_herbie_preprocess_block(&$variables) {
   if (isset($section_classes) && in_array('dcf-inverse', $section_classes)) {
     $variables['title_attributes']['class'][] = 'dcf-inverse';
   }
+
+  // Make host available to contact_info custom block.
+  if ($bundle == 'contact_info') {
+    $variables['data']['host'] = \Drupal::request()->getHost();
+  }
+
 }
 
 /**
