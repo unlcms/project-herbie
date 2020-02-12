@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_block_type_form_alter().
+ *
+ * This alters the custom block edit form, not the core block UI config form.
  */
 function unl_blocks_block_type_form_alter(array &$form, FormStateInterface &$form_state, string $block_type) {
   if ($block_type == 'card') {
@@ -47,4 +49,53 @@ function _unl_blocks_card_form_validate(array &$form, FormStateInterface &$form_
   if (!empty($values['b_card_cta_style'][0]['value']) && empty($values['b_card_cta_style'][0]['value'])) {
     $form_state->setErrorByName('b_card_cta_style', t('CTA Style field is required'));
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * This alters the core block UI config form, not the custom block edit form.
+ */
+function unl_blocks_form_block_form_alter(array &$form, FormStateInterface &$form_state, $form_id) {
+  /** @var  \Drupal\block\Entity\Block */
+  $block = $form_state->getFormObject()->getEntity();
+  $plugin_id = $block->getPluginID();
+
+  // Modify certain block_content configuration forms.
+  $plugin_id = explode(':', $plugin_id);
+  if (isset($plugin_id[0]) && $plugin_id[0] == 'block_content') {
+    /** @var \Drupal\block_content\Entity\BlockContent */
+    $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $plugin_id[1]);
+    if ($block_content) {
+      $bundle = $block_content->bundle();
+
+      // Modify Contact Info block instance config form.
+      if ($bundle == 'contact_info') {
+        // The label is always displayed.
+        $form['settings']['label_display']['#default_value'] = 'visible';
+        $form['settings']['label_display']['#disabled'] = TRUE;
+        // Run through validation because FAPI doesn't check disabled
+        // elements for tampering.
+        $form['#validate'][] = '_unl_blocks_contact_info_block_form_validate';
+      }
+    }
+  }
+
+  /**
+   * Validation callback function for Contact Info core block config form.
+   *
+   * @param array $form
+   *   Nested array of form elements that comprise the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
+   */
+  function _unl_blocks_contact_info_block_form_validate(array &$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    // FAPI doesn't enforce disabled elements, so we override any
+    // user tampering here.
+    if ($values['settings']['label_display'] !== 'visible') {
+      $form_state->setValue(['settings', 'label_display'], 'visible');
+    }
+  }
+
 }
