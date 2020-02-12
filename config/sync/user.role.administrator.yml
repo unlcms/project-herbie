@@ -68,6 +68,8 @@ permissions:
   - 'administer paragraphs types'
   - 'administer pathauto'
   - 'administer permissions'
+  - 'administer redirect settings'
+  - 'administer redirects'
   - 'administer responsive images'
   - 'administer shortcuts'
   - 'administer site configuration'

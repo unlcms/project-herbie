@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6559b66340cfc3a3ad1920234ff9510",
+    "content-hash": "56d296d20a8bbf0ab0d95fb7516c5988",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3171,7 +3171,8 @@
                     "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
                     "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
-                    "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch"
+                    "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
+                    "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch"
                 }
             },
             "autoload": {
@@ -5260,6 +5261,61 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/rabbit_hole",
                 "issues": "https://www.drupal.org/project/issues/rabbit_hole"
+            }
+        },
+        {
+            "name": "drupal/redirect",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/redirect.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "7940acfb28bd802235d159f1c7a9a58e89dd3d15"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1576656784",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "pifagor",
+                    "homepage": "https://www.drupal.org/user/2375692"
+                }
+            ],
+            "description": "Allows users to redirect from old URLs to new URLs.",
+            "homepage": "https://www.drupal.org/project/redirect",
+            "support": {
+                "source": "https://git.drupalcode.org/project/redirect"
             }
         },
         {

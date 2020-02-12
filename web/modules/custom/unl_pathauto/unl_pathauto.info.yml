@@ -1,0 +1,11 @@
+name: 'UNL Pathauto'
+description: 'Extends Pathauto functionality'
+package: UNL
+
+type: module
+core: 8.x
+
+dependencies:
+- pathauto:pathauto
+
+version: 1.x

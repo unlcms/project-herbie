@@ -74,6 +74,7 @@ module:
   path: 0
   path_alias: 0
   rabbit_hole: 0
+  redirect: 0
   responsive_image: 0
   rh_media: 0
   shortcut: 0
@@ -93,6 +94,7 @@ module:
   unl_mediahub: 0
   unl_menu: 0
   unl_news: 0
+  unl_pathauto: 0
   unl_twig: 0
   unl_user: 0
   unl_utility: 0

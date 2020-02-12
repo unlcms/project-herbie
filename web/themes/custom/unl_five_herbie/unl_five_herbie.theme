@@ -240,19 +240,6 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for media templates.
- */
-function unl_five_herbie_theme_suggestions_media_alter(array &$suggestions, array $variables) {
-  // Add a template suggestion so that media in a specific block can be targeted.
-  // This allows a template such as media__hero.html.twig for removing all wrappers,
-  // including the contextual link wrapper, that interfere with 5.0 CSS.
-  // https://drupal.stackexchange.com/a/245683
-  $media = $variables['elements']['#media'];
-  $parent = $media->_referringItem->getEntity();
-  $suggestions[] = 'media__' . $parent->bundle();
-}
-
-/**
  * Implements template_preprocess_responsive_image_formatter().
  */
 function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables) {
