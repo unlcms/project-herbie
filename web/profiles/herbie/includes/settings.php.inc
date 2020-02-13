@@ -46,20 +46,22 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
  * needed) only for command line usage.
  */
 if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
-  // https://www.php.net/ini_get
-  function return_bytes($val) {
-    $val = trim($val);
-    $last = strtolower($val[strlen($val)-1]);
-    switch($last) {
-      case 'g':
-        $val *= 1024;
-      case 'm':
-        $val *= 1024;
-      case 'k':
-        $val *= 1024;
-    }
+  if (!function_exists('return_bytes')) {
+    // https://www.php.net/ini_get
+    function return_bytes($val) {
+      $val = trim($val);
+      $last = strtolower($val[strlen($val) - 1]);
+      switch ($last) {
+        case 'g':
+          $val *= 1024;
+        case 'm':
+          $val *= 1024;
+        case 'k':
+          $val *= 1024;
+      }
 
-    return $val;
+      return $val;
+    }
   }
 
   $memory_limit = return_bytes(ini_get('memory_limit'));
