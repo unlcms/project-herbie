@@ -46,6 +46,12 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
  * needed) only for command line usage.
  */
 if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
+  // This file is loaded with an 'include' statement in settings.php. In certain
+  // situations (such as drush site:install) settings.php is loaded multiple
+  // times, therefore this file is included multiple times, so this function
+  // needs to avoid being defined twice. This file could be loaded with
+  // 'include_once' instead but that was not done because it might
+  // negatively affect setting prioritization/order.
   if (!function_exists('return_bytes')) {
     // https://www.php.net/ini_get
     function return_bytes($val) {
