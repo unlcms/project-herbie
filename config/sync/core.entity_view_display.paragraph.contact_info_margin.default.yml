@@ -5,18 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_margin.p_b_cinfo_margin_markup
     - paragraphs.paragraphs_type.contact_info_margin
-  module:
-    - markup
 id: paragraph.contact_info_margin.default
 targetEntityType: paragraph
 bundle: contact_info_margin
 mode: default
-content:
-  p_b_cinfo_margin_markup:
-    weight: 0
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: markup
-    region: content
-hidden: {  }
+content: {  }
+hidden:
+  p_b_cinfo_margin_markup: true
