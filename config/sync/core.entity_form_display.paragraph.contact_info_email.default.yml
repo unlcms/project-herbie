@@ -1,0 +1,23 @@
+uuid: c886372a-1ea7-470c-9d47-c02f0cd3302a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_email.p_b_cinfo_email_email
+    - paragraphs.paragraphs_type.contact_info_email
+id: paragraph.contact_info_email.default
+targetEntityType: paragraph
+bundle: contact_info_email
+mode: default
+content:
+  p_b_cinfo_email_email:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+hidden:
+  created: true
+  status: true

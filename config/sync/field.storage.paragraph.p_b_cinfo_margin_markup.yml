@@ -1,0 +1,19 @@
+uuid: 14fc0a1b-9391-4668-8193-bf0d3a37ff6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - paragraphs
+id: paragraph.p_b_cinfo_margin_markup
+field_name: p_b_cinfo_margin_markup
+entity_type: paragraph
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
