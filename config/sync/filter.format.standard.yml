@@ -93,3 +93,13 @@ filters:
         narrow: narrow
         remote_video: remote_video
         wide: wide
+      bundle_view_modes:
+        image:
+          default_view_mode: narrow
+          allowed_view_modes:
+            narrow: narrow
+            wide: wide
+        remote_video:
+          default_view_mode: remote_video
+          allowed_view_modes:
+            remote_video: remote_video
