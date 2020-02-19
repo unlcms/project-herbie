@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb9dadb608bfcd5ce7911f30e9ba3dd3",
+    "content-hash": "55c4ee77edd7f7db226ffc2dbb197e34",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4963,6 +4963,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

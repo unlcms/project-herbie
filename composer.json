@@ -241,6 +241,9 @@
             "drupal/layout_builder_modal": {
                 "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
             },
+            "drupal/media_library_extras": {
+                "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
+            },
             "drupal/paragraphs": {
                 "2901390 - Integrity constraint violation: 1048 Column 'langcode' cannot be null": "patches/2901390-n24.patch"
             }
