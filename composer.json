@@ -127,6 +127,7 @@
         "drupal/linkit": "^5.0",
         "drupal/markup": "^1.0@beta",
         "drupal/media_entity_browser": "2.x-dev#ff5532ec8a7a8aff89415624de1b17d7697557ad",
+        "drupal/media_library_extras": "^1.0@alpha",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/paragraphs": "^1.8",
