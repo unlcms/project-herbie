@@ -1,0 +1,21 @@
+uuid: 0f9ab251-ffdc-4493-a755-49804b9b6783
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_phone.p_b_cinfo_phone_phone
+    - paragraphs.paragraphs_type.contact_info_phone
+id: paragraph.contact_info_phone.default
+targetEntityType: paragraph
+bundle: contact_info_phone
+mode: default
+content:
+  p_b_cinfo_phone_phone:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: e1817ff0-97d2-42da-b3b7-6e598a3db7d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_heading.p_b_cinfo_heading_heading
+    - paragraphs.paragraphs_type.contact_info_heading
+id: paragraph.contact_info_heading.default
+targetEntityType: paragraph
+bundle: contact_info_heading
+mode: default
+content:
+  p_b_cinfo_heading_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

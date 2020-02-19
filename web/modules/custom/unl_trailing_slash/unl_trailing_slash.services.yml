@@ -1,0 +1,5 @@
+services:
+  unl_trailing_slash.path_processor_trailing_slash:
+    class: Drupal\unl_trailing_slash\PathProcessor\TrailingSlashOutboundPathProcessor
+    tags:
+      - { name: path_processor_outbound, priority: -1 }

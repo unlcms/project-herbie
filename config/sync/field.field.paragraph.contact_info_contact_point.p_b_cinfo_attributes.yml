@@ -1,0 +1,67 @@
+uuid: 9e44fdfe-ba07-41fd-bf58-e1233998d618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_attributes
+    - paragraphs.paragraphs_type.contact_info_contact_point
+    - paragraphs.paragraphs_type.contact_info_email
+    - paragraphs.paragraphs_type.contact_info_fax
+    - paragraphs.paragraphs_type.contact_info_heading
+    - paragraphs.paragraphs_type.contact_info_margin
+    - paragraphs.paragraphs_type.contact_info_phone
+    - paragraphs.paragraphs_type.contact_info_physical_address
+    - paragraphs.paragraphs_type.contact_info_post_office_box_add
+  module:
+    - entity_reference_revisions
+id: paragraph.contact_info_contact_point.p_b_cinfo_attributes
+field_name: p_b_cinfo_attributes
+entity_type: paragraph
+bundle: contact_info_contact_point
+label: Attributes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact_info_heading: contact_info_heading
+      contact_info_physical_address: contact_info_physical_address
+      contact_info_post_office_box_add: contact_info_post_office_box_add
+      contact_info_phone: contact_info_phone
+      contact_info_fax: contact_info_fax
+      contact_info_email: contact_info_email
+      contact_info_margin: contact_info_margin
+    target_bundles_drag_drop:
+      contact_info_contact_point:
+        weight: -19
+        enabled: false
+      accordion_item:
+        weight: -18
+        enabled: false
+      contact_info_heading:
+        enabled: true
+        weight: -17
+      contact_info_physical_address:
+        enabled: true
+        weight: -16
+      contact_info_post_office_box_add:
+        enabled: true
+        weight: -15
+      contact_info_phone:
+        enabled: true
+        weight: -14
+      contact_info_fax:
+        enabled: true
+        weight: -13
+      contact_info_email:
+        enabled: true
+        weight: -12
+      contact_info_margin:
+        enabled: true
+        weight: -11
+field_type: entity_reference_revisions

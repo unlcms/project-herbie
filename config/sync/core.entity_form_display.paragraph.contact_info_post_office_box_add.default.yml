@@ -1,0 +1,48 @@
+uuid: ad209a88-2347-4c36-a54b-97ad28accf10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_box_number
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_city
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_postal_code
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_state
+    - paragraphs.paragraphs_type.contact_info_post_office_box_add
+id: paragraph.contact_info_post_office_box_add.default
+targetEntityType: paragraph
+bundle: contact_info_post_office_box_add
+mode: default
+content:
+  p_b_cinfo_poadd_box_number:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  p_b_cinfo_poadd_city:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  p_b_cinfo_poadd_postal_code:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  p_b_cinfo_poadd_state:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

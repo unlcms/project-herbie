@@ -1,0 +1,21 @@
+uuid: ffff953a-3dd1-46d6-983d-8b773a831137
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_fax.p_b_cinfo_fax_fax
+    - paragraphs.paragraphs_type.contact_info_fax
+id: paragraph.contact_info_fax.default
+targetEntityType: paragraph
+bundle: contact_info_fax
+mode: default
+content:
+  p_b_cinfo_fax_fax:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

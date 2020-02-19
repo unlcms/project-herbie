@@ -1,0 +1,19 @@
+uuid: 115d13fa-923c-4819-a4c2-a5bd298bfb32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_heading_heading
+    - paragraphs.paragraphs_type.contact_info_heading
+id: paragraph.contact_info_heading.p_b_cinfo_heading_heading
+field_name: p_b_cinfo_heading_heading
+entity_type: paragraph
+bundle: contact_info_heading
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

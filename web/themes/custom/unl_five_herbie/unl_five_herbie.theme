@@ -38,6 +38,12 @@ function unl_five_herbie_preprocess_region(&$variables) {
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
+  // Set $bundle var for custom block entities.
+  $bundle = NULL;
+  if (isset($variables['content']['#block_content'])) {
+    $bundle = $variables['content']['#block_content']->bundle();
+  }
+
   if (isset($variables['content']['#block_content'])) {
     $section_classes = $variables['content']['#block_content']->__get('#section_classes');
     $variables['data']['section_classes'] = $section_classes;
@@ -53,6 +59,12 @@ function unl_five_herbie_preprocess_block(&$variables) {
   if (isset($section_classes) && in_array('dcf-inverse', $section_classes)) {
     $variables['title_attributes']['class'][] = 'dcf-inverse';
   }
+
+  // Make host available to contact_info custom block.
+  if ($bundle == 'contact_info') {
+    $variables['data']['host'] = \Drupal::request()->getHost();
+  }
+
 }
 
 /**
@@ -225,19 +237,6 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
       $field->element_attributes->addClass('class', 'dcf-inverse');
     }
   }
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter() for media templates.
- */
-function unl_five_herbie_theme_suggestions_media_alter(array &$suggestions, array $variables) {
-  // Add a template suggestion so that media in a specific block can be targeted.
-  // This allows a template such as media__hero.html.twig for removing all wrappers,
-  // including the contextual link wrapper, that interfere with 5.0 CSS.
-  // https://drupal.stackexchange.com/a/245683
-  $media = $variables['elements']['#media'];
-  $parent = $media->_referringItem->getEntity();
-  $suggestions[] = 'media__' . $parent->bundle();
 }
 
 /**

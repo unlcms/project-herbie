@@ -1,0 +1,24 @@
+uuid: b296d85b-4e7e-4d49-9f49-1ca33daad2ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_contact_point.p_b_cinfo_attributes
+    - paragraphs.paragraphs_type.contact_info_contact_point
+  module:
+    - entity_reference_revisions
+id: paragraph.contact_info_contact_point.default
+targetEntityType: paragraph
+bundle: contact_info_contact_point
+mode: default
+content:
+  p_b_cinfo_attributes:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }
