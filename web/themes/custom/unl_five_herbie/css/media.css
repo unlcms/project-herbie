@@ -1,3 +1,9 @@
+/* Override unl_five styles */
+.align-left,
+.align-right {
+  margin-bottom: 0;
+}
+
 /* Remove whitespace under element */
 .media-entity {
   display: grid;
@@ -18,8 +24,18 @@
   width: 100%;
 }
 
+/* Add margin to bottom of media element */
 .media-entity {
   margin-bottom: 1em;
+}
+
+/* If media element is wrapper in figure, then move margin-bottom to figure */
+.figure--embedded-media {
+  margin-bottom: 1em;
+}
+
+.figure--embedded-media .media-entity {
+  margin-bottom: 0;
 }
 
 /* When image is inside figure, set width on figure element. */
@@ -40,4 +56,8 @@
 .media-entity.view-mode--remote_video iframe {
   width: 100%;
   height: 100%;
+}
+
+.figure--embedded-media figcaption {
+  margin-top: 1em;
 }
