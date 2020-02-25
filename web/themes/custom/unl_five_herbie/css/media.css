@@ -20,7 +20,8 @@
   width: 50%;
 }
 
-.media-entity.view-mode--wide {
+.media-entity.view-mode--wide,
+.media-entity.view-mode--remote_video {
   width: 100%;
 }
 
