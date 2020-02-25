@@ -7,6 +7,9 @@ base theme: unl_five
 libraries:
   - unl_five_herbie/global-styling
 
+ckeditor_stylesheets:
+  - css/media.css
+
 libraries-override:
   core/classList: false
   core/html5shiv: false

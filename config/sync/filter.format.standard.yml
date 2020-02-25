@@ -2,10 +2,14 @@ uuid: 4bc0622c-1a41-4758-9a12-8fb3f6e2fb65
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.narrow
+    - core.entity_view_mode.media.remote_video
+    - core.entity_view_mode.media.wide
   module:
     - editor
-    - entity_embed
     - linkit
+    - media
 name: Standard
 format: standard
 weight: 0
@@ -35,7 +39,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<p> <br> <a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id> <h3 id> <s> <sup> <sub> <table class> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+      allowed_html: '<p> <br> <a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id> <h3 id> <s> <sup> <sub> <table class> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -68,12 +72,6 @@ filters:
     status: false
     weight: -43
     settings: {  }
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: true
-    weight: -44
-    settings: {  }
   linkit:
     id: linkit
     provider: linkit
@@ -81,3 +79,27 @@ filters:
     weight: -47
     settings:
       title: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types:
+        image: image
+        remote_video: remote_video
+      allowed_view_modes:
+        narrow: narrow
+        remote_video: remote_video
+        wide: wide
+      bundle_view_modes:
+        image:
+          default_view_mode: narrow
+          allowed_view_modes:
+            narrow: narrow
+            wide: wide
+        remote_video:
+          default_view_mode: remote_video
+          allowed_view_modes:
+            remote_video: remote_video

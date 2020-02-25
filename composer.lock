@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc4cb2363f1fdcea37ae28c447e694f6",
+    "content-hash": "55c4ee77edd7f7db226ffc2dbb197e34",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3172,6 +3172,7 @@
                     "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                     "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
+                    "3100066 - 'Convert line breaks into HTML' filter should exclude <drupal-media> tag": "patches/3100066-2.patch",
                     "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch"
                 }
             },
@@ -4932,6 +4933,64 @@
                 "source": "https://git.drupalcode.org/project/media_entity_browser"
             },
             "time": "2019-01-04T04:57:51+00:00"
+        },
+        {
+            "name": "drupal/media_library_extras",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_library_extras.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_library_extras-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "7a3b48d86316f220196b5de2a49913730f74704b"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1581379602",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "patches_applied": {
+                    "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
+                },
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                },
+                {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
+                }
+            ],
+            "description": "Provides extra functionality and features to core media library.",
+            "homepage": "https://www.drupal.org/project/media_library_extras",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_library_extras"
+            }
         },
         {
             "name": "drupal/menu_admin_per_menu",
@@ -12733,6 +12792,7 @@
         "drupal/layout_builder_modal": 15,
         "drupal/markup": 10,
         "drupal/media_entity_browser": 20,
+        "drupal/media_library_extras": 15,
         "drupal/rabbit_hole": 10,
         "unlcms/external_entities_unldirectory": 20,
         "unlcms/unl_cas": 20,

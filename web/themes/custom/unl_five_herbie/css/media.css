@@ -1,25 +1,64 @@
+/* Override unl_five styles */
+.align-left,
+.align-right {
+  margin-bottom: 0;
+}
+
 /* Remove whitespace under element */
-.embedded-entity .contextual-region {
+.media-entity {
   display: grid;
 }
 
-/* Set width for embedded entity and for optional figure element */
-.embedded-entity.view-mode--narrow,
-.figure-embedded-entity.view-mode--narrow {
+/* Since images are always inside a container element, they're always 100% wide. */
+.media-entity.view-mode--narrow img,
+.media-entity.view-mode--wide img {
+  width: 100%;
+}
+
+/* Set width on media element. */
+.media-entity.view-mode--narrow {
   width: 50%;
 }
 
-.embedded-entity.view-mode--wide,
-.figure-embedded-entity.view-mode--wide {
+.media-entity.view-mode--wide,
+.media-entity.view-mode--remote_video {
   width: 100%;
 }
 
-/* If figure element wraps embedded entity, then set size is set there */
-.figure-embedded-entity .embedded-entity {
+/* Add margin to bottom of media element */
+.media-entity {
+  margin-bottom: 1em;
+}
+
+/* If media element is wrapper in figure, then move margin-bottom to figure */
+.figure--embedded-media {
+  margin-bottom: 1em;
+}
+
+.figure--embedded-media .media-entity {
+  margin-bottom: 0;
+}
+
+/* When image is inside figure, set width on figure element. */
+.figure--embedded-media.view-mode--narrow {
+  width: 50%;
+}
+
+.figure--embedded-media.view-mode--wide {
   width: 100%;
 }
 
-.embedded-entity.view-mode--narrow img,
-.embedded-entity.view-mode--wide img {
+.figure--embedded-media.view-mode--narrow .media-entity,
+.figure--embedded-media.view-mode--wide .media-entity {
   width: 100%;
+}
+
+/* Set remote video iframe width and height to fill width. */
+.media-entity.view-mode--remote_video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.figure--embedded-media figcaption {
+  margin-top: 1em;
 }
