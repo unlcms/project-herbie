@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "965cd5934cecf004d63e22ccca0e3b1a",
+    "content-hash": "a9c66dfeae78c5ce674abc6c4be7104b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3972,6 +3972,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "3081407 - <drupal-media> are not tracked by Entity Usage": "patches/3081407-8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

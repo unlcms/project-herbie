@@ -1,0 +1,322 @@
+diff --git a/src/Plugin/EntityUsage/Track/MediaEmbed.php b/src/Plugin/EntityUsage/Track/MediaEmbed.php
+new file mode 100644
+index 0000000..22540bf
+--- /dev/null
++++ b/src/Plugin/EntityUsage/Track/MediaEmbed.php
+@@ -0,0 +1,39 @@
++<?php
++
++namespace Drupal\entity_usage\Plugin\EntityUsage\Track;
++
++use Drupal\Component\Utility\Html;
++
++/**
++ * Tracks usage of drupal-media tags in wysiwyg fields.
++ *
++ * @EntityUsageTrack(
++ *   id = "media_embed",
++ *   label = @Translation("Media WYSIWYG Embed (Core)"),
++ *   description = @Translation("Tracks relationships created with Core's 'Embed media' filter in formatted text fields."),
++ *   field_types = {"text", "text_long", "text_with_summary"},
++ * )
++ */
++class MediaEmbed extends TextFieldEmbedBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function parseEntitiesFromText($text) {
++    $dom = Html::load($text);
++    $xpath = new \DOMXPath($dom);
++    $entities = [];
++    foreach ($xpath->query('//drupal-media[@data-entity-type="media" and @data-entity-uuid]') as $node) {
++      // Note that this does not cover 100% of the situations. In the (unlikely
++      // but possible) use case where the user embeds the same entity twice in
++      // the same field, we are just recording 1 usage for this target entity,
++      // when we should record 2. The alternative is to add a lot of complexity
++      // to the update logic of our plugin, to deal with all possible
++      // combinations in the update scenario.
++      // @TODO Re-evaluate if this is worth the effort and overhead.
++      $entities[$node->getAttribute('data-entity-uuid')] = $node->getAttribute('data-entity-type');
++    }
++    return $entities;
++  }
++
++}
+diff --git a/tests/modules/entity_usage_test/config/install/core.entity_form_display.media.eu_test_image.default.yml b/tests/modules/entity_usage_test/config/install/core.entity_form_display.media.eu_test_image.default.yml
+new file mode 100644
+index 0000000..ba920a9
+--- /dev/null
++++ b/tests/modules/entity_usage_test/config/install/core.entity_form_display.media.eu_test_image.default.yml
+@@ -0,0 +1,61 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.eu_test_image.field_media_image_1
++    - image.style.thumbnail
++    - media.type.eu_test_image
++  module:
++    - image
++    - path
++id: media.eu_test_image.default
++targetEntityType: media
++bundle: eu_test_image
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 10
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  field_media_image_1:
++    weight: 0
++    settings:
++      progress_indicator: throbber
++      preview_image_style: thumbnail
++    third_party_settings: {  }
++    type: image_image
++    region: content
++  name:
++    type: string_textfield
++    weight: -5
++    region: content
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  path:
++    type: path
++    weight: 30
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  status:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 100
++    region: content
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 5
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++      match_limit: 10
++    region: content
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/tests/modules/entity_usage_test/config/install/field.field.media.eu_test_image.field_media_image_1.yml b/tests/modules/entity_usage_test/config/install/field.field.media.eu_test_image.field_media_image_1.yml
+new file mode 100644
+index 0000000..6eb801d
+--- /dev/null
++++ b/tests/modules/entity_usage_test/config/install/field.field.media.eu_test_image.field_media_image_1.yml
+@@ -0,0 +1,37 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.media.field_media_image_1
++    - media.type.eu_test_image
++  module:
++    - image
++id: media.eu_test_image.field_media_image_1
++field_name: field_media_image_1
++entity_type: media
++bundle: eu_test_image
++label: Image
++description: ''
++required: true
++translatable: true
++default_value: {  }
++default_value_callback: ''
++settings:
++  file_extensions: 'png gif jpg jpeg'
++  alt_field: true
++  alt_field_required: true
++  title_field: false
++  title_field_required: false
++  max_resolution: ''
++  min_resolution: ''
++  default_image:
++    uuid: null
++    alt: ''
++    title: ''
++    width: null
++    height: null
++  file_directory: '[date:custom:Y]-[date:custom:m]'
++  max_filesize: ''
++  handler: 'default:file'
++  handler_settings: {  }
++field_type: image
+diff --git a/tests/modules/entity_usage_test/config/install/field.storage.media.field_media_image_1.yml b/tests/modules/entity_usage_test/config/install/field.storage.media.field_media_image_1.yml
+new file mode 100644
+index 0000000..ec2ee13
+--- /dev/null
++++ b/tests/modules/entity_usage_test/config/install/field.storage.media.field_media_image_1.yml
+@@ -0,0 +1,29 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - file
++    - image
++    - media
++id: media.field_media_image_1
++field_name: field_media_image_1
++entity_type: media
++type: image
++settings:
++  default_image:
++    uuid: null
++    alt: ''
++    title: ''
++    width: null
++    height: null
++  target_type: file
++  display_field: false
++  display_default: false
++  uri_scheme: public
++module: image
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/tests/modules/entity_usage_test/config/install/media.type.eu_test_image.yml b/tests/modules/entity_usage_test/config/install/media.type.eu_test_image.yml
+new file mode 100644
+index 0000000..840aafa
+--- /dev/null
++++ b/tests/modules/entity_usage_test/config/install/media.type.eu_test_image.yml
+@@ -0,0 +1,13 @@
++langcode: en
++status: true
++dependencies: {  }
++id: eu_test_image
++label: eu_test_image
++description: ''
++source: image
++queue_thumbnail_downloads: false
++new_revision: false
++source_configuration:
++  source_field: field_media_image_1
++field_map:
++  name: name
+diff --git a/tests/modules/entity_usage_test/entity_usage_test.info.yml b/tests/modules/entity_usage_test/entity_usage_test.info.yml
+index 6efffe3..d0e3a16 100644
+--- a/tests/modules/entity_usage_test/entity_usage_test.info.yml
++++ b/tests/modules/entity_usage_test/entity_usage_test.info.yml
+@@ -10,3 +10,4 @@ dependencies:
+   - text
+   - node
+   - ckeditor
++  - media
+diff --git a/tests/src/FunctionalJavascript/EmbeddedContentTest.php b/tests/src/FunctionalJavascript/EmbeddedContentTest.php
+index 1847947..7d45996 100644
+--- a/tests/src/FunctionalJavascript/EmbeddedContentTest.php
++++ b/tests/src/FunctionalJavascript/EmbeddedContentTest.php
+@@ -6,6 +6,8 @@ use Drupal\field\Entity\FieldConfig;
+ use Drupal\field\Entity\FieldStorageConfig;
+ use Drupal\node\Entity\Node;
+ use Drupal\Tests\entity_usage\Traits\EntityUsageLastEntityQueryTrait;
++use Drupal\file\Entity\File;
++use Drupal\media\Entity\Media;
+ 
+ /**
+  * Basic functional tests for the usage tracking of embedded content.
+@@ -14,6 +16,7 @@ use Drupal\Tests\entity_usage\Traits\EntityUsageLastEntityQueryTrait;
+  * - Entity Embed
+  * - LinkIt
+  * - HtmlLink.
++ * - MediaMedia WYSIWYG Embed (Core)
+  *
+  * @package Drupal\Tests\entity_usage\FunctionalJavascript
+  *
+@@ -425,4 +428,82 @@ class EmbeddedContentTest extends EntityUsageJavascriptTestBase {
+     $this->assertEquals($expected, $usage);
+   }
+ 
++  /**
++   * Tests Media embed parsing.
++   */
++  public function testMediaEmbed() {
++    // Create media content.
++    $file = File::create([
++      'uri' => 'public://example.png',
++      'filename' => 'example.png',
++    ]);
++
++    $file->save();
++
++    $media = Media::create([
++      'bundle' => 'eu_test_image',
++      'field_media_image_1' => [
++        [
++          'target_id' => $file->id(),
++          'alt' => 'test alt',
++          'title' => 'test title',
++          'width' => 10,
++          'height' => 11,
++        ],
++      ],
++    ]);
++
++    $media->save();
++
++    /** @var \Drupal\entity_usage\EntityUsage $usage_service */
++    $usage_service = \Drupal::service('entity_usage.usage');
++
++    $usage = $usage_service->listSources($media);
++    $this->assertEquals([], $usage);
++
++    $embedded_text = '<drupal-media data-entity-type="media" data-entity-uuid="' . $media->uuid() . '"></drupal-media>';
++    $node1 = Node::create([
++      'type' => 'eu_test_ct',
++      'title' => 'Node 1',
++      'field_eu_test_rich_text' => [
++        'value' => $embedded_text,
++        'format' => 'eu_test_text_format',
++      ],
++    ]);
++
++    $node1->save();
++
++    $usage = $usage_service->listSources($media);
++
++    $expected = [
++      'node' => [
++        $node1->id() => [
++          [
++            'source_langcode' => $node1->language()->getId(),
++            'source_vid' => $node1->getRevisionId(),
++            'method' => 'media_embed',
++            'field_name' => 'field_eu_test_rich_text',
++            'count' => 1,
++          ],
++        ],
++      ],
++    ];
++
++    $this->assertEquals($expected, $usage);
++
++    $usage = $usage_service->listTargets($node1);
++    $expected = [
++      'media' => [
++        $media->id() => [
++          [
++            'method' => 'media_embed',
++            'field_name' => 'field_eu_test_rich_text',
++            'count' => 1,
++          ],
++        ],
++      ],
++    ];
++    $this->assertEquals($expected, $usage);
++  }
++
+ }
