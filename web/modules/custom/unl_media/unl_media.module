@@ -129,7 +129,7 @@ function _unl_media_media_embed_dialog_validate($form, FormStateInterface &$form
  */
 function unl_media_form_editor_link_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
   // Replace default help text.
-  $form['attributes']['href']['#description'] = t('<Link options:<br><strong>Local content and existing documents:</strong> Start typing to select an autocomplete option<br><strong>New document:</strong> <a href="@file_url" target="_blank">Upload a new document</a><br><strong>External URLs:</strong> Type full URL', ['@file_url' => '/media/add/file']);
+  $form['attributes']['href']['#description'] = t('<Link options:<br><strong>Local content and existing documents:</strong> Start typing to select an autocomplete option<br><strong>New document:</strong> <a href="@file_url" target="_blank">Upload a new document</a><br><strong>External URLs:</strong> Type full URL', ['@file_url' => base_path() . 'media/add/file']);
 }
 
 /**
