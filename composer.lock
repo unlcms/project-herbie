@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55c4ee77edd7f7db226ffc2dbb197e34",
+    "content-hash": "965cd5934cecf004d63e22ccca0e3b1a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3935,26 +3935,23 @@
         },
         {
             "name": "drupal/entity_usage",
-            "version": "2.0.0-alpha8",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_usage.git",
-                "reference": "8.x-2.0-alpha8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-alpha8.zip",
-                "reference": "8.x-2.0-alpha8",
-                "shasum": "577da1bf89d7520b07ba1af5be8553bac5ceb53f"
+                "reference": "897454087883e5b2ad421d0963d3ff587129926e"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "^8.8 || ^9"
             },
             "require-dev": {
                 "drupal/block_field": "~1.0",
                 "drupal/dynamic_entity_reference": "~1.0",
+                "drupal/entity_browser": "~2.0",
+                "drupal/entity_browser_block": "~1.0",
                 "drupal/entity_embed": "~1.0",
                 "drupal/entity_reference_revisions": "~1.0",
+                "drupal/inline_entity_form": "^1.0@RC",
                 "drupal/paragraphs": "~1.0",
                 "drupal/webform": "~5.0"
             },
@@ -3964,11 +3961,16 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha8",
-                    "datestamp": "1561364886",
+                    "version": "8.x-2.0-beta2+1-dev",
+                    "datestamp": "1580083981",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
@@ -3994,7 +3996,8 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_usage",
                 "issues": "http://drupal.org/project/issues/entity_usage"
-            }
+            },
+            "time": "2020-02-16T20:16:04+00:00"
         },
         {
             "name": "drupal/external_entities",
@@ -12786,7 +12789,7 @@
         "drupal/dcf": 10,
         "drupal/diff": 5,
         "drupal/entity_embed": 5,
-        "drupal/entity_usage": 15,
+        "drupal/entity_usage": 20,
         "drupal/external_entities": 15,
         "drupal/inline_block_title_automatic": 15,
         "drupal/layout_builder_modal": 15,
