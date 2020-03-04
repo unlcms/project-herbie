@@ -1,0 +1,19 @@
+uuid: 01b1b64e-0aed-40c1-b105-c098f9e912a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_padd_postal_code
+    - paragraphs.paragraphs_type.contact_info_physical_address
+id: paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+field_name: p_b_cinfo_padd_postal_code
+entity_type: paragraph
+bundle: contact_info_physical_address
+label: 'Postal Code'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

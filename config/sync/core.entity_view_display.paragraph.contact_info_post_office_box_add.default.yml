@@ -1,0 +1,49 @@
+uuid: a083a4a8-31d2-46da-bfe8-7bf4c3611b2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_box_number
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_city
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_postal_code
+    - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_state
+    - paragraphs.paragraphs_type.contact_info_post_office_box_add
+  module:
+    - options
+id: paragraph.contact_info_post_office_box_add.default
+targetEntityType: paragraph
+bundle: contact_info_post_office_box_add
+mode: default
+content:
+  p_b_cinfo_poadd_box_number:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_poadd_city:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_poadd_postal_code:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  p_b_cinfo_poadd_state:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

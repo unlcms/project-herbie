@@ -1,0 +1,55 @@
+uuid: 688d8f36-3a81-4fae-a7ee-17ea53f66e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.storage.block_content.b_cinfo_contact_point
+    - paragraphs.paragraphs_type.contact_info_contact_point
+  module:
+    - entity_reference_revisions
+id: block_content.contact_info.b_cinfo_contact_point
+field_name: b_cinfo_contact_point
+entity_type: block_content
+bundle: contact_info
+label: 'Contact Point'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact_info_contact_point: contact_info_contact_point
+    target_bundles_drag_drop:
+      contact_info_contact_point:
+        enabled: true
+        weight: 10
+      accordion_item:
+        weight: 11
+        enabled: false
+      contact_info_email:
+        weight: 12
+        enabled: false
+      contact_info_fax:
+        weight: 13
+        enabled: false
+      contact_info_heading:
+        weight: 14
+        enabled: false
+      contact_info_margin:
+        weight: 15
+        enabled: false
+      contact_info_phone:
+        weight: 16
+        enabled: false
+      contact_info_physical_address:
+        weight: 17
+        enabled: false
+      contact_info_post_office_box_add:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

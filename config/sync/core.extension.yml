@@ -33,10 +33,6 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
-  embed: 0
-  entity_browser: 0
-  entity_browser_entity_form: 0
-  entity_embed: 0
   entity_reference_revisions: 0
   entity_usage: 0
   external_entities: 0
@@ -61,8 +57,9 @@ module:
   layout_discovery: 0
   link: 0
   linkit: 0
+  markup: 0
   media: 0
-  media_entity_browser: 0
+  media_embed_view_mode_restrictions: 0
   media_library: 0
   menu_block: 0
   menu_ui: 0
@@ -71,7 +68,9 @@ module:
   page_cache: 0
   paragraphs_type_permissions: 0
   path: 0
+  path_alias: 0
   rabbit_hole: 0
+  redirect: 0
   responsive_image: 0
   rh_media: 0
   shortcut: 0
@@ -91,6 +90,8 @@ module:
   unl_mediahub: 0
   unl_menu: 0
   unl_news: 0
+  unl_pathauto: 0
+  unl_trailing_slash: 0
   unl_twig: 0
   unl_user: 0
   unl_utility: 0

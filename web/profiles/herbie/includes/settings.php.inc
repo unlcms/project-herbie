@@ -1,16 +1,26 @@
 <?php
 
+/*
+ * Location of the site configuration files
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+/*
+ * Set environment-specific configuration.
+ */
 $environment = getenv('UNLCMSENV');
 
 if ($environment == 'production') {
   $config['config_split.config_split.production']['status'] = TRUE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
+  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 }
 elseif ($environment == 'stage') {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = FALSE;
+  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 }
 else {
   $config['config_split.config_split.production']['status'] = FALSE;
@@ -23,16 +33,19 @@ else {
   // This will ensure the site can only be accessed through the intended host
   // names. Additional host patterns can be added for custom configurations.
   $settings['trusted_host_patterns'] = ['.*'];
+
+  // For local development, the temp directory should be set
+  // in settings.local.php.
 }
 
-/**
+/*
  * Private file path:
  *
  * A local file system path where private files will be stored.
  */
 $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
 
-/**
+/*
  * Increase PHP's memory_limit for Drush.
  *
  * Drush site install needs more than the typical hosting default of 128M for
@@ -41,20 +54,28 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
  * needed) only for command line usage.
  */
 if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
-  // https://www.php.net/ini_get
-  function return_bytes($val) {
-    $val = trim($val);
-    $last = strtolower($val[strlen($val)-1]);
-    switch($last) {
-      case 'g':
-        $val *= 1024;
-      case 'm':
-        $val *= 1024;
-      case 'k':
-        $val *= 1024;
-    }
+  // This file is loaded with an 'include' statement in settings.php. In certain
+  // situations (such as drush site:install) settings.php is loaded multiple
+  // times, therefore this file is included multiple times, so this function
+  // needs to avoid being defined twice. This file could be loaded with
+  // 'include_once' instead but that was not done because it might
+  // negatively affect setting prioritization/order.
+  if (!function_exists('return_bytes')) {
+    // https://www.php.net/ini_get
+    function return_bytes($val) {
+      $val = trim($val);
+      $last = strtolower($val[strlen($val) - 1]);
+      switch ($last) {
+        case 'g':
+          $val *= 1024;
+        case 'm':
+          $val *= 1024;
+        case 'k':
+          $val *= 1024;
+      }
 
-    return $val;
+      return $val;
+    }
   }
 
   $memory_limit = return_bytes(ini_get('memory_limit'));
