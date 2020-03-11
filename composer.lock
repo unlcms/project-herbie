@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7b4a6078982241d4d16c281dbdbc2d7",
+    "content-hash": "e0c0c9a6d75563245a6725fa82f848c2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3165,6 +3165,7 @@
                     }
                 },
                 "patches_applied": {
+                    "3103529 - web install of 8.8.1 fails": "patches/3103529-56.patch",
                     "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                     "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                     "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
@@ -9467,12 +9468,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "aad8b2df5fbd139d540f57aba4eb8fc7d6701209"
+                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/aad8b2df5fbd139d540f57aba4eb8fc7d6701209",
-                "reference": "aad8b2df5fbd139d540f57aba4eb8fc7d6701209",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/57a462654b620a6e5c58fa69f88f4d896400bb80",
+                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80",
                 "shasum": ""
             },
             "require": {
@@ -9488,7 +9489,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2019-06-19T16:53:09+00:00"
+            "time": "2020-02-19T20:26:29+00:00"
         },
         {
             "name": "unlcms/unl_five",
@@ -9496,12 +9497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954"
+                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/a4dbf5e48d4c796e781c7e2759c02fe841d81954",
-                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/55543ab3b7cb63aec1abe93792c2d8855eac875a",
+                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9514,7 +9515,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-12-17T22:48:10+00:00"
+            "time": "2020-02-21T00:48:36+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -9522,12 +9523,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "858eaeb6cdb7ae3ef6ced1dfabad721255d6e696"
+                "reference": "2dbe4f0f8ec20972676e95657da2559de2c8bae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/858eaeb6cdb7ae3ef6ced1dfabad721255d6e696",
-                "reference": "858eaeb6cdb7ae3ef6ced1dfabad721255d6e696",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/2dbe4f0f8ec20972676e95657da2559de2c8bae4",
+                "reference": "2dbe4f0f8ec20972676e95657da2559de2c8bae4",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -9540,7 +9541,7 @@
                 }
             ],
             "description": "Admin interface to create and manage multiple site installations.",
-            "time": "2019-12-02T17:55:26+00:00"
+            "time": "2020-02-13T19:36:28+00:00"
         },
         {
             "name": "unlcms/unl_user",
@@ -10250,16 +10251,16 @@
         },
         {
             "name": "behat/mink-selenium2-driver",
-            "version": "dev-master",
+            "version": "1.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
-                "reference": "3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9"
+                "reference": "0a09c4341621fca937a726827611b20ce3e2c259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9",
-                "reference": "3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9",
+                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/0a09c4341621fca937a726827611b20ce3e2c259",
+                "reference": "0a09c4341621fca937a726827611b20ce3e2c259",
                 "shasum": ""
             },
             "require": {
@@ -10307,7 +10308,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2019-08-29T11:53:53+00:00"
+            "time": "2019-09-02T09:46:54+00:00"
         },
         {
             "name": "composer/ca-bundle",
