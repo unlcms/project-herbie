@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "965cd5934cecf004d63e22ccca0e3b1a",
+    "content-hash": "4f58edec8561d9cf006a0b7cc9a022e3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2382,32 +2382,32 @@
         },
         {
             "name": "drupal/ckeditor_config",
-            "version": "2.0.0-rc1",
+            "version": "3.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_config.git",
-                "reference": "8.x-2.0-rc1"
+                "reference": "8.x-3.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-2.0-rc1.zip",
-                "reference": "8.x-2.0-rc1",
-                "shasum": "ad3368a2157760eb9759de33ad1980ba9c487038"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "da9594a109054809e4f6427a45dff5ac7f3f7b61"
             },
             "require": {
-                "drupal/core": "^8.5"
+                "drupal/core": "^8.5|^9.0"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-2.x": "2.x-dev"
+                    "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-rc1",
-                    "datestamp": "1557181381",
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1583945126",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3165,6 +3165,7 @@
                     }
                 },
                 "patches_applied": {
+                    "3103529 - web install of 8.8.1 fails": "patches/3103529-56.patch",
                     "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                     "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                     "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
@@ -3173,7 +3174,8 @@
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                     "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
                     "3100066 - 'Convert line breaks into HTML' filter should exclude <drupal-media> tag": "patches/3100066-2.patch",
-                    "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch"
+                    "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch",
+                    "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
                 }
             },
             "autoload": {
@@ -9469,12 +9471,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "aad8b2df5fbd139d540f57aba4eb8fc7d6701209"
+                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/aad8b2df5fbd139d540f57aba4eb8fc7d6701209",
-                "reference": "aad8b2df5fbd139d540f57aba4eb8fc7d6701209",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/57a462654b620a6e5c58fa69f88f4d896400bb80",
+                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80",
                 "shasum": ""
             },
             "require": {
@@ -9490,7 +9492,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2019-06-19T16:53:09+00:00"
+            "time": "2020-02-19T20:26:29+00:00"
         },
         {
             "name": "unlcms/unl_five",
@@ -9498,12 +9500,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954"
+                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/a4dbf5e48d4c796e781c7e2759c02fe841d81954",
-                "reference": "a4dbf5e48d4c796e781c7e2759c02fe841d81954",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/55543ab3b7cb63aec1abe93792c2d8855eac875a",
+                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9516,7 +9518,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2019-12-17T22:48:10+00:00"
+            "time": "2020-02-21T00:48:36+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -9524,12 +9526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "858eaeb6cdb7ae3ef6ced1dfabad721255d6e696"
+                "reference": "2dbe4f0f8ec20972676e95657da2559de2c8bae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/858eaeb6cdb7ae3ef6ced1dfabad721255d6e696",
-                "reference": "858eaeb6cdb7ae3ef6ced1dfabad721255d6e696",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/2dbe4f0f8ec20972676e95657da2559de2c8bae4",
+                "reference": "2dbe4f0f8ec20972676e95657da2559de2c8bae4",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -9542,7 +9544,7 @@
                 }
             ],
             "description": "Admin interface to create and manage multiple site installations.",
-            "time": "2019-12-02T17:55:26+00:00"
+            "time": "2020-02-13T19:36:28+00:00"
         },
         {
             "name": "unlcms/unl_user",
@@ -12784,7 +12786,6 @@
         "drupal/auto_entitylabel": 10,
         "drupal/block_form_alter": 10,
         "drupal/block_type_templates": 15,
-        "drupal/ckeditor_config": 5,
         "drupal/config_role_split": 10,
         "drupal/dcf": 10,
         "drupal/diff": 5,
