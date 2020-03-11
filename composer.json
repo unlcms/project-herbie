@@ -229,9 +229,6 @@
             "drupal/entity_embed": {
                 "3061050 - \"TypeError: originalGetFocusedWidget is not a function\" if drupalimage plugin button not used": "patches/originalgetfocusedwidget-not-function-3061050-2.patch"
             },
-            "drupal/entity_usage": {
-                "3081407 - <drupal-media> are not tracked by Entity Usage": "patches/3081407-8.patch"
-            },
             "drupal/external_entities": {
                 "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
             },
