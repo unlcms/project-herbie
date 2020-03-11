@@ -114,7 +114,7 @@
         "drupal/embed": "^1.0",
         "drupal/entity_browser": "^2.1",
         "drupal/entity_embed": "^1.0@RC",
-        "drupal/entity_usage": "^2.0@alpha",
+        "drupal/entity_usage": "2.x-dev",
         "drupal/external_entities": "^2.0@alpha",
         "drupal/field_group": "^3.0",
         "drupal/honeypot": "^1.29",
