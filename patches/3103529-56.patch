@@ -1,0 +1,17 @@
+diff --git a/core/includes/install.core.inc b/core/includes/install.core.inc
+index cfab4129..673261ca 100644
+--- a/core/includes/install.core.inc
++++ b/core/includes/install.core.inc
+@@ -159,6 +159,12 @@ function install_drupal($class_loader, $settings = [], callable $callback = NULL
+       install_display_output($output, $state);
+     }
+     elseif ($state['installation_finished']) {
++      // Truncate cache_container table.
++      // See https://www.drupal.org/project/drupal/issues/3103529.
++      if (Database::getConnection()->schema()->tableExists('cache_container')) {
++        Database::getConnection()->truncate('cache_container')->execute();
++      }
++
+       // Redirect to the newly installed site.
+       $finish_url = '';
+       if (isset($install_state['profile_info']['distribution']['install']['finish_url'])) {

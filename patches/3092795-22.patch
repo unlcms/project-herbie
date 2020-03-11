@@ -1,0 +1,56 @@
+diff --git a/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css b/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
+index 82923ff63e..0232f3554e 100644
+--- a/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
++++ b/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
+@@ -22,14 +22,6 @@ drupal-media {
+ }
+ 
+ /**
+- * Fix positioning without delete button. Can be removed with this issue:
+- * @see https://www.drupal.org/project/drupal/issues/3074859
+- */
+-drupal-media .media-library-item__edit {
+-  right: 10px;
+-}
+-
+-/**
+  * Allow alignment to display in CKEditor.
+  */
+ drupal-media[data-align=left],
+@@ -39,3 +31,36 @@ drupal-media[data-align=right] {
+ drupal-media[data-align=center] {
+   display: flex;
+ }
++
++/**
++ * Embedded media edit button styles.
++ *
++ * We have to override the .button styles since buttons make heavy use of
++ * background and border property changes.
++ */
++drupal-media .media-library-item__edit,
++drupal-media .media-library-item__edit:hover,
++drupal-media .media-library-item__edit:focus {
++  position: absolute;
++  z-index: 1;
++  top: 10px;
++  overflow: hidden;
++  width: 21px;
++  height: 21px;
++  margin: 5px;
++  padding: 0;
++  transition: 0.2s border-color;
++  color: transparent;
++  border: 2px solid #ccc;
++  border-radius: 20px;
++  background-size: 13px;
++  text-shadow: none;
++  font-size: 0;
++  cursor: pointer;
++}
++
++drupal-media .media-library-item__edit {
++  right: 10px;
++  background: url("../../../../../misc/icons/787878/pencil.svg") #fff center no-repeat;
++  background-size: 13px;
++}

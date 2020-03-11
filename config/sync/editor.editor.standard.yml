@@ -52,7 +52,7 @@ settings:
     language:
       language_list: un
     customconfig:
-      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = showborders"
+      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = \"showborders\""
     dcf_base:
       enabled_plugins:
         dcf_table: dcf_table

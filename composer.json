@@ -101,7 +101,7 @@
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
-        "drupal/ckeditor_config": "^2.0@RC",
+        "drupal/ckeditor_config": "^3.0",
         "drupal/config_ignore": "^2.1",
         "drupal/config_role_split": "^1.0@beta",
         "drupal/config_split": "^1.4",
@@ -114,7 +114,7 @@
         "drupal/embed": "^1.0",
         "drupal/entity_browser": "^2.1",
         "drupal/entity_embed": "^1.0@RC",
-        "drupal/entity_usage": "^2.0@alpha",
+        "drupal/entity_usage": "2.x-dev",
         "drupal/external_entities": "^2.0@alpha",
         "drupal/field_group": "^3.0",
         "drupal/honeypot": "^1.29",
@@ -204,6 +204,7 @@
         },
         "patches": {
             "drupal/core": {
+                "3103529 - web install of 8.8.1 fails": "patches/3103529-56.patch",
                 "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                 "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
@@ -212,7 +213,8 @@
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
                 "3100066 - 'Convert line breaks into HTML' filter should exclude <drupal-media> tag": "patches/3100066-2.patch",
-                "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch"
+                "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch",
+                "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
