@@ -1,0 +1,3 @@
+# This file should be copied to config.local.yaml before editing.
+name: project-herbie-local
+additional_fqdns: ["project-herbie-local.unl.edu"]
