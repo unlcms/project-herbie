@@ -212,7 +212,8 @@
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
                 "3100066 - 'Convert line breaks into HTML' filter should exclude <drupal-media> tag": "patches/3100066-2.patch",
-                "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch"
+                "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch",
+                "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
