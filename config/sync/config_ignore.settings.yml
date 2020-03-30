@@ -24,11 +24,12 @@ ignored_config_entities:
   44: ~block.block.unl_five_local_tasks
   46: ~block.block.unl_five_messages
   48: ~block.block.unl_five_page_title
-  50: 'webform.webform.*'
-  52: 'system.site:name'
-  54: 'system.site:mail'
-  56: 'system.site:slogan'
-  58: 'system.site:page.front'
+  50: 'system.site:name'
+  52: 'system.site:mail'
+  54: 'system.site:slogan'
+  56: 'system.site:page.front'
+  58: unl_breadcrumbs.settings
+  60: 'webform.webform.*'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 enable_export_filtering: '1'
