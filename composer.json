@@ -147,6 +147,7 @@
         "unl/wdntemplates": "^5.0",
         "unlcms/external_entities_unldirectory": "dev-8.x-2.x",
         "unlcms/project-herbie-composer-plugin": "^1.0",
+        "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "dev-8.x-1.x",
         "unlcms/unl_five": "dev-8.x-5.0.x",
         "unlcms/unl_multisite": "dev-8.x-1.x",

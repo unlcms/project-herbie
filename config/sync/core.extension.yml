@@ -83,6 +83,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   unl_blocks: 0
+  unl_breadcrumbs: 0
   unl_cas: 0
   unl_config: 0
   unl_five_ckeditor: 0

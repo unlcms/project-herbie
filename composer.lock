@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26c330749872adf0dedfa01f951bbdb7",
+    "content-hash": "3d0f5dc2af0820988d8c3e5033b292c6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9494,6 +9494,35 @@
             "time": "2019-04-02T21:29:08+00:00"
         },
         {
+            "name": "unlcms/unl_breadcrumbs",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_breadcrumbs.git",
+                "reference": "267d1a49eb73c40f36a1f8e929e8afc0ce481aaa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/267d1a49eb73c40f36a1f8e929e8afc0ce481aaa",
+                "reference": "267d1a49eb73c40f36a1f8e929e8afc0ce481aaa",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/u/chris-burge",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "UNL breadcrumb implementation",
+            "time": "2020-02-20T19:49:15+00:00"
+        },
+        {
             "name": "unlcms/unl_cas",
             "version": "dev-8.x-1.x",
             "source": {
@@ -9528,12 +9557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a"
+                "reference": "f6edb61032f881a7e1cd31b2c19bb99329c74743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/55543ab3b7cb63aec1abe93792c2d8855eac875a",
-                "reference": "55543ab3b7cb63aec1abe93792c2d8855eac875a",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/f6edb61032f881a7e1cd31b2c19bb99329c74743",
+                "reference": "f6edb61032f881a7e1cd31b2c19bb99329c74743",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -9546,7 +9575,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.0 theme.",
-            "time": "2020-02-21T00:48:36+00:00"
+            "time": "2020-03-09T20:53:38+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -12840,5 +12869,6 @@
     "platform": {
         "php": ">=7.1"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
