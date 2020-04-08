@@ -1,7 +1,7 @@
 name: UNLedu 5.0 Project Herbie
 type: theme
 description: 'Subtheme for unl_five.'
-core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: unl_five
 
 libraries:
