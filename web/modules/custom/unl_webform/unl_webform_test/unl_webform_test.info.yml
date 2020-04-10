@@ -3,7 +3,7 @@ description: 'Provides testing capabilities for UNL Webform'
 package: UNL
 
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 
 version: 1.x
 
