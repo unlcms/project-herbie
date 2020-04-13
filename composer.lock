@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5647c18eb2f65ed9999ba640a0c6edcf",
+    "content-hash": "6c8b93533684ff317418ef7ecd84231b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4691,23 +4691,19 @@
         },
         {
             "name": "drupal/layout_builder_restrictions",
-            "version": "2.1.0",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_builder_restrictions.git",
-                "reference": "8.x-2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_builder_restrictions-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "1d15acaf6ae2da688087576c716cb2c7e9719abc"
+                "reference": "2b0ee2e22738d2cf59124a5c842af81f967dba18"
             },
             "require": {
-                "drupal/core": "^8.5.0-rc1"
+                "drupal/core": "^8.6.0 || ^9"
             },
             "require-dev": {
-                "drupal/layout_library": "*"
+                "drupal/dashboards": "*",
+                "drupal/layout_library": "*",
+                "drupal/mini_layouts": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -4715,17 +4711,17 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1564441086",
+                    "version": "8.x-2.5+5-dev",
+                    "datestamp": "1585156040",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -4745,7 +4741,8 @@
             "homepage": "https://www.drupal.org/project/layout_builder_restrictions",
             "support": {
                 "source": "https://git.drupalcode.org/project/layout_builder_restrictions"
-            }
+            },
+            "time": "2020-03-25T22:38:24+00:00"
         },
         {
             "name": "drupal/linkit",
@@ -12879,6 +12876,7 @@
         "drupal/external_entities": 15,
         "drupal/inline_block_title_automatic": 15,
         "drupal/layout_builder_modal": 15,
+        "drupal/layout_builder_restrictions": 20,
         "drupal/markup": 10,
         "drupal/media_entity_browser": 20,
         "drupal/media_library_extras": 15,
