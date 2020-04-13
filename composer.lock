@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c8b93533684ff317418ef7ecd84231b",
+    "content-hash": "01a609379e075b87fc2715db66cf6a8d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4717,6 +4717,9 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2982452 - Restrict blocks per layout and per region": "patches/2982452-58.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
