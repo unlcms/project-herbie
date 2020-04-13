@@ -15,14 +15,6 @@ dependencies:
     - responsive_image
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
-  layout_builder_restrictions:
-    entity_view_mode_restriction:
-      allowed_blocks: {  }
-      allowed_layouts: {  }
 id: node.news.default
 targetEntityType: node
 bundle: news

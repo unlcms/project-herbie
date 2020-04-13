@@ -1,0 +1,7 @@
+plugin_config:
+  entity_view_mode_restriction_by_region:
+    weight: -10
+    enabled: true
+  entity_view_mode_restriction:
+    weight: -9
+    enabled: false
