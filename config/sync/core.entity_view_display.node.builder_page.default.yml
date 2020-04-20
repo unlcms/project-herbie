@@ -48,31 +48,104 @@ third_party_settings:
             weight: 0
         third_party_settings: {  }
   layout_builder_restrictions:
+    entity_view_mode_restriction_by_region:
+      allowed_layouts:
+        - dcf_onecol_section
+        - dcf_twocol_section
+        - dcf_threecol_section
+        - dcf_fourcol_section
+      whitelisted_blocks:
+        dcf_threecol_section:
+          all_regions:
+            'Aggregated Content':
+              - unl_recent_news
+            'Chaos Tools': {  }
+            'Content fields': {  }
+            'Custom block types':
+              - card
+              - card_circle_image
+              - content
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:card'
+              - 'inline_block:card_circle_image'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            User: {  }
+            Webform: {  }
+            core: {  }
+        dcf_fourcol_section:
+          all_regions:
+            'Aggregated Content': {  }
+            'Chaos Tools': {  }
+            'Content fields': {  }
+            'Custom block types':
+              - card
+              - card_circle_image
+              - content
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:card'
+              - 'inline_block:card_circle_image'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            User: {  }
+            Webform: {  }
+            core: {  }
+        dcf_onecol_section:
+          all_regions:
+            'Aggregated Content':
+              - unl_recent_news
+            'Chaos Tools': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Custom block types':
+              - accordion
+              - card
+              - card_circle_image
+              - content
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:card'
+              - 'inline_block:card_circle_image'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            User: {  }
+            Webform: {  }
+            core: {  }
+        dcf_twocol_section:
+          all_regions:
+            'Aggregated Content':
+              - unl_recent_news
+            'Chaos Tools': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Custom block types':
+              - accordion
+              - card
+              - card_circle_image
+              - content
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:card'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            User: {  }
+            core: {  }
+    allowed_block_categories: {  }
     entity_view_mode_restriction:
-      allowed_blocks:
-        'Aggregated Content':
-          - unl_recent_news
-        'Chaos Tools': {  }
-        Content: {  }
-        'Content fields':
-          - 'field_block:node:builder_page:body'
-        'Custom block types':
-          - accordion
-          - card
-          - card_circle_image
-          - content
-        Forms: {  }
-        'Inline blocks':
-          - 'inline_block:accordion'
-          - 'inline_block:card'
-          - 'inline_block:card_circle_image'
-          - 'inline_block:content'
-        'Lists (Views)': {  }
-        Menus: {  }
-        System: {  }
-        User: {  }
-        'User fields': {  }
-        core: {  }
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
       allowed_layouts:
         - dcf_onecol_section
         - dcf_twocol_section
