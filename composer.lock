@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b018db4729ef8bb7e4882c1e727ae36",
+    "content-hash": "9318f3303f933d92388ba7d4e27f356b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9593,17 +9593,20 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "dev-8.x-5.0.x",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "f6edb61032f881a7e1cd31b2c19bb99329c74743"
+                "reference": "52314b983719c6e12fa2eb34b25d11f602a3e95a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/f6edb61032f881a7e1cd31b2c19bb99329c74743",
-                "reference": "f6edb61032f881a7e1cd31b2c19bb99329c74743",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/52314b983719c6e12fa2eb34b25d11f602a3e95a",
+                "reference": "52314b983719c6e12fa2eb34b25d11f602a3e95a",
                 "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-theme",
             "notification-url": "https://packagist.org/downloads/",
@@ -9614,8 +9617,8 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "UNLedu Framework 5.0 theme.",
-            "time": "2020-03-09T20:53:38+00:00"
+            "description": "UNLedu Framework 5.x theme.",
+            "time": "2020-04-17T20:06:10+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -12904,7 +12907,6 @@
         "drupal/rabbit_hole": 10,
         "unlcms/external_entities_unldirectory": 20,
         "unlcms/unl_cas": 20,
-        "unlcms/unl_five": 20,
         "unlcms/unl_multisite": 20,
         "drupal/config_inspector": 10
     },

@@ -8,8 +8,8 @@ _core:
   default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
 id: unl_five_herbie_local_tasks
 theme: unl_five_herbie
-region: header
-weight: -2
+region: navlinks
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:
