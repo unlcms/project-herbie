@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5647c18eb2f65ed9999ba640a0c6edcf",
+    "content-hash": "2b018db4729ef8bb7e4882c1e727ae36",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9452,11 +9452,11 @@
         },
         {
             "name": "unl/wdntemplates",
-            "version": "5.0",
+            "version": "5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "develop"
+                "reference": "5.1"
             },
             "type": "library"
         },
