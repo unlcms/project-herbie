@@ -148,7 +148,7 @@
         "unlcms/external_entities_unldirectory": "dev-8.x-2.x",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_breadcrumbs": "^1.0",
-        "unlcms/unl_cas": "dev-8.x-1.x",
+        "unlcms/unl_cas": "^1.0",
         "unlcms/unl_five": "^5.1",
         "unlcms/unl_multisite": "dev-8.x-1.x",
         "vlucas/phpdotenv": "^2.4",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9318f3303f933d92388ba7d4e27f356b",
+    "content-hash": "918a60cc973fddcd60eb8ca20d56c434",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9567,19 +9567,20 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "dev-8.x-1.x",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80"
+                "reference": "a168fe10da954b697be3b8aab9ece89a485124c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/57a462654b620a6e5c58fa69f88f4d896400bb80",
-                "reference": "57a462654b620a6e5c58fa69f88f4d896400bb80",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/a168fe10da954b697be3b8aab9ece89a485124c5",
+                "reference": "a168fe10da954b697be3b8aab9ece89a485124c5",
                 "shasum": ""
             },
             "require": {
+                "drupal/core": "^8 || ^9",
                 "unlcms/unl_user": "dev-8.x-1.x"
             },
             "type": "drupal-module",
@@ -9592,7 +9593,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2020-02-19T20:26:29+00:00"
+            "time": "2020-04-09T22:28:29+00:00"
         },
         {
             "name": "unlcms/unl_five",
@@ -12909,7 +12910,6 @@
         "drupal/media_library_extras": 15,
         "drupal/rabbit_hole": 10,
         "unlcms/external_entities_unldirectory": 20,
-        "unlcms/unl_cas": 20,
         "unlcms/unl_multisite": 20,
         "drupal/config_inspector": 10
     },
