@@ -9535,22 +9535,25 @@
         },
         {
             "name": "unlcms/unl_breadcrumbs",
-            "version": "1.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_breadcrumbs.git",
-                "reference": "267d1a49eb73c40f36a1f8e929e8afc0ce481aaa"
+                "reference": "736261d69f0b508ebe253b8bacb92d4001a99871"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/267d1a49eb73c40f36a1f8e929e8afc0ce481aaa",
-                "reference": "267d1a49eb73c40f36a1f8e929e8afc0ce481aaa",
+                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/736261d69f0b508ebe253b8bacb92d4001a99871",
+                "reference": "736261d69f0b508ebe253b8bacb92d4001a99871",
                 "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -9560,7 +9563,7 @@
                 }
             ],
             "description": "UNL breadcrumb implementation",
-            "time": "2020-02-20T19:49:15+00:00"
+            "time": "2020-04-09T22:21:27+00:00"
         },
         {
             "name": "unlcms/unl_cas",
