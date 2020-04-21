@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "918a60cc973fddcd60eb8ca20d56c434",
+    "content-hash": "b5bdb3de4418bb2bf8c407ef1304d844",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9626,19 +9626,20 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "dev-8.x-1.x",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "47da8e8a339242fc62a35a6e0f319aa142d03199"
+                "reference": "4396af690c8bcfb192662228263e5f4597a00a12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/47da8e8a339242fc62a35a6e0f319aa142d03199",
-                "reference": "47da8e8a339242fc62a35a6e0f319aa142d03199",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/4396af690c8bcfb192662228263e5f4597a00a12",
+                "reference": "4396af690c8bcfb192662228263e5f4597a00a12",
                 "shasum": ""
             },
             "require": {
+                "drupal/core": "^8 || ^9",
                 "richardbporter/drush-users-commands": "^2.0"
             },
             "type": "drupal-module",
@@ -9651,7 +9652,7 @@
                 }
             ],
             "description": "Admin interface to create and manage multiple site installations.",
-            "time": "2020-03-27T16:23:32+00:00"
+            "time": "2020-04-13T18:27:16+00:00"
         },
         {
             "name": "unlcms/unl_user",
@@ -12910,7 +12911,6 @@
         "drupal/media_library_extras": 15,
         "drupal/rabbit_hole": 10,
         "unlcms/external_entities_unldirectory": 20,
-        "unlcms/unl_multisite": 20,
         "drupal/config_inspector": 10
     },
     "prefer-stable": true,

@@ -150,7 +150,7 @@
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^1.0",
         "unlcms/unl_five": "^5.1",
-        "unlcms/unl_multisite": "dev-8.x-1.x",
+        "unlcms/unl_multisite": "^1.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
