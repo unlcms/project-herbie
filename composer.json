@@ -124,7 +124,7 @@
         "drupal/imagemagick": "^2.4",
         "drupal/inline_block_title_automatic": "^1.0@alpha",
         "drupal/inline_entity_form": "^1.0",
-        "drupal/layout_builder_modal": "^1.0@alpha",
+        "drupal/layout_builder_modal": "^1.0",
         "drupal/layout_builder_restrictions": "^2.0",
         "drupal/linkit": "^5.0",
         "drupal/markup": "^1.0@beta",
@@ -238,9 +238,6 @@
             },
             "drupal/linkit": {
               "3063393 - Remove '/edit' from media entity paths": "patches/linkit-media_entity_update_canonical_path-3063393-11.patch"
-            },
-            "drupal/layout_builder_modal": {
-                "3042886 - Set modal autoResize to TRUE": "patches/layout_builder_modal-autoResize_to_TRUE-3042886-16.patch"
             },
             "drupal/media_library_extras": {
                 "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"

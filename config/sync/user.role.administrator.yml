@@ -49,6 +49,7 @@ permissions:
   - 'administer filters'
   - 'administer honeypot'
   - 'administer image styles'
+  - 'administer layout builder modal'
   - 'administer linkit profiles'
   - 'administer media'
   - 'administer media display'
