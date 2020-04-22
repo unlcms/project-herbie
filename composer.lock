@@ -8270,16 +8270,16 @@
         },
         {
             "name": "symfony/ldap",
-            "version": "v3.4.25",
+            "version": "v3.4.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ldap.git",
-                "reference": "731488ee91e300a26907c820496f6ea092168ca1"
+                "reference": "1c444da0e3a1779a854d4f2196ed1dd7ae1ef181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ldap/zipball/731488ee91e300a26907c820496f6ea092168ca1",
-                "reference": "731488ee91e300a26907c820496f6ea092168ca1",
+                "url": "https://api.github.com/repos/symfony/ldap/zipball/1c444da0e3a1779a854d4f2196ed1dd7ae1ef181",
+                "reference": "1c444da0e3a1779a854d4f2196ed1dd7ae1ef181",
                 "shasum": ""
             },
             "require": {
@@ -8322,20 +8322,20 @@
                 "active directory",
                 "ldap"
             ],
-            "time": "2019-01-16T09:39:14+00:00"
+            "time": "2020-03-16T08:31:04+00:00"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.2.6",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "fd4a5f27b7cd085b489247b9890ebca9f3e10044"
+                "reference": "9072131b5e6e21203db3249c7db26b52897bc73e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/fd4a5f27b7cd085b489247b9890ebca9f3e10044",
-                "reference": "fd4a5f27b7cd085b489247b9890ebca9f3e10044",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/9072131b5e6e21203db3249c7db26b52897bc73e",
+                "reference": "9072131b5e6e21203db3249c7db26b52897bc73e",
                 "shasum": ""
             },
             "require": {
@@ -8344,7 +8344,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -8376,7 +8376,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2019-04-10T16:20:36+00:00"
+            "time": "2020-03-27T16:54:36+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -9567,21 +9567,21 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "a168fe10da954b697be3b8aab9ece89a485124c5"
+                "reference": "d425043ec9b1f690d8b659f0c5ec544f9a9e2655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/a168fe10da954b697be3b8aab9ece89a485124c5",
-                "reference": "a168fe10da954b697be3b8aab9ece89a485124c5",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/d425043ec9b1f690d8b659f0c5ec544f9a9e2655",
+                "reference": "d425043ec9b1f690d8b659f0c5ec544f9a9e2655",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^8 || ^9",
-                "unlcms/unl_user": "dev-8.x-1.x"
+                "unlcms/unl_user": "^1.0"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -9593,7 +9593,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2020-04-09T22:28:29+00:00"
+            "time": "2020-04-22T14:45:03+00:00"
         },
         {
             "name": "unlcms/unl_five",
@@ -9656,19 +9656,20 @@
         },
         {
             "name": "unlcms/unl_user",
-            "version": "dev-8.x-1.x",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_user.git",
-                "reference": "b68a1394d39e9a48e671e578d6e98825b38c1dc3"
+                "reference": "55a4e2a1fc88237f538613f252b1cd298be6eabd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/b68a1394d39e9a48e671e578d6e98825b38c1dc3",
-                "reference": "b68a1394d39e9a48e671e578d6e98825b38c1dc3",
+                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/55a4e2a1fc88237f538613f252b1cd298be6eabd",
+                "reference": "55a4e2a1fc88237f538613f252b1cd298be6eabd",
                 "shasum": ""
             },
             "require": {
+                "drupal/core": "^8 || ^9",
                 "symfony/ldap": "~3.4"
             },
             "type": "drupal-module",
@@ -9681,7 +9682,7 @@
                 }
             ],
             "description": "UNL User data integration",
-            "time": "2019-03-21T18:42:44+00:00"
+            "time": "2020-04-15T20:32:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
