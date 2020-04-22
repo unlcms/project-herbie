@@ -119,7 +119,7 @@
         "drupal/entity_usage": "2.x-dev",
         "drupal/external_entities": "^2.0@alpha",
         "drupal/field_group": "^3.0",
-        "drupal/honeypot": "^1.29",
+        "drupal/honeypot": "^1.0",
         "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
         "drupal/inline_block_title_automatic": "^1.0@alpha",
