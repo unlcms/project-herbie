@@ -123,7 +123,7 @@
         "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
         "drupal/inline_block_title_automatic": "^1.0@alpha",
-        "drupal/inline_entity_form": "1.0.0-rc1",
+        "drupal/inline_entity_form": "^1.0",
         "drupal/layout_builder_modal": "^1.0@alpha",
         "drupal/layout_builder_restrictions": "^2.0",
         "drupal/linkit": "^5.0",
@@ -235,9 +235,6 @@
             },
             "drupal/external_entities": {
                 "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
-            },
-            "drupal/inline_entity_form": {
-                "2927884 - Remove revision log messages from entities other than nodes": "patches/inline_entity_form-remove_log_message-2927884-6.patch"
             },
             "drupal/linkit": {
               "3063393 - Remove '/edit' from media entity paths": "patches/linkit-media_entity_update_canonical_path-3063393-11.patch"
