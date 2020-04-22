@@ -108,7 +108,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "drupal/ctools": "^3.2",
+        "drupal/ctools": "^3.0",
         "drupal/dcf": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
         "drupal/embed": "^1.0",
