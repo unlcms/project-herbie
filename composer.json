@@ -145,7 +145,7 @@
         "ractoon/jquery-text-counter": "0.8.0",
         "robinherbots/jquery.inputmask": "4.0.6",
         "unl/wdntemplates": "^5.1",
-        "unlcms/external_entities_unldirectory": "dev-8.x-2.x",
+        "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5bdb3de4418bb2bf8c407ef1304d844",
+    "content-hash": "679c6b7c26ca3402eca21f380bbc5cda",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9462,19 +9462,20 @@
         },
         {
             "name": "unlcms/external_entities_unldirectory",
-            "version": "dev-8.x-2.x",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/external_entities_unldirectory.git",
-                "reference": "2f21ee3b632ef09bed11177bda7c01af6c05d42a"
+                "reference": "d1679d951655ef86e572b0583c6ed636755981b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/2f21ee3b632ef09bed11177bda7c01af6c05d42a",
-                "reference": "2f21ee3b632ef09bed11177bda7c01af6c05d42a",
+                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/d1679d951655ef86e572b0583c6ed636755981b2",
+                "reference": "d1679d951655ef86e572b0583c6ed636755981b2",
                 "shasum": ""
             },
             "require": {
+                "drupal/core": "^8 || ^9",
                 "drupal/external_entities": "2.0.*"
             },
             "type": "drupal-module",
@@ -9487,7 +9488,7 @@
                 }
             ],
             "description": "Reference UNL Directory data as external entities.",
-            "time": "2019-05-31T18:15:08+00:00"
+            "time": "2020-04-21T19:15:45+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -12911,7 +12912,6 @@
         "drupal/media_entity_browser": 20,
         "drupal/media_library_extras": 15,
         "drupal/rabbit_hole": 10,
-        "unlcms/external_entities_unldirectory": 20,
         "drupal/config_inspector": 10
     },
     "prefer-stable": true,
