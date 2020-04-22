@@ -93,7 +93,7 @@
         "php": ">=7.1",
         "composer/installers": "^1.6",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal/admin_toolbar": "^1.26",
+        "drupal/admin_toolbar": "^2.0",
         "drupal/allowed_formats": "^1.1",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.6",
