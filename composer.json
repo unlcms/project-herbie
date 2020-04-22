@@ -102,6 +102,7 @@
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
         "drupal/ckeditor_config": "^3.0",
+        "drupal/config_filter": "^1.0",
         "drupal/config_ignore": "^2.1",
         "drupal/config_role_split": "^1.0@beta",
         "drupal/config_split": "^1.4",
