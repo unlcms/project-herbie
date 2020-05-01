@@ -61,6 +61,7 @@ permissions:
   - 'administer node fields'
   - 'administer node form display'
   - 'administer nodes'
+  - 'administer oembed providers'
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
