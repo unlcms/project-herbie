@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "679c6b7c26ca3402eca21f380bbc5cda",
+    "content-hash": "0c00ae6095d0cc1f3022e0d47cde439f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3168,7 +3168,6 @@
                     "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
                     "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                     "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/core_book-outline_permission-502430-80.patch",
-                    "3008119 - Provide hook_oembed_providers_alter()": "patches/drupal-allow_alter_oembed_providers-3008119-4.patch",
                     "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving": "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                     "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
@@ -5127,6 +5126,57 @@
             "homepage": "https://www.drupal.org/project/menu_block",
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_block"
+            }
+        },
+        {
+            "name": "drupal/oembed_providers",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/oembed_providers.git",
+                "reference": "1.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/oembed_providers-1.0.0-beta2.zip",
+                "reference": "1.0.0-beta2",
+                "shasum": "e6f14c822146694d03829600b0870b355da0f358"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta2",
+                    "datestamp": "1587480775",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/u/chris-burge",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allows site builders and developers to manage oEmbed providers.",
+            "homepage": "https://drupal.org/project/oembed_providers",
+            "keywords": [
+                "Drupal",
+                "Media",
+                "oEmbed"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/oembed_providers",
+                "issues": "https://www.drupal.org/project/issues/oembed_providers"
             }
         },
         {
@@ -12911,6 +12961,7 @@
         "drupal/markup": 10,
         "drupal/media_entity_browser": 20,
         "drupal/media_library_extras": 15,
+        "drupal/oembed_providers": 10,
         "drupal/rabbit_hole": 10,
         "drupal/config_inspector": 10
     },

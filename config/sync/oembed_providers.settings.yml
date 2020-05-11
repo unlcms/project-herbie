@@ -1,0 +1,5 @@
+allowed_providers:
+  - 'UNL MediaHub'
+external_fetch: false
+_core:
+  default_config_hash: lgWtCY9jfjkig9RkOgXl1JO2lGljsH4yqnQeKK1VpoA
