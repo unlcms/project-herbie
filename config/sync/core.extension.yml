@@ -65,6 +65,7 @@ module:
   menu_block: 0
   menu_ui: 0
   node: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   paragraphs_type_permissions: 0
@@ -89,7 +90,6 @@ module:
   unl_config: 0
   unl_five_ckeditor: 0
   unl_media: 0
-  unl_mediahub: 0
   unl_menu: 0
   unl_news: 0
   unl_pathauto: 0
