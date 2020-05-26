@@ -57,4 +57,78 @@ trait UNLUtilityTrait {
     }
   }
 
+  /**
+   * Utility method that determines if a string begins with another string.
+   *
+   * @param string $string
+   *   The string being being searched.
+   * @param string $subString
+   *   The string being searched for.
+   * @param bool $caseSensitive
+   *   Whether or nor the search should be case sensitive.
+   */
+  public static function stringStartsWith($string, $subString, $caseSensitive = TRUE) {
+    if ($caseSensitive === FALSE) {
+      $string = mb_strtolower($string);
+      $subString = mb_strtolower($subString);
+    }
+
+    if (mb_substr($string, 0, mb_strlen($subString)) == $subString) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+  }
+
+  /**
+   * Utility method that determines if a string ends with another string.
+   *
+   * @param string $string
+   *   The string being being searched.
+   * @param string $subString
+   *   The string being searched for.
+   * @param bool $caseSensitive
+   *   Whether or nor the search should be case sensitive.
+   */
+  public static function stringEndsWith($string, $subString, $caseSensitive = TRUE) {
+    if ($caseSensitive === FALSE) {
+      $string = mb_strtolower($string);
+      $subString = mb_strtolower($subString);
+    }
+
+    $strlen = strlen($string);
+    $subStringLength = strlen($subString);
+
+    if ($subStringLength > $strlen) {
+      return FALSE;
+    }
+
+    return substr_compare($string, $subString, $strlen - $subStringLength, $subStringLength) === 0;
+  }
+
+  /**
+   * Method that determines if a string in contained within another string.
+   *
+   * @param string $haystack
+   *   The string being being searched.
+   * @param string $needle
+   *   The string being searched for.
+   * @param bool $caseSensitive
+   *   Whether or nor the search should be case sensitive.
+   */
+  public static function stringContains($haystack, $needle, $caseSensitive = TRUE) {
+    if ($caseSensitive === FALSE) {
+      $haystack = mb_strtolower($haystack);
+      $needle = mb_strtolower($needle);
+    }
+
+    if (mb_substr_count($haystack, $needle) > 0) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+  }
+
 }
