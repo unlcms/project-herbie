@@ -1,14 +1,14 @@
-APIVersion: v1.11.0
+APIVersion: v1.14.2
 type: php
 docroot: web
-php_version: "7.2"
+php_version: "7.3"
 webserver_type: apache-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
-mariadb_version: "10.2"
+mariadb_version: "10.3"
 nfs_mount_enabled: false
 provider: default
 use_dns_when_possible: true
