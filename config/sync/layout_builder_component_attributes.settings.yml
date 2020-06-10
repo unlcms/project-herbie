@@ -1,0 +1,17 @@
+allowed_block_attributes:
+  class: true
+  id: false
+  style: false
+  data: false
+allowed_block_title_attributes:
+  id: false
+  class: false
+  style: false
+  data: false
+allowed_block_content_attributes:
+  id: false
+  class: false
+  style: false
+  data: false
+_core:
+  default_config_hash: PM_ibIU27unktxUQ-TnxRKQnmujQB-zCxMHRpPMruo8

@@ -89,6 +89,7 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit own person content'
+  - 'manage layout builder component attributes'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
