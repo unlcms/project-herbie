@@ -107,8 +107,8 @@
         "drupal/config_role_split": "^1.0@beta",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-recommended": "^8.9",
         "drupal/ctools": "^3.0",
         "drupal/dcf": "^1.0",
         "drupal/diff": "^1.0",
@@ -158,7 +158,7 @@
     },
     "require-dev": {
         "drupal/config_inspector": "^1.0@beta",
-        "drupal/core-dev": "^8.8",
+        "drupal/core-dev": "^8.9",
         "drupal/twig_xdebug": "^1.1"
     },
     "conflict": {
@@ -211,7 +211,6 @@
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-5.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
-                "3045171 - Form blocks rendered inside layout builder break save": "patches/layout-builder-save-issue-3045171-140.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/drupal-data_drupal_selector-2897377-20.patch",
                 "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },

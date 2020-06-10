@@ -1,8 +1,8 @@
-diff --git a/.htaccess b/.htaccess
-index 83cb71a..e906d6e 100644
---- a/.htaccess
-+++ b/.htaccess
-@@ -80,6 +80,18 @@ AddEncoding gzip svgz
+diff --git a/web/.htaccess b/web/.htaccess
+index 6f9123d1..3f696842 100644
+--- a/web/.htaccess
++++ b/web/.htaccess
+@@ -73,6 +73,18 @@ AddEncoding gzip svgz
    # even when running as CGI or FastCGI.
    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
  
