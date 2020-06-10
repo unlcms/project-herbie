@@ -25,6 +25,7 @@ third_party_settings:
           column_widths: '100'
           title: ''
           title_classes: {  }
+          title_display: false
           section_package: ''
           section_classes: {  }
           block_margin: ''
