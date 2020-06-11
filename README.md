@@ -76,3 +76,9 @@ Navigate to `http://example.unl.edu/project-herbie/web` in your browser.
 See [Installing Drupal 8](https://www.drupal.org/docs/8/install)
 
 When asked to select an Installation Profile, select "Use existing configuration"
+
+### Config Split
+
+This project uses Config Split to manage configuration among production, stage, and development. Certain modules, such as Twig Xdebug and Config Inspector are only enabled on development.
+
+In the development config split, a number of settings are enabled, disabled, or modified: Caching is disabled; Twig caching is disabled and Twig autoloading is enabled; debug cacheability headers are enabled; CSS and JS aggregation is disabled; and file permission hardening is disabled.  See /profiles/herbie/includes/settings.php.inc for more details. These settings can be overridden in settings.local.php.
