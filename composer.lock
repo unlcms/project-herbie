@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ab4884bd44ea11b38b5b2e1032e499b",
+    "content-hash": "43fa639701c477c9329c6e2c13965572",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4293,6 +4293,52 @@
             }
         },
         {
+            "name": "drupal/layout_builder_component_attributes",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/layout_builder_component_attributes.git",
+                "reference": "1.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_component_attributes-1.0.0-beta1.zip",
+                "reference": "1.0.0-beta1",
+                "shasum": "9c247044d9d2ab8aa4eddf088161f46dd0cca535"
+            },
+            "require": {
+                "drupal/core": "^8.8|^9.0",
+                "neilime/php-css-lint": "^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta1",
+                    "datestamp": "1588788356",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
+                }
+            ],
+            "description": "Allows editors to add HTML attributes to Layout Builder components (blocks)",
+            "homepage": "https://drupal.org/project/layout_builder_component_attributes",
+            "support": {
+                "source": "https://cgit.drupalcode.org/layout_builder_component_attributes",
+                "issues": "https://drupal.org/project/issues/layout_builder_component_attributes"
+            }
+        },
+        {
             "name": "drupal/layout_builder_modal",
             "version": "1.0.0",
             "source": {
@@ -6662,6 +6708,58 @@
                 "html"
             ],
             "time": "2016-07-25T17:07:32+00:00"
+        },
+        {
+            "name": "neilime/php-css-lint",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neilime/php-css-lint.git",
+                "reference": "60dfe9ce26cda4732130d57b846b149e372d9850"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neilime/php-css-lint/zipball/60dfe9ce26cda4732130d57b846b149e372d9850",
+                "reference": "60dfe9ce26cda4732130d57b846b149e372d9850",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7 || ^8.2"
+            },
+            "bin": [
+                "scripts/php-css-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CssLint\\": "src/CssLint"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Neilime",
+                    "homepage": "https://github.com/neilime",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Powerful & memory efficient CSS linter for PHP",
+            "homepage": "https://neilime.github.io/php-css-lint/",
+            "keywords": [
+                "css",
+                "lint",
+                "linter",
+                "syntax",
+                "validation"
+            ],
+            "time": "2019-11-08T10:39:21+00:00"
         },
         {
             "name": "nigelotoole/progress-tracker",
@@ -12749,6 +12847,7 @@
         "drupal/config_role_split": 10,
         "drupal/external_entities": 15,
         "drupal/inline_block_title_automatic": 15,
+        "drupal/layout_builder_component_attributes": 10,
         "drupal/layout_builder_operation_link": 5,
         "drupal/markup": 10,
         "drupal/media_library_extras": 15,
