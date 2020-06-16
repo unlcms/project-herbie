@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47ca7444949aa1d4329cb594613ba513",
+    "content-hash": "74ee26cc4f55bb1d32967a386a2aaca2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2455,6 +2455,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

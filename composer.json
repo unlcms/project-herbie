@@ -223,6 +223,9 @@
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
             },
+            "drupal/codemirror_editor": {
+                "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
+            },
             "drupal/chosen": {
                 "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
             },
