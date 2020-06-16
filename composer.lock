@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74ee26cc4f55bb1d32967a386a2aaca2",
+    "content-hash": "20975744fa395be9d33affbcc91fb186",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3814,11 +3814,17 @@
         },
         {
             "name": "drupal/field_css",
-            "version": "dev-2.0.x",
+            "version": "2.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_css.git",
-                "reference": "2480ca9c1044ba011c41dd8016bc87a1cf81a586"
+                "reference": "2.0.0-rc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_css-2.0.0-rc3.zip",
+                "reference": "2.0.0-rc3",
+                "shasum": "9a274eeb3c4a0370f885b3f26a5df25730454c6f"
             },
             "require": {
                 "drupal/core": "^8.8.4 || ^9",
@@ -3832,15 +3838,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.0.x": "2.0.x-dev"
-                },
                 "drupal": {
-                    "version": "2.0.0-rc1+1-dev",
-                    "datestamp": "1592241832",
+                    "version": "2.0.0-rc3",
+                    "datestamp": "1592337787",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3867,8 +3870,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/field_css",
                 "issues": "https://www.drupal.org/project/issues/field_css"
-            },
-            "time": "2020-06-16T19:26:53+00:00"
+            }
         },
         {
             "name": "drupal/field_group",
@@ -13006,7 +13008,7 @@
         "drupal/block_type_templates": 15,
         "drupal/config_role_split": 10,
         "drupal/external_entities": 15,
-        "drupal/field_css": 20,
+        "drupal/field_css": 5,
         "drupal/inline_block_title_automatic": 15,
         "drupal/layout_builder_component_attributes": 10,
         "drupal/layout_builder_operation_link": 5,

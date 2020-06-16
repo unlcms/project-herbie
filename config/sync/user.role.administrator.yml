@@ -12,6 +12,7 @@ permissions:
   - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
+  - 'access css fields'
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
