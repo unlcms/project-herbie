@@ -1,0 +1,22 @@
+uuid: 9b4c5c7c-3571-45fb-86ca-2eeca3bbb8d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - codemirror_editor
+format: html_code
+editor: codemirror_editor
+settings:
+  mode: text/html
+  toolbar: true
+  buttons:
+    - enlarge
+    - shrink
+  lineWrapping: true
+  lineNumbers: true
+  foldGutter: true
+  autoCloseTags: true
+  styleActiveLine: true
+image_upload: {  }

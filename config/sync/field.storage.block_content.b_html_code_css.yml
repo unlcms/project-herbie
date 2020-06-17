@@ -1,0 +1,19 @@
+uuid: 53bb8ac7-0d3a-4e3a-a9a5-b1fec28b1a73
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - field_css
+id: block_content.b_html_code_css
+field_name: b_html_code_css
+entity_type: block_content
+type: css
+settings: {  }
+module: field_css
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: b6842e8c-9319-4c4f-8ceb-13e9fb394384
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html_code
+    - field.storage.block_content.b_html_code_css
+  module:
+    - field_css
+id: block_content.html_code.b_html_code_css
+field_name: b_html_code_css
+entity_type: block_content
+bundle: html_code
+label: CSS
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: css
