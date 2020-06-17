@@ -5,4 +5,4 @@ dependencies: {  }
 id: html_code
 label: 'HTML Code'
 revision: 1
-description: ''
+description: 'A block that allows for direct HTML and CSS editing'
