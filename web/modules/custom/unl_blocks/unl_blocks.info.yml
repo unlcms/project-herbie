@@ -11,4 +11,5 @@ dependencies:
   - drupal:block
   - drupal:block_content
   - drupal:block_form_alter
+  - drupal:codemirror_editor
   - drupal:layout_builder
