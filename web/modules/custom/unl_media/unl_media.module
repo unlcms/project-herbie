@@ -131,7 +131,8 @@ function unl_media_form_editor_link_dialog_alter(&$form, FormStateInterface &$fo
   global $base_url;
 
   // Replace default help text.
-  $form['attributes']['href']['#description'] = t('<strong>Existing content:</strong> Start typing to select an autocomplete option<br><span style="padding-left: 10px;">For content on @base_url</span><br><strong>External URLs:</strong> Type full URL<br><span style="padding-left: 10px;">For content on sites other than @base_url</span><br><strong>Files (media):</strong> Click on the <em>Media Library</em> button below:', ['@base_url' => $base_url]);
+  $form['attributes']['href']['#description'] = t('<strong>Existing content:</strong> Start typing to select an autocomplete option<br><span class="indent">For content on @base_url</span><br><strong>External URLs:</strong> Type full URL<br><span class="indent">For content on sites other than @base_url</span><br><strong>Files (media):</strong> Click on the <em>Media Library</em> button below:', ['@base_url' => $base_url]);
+  $form['#attached']['library'][] = 'unl_media/editor_dialog_modal';
 }
 
 /**
