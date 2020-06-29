@@ -60,6 +60,7 @@ module:
   layout_discovery: 0
   link: 0
   linkit: 0
+  linkit_media_library: 0
   markup: 0
   media: 0
   media_embed_view_mode_restrictions: 0
