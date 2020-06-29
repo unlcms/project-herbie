@@ -12,7 +12,7 @@ use Drupal\unl_utility\UNLUtilityTrait;
  * Implements hook_form_alter().
  */
 function unl_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Drupal does not respect JS dependencies when loading loading ia AJAX.
+  // Drupal does not respect JS dependencies when loading via AJAX.
   // See https://www.drupal.org/project/drupal/issues/1988968. Interestingly,
   // patch #162, which other developers report as working, does not fix this
   // instance. As a workaround, this module checks if a user has the
