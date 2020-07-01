@@ -3814,17 +3814,17 @@
         },
         {
             "name": "drupal/field_css",
-            "version": "2.0.0-rc3",
+            "version": "2.0.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_css.git",
-                "reference": "2.0.0-rc3"
+                "reference": "2.0.0-rc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_css-2.0.0-rc3.zip",
-                "reference": "2.0.0-rc3",
-                "shasum": "9a274eeb3c4a0370f885b3f26a5df25730454c6f"
+                "url": "https://ftp.drupal.org/files/projects/field_css-2.0.0-rc4.zip",
+                "reference": "2.0.0-rc4",
+                "shasum": "be6e623e0f7363597575b022aba868599d37b02c"
             },
             "require": {
                 "drupal/core": "^8.8.4 || ^9",
@@ -3839,8 +3839,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc3",
-                    "datestamp": "1592337787",
+                    "version": "2.0.0-rc4",
+                    "datestamp": "1593630926",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
