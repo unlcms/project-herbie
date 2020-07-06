@@ -17,6 +17,7 @@ module:
   chosen_lib: 0
   ckeditor: 0
   ckeditor_config: 0
+  codemirror_editor: 0
   config: 0
   config_filter: 0
   config_ignore: 0
@@ -38,6 +39,7 @@ module:
   external_entities: 0
   external_entities_unldirectory: 0
   field: 0
+  field_css: 0
   field_group: 0
   field_ui: 0
   file: 0

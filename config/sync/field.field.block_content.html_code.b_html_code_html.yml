@@ -1,0 +1,30 @@
+uuid: 198b7a6c-4d20-4311-89da-7fd433f84da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html_code
+    - field.storage.block_content.b_html_code_html
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    html_code: html_code
+    block_body: '0'
+    block_body_centered: '0'
+    standard: '0'
+    webform: '0'
+    plain_text: '0'
+id: block_content.html_code.b_html_code_html
+field_name: b_html_code_html
+entity_type: block_content
+bundle: html_code
+label: HTML
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

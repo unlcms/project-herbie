@@ -6,6 +6,26 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\unl_utility\UNLUtilityTrait;
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Drupal does not respect JS dependencies when loading via AJAX.
+  // See https://www.drupal.org/project/drupal/issues/1988968. Interestingly,
+  // patch #162, which other developers report as working, does not fix this
+  // instance. As a workaround, this module checks if a user has the
+  // "use unl code block" permissions and then loads the library on Layout
+  // Builder forms and on the block admin form. If the CodeMirror library is
+  // already loaded on the page, then the AJAX issue is sidestepped.
+  if ((UNLUtilityTrait::stringEndsWith($form_id, 'layout_builder_form') || $form_id == 'block_admin_display_form')
+    && (\Drupal::currentUser()->hasPermission('create html_code block content')
+      || \Drupal::currentUser()->hasPermission('edit html_code block content'))
+    ) {
+    $form['#attached']['library'][] = 'codemirror_editor/codemirror';
+  }
+}
 
 /**
  * Implements hook_block_type_form_alter().

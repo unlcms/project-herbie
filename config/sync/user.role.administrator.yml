@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: administrator
 label: Administrator
-weight: -7
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -12,6 +12,7 @@ permissions:
   - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
+  - 'access css fields'
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
@@ -37,6 +38,7 @@ permissions:
   - 'administer block_content_type labels'
   - 'administer blocks'
   - 'administer book outlines'
+  - 'administer codemirror editor'
   - 'administer config role split'
   - 'administer configuration split'
   - 'administer content types'
@@ -112,6 +114,7 @@ permissions:
   - 'create contact_info block content'
   - 'create content block content'
   - 'create hero block content'
+  - 'create html_code block content'
   - 'create media'
   - 'create new books'
   - 'create news content'
@@ -128,6 +131,7 @@ permissions:
   - 'delete any contact_info block content'
   - 'delete any content block content'
   - 'delete any hero block content'
+  - 'delete any html_code block content'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any person content'
@@ -176,10 +180,12 @@ permissions:
   - 'update any contact_info block content'
   - 'update any content block content'
   - 'update any hero block content'
+  - 'update any html_code block content'
   - 'update any media'
   - 'update media'
   - 'use text format block_body'
   - 'use text format block_body_centered'
+  - 'use text format html_code'
   - 'use text format standard'
   - 'use text format webform'
   - 'view all media revisions'

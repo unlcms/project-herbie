@@ -1,5 +1,5 @@
 {
-    "name": "drupal/recommended-project",
+    "name": "unlcms/project-herbie",
     "description": "Project template for Drupal 8 projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
@@ -102,6 +102,7 @@
         "drupal/body_scroll_lock": "^1.0",
         "drupal/chosen": "^2.7",
         "drupal/ckeditor_config": "^3.0",
+        "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
         "drupal/config_ignore": "^2.1",
         "drupal/config_role_split": "^1.0@beta",
@@ -115,6 +116,7 @@
         "drupal/entity_reference_revisions": "^1.0",
         "drupal/entity_usage": "^2.0",
         "drupal/external_entities": "^2.0@alpha",
+        "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
         "drupal/honeypot": "^1.0",
         "drupal/image_effects": "^2.3",
@@ -220,6 +222,9 @@
             },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
+            },
+            "drupal/codemirror_editor": {
+                "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
             },
             "drupal/chosen": {
                 "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
