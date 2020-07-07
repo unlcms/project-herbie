@@ -3,3 +3,8 @@ media_metadata:
   css:
     theme:
       css/media_metadata.css: {}
+editor_dialog_modal:
+  version: VERSION
+  css:
+    theme:
+      css/editor_dialog_modal.css: {}
