@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3353cbbe6d196e3bb54fab179f44a814",
+    "content-hash": "237f41698bb019ea5e26fb168f9c3ea5",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2422,6 +2422,60 @@
             }
         },
         {
+            "name": "drupal/codemirror_editor",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/codemirror_editor.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/codemirror_editor-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "a60d4ba90074c5d3a2318a85e076756afb7f6d37"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9.0",
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1583670260",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": {
+                    "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                }
+            ],
+            "description": "This module integrates the CodeMirror editor library into Drupal.",
+            "homepage": "https://www.drupal.org/project/codemirror_editor",
+            "keywords": [
+                "CodeMirror",
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/codemirror_editor",
+                "issues": "https://www.drupal.org/project/issues/codemirror_editor"
+            }
+        },
+        {
             "name": "drupal/config_filter",
             "version": "1.5.0",
             "source": {
@@ -3750,6 +3804,66 @@
             "homepage": "https://www.drupal.org/project/external_entities",
             "support": {
                 "source": "https://git.drupalcode.org/project/external_entities"
+            }
+        },
+        {
+            "name": "drupal/field_css",
+            "version": "2.0.0-rc4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_css.git",
+                "reference": "2.0.0-rc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_css-2.0.0-rc4.zip",
+                "reference": "2.0.0-rc4",
+                "shasum": "be6e623e0f7363597575b022aba868599d37b02c"
+            },
+            "require": {
+                "drupal/core": "^8.8.4 || ^9",
+                "sabberworm/php-css-parser": "^8.0"
+            },
+            "require-dev": {
+                "drupal/codemirror_editor": "^1.0"
+            },
+            "suggest": {
+                "drupal/codemirror_editor": "Allows for CSS fields to be rendered with the CodeMirror editor"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-rc4",
+                    "datestamp": "1593630926",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
+                },
+                {
+                    "name": "e2thex",
+                    "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "mikemiles86",
+                    "homepage": "https://www.drupal.org/user/471470"
+                }
+            ],
+            "description": "A simple module that provides CSS field type.",
+            "homepage": "https://www.drupal.org/project/field_css",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_css",
+                "issues": "https://www.drupal.org/project/issues/field_css"
             }
         },
         {
@@ -7528,6 +7642,51 @@
             "type": "library"
         },
         {
+            "name": "sabberworm/php-css-parser",
+            "version": "8.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/d217848e1396ef962fb1997cf3e2421acba7f796",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Sabberworm\\CSS": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "time": "2020-06-01T09:10:00+00:00"
+        },
+        {
             "name": "stack/builder",
             "version": "v1.0.5",
             "source": {
@@ -9861,16 +10020,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "52314b983719c6e12fa2eb34b25d11f602a3e95a"
+                "reference": "1ccb3c9cdb16b3d8ea987ba2313606227c5f06e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/52314b983719c6e12fa2eb34b25d11f602a3e95a",
-                "reference": "52314b983719c6e12fa2eb34b25d11f602a3e95a",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/1ccb3c9cdb16b3d8ea987ba2313606227c5f06e3",
+                "reference": "1ccb3c9cdb16b3d8ea987ba2313606227c5f06e3",
                 "shasum": ""
             },
             "require": {
@@ -9886,7 +10045,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.x theme.",
-            "time": "2020-04-17T20:06:10+00:00"
+            "time": "2020-06-30T20:52:16+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -12989,6 +13148,7 @@
         "drupal/block_type_templates": 15,
         "drupal/config_role_split": 10,
         "drupal/external_entities": 15,
+        "drupal/field_css": 5,
         "drupal/inline_block_title_automatic": 15,
         "drupal/layout_builder_component_attributes": 10,
         "drupal/layout_builder_operation_link": 5,

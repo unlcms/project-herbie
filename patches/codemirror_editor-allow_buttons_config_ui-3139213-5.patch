@@ -1,0 +1,319 @@
+diff --git a/config/schema/codemirror_editor.schema.yml b/config/schema/codemirror_editor.schema.yml
+index 6559829..c8204da 100644
+--- a/config/schema/codemirror_editor.schema.yml
++++ b/config/schema/codemirror_editor.schema.yml
+@@ -76,6 +76,12 @@ codemirror_plugin_settings:
+     toolbar:
+       type: boolean
+       label: Load toolbar
++    buttons:
++      type: sequence
++      label: Toolbar buttons
++      sequence:
++        type: string
++        label: Button
+     lineWrapping:
+       type: boolean
+       label: Line wrapping
+diff --git a/src/CodeMirrorPluginTrait.php b/src/CodeMirrorPluginTrait.php
+index 93d6001..32a9479 100644
+--- a/src/CodeMirrorPluginTrait.php
++++ b/src/CodeMirrorPluginTrait.php
+@@ -2,11 +2,37 @@
+ 
+ namespace Drupal\codemirror_editor;
+ 
++use Drupal\Core\Form\FormStateInterface;
++
+ /**
+  * Provides a helper methods to for CodeMirror plugins.
+  */
+ trait CodeMirrorPluginTrait {
+ 
++  /**
++   * Returns a list of buttons available for CodeMirror.
++   *
++   * @return array
++   *   A list of buttons.
++   */
++  protected static function getAvailableButtons() {
++    return [
++      'bold',
++      'italic',
++      'underline',
++      'strike-through',
++      'list-numbered',
++      'list-bullet',
++      'link',
++      'horizontal-rule',
++      'undo',
++      'redo',
++      'clear-formatting',
++      'enlarge',
++      'shrink',
++    ];
++  }
++
+   /**
+    * Returns the default settings for CodeMirror plugin.
+    *
+@@ -17,6 +43,7 @@ trait CodeMirrorPluginTrait {
+     return [
+       'mode' => 'text/html',
+       'toolbar' => TRUE,
++      'buttons' => self::getAvailableButtons(),
+       'lineWrapping' => FALSE,
+       'lineNumbers' => FALSE,
+       'foldGutter' => FALSE,
+@@ -68,6 +95,23 @@ trait CodeMirrorPluginTrait {
+       ];
+     }
+ 
++    if (!$keys || in_array('buttons', $keys)) {
++      $form['buttons'] = [
++        '#type' => 'select',
++        '#multiple' => TRUE,
++        '#title' => t('Toolbar buttons'),
++        '#default_value' => $settings['buttons'],
++        '#options' => array_combine(self::getAvailableButtons(), self::getAvailableButtons()),
++        '#value_callback' => [static::class, 'setButtonsValue'],
++        '#states' => [
++          'visible' => [
++            ':input[name$="[settings_edit_form][settings][toolbar]"]' => ['checked' => TRUE],
++          ],
++        ],
++        '#description' => t('Buttons that will be available inside the toolbar.'),
++      ];
++    }
++
+     if (!$keys || in_array('lineWrapping', $keys)) {
+       $form['lineWrapping'] = [
+         '#title' => t('Line wrapping'),
+@@ -137,4 +181,27 @@ trait CodeMirrorPluginTrait {
+     return \Drupal::service('plugin.manager.codemirror_mode')->normalizeMode($mode);
+   }
+ 
++  /**
++   * Value callback for CodeMirror buttons.
++   *
++   * Prevent buttons from being stored in config with keyed values.
++   *
++   * @param array $element
++   *   An associative array containing the properties of the element.
++   * @param mixed $input
++   *   The incoming input to populate the form element. If this is FALSE,
++   *   the element's default value should be returned.
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The current state of the form.
++   *
++   * @return mixed
++   *   The value to assign to the element.
++   */
++  public static function setButtonsValue(array &$element, $input, FormStateInterface $form_state) {
++    if ($input === FALSE) {
++      return isset($element['#default_value']) ? $element['#default_value'] : [];
++    }
++    return $input;
++  }
++
+ }
+diff --git a/src/Plugin/Field/FieldWidget/CodeMirrorEditorWidget.php b/src/Plugin/Field/FieldWidget/CodeMirrorEditorWidget.php
+index 147711c..c93c1be 100644
+--- a/src/Plugin/Field/FieldWidget/CodeMirrorEditorWidget.php
++++ b/src/Plugin/Field/FieldWidget/CodeMirrorEditorWidget.php
+@@ -67,6 +67,10 @@ class CodeMirrorEditorWidget extends WidgetBase {
+ 
+     $summary[] = $this->t('Language mode: @mode', ['@mode' => $this->getSetting('mode')]);
+     $summary[] = $this->t('Load toolbar: @toolbar', ['@toolbar' => $this->formatBoolean('toolbar')]);
++    if ($settings['toolbar']) {
++      $summary[] = $this->t('Toolbar buttons: @buttons', ['@buttons' => implode(", ", $settings['buttons'])]);
++    }
++
+     $summary[] = $this->t('Line wrapping: @lineWrapping', ['@lineWrapping' => $this->formatBoolean('lineWrapping')]);
+     $summary[] = $this->t('Line numbers: @lineNumbers', ['@lineNumbers' => $this->formatBoolean('lineNumbers')]);
+     $summary[] = $this->t('Fold gutter: @foldGutter', ['@foldGutter' => $this->formatBoolean('foldGutter')]);
+diff --git a/tests/src/FunctionalJavascript/TextEditorTest.php b/tests/src/FunctionalJavascript/TextEditorTest.php
+index 86619a6..c8ec2ba 100644
+--- a/tests/src/FunctionalJavascript/TextEditorTest.php
++++ b/tests/src/FunctionalJavascript/TextEditorTest.php
+@@ -2,6 +2,8 @@
+ 
+ namespace Drupal\Tests\codemirror_editor\FunctionalJavascript;
+ 
++use Drupal\codemirror_editor\CodeMirrorPluginTrait;
++
+ /**
+  * Tests the CodeMirror text editor.
+  *
+@@ -9,6 +11,8 @@ namespace Drupal\Tests\codemirror_editor\FunctionalJavascript;
+  */
+ class TextEditorTest extends TestBase {
+ 
++  use CodeMirrorPluginTrait;
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -47,6 +51,11 @@ class TextEditorTest extends TestBase {
+     $this->assertEditorValue('<strong>Test</strong>');
+ 
+     $this->assertToolbarExists();
++    // 'buttons' is not available from cm.getOption().
++    $buttons = $this->getAvailableButtons();
++    foreach ($buttons as $button) {
++      $this->assertSession()->elementExists('xpath', "//*[@data-cme-button='" . $button . "']");
++    }
+     $this->assertEditorOption('mode', 'text/html');
+     $this->assertEditorOption('lineWrapping', FALSE);
+     $this->assertEditorOption('lineNumbers', FALSE);
+@@ -65,6 +74,9 @@ class TextEditorTest extends TestBase {
+ 
+     // Make sure that the form displays default values.
+     $this->assertElementExist('//select[@name = "editor[settings][mode]"]/optgroup/option[@value = "text/html" and @selected]');
++    foreach ($buttons as $button) {
++      $this->assertElementExist('//select[@name = "editor[settings][buttons][]"]/option[@value = "' . $button . '" and @selected]');
++    }
+     $this->assertElementExist('//input[@name = "editor[settings][toolbar]" and @checked]');
+     $this->assertElementExist('//input[@name = "editor[settings][lineWrapping]" and not(@checked)]');
+     $this->assertElementExist('//input[@name = "editor[settings][lineNumbers]" and not(@checked)]');
+@@ -86,12 +98,38 @@ class TextEditorTest extends TestBase {
+     $this->drupalGet('node/1/edit');
+ 
+     $this->assertToolbarNotExists();
++    $this->assertElementNotExist('//select[@name = "editor[settings][buttons][]"]');
+     $this->assertEditorOption('mode', 'application/xml');
+     $this->assertEditorOption('lineWrapping', TRUE);
+     $this->assertEditorOption('lineNumbers', TRUE);
+     $this->assertEditorOption('foldGutter', TRUE);
+     $this->assertEditorOption('autoCloseTags', FALSE);
+     $this->assertEditorOption('styleActiveLine', TRUE);
++
++    // Update buttons config and verify correct rendering on toolbar.
++    $this->drupalGet('admin/config/content/formats/manage/codemirror');
++
++    $buttons_allowed = [
++      'bold',
++      'italic',
++    ];
++    $buttons_disallowed = array_diff($buttons_allowed, $buttons);
++
++    $edit = [
++      'editor[settings][toolbar]' => TRUE,
++      'editor[settings][buttons][]' => $buttons_allowed,
++    ];
++    $this->drupalPostForm(NULL, $edit, 'Save configuration');
++
++    $this->drupalGet('node/1/edit');
++
++    $this->assertToolbarExists();
++    foreach ($buttons_allowed as $button) {
++      $this->assertSession()->elementExists('xpath', "//*[@data-cme-button='" . $button . "']");
++    }
++    foreach ($buttons_disallowed as $button) {
++      $this->assertSession()->elementNotExists('xpath', "//*[@data-cme-button='" . $button . "']");
++    }
+   }
+ 
+   /**
+diff --git a/tests/src/FunctionalJavascript/WidgetTest.php b/tests/src/FunctionalJavascript/WidgetTest.php
+index 47835b6..e084284 100644
+--- a/tests/src/FunctionalJavascript/WidgetTest.php
++++ b/tests/src/FunctionalJavascript/WidgetTest.php
+@@ -2,6 +2,8 @@
+ 
+ namespace Drupal\Tests\codemirror_editor\FunctionalJavascript;
+ 
++use Drupal\codemirror_editor\CodeMirrorPluginTrait;
++
+ /**
+  * Tests the CodeMirror field widget.
+  *
+@@ -9,6 +11,8 @@ namespace Drupal\Tests\codemirror_editor\FunctionalJavascript;
+  */
+ class WidgetTest extends TestBase {
+ 
++  use CodeMirrorPluginTrait;
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -20,6 +24,7 @@ class WidgetTest extends TestBase {
+    * Test callback.
+    */
+   public function testWidgetEditor() {
++    $page = $this->getSession()->getPage();
+ 
+     $permissions = [
+       'administer node fields',
+@@ -36,6 +41,7 @@ class WidgetTest extends TestBase {
+       'placeholder' => '',
+       'mode' => 'text/html',
+       'toolbar' => TRUE,
++      'buttons' => $this->getAvailableButtons(),
+       'lineWrapping' => FALSE,
+       'lineNumbers' => FALSE,
+       'foldGutter' => FALSE,
+@@ -59,6 +65,7 @@ class WidgetTest extends TestBase {
+       'placeholder' => 'Example',
+       'mode' => 'application/xml',
+       'toolbar' => FALSE,
++      'buttons' => [],
+       'lineWrapping' => TRUE,
+       'lineNumbers' => TRUE,
+       'foldGutter' => TRUE,
+@@ -69,7 +76,12 @@ class WidgetTest extends TestBase {
+     $this->updateWidgetSettingField('rows', $widget_settings['rows']);
+     $this->updateWidgetSettingField('placeholder', $widget_settings['placeholder']);
+     $this->updateWidgetSettingField('mode', $widget_settings['mode']);
++    // Verify buttons select field is visible.
++    $element = $page->find('xpath', "//select[@name='fields[field_code][settings_edit_form][settings][buttons][]']");
++    $this->assertTrue($element->isVisible());
+     $this->updateWidgetSettingField('toolbar', $widget_settings['toolbar']);
++    // Verify buttons select is not longer visible.
++    $this->assertFalse($element->isVisible());
+     $this->updateWidgetSettingField('lineWrapping', $widget_settings['lineWrapping']);
+     $this->updateWidgetSettingField('lineNumbers', $widget_settings['lineNumbers']);
+     $this->updateWidgetSettingField('foldGutter', $widget_settings['foldGutter']);
+@@ -108,6 +120,12 @@ class WidgetTest extends TestBase {
+     );
+     $this->assertSession()->elementExists('xpath', $xpath);
+     $widget_settings['toolbar'] ? $this->assertToolbarExists() : $this->assertToolbarNotExists();
++    // 'buttons' is not available from cm.getOption().
++    if (!empty($widget_settings['buttons'])) {
++      foreach ($widget_settings['buttons'] as $button) {
++        $this->assertSession()->elementExists('xpath', "//*[@data-cme-button='" . $button . "']");
++      }
++    }
+     $this->assertEditorOption('mode', $widget_settings['mode']);
+     $this->assertEditorOption('lineWrapping', $widget_settings['lineWrapping']);
+     $this->assertEditorOption('lineNumbers', $widget_settings['lineNumbers']);
+@@ -126,6 +144,9 @@ class WidgetTest extends TestBase {
+     }
+     $expected_summary[] = 'Language mode: ' . $widget_settings['mode'];
+     $expected_summary[] = 'Load toolbar: ' . ($widget_settings['toolbar'] ? 'Yes' : 'No');
++    if ($widget_settings['toolbar']) {
++      $expected_summary[] = 'Toolbar buttons: ' . implode(', ', $widget_settings['buttons']);
++    }
+     $expected_summary[] = 'Line wrapping: ' . ($widget_settings['lineWrapping'] ? 'Yes' : 'No');
+     $expected_summary[] = 'Line numbers: ' . ($widget_settings['lineNumbers'] ? 'Yes' : 'No');
+     $expected_summary[] = 'Fold gutter: ' . ($widget_settings['foldGutter'] ? 'Yes' : 'No');
+@@ -143,6 +164,7 @@ class WidgetTest extends TestBase {
+    */
+   protected function assertWidgetSettingsForm(array $widget_settings) {
+     $assert_session = $this->assertSession();
++    $page = $this->getSession()->getPage();
+ 
+     $settings_wrapper = $assert_session
+       ->waitForElementVisible('xpath', '//div[@data-drupal-selector = "edit-fields-field-code-settings-edit-form"]');
+@@ -163,6 +185,11 @@ class WidgetTest extends TestBase {
+     $xpath = sprintf($xpath, $widget_settings['toolbar'] ? '@checked = "checked"' : 'not(@checked)');
+     $assert_session->elementExists('xpath', $xpath, $settings_wrapper);
+ 
++    $element = $page->find('xpath', "//select[@name='fields[field_code][settings_edit_form][settings][buttons][]']");
++    $this->assertNotEmpty($element);
++    $expected_value = $widget_settings['buttons'];
++    $this->assertSame($element->getValue(), $expected_value);
++
+     $xpath = '//input[@name = "fields[field_code][settings_edit_form][settings][lineWrapping]" and %s]';
+     $xpath = sprintf($xpath, $widget_settings['lineWrapping'] ? '@checked = "checked"' : 'not(@checked)');
+     $assert_session->elementExists('xpath', $xpath, $settings_wrapper);

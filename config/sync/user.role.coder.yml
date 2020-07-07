@@ -1,0 +1,14 @@
+uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
+langcode: en
+status: true
+dependencies: {  }
+id: coder
+label: Coder
+weight: -8
+is_admin: null
+permissions:
+  - 'access css fields'
+  - 'create html_code block content'
+  - 'delete any html_code block content'
+  - 'update any html_code block content'
+  - 'use text format html_code'

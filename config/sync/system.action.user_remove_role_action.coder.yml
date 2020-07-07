@@ -1,0 +1,14 @@
+uuid: 34fea1c5-58aa-47f7-b665-b10886128e85
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.coder
+  module:
+    - user
+id: user_remove_role_action.coder
+label: 'Remove the Coder role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: coder

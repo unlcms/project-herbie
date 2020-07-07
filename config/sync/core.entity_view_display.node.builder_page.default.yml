@@ -66,11 +66,13 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - html_code
             Forms: {  }
             'Inline blocks':
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
+              - 'inline_block:html_code'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -86,11 +88,13 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - html_code
             Forms: {  }
             'Inline blocks':
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
+              - 'inline_block:html_code'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -109,12 +113,14 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - html_code
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
+              - 'inline_block:html_code'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -133,11 +139,13 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - html_code
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:card'
               - 'inline_block:content'
+              - 'inline_block:html_code'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
