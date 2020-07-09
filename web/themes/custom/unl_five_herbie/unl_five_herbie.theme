@@ -5,6 +5,7 @@
  * Contains theme functions for unl_five_herbie.
  */
 
+use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 
 /**
@@ -13,8 +14,8 @@ use Drupal\views\Views;
 function unl_five_herbie_preprocess_region(&$variables) {
   // Hide the hero region page title on Person nodes.
   $current_route = \Drupal::routeMatch();
-  $node = $current_route->getParameters()->get('node');
-  if ($node) {
+  $node = $current_route->getParameter('node');
+  if ($node instanceof NodeInterface) {
     $bundle = $node->bundle();
 
     switch ($bundle) {
@@ -27,8 +28,8 @@ function unl_five_herbie_preprocess_region(&$variables) {
   // Add the Hero field (s_n_hero) to the hero region template, region--hero.html.twig.
   if ($variables['region'] == 'hero') {
     $current_route = \Drupal::routeMatch();
-    $node = $current_route->getParameters()->get('node');
-    if ($node && $node->hasField('s_n_hero') && !$node->get('s_n_hero')->isEmpty()) {
+    $node = $current_route->getParameter('node');
+    if ($node instanceof NodeInterface && $node->hasField('s_n_hero') && !$node->get('s_n_hero')->isEmpty()) {
       $variables['s_n_hero'] = $node->get('s_n_hero')->view(['label' => 'hidden', 'type' => 'entity_reference_entity_view']);
     }
   }
