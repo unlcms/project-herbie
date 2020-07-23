@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "237f41698bb019ea5e26fb168f9c3ea5",
+    "content-hash": "5e9b5063a018c0dc3df17f06069cd6f9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3457,56 +3457,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
-            }
-        },
-        {
-            "name": "drupal/dcf",
-            "version": "1.0.0-beta3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/dcf.git",
-                "reference": "8.x-1.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dcf-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "b5d0e8aa793b81d98857152f5a5a7a856ca62511"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "require-dev": {
-                "drupal/dcf_classes": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1586041673",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Burge",
-                    "homepage": "https://www.drupal.org/user/1826152"
-                },
-                {
-                    "name": "ericras",
-                    "homepage": "https://www.drupal.org/user/1080292"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/dcf",
-            "support": {
-                "source": "https://git.drupalcode.org/project/dcf"
             }
         },
         {
@@ -10017,6 +9967,44 @@
             ],
             "description": "login.unl.edu integration",
             "time": "2020-04-22T14:45:03+00:00"
+        },
+        {
+            "name": "unlcms/unl_dcf",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_dcf.git",
+                "reference": "8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_dcf/zipball/8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3",
+                "reference": "8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8.8|^9.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/u/chris-burge",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Eric Rasmussen",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides modules to facilitate DCF implementation in Drupal",
+            "homepage": "https://www.drupal.org/project/dcf",
+            "time": "2020-07-20T17:40:08+00:00"
         },
         {
             "name": "unlcms/unl_five",
