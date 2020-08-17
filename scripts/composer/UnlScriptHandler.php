@@ -43,7 +43,7 @@ class UnlScriptHandler {
 
     // Install NPM project.
     $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
-    exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
+    system("cd $composerRoot/vendor/unl/wdntemplates; npm ci");
 
     // Check if Grunt CLI is installed.
     if (empty(exec("which grunt"))) {
