@@ -45,15 +45,17 @@ class UnlScriptHandler {
     $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
     exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
 
-    // Check if Grunt CLI is installed.
-    if (empty(exec("which grunt"))) {
-      $io->write("Grunt CLI is not installed. Run 'npm install -g grunt-cli'");
-      return;
-    }
-
     // Run Grunt default task.
     $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
-    exec("cd $composerRoot/vendor/unl/wdntemplates; grunt");
+
+    // Check if Grunt CLI is installed globally.
+    if (!empty(exec("which grunt"))) {
+      system("cd $composerRoot/vendor/unl/wdntemplates; grunt");
+    }
+    else {
+      $io->write("Grunt CLI is not installed globally. Executing from NPM binary.");
+      system("cd $composerRoot/vendor/unl/wdntemplates; ./node_modules/grunt-cli/bin/grunt");
+    }
   }
 
   /**
