@@ -43,7 +43,7 @@ class UnlScriptHandler {
 
     // Install NPM project.
     $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
-    exec("cd $composerRoot/vendor/unl/wdntemplates; npm install");
+    system("cd $composerRoot/vendor/unl/wdntemplates; npm ci");
 
     // Run Grunt default task.
     $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
