@@ -206,10 +206,10 @@ index 3189ef519e..e83b725b0e 100644
      ];
      $form['book_child_type'] = [
 diff --git a/core/modules/book/tests/src/Functional/BookTest.php b/core/modules/book/tests/src/Functional/BookTest.php
-index 38fdf54ac5..04904aa471 100644
+index b57773c805..81fd75727c 100644
 --- a/core/modules/book/tests/src/Functional/BookTest.php
 +++ b/core/modules/book/tests/src/Functional/BookTest.php
-@@ -50,15 +50,34 @@ class BookTest extends BrowserTestBase {
+@@ -56,6 +56,7 @@ protected function setUp() {
      parent::setUp();
      $this->drupalPlaceBlock('system_breadcrumb_block');
      $this->drupalPlaceBlock('page_title_block');
@@ -217,36 +217,15 @@ index 38fdf54ac5..04904aa471 100644
  
      // node_access_test requires a node_access_rebuild().
      node_access_rebuild();
- 
-     // Create users.
--    $this->bookAuthor = $this->drupalCreateUser(['create new books', 'create book content', 'edit own book content', 'add content to books']);
-+    $this->bookAuthor = $this->drupalCreateUser([
-+      'create new books',
-+      'create book content',
-+      'edit own book content',
-+      'add content to books',
-+    ]);
-     $this->webUser = $this->drupalCreateUser(['access printer-friendly version', 'node test view']);
-     $this->webUserWithoutNodeAccess = $this->drupalCreateUser(['access printer-friendly version']);
--    $this->adminUser = $this->drupalCreateUser(['create new books', 'create book content', 'edit any book content', 'delete any book content', 'add content to books', 'administer blocks', 'administer permissions', 'administer book outlines', 'node test view', 'administer content types', 'administer site configuration']);
-+    $this->adminUser = $this->drupalCreateUser([
-+      'create new books',
-+      'create book content',
-+      'edit any book content',
-+      'delete any book content',
-+      'add content to books',
+@@ -80,6 +81,7 @@ protected function setUp() {
+       'edit any book content',
+       'delete any book content',
+       'add content to books',
 +      'add any content to books',
-+      'administer blocks',
-+      'administer permissions',
-+      'administer book outlines',
-+      'node test view',
-+      'administer content types',
-+      'administer site configuration',
-+    ]);
-   }
- 
-   /**
-@@ -440,6 +459,52 @@ class BookTest extends BrowserTestBase {
+       'administer blocks',
+       'administer permissions',
+       'administer book outlines',
+@@ -470,6 +472,52 @@ public function testBookOutline() {
      // Test the form itself.
      $this->drupalGet('node/' . $node->id() . '/edit');
      $this->assertOptionSelected('edit-book-bid', $node->id());
