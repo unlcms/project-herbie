@@ -29,6 +29,9 @@ third_party_settings:
           section_package: ''
           section_classes: {  }
           block_margin: ''
+          section_element_id: ''
+          column_classes:
+            col_1: {  }
         components:
           df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
             uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
