@@ -9940,16 +9940,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "d425043ec9b1f690d8b659f0c5ec544f9a9e2655"
+                "reference": "92fd80c2d1fc25de8242b44e96344517492c4ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/d425043ec9b1f690d8b659f0c5ec544f9a9e2655",
-                "reference": "d425043ec9b1f690d8b659f0c5ec544f9a9e2655",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/92fd80c2d1fc25de8242b44e96344517492c4ebb",
+                "reference": "92fd80c2d1fc25de8242b44e96344517492c4ebb",
                 "shasum": ""
             },
             "require": {
@@ -9966,7 +9966,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2020-04-22T14:45:03+00:00"
+            "time": "2020-09-28T14:12:08+00:00"
         },
         {
             "name": "unlcms/unl_dcf",
