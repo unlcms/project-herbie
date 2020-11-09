@@ -139,6 +139,7 @@
         "drupal/redirect": "^1.5",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^2.0",
+        "drupal/twig_ui": "^1.0@beta",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
         "harvesthq/chosen": "^1.8",
