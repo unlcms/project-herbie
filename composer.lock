@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6133a404fa39d57df11c7200f08e2327",
+    "content-hash": "aab2f434949ea9b388dabdb8c8020293",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5384,6 +5384,54 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/twig_tweak",
                 "issues": "https://www.drupal.org/project/issues/twig_tweak"
+            }
+        },
+        {
+            "name": "drupal/twig_ui",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_ui.git",
+                "reference": "1.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_ui-1.0.0-beta1.zip",
+                "reference": "1.0.0-beta1",
+                "shasum": "1b0cf47f0d4c27a0185c6eb61d67c8068d973ffc"
+            },
+            "require": {
+                "drupal/core": "^8.8.4 || ^9"
+            },
+            "suggest": {
+                "drupal/codemirror_editor": "Allows for template code fields to be rendered with the CodeMirror editor"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta1",
+                    "datestamp": "1604941312",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
+                }
+            ],
+            "description": "Create and manage Twig templates in the UI",
+            "homepage": "https://www.drupal.org/project/twig_ui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/twig_ui",
+                "issues": "https://www.drupal.org/project/issues/twig_ui"
             }
         },
         {
@@ -13283,6 +13331,7 @@
         "drupal/media_library_extras": 15,
         "drupal/oembed_providers": 10,
         "drupal/rabbit_hole": 10,
+        "drupal/twig_ui": 10,
         "drupal/config_inspector": 10
     },
     "prefer-stable": true,
