@@ -9876,16 +9876,16 @@
         },
         {
             "name": "unlcms/external_entities_unldirectory",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/external_entities_unldirectory.git",
-                "reference": "d1679d951655ef86e572b0583c6ed636755981b2"
+                "reference": "47e14073f31e7fc3cbd2e06f172283bb6fedc44a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/d1679d951655ef86e572b0583c6ed636755981b2",
-                "reference": "d1679d951655ef86e572b0583c6ed636755981b2",
+                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/47e14073f31e7fc3cbd2e06f172283bb6fedc44a",
+                "reference": "47e14073f31e7fc3cbd2e06f172283bb6fedc44a",
                 "shasum": ""
             },
             "require": {
@@ -9902,7 +9902,7 @@
                 }
             ],
             "description": "Reference UNL Directory data as external entities.",
-            "time": "2020-04-21T19:15:45+00:00"
+            "time": "2020-11-09T19:53:39+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -9982,16 +9982,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "92fd80c2d1fc25de8242b44e96344517492c4ebb"
+                "reference": "f48434a04c44be5802c835830594e88075138707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/92fd80c2d1fc25de8242b44e96344517492c4ebb",
-                "reference": "92fd80c2d1fc25de8242b44e96344517492c4ebb",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/f48434a04c44be5802c835830594e88075138707",
+                "reference": "f48434a04c44be5802c835830594e88075138707",
                 "shasum": ""
             },
             "require": {
@@ -10008,7 +10008,7 @@
                 }
             ],
             "description": "login.unl.edu integration",
-            "time": "2020-09-28T14:12:08+00:00"
+            "time": "2020-11-09T22:06:01+00:00"
         },
         {
             "name": "unlcms/unl_dcf",
@@ -12177,6 +12177,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
