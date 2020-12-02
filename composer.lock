@@ -11052,32 +11052,34 @@
         },
         {
             "name": "drupal/config_inspector",
-            "version": "1.0.0-beta2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_inspector.git",
-                "reference": "8.x-1.0-beta2"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_inspector-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "1f7b27c4b1c800a605a6d6583d0b1d120794658e"
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "9f6dca8b2fa69f2410b732c09e3edea23422fa04"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1569419586",
+                    "version": "8.x-1.1",
+                    "datestamp": "1588166264",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
