@@ -2212,17 +2212,17 @@
         },
         {
             "name": "drupal/chosen",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/chosen.git",
-                "reference": "8.x-2.7"
+                "reference": "8.x-2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/chosen-8.x-2.7.zip",
-                "reference": "8.x-2.7",
-                "shasum": "8d0fdcb20a9842019f11ad7ac811d55e3b83e9ba"
+                "url": "https://ftp.drupal.org/files/projects/chosen-8.x-2.8.zip",
+                "reference": "8.x-2.8",
+                "shasum": "19a99867bc09bb1f937e992fc25d95b98a908735"
             },
             "require": {
                 "drupal/chosen_lib": "*",
@@ -2230,12 +2230,9 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-2.7",
-                    "datestamp": "1565942881",
+                    "version": "8.x-2.8",
+                    "datestamp": "1576594384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2300,22 +2297,25 @@
         },
         {
             "name": "drupal/chosen_lib",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "require": {
                 "drupal/chosen": "self.version",
-                "drupal/core": "~8.0"
+                "drupal/core": "~8.0",
+                "php": ">=5.6.0"
             },
             "type": "metapackage",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-2.7",
-                    "datestamp": "1565942881",
+                    "version": "8.x-2.8",
+                    "datestamp": "1576594384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
@@ -2361,7 +2361,7 @@
                     "homepage": "https://www.drupal.org/user/235438"
                 }
             ],
-            "description": "Add <a href=\"http://harvesthq.github.com/chosen/\">chosen</a> library definition.",
+            "description": "This module provides the basic integration with the Chosen jQuery plugin.",
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
