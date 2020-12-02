@@ -2369,32 +2369,29 @@
         },
         {
             "name": "drupal/ckeditor_config",
-            "version": "3.0.0-beta1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_config.git",
-                "reference": "8.x-3.0-beta1"
+                "reference": "8.x-3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.0-beta1.zip",
-                "reference": "8.x-3.0-beta1",
-                "shasum": "da9594a109054809e4f6427a45dff5ac7f3f7b61"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.0.zip",
+                "reference": "8.x-3.0",
+                "shasum": "fc6c09ff6fa525e9d0828be4dd0daa06ad9e7b52"
             },
             "require": {
                 "drupal/core": "^8.5|^9.0"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-3.0-beta1",
-                    "datestamp": "1583945126",
+                    "version": "8.x-3.0",
+                    "datestamp": "1589836234",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
