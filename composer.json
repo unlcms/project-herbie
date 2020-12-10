@@ -225,9 +225,6 @@
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
             },
-            "drupal/codemirror_editor": {
-                "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
-            },
             "drupal/chosen": {
                 "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
             },
@@ -237,14 +234,11 @@
             "drupal/external_entities": {
                 "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
             },
-            "drupal/linkit": {
-              "3063393 - Remove '/edit' from media entity paths": "patches/linkit-media_entity_update_canonical_path-3063393-11.patch"
-            },
             "drupal/media_library_extras": {
                 "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
             },
             "drupal/paragraphs": {
-                "2901390 - Integrity constraint violation: 1048 Column 'langcode' cannot be null": "patches/2901390-n24.patch"
+                "2901390 - Integrity constraint violation: 1048 Column 'langcode' cannot be null": "patches/paragraphs-2901390-51.patch"
             }
         },
         "drupal-scaffold": {

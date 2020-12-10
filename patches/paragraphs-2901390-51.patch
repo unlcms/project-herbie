@@ -1,0 +1,111 @@
+diff --git a/src/Plugin/Field/FieldWidget/InlineParagraphsWidget.php b/src/Plugin/Field/FieldWidget/InlineParagraphsWidget.php
+index cc9a92a..42509a4 100644
+--- a/src/Plugin/Field/FieldWidget/InlineParagraphsWidget.php
++++ b/src/Plugin/Field/FieldWidget/InlineParagraphsWidget.php
+@@ -15,6 +15,7 @@ use Drupal\Core\Field\FieldItemListInterface;
+ use Drupal\Core\Render\Element;
+ use Drupal\field_group\FormatterHelper;
+ use Drupal\paragraphs\ParagraphInterface;
++use Drupal\paragraphs\Traits\FieldWidgetTrait;
+ use Symfony\Component\Validator\ConstraintViolationInterface;
+ use Drupal\paragraphs\Plugin\EntityReferenceSelection\ParagraphSelection;
+ 
+@@ -35,6 +36,8 @@ use Drupal\paragraphs\Plugin\EntityReferenceSelection\ParagraphSelection;
+  */
+ class InlineParagraphsWidget extends WidgetBase {
+ 
++  use FieldWidgetTrait;
++
+   /**
+    * Indicates whether the current widget instance is in translation.
+    *
+@@ -1365,6 +1368,9 @@ class InlineParagraphsWidget extends WidgetBase {
+       return;
+     }
+     $this->isTranslating = FALSE;
++
++    $this->initFormLangcodes($form_state, $host);
++
+     if (!$host->isTranslatable()) {
+       return;
+     }
+diff --git a/src/Plugin/Field/FieldWidget/ParagraphsWidget.php b/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
+index e6decde..f6bbb87 100644
+--- a/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
++++ b/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
+@@ -19,6 +19,7 @@ use Drupal\Core\TypedData\TranslationStatusInterface;
+ use Drupal\field_group\FormatterHelper;
+ use Drupal\paragraphs\ParagraphInterface;
+ use Drupal\paragraphs\Plugin\EntityReferenceSelection\ParagraphSelection;
++use Drupal\paragraphs\Traits\FieldWidgetTrait;
+ use Symfony\Component\Validator\ConstraintViolationInterface;
+ use Symfony\Component\Validator\ConstraintViolationListInterface;
+ 
+@@ -36,6 +37,8 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
+  */
+ class ParagraphsWidget extends WidgetBase {
+ 
++  use FieldWidgetTrait;
++
+   /**
+    * Action position is in the add paragraphs place.
+    */
+@@ -2356,6 +2359,9 @@ class ParagraphsWidget extends WidgetBase {
+       return;
+     }
+     $this->isTranslating = FALSE;
++
++    $this->initFormLangcodes($form_state, $host);
++
+     if (!$host->isTranslatable()) {
+       return;
+     }
+diff --git a/src/Traits/FieldWidgetTrait.php b/src/Traits/FieldWidgetTrait.php
+new file mode 100644
+index 0000000..bb1fcdd
+--- /dev/null
++++ b/src/Traits/FieldWidgetTrait.php
+@@ -0,0 +1,43 @@
++<?php
++
++namespace Drupal\paragraphs\Traits;
++
++use Drupal\Core\Entity\EntityInterface;
++use Drupal\Core\Form\FormStateInterface;
++
++/**
++ * Methods to help Paragraphs field widgets.
++ */
++trait FieldWidgetTrait {
++
++  /**
++   * Initializes form language code values.
++   *
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The current state of the form.
++   * @param \Drupal\Core\Entity\EntityInterface $host
++   *   The host entity.
++   *
++   * @see ContentEntityForm::initFormLangcodes()
++   */
++  protected function initFormLangcodes(FormStateInterface $form_state, EntityInterface $host) {
++    /** @var \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository */
++    $entity_repository = \Drupal::service('entity.repository');
++
++    // Store the entity default language to allow checking whether the form is
++    // dealing with the original entity or a translation.
++    if (!$form_state->has('entity_default_langcode')) {
++      $form_state->set('entity_default_langcode', $host->getUntranslated()->language()->getId());
++    }
++    // This value might have been explicitly populated to work with a particular
++    // entity translation. If not we fall back to the most proper language based
++    // on contextual information.
++    if (!$form_state->has('langcode')) {
++      // Imply a 'view' operation to ensure users edit entities in the same
++      // language they are displayed. This allows to keep contextual editing
++      // working also for multilingual entities.
++      $form_state->set('langcode', $entity_repository->getTranslationFromContext($host)->language()->getId());
++    }
++  }
++
++}
