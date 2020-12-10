@@ -4812,29 +4812,26 @@
         },
         {
             "name": "drupal/menu_admin_per_menu",
-            "version": "1.0.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_admin_per_menu.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_admin_per_menu-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "27dbef0025146a382feab67db5e93eaf280b8de4"
+                "url": "https://ftp.drupal.org/files/projects/menu_admin_per_menu-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "cb967bdd9ca6f5692d670d5c7c8d77587e7fd38c"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1507184944",
+                    "version": "8.x-1.3",
+                    "datestamp": "1593436060",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4847,8 +4844,16 @@
             ],
             "authors": [
                 {
+                    "name": "JeroenT",
+                    "homepage": "https://www.drupal.org/user/2228934"
+                },
+                {
                     "name": "anrikun",
                     "homepage": "https://www.drupal.org/user/410199"
+                },
+                {
+                    "name": "jonas139",
+                    "homepage": "https://www.drupal.org/user/2873401"
                 },
                 {
                     "name": "mkdok",
