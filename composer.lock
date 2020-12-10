@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62d357feb91c450db9b97dcc9399d051",
+    "content-hash": "a713aba0b141f7bd2e77de3affbec159",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2420,17 +2420,17 @@
         },
         {
             "name": "drupal/codemirror_editor",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/codemirror_editor.git",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/codemirror_editor-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "a60d4ba90074c5d3a2318a85e076756afb7f6d37"
+                "url": "https://ftp.drupal.org/files/projects/codemirror_editor-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "8d76413acb313d68e21031c5be92e7190a18f516"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9.0",
@@ -2440,15 +2440,12 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1583670260",
+                    "version": "8.x-1.6",
+                    "datestamp": "1598386386",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "3139213 - Allow buttons config": "patches/codemirror_editor-allow_buttons_config_ui-3139213-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2459,6 +2456,10 @@
                 {
                     "name": "Chi",
                     "homepage": "https://www.drupal.org/user/556138"
+                },
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
                 }
             ],
             "description": "This module integrates the CodeMirror editor library into Drupal.",
