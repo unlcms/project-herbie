@@ -90,6 +90,7 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit own person content'
+  - 'load twig templates from file system'
   - 'manage layout builder component attributes'
   - 'revert book revisions'
   - 'revert builder_page revisions'
