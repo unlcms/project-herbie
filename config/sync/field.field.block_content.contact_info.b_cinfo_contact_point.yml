@@ -25,12 +25,12 @@ settings:
     target_bundles:
       contact_info_contact_point: contact_info_contact_point
     target_bundles_drag_drop:
-      contact_info_contact_point:
-        enabled: true
-        weight: 10
       accordion_item:
         weight: 11
         enabled: false
+      contact_info_contact_point:
+        enabled: true
+        weight: 10
       contact_info_email:
         weight: 12
         enabled: false

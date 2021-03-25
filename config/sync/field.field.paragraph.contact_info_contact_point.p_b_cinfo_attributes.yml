@@ -37,31 +37,31 @@ settings:
       contact_info_email: contact_info_email
       contact_info_margin: contact_info_margin
     target_bundles_drag_drop:
-      contact_info_contact_point:
-        weight: -19
-        enabled: false
       accordion_item:
         weight: -18
         enabled: false
+      contact_info_contact_point:
+        weight: -19
+        enabled: false
+      contact_info_email:
+        enabled: true
+        weight: -12
+      contact_info_fax:
+        enabled: true
+        weight: -13
       contact_info_heading:
         enabled: true
         weight: -17
+      contact_info_margin:
+        enabled: true
+        weight: -11
+      contact_info_phone:
+        enabled: true
+        weight: -14
       contact_info_physical_address:
         enabled: true
         weight: -16
       contact_info_post_office_box_add:
         enabled: true
         weight: -15
-      contact_info_phone:
-        enabled: true
-        weight: -14
-      contact_info_fax:
-        enabled: true
-        weight: -13
-      contact_info_email:
-        enabled: true
-        weight: -12
-      contact_info_margin:
-        enabled: true
-        weight: -11
 field_type: entity_reference_revisions
