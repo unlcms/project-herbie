@@ -1,0 +1,6 @@
+allowed_themes: selected
+allowed_theme_list:
+  - unl_five_herbie
+default_selected_themes:
+  - unl_five_herbie
+codemirror_config: "buttons:\n  - bold\n  - italic\n  - list-numbered\n  - list-bullet\n  - link\n  - undo\n  - redo\n  - enlarge\n  - shrink"
