@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a713aba0b141f7bd2e77de3affbec159",
+    "content-hash": "49b7649fa878585c77239bd4ed167799",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3207,7 +3207,8 @@
                     "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                     "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
                     "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
-                    "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
+                    "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch",
+                    "2958588 - Off-canvas style resets are overriding styles (especially SVGs) resulting in display issues": "patches/2958588-93-89x-without-pcss.patch"
                 }
             },
             "autoload": {
