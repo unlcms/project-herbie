@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - media
 name: Webform
 format: webform
 weight: 0
@@ -33,7 +34,7 @@ filters:
     status: true
     weight: -44
     settings:
-      allowed_html: '<p> <a href hreflang> <em> <strong> <ul type> <ol start type> <li> <s> <sup> <sub>'
+      allowed_html: '<p> <em> <strong> <ul type> <ol start type> <li> <s> <sup> <sub> <a href hreflang class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -66,3 +67,22 @@ filters:
     status: false
     weight: -50
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }
+      bundle_view_modes:
+        file:
+          default_view_mode: default
+          allowed_view_modes: {  }
+        image:
+          default_view_mode: default
+          allowed_view_modes: {  }
+        remote_video:
+          default_view_mode: default
+          allowed_view_modes: {  }
