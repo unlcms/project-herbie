@@ -5,5 +5,6 @@ dependencies: {  }
 id: contact_info_post_office_box_add
 label: 'Contact Info Post Office Box Address'
 icon_uuid: null
+icon_default: null
 description: ''
 behavior_plugins: {  }
