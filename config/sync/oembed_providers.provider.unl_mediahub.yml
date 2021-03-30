@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: unl_mediahub
-label: 'UNL MediaHub'
+label: 'UNL Mediahub'
 provider_url: 'https://mediahub.unl.edu'
 endpoints:
   -
