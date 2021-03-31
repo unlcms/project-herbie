@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49b7649fa878585c77239bd4ed167799",
+    "content-hash": "f1309583389e173ffe4918fd5fc9e977",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9867,11 +9867,11 @@
         },
         {
             "name": "unl/wdntemplates",
-            "version": "5.1",
+            "version": "5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "5.1"
+                "reference": "5.3"
             },
             "type": "library"
         },
@@ -10051,16 +10051,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "5.1.2",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "064af31d2a54370c55e84864055634e525dcba88"
+                "reference": "b8a691a000fa52da319cf38fe960ffa25a398f45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/064af31d2a54370c55e84864055634e525dcba88",
-                "reference": "064af31d2a54370c55e84864055634e525dcba88",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/b8a691a000fa52da319cf38fe960ffa25a398f45",
+                "reference": "b8a691a000fa52da319cf38fe960ffa25a398f45",
                 "shasum": ""
             },
             "require": {
@@ -10076,7 +10076,7 @@
                 }
             ],
             "description": "UNLedu Framework 5.x theme.",
-            "time": "2020-07-09T20:13:47+00:00"
+            "time": "2021-03-31T19:39:21+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
