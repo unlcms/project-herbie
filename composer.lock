@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1309583389e173ffe4918fd5fc9e977",
+    "content-hash": "1d84203fe6d3b68eb2d0fc2e3525ccda",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10013,7 +10013,7 @@
         },
         {
             "name": "unlcms/unl_dcf",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_dcf.git",
