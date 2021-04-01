@@ -95,6 +95,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal/admin_toolbar": "^2.0",
         "drupal/allowed_formats": "^1.0",
+        "drupal/asset_injector": "^2.7",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.6",
         "drupal/block_form_alter": "^1.0",

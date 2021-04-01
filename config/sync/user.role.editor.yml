@@ -19,6 +19,7 @@ permissions:
   - 'add content to books'
   - 'administer block content types'
   - 'administer book outlines'
+  - 'administer css assets injector'
   - 'administer main menu items'
   - 'administer redirects'
   - 'administer twig templates'
