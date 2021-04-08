@@ -1,0 +1,8 @@
+uuid: be648aaf-7504-4304-a885-8021f1effaa6
+langcode: en
+status: true
+dependencies: {  }
+id: events_band
+label: 'Events Band'
+revision: 1
+description: 'A band containing upcoming events'

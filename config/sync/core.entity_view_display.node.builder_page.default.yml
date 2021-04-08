@@ -59,29 +59,6 @@ third_party_settings:
         - dcf_threecol_section
         - dcf_fourcol_section
       whitelisted_blocks:
-        dcf_threecol_section:
-          all_regions:
-            'Aggregated Content':
-              - unl_recent_news
-            'Chaos Tools': {  }
-            'Content fields': {  }
-            'Custom block types':
-              - card
-              - card_circle_image
-              - content
-              - html_code
-            Forms: {  }
-            'Inline blocks':
-              - 'inline_block:card'
-              - 'inline_block:card_circle_image'
-              - 'inline_block:content'
-              - 'inline_block:html_code'
-            'Lists (Views)': {  }
-            Menus: {  }
-            System: {  }
-            User: {  }
-            Webform: {  }
-            core: {  }
         dcf_fourcol_section:
           all_regions:
             'Aggregated Content': {  }
@@ -116,10 +93,35 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - events_band
               - html_code
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
+              - 'inline_block:card'
+              - 'inline_block:card_circle_image'
+              - 'inline_block:content'
+              - 'inline_block:events_band'
+              - 'inline_block:html_code'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            User: {  }
+            Webform: {  }
+            core: {  }
+        dcf_threecol_section:
+          all_regions:
+            'Aggregated Content':
+              - unl_recent_news
+            'Chaos Tools': {  }
+            'Content fields': {  }
+            'Custom block types':
+              - card
+              - card_circle_image
+              - content
+              - html_code
+            Forms: {  }
+            'Inline blocks':
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
