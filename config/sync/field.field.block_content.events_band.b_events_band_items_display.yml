@@ -1,0 +1,23 @@
+uuid: 90640ec3-7624-4374-b0b9-ce9dfcae7610
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.events_band
+    - field.storage.block_content.b_events_band_items_display
+  module:
+    - options
+id: block_content.events_band.b_events_band_items_display
+field_name: b_events_band_items_display
+entity_type: block_content
+bundle: events_band
+label: 'Items to Display'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '6'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
