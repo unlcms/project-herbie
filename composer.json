@@ -32,21 +32,6 @@
         {
             "type": "package",
             "package": {
-                "name": "harvesthq/chosen",
-                "version": "1.8.2",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "robinherbots/jquery.inputmask",
                 "version": "4.0.6",
                 "dist": {
@@ -101,7 +86,6 @@
         "drupal/block_form_alter": "^1.0",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/body_scroll_lock": "^1.0",
-        "drupal/chosen": "^2.7",
         "drupal/ckeditor_config": "^3.0",
         "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
@@ -143,7 +127,6 @@
         "drupal/twig_ui": "^1.0@beta",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
-        "harvesthq/chosen": "^1.8",
         "jackocnr/intl-tel-input": "15.0.1",
         "nigelotoole/progress-tracker": "1.4.0",
         "oomphinc/composer-installers-extender": "^1.1",
@@ -226,9 +209,6 @@
             },
             "drupal/block_type_templates": {
                 "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
-            },
-            "drupal/chosen": {
-                "3062839 - UI (CSS styling) is broken in off-canvas settings tray": "patches/chosen-offcanvas-css-improvements-3062839-5.patch"
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
