@@ -10062,16 +10062,16 @@
         },
         {
             "name": "unlcms/unl_dcf",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_dcf.git",
-                "reference": "8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3"
+                "reference": "14351fa8297a175b247ddef45a55a7d10bade226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_dcf/zipball/8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3",
-                "reference": "8d305fb2c9bb48a34c4d225aeaade1e9e08f94f3",
+                "url": "https://api.github.com/repos/unlcms/unl_dcf/zipball/14351fa8297a175b247ddef45a55a7d10bade226",
+                "reference": "14351fa8297a175b247ddef45a55a7d10bade226",
                 "shasum": ""
             },
             "require": {
@@ -10096,7 +10096,7 @@
             ],
             "description": "Provides modules to facilitate DCF implementation in Drupal",
             "homepage": "https://www.drupal.org/project/dcf",
-            "time": "2020-07-20T17:40:08+00:00"
+            "time": "2021-04-01T18:53:11+00:00"
         },
         {
             "name": "unlcms/unl_five",
