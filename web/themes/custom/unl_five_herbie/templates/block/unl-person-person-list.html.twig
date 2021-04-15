@@ -1,0 +1,13 @@
+{%
+  set attributes = attributes.addClass([
+    'dcf-grid-full',
+    'dcf-grid-halves@sm',
+    'dcf-col-gap-8',
+    'dcf-row-gap-8'
+  ])
+%}
+<div{{ attributes }}>
+  {% for nid in nodes %}
+    {{ drupal_entity('node', nid, 'teaser') }}
+  {% endfor %}
+</div>
