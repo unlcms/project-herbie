@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function unl_person_theme($existing, $type, $theme, $path) {
+  return [
+    'unl_person_person_list' => [
+      'variables' => [
+        'attributes' => [],
+        'nodes' => [],
+      ],
+    ],
+  ];
+}

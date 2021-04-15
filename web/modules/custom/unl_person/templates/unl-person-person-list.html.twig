@@ -1,0 +1,5 @@
+<div{{ attributes }}>
+  {% for nid in nodes %}
+    {{ drupal_entity('node', nid, 'teaser') }}
+  {% endfor %}
+</div>
