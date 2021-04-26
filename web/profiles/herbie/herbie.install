@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Uninstall Chosen module.
+ */
+function herbie_update_8101(&$sandbox) {
+  $srvc = \Drupal::service('herbie.module_remove');
+  $srvc->remove('chosen');
+  $srvc->remove('chosen_field');
+  $srvc->remove('chosen_lib');
+}
