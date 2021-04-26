@@ -4,6 +4,7 @@
  * Uninstall Chosen module.
  */
 function herbie_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
   $srvc = \Drupal::service('herbie.module_remove');
   $srvc->remove('chosen');
   $srvc->remove('chosen_field');
