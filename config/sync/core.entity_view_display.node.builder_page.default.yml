@@ -64,6 +64,7 @@ third_party_settings:
             'Aggregated Content': {  }
             'Chaos Tools': {  }
             'Content fields': {  }
+            'Curated Lists': {  }
             'Custom block types':
               - card
               - card_circle_image
@@ -85,9 +86,10 @@ third_party_settings:
           all_regions:
             'Aggregated Content':
               - unl_recent_news
-            'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
+            'Curated Lists':
+              - unl_person_list
             'Custom block types':
               - accordion
               - card
@@ -95,7 +97,6 @@ third_party_settings:
               - content
               - events_band
               - html_code
-            Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:card'
@@ -115,6 +116,7 @@ third_party_settings:
               - unl_recent_news
             'Chaos Tools': {  }
             'Content fields': {  }
+            'Curated Lists': {  }
             'Custom block types':
               - card
               - card_circle_image
@@ -139,6 +141,7 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
+            'Curated Lists': {  }
             'Custom block types':
               - accordion
               - card
@@ -156,7 +159,21 @@ third_party_settings:
             System: {  }
             User: {  }
             core: {  }
-    allowed_block_categories: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories:
+      - 'Aggregated Content'
+      - 'Chaos Tools'
+      - 'Content fields'
+      - 'Curated Lists'
+      - 'Custom block types'
+      - Forms
+      - 'Inline blocks'
+      - 'Lists (Views)'
+      - Menus
+      - System
+      - User
+      - Webform
+      - core
     entity_view_mode_restriction:
       whitelisted_blocks: {  }
       blacklisted_blocks: {  }

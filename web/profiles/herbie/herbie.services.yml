@@ -1,0 +1,4 @@
+services:
+  herbie.module_remove:
+    class: Drupal\herbie\ModuleRemove
+    arguments: ['@database', '@config.factory']

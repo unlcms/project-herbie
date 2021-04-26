@@ -1,0 +1,11 @@
+name: 'UNL Person'
+description: 'Provides functionality for Persons'
+package: UNL
+
+type: module
+core_version_requirement: ^8 || ^9
+
+version: 1.x
+
+dependencies:
+- twig_tweak:twig_tweak
