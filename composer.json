@@ -32,11 +32,33 @@
         {
             "type": "package",
             "package": {
-                "name": "robinherbots/jquery.inputmask",
-                "version": "4.0.6",
+                "name": "atomiks/tippyjs",
+                "version": "5.2.1",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/robinherbots/jquery.inputmask/archive/4.0.6.zip"
+                    "url": "https://github.com/atomiks/tippyjs/archive/refs/tags/v5.2.1.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "cferdinandi/tabby",
+                "version": "12.0.3",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/cferdinandi/tabby/archive/refs/tags/v12.0.3.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "robinherbots/jquery.inputmask",
+                "version": "5.0.5",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/RobinHerbots/Inputmask/archive/refs/tags/5.0.5.zip"
                 }
             }
         },
@@ -44,10 +66,10 @@
             "type": "package",
             "package": {
                 "name": "jackocnr/intl-tel-input",
-                "version": "15.0.1",
+                "version": "16.1.0",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v15.0.1.zip"
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/refs/tags/v16.1.0.zip"
                 }
             }
         },
@@ -55,10 +77,10 @@
             "type": "package",
             "package": {
                 "name": "ractoon/jquery-text-counter",
-                "version": "0.8.0",
+                "version": "0.9.0",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/ractoon/jquery-text-counter/archive/0.8.0.zip"
+                    "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/refs/tags/0.9.0.zip"
                 }
             }
         },
@@ -66,16 +88,18 @@
             "type": "package",
             "package": {
                 "name": "nigelotoole/progress-tracker",
-                "version": "1.4.0",
+                "version": "2.0.6",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/NigelOToole/progress-tracker/archive/v1.4.0.zip"
+                    "url": "https://github.com/NigelOToole/progress-tracker/archive/refs/tags/2.0.6.zip"
                 }
             }
         }
     ],
     "require": {
         "php": ">=7.1",
+        "atomiks/tippyjs": "^5.2",
+        "cferdinandi/tabby": "12.0.3",
         "composer/installers": "^1.6",
         "cweagans/composer-patches": "^1.6.5",
         "drupal/admin_toolbar": "^2.0",
@@ -125,13 +149,13 @@
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^2.0",
         "drupal/twig_ui": "^1.0@beta",
-        "drupal/webform": "^5.2",
+        "drupal/webform": "^6.0",
         "drush/drush": "^9.0.0",
-        "jackocnr/intl-tel-input": "15.0.1",
-        "nigelotoole/progress-tracker": "1.4.0",
+        "jackocnr/intl-tel-input": "16.1.0",
+        "nigelotoole/progress-tracker": "^2.0",
         "oomphinc/composer-installers-extender": "^1.1",
-        "ractoon/jquery-text-counter": "0.8.0",
-        "robinherbots/jquery.inputmask": "4.0.6",
+        "ractoon/jquery-text-counter": "0.9.0",
+        "robinherbots/jquery.inputmask": "5.0.5",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
@@ -187,6 +211,8 @@
             "drush/Commands/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/libraries/tippyjs/5.x": ["atomiks/tippyjs"],
+            "web/libraries/tabby": ["cferdinandi/tabby"],
             "web/libraries/jquery.inputmask": ["robinherbots/jquery.inputmask"],
             "web/libraries/jquery.intl-tel-input": ["jackocnr/intl-tel-input"],
             "web/libraries/jquery.textcounter": ["ractoon/jquery-text-counter"],
