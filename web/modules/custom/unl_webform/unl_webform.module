@@ -5,7 +5,39 @@
  * Modifies Webform UI to pare down options and enforce defaults.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\WebformInterface;
+
+/**
+ * Implements hook_entity_create().
+ */
+function unl_webform_entity_create(EntityInterface $entity) {
+  if ($entity instanceof WebformInterface) {
+    // Alter settings for newly created Webforms.
+    $settings = $entity->getSettings();
+    // Disable "Allow users to post submissions from a dedicated URL".
+    $settings['page'] = FALSE;
+    // Set "Confirmation Type" to "inline".
+    $settings['confirmation_type'] = 'inline';
+    $settings = $entity->setSettings($settings);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_webform_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'webform_settings_form':
+      // Disable "Allow users to post submissions from a dedicated URL" field.
+      $form['page_settings']['page']['#disabled'] = TRUE;
+      break;
+    case 'webform_settings_confirmation_form':
+      $form['confirmation_type']['confirmation_type']['#disabled'] = TRUE;
+      break;
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
