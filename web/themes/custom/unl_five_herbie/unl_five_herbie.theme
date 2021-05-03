@@ -130,7 +130,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
     // Set a variable with the b_hero_size CSS class since rendering the field
     // directly into the template will include breaking HTML comments if twig debugging is enabled.
-    $variables['hero_size_class'] = $variables['items'][0]['data']['b_hero_size'][0]['#markup'];
+    $variables['hero_size_class'] = $variables['items'][0]['content']['b_hero_size'][0]['#markup'];
    }
 
 
