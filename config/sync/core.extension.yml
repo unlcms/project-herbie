@@ -36,6 +36,7 @@ module:
   entity_usage: 0
   external_entities: 0
   external_entities_unldirectory: 0
+  feeds: 0
   field: 0
   field_css: 0
   field_group: 0

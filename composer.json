@@ -124,6 +124,7 @@
         "drupal/entity_reference_revisions": "^1.0",
         "drupal/entity_usage": "^2.0",
         "drupal/external_entities": "^2.0@alpha",
+        "drupal/feeds": "^3.0@alpha",
         "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
         "drupal/honeypot": "^1.0",
