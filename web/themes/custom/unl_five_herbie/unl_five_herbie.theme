@@ -65,20 +65,6 @@ function unl_five_herbie_preprocess_block(&$variables) {
   if ($bundle == 'contact_info') {
     $variables['data']['host'] = \Drupal::request()->getHost();
   }
-
-  // Pass through config data to WDN Events Band block template.
-  if ($bundle == 'events_band') {
-    $limit = $variables['content']['b_events_band_items_display'][0]['#markup'];
-    $url = $variables['content']['b_events_band_cal_url'][0]['#url']->getUri();
-    // Add trailing slash to URL is one is not present.
-    $url = (substr($url, -1) !== '/') ? $url . '/' : $url;
-    
-    $data = [
-      'limit' => $limit,
-      'url' => $url // @TODO add trailing slash if missing
-    ];
-    $variables['data']['events_band'] = json_encode($data);
-  }
 }
 
 /**

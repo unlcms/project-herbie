@@ -1,0 +1,8 @@
+name: 'UNL Events'
+description: 'Provides functionality for Events'
+package: UNL
+
+type: module
+core_version_requirement: ^8 || ^9
+
+version: 1.x
