@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * The module file for UNL System.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'system_site_information_settings') {
+    /** @var \Drupal\Core\Config\ConfigFactoryInterface */
+    $config_factory = \Drupal::service('config.factory');
+    $config = $config_factory->get('unl_system.settings');
+
+    $form['site_information']['#weight'] = -10;
+
+    $form['unl_affiliation'] = [
+      '#type' => 'details',
+      '#title' => 'UNL Affiliation',
+      '#open' => TRUE,
+      '#weight' => -9,
+    ];
+    $form['unl_affiliation']['affiliation_name'] = [
+      '#type' => 'textfield',
+      '#title' => t('Affiliation Name'),
+      '#default_value' => $config->get('affiliation_name'),
+    ];
+    $form['unl_affiliation']['affiliation_url'] = [
+      '#type' => 'url',
+      '#title' => t('Affiliation URL'),
+      '#default_value' => $config->get('affiliation_url'),
+    ];
+    $form['#validate'][] = '_unl_system_system_site_information_settings_validate';
+    $form['#submit'][] = '_unl_system_system_site_information_settings_submit';
+  }
+
+}
+
+/**
+ * Validates system_site_information_settings form.
+ *
+ * @param array $form
+ *   A array describing the form.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function _unl_system_system_site_information_settings_validate(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+
+  if ($values['affiliation_name'] && empty($values['affiliation_url'])) {
+    $form_state->setErrorByName('affiliation_url', 'Affiliation URL is required if Affiliation Name is defined.');
+  }
+  if (empty($values['affiliation_name']) && $values['affiliation_url']) {
+    $form_state->setErrorByName('affiliation_name', 'Affiliation Name is required if Affiliation URL is defined.');
+  }
+}
+
+/**
+ * Submits system_site_information_settings form.
+ *
+ * @param array $form
+ *   A array describing the form.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function _unl_system_system_site_information_settings_submit(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface */
+  $config_factory = \Drupal::service('config.factory');
+
+  /** @var \Drupal\Core\Config\Config */
+  $config = $config_factory->getEditable('unl_system.settings');
+  $config->set('affiliation_name', $values['affiliation_name']);
+  $config->set('affiliation_url', $values['affiliation_url']);
+  $config->save();
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function unl_system_preprocess_block(&$vars) {
+  if ($vars['plugin_id'] == 'system_branding_block') {
+    $config_factory = \Drupal::service('config.factory');
+    $config = $config_factory->get('unl_system.settings');
+
+    $vars['affiliation_name'] = $config->get('affiliation_name');
+    $vars['affiliation_url'] = $config->get('affiliation_url');
+  }
+}
