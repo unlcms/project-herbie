@@ -9,10 +9,3 @@ person:
   css:
     theme:
       css/theme/person.css: {}
-events_band:
-  version: VERSION
-  js:
-    js/events-band.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once
