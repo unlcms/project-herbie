@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * The module file for UNL Events.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function unl_events_theme($existing, $type, $theme, $path) {
+  return [
+    'unl_events_upcoming_events_block' => [
+      'variables' => [
+        'json_config_string' => '',
+      ],
+    ],
+  ];
+}

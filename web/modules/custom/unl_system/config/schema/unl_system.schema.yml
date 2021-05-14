@@ -1,0 +1,10 @@
+unl_system.settings:
+  type: config_object
+  label: 'UNL System settings'
+  mapping:
+    affiliation_name:
+      type: string
+      label: 'Affiliation Name'
+    affiliation_url:
+      type: string
+      label: 'Affiliation URL'

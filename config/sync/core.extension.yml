@@ -94,12 +94,14 @@ module:
   unl_breadcrumbs: 0
   unl_cas: 0
   unl_config: 0
+  unl_events: 0
   unl_five_ckeditor: 0
   unl_media: 0
   unl_menu: 0
   unl_news: 0
   unl_pathauto: 0
   unl_person: 0
+  unl_system: 0
   unl_trailing_slash: 0
   unl_twig: 0
   unl_user: 0

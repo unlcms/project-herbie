@@ -26,16 +26,9 @@
  */
 #}
 <div{{ attributes }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    <div id="events-band"></div>
-  {% endblock %}
+  <div id="events-band"></div>
 </div>
-{{ attach_library('unl_five_herbie/events_band') }}
+{{ attach_library('unl_events/events_band') }}
 <script type="application/json" data-selector-json="wdn-events-band-settings">
-  {{ data.events_band|raw }}
+  {{ json_config_string|raw }}
 </script>
