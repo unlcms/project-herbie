@@ -1,0 +1,7 @@
+unl_news.settings:
+  path: '/admin/config/content/unl-news'
+  defaults:
+    _form: '\Drupal\unl_news\Form\SettingsForm'
+    _title: 'Unl News Settings'
+  requirements:
+    _permission: 'administer unl news'

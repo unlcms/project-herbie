@@ -89,6 +89,7 @@ permissions:
   - 'administer twig templates'
   - 'administer twig ui templates settings'
   - 'administer unl breadcrumbs'
+  - 'administer unl news'
   - 'administer unl_directory_entry display'
   - 'administer unl_directory_entry fields'
   - 'administer unl_directory_entry form display'

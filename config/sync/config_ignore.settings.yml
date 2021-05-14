@@ -29,7 +29,8 @@ ignored_config_entities:
   54: 'system.site:slogan'
   56: 'system.site:page.front'
   58: unl_breadcrumbs.settings
-  60: 'webform.webform.*'
+  60: unl_news.settings
+  62: 'webform.webform.*'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 enable_export_filtering: '1'

@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.n_news_canonical_url
+    - field.field.node.news.n_news_foreign_key
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
     - node.type.news
     - responsive_image.styles.news_lead_image
   module:
-    - layout_builder
-    - layout_builder_restrictions
+    - link
     - responsive_image
     - text
     - user
@@ -32,6 +33,27 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  n_news_canonical_url:
+    weight: 6
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  n_news_foreign_key:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   n_news_image:
     type: responsive_image
     weight: 1

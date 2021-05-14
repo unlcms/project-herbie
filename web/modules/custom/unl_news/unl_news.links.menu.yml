@@ -1,0 +1,5 @@
+unl_news.settings:
+  title: 'UNL News'
+  parent: system.admin_config_content
+  description: 'UNL News Settings'
+  route_name: unl_news.settings

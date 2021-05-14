@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.n_news_canonical_url
+    - field.field.node.news.n_news_foreign_key
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
@@ -42,5 +44,7 @@ content:
       image_link: content
     third_party_settings: {  }
 hidden:
+  n_news_canonical_url: true
+  n_news_foreign_key: true
   n_news_image_credit: true
   n_news_image_cutline: true

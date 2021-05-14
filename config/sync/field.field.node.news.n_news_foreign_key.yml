@@ -1,0 +1,23 @@
+uuid: 06ca8406-3182-42bf-9838-2f4f22833ac7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_foreign_key
+    - node.type.news
+id: node.news.n_news_foreign_key
+field_name: n_news_foreign_key
+entity_type: node
+bundle: news
+label: 'Foreign Key'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
