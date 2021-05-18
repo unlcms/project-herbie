@@ -33,6 +33,10 @@ settings:
             - BulletedList
             - NumberedList
         -
+          name: Media
+          items:
+            - DrupalMediaLibrary
+        -
           name: Tools
           items:
             - SpecialChar
