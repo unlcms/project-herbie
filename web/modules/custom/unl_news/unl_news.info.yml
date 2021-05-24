@@ -9,3 +9,4 @@ version: 1.x
 
 dependencies:
   - drupal:views
+  - queue_ui:queue_ui

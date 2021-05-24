@@ -30,6 +30,7 @@ permissions:
   - 'access webform submission user'
   - 'add any content to books'
   - 'add content to books'
+  - 'admin queue_ui'
   - 'administer account settings'
   - 'administer block content types'
   - 'administer block_content display'
