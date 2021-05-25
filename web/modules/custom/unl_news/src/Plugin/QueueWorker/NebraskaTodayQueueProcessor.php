@@ -8,7 +8,6 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\State\StateInterface;
-use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Drupal\Core\Utility\Token;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\file\Entity\File;
@@ -65,13 +64,6 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
   protected $token;
 
   /**
-   * The public stream wrapper.
-   *
-   * @var \Drupal\Core\StreamWrapper\StreamWrapperInterface
-   */
-  protected $publicStreamWrapper;
-
-  /**
    * Drupal's state system.
    *
    * @var \Drupal\Core\State\StateInterface
@@ -96,20 +88,17 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
    * @param \GuzzleHttp\ClientInterface $client
    *   A GuzzleHTTP client.
    * @param \Drupal\Core\Utility\Token $token
-   *   Drupal placeholder/token replacement system.
-   * @param \Drupal\Core\StreamWrapper\StreamWrapperInterface $public_stream_wrapper
    *   The public stream wrapper.
    * @param \Drupal\Core\State\StateInterface $state
    *   Drupal's state system.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory, FileSystemInterface $file_system, ClientInterface $client, Token $token, StreamWrapperInterface $public_stream_wrapper, StateInterface $state) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory, FileSystemInterface $file_system, ClientInterface $client, Token $token, StateInterface $state) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entity_type_manager;
     $this->configFactory = $config_factory;
     $this->fileSystem = $file_system;
     $this->client = $client;
     $this->token = $token;
-    $this->publicStreamWrapper = $public_stream_wrapper;
     $this->state = $state;
   }
 
@@ -126,7 +115,6 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
       $container->get('file_system'),
       $container->get('http_client'),
       $container->get('token'),
-      $container->get('stream_wrapper.public'),
       $container->get('state')
     );
   }
@@ -157,7 +145,9 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
       // sometimes returned.
       if (stripos($item->articleImage->mimeType, 'image/') === 0) {
         $remote_image_url = $item->articleImage->url;
-        $filename = end(explode('/', $remote_image_url));
+        $filename = explode('/', $remote_image_url);
+        $filename = end($filename);
+
         $alt = $item->articleImage->alt;
 
         // Get image upload path from field config.
@@ -165,7 +155,7 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         $img_field_config = FieldConfig::loadByName('node', 'news', 'n_news_image');
         $img_dir = $img_field_config->getSetting('file_directory');
         $img_dir = $this->token->replace($img_dir);
-        $img_dir = $this->publicStreamWrapper->basePath() . '/' . $img_dir;
+        $img_dir = 'public://' . $img_dir;
 
         $this->fileSystem->prepareDirectory($img_dir, $this->fileSystem::CREATE_DIRECTORY);
 
@@ -188,7 +178,7 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         // Get the responsive image style for the default display.
         $display_settings = $this->entityTypeManager
           ->getStorage('entity_view_display')
-          ->load('node.news.default') // @todo update display for block only?
+          ->load('node.news.default')
           ->getRenderer('n_news_image')
           ->getSettings();
         $responsive_image_style = ResponsiveImageStyle::load($display_settings['responsive_image_style']);
