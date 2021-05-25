@@ -1,0 +1,22 @@
+<div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 unl-bg-lightest-gray">
+  {% if subhead is not empty %}
+    <h2 class="dcf-subhead dcf-bold unl-dark-gray">{{ subhead }}</h2>
+  {% endif %}
+  <div class="dcf-grid-halves@sm dcf-grid-fourths@md dcf-col-gap-5 dcf-row-gap-6">
+    {% for item in items %}
+      <div class="dcf-card-as-link dcf-d-flex dcf-flex-col">
+        <div class="dcf-2nd dcf-pt-2">
+          <h3 class="dcf-txt-h5 dcf-mb-0"><a class="dcf-card-link dcf-txt-decor-hover" href="{{ item.link }}">{{ item.title }}</a></h3>
+        </div>
+        <div class="dcf-1st unl-frame-quad unl-bg-light-gray">
+          {{ item.image }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="dcf-mt-4 dcf-txt-right">
+    <a class="dcf-txt-decor-hover dcf-txt-sm dcf-bold" href="{{ more_link }}">Read More News</a>
+  </div>
+</div>
+{{ attach_library('unl_five/scroll_animiations') }}
+{{ attach_library('unl_five/card-as-link') }}

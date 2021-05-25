@@ -20,6 +20,9 @@
 {% if field_name == 'b_cdcir_image' %}
   {% set attributes = attributes.addClass(['dcf-d-block', 'dcf-h-100%', 'dcf-w-100%', 'dcf-circle', 'dcf-ratio-child']) %}
 {% endif %}
+{% if field_name == 'n_news_image' %}
+  {% set attributes = attributes.addClass(['dcf-d-block']) %}
+{% endif %}
 
 {# Regardless of the field, remove the data-field-name attribute. #}
 <img{{ attributes.removeAttribute('data-field-name') }} />

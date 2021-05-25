@@ -1,0 +1,4 @@
+services:
+  logger.channel.unl_news:
+    parent: logger.channel_base
+    arguments: ['unl_news']

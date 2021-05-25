@@ -12,6 +12,21 @@ use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 
 /**
+ * Implements hook_theme().
+ */
+function unl_news_theme($existing, $type, $theme, $path) {
+  return [
+    'unl_news_recent_news_block' => [
+      'variables' => [
+        'subhead' => '',
+        'items' => [],
+        'more_link' => '',
+      ],
+    ],
+  ];
+}
+
+/**
  * Cron job for UNL News.
  */
 function unl_news_cron() {
