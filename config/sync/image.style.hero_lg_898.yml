@@ -1,0 +1,17 @@
+uuid: 2c798d2a-b8f1-464b-be96-1bbb9ca27560
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_lg_898
+label: 'Hero (lg) 898x448'
+effects:
+  4071be78-6fde-460b-9ce2-bfaa9b36d29e:
+    uuid: 4071be78-6fde-460b-9ce2-bfaa9b36d29e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 898
+      height: 448
+      crop_type: focal_point
