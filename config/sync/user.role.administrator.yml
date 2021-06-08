@@ -42,6 +42,8 @@ permissions:
   - 'administer config role split'
   - 'administer configuration split'
   - 'administer content types'
+  - 'administer crop'
+  - 'administer crop types'
   - 'administer css assets injector'
   - 'administer dcf classes'
   - 'administer display modes'
