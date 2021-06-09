@@ -158,13 +158,17 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     $form['tags']['tag_ids'] = [
-      '#type' => 'select',
+      '#type' => 'select2',
       '#title' => $this->t('Tags for Import'),
       '#description' => $this->t('Nebraska Today tags to be imported by this site.'),
       '#multiple' => TRUE,
       '#options' => $options,
       '#default_value' => $config->get('tag_ids'),
       '#disabled' => FALSE,
+      '#select2' => [
+        'allowClear' => FALSE,
+        'multiple' => TRUE,
+      ],
     ];
     if (isset($tag_ids_disabled) && $tag_ids_disabled) {
       $form['tags']['tag_ids']['#disabled'] = TRUE;
