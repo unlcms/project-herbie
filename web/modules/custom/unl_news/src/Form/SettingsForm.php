@@ -185,6 +185,25 @@ class SettingsForm extends ConfigFormBase {
       '#markup' => $this->t('<p class="description">Download an updated tags list from Nebraska Today.</p>'),
     ];
 
+    $form['retrieve_articles'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Retrieve Articles'),
+    ];
+
+    $form['retrieve_articles']['markup'] = [
+      '#markup' => $this->t('<p>Articles are retrieved from the Nebraska Today API and then queued by cron.</p>'),
+    ];
+
+    $form['retrieve_articles']['manual_api_pull'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Retrieve items from API'),
+      '#name' => 'manual-api-pull',
+    ];
+
+    $form['retrieve_articles']['manual_batch_description'] = [
+      '#markup' => $this->t('<p class="description">When manually retrieving items, do not close your browser window until completion.</p>'),
+    ];
+
     $form['queue'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Import Queue'),
@@ -214,7 +233,12 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (in_array($form_state->getTriggeringElement()['#name'], ['tags-refresh', 'manual-batch'])) {
+    if (in_array($form_state->getTriggeringElement()['#name'], [
+      'tags-refresh',
+      'manual-batch',
+      'manual-api-pull',
+    ])) {
+
       return;
     }
 
@@ -232,6 +256,10 @@ class SettingsForm extends ConfigFormBase {
     }
     elseif ($triggering_element == 'manual-batch') {
       $this->manualBatch();
+      return;
+    }
+    elseif ($triggering_element == 'manual-api-pull') {
+      unl_news_cron();
       return;
     }
 
