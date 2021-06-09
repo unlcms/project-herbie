@@ -14,6 +14,10 @@
             "url": "https://packages.drupal.org/8"
         },
         {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
             "type": "vcs",
             "url": "https://github.com/unlcms/project-herbie-composer-plugin.git"
         },
@@ -119,6 +123,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.9",
         "drupal/core-recommended": "^8.9",
+        "drupal/crop": "^2.1",
         "drupal/ctools": "^3.0",
         "drupal/diff": "^1.0",
         "drupal/entity_reference_revisions": "^1.0",
@@ -128,6 +133,7 @@
         "drupal/feeds_ex": "^1.0@alpha",
         "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
+        "drupal/focal_point": "^1.5",
         "drupal/honeypot": "^1.0",
         "drupal/image_effects": "^2.3",
         "drupal/imagemagick": "^2.4",
@@ -149,6 +155,7 @@
         "drupal/queue_ui": "^2.2",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.5",
+        "drupal/select2": "^1.13",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^2.0",
         "drupal/twig_ui": "^1.0@beta",
@@ -156,6 +163,7 @@
         "drush/drush": "^9.0.0",
         "jackocnr/intl-tel-input": "16.1.0",
         "nigelotoole/progress-tracker": "^2.0",
+        "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "ractoon/jquery-text-counter": "0.9.0",
         "robinherbots/jquery.inputmask": "5.0.5",
@@ -204,9 +212,14 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -229,8 +242,7 @@
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
-                "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch",
-                "2958588 - Off-canvas style resets are overriding styles (especially SVGs) resulting in display issues": "patches/2958588-93-89x-without-pcss.patch"
+                "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
