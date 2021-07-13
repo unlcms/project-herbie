@@ -291,7 +291,10 @@ class SettingsForm extends ConfigFormBase {
       'finished' => ['\Drupal\queue_ui\QueueUIBatch', 'finish'],
     ];
 
-    $batch['operations'][] = ['\Drupal\queue_ui\QueueUIBatch::step', [self::QUEUE_NAME]];
+    $batch['operations'][] = [
+      '\Drupal\queue_ui\QueueUIBatch::step',
+      [self::QUEUE_NAME],
+    ];
 
     batch_set($batch);
   }
@@ -304,18 +307,13 @@ class SettingsForm extends ConfigFormBase {
    */
   public function tagsRefresh() {
     try {
-      // GuzzleHTTP stuff
-      // Temp until Nebraska Today API is updated.
-      $options = [
-        '20861' => 'Riko Bishop',
-        '31417' => '2021 spring commencement',
-        '119' => 'Tom Osborne',
-        '520' => 'graduation',
-        '17' => 'commencement',
-        '2795' => 'Jennifer Clark',
-        '32877' => 'Connie Clifton Rath',
-        '15922' => 'Grit and Glory',
-      ];
+      $request = $this->httpClient->get('https://news.unl.edu/api/v1/tags?format=json');
+      $json_string = (string) $request->getBody();
+      $response_payload = json_decode($json_string);
+      $options = [];
+      foreach ($response_payload->data as $term) {
+        $options[$term->id] = $term->name;
+      }
       asort($options, SORT_STRING | SORT_FLAG_CASE);
 
       // Cache permanently.
