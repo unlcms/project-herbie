@@ -128,13 +128,7 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
       }
     }
 
-    // Now that $items array is complete, loop through articles again and
-    // add cacheable dependency.
-    foreach ($articles as $article) {
-      $this->renderer->addCacheableDependency($items, $article);
-    }
-
-    return [
+    $return = [
       '#theme' => 'unl_news_recent_news_block',
       // #title will result in Drupal block title printing,
       // so use #subhead instead.
@@ -142,6 +136,14 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#items' => $items,
       '#read_more' => $this->configuration['read_more'],
     ];
+
+    // Loop through articles again and add cacheable dependency to return
+    // render array.
+    foreach ($articles as $article) {
+      $this->renderer->addCacheableDependency($return, $article);
+    }
+
+    return $return;
   }
 
 }
