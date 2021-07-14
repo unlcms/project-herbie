@@ -118,9 +118,11 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
       // (Nebraska Today) content.
       if ($canonical_url = $article->get('n_news_canonical_url')->getString()) {
         $items[$nid]['link'] = $canonical_url;
+        $items[$nid]['source'] = 'remote';
       }
       else {
         $items[$nid]['link'] = $article->toLink(NULL, 'canonical', ['absolute' => TRUE])->getUrl();
+        $items[$nid]['source'] = 'local';
       }
 
       if ($article->get('n_news_image')->getValue()) {

@@ -14,14 +14,12 @@
 {% set field_name = attributes.storage['data-field-name']|render %}
 
 {# Loop through potential fields and add classes. #}
+{# TODO: Move to unl_five_herbie_preprocess_field(). #}
 {% if field_name == 'b_card_image' %}
   {% set attributes = attributes.addClass(['dcf-d-block']) %}
 {% endif %}
 {% if field_name == 'b_cdcir_image' %}
   {% set attributes = attributes.addClass(['dcf-d-block', 'dcf-h-100%', 'dcf-w-100%', 'dcf-circle', 'dcf-ratio-child']) %}
-{% endif %}
-{% if field_name == 'n_news_image' %}
-  {% set attributes = attributes.addClass(['dcf-d-block']) %}
 {% endif %}
 
 {# Regardless of the field, remove the data-field-name attribute. #}
