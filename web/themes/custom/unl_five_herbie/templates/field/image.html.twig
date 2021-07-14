@@ -14,6 +14,7 @@
 {% set field_name = attributes.storage['data-field-name']|render %}
 
 {# Loop through potential fields and add classes. #}
+{# TODO: Move to unl_five_herbie_preprocess_field(). #}
 {% if field_name == 'b_card_image' %}
   {% set attributes = attributes.addClass(['dcf-d-block']) %}
 {% endif %}

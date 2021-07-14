@@ -1,0 +1,10 @@
+unl_news.settings:
+  type: config_object
+  label: 'UNL News settings'
+  mapping:
+    tag_ids:
+      type: sequence
+      label: 'Tags'
+      sequence:
+        type: integer
+        label: 'Tag'

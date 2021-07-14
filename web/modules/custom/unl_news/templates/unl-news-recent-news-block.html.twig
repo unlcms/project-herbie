@@ -1,0 +1,19 @@
+<div class="recent-news-block">
+  {% if subhead is not empty %}
+    <h2>{{ subhead }}</h2>
+  {% endif %}
+  <div class="items">
+    {% for item in items %}
+      <article class="item">
+        {{ item.image }}
+        {% if item.source == 'remote' %}
+          <div class="ne-today">From Nebraska Today</div>
+        {% endif %}
+        <h3 class="title-link"><a href="{{ item.link }}">{{ item.title }}</a></h3>
+      </article>
+    {% endfor %}
+  </div>
+  <div class="read-more-wrapper">
+    <a class="read-more" href="{{ more_link }}">Read More News</a>
+  </div>
+</div>

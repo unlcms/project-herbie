@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.n_news_canonical_url
+    - field.field.node.news.n_news_foreign_key
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
@@ -12,6 +14,7 @@ dependencies:
   module:
     - field_group
     - image
+    - link
     - path
     - text
 third_party_settings:
@@ -31,6 +34,22 @@ third_party_settings:
         required_fields: true
       label: 'Lead image'
       region: content
+    group_nebraska_today:
+      children:
+        - n_news_foreign_key
+        - n_news_canonical_url
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+        weight: 0
+      label: 'Nebraska Today'
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -52,6 +71,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  n_news_canonical_url:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  n_news_foreign_key:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   n_news_image:
     weight: 9
     settings:
@@ -122,8 +156,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
