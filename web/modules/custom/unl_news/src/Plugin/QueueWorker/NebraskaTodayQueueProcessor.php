@@ -2,6 +2,7 @@
 
 namespace Drupal\unl_news\Plugin\QueueWorker;
 
+use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
@@ -126,7 +127,10 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
     $node = Node::create([
       'type' => 'news',
     ]);
-    $node->set('title', $item->title);
+    // Truncate title to 255 characters as is allowed by the
+    // node title field.
+    $title = Unicode::truncate($item->title, 255, TRUE, TRUE);
+    $node->set('title', $title);
     $node->set('n_news_foreign_key', $item->id);
     $node->set('n_news_canonical_url', $item->canonicalUrl);
 
@@ -148,7 +152,9 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         $filename = explode('/', $remote_image_url);
         $filename = end($filename);
 
-        $alt = $item->articleImage->alt;
+        // Truncate alt text to 512 characters as is allowed by the
+        // n_news_image_alt field.
+        $alt = Unicode::truncate($item->articleImage->alt, 512, TRUE, TRUE);
 
         // Get image upload path from field config.
         /** @var \Drupal\field\Entity\FieldConfig */
