@@ -10,15 +10,15 @@ use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Recent News block.
+ * Provides a News Aggregation block.
  *
  * @Block(
- *   id = "unl_recent_news",
- *   admin_label = @Translation("Recent News"),
+ *   id = "unl_news_aggregation",
+ *   admin_label = @Translation("News Aggregation"),
  *   category = @Translation("Aggregated Content"),
  * )
  */
-class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * The entity type manager service.
@@ -61,8 +61,7 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
    */
   public function defaultConfiguration() {
     return [
-      'subhead' => '',
-      'more_link' => '',
+      'quantity' => 16,
     ];
   }
 
@@ -70,19 +69,16 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $form['subhead'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Subhead'),
-      '#description' => $this->t('The subhead that will appear in the block above the news items.'),
-      '#default_value' => $this->configuration['subhead'],
-    ];
-
-    $form['more_link'] = [
-      '#type' => 'url',
-      '#title' => 'More Link URL',
-      '#default_value' => $this->configuration['more_link'],
-      '#description' => $this->t('The URL for the "Read More News" link.'),
-      '#required' => TRUE,
+    $form['quantity'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Items per page'),
+      '#options' => [
+        12 => '12',
+        16 => '16',
+        20 => '20',
+      ],
+      '#description' => $this->t('The number of news items to display per page'),
+      '#default_value' => $this->configuration['quantity'],
     ];
 
     return $form;
@@ -92,8 +88,7 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['subhead'] = $form_state->getValue('subhead');
-    $this->configuration['more_link'] = $form_state->getValue('more_link');
+    $this->configuration['quantity'] = $form_state->getValue('quantity');
   }
 
   /**
@@ -106,7 +101,7 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $ids = $query->condition('status', 1)
       ->condition('type', 'news')
       ->sort('created', 'DESC')
-      ->range(0, 4)
+      ->pager($this->configuration['quantity'])
       ->execute();
     $articles = $node_storage->loadMultiple($ids);
 
@@ -131,12 +126,11 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
     }
 
     $return = [
-      '#theme' => 'unl_news_recent_news_block',
-      // #title will result in Drupal block title printing,
-      // so use #subhead instead.
-      '#subhead' => $this->configuration['subhead'],
+      '#theme' => 'unl_news_news_aggregation_block',
       '#items' => $items,
-      '#read_more' => $this->configuration['read_more'],
+      '#pager' => [
+        '#type' => 'pager',
+      ],
       '#cache' => [
         'tags' => ['node_list:news'],
       ],

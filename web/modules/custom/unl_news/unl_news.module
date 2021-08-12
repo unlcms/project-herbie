@@ -23,6 +23,12 @@ function unl_news_theme($existing, $type, $theme, $path) {
         'more_link' => '',
       ],
     ],
+    'unl_news_news_aggregation_block' => [
+      'variables' => [
+        'items' => [],
+        'pager' => [],
+      ],
+    ],
   ];
 }
 

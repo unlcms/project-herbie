@@ -86,6 +86,7 @@ third_party_settings:
         dcf_onecol_section:
           all_regions:
             'Aggregated Content':
+              - unl_news_aggregation
               - unl_recent_news
               - unl_upcoming_events
             'Content fields':
