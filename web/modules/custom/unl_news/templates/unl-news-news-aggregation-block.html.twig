@@ -1,0 +1,15 @@
+<div class="news-aggregation-block">
+  <h2>News</h2>
+  <div class="items">
+    {% for item in items %}
+      <article class="item">
+        {{ item.image }}
+        {% if item.source == 'remote' %}
+          <div class="ne-today">From Nebraska Today</div>
+        {% endif %}
+        <h3 class="title-link"><a href="{{ item.link }}">{{ item.title }}</a></h3>
+      </article>
+    {% endfor %}
+  </div>
+  {{ pager }}
+</div>
