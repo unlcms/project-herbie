@@ -157,6 +157,7 @@ third_party_settings:
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:card'
+              - 'inline_block:card_circle_image'
               - 'inline_block:content'
               - 'inline_block:html_code'
             'Lists (Views)': {  }
