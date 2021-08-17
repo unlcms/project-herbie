@@ -21,6 +21,9 @@ settings:
             - Strike
             - Superscript
             - Subscript
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
             - Styles
         -
           name: Links
@@ -52,7 +55,7 @@ settings:
     stylescombo:
       styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button\r\np.dcf-txt-xs|Extra small\r\np.dcf-txt-sm|Small\r\np.dcf-txt-md|Medium\r\np.dcf-txt-lg|Large\r\np.unl-font-serif|Serif"
     customconfig:
-      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = \"showborders\""
+      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = \"showborders\"\r\njustifyClasses = [\"dcf-txt-left\", \"dcf-txt-center\", \"dcf-txt-right\", null]"
     dcf_base:
       enabled_plugins:
         dcf_table: dcf_table
