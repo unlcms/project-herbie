@@ -11,6 +11,7 @@ dependencies:
     - field.field.block_content.hero.b_hero_title
     - responsive_image.styles.hero_medium
   module:
+    - dcf_lazyload
     - options
     - responsive_image
 id: block_content.hero.default
@@ -24,7 +25,9 @@ content:
     settings:
       responsive_image_style: hero_medium
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      dcf_lazyload:
+        dcf_lazyload_enable: true
     type: responsive_image
     region: content
   b_hero_overline:

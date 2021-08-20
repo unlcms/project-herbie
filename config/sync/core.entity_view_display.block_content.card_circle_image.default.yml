@@ -11,6 +11,7 @@ dependencies:
     - field.field.block_content.card_circle_image.b_cdcir_image
     - responsive_image.styles.card_circle_image_block
   module:
+    - dcf_lazyload
     - link
     - responsive_image
     - text
@@ -64,7 +65,9 @@ content:
     settings:
       responsive_image_style: card_circle_image_block
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      dcf_lazyload:
+        dcf_lazyload_enable: true
     type: responsive_image
     region: content
 hidden: {  }
