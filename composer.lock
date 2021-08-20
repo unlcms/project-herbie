@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "474336518b4880b71bc55ee728a2810e",
+    "content-hash": "15b14301347564f569c6cfe6c1d7d9de",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5059,17 +5059,17 @@
         },
         {
             "name": "drupal/oembed_providers",
-            "version": "1.1.3",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/oembed_providers.git",
-                "reference": "1.1.3"
+                "reference": "2.0.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/oembed_providers-1.1.3.zip",
-                "reference": "1.1.3",
-                "shasum": "d963679d7713aaf1dc5db7d18480d6acd4998884"
+                "url": "https://ftp.drupal.org/files/projects/oembed_providers-2.0.0-rc2.zip",
+                "reference": "2.0.0-rc2",
+                "shasum": "9b7f2cd7f06a065a43546d4c69e0ce1f71e9fec8"
             },
             "require": {
                 "drupal/core": "^8.8.0 || ^9.0"
@@ -5077,11 +5077,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.3",
-                    "datestamp": "1607113505",
+                    "version": "2.0.0-rc2",
+                    "datestamp": "1628194329",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -14608,7 +14608,6 @@
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/media_library_extras": 15,
-        "drupal/oembed_providers": 10,
         "drupal/rabbit_hole": 10,
         "drupal/twig_ui": 10,
         "drupal/config_inspector": 10
