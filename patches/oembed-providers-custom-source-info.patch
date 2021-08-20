@@ -1,0 +1,18 @@
+diff --git a/oembed_providers.module b/oembed_providers.module
+index 778ecf3..4597796 100644
+--- a/oembed_providers.module
++++ b/oembed_providers.module
+@@ -34,6 +34,13 @@ function oembed_providers_media_source_info_alter(array &$sources) {
+       'default_thumbnail_filename' => 'no-thumbnail.png',
+       'providers' => $providers,
+       'class' => 'Drupal\media\Plugin\media\Source\OEmbed',
++      // Added in https://www.drupal.org/i/3228512.
++      'default_name_metadata_attribute' => 'default_name',
++      'thumbnail_uri_metadata_attribute' => 'thumbnail_uri',
++      // Added in https://www.drupal.org/i/3228501.
++      'forms' => [
++        'media_library_add' => 'Drupal\media_library\Form\OEmbedForm',
++      ],
+     ];
+   }
+ }
