@@ -10997,16 +10997,16 @@
         },
         {
             "name": "unlcms/unl_dcf",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_dcf.git",
-                "reference": "14351fa8297a175b247ddef45a55a7d10bade226"
+                "reference": "db20e303c39cef6e3ecb6c329ce5bde69742c0ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_dcf/zipball/14351fa8297a175b247ddef45a55a7d10bade226",
-                "reference": "14351fa8297a175b247ddef45a55a7d10bade226",
+                "url": "https://api.github.com/repos/unlcms/unl_dcf/zipball/db20e303c39cef6e3ecb6c329ce5bde69742c0ba",
+                "reference": "db20e303c39cef6e3ecb6c329ce5bde69742c0ba",
                 "shasum": ""
             },
             "require": {
@@ -11035,7 +11035,7 @@
                 "issues": "https://github.com/unlcms/unl_dcf/issues",
                 "source": "https://github.com/unlcms/unl_dcf"
             },
-            "time": "2021-04-01T18:53:11+00:00"
+            "time": "2021-08-20T18:20:41+00:00"
         },
         {
             "name": "unlcms/unl_five",
