@@ -5,6 +5,7 @@ namespace Drupal\unl_news\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Path\PathValidatorInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -35,12 +36,20 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
   protected $renderer;
 
   /**
+   * The path validator service.
+   *
+   * @var \Drupal\Core\Path\PathValidatorInterface
+   */
+  protected $pathValidator;
+
+  /**
    * Constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, PathValidatorInterface $path_validator) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entity_type_manager;
     $this->renderer = $renderer;
+    $this->pathValidator = $path_validator;
   }
 
   /**
@@ -52,7 +61,8 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $plugin_id,
       $plugin_definition,
       $container->get('entity_type.manager'),
-      $container->get('renderer')
+      $container->get('renderer'),
+      $container->get('path.validator')
     );
   }
 
@@ -78,14 +88,27 @@ class RecentNewsBlock extends BlockBase implements ContainerFactoryPluginInterfa
     ];
 
     $form['more_link'] = [
-      '#type' => 'url',
-      '#title' => 'More Link URL',
+      '#type' => 'textfield',
+      '#title' => 'More Link Path',
       '#default_value' => $this->configuration['more_link'],
-      '#description' => $this->t('The URL for the "Read More News" link.'),
+      '#description' => $this->t('The absolute path for the "Read More News" link. E.g. "/news". The destination must already exist.'),
       '#required' => TRUE,
     ];
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockValidate($form, FormStateInterface $form_state) {
+    $more_link = $form_state->getValue('more_link');
+    if (!$this->pathValidator->isValid($more_link)) {
+      $form_state
+        ->setErrorByName('more_link', $this->t('The path %path is not valid.', [
+          '%path' => $more_link,
+        ]));
+    }
   }
 
   /**
