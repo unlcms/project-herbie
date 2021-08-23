@@ -27,7 +27,7 @@ content:
       image_link: ''
     third_party_settings:
       dcf_lazyload:
-        dcf_lazyload_enable: true
+        dcf_lazyload_enable: false
     type: responsive_image
     region: content
   b_hero_overline:
