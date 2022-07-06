@@ -71,6 +71,8 @@ Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_i
 
 ### Install Drupal
 
+Copy `web/sites/default/default.settings.php` to `web/sites/default/settings.php`
+
 Navigate to `http://example.unl.edu/project-herbie/web` in your browser.
 
 See [Installing Drupal 8](https://www.drupal.org/docs/8/install)
