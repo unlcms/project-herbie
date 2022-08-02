@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    standard: standard
-    block_body: '0'
-    webform: '0'
-    plain_text: '0'
+    allowed_formats:
+      - standard
 id: node.builder_page.body
 field_name: body
 entity_type: node

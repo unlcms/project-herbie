@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    block_body: block_body
-    standard: '0'
-    webform: '0'
-    plain_text: '0'
+    allowed_formats:
+      - block_body
 id: block_content.card.b_card_body
 field_name: b_card_body
 entity_type: block_content

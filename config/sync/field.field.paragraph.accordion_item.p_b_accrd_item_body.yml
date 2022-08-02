@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    block_body: block_body
-    standard: '0'
-    webform: '0'
-    plain_text: '0'
+    allowed_formats:
+      - block_body
 id: paragraph.accordion_item.p_b_accrd_item_body
 field_name: p_b_accrd_item_body
 entity_type: paragraph

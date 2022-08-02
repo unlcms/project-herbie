@@ -10,12 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    html_code: html_code
-    block_body: '0'
-    block_body_centered: '0'
-    standard: '0'
-    webform: '0'
-    plain_text: '0'
+    allowed_formats:
+      - html_code
 id: block_content.html_code.b_html_code_html
 field_name: b_html_code_html
 entity_type: block_content

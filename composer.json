@@ -253,13 +253,10 @@
                 "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },
             "drupal/block_content_permissions": {
-                "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/block_content_permissions-access_listing_page-2920739-23.patch"
-            },
-            "drupal/block_type_templates": {
-                "3018307 - Support for View Modes": "https://www.drupal.org/files/issues/2019-03-21/block_type_templates-view_mode_support-3018307-4.patch"
+                "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
             },
             "drupal/config_ignore": {
-                "2857247 - Support for export filtering via Drush": "https://www.drupal.org/files/issues/2018-04-19/support-for-export-2857247-18.patch"
+                "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             },
             "drupal/external_entities": {
                 "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
