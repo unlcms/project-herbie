@@ -258,9 +258,6 @@
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             },
-            "drupal/external_entities": {
-                "3065268 - external_entities_inline_entity_form_entity_form_alter() needs to check entity instance sooner": "patches/external_entities-do_not_break_ief_render_elements-3089287-4.patch"
-            },
             "drupal/media_library_extras": {
                 "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
             },

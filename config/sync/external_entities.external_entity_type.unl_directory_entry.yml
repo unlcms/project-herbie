@@ -7,43 +7,6 @@ label: 'UNL Directory Entry'
 label_plural: 'UNL Directory Entries'
 description: 'Data from directory.unl.edu.'
 read_only: true
-field_mappings:
-  id:
-    value: uid
-  title:
-    value: displayName
-  ee_unldir_imageurl:
-    value: imageURL
-  ee_unldir_knowledgepresentations:
-    value: knowledge/presentations
-  ee_unldir_knowledge_bio:
-    value: knowledge/bio
-  ee_unldir_knowledge_courses:
-    value: knowledge/courses
-  ee_unldir_knowledge_education:
-    value: knowledge/education
-  ee_unldir_knowledge_grants:
-    value: knowledge/grants
-  ee_unldir_knowledge_honors:
-    value: knowledge/honors
-  ee_unldir_knowledge_papers:
-    value: knowledge/papers
-  ee_unldir_knowledge_performances:
-    value: knowledge/performances
-  ee_unldir_mail:
-    value: mail
-  ee_unldir_primaryaffiliation:
-    value: eduPersonPrimaryAffiliation
-  ee_unldir_telephonenumber:
-    value: telephoneNumber
-  ee_unldir_title:
-    value: title
-  ee_unldir_uid:
-    value: uid
-  ee_unldir_unldirectoryaddress:
-    value: unlDirectoryAddress
-  ee_unldir_unlhrprimarydepartment:
-    value: unlHRPrimaryDepartment
 storage_client_id: unldirectory
 storage_client_config:
   endpoint: 'https://directory.unl.edu'
@@ -65,3 +28,42 @@ annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null
 inherits_annotation_fields: false
+field_mapper_id: simple
+field_mapper_config:
+  field_mappings:
+    id:
+      value: uid
+    title:
+      value: displayName
+    ee_unldir_imageurl:
+      value: imageURL
+    ee_unldir_knowledgepresentations:
+      value: knowledge/presentations
+    ee_unldir_knowledge_bio:
+      value: knowledge/bio
+    ee_unldir_knowledge_courses:
+      value: knowledge/courses
+    ee_unldir_knowledge_education:
+      value: knowledge/education
+    ee_unldir_knowledge_grants:
+      value: knowledge/grants
+    ee_unldir_knowledge_honors:
+      value: knowledge/honors
+    ee_unldir_knowledge_papers:
+      value: knowledge/papers
+    ee_unldir_knowledge_performances:
+      value: knowledge/performances
+    ee_unldir_mail:
+      value: mail
+    ee_unldir_primaryaffiliation:
+      value: eduPersonPrimaryAffiliation
+    ee_unldir_telephonenumber:
+      value: telephoneNumber
+    ee_unldir_title:
+      value: title
+    ee_unldir_uid:
+      value: uid
+    ee_unldir_unldirectoryaddress:
+      value: unlDirectoryAddress
+    ee_unldir_unlhrprimarydepartment:
+      value: unlHRPrimaryDepartment

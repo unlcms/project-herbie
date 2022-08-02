@@ -36,6 +36,7 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   external_entities: 0
+  external_entities_pathauto: 0
   external_entities_unldirectory: 0
   field: 0
   field_css: 0
