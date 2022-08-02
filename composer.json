@@ -1,9 +1,9 @@
 {
     "name": "unlcms/project-herbie",
-    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "description": "Drupal 9 at UNL (based on drupal/recommended-project)",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
+    "homepage": "https://github.com/unlcms/project-herbie",
     "support": {
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"

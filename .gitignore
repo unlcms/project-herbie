@@ -7,6 +7,9 @@
 /web/profiles/contrib/
 /web/libraries/
 
+# Ignore backup .htaccess file created when patching
+.htaccess.orig
+
 # Ignore sensitive information
 /web/sites/*/settings.php
 /web/sites/*/settings.local.php
