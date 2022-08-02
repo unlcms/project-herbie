@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: 'person/[node:title]'
 selection_criteria:
   d138bafe-e2f4-4842-ae75-34223692c5de:
-    id: node_type
+    id: 'entity_bundle:node'
     bundles:
       person: person
     negate: false

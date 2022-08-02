@@ -58,7 +58,7 @@ third_party_settings:
         - dcf_twocol_section
         - dcf_threecol_section
         - dcf_fourcol_section
-      whitelisted_blocks:
+      allowlisted_blocks:
         dcf_fourcol_section:
           all_regions:
             'Aggregated Content': {  }
@@ -166,7 +166,7 @@ third_party_settings:
             User: {  }
             Webform: {  }
             core: {  }
-      blacklisted_blocks: {  }
+      denylisted_blocks: {  }
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
@@ -182,13 +182,13 @@ third_party_settings:
       - Webform
       - core
     entity_view_mode_restriction:
-      whitelisted_blocks: {  }
-      blacklisted_blocks: {  }
       allowed_layouts:
         - dcf_onecol_section
         - dcf_twocol_section
         - dcf_threecol_section
         - dcf_fourcol_section
+      allowlisted_blocks: {  }
+      denylisted_blocks: {  }
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page
