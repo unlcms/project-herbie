@@ -171,7 +171,7 @@
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^1.0",
         "unlcms/unl_dcf": "^1.1",
-        "unlcms/unl_five": "^5.3",
+        "unlcms/unl_five": "5.3.11",
         "unlcms/unl_multisite": "^1.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
