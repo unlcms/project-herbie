@@ -7,27 +7,6 @@ label: 'UNL Directory Entry'
 label_plural: 'UNL Directory Entries'
 description: 'Data from directory.unl.edu.'
 read_only: true
-storage_client_id: unldirectory
-storage_client_config:
-  endpoint: 'https://directory.unl.edu'
-  response_format: json
-  pager:
-    default_limit: '10'
-    page_parameter: ''
-    page_parameter_type: null
-    page_size_parameter: ''
-    page_size_parameter_type: null
-  api_key:
-    header_name: ''
-    key: ''
-  parameters:
-    list: {  }
-    single: {  }
-persistent_cache_max_age: 3600
-annotation_entity_type_id: null
-annotation_bundle_id: null
-annotation_field_name: null
-inherits_annotation_fields: false
 field_mapper_id: simple
 field_mapper_config:
   field_mappings:
@@ -67,3 +46,24 @@ field_mapper_config:
       value: unlDirectoryAddress
     ee_unldir_unlhrprimarydepartment:
       value: unlHRPrimaryDepartment
+storage_client_id: unldirectory
+storage_client_config:
+  endpoint: 'https://directory.unl.edu'
+  response_format: json
+  pager:
+    default_limit: '10'
+    page_parameter: ''
+    page_parameter_type: null
+    page_size_parameter: ''
+    page_size_parameter_type: null
+  api_key:
+    header_name: ''
+    key: ''
+  parameters:
+    list: {  }
+    single: {  }
+persistent_cache_max_age: 3600
+annotation_entity_type_id: null
+annotation_bundle_id: null
+annotation_field_name: null
+inherits_annotation_fields: false

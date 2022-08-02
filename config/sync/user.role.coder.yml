@@ -1,7 +1,13 @@
 uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - block_content_permissions
+    - field_css
+    - filter
 id: coder
 label: Coder
 weight: -8

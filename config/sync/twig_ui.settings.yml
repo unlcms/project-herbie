@@ -3,4 +3,14 @@ allowed_theme_list:
   - unl_five_herbie
 default_selected_themes:
   - unl_five_herbie
-codemirror_config: "buttons:\n  - bold\n  - italic\n  - list-numbered\n  - list-bullet\n  - link\n  - undo\n  - redo\n  - enlarge\n  - shrink"
+codemirror_config: |-
+  buttons:
+    - bold
+    - italic
+    - list-numbered
+    - list-bullet
+    - link
+    - undo
+    - redo
+    - enlarge
+    - shrink

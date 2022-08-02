@@ -19,13 +19,13 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 8
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 3
@@ -40,40 +40,40 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   s_n_hero:
+    type: inline_entity_form_complex
     weight: 0
+    region: content
     settings:
       form_mode: default
       override_labels: true
       label_singular: Hero
       label_plural: Heroes
-      collapsible: true
       allow_new: true
-      match_operator: CONTAINS
-      collapsed: false
       allow_existing: false
+      match_operator: CONTAINS
       allow_duplicate: false
+      collapsible: true
+      collapsed: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -86,17 +86,17 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   layout_builder__layout: true

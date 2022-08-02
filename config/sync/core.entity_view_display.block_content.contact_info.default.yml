@@ -14,11 +14,11 @@ mode: default
 content:
   b_cinfo_contact_point:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

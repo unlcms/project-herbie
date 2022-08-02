@@ -1,7 +1,35 @@
 uuid: 9785a012-13f3-431d-9439-f7d19859f9ec
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.book
+    - node.type.builder_page
+    - node.type.news
+    - node.type.person
+  module:
+    - asset_injector
+    - block_content_permissions
+    - book
+    - entity_usage
+    - layout_builder
+    - layout_builder_component_attributes
+    - media
+    - menu_admin_per_menu
+    - node
+    - paragraphs
+    - paragraphs_type_permissions
+    - path
+    - redirect
+    - system
+    - toolbar
+    - twig_ui
+    - unl_config
+    - webform
 id: editor
 label: Editor
 weight: -7
@@ -12,8 +40,6 @@ permissions:
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access media overview'
-  - 'access media_entity_browser entity browser pages'
-  - 'access media_entity_browser_modal entity browser pages'
   - 'access toolbar'
   - 'access webform overview'
   - 'add content to books'
@@ -32,7 +58,6 @@ permissions:
   - 'create card_circle_image block content'
   - 'create contact_info block content'
   - 'create content block content'
-  - 'create events_band block content'
   - 'create file media'
   - 'create hero block content'
   - 'create image media'
@@ -45,8 +70,6 @@ permissions:
   - 'create paragraph content contact_info_margin'
   - 'create paragraph content contact_info_phone'
   - 'create paragraph content contact_info_physical_address'
-  - 'create paragraph content contact_info_place'
-  - 'create paragraph content contact_info_place_attribute'
   - 'create paragraph content contact_info_post_office_box_add'
   - 'create person content'
   - 'create remote_video media'
@@ -59,7 +82,6 @@ permissions:
   - 'delete any card_circle_image block content'
   - 'delete any contact_info block content'
   - 'delete any content block content'
-  - 'delete any events_band block content'
   - 'delete any file media'
   - 'delete any hero block content'
   - 'delete any image media'
@@ -79,8 +101,6 @@ permissions:
   - 'delete paragraph content contact_info_margin'
   - 'delete paragraph content contact_info_phone'
   - 'delete paragraph content contact_info_physical_address'
-  - 'delete paragraph content contact_info_place'
-  - 'delete paragraph content contact_info_place_attribute'
   - 'delete paragraph content contact_info_post_office_box_add'
   - 'delete person revisions'
   - 'edit any book content'
@@ -105,7 +125,6 @@ permissions:
   - 'update any card_circle_image block content'
   - 'update any contact_info block content'
   - 'update any content block content'
-  - 'update any events_band block content'
   - 'update any hero block content'
   - 'update paragraph content accordion_item'
   - 'update paragraph content contact_info_email'
@@ -114,8 +133,6 @@ permissions:
   - 'update paragraph content contact_info_margin'
   - 'update paragraph content contact_info_phone'
   - 'update paragraph content contact_info_physical_address'
-  - 'update paragraph content contact_info_place'
-  - 'update paragraph content contact_info_place_attribute'
   - 'update paragraph content contact_info_post_office_box_add'
   - 'view any webform submission'
   - 'view book revisions'
@@ -130,8 +147,6 @@ permissions:
   - 'view paragraph content contact_info_margin'
   - 'view paragraph content contact_info_phone'
   - 'view paragraph content contact_info_physical_address'
-  - 'view paragraph content contact_info_place'
-  - 'view paragraph content contact_info_place_attribute'
   - 'view paragraph content contact_info_post_office_box_add'
   - 'view person revisions'
   - 'view restricted block content'

@@ -1,9 +1,11 @@
 uuid: 3a33fbcf-d5e1-4bfb-809d-77e7262d749e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - oembed_providers.provider.unl_mediahub
 id: video
 label: 'Remote Video'
+description: null
 providers:
   - 'UNL Mediahub'
-description: null

@@ -1,0 +1,82 @@
+diff --git a/core/modules/media//src/Entity/Media.php b/core/modules/media//src/Entity/Media.php
+index 55ffb8a6a6..28eedd3eb1 100644
+--- a/core/modules/media//src/Entity/Media.php
++++ b/core/modules/media//src/Entity/Media.php
+@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Field\BaseFieldDefinition;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\Core\Url;
+ use Drupal\media\MediaInterface;
+ use Drupal\media\MediaSourceEntityConstraintsInterface;
+ use Drupal\media\MediaSourceFieldConstraintsInterface;
+@@ -371,10 +372,15 @@ class Media extends EditorialContentEntityBase implements MediaInterface {
+         // Try to set fields provided by the media source and mapped in
+         // media type config.
+         foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
++          // If metadata is a URL object, then convert to a string.
++          $meta_data = $media_source->getMetadata($translation, $metadata_attribute_name);
++          if ($meta_data instanceof Url) {
++            $meta_data = $meta_data->toString();
++          }
+           // Only save value in entity field if empty. Do not overwrite existing
+           // data.
+           if ($translation->hasField($entity_field_name) && ($translation->get($entity_field_name)->isEmpty() || $translation->hasSourceFieldChanged())) {
+-            $translation->set($entity_field_name, $media_source->getMetadata($translation, $metadata_attribute_name));
++            $translation->set($entity_field_name, $meta_data);
+           }
+         }
+ 
+diff --git a/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php b/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
+index ae9ab1416a..fca3ef580d 100644
+--- a/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
++++ b/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
+@@ -19,7 +19,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+   /**
+    * {@inheritdoc}
+    */
+-  protected static $modules = ['media_test_oembed'];
++  protected static $modules = ['media_test_oembed', 'link'];
+ 
+   /**
+    * {@inheritdoc}
+@@ -82,6 +82,8 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+       'field_string_width' => 'string',
+       'field_string_height' => 'string',
+       'field_string_author_name' => 'string',
++      'field_link_author_url' => 'link',
++      'field_string_author_url' => 'string',
+     ];
+     $this->createMediaTypeFields($fields, $media_type_id);
+ 
+@@ -94,6 +96,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+     $assert_session->selectExists('field_map[width]')->setValue('field_string_width');
+     $assert_session->selectExists('field_map[height]')->setValue('field_string_height');
+     $assert_session->selectExists('field_map[author_name]')->setValue('field_string_author_name');
++    $assert_session->selectExists('field_map[author_url]')->setValue('field_link_author_url');
+     $assert_session->buttonExists('Save')->press();
+ 
+     // Configure the iframe to be narrower than the actual video, so we can
+@@ -117,6 +120,22 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+ 
+     $assert_session->addressEquals('admin/content/media');
+ 
++    // Change the author_url mapping to a string field and create the
++    // media item again.
++    $this->drupalGet("admin/structure/media/manage/$media_type_id");
++    $assert_session->selectExists('field_map[author_url]')->setValue('field_string_author_url');
++    $assert_session->buttonExists('Save')->press();
++
++    $this->hijackProviderEndpoints();
++    $video_url = 'https://vimeo.com/7073899';
++    ResourceController::setResourceUrl($video_url, $this->getFixturesDirectory() . '/video_vimeo.json');
++
++    $this->drupalGet("media/add/$media_type_id");
++    $assert_session->fieldExists('Remote video URL')->setValue($video_url);
++    $assert_session->buttonExists('Save')->press();
++
++    $assert_session->addressEquals('admin/content/media');
++
+     // Get the media entity view URL from the creation message.
+     $this->drupalGet($this->assertLinkToCreatedMedia());
+ 

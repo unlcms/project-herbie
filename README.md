@@ -84,3 +84,12 @@ When asked to select an Installation Profile, select "Use existing configuration
 This project uses Config Split to manage configuration among production, stage, and development. Certain modules, such as Twig Xdebug and Config Inspector are only enabled on development.
 
 In the development config split, a number of settings are enabled, disabled, or modified: Caching is disabled; Twig caching is disabled and Twig autoloading is enabled; debug cacheability headers are enabled; CSS and JS aggregation is disabled; and file permission hardening is disabled.  See /profiles/herbie/includes/settings.php.inc for more details. These settings can be overridden in settings.local.php.
+
+
+## D9 todo:
+
+This patch needs updated for 9.4: https://www.drupal.org/node/3060292
+
+                "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-20-D9.patch",
+
+Update Twig UI Templates to 1.0.1

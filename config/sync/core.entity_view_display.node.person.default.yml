@@ -25,68 +25,70 @@ bundle: person
 mode: default
 content:
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
   n_person_address:
-    weight: 108
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 108
     region: content
   n_person_bio:
-    weight: 105
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 105
     region: content
   n_person_email:
-    weight: 107
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 107
     region: content
   n_person_phone:
-    weight: 104
+    type: telephone_link
     label: hidden
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 104
     region: content
   n_person_photo:
-    weight: 109
+    type: image
     label: hidden
     settings:
-      image_style: 1_1_240x240
       image_link: ''
+      image_style: 1_1_240x240
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 109
     region: content
   n_person_position:
-    weight: 103
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 103
     region: content
   n_person_unldirectoryreference:
-    weight: 102
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 102
     region: content
   n_person_website:
-    weight: 106
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -95,6 +97,6 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 106
     region: content
 hidden: {  }

@@ -1,7 +1,20 @@
 uuid: 7e5e6587-46de-4143-890c-228d7627f7d5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.block_body
+    - filter.format.block_body_centered
+    - filter.format.standard
+    - filter.format.webform
+  module:
+    - contextual
+    - filter
+    - honeypot
+    - media
+    - paragraphs_type_permissions
+    - system
+    - webform
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated

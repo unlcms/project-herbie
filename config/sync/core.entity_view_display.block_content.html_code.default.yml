@@ -15,20 +15,20 @@ bundle: html_code
 mode: default
 content:
   b_html_code_css:
-    weight: 1
+    type: css
     label: hidden
     settings:
       location: head
       prefix: entity-item
       fixed_prefix_value: ''
     third_party_settings: {  }
-    type: css
+    weight: 1
     region: content
   b_html_code_html:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
 hidden: {  }

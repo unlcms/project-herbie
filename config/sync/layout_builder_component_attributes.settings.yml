@@ -1,6 +1,8 @@
+_core:
+  default_config_hash: PM_ibIU27unktxUQ-TnxRKQnmujQB-zCxMHRpPMruo8
 allowed_block_attributes:
-  class: true
   id: false
+  class: true
   style: false
   data: false
 allowed_block_title_attributes:
@@ -13,5 +15,3 @@ allowed_block_content_attributes:
   class: false
   style: false
   data: false
-_core:
-  default_config_hash: PM_ibIU27unktxUQ-TnxRKQnmujQB-zCxMHRpPMruo8

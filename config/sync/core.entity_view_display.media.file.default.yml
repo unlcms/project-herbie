@@ -18,54 +18,56 @@ bundle: file
 mode: default
 content:
   created:
-    label: hidden
     type: timestamp
-    weight: 0
-    region: content
+    label: hidden
     settings:
       date_format: medium
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_media_file:
-    weight: 6
+    type: file_default
     label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    type: file_default
+    weight: 6
     region: content
   s_m_file_size:
-    weight: 8
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 8
     region: content
   s_m_mime_type:
-    weight: 7
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   thumbnail:
     type: image
-    weight: 5
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: ''
-    region: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-  uid:
-    label: hidden
-    type: author
-    weight: 0
+    weight: 5
     region: content
+  uid:
+    type: author
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   name: true

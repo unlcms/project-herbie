@@ -15,13 +15,14 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: true
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: dcf_onecol_section
         layout_settings:
           label: ''
+          context_mapping: {  }
           column_widths: '100'
           title: ''
           title_classes: {  }
@@ -39,17 +40,17 @@ third_party_settings:
             configuration:
               id: 'field_block:node:builder_page:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     entity_view_mode_restriction_by_region:
@@ -187,32 +188,32 @@ third_party_settings:
         - dcf_twocol_section
         - dcf_threecol_section
         - dcf_fourcol_section
-      allowlisted_blocks: {  }
       denylisted_blocks: {  }
+      allowlisted_blocks: {  }
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
   s_n_hero:
-    weight: 102
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 102
     region: content
 hidden:
   layout_builder__layout: true

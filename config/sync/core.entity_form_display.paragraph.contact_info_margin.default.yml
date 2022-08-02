@@ -13,11 +13,11 @@ bundle: contact_info_margin
 mode: default
 content:
   p_b_cinfo_margin_markup:
+    type: markup
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: markup
-    region: content
 hidden:
   created: true
   status: true

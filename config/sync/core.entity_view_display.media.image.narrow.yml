@@ -17,8 +17,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: media.image.narrow
 targetEntityType: media
 bundle: image
@@ -26,8 +26,6 @@ mode: narrow
 content:
   field_media_image:
     type: responsive_image
-    weight: 0
-    region: content
     label: hidden
     settings:
       responsive_image_style: narrow
@@ -35,6 +33,8 @@ content:
     third_party_settings:
       dcf_lazyload:
         dcf_lazyload_enable: true
+    weight: 0
+    region: content
 hidden:
   created: true
   name: true

@@ -14,8 +14,6 @@ id: card_block
 label: 'Card Block'
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
@@ -27,5 +25,7 @@ image_style_mappings:
         - 16_9_3840x2160
         - 16_9_480x270
         - 16_9_960x540
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: 16_9_3840x2160

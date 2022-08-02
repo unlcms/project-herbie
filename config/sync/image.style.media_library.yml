@@ -2,11 +2,11 @@ uuid: 90cf30e7-4334-45da-bcbd-d444fae32608
 langcode: en
 status: true
 dependencies:
+  module:
+    - image_effects
   enforced:
     module:
       - media_library
-  module:
-    - image_effects
 _core:
   default_config_hash: KK5aodHH54Bc7Q3LmjfrsYlRV-nQtCjCXlkZOFTW6v0
 name: media_library

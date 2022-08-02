@@ -5,6 +5,7 @@ dependencies: {  }
 id: stage
 label: Stage
 description: ''
+weight: 0
 folder: ../config/stage
 module: {  }
 theme: {  }
@@ -12,4 +13,3 @@ blacklist: {  }
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
-weight: 0

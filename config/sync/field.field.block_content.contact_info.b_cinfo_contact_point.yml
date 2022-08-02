@@ -21,16 +21,16 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       contact_info_contact_point: contact_info_contact_point
+    negate: 0
     target_bundles_drag_drop:
       accordion_item:
         weight: 11
         enabled: false
       contact_info_contact_point:
-        enabled: true
         weight: 10
+        enabled: true
       contact_info_email:
         weight: 12
         enabled: false

@@ -14,8 +14,6 @@ id: narrow
 label: Narrow
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 50vw
@@ -27,5 +25,7 @@ image_style_mappings:
         - inline_480
         - inline_720
         - inline_960
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: '_original image_'

@@ -18,44 +18,44 @@ bundle: hero
 mode: default
 content:
   b_hero_image:
+    type: image_focal_point
     weight: 0
+    region: content
     settings:
-      preview_image_style: hero_md_673
       progress_indicator: throbber
+      preview_image_style: hero_md_673
       preview_link: true
       offsets: '50,50'
     third_party_settings: {  }
-    type: image_focal_point
-    region: content
   b_hero_overline:
+    type: string_textfield
     weight: 2
+    region: content
     settings:
       size: 40
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   b_hero_size:
+    type: options_select
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   b_hero_subhead:
+    type: string_textfield
     weight: 4
+    region: content
     settings:
       size: 40
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   b_hero_title:
+    type: string_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   info: true

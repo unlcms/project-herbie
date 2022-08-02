@@ -22,16 +22,16 @@ third_party_settings:
         - s_m_mime_type
         - s_m_width
         - s_m_height
+      label: Attributes
+      region: content
       parent_name: ''
       weight: 6
       format_type: fieldset
       format_settings:
-        id: ''
         classes: hidden
+        id: ''
         description: ''
         required_fields: true
-      label: Attributes
-      region: content
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -44,13 +44,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_media_image:
+    type: image_image
     weight: 1
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   name:
     type: string_textfield
     weight: 0
@@ -66,52 +66,52 @@ content:
     settings: {  }
     third_party_settings: {  }
   s_m_file_size:
+    type: string_textfield
     weight: 7
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   s_m_height:
+    type: string_textfield
     weight: 10
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   s_m_mime_type:
+    type: string_textfield
     weight: 8
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   s_m_width:
+    type: string_textfield
     weight: 9
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden: {  }

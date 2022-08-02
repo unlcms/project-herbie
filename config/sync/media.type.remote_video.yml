@@ -1,7 +1,11 @@
 uuid: 09882158-4347-4129-87bd-ab21d0ee9271
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - oembed_providers.bucket.video
+  module:
+    - oembed_providers
 id: remote_video
 label: 'Remote Video'
 description: ''
@@ -9,10 +13,10 @@ source: 'oembed:video'
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
+  source_field: field_media_oembed_video
   thumbnails_directory: 'public://oembed_thumbnails'
   providers:
     - 'UNL Mediahub'
-  source_field: field_media_oembed_video
 field_map:
   type: m_rv_resource_type
   title: m_rv_resource_title

@@ -23,19 +23,19 @@ bundle: news
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   n_news_canonical_url:
-    weight: 6
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -44,21 +44,19 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 6
     region: content
   n_news_foreign_key:
-    weight: 5
+    type: number_integer
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 5
     region: content
   n_news_image:
     type: responsive_image
-    weight: 1
-    region: content
     label: hidden
     settings:
       responsive_image_style: news_lead_image
@@ -66,20 +64,22 @@ content:
     third_party_settings:
       dcf_lazyload:
         dcf_lazyload_enable: true
+    weight: 1
+    region: content
   n_news_image_credit:
     type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 2
     region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   n_news_image_cutline:
     type: string
-    weight: 3
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden: {  }

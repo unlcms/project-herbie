@@ -11,11 +11,11 @@ bundle: contact_info_fax
 mode: default
 content:
   p_b_cinfo_fax_fax:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden: {  }

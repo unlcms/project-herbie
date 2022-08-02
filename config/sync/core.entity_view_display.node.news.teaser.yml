@@ -22,27 +22,27 @@ bundle: news
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 1
     region: content
   links:
-    weight: 2
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
   n_news_image:
     type: responsive_image
-    weight: 0
-    region: content
     label: hidden
     settings:
       responsive_image_style: news_lead_image
       image_link: content
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   n_news_canonical_url: true
   n_news_foreign_key: true

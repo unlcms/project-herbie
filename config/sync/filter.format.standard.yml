@@ -86,13 +86,13 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_media_types:
-        image: image
-        remote_video: remote_video
       allowed_view_modes:
         narrow: narrow
         remote_video: remote_video
         wide: wide
+      allowed_media_types:
+        image: image
+        remote_video: remote_video
       bundle_view_modes:
         image:
           default_view_mode: narrow

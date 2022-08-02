@@ -29,130 +29,130 @@ bundle: unl_directory_entry
 mode: default
 content:
   ee_unldir_imageurl:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   ee_unldir_knowledge_bio:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 3
     region: content
   ee_unldir_knowledge_courses:
-    weight: 7
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 7
     region: content
   ee_unldir_knowledge_education:
-    weight: 8
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 8
     region: content
   ee_unldir_knowledge_grants:
-    weight: 6
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 6
     region: content
   ee_unldir_knowledge_honors:
-    weight: 9
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 9
     region: content
   ee_unldir_knowledge_papers:
-    weight: 10
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 10
     region: content
   ee_unldir_knowledge_performances:
-    weight: 11
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 11
     region: content
   ee_unldir_knowledgepresentations:
-    weight: 12
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 12
     region: content
   ee_unldir_mail:
-    weight: 13
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 13
     region: content
   ee_unldir_primaryaffiliation:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   ee_unldir_telephonenumber:
-    weight: 14
+    type: telephone_link
     label: hidden
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 14
     region: content
   ee_unldir_title:
-    weight: 15
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 15
     region: content
   ee_unldir_uid:
-    weight: 16
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 16
     region: content
   ee_unldir_unldirectoryaddress:
-    weight: 17
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 17
     region: content
   ee_unldir_unlhrprimarydepartment:
-    weight: 18
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 18
     region: content
   title:
     type: string
     label: hidden
-    region: content
-    weight: 0
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden: {  }

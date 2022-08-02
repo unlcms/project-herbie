@@ -11,11 +11,11 @@ bundle: contact_info_heading
 mode: default
 content:
   p_b_cinfo_heading_heading:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden: {  }

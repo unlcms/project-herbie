@@ -1,8 +1,8 @@
+_core:
+  default_config_hash: OQEHakzIUDx3nWOx2W5M-867WqcYLA_4mWia4mgdaqA
 cdn: true
 minified: true
 theme: default
 language_modes:
   - css
   - htmlmixed
-_core:
-  default_config_hash: OQEHakzIUDx3nWOx2W5M-867WqcYLA_4mWia4mgdaqA

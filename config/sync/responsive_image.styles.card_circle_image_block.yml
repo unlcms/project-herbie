@@ -14,8 +14,6 @@ id: card_circle_image_block
 label: 'Card + Circle Image Block'
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
@@ -27,5 +25,7 @@ image_style_mappings:
         - 1_1_3840x3840
         - 1_1_480x480
         - 1_1_960x960
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: 1_1_3840x3840

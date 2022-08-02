@@ -9,7 +9,6 @@ dependencies:
 format: html_code
 editor: codemirror_editor
 settings:
-  mode: text/html
   toolbar: true
   buttons:
     - enlarge
@@ -19,4 +18,5 @@ settings:
   foldGutter: true
   autoCloseTags: true
   styleActiveLine: true
+  mode: text/html
 image_upload: {  }

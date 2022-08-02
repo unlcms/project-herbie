@@ -11,13 +11,13 @@ bundle: contact_info_email
 mode: default
 content:
   p_b_cinfo_email_email:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: email_default
+    weight: 0
     region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

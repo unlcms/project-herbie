@@ -11,12 +11,12 @@ pattern: '[node:book:parents:join-path]/[node:title]'
 selection_criteria:
   8a2d12b0-c87e-439d-95ca-147d1f476e07:
     id: 'entity_bundle:node'
-    bundles:
-      book: book
     negate: false
+    uuid: 8a2d12b0-c87e-439d-95ca-147d1f476e07
     context_mapping:
       node: node
-    uuid: 8a2d12b0-c87e-439d-95ca-147d1f476e07
+    bundles:
+      book: book
 selection_logic: and
 weight: -5
 relationships: {  }

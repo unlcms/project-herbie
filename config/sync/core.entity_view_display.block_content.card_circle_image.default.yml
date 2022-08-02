@@ -21,14 +21,14 @@ bundle: card_circle_image
 mode: default
 content:
   b_cdcir_body:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   b_cdcir_cta:
-    weight: 4
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -37,18 +37,18 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 4
     region: content
   b_cdcir_headline:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
   b_cdcir_headline_link:
-    weight: 1
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
@@ -57,10 +57,10 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link_separate
+    weight: 1
     region: content
   b_cdcir_image:
-    weight: 3
+    type: responsive_image
     label: hidden
     settings:
       responsive_image_style: card_circle_image_block
@@ -68,6 +68,6 @@ content:
     third_party_settings:
       dcf_lazyload:
         dcf_lazyload_enable: true
-    type: responsive_image
+    weight: 3
     region: content
 hidden: {  }

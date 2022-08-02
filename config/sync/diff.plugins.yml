@@ -56,9 +56,9 @@ fields:
     uid:
       type: entity_reference_field_diff_builder
       settings:
-        compare_entity_reference: 1
         show_header: 1
         markdown: drupal_html_to_text
+        compare_entity_reference: 1
     title:
       type: core_field_diff_builder
       settings:

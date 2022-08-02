@@ -1,5 +1,5 @@
 diff --git a/core/modules/book/book.install b/core/modules/book/book.install
-index 7704483365..d0e43d3e79 100644
+index 7704483..d0e43d3 100644
 --- a/core/modules/book/book.install
 +++ b/core/modules/book/book.install
 @@ -133,3 +133,19 @@ function book_schema() {
@@ -23,7 +23,7 @@ index 7704483365..d0e43d3e79 100644
 +  }
 +}
 diff --git a/core/modules/book/book.module b/core/modules/book/book.module
-index 8bb1bb38a5..0a4afc3a0c 100644
+index bc3e770..f3e827b 100644
 --- a/core/modules/book/book.module
 +++ b/core/modules/book/book.module
 @@ -5,7 +5,9 @@
@@ -64,9 +64,9 @@ index 8bb1bb38a5..0a4afc3a0c 100644
 +  if ($access_return instanceof AccessResultAllowed) {
      $collapsed = !($node->isNew() && !empty($node->book['pid']));
      $form = \Drupal::service('book.manager')->addFormElements($form, $form_state, $node, $account, $collapsed);
-     // The "js-hide" class hides submit button when Javascript is enabled.
+     // The "js-hide" class hides submit button when JavaScript is enabled.
 diff --git a/core/modules/book/book.permissions.yml b/core/modules/book/book.permissions.yml
-index e3ec489f0c..184385e515 100644
+index e3ec489..184385e 100644
 --- a/core/modules/book/book.permissions.yml
 +++ b/core/modules/book/book.permissions.yml
 @@ -3,7 +3,10 @@ administer book outlines:
@@ -82,7 +82,7 @@ index e3ec489f0c..184385e515 100644
    title: 'View printer-friendly books'
    description: 'View a book page and all of its sub-pages as a single document for ease of printing. Can be performance heavy.'
 diff --git a/core/modules/book/book.routing.yml b/core/modules/book/book.routing.yml
-index 772a6cf391..979177d8d6 100644
+index 0a4b783..29329f7 100644
 --- a/core/modules/book/book.routing.yml
 +++ b/core/modules/book/book.routing.yml
 @@ -37,8 +37,8 @@ entity.node.book_outline_form:
@@ -105,7 +105,7 @@ index 772a6cf391..979177d8d6 100644
      _access_book_removable: 'TRUE'
      node: \d+
 diff --git a/core/modules/book/book.services.yml b/core/modules/book/book.services.yml
-index 740252e85b..5a8612edc3 100644
+index ab23275..f7f3af7 100644
 --- a/core/modules/book/book.services.yml
 +++ b/core/modules/book/book.services.yml
 @@ -23,6 +23,11 @@ services:
@@ -119,10 +119,10 @@ index 740252e85b..5a8612edc3 100644
 +      - { name: access_check, applies_to: _access_node_book_outline }
    cache_context.route.book_navigation:
      class: Drupal\book\Cache\BookNavigationCacheContext
-     arguments: ['@request_stack']
+     arguments: ['@current_route_match']
 diff --git a/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
 new file mode 100644
-index 0000000000..453cc3e10c
+index 0000000..453cc3e
 --- /dev/null
 +++ b/core/modules/book/src/Access/BookNodeOutlineAccessCheck.php
 @@ -0,0 +1,66 @@
@@ -193,10 +193,10 @@ index 0000000000..453cc3e10c
 +
 +}
 diff --git a/core/modules/book/src/Form/BookSettingsForm.php b/core/modules/book/src/Form/BookSettingsForm.php
-index 3189ef519e..e83b725b0e 100644
+index 3a92ba9..485b3cd 100644
 --- a/core/modules/book/src/Form/BookSettingsForm.php
 +++ b/core/modules/book/src/Form/BookSettingsForm.php
-@@ -37,7 +37,7 @@ class BookSettingsForm extends ConfigFormBase {
+@@ -37,7 +37,7 @@ public function buildForm(array $form, FormStateInterface $form_state) {
        '#title' => $this->t('Content types allowed in book outlines'),
        '#default_value' => $config->get('allowed_types'),
        '#options' => $types,
@@ -206,10 +206,10 @@ index 3189ef519e..e83b725b0e 100644
      ];
      $form['book_child_type'] = [
 diff --git a/core/modules/book/tests/src/Functional/BookTest.php b/core/modules/book/tests/src/Functional/BookTest.php
-index b57773c805..81fd75727c 100644
+index fb75908..3bb168b 100644
 --- a/core/modules/book/tests/src/Functional/BookTest.php
 +++ b/core/modules/book/tests/src/Functional/BookTest.php
-@@ -56,6 +56,7 @@ protected function setUp() {
+@@ -62,6 +62,7 @@ protected function setUp(): void {
      parent::setUp();
      $this->drupalPlaceBlock('system_breadcrumb_block');
      $this->drupalPlaceBlock('page_title_block');
@@ -217,7 +217,7 @@ index b57773c805..81fd75727c 100644
  
      // node_access_test requires a node_access_rebuild().
      node_access_rebuild();
-@@ -80,6 +81,7 @@ protected function setUp() {
+@@ -87,6 +88,7 @@ protected function setUp(): void {
        'edit any book content',
        'delete any book content',
        'add content to books',
@@ -225,10 +225,10 @@ index b57773c805..81fd75727c 100644
        'administer blocks',
        'administer permissions',
        'administer book outlines',
-@@ -470,6 +472,52 @@ public function testBookOutline() {
+@@ -525,6 +527,53 @@ public function testBookOutline() {
      // Test the form itself.
      $this->drupalGet('node/' . $node->id() . '/edit');
-     $this->assertOptionSelected('edit-book-bid', $node->id());
+     $this->assertTrue($this->assertSession()->optionExists('edit-book-bid', $node->id())->isSelected());
 +
 +    // Create a new node that is not of book type.
 +    $this->drupalLogin($this->adminUser);
@@ -245,19 +245,19 @@ index b57773c805..81fd75727c 100644
 +
 +    // Admin user has edit book field on all nodes.
 +    $this->drupalGet('node/' . $non_book_node->id() . '/edit');
-+    $this->assertFieldById('edit-book-bid');
++    $this->assertSession()->fieldExists('edit-book-bid');
 +    // Admin user has access to outline path on all nodes.
-+    $this->assertLinkByHref('node/' . $non_book_node->id() . '/outline');
++    $this->assertSession()->linkByHrefExists('node/' . $non_book_node->id() . '/outline');
 +
 +    // Book author user only has edit book field on allowed book type nodes.
 +    $this->drupalLogin($this->bookAuthor);
 +    $this->drupalGet('node/' . $non_book_node->id() . '/edit');
-+    $this->assertNoFieldById('edit-book-bid');
++    $this->assertSession()->fieldNotExists('edit-book-bid');
 +    // Book author user only has outline access on allowed book type nodes.
-+    $this->assertNoLinkByHref('node/' . $non_book_node->id() . '/outline');
++    $this->assertSession()->linkByHrefNotExists('node/' . $non_book_node->id() . '/outline');
 +
-+    // Update bookAuthor permissions to edit page content type
 +    // and view test nodes.
++    // Update bookAuthor permissions to edit page content type
 +    $this->bookAuthor = $this->drupalCreateUser([
 +      'create new books',
 +      'create book content',
@@ -274,7 +274,18 @@ index b57773c805..81fd75727c 100644
 +    $this->assertText('This is the top-level page in this book');
 +    // Book author user has access to outline path if a node is already in
 +    // an outline already.
-+    $this->assertLinkByHref('node/' . $non_book_node_in_outline->id() . '/outline');
++    $this->assertSession()->linkByHrefExists('node/' . $non_book_node_in_outline->id() . '/outline');
++
    }
  
    /**
+@@ -540,7 +589,8 @@ public function testSaveBookLink() {
+     // Save the link.
+     $return = $book_manager->saveBookLink($link, $new);
+ 
+-    // Add the link defaults to $link so we have something to compare to the return from saveBookLink().
++    // Add the link defaults to $link so we have something
++    // to compare to the return from saveBookLink().
+     $link = $book_manager->getLinkDefaults($link['nid']);
+ 
+     // Test the return from saveBookLink.

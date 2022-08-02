@@ -5,6 +5,21 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.m_rv_author_name
+    - field.field.media.remote_video.m_rv_author_url
+    - field.field.media.remote_video.m_rv_default_name
+    - field.field.media.remote_video.m_rv_html_representation
+    - field.field.media.remote_video.m_rv_provider_name
+    - field.field.media.remote_video.m_rv_provider_url
+    - field.field.media.remote_video.m_rv_resource_title
+    - field.field.media.remote_video.m_rv_resource_type
+    - field.field.media.remote_video.m_rv_source_url
+    - field.field.media.remote_video.m_rv_suggested_cache_lifetime
+    - field.field.media.remote_video.m_rv_thumbnail_height
+    - field.field.media.remote_video.m_rv_thumbnail_local_uri
+    - field.field.media.remote_video.m_rv_thumbnail_width
+    - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_width
     - image.style.medium
     - media.type.remote_video
   module:
@@ -18,10 +33,12 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: medium
       image_link: ''
-    weight: 0
+      image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true

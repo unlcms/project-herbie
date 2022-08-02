@@ -15,6 +15,7 @@ content:
   b_cinfo_contact_point:
     type: entity_reference_paragraphs
     weight: 27
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -23,7 +24,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
   info:
     type: string_textfield
     weight: -5

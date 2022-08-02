@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.file.field_media_file
+    - field.field.media.file.s_m_file_size
+    - field.field.media.file.s_m_mime_type
     - image.style.medium
     - media.type.file
   module:
@@ -18,10 +20,12 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: medium
       image_link: ''
-    weight: 0
+      image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true
