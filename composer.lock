@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f52ed97da9623a2219e7e4551185a67b",
+    "content-hash": "1f0fb248ab27b772674db5fed807de30",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10546,21 +10546,20 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "f48434a04c44be5802c835830594e88075138707"
+                "reference": "15ac5f78387bf6647630bf9c6f2ec2834b61b139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/f48434a04c44be5802c835830594e88075138707",
-                "reference": "f48434a04c44be5802c835830594e88075138707",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/15ac5f78387bf6647630bf9c6f2ec2834b61b139",
+                "reference": "15ac5f78387bf6647630bf9c6f2ec2834b61b139",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "unlcms/unl_user": "^1.0"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -10571,12 +10570,12 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "login.unl.edu integration",
+            "description": "CAS integration for UNL",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/1.2.0"
+                "source": "https://github.com/unlcms/unl_cas/tree/1.3.0"
             },
-            "time": "2020-11-09T22:06:01+00:00"
+            "time": "2022-08-03T21:27:58+00:00"
         },
         {
             "name": "unlcms/unl_dcf",
@@ -10689,16 +10688,16 @@
         },
         {
             "name": "unlcms/unl_user",
-            "version": "1.0.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_user.git",
-                "reference": "55a4e2a1fc88237f538613f252b1cd298be6eabd"
+                "reference": "cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/55a4e2a1fc88237f538613f252b1cd298be6eabd",
-                "reference": "55a4e2a1fc88237f538613f252b1cd298be6eabd",
+                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d",
+                "reference": "cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d",
                 "shasum": ""
             },
             "require": {
@@ -10709,17 +10708,22 @@
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                },
+                {
                     "name": "Michael Fairchild (mfairchild365)",
                     "homepage": "https://www.drupal.org/u/mfairchild365",
-                    "role": "Maintainer"
+                    "role": "Creator"
                 }
             ],
-            "description": "UNL User data integration",
+            "description": "Populate user data with values from LDAP & allow searching for users to add.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_user/issues",
-                "source": "https://github.com/unlcms/unl_user/tree/8.x-1.x"
+                "source": "https://github.com/unlcms/unl_user/tree/1.1"
             },
-            "time": "2020-04-15T20:32:49+00:00"
+            "time": "2022-08-03T19:41:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
