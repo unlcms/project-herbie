@@ -36,34 +36,32 @@ The [unl_five](https://github.com/unlcms/unl_five) theme requires the [UNLedu We
 
 There are two methods to install the UNLedu Web Framework:
 
-1. automated
-2. manual
+1. Automated
+2. Manual
 
 ### Automated
 
-The unl/wdntemplates package is already downloaded to /vendor/unl/wdntemplates. Run the following command:
+The unl/wdntemplates package is already downloaded to `/vendor/unl/wdntemplates`. Run the following command:
 
 ```
 composer install-wdn
 ```
 
-This command will create a symlink of /vendor/unl/wdntemplates/wdn at /web/wdn.
+This command will create a symlink of `/vendor/unl/wdntemplates/wdn` at `/web/wdn`.
 
 The wdntemplates package is a Node.js project that uses Grunt. This command will also install the Node.js project and run the default Grunt task.
 
-To receive upstream updates, navigate to /vendor/wdn and run `git pull`.
+To receive upstream updates, navigate to `/vendor/wdn` and run `git pull`.
 
 ### Manual
 
-Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip) to `/web/wdn`
+Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip) to `/web/wdn`.
 
 ## Install Drupal
 
 Copy `web/sites/default/default.settings.php` to `web/sites/default/settings.php`
 
-Navigate to `http://example.unl.edu/project-herbie/web` in your browser.
-
-See [Installing Drupal](https://www.drupal.org/docs/installing-drupal)
+Navigate to `http://example.unl.edu/project-herbie/web` in your browser. (See [Installing Drupal](https://www.drupal.org/docs/installing-drupal).)
 
 When asked to select an Installation Profile, select "Use existing configuration".
 
@@ -75,23 +73,32 @@ In the development config split, a number of settings are enabled, disabled, or 
 
 ## (Optional) Running multisite
 
-The unl_multisite module allows additional sites to be run from subdirectories such as http://example.unl.edu/site2. This is not required to run the base site installation.
+The [unl_multisite module](https://github.com/unlcms/unl_multisite) provides a web interface to run a [Drupal multisite](https://www.drupal.org/docs/multisite-drupal) setup so additional sites can exist in subdirectories such as http://example.unl.edu/site2. (This is not required to run the base site installation as a single site.)
+
+Much of the setup that is detailed in the unl_multisite module's README file has been done in this project with Composer scripts. The following is what needs to be done manually.
+
+1. Create these files from the provided samples:
 
 ```
 cp web/sites/example.sites.php web/sites/sites.php
 cp web/.htaccess-subsite-map.txt.sample web/.htaccess-subsite-map.txt
 ```
 
-Add the following line to your Apache's configuration file (httpd.conf) where <DRUPAL_ROOT> is the file system path to the Drupal web root. Restart Apache afterward.
+2. Add the following line to your Apache's configuration file (httpd.conf) where <DRUPAL_ROOT> is the file system path to the Drupal web root. Restart Apache afterward.
 
 ```
 RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 ```
 
-Set up a cron job on the server to execute `php web/modules/contrib/unl_multisite/cron.php` on a regular basis.
+3. Set up a cron job on the server to execute `php web/modules/contrib/unl_multisite/cron.php` on a regular basis.
 
-Enable the UNL Multisite module on the default site. It should only be enabled on the default site.
+4. Ensure the MySQL/MariaDB database user for the default site has privileges to create new databases.
 
+5. Enable the UNL Multisite module on the default site. It should only be enabled on the default site.
+
+## Troubleshooting
+
+- Drush and MariaDB 10.7+ don't work with a database port set if the host is localhost. If you are using localhost for the host, clear the port setting in settings.php.
 
 ## D9 todo:
 
