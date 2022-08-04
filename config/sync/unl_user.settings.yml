@@ -1,0 +1,4 @@
+uri: 'ldaps://unl.edu/'
+dn: 'cn=its-cms,ou=service,dc=unl,dc=edu'
+password: XXX
+username_format: myunl
