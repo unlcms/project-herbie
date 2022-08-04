@@ -21,7 +21,6 @@ dependencies:
     - book
     - codemirror_editor
     - config
-    - config_inspector
     - config_split
     - contextual
     - crop
@@ -57,7 +56,6 @@ dependencies:
     - twig_ui
     - unl_breadcrumbs
     - unl_news
-    - update
     - views_ui
     - webform
     - webform_submission_log
@@ -223,7 +221,6 @@ permissions:
   - 'edit webform twig'
   - 'export configuration'
   - 'import configuration'
-  - 'inspect configuration'
   - 'link to any page'
   - 'load twig templates from file system'
   - 'manage layout builder component attributes'
@@ -266,4 +263,3 @@ permissions:
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'
   - 'view unpublished paragraphs'
-  - 'view update notifications'
