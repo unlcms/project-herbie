@@ -115,7 +115,7 @@ if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
 
   $memory_limit = return_bytes(ini_get('memory_limit'));
   if ($memory_limit < (256 * 1024 * 1024)) {
-    ini_set('memory_limit', '256M');
+    ini_set('memory_limit', '512M');
   }
 }
 
