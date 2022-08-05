@@ -96,7 +96,7 @@ RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 
 5. Enable the UNL Multisite module on the default site. It should only be enabled on the default site.
 
-## Troubleshooting
+### Multisite Troubleshooting
 
 - Drush and MariaDB 10.7+ don't work with a database port set if the host is localhost. If you are using localhost for the host, clear the port setting in settings.php.
 
