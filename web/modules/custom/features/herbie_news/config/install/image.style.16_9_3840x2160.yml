@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_3840x2160
+label: '16:9 (3840x2160)'
+effects:
+  e9d3b781-8a2a-41f7-9c1b-f820e7d0e4db:
+    uuid: e9d3b781-8a2a-41f7-9c1b-f820e7d0e4db
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3840
+      height: 2160
+      anchor: center-center

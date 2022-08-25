@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.news
+_core:
+  default_config_hash: QwVmRvIL8alskCN88ie0PLN3ADb46UFn5aaAT1XEoHE
 id: delete_news_revisions
 label: 'delete news revisions'
 roles:

@@ -2,6 +2,8 @@ uuid: e5aa3e5d-4872-4a60-98f7-8be1fb4bd079
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: LD5Q0KYvavqq6TTveEPfKwZmnXvqK6ycw5BPnjZbMMQ
 name: 16_9_960x540
 label: '16:9 (960x540)'
 effects:

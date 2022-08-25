@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: edit_any_news_content
+label: 'edit any news content'
+roles:
+  - administrator
+  - editor

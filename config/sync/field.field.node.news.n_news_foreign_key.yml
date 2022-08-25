@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.n_news_foreign_key
     - node.type.news
+_core:
+  default_config_hash: USKwTaXsVt0T6wWPXhd9cPe_klVSKtdcu4k4b7chh8Q
 id: node.news.n_news_foreign_key
 field_name: n_news_foreign_key
 entity_type: node

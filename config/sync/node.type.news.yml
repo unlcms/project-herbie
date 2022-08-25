@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: pgaVVynovhmGEh0cbHLy9vWj47-u7cO5XYBGUPrTBcc
 name: 'News item'
 type: news
 description: 'A timely update, notice, or general news item.'

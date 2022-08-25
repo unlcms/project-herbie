@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: xYUhKqP44tv1gGWI8ys_QkIQtypbi_u2sXkRiyIJrgg
 id: node.n_news_image_credit
 field_name: n_news_image_credit
 entity_type: node

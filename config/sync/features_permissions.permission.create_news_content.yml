@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.news
+_core:
+  default_config_hash: WmyR5vGpNjTeemiFPoAr9MeoOiAyNuSlVuJP3w6exx0
 id: create_news_content
 label: 'create news content'
 roles:

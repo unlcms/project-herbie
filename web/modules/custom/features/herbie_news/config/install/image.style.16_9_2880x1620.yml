@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_2880x1620
+label: '16:9 (2880x1620)'
+effects:
+  de4c1a33-31f4-4a07-a28e-12903ae26bc4:
+    uuid: de4c1a33-31f4-4a07-a28e-12903ae26bc4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2880
+      height: 1620
+      anchor: center-center

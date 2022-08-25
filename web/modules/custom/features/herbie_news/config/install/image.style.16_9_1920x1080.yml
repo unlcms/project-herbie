@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_1920x1080
+label: '16:9 (1920x1080)'
+effects:
+  b9de540f-10c3-4b8d-bcd7-81be5b9310d3:
+    uuid: b9de540f-10c3-4b8d-bcd7-81be5b9310d3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center

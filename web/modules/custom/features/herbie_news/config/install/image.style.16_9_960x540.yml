@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_960x540
+label: '16:9 (960x540)'
+effects:
+  75e675b2-ae39-4762-8a2b-0f74ecf143ce:
+    uuid: 75e675b2-ae39-4762-8a2b-0f74ecf143ce
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 540
+      anchor: center-center

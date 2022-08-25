@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: n-HwqDVBnbt4gl4agCdH0hEFck7xpMUWO-KY1nNak7k
 id: node.n_news_canonical_url
 field_name: n_news_canonical_url
 entity_type: node

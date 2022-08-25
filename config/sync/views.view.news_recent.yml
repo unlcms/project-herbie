@@ -11,6 +11,8 @@ dependencies:
     - node
     - responsive_image
     - user
+_core:
+  default_config_hash: Mx25vleYwLMRQcC7gl6G_Pm7MJWoZjhfgDtD9Nfb5QI
 id: news_recent
 label: 'Recent News'
 module: views

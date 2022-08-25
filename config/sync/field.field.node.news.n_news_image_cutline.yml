@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.n_news_image_cutline
     - node.type.news
+_core:
+  default_config_hash: Zb-q-NZxSMX12H4CaaJd5yQ_8IXXQbNyl9v8W5646Xg
 id: node.news.n_news_image_cutline
 field_name: n_news_image_cutline
 entity_type: node

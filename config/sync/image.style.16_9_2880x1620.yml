@@ -2,6 +2,8 @@ uuid: cfc155a1-9599-4a13-ac80-b7e87c2b83aa
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: '-nIBSccgw9P9mJFMaXA0zYJReYRaTN6i8oBId39qt4c'
 name: 16_9_2880x1620
 label: '16:9 (2880x1620)'
 effects:

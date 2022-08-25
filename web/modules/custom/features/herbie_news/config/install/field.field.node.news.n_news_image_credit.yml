@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_image_credit
+    - node.type.news
+id: node.news.n_news_image_credit
+field_name: n_news_image_credit
+entity_type: node
+bundle: news
+label: 'Lead image credit'
+description: 'A credit line for the <em>Lead image</em>. E.g "Herbie Husker | University Communication".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

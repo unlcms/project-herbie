@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - standard
+_core:
+  default_config_hash: PXCrWot7Q0vI5BQwG7it7AO4oPavY2HlUjS_-5-R718
 id: node.news.body
 field_name: body
 entity_type: node

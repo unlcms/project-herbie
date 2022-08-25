@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: VmBmNIJZI_H76zQrOaiAfW5W070h0JQ5-U4WlC1KHCA
 id: node.n_news_foreign_key
 field_name: n_news_foreign_key
 entity_type: node

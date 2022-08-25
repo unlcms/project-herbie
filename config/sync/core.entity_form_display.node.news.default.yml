@@ -50,6 +50,8 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: 0
+_core:
+  default_config_hash: 1ig1LirCP7SSPd3fkZI2D2HXOP8rAZ5yXh9M14xIdIY
 id: node.news.default
 targetEntityType: node
 bundle: news

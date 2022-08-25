@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: administer_unl_news
+label: 'administer unl news'
+roles:
+  - administrator

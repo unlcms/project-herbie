@@ -10,6 +10,8 @@ dependencies:
     - image.style.16_9_3840x2160
     - image.style.16_9_480x270
     - image.style.16_9_960x540
+_core:
+  default_config_hash: TNw8WyUva5Dkcy-5mAPkRrL8C2kvyAMywB5yk7yZrwI
 id: news_lead_image
 label: 'News Lead Image'
 image_style_mappings:

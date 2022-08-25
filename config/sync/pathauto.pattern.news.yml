@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: SVJQ-y0pvh1lQRqUtVzIOGVw-z7lbg5_caBPxFi6BqM
 id: news
 label: News
 type: 'canonical_entities:node'

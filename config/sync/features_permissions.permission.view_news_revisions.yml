@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.news
+_core:
+  default_config_hash: OAHphdxrj37ax09iS5FdNOer5gMbl5b9n7Sv9gVZyPw
 id: view_news_revisions
 label: 'view news revisions'
 roles:

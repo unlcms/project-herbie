@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: delete_news_revisions
+label: 'delete news revisions'
+roles:
+  - administrator
+  - editor

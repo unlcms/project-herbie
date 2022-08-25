@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: create_news_content
+label: 'create news content'
+roles:
+  - administrator
+  - editor

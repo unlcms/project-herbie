@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Hv5dy9jk2BQNyZxLLRzMhixTTkDA-AqRHyXfYrvwD3M
 id: node.n_news_image_cutline
 field_name: n_news_image_cutline
 entity_type: node

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.n_news_image_credit
     - node.type.news
+_core:
+  default_config_hash: eIflxwsNO6-EOpaytdFcyOFVi_6R_UYQ1xc89945IFI
 id: node.news.n_news_image_credit
 field_name: n_news_image_credit
 entity_type: node

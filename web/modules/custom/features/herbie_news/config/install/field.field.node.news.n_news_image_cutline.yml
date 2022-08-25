@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_image_cutline
+    - node.type.news
+id: node.news.n_news_image_cutline
+field_name: n_news_image_cutline
+entity_type: node
+bundle: news
+label: 'Lead image cutline'
+description: 'A caption or description for the <em>Lead image</em>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
