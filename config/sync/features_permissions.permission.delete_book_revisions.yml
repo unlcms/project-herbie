@@ -1,0 +1,10 @@
+uuid: d788870b-9508-44d9-adcf-c58936c12d94
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: delete_book_revisions
+label: 'delete book revisions'
+roles:
+  - editor

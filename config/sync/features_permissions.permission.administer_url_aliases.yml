@@ -1,0 +1,8 @@
+uuid: 62778760-c903-43e7-aab4-49f3bfb62c16
+langcode: en
+status: true
+dependencies: {  }
+id: administer_url_aliases
+label: 'administer url aliases'
+roles:
+  - administrator

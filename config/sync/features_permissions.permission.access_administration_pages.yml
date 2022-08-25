@@ -1,0 +1,9 @@
+uuid: e6339e20-cd7f-4609-8fc6-99fb7640c9c1
+langcode: en
+status: true
+dependencies: {  }
+id: access_administration_pages
+label: 'access administration pages'
+roles:
+  - administrator
+  - editor

@@ -1,0 +1,9 @@
+uuid: 5dea52d1-26b4-4c7c-a5bc-b6b5bd47b7d5
+langcode: en
+status: true
+dependencies: {  }
+id: view_own_unpublished_media
+label: 'view own unpublished media'
+roles:
+  - administrator
+  - editor

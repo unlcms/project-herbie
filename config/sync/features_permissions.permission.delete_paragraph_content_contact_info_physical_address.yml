@@ -1,0 +1,8 @@
+uuid: 2460efe1-73e8-4384-a58f-8edc0ed4a8d6
+langcode: en
+status: true
+dependencies: {  }
+id: delete_paragraph_content_contact_info_physical_address
+label: 'delete paragraph content contact_info_physical_address'
+roles:
+  - editor

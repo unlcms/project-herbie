@@ -1,0 +1,10 @@
+uuid: a8ef6f52-74d4-445e-b4cc-e3190c500633
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: edit_own_builder_page_content
+label: 'edit own builder_page content'
+roles:
+  - administrator

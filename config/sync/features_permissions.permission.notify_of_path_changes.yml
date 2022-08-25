@@ -1,0 +1,8 @@
+uuid: 6eab81a5-e23d-44a6-9125-bd673bee09b9
+langcode: en
+status: true
+dependencies: {  }
+id: notify_of_path_changes
+label: 'notify of path changes'
+roles:
+  - administrator

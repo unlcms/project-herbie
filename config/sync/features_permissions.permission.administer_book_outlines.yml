@@ -1,0 +1,9 @@
+uuid: e38905b7-4320-418e-9efe-cbff19b51e74
+langcode: en
+status: true
+dependencies: {  }
+id: administer_book_outlines
+label: 'administer book outlines'
+roles:
+  - administrator
+  - editor

@@ -1,0 +1,8 @@
+uuid: ed0ae72a-2caa-4782-b915-ae66fcf4aad8
+langcode: en
+status: true
+dependencies: {  }
+id: administer_permissions
+label: 'administer permissions'
+roles:
+  - administrator

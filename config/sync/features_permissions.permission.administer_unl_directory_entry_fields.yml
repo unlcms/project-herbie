@@ -1,0 +1,10 @@
+uuid: 99fddaef-cf93-4b9e-9e6f-9714826a044d
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: administer_unl_directory_entry_fields
+label: 'administer unl_directory_entry fields'
+roles:
+  - administrator

@@ -1,0 +1,8 @@
+uuid: 5674603c-3f59-4969-9d23-1a3e0ef24ef2
+langcode: en
+status: true
+dependencies: {  }
+id: delete_paragraph_content_contact_info_fax
+label: 'delete paragraph content contact_info_fax'
+roles:
+  - editor

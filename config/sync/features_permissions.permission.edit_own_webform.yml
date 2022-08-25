@@ -1,0 +1,9 @@
+uuid: c43a9b84-f75e-49b0-ad28-ee659ebb3193
+langcode: en
+status: true
+dependencies: {  }
+id: edit_own_webform
+label: 'edit own webform'
+roles:
+  - administrator
+  - authenticated

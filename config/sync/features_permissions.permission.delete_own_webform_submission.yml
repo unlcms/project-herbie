@@ -1,0 +1,8 @@
+uuid: 1cd90769-c908-42ea-b61c-37bb044db5f7
+langcode: en
+status: true
+dependencies: {  }
+id: delete_own_webform_submission
+label: 'delete own webform submission'
+roles:
+  - administrator

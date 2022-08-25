@@ -1,0 +1,8 @@
+uuid: d49ade42-f126-4796-ad1e-751a75ffd1f5
+langcode: en
+status: true
+dependencies: {  }
+id: delete_paragraph_content_contact_info_phone
+label: 'delete paragraph content contact_info_phone'
+roles:
+  - editor

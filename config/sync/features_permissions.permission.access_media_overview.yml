@@ -1,0 +1,9 @@
+uuid: ea45251f-9b79-4555-812c-97a1780ad7ed
+langcode: en
+status: true
+dependencies: {  }
+id: access_media_overview
+label: 'access media overview'
+roles:
+  - administrator
+  - editor

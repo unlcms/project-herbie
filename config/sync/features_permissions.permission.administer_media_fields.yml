@@ -1,0 +1,10 @@
+uuid: a16ede5f-7680-49d1-8808-c4c628426875
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: administer_media_fields
+label: 'administer media fields'
+roles:
+  - administrator

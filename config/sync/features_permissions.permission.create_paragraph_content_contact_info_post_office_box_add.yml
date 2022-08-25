@@ -1,0 +1,8 @@
+uuid: 32380e60-7e2a-429e-8aa0-d6b625810f2c
+langcode: en
+status: true
+dependencies: {  }
+id: create_paragraph_content_contact_info_post_office_box_add
+label: 'create paragraph content contact_info_post_office_box_add'
+roles:
+  - editor

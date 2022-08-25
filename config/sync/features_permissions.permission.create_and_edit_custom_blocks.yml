@@ -1,0 +1,9 @@
+uuid: 2b2625b0-f9a1-4d5b-bbbf-e7edd630a217
+langcode: en
+status: true
+dependencies: {  }
+id: create_and_edit_custom_blocks
+label: 'create and edit custom blocks'
+roles:
+  - administrator
+  - editor

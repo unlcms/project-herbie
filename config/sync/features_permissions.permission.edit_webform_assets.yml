@@ -1,0 +1,8 @@
+uuid: 81a8049b-c442-4ed8-9320-192e58ff74f9
+langcode: en
+status: true
+dependencies: {  }
+id: edit_webform_assets
+label: 'edit webform assets'
+roles:
+  - administrator

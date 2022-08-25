@@ -1,0 +1,8 @@
+uuid: 4a555a66-361d-4118-b153-0e2fa6c545fb
+langcode: en
+status: true
+dependencies: {  }
+id: administer_display_modes
+label: 'administer display modes'
+roles:
+  - administrator

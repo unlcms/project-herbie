@@ -1,0 +1,8 @@
+uuid: ce756bd8-743e-4903-a476-05c3aa9d5564
+langcode: en
+status: true
+dependencies: {  }
+id: administer_unl_breadcrumbs
+label: 'administer unl breadcrumbs'
+roles:
+  - administrator

@@ -1,0 +1,8 @@
+uuid: dc8b43f3-c22f-4411-b741-a8a02c65b451
+langcode: en
+status: true
+dependencies: {  }
+id: administer_unl_news
+label: 'administer unl news'
+roles:
+  - administrator

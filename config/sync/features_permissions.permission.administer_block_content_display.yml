@@ -1,0 +1,10 @@
+uuid: fd77113d-d2c4-4d8d-83d2-57991a4c6119
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: administer_block_content_display
+label: 'administer block_content display'
+roles:
+  - administrator

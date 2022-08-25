@@ -1,0 +1,8 @@
+uuid: 22bb38cb-d90c-4894-8fc7-5c51f007245c
+langcode: en
+status: true
+dependencies: {  }
+id: view_unl_directory_entry_external_entity
+label: 'view unl_directory_entry external entity'
+roles:
+  - administrator

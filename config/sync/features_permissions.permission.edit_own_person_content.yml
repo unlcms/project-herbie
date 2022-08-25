@@ -1,0 +1,11 @@
+uuid: 9dfaba28-da8e-4e3c-a6e9-47fe7fa16a4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: edit_own_person_content
+label: 'edit own person content'
+roles:
+  - administrator
+  - editor

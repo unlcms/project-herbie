@@ -1,0 +1,9 @@
+uuid: 4b75a042-f1f6-42c8-b8a3-ec7c7f710e1a
+langcode: en
+status: true
+dependencies: {  }
+id: delete_any_html_code_block_content
+label: 'delete any html_code block content'
+roles:
+  - administrator
+  - coder

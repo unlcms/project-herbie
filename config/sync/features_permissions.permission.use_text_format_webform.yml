@@ -1,0 +1,11 @@
+uuid: 71608572-8443-46d4-999a-e08cf39185e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.webform
+id: use_text_format_webform
+label: 'use text format webform'
+roles:
+  - administrator
+  - authenticated

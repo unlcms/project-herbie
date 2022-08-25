@@ -1,0 +1,9 @@
+uuid: a03c7028-3dd1-44b7-b0a5-ca55ac0cc9fa
+langcode: en
+status: true
+dependencies: {  }
+id: bypass_honeypot_protection
+label: 'bypass honeypot protection'
+roles:
+  - administrator
+  - authenticated

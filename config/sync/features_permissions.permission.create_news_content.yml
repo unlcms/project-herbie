@@ -1,0 +1,11 @@
+uuid: 4d18da34-28a6-454a-9206-1a0abad6bdf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: create_news_content
+label: 'create news content'
+roles:
+  - administrator
+  - editor

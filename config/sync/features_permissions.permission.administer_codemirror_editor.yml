@@ -1,0 +1,8 @@
+uuid: 0d28c3ab-fa80-40c5-818e-fbcc5bfefe73
+langcode: en
+status: true
+dependencies: {  }
+id: administer_codemirror_editor
+label: 'administer codemirror editor'
+roles:
+  - administrator

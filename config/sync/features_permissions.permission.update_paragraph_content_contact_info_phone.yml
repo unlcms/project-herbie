@@ -1,0 +1,8 @@
+uuid: 2dea38c1-bfa0-41cc-8333-30290ca62eb3
+langcode: en
+status: true
+dependencies: {  }
+id: update_paragraph_content_contact_info_phone
+label: 'update paragraph content contact_info_phone'
+roles:
+  - editor

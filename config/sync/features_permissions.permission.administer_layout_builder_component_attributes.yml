@@ -1,0 +1,8 @@
+uuid: ae344549-b5dc-4e66-abe1-d5fec41c1e57
+langcode: en
+status: true
+dependencies: {  }
+id: administer_layout_builder_component_attributes
+label: 'administer layout builder component attributes'
+roles:
+  - administrator

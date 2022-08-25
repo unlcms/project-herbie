@@ -1,0 +1,10 @@
+uuid: 594b7d46-3f88-417b-bb8a-af0952d22ec9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+id: configure_all_builder_page_node_layout_overrides
+label: 'configure all builder_page node layout overrides'
+roles:
+  - administrator

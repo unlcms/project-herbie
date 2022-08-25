@@ -1,0 +1,10 @@
+uuid: 6a6a4671-5533-4a02-9fc5-e3555203a338
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: view_book_revisions
+label: 'view book revisions'
+roles:
+  - editor

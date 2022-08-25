@@ -1,0 +1,9 @@
+uuid: 15e10633-942f-4836-b963-a1049a62b9f1
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_content_block_content
+label: 'update any content block content'
+roles:
+  - administrator
+  - editor

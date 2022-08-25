@@ -1,0 +1,8 @@
+uuid: 77ec78cf-2243-4dd0-9fc7-e73f6d57da4c
+langcode: en
+status: true
+dependencies: {  }
+id: access_own_webform_configuration
+label: 'access own webform configuration'
+roles:
+  - administrator

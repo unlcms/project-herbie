@@ -1,0 +1,11 @@
+uuid: 65006367-3feb-4ee2-ae59-4267c6c0fde0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: delete_person_revisions
+label: 'delete person revisions'
+roles:
+  - administrator
+  - editor

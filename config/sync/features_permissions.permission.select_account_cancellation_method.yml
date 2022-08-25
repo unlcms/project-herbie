@@ -1,0 +1,8 @@
+uuid: 143938a4-89b2-47f4-9f33-82530df33e1f
+langcode: en
+status: true
+dependencies: {  }
+id: select_account_cancellation_method
+label: 'select account cancellation method'
+roles:
+  - administrator

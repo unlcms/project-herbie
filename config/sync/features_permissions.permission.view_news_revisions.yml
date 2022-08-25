@@ -1,0 +1,11 @@
+uuid: 7ed02ccd-0872-4b62-874c-38a81ad9bdd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: view_news_revisions
+label: 'view news revisions'
+roles:
+  - administrator
+  - editor

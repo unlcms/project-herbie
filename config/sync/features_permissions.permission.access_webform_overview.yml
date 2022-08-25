@@ -1,0 +1,9 @@
+uuid: f7b2a6c8-253f-4744-918c-d2666cbc528a
+langcode: en
+status: true
+dependencies: {  }
+id: access_webform_overview
+label: 'access webform overview'
+roles:
+  - administrator
+  - editor

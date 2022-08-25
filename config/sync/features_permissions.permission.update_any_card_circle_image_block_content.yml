@@ -1,0 +1,9 @@
+uuid: 7a2afb1a-5a5f-4bfb-9474-5cd417c392eb
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_card_circle_image_block_content
+label: 'update any card_circle_image block content'
+roles:
+  - administrator
+  - editor

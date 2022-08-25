@@ -1,0 +1,8 @@
+uuid: 5a027d3a-762b-4522-ba6e-12b55b1d4fda
+langcode: en
+status: true
+dependencies: {  }
+id: administer_crop
+label: 'administer crop'
+roles:
+  - administrator

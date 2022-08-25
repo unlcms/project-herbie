@@ -1,0 +1,8 @@
+uuid: af9352dd-d4ae-4b1c-8819-ee9a3f1f572d
+langcode: en
+status: true
+dependencies: {  }
+id: create_paragraph_content_contact_info_margin
+label: 'create paragraph content contact_info_margin'
+roles:
+  - editor

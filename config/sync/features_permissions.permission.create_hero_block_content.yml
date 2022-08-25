@@ -1,0 +1,9 @@
+uuid: eb54f982-db1e-482e-8b76-a89fd37a16e7
+langcode: en
+status: true
+dependencies: {  }
+id: create_hero_block_content
+label: 'create hero block content'
+roles:
+  - administrator
+  - editor

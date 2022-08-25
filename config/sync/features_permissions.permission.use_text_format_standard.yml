@@ -1,0 +1,11 @@
+uuid: ff411f83-95d6-40c0-b986-47a61a4efcf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.standard
+id: use_text_format_standard
+label: 'use text format standard'
+roles:
+  - administrator
+  - authenticated

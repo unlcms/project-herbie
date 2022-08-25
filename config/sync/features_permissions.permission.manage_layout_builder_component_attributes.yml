@@ -1,0 +1,9 @@
+uuid: c0c3d983-34df-49b9-87d2-312badc43163
+langcode: en
+status: true
+dependencies: {  }
+id: manage_layout_builder_component_attributes
+label: 'manage layout builder component attributes'
+roles:
+  - administrator
+  - editor

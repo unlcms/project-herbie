@@ -1,0 +1,8 @@
+uuid: 06a4b36f-6b55-47f6-98e7-39a324b6191d
+langcode: en
+status: true
+dependencies: {  }
+id: administer_paragraphs_types
+label: 'administer paragraphs types'
+roles:
+  - administrator

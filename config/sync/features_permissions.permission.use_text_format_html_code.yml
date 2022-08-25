@@ -1,0 +1,11 @@
+uuid: c4bf000c-03f0-4e5f-8174-abdc95ea90f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.html_code
+id: use_text_format_html_code
+label: 'use text format html_code'
+roles:
+  - administrator
+  - coder

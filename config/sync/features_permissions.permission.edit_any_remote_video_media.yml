@@ -1,0 +1,10 @@
+uuid: c82785e2-f25d-43e4-b428-692bc80101ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: edit_any_remote_video_media
+label: 'edit any remote_video media'
+roles:
+  - editor

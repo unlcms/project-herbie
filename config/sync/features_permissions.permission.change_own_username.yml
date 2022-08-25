@@ -1,0 +1,8 @@
+uuid: 223d9252-b25d-4872-b397-6d0b41e2ff18
+langcode: en
+status: true
+dependencies: {  }
+id: change_own_username
+label: 'change own username'
+roles:
+  - administrator

@@ -1,0 +1,9 @@
+uuid: fc094c86-cdfc-451a-a6aa-95855ebd04d5
+langcode: en
+status: true
+dependencies: {  }
+id: create_card_circle_image_block_content
+label: 'create card_circle_image block content'
+roles:
+  - administrator
+  - editor

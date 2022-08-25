@@ -1,0 +1,9 @@
+uuid: d8d5a1f1-dd3f-46c4-b5ec-d472fc7d0dd8
+langcode: en
+status: true
+dependencies: {  }
+id: view_paragraph_content_contact_info_contact_point
+label: 'view paragraph content contact_info_contact_point'
+roles:
+  - anonymous
+  - authenticated

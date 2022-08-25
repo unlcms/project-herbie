@@ -1,0 +1,8 @@
+uuid: 409c0e87-ed66-41e6-8e91-ec7663ac5712
+langcode: en
+status: true
+dependencies: {  }
+id: administer_responsive_images
+label: 'administer responsive images'
+roles:
+  - administrator

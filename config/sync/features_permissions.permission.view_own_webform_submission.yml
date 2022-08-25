@@ -1,0 +1,8 @@
+uuid: 48ecdf64-7a7f-4f9b-8e31-d7e343348b77
+langcode: en
+status: true
+dependencies: {  }
+id: view_own_webform_submission
+label: 'view own webform submission'
+roles:
+  - administrator

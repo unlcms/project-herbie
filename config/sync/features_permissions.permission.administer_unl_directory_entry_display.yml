@@ -1,0 +1,10 @@
+uuid: 6bfc069f-ae0f-4f5f-9d97-25db454537a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: administer_unl_directory_entry_display
+label: 'administer unl_directory_entry display'
+roles:
+  - administrator

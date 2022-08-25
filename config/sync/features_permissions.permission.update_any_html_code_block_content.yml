@@ -1,0 +1,9 @@
+uuid: 8d3c2e09-7a59-4359-859f-b9fa6fd10a69
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_html_code_block_content
+label: 'update any html_code block content'
+roles:
+  - administrator
+  - coder

@@ -1,0 +1,9 @@
+uuid: fa07f397-aa24-4394-b57a-5f1b9f9681a1
+langcode: en
+status: true
+dependencies: {  }
+id: create_url_aliases
+label: 'create url aliases'
+roles:
+  - administrator
+  - editor

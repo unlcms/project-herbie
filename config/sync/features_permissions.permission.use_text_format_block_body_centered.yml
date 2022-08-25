@@ -1,0 +1,11 @@
+uuid: aaeb0e0c-11bc-49fe-87fb-929c70c8e691
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.block_body_centered
+id: use_text_format_block_body_centered
+label: 'use text format block_body_centered'
+roles:
+  - administrator
+  - authenticated

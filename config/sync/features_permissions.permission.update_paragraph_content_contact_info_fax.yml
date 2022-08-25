@@ -1,0 +1,8 @@
+uuid: 5bf5e724-32de-43d9-94a9-c81337f41836
+langcode: en
+status: true
+dependencies: {  }
+id: update_paragraph_content_contact_info_fax
+label: 'update paragraph content contact_info_fax'
+roles:
+  - editor

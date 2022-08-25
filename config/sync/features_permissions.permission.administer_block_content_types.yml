@@ -1,0 +1,9 @@
+uuid: d36ccbee-89b7-484e-a239-76f06ffcde75
+langcode: en
+status: true
+dependencies: {  }
+id: administer_block_content_types
+label: 'administer block content types'
+roles:
+  - administrator
+  - editor

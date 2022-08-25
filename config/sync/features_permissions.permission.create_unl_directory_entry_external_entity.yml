@@ -1,0 +1,8 @@
+uuid: 568b79b8-b054-4144-8595-bc2bc577606e
+langcode: en
+status: true
+dependencies: {  }
+id: create_unl_directory_entry_external_entity
+label: 'create unl_directory_entry external entity'
+roles:
+  - administrator

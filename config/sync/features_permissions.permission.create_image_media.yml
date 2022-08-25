@@ -1,0 +1,10 @@
+uuid: f0b9c45a-1d84-4ddf-ba40-dac638121eca
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: create_image_media
+label: 'create image media'
+roles:
+  - editor

@@ -1,0 +1,8 @@
+uuid: d1de699e-cb7b-40fd-8cb8-cd4e3e8b4312
+langcode: en
+status: true
+dependencies: {  }
+id: cancel_account
+label: 'cancel account'
+roles:
+  - administrator

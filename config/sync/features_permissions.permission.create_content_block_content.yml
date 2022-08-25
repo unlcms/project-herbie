@@ -1,0 +1,9 @@
+uuid: 875db28f-d736-4df3-871e-7eb521f0c7b5
+langcode: en
+status: true
+dependencies: {  }
+id: create_content_block_content
+label: 'create content block content'
+roles:
+  - administrator
+  - editor

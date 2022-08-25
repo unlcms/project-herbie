@@ -1,0 +1,11 @@
+uuid: f382aee5-76c5-4c89-886e-e02d4a7f473e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+id: configure_editable_builder_page_node_layout_overrides
+label: 'configure editable builder_page node layout overrides'
+roles:
+  - administrator
+  - editor

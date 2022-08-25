@@ -1,0 +1,8 @@
+uuid: 9c6d630b-178d-440b-9ac1-dc9fb62b6dda
+langcode: en
+status: true
+dependencies: {  }
+id: create_paragraph_content_contact_info_physical_address
+label: 'create paragraph content contact_info_physical_address'
+roles:
+  - editor

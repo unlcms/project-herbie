@@ -1,0 +1,10 @@
+uuid: d6796ebb-49b3-4843-b40c-7d697c12a2fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: create_book_content
+label: 'create book content'
+roles:
+  - editor

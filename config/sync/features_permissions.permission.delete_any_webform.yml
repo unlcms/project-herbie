@@ -1,0 +1,9 @@
+uuid: f46ad186-6848-4e45-8430-2b9c7963af3f
+langcode: en
+status: true
+dependencies: {  }
+id: delete_any_webform
+label: 'delete any webform'
+roles:
+  - administrator
+  - editor

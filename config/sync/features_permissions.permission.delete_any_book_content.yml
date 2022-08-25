@@ -1,0 +1,10 @@
+uuid: fa8bd1f2-a10d-44e9-bd91-d5d5bb808c87
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: delete_any_book_content
+label: 'delete any book content'
+roles:
+  - editor

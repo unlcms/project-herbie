@@ -1,0 +1,10 @@
+uuid: aae9a121-c3ba-4c07-b289-09a9bb53e741
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+id: delete_any_file_media
+label: 'delete any file media'
+roles:
+  - editor

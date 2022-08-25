@@ -1,0 +1,11 @@
+uuid: 101df0dc-187c-4f1e-8c56-e7d76856d9b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: view_builder_page_revisions
+label: 'view builder_page revisions'
+roles:
+  - administrator
+  - editor

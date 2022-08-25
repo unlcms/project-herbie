@@ -1,0 +1,10 @@
+uuid: 1cdb98b6-b3eb-4d8d-aee3-749f0785c677
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: delete_any_image_media
+label: 'delete any image media'
+roles:
+  - editor

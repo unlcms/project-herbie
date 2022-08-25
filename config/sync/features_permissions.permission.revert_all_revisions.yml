@@ -1,0 +1,8 @@
+uuid: c01c9b00-8889-46ed-94b9-df976c46c099
+langcode: en
+status: true
+dependencies: {  }
+id: revert_all_revisions
+label: 'revert all revisions'
+roles:
+  - administrator

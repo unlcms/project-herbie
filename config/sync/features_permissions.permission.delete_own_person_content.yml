@@ -1,0 +1,11 @@
+uuid: f84ed1bb-45e0-4c2f-9e3f-2ca869b0b990
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: delete_own_person_content
+label: 'delete own person content'
+roles:
+  - administrator
+  - editor

@@ -1,0 +1,9 @@
+uuid: 9a098c13-bb66-4501-a144-da43e32bf849
+langcode: en
+status: true
+dependencies: {  }
+id: create_accordion_block_content
+label: 'create accordion block content'
+roles:
+  - administrator
+  - editor

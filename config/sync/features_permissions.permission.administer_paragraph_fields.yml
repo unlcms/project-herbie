@@ -1,0 +1,10 @@
+uuid: 39845620-3633-4446-97ef-31911fd64f20
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: administer_paragraph_fields
+label: 'administer paragraph fields'
+roles:
+  - administrator

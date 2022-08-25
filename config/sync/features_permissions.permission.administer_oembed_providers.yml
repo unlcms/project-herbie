@@ -1,0 +1,8 @@
+uuid: d11b5acf-583c-4f36-943f-08d0f31f3b33
+langcode: en
+status: true
+dependencies: {  }
+id: administer_oembed_providers
+label: 'administer oembed providers'
+roles:
+  - administrator

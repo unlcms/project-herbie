@@ -1,0 +1,11 @@
+uuid: 728ce087-2e4d-4797-b9b8-aa2e40b68918
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: revert_news_revisions
+label: 'revert news revisions'
+roles:
+  - administrator
+  - editor

@@ -1,0 +1,9 @@
+uuid: 8c4be2a4-5dbf-4cc6-a5f7-007e8bb67d13
+langcode: en
+status: true
+dependencies: {  }
+id: access_css_fields
+label: 'access css fields'
+roles:
+  - administrator
+  - coder

@@ -1,0 +1,10 @@
+uuid: 92a269ac-92d1-4dd6-9b86-b6f46c47588a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: revert_book_revisions
+label: 'revert book revisions'
+roles:
+  - editor

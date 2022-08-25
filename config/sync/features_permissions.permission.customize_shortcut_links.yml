@@ -1,0 +1,8 @@
+uuid: b80ba239-5c24-4f26-9fc3-88ffa3964f00
+langcode: en
+status: true
+dependencies: {  }
+id: customize_shortcut_links
+label: 'customize shortcut links'
+roles:
+  - administrator

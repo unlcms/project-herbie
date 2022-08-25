@@ -1,0 +1,8 @@
+uuid: 208ee625-30fe-4fd9-b024-d30bc8146167
+langcode: en
+status: true
+dependencies: {  }
+id: administer_webform_submission
+label: 'administer webform submission'
+roles:
+  - administrator

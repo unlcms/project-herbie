@@ -1,0 +1,8 @@
+uuid: 6023ebc5-46b4-4bbb-8e5b-21623e69f45f
+langcode: en
+status: true
+dependencies: {  }
+id: rabbit_hole_administer_media
+label: 'rabbit hole administer media'
+roles:
+  - administrator

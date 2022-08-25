@@ -1,0 +1,9 @@
+uuid: 1f773649-b81d-4a7b-b6c9-963d88454bbd
+langcode: en
+status: true
+dependencies: {  }
+id: access_contextual_links
+label: 'access contextual links'
+roles:
+  - administrator
+  - authenticated

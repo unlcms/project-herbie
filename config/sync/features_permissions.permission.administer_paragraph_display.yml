@@ -1,0 +1,10 @@
+uuid: 55f8294a-2b6a-4083-8f82-c662498b6fbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: administer_paragraph_display
+label: 'administer paragraph display'
+roles:
+  - administrator

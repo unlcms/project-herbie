@@ -1,0 +1,8 @@
+uuid: bdd36dac-4bcf-4151-ad2f-7eb8e21288a1
+langcode: en
+status: true
+dependencies: {  }
+id: delete_all_revisions
+label: 'delete all revisions'
+roles:
+  - administrator

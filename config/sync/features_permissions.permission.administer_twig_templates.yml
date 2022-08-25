@@ -1,0 +1,9 @@
+uuid: b06cd8cb-f913-45ed-935b-2fe5c9d7895e
+langcode: en
+status: true
+dependencies: {  }
+id: administer_twig_templates
+label: 'administer twig templates'
+roles:
+  - administrator
+  - editor

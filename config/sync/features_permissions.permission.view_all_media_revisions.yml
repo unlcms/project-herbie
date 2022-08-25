@@ -1,0 +1,8 @@
+uuid: a814b3a3-19ec-436f-bd00-140747182c3a
+langcode: en
+status: true
+dependencies: {  }
+id: view_all_media_revisions
+label: 'view all media revisions'
+roles:
+  - administrator

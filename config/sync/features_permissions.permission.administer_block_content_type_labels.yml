@@ -1,0 +1,8 @@
+uuid: 27058dc7-13d5-42ee-85b1-fb64bc95d4b1
+langcode: en
+status: true
+dependencies: {  }
+id: administer_block_content_type_labels
+label: 'administer block_content_type labels'
+roles:
+  - administrator

@@ -1,0 +1,9 @@
+uuid: 433c5a23-75eb-4664-a6ef-bd0273cc7506
+langcode: en
+status: true
+dependencies: {  }
+id: add_content_to_books
+label: 'add content to books'
+roles:
+  - administrator
+  - editor

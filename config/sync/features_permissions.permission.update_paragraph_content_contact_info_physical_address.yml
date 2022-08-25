@@ -1,0 +1,8 @@
+uuid: c7c3400f-bdf5-48f8-968e-e8a6889fbe04
+langcode: en
+status: true
+dependencies: {  }
+id: update_paragraph_content_contact_info_physical_address
+label: 'update paragraph content contact_info_physical_address'
+roles:
+  - editor

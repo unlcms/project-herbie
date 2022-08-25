@@ -1,0 +1,8 @@
+uuid: 12f41377-4c91-4271-8e43-490f10c9cfb5
+langcode: en
+status: true
+dependencies: {  }
+id: link_to_any_page
+label: 'link to any page'
+roles:
+  - administrator

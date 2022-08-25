@@ -1,0 +1,10 @@
+uuid: 5eae6383-13b7-4033-8f71-634b03fb8970
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: delete_any_remote_video_media
+label: 'delete any remote_video media'
+roles:
+  - editor

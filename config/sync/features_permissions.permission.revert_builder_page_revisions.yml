@@ -1,0 +1,11 @@
+uuid: b77fdf0d-e1d5-4e1d-a3cd-23d530ea9cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: revert_builder_page_revisions
+label: 'revert builder_page revisions'
+roles:
+  - administrator
+  - editor

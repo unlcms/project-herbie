@@ -1,0 +1,9 @@
+uuid: 07e60184-ee69-484c-99ee-f47abe931977
+langcode: en
+status: true
+dependencies: {  }
+id: access_content
+label: 'access content'
+roles:
+  - anonymous
+  - authenticated

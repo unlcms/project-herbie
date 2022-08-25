@@ -1,0 +1,8 @@
+uuid: 9aee0510-af91-468c-b6e6-91e07fc53e59
+langcode: en
+status: true
+dependencies: {  }
+id: administer_views
+label: 'administer views'
+roles:
+  - administrator

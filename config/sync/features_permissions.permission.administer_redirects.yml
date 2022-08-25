@@ -1,0 +1,9 @@
+uuid: 2d5258f8-041e-4c98-9c13-c9cdd83c578e
+langcode: en
+status: true
+dependencies: {  }
+id: administer_redirects
+label: 'administer redirects'
+roles:
+  - administrator
+  - editor

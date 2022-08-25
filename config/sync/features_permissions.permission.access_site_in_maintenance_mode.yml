@@ -1,0 +1,8 @@
+uuid: 308a6e7d-c353-4789-a515-71108e46ce0c
+langcode: en
+status: true
+dependencies: {  }
+id: access_site_in_maintenance_mode
+label: 'access site in maintenance mode'
+roles:
+  - administrator

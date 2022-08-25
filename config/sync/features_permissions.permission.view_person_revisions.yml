@@ -1,0 +1,11 @@
+uuid: 482e1f68-c170-411d-af21-82192dbdd2cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: view_person_revisions
+label: 'view person revisions'
+roles:
+  - administrator
+  - editor

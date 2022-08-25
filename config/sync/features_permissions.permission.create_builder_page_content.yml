@@ -1,0 +1,11 @@
+uuid: e37c3a3f-2fd2-436b-a1df-5c828b4f39d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: create_builder_page_content
+label: 'create builder_page content'
+roles:
+  - administrator
+  - editor

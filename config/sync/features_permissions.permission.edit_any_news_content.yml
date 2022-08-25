@@ -1,0 +1,11 @@
+uuid: d98722e0-b19f-4610-9131-dd64e5626fb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: edit_any_news_content
+label: 'edit any news content'
+roles:
+  - administrator
+  - editor

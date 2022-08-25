@@ -1,0 +1,10 @@
+uuid: 74de05f8-55dc-475a-b832-0938ed2c1370
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: administer_media_display
+label: 'administer media display'
+roles:
+  - administrator

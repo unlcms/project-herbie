@@ -1,0 +1,8 @@
+uuid: ce090b0f-fddc-4ecc-a0fc-06d1c5b2c43c
+langcode: en
+status: true
+dependencies: {  }
+id: unl_administer_site_configuration
+label: 'unl administer site configuration'
+roles:
+  - editor

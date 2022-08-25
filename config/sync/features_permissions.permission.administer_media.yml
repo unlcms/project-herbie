@@ -1,0 +1,8 @@
+uuid: 8e252cfa-e4d9-4e63-ac5e-71fcfad5f473
+langcode: en
+status: true
+dependencies: {  }
+id: administer_media
+label: 'administer media'
+roles:
+  - administrator

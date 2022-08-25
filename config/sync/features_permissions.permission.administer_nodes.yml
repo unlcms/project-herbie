@@ -1,0 +1,8 @@
+uuid: f3382035-9fae-4caf-9012-1392362e4c8e
+langcode: en
+status: true
+dependencies: {  }
+id: administer_nodes
+label: 'administer nodes'
+roles:
+  - administrator

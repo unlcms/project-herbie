@@ -1,0 +1,8 @@
+uuid: 220910c7-a3b5-4a3a-b0b3-16b864e538fe
+langcode: en
+status: true
+dependencies: {  }
+id: administer_software_updates
+label: 'administer software updates'
+roles:
+  - administrator

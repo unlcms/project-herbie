@@ -1,0 +1,11 @@
+uuid: b1fc757b-f004-4c3f-ae08-d7bd467edb78
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: create_person_content
+label: 'create person content'
+roles:
+  - administrator
+  - editor

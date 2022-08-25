@@ -1,0 +1,9 @@
+uuid: 9c29b676-6173-4aed-860f-44ba1c3b47ae
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_hero_block_content
+label: 'update any hero block content'
+roles:
+  - administrator
+  - editor

@@ -1,0 +1,11 @@
+uuid: 28055391-5709-4735-a6e9-a2135ba579b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: revert_person_revisions
+label: 'revert person revisions'
+roles:
+  - administrator
+  - editor

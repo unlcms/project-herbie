@@ -1,0 +1,8 @@
+uuid: 59a9e2ad-5d88-4a4f-a704-7608f929cada
+langcode: en
+status: true
+dependencies: {  }
+id: administer_paragraphs_settings
+label: 'administer paragraphs settings'
+roles:
+  - administrator

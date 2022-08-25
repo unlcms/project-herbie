@@ -1,0 +1,10 @@
+uuid: 1d0057a0-b7a0-4e85-ac3b-b486633967a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: administer_taxonomy_term_display
+label: 'administer taxonomy_term display'
+roles:
+  - administrator

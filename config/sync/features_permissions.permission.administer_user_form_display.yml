@@ -1,0 +1,10 @@
+uuid: 81504b37-4245-411b-a8ac-e3891d6a4981
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: administer_user_form_display
+label: 'administer user form display'
+roles:
+  - administrator

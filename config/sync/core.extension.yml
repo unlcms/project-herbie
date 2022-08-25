@@ -22,6 +22,7 @@ module:
   config_filter: 0
   config_ignore: 0
   config_split: 0
+  config_update: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -39,6 +40,9 @@ module:
   external_entities: 0
   external_entities_pathauto: 0
   external_entities_unldirectory: 0
+  features: 0
+  features_permissions: 0
+  features_ui: 0
   field: 0
   field_css: 0
   field_group: 0

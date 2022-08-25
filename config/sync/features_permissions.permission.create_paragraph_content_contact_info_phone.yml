@@ -1,0 +1,8 @@
+uuid: 3a15ba6d-c871-4cf5-a0dc-8c6cf83b96c5
+langcode: en
+status: true
+dependencies: {  }
+id: create_paragraph_content_contact_info_phone
+label: 'create paragraph content contact_info_phone'
+roles:
+  - editor

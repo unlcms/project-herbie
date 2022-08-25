@@ -1,0 +1,9 @@
+uuid: 3d761969-85e2-40f8-a2c0-d6aecc3e966c
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_accordion_block_content
+label: 'update any accordion block content'
+roles:
+  - administrator
+  - editor

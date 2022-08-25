@@ -1,0 +1,8 @@
+uuid: f7bde909-b977-4324-ba64-fb3bef97151f
+langcode: en
+status: true
+dependencies: {  }
+id: access_site_reports
+label: 'access site reports'
+roles:
+  - administrator

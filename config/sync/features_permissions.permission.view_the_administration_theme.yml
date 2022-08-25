@@ -1,0 +1,9 @@
+uuid: c8502073-3ead-41d8-a17e-fa50b5078f7d
+langcode: en
+status: true
+dependencies: {  }
+id: view_the_administration_theme
+label: 'view the administration theme'
+roles:
+  - administrator
+  - editor

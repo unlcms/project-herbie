@@ -1,0 +1,9 @@
+uuid: cb65a9c2-df08-4428-8343-af0379c06f5e
+langcode: en
+status: true
+dependencies: {  }
+id: update_any_card_block_content
+label: 'update any card block content'
+roles:
+  - administrator
+  - editor

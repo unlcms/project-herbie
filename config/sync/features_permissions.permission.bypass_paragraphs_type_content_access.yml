@@ -1,0 +1,8 @@
+uuid: ccf6eeb3-74c0-4ce7-92d8-02044dd00f1a
+langcode: en
+status: true
+dependencies: {  }
+id: bypass_paragraphs_type_content_access
+label: 'bypass paragraphs type content access'
+roles:
+  - administrator

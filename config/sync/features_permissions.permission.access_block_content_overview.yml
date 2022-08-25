@@ -1,0 +1,9 @@
+uuid: a5856206-b74e-4d2e-95a2-9f9eb532bab4
+langcode: en
+status: true
+dependencies: {  }
+id: access_block_content_overview
+label: 'access block content overview'
+roles:
+  - administrator
+  - editor

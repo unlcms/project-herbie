@@ -1,0 +1,10 @@
+uuid: c5a96d4a-3dde-46de-878f-24ce7e757cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: edit_any_book_content
+label: 'edit any book content'
+roles:
+  - editor

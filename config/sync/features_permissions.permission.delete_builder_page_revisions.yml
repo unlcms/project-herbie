@@ -1,0 +1,11 @@
+uuid: de6530ae-db4f-4478-8a18-c630a9b27d65
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: delete_builder_page_revisions
+label: 'delete builder_page revisions'
+roles:
+  - administrator
+  - editor

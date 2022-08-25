@@ -1,0 +1,10 @@
+uuid: 6961d28d-af41-406b-840b-9c89df312b28
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: administer_node_display
+label: 'administer node display'
+roles:
+  - administrator

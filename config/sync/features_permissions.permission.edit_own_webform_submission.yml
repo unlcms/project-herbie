@@ -1,0 +1,8 @@
+uuid: 6aefe3c7-66f6-4899-ac60-d552f252f260
+langcode: en
+status: true
+dependencies: {  }
+id: edit_own_webform_submission
+label: 'edit own webform submission'
+roles:
+  - administrator

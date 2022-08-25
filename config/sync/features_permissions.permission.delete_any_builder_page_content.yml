@@ -1,0 +1,11 @@
+uuid: e2363109-63c5-47e7-b3f7-2c6ba791ce76
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: delete_any_builder_page_content
+label: 'delete any builder_page content'
+roles:
+  - administrator
+  - editor

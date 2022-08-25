@@ -1,0 +1,10 @@
+uuid: ae1ac5a0-a4eb-4c6d-97ae-0f2854e984b1
+langcode: en
+status: true
+dependencies: {  }
+id: view_paragraph_content_contact_info_margin
+label: 'view paragraph content contact_info_margin'
+roles:
+  - anonymous
+  - authenticated
+  - editor

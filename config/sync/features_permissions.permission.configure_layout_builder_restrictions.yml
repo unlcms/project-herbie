@@ -1,0 +1,8 @@
+uuid: 82caa29f-4e47-4494-ba0b-eb65ba577c34
+langcode: en
+status: true
+dependencies: {  }
+id: configure_layout_builder_restrictions
+label: 'configure layout builder restrictions'
+roles:
+  - administrator

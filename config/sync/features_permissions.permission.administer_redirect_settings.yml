@@ -1,0 +1,8 @@
+uuid: 7eec4f94-f34e-446f-94c7-0195fe15255c
+langcode: en
+status: true
+dependencies: {  }
+id: administer_redirect_settings
+label: 'administer redirect settings'
+roles:
+  - administrator
