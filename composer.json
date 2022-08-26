@@ -156,7 +156,7 @@
         "drupal/select2": "^1.13",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^2.0",
-        "drupal/twig_ui": "1.0.0-rc2",
+        "drupal/twig_ui": "^1.0",
         "drupal/webform": "^6.1",
         "drush/drush": "^11",
         "jackocnr/intl-tel-input": "16.1.0",
