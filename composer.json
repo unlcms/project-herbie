@@ -250,7 +250,7 @@
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-30-D9.patch",
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/502430-90.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
-                "3080606 - Re-order Layout Builder sections": "patches/3080606-reorder-layout-sections-28.patch",
+                "3080606 - Re-order Layout Builder sections": "patches/3080606-71.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
                 "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
             },
@@ -261,13 +261,10 @@
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             },
             "drupal/features_permissions": {
-                "Need to check isset": "patches/features_permissions_isset.patch"
+                "Custom - Need to check isset": "patches/features_permissions_isset.patch"
             },
             "drupal/media_library_extras": {
                 "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
-            },
-            "drupal/paragraphs": {
-                "2901390 - Integrity constraint violation: 1048 Column 'langcode' cannot be null": "patches/paragraphs-2901390-51.patch"
             }
         },
         "drupal-scaffold": {

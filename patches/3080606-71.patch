@@ -27,12 +27,12 @@ index cbd03bb313..52a7a99c45 100644
    display: none !important;
  }
 diff --git a/core/modules/layout_builder/layout_builder.post_update.php b/core/modules/layout_builder/layout_builder.post_update.php
-index 1b4a2acb03..47aa1dedb6 100644
+index 04d2139cf7..236fa258ef 100644
 --- a/core/modules/layout_builder/layout_builder.post_update.php
 +++ b/core/modules/layout_builder/layout_builder.post_update.php
-@@ -299,3 +299,10 @@ function _layout_builder_bundle_has_no_translations($entity_type_id, $bundle) {
-   // doesn't we have no way to determine if there are translations.
-   return FALSE;
+@@ -73,3 +73,10 @@ function layout_builder_post_update_section_storage_context_mapping(&$sandbox =
+ function layout_builder_post_update_tempstore_route_enhancer() {
+   // Empty post-update hook.
  }
 +
 +/**
@@ -42,7 +42,7 @@ index 1b4a2acb03..47aa1dedb6 100644
 +  // Empty post-update hook.
 +}
 diff --git a/core/modules/layout_builder/layout_builder.routing.yml b/core/modules/layout_builder/layout_builder.routing.yml
-index b59e2a036d..bd77e969f5 100644
+index 6dcf0c9f05..ae11ef771d 100644
 --- a/core/modules/layout_builder/layout_builder.routing.yml
 +++ b/core/modules/layout_builder/layout_builder.routing.yml
 @@ -39,6 +39,19 @@ layout_builder.configure_section:
@@ -66,10 +66,10 @@ index b59e2a036d..bd77e969f5 100644
    path: '/layout_builder/remove/section/{section_storage_type}/{section_storage}/{delta}'
    defaults:
 diff --git a/core/modules/layout_builder/src/Form/DefaultsEntityForm.php b/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
-index 8fb71c52f9..0555147c59 100644
+index b254e3424d..82521109e2 100644
 --- a/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
 +++ b/core/modules/layout_builder/src/Form/DefaultsEntityForm.php
-@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityForm;
+@@ -6,6 +6,7 @@
  use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
  use Drupal\Core\Form\FormStateInterface;
  use Drupal\Core\Routing\RouteMatchInterface;
@@ -77,7 +77,7 @@ index 8fb71c52f9..0555147c59 100644
  use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
  use Drupal\layout_builder\LayoutTempstoreRepositoryInterface;
  use Drupal\layout_builder\SectionStorageInterface;
-@@ -171,6 +172,27 @@ class DefaultsEntityForm extends EntityForm {
+@@ -182,6 +183,27 @@ protected function actions(array $form, FormStateInterface $form_state) {
        '#submit' => ['::redirectOnSubmit'],
        '#redirect' => 'discard_changes',
      ];
@@ -318,7 +318,7 @@ diff --git a/core/modules/layout_builder/src/Form/OverridesEntityForm.php b/core
 index 29f940bdcc..658ce3c35d 100644
 --- a/core/modules/layout_builder/src/Form/OverridesEntityForm.php
 +++ b/core/modules/layout_builder/src/Form/OverridesEntityForm.php
-@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityInterface;
+@@ -9,6 +9,7 @@
  use Drupal\Core\Entity\EntityRepositoryInterface;
  use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
  use Drupal\Core\Form\FormStateInterface;
@@ -326,7 +326,7 @@ index 29f940bdcc..658ce3c35d 100644
  use Drupal\layout_builder\LayoutTempstoreRepositoryInterface;
  use Drupal\layout_builder\OverridesSectionStorageInterface;
  use Drupal\layout_builder\Plugin\SectionStorage\OverridesSectionStorage;
-@@ -207,6 +208,27 @@ class OverridesEntityForm extends ContentEntityForm {
+@@ -207,6 +208,27 @@ protected function actions(array $form, FormStateInterface $form_state) {
        '#submit' => ['::redirectOnSubmit'],
        '#redirect' => 'revert',
      ];
@@ -356,10 +356,10 @@ index 29f940bdcc..658ce3c35d 100644
    }
 diff --git a/core/modules/layout_builder/tests/src/FunctionalJavascript/MoveSectionsFormTest.php b/core/modules/layout_builder/tests/src/FunctionalJavascript/MoveSectionsFormTest.php
 new file mode 100644
-index 0000000000..e178d1ee6f
+index 0000000000..4637e39f9b
 --- /dev/null
 +++ b/core/modules/layout_builder/tests/src/FunctionalJavascript/MoveSectionsFormTest.php
-@@ -0,0 +1,237 @@
+@@ -0,0 +1,234 @@
 +<?php
 +
 +namespace Drupal\Tests\layout_builder\FunctionalJavascript;
@@ -401,7 +401,7 @@ index 0000000000..e178d1ee6f
 +  /**
 +   * {@inheritdoc}
 +   */
-+  protected function setUp() {
++  protected function setUp(): void {
 +    parent::setUp();
 +
 +    $this->createContentType(['type' => 'bundle_with_section_field']);
@@ -422,11 +422,8 @@ index 0000000000..e178d1ee6f
 +    $assert_session = $this->assertSession();
 +
 +    // Enable layout builder.
-+    $this->drupalPostForm(
-+      static::FIELD_UI_PREFIX . '/display/default',
-+      ['layout[enabled]' => TRUE],
-+      'Save'
-+    );
++    $this->drupalGet(static::FIELD_UI_PREFIX . '/display/default');
++    $this->submitForm(['layout[enabled]' => TRUE], 'Save');
 +    $page->clickLink('Manage layout');
 +    $assert_session->addressEquals(static::FIELD_UI_PREFIX . '/display/default/layout');
 +
