@@ -164,10 +164,3 @@ RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 
 - Drush and MariaDB 10.7+ don't work with a database port set if the host is localhost. If you are using localhost for the host, clear the port setting in settings.php.
 
-
-## D9 todo:
-
-This patch needs updated for 9.4: https://www.drupal.org/node/3060292
-
-                "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-20-D9.patch",
-

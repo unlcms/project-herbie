@@ -1,8 +1,8 @@
-diff --git a/core/modules/media//src/Entity/Media.php b/core/modules/media//src/Entity/Media.php
-index 55ffb8a6a6..28eedd3eb1 100644
---- a/core/modules/media//src/Entity/Media.php
-+++ b/core/modules/media//src/Entity/Media.php
-@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
+diff --git a/core/modules/media/src/Entity/Media.php b/core/modules/media/src/Entity/Media.php
+index 76739dbe48..6e8a0288c4 100644
+--- a/core/modules/media/src/Entity/Media.php
++++ b/core/modules/media/src/Entity/Media.php
+@@ -7,6 +7,7 @@
  use Drupal\Core\Entity\EntityTypeInterface;
  use Drupal\Core\Field\BaseFieldDefinition;
  use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -10,7 +10,7 @@ index 55ffb8a6a6..28eedd3eb1 100644
  use Drupal\media\MediaInterface;
  use Drupal\media\MediaSourceEntityConstraintsInterface;
  use Drupal\media\MediaSourceFieldConstraintsInterface;
-@@ -371,10 +372,15 @@ class Media extends EditorialContentEntityBase implements MediaInterface {
+@@ -375,10 +376,15 @@ public function prepareSave() {
          // Try to set fields provided by the media source and mapped in
          // media type config.
          foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
@@ -19,19 +19,19 @@ index 55ffb8a6a6..28eedd3eb1 100644
 +          if ($meta_data instanceof Url) {
 +            $meta_data = $meta_data->toString();
 +          }
-           // Only save value in entity field if empty. Do not overwrite existing
-           // data.
+           // Only save value in the entity if the field is empty or if the
+           // source field changed.
            if ($translation->hasField($entity_field_name) && ($translation->get($entity_field_name)->isEmpty() || $translation->hasSourceFieldChanged())) {
 -            $translation->set($entity_field_name, $media_source->getMetadata($translation, $metadata_attribute_name));
 +            $translation->set($entity_field_name, $meta_data);
            }
          }
  
-diff --git a/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php b/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
-index ae9ab1416a..fca3ef580d 100644
---- a/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
-+++ b/core/modules/media//tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
-@@ -19,7 +19,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+diff --git a/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php b/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
+index b6a8fff68b..92c0b64065 100644
+--- a/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
++++ b/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
+@@ -20,7 +20,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
    /**
     * {@inheritdoc}
     */
@@ -40,7 +40,7 @@ index ae9ab1416a..fca3ef580d 100644
  
    /**
     * {@inheritdoc}
-@@ -82,6 +82,8 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+@@ -83,6 +83,8 @@ public function testMediaOEmbedVideoSource() {
        'field_string_width' => 'string',
        'field_string_height' => 'string',
        'field_string_author_name' => 'string',
@@ -49,7 +49,7 @@ index ae9ab1416a..fca3ef580d 100644
      ];
      $this->createMediaTypeFields($fields, $media_type_id);
  
-@@ -94,6 +96,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+@@ -95,6 +97,7 @@ public function testMediaOEmbedVideoSource() {
      $assert_session->selectExists('field_map[width]')->setValue('field_string_width');
      $assert_session->selectExists('field_map[height]')->setValue('field_string_height');
      $assert_session->selectExists('field_map[author_name]')->setValue('field_string_author_name');
@@ -57,7 +57,7 @@ index ae9ab1416a..fca3ef580d 100644
      $assert_session->buttonExists('Save')->press();
  
      // Configure the iframe to be narrower than the actual video, so we can
-@@ -117,6 +120,22 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+@@ -118,6 +121,22 @@ public function testMediaOEmbedVideoSource() {
  
      $assert_session->addressEquals('admin/content/media');
  
