@@ -73,6 +73,19 @@ When asked to select an Installation Profile, select "Use existing configuration
 
 Decide if you want to run a multisite installation.  (See "Running Multisite" below.) 
 
+## Upgrading Drupal Core
+
+Run on devolpment site and commit composer.json and composer.lock:
+```
+composer update "drupal/core-*" --with-all-dependencies
+```
+
+Run on all sites:
+```
+drush updatedb
+drush cache:rebuild
+```
+
 ## Configuration Management
 
 This project uses Drupal 9 Configuration Management to store the present/base/main configuration of a new site.
@@ -158,4 +171,3 @@ This patch needs updated for 9.4: https://www.drupal.org/node/3060292
 
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-20-D9.patch",
 
-Update Twig UI Templates to 1.0.1
