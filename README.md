@@ -1,5 +1,8 @@
 # Drupal 9 at UNL (Project Herbie)
 
+A multisite installation hosted at http://cms.unl.edu/ developed by the [Digital Experience Group](https://ucomm.unl.edu/) 
+and supported by DXG and ITS.
+
 ## Requirements
 
 See [Drupal System Requirements](https://www.drupal.org/docs/system-requirements)
@@ -24,6 +27,10 @@ See [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linu
 Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
 It may be necessary to replace `composer` with `php composer.phar` (or similar).
 
+### DDEV Support
+
+See the _DDEV-README.md_ file in this project.
+
 ## Installation
 
 Navigate to the project root and install the project:
@@ -34,7 +41,7 @@ composer install
 
 ### Install the UNLedu Web Framework
 
-The [unl_five](https://github.com/unlcms/unl_five) theme requires the [UNLedu Web Framework](https://github.com/unl/wdntemplates)
+The [unl_five](https://github.com/unlcms/unl_five) theme requires the [UNLedu Web Framework](https://github.com/unl/wdntemplates).
 
 There are two methods to install the UNLedu Web Framework:
 
@@ -66,18 +73,27 @@ Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_i
 cp web/sites/default/default.settings.php web/sites/default/settings.php
 ```
 
-Navigate to `http://example.unl.edu/project-herbie/web` (or set up a virtual host) in your browser. 
+Navigate to _http://example.unl.edu/project-herbie/web/_ (or set up a virtual host, _cms-local.unl.edu_ is the recommended name) in your browser. 
 (See [Installing Drupal](https://www.drupal.org/docs/installing-drupal))
 
-When asked to select an Installation Profile, select "Use existing configuration". 
+When asked to select an Installation Profile, select _Use existing configuration_. 
 
 Decide if you want to run a multisite installation.  (See "Running Multisite" below.) 
 
-## Upgrading Drupal Core
+## Upgrading Drupal Core (or a module)
 
-Run on devolpment site and commit composer.json and composer.lock:
+Run this on a development site and commit composer.json, composer.lock, and any changes to `config/sync`.
+The process is the same for a module, just change the project in the first composer command.
 ```
 composer update "drupal/core-*" --with-all-dependencies
+drush updatedb
+drush cache:rebuild
+drush config:export
+```
+
+Run on a deployment after updating code base:
+```
+composer install
 ```
 
 Run on all sites:
@@ -104,11 +120,11 @@ Once again, with feeling, **_Never use drush config:import_**.
 
 Options to deploy a configuration setting across sites:
 
-1. Use `drush config:set` to change a config value. An example is `drush config:set unl_user.settings username_format myunl`.
-
-2. Alternatively, a non-editable config value (one that end-users shouldn't be able to change) can be set in `/profiles/herbie/includes/settings.php.inc` and committed.
-
-3. If the setting is part of a Feature, update the Feature. (See "Features" section below.) Or create a new Feature.
+1. First check if the setting is part of a Feature. (Is the _State_ clean on `admin/config/development/features`?)
+If not, update the Feature. (See "Features" section below.) 
+2. Consider creating a new Feature for a package of configuration. 
+3. Use `drush config:set` to change a config value. An example is `drush config:set unl_user.settings username_format myunl`. 
+4. Alternatively, a non-editable config value (one that end-users shouldn't be able to change) can be set in `/profiles/herbie/includes/settings.php.inc` and committed.
 
 ## Config Split
 
@@ -126,7 +142,7 @@ Are written to `web/modules/custom/features` and part of the `herbie` feature bu
 
 ### Updating a Feature
 
-In a development site, make the changes, bump the Version on `admin/config/development/features/edit/herbie_FEATURE` and click Write. Then commit changes.
+In a development site, make the changes, bump the **Version** on `admin/config/development/features/edit/herbie_FEATURE` and click _Write_. Then commit changes.
 
 ### Updating Multisites with the Feature update
 
