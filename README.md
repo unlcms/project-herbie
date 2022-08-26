@@ -100,6 +100,18 @@ RewriteMap drupal_unl_multisite txt:<DRUPAL_ROOT>/.htaccess-subsite-map.txt
 
 - Drush and MariaDB 10.7+ don't work with a database port set if the host is localhost. If you are using localhost for the host, clear the port setting in settings.php.
 
+## Features
+
+Are written to `web/modules/custom/features` and part of the `herbie` feature bundle.
+
+### Updating a Feature
+
+In a development site, make the changes, bump the Version on `admin/config/development/features/edit/herbie_FEATURE` and click Write. Then commit changes.
+
+### Updating Multisites with the Feature update
+
+Deploy changes. Then run `drush fim herbie_FEATURE` on all sites.
+
 ## D9 todo:
 
 This patch needs updated for 9.4: https://www.drupal.org/node/3060292
