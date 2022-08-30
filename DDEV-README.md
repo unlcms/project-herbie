@@ -18,7 +18,7 @@
 1.  Start DDEV
     `ddev start`
     (Since Drupal is not yet installed, DDEV will install it. This only happens once.)
-1.  Navigate to http://project-herbie-local.unl.edu/user and login (or whatever FQDN is
+1.  Navigate to http://cms-local.unl.edu/user and login (or whatever FQDN is
     defined in .ddev/config.local.yaml)
 1.  Connect to the container via SSH
     `ddev ssh`
@@ -35,7 +35,7 @@
 ## UNL CAS Authentication
 The unl_cas module is enabled by default, which allows users to authenticate
 with UNL credentials. The shib.unl.edu server will only allow applications to connect that
-end with 'unl.edu', so the the default local FQDN is project-herbie-local.unl.edu. This will
+end with 'unl.edu', so the the default local FQDN is cms-local.unl.edu. This will
 need to be added to your local hosts file.
 
 ## DDEV Documentation
