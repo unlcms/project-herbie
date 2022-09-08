@@ -1,8 +1,0 @@
-uuid: 9665c2c1-95bb-4461-91bc-b011fd84ec26
-langcode: en
-status: true
-dependencies: {  }
-id: administer_content_types
-label: 'administer content types'
-roles:
-  - administrator

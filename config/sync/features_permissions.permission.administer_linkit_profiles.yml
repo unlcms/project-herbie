@@ -1,8 +1,0 @@
-uuid: e4b05607-d045-4a19-98da-d9da9ac91eaf
-langcode: en
-status: true
-dependencies: {  }
-id: administer_linkit_profiles
-label: 'administer linkit profiles'
-roles:
-  - administrator

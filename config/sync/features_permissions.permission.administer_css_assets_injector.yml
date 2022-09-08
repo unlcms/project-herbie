@@ -5,5 +5,4 @@ dependencies: {  }
 id: administer_css_assets_injector
 label: 'administer css assets injector'
 roles:
-  - administrator
   - editor

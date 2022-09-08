@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_webform_overview
 label: 'access webform overview'
 roles:
-  - administrator
   - editor

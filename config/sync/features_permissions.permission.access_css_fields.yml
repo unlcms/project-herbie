@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_css_fields
 label: 'access css fields'
 roles:
-  - administrator
   - coder

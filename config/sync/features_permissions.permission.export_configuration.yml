@@ -1,8 +1,0 @@
-uuid: 6913d197-bec2-46f4-8446-22b961cd41b1
-langcode: en
-status: true
-dependencies: {  }
-id: export_configuration
-label: 'export configuration'
-roles:
-  - administrator

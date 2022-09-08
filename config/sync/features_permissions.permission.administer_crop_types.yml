@@ -1,8 +1,0 @@
-uuid: 5949b96b-84a5-4efd-8f8c-7bf8fbd749c9
-langcode: en
-status: true
-dependencies: {  }
-id: administer_crop_types
-label: 'administer crop types'
-roles:
-  - administrator

@@ -7,5 +7,4 @@ dependencies:
 id: use_text_format_standard
 label: 'use text format standard'
 roles:
-  - administrator
   - authenticated

@@ -1,8 +1,0 @@
-uuid: ebeaf9f0-d8eb-4976-b6b2-974e22fca25e
-langcode: en
-status: true
-dependencies: {  }
-id: administer_external_entity_types
-label: 'administer external entity types'
-roles:
-  - administrator

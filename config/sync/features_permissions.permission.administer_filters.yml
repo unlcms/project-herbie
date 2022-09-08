@@ -1,8 +1,0 @@
-uuid: e07385ec-533d-4ee6-8263-d2e16e8b399b
-langcode: en
-status: true
-dependencies: {  }
-id: administer_filters
-label: 'administer filters'
-roles:
-  - administrator

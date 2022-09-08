@@ -1,8 +1,0 @@
-uuid: 8786ce92-e4fa-433a-a0b6-4b7a28f47c6e
-langcode: en
-status: true
-dependencies: {  }
-id: access_webform_submission_log
-label: 'access webform submission log'
-roles:
-  - administrator

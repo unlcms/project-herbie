@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_content_overview
 label: 'access content overview'
 roles:
-  - administrator
   - editor

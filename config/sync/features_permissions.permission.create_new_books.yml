@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_new_books
 label: 'create new books'
 roles:
-  - administrator
   - editor

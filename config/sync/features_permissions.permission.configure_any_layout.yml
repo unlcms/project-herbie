@@ -1,8 +1,0 @@
-uuid: 824a9420-5b95-4c31-afd6-c0382dfd2716
-langcode: en
-status: true
-dependencies: {  }
-id: configure_any_layout
-label: 'configure any layout'
-roles:
-  - administrator

@@ -1,8 +1,0 @@
-uuid: dedb9dd2-2085-4fa6-bcfa-5c6336b44033
-langcode: en
-status: true
-dependencies: {  }
-id: access_taxonomy_overview
-label: 'access taxonomy overview'
-roles:
-  - administrator

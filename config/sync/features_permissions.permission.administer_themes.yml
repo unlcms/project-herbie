@@ -1,8 +1,0 @@
-uuid: 167e5b8b-29d2-46af-bde1-08cc57db0c15
-langcode: en
-status: true
-dependencies: {  }
-id: administer_themes
-label: 'administer themes'
-roles:
-  - administrator

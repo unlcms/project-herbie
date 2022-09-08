@@ -1,0 +1,8 @@
+uuid: 72cbb310-f52b-49da-afc0-b12771c2e84b
+langcode: en
+status: true
+dependencies: {  }
+id: view_user_email_addresses
+label: 'view user email addresses'
+roles:
+  - site_admin

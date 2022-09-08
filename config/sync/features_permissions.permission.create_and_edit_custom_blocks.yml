@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_and_edit_custom_blocks
 label: 'create and edit custom blocks'
 roles:
-  - administrator
   - editor

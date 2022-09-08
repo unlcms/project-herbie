@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_toolbar
 label: 'access toolbar'
 roles:
-  - administrator
   - editor

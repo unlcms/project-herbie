@@ -5,5 +5,4 @@ dependencies: {  }
 id: administer_redirects
 label: 'administer redirects'
 roles:
-  - administrator
   - editor

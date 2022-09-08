@@ -5,5 +5,4 @@ dependencies: {  }
 id: delete_any_contact_info_block_content
 label: 'delete any contact_info block content'
 roles:
-  - administrator
   - editor

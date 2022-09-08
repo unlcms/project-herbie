@@ -1,8 +1,0 @@
-uuid: 3adb5878-a791-4a94-9032-7330cf65d232
-langcode: en
-status: true
-dependencies: {  }
-id: update_any_media
-label: 'update any media'
-roles:
-  - administrator

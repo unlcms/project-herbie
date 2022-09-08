@@ -1,8 +1,0 @@
-uuid: 82eeb621-cb0b-457a-96d6-e5d51517efa6
-langcode: en
-status: true
-dependencies: {  }
-id: administer_configuration_split
-label: 'administer configuration split'
-roles:
-  - administrator

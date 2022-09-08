@@ -7,5 +7,4 @@ dependencies:
 id: delete_own_person_content
 label: 'delete own person content'
 roles:
-  - administrator
   - editor

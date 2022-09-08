@@ -1,8 +1,0 @@
-uuid: 064afb6a-b530-4d3e-8b41-7a6f78edfb75
-langcode: en
-status: true
-dependencies: {  }
-id: administer_media_types
-label: 'administer media types'
-roles:
-  - administrator

@@ -1,8 +1,0 @@
-uuid: 452d7397-7c2a-40a1-9aa9-5d8f526735e7
-langcode: en
-status: true
-dependencies: {  }
-id: administer_image_styles
-label: 'administer image styles'
-roles:
-  - administrator

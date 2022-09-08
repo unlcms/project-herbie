@@ -7,5 +7,4 @@ dependencies:
 id: use_text_format_html_code
 label: 'use text format html_code'
 roles:
-  - administrator
   - coder

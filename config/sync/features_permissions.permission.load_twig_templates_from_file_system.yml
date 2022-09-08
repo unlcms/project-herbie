@@ -5,5 +5,4 @@ dependencies: {  }
 id: load_twig_templates_from_file_system
 label: 'load twig templates from file system'
 roles:
-  - administrator
   - editor

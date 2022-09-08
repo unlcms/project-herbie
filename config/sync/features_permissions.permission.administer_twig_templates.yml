@@ -5,5 +5,4 @@ dependencies: {  }
 id: administer_twig_templates
 label: 'administer twig templates'
 roles:
-  - administrator
   - editor

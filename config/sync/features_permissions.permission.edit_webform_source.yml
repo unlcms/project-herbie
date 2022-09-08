@@ -1,8 +1,0 @@
-uuid: aa7a2b9d-490a-45f7-aade-1311cdd7902c
-langcode: en
-status: true
-dependencies: {  }
-id: edit_webform_source
-label: 'edit webform source'
-roles:
-  - administrator

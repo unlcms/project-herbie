@@ -1,8 +1,0 @@
-uuid: b6e06e5d-a8d9-4a49-b1ac-b339ea40d271
-langcode: en
-status: true
-dependencies: {  }
-id: synchronize_configuration
-label: 'synchronize configuration'
-roles:
-  - administrator

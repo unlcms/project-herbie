@@ -1,8 +1,0 @@
-uuid: 9903b216-ddb5-4fac-b1c5-f2ca651f21d0
-langcode: en
-status: true
-dependencies: {  }
-id: create_media
-label: 'create media'
-roles:
-  - administrator

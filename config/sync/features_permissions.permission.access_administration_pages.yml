@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_administration_pages
 label: 'access administration pages'
 roles:
-  - administrator
   - editor

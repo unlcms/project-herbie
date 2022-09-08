@@ -1,8 +1,0 @@
-uuid: 885cf6e7-7def-4dad-9e21-5a09e54e235a
-langcode: en
-status: true
-dependencies: {  }
-id: access_shortcuts
-label: 'access shortcuts'
-roles:
-  - administrator

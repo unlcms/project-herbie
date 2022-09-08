@@ -9,5 +9,4 @@ _core:
 id: delete_news_revisions
 label: 'delete news revisions'
 roles:
-  - administrator
   - editor

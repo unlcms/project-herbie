@@ -5,5 +5,4 @@ dependencies: {  }
 id: administer_book_outlines
 label: 'administer book outlines'
 roles:
-  - administrator
   - editor

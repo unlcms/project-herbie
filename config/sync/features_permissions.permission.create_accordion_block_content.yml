@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_accordion_block_content
 label: 'create accordion block content'
 roles:
-  - administrator
   - editor

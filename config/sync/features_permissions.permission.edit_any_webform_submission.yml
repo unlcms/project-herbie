@@ -5,5 +5,4 @@ dependencies: {  }
 id: edit_any_webform_submission
 label: 'edit any webform submission'
 roles:
-  - administrator
   - editor

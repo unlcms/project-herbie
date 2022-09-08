@@ -1,8 +1,0 @@
-uuid: 2091b91a-6a6f-4a34-9b35-0dfa55bd5277
-langcode: en
-status: true
-dependencies: {  }
-id: bypass_node_access
-label: 'bypass node access'
-roles:
-  - administrator

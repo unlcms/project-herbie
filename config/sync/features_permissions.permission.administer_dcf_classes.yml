@@ -1,8 +1,0 @@
-uuid: c14616ad-66ab-4206-8d25-f982b274d90c
-langcode: en
-status: true
-dependencies: {  }
-id: administer_dcf_classes
-label: 'administer dcf classes'
-roles:
-  - administrator

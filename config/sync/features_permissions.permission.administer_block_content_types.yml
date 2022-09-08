@@ -5,5 +5,4 @@ dependencies: {  }
 id: administer_block_content_types
 label: 'administer block content types'
 roles:
-  - administrator
   - editor

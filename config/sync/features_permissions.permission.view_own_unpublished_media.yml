@@ -5,5 +5,4 @@ dependencies: {  }
 id: view_own_unpublished_media
 label: 'view own unpublished media'
 roles:
-  - administrator
   - editor

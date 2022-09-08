@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_contextual_links
 label: 'access contextual links'
 roles:
-  - administrator
   - authenticated

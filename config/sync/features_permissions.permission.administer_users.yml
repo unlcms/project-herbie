@@ -1,8 +1,8 @@
-uuid: 2aa45525-ccdc-4444-9a02-7ad89427b38c
+uuid: 2d97e134-e9d7-4f37-a529-5445afdbafd0
 langcode: en
 status: true
 dependencies: {  }
 id: administer_users
 label: 'administer users'
 roles:
-  - administrator
+  - site_admin

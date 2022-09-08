@@ -1,8 +1,0 @@
-uuid: b43589e8-bd37-4452-b6ce-4930add5fe85
-langcode: en
-status: true
-dependencies: {  }
-id: administer_webform_element_access
-label: 'administer webform element access'
-roles:
-  - administrator

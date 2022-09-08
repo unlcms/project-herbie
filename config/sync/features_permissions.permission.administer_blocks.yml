@@ -1,8 +1,0 @@
-uuid: 789fa565-cee0-49ee-8e9a-d6a3400e82f0
-langcode: en
-status: true
-dependencies: {  }
-id: administer_blocks
-label: 'administer blocks'
-roles:
-  - administrator

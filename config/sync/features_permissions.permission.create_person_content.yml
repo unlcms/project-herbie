@@ -7,5 +7,4 @@ dependencies:
 id: create_person_content
 label: 'create person content'
 roles:
-  - administrator
   - editor

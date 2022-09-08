@@ -1,0 +1,12 @@
+uuid: eee67aa7-8419-4c24-a761-2b38f59cfb5a
+langcode: en
+status: true
+dependencies: {  }
+id: site_admin
+label: 'Site admin'
+weight: -7
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer users'
+  - 'view user email addresses'

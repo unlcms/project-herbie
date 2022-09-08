@@ -7,5 +7,4 @@ dependencies:
 id: view_person_revisions
 label: 'view person revisions'
 roles:
-  - administrator
   - editor

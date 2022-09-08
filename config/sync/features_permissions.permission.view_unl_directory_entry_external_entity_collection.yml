@@ -1,8 +1,0 @@
-uuid: 866b60be-59a4-4a67-83a8-ca3b609a4ddd
-langcode: en
-status: true
-dependencies: {  }
-id: view_unl_directory_entry_external_entity_collection
-label: 'view unl_directory_entry external entity collection'
-roles:
-  - administrator

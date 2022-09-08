@@ -5,5 +5,4 @@ dependencies: {  }
 id: delete_any_html_code_block_content
 label: 'delete any html_code block content'
 roles:
-  - administrator
   - coder

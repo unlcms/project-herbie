@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_entity_usage_statistics
 label: 'access entity usage statistics'
 roles:
-  - administrator
   - editor

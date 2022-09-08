@@ -5,5 +5,4 @@ dependencies: {  }
 id: update_any_card_block_content
 label: 'update any card block content'
 roles:
-  - administrator
   - editor

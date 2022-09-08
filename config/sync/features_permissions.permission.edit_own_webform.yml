@@ -5,5 +5,4 @@ dependencies: {  }
 id: edit_own_webform
 label: 'edit own webform'
 roles:
-  - administrator
   - authenticated

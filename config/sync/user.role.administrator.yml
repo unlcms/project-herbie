@@ -61,8 +61,8 @@ dependencies:
     - webform_submission_log
 id: administrator
 label: Administrator
-weight: -6
-is_admin: null
+weight: -5
+is_admin: true
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'

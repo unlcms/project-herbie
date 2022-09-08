@@ -1,8 +1,0 @@
-uuid: d85f55a0-ce90-45dd-b51a-29ffc3bd5cfa
-langcode: en
-status: true
-dependencies: {  }
-id: perform_batch_updates_entity_usage
-label: 'perform batch updates entity usage'
-roles:
-  - administrator

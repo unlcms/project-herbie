@@ -1,8 +1,0 @@
-uuid: 3d94194a-f44c-4ce4-8cd5-a6a8dc69e855
-langcode: en
-status: true
-dependencies: {  }
-id: administer_account_settings
-label: 'administer account settings'
-roles:
-  - administrator

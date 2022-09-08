@@ -5,5 +5,4 @@ dependencies: {  }
 id: view_unpublished_paragraphs
 label: 'view unpublished paragraphs'
 roles:
-  - administrator
   - editor

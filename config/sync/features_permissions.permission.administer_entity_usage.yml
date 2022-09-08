@@ -1,8 +1,0 @@
-uuid: 205e9c0f-2559-4be8-9526-e9545d35aa11
-langcode: en
-status: true
-dependencies: {  }
-id: administer_entity_usage
-label: 'administer entity usage'
-roles:
-  - administrator

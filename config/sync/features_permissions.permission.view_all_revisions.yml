@@ -1,8 +1,0 @@
-uuid: f7f6a22a-7008-4377-88a4-9a56d7121042
-langcode: en
-status: true
-dependencies: {  }
-id: view_all_revisions
-label: 'view all revisions'
-roles:
-  - administrator

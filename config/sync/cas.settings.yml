@@ -1,0 +1,58 @@
+_core:
+  default_config_hash: Qojs5PTH_nF-5JqOGat0BjDMIblBcqVVCKqtIkTL6VI
+login_link_enabled: true
+login_link_label: 'CAS Login'
+login_success_message: ''
+server:
+  version: '2.0'
+  protocol: https
+  hostname: shib.unl.edu
+  port: 443
+  path: /idp/profile/cas
+  verify: 1
+  cert: /etc/pki/tls/cert.pem
+gateway:
+  enabled: false
+  recheck_time: 720
+  paths:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  method: client_side
+forced_login:
+  enabled: false
+  paths:
+    id: request_path
+    negate: false
+    pages: ''
+user_accounts:
+  prevent_normal_login: true
+  auto_register: true
+  email_assignment_strategy: 1
+  email_hostname: unl.edu
+  email_attribute: email
+  auto_assigned_roles: {  }
+  restrict_password_management: true
+  restrict_email_management: true
+error_handling:
+  login_failure_page: /user/login
+  message_validation_failure: 'There was a problem validating your login, please contact a site administrator.'
+  message_no_local_account: 'You do not have an account on this website. Please contact a site administrator.'
+  message_subscriber_denied_reg: 'You do not have access to log in to this website. Please contact a site administrator if you believe you should have access.'
+  message_subscriber_denied_login: 'You do not have access to log in to this website. Please contact a site administrator if you believe you should have access.'
+  message_account_blocked: 'Your account is blocked or has not been activated. Please contact a site administrator.'
+  message_username_already_exists: 'An account on this website with your username already exists. Please contact a site administrator.'
+  message_prevent_normal_login: 'This account must log in using <a href="[cas:login-url]">CAS</a>.'
+  message_restrict_password_management: 'The requested account is associated with CAS and its password cannot be managed from this website.'
+logout:
+  cas_logout: true
+  logout_destination: ''
+  enable_single_logout: false
+  single_logout_session_lifetime: 25
+proxy:
+  initialize: false
+  can_be_proxied: false
+  proxy_chains: ''
+advanced:
+  debug_log: false
+  connection_timeout: 10

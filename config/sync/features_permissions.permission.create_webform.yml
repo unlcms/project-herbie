@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_webform
 label: 'create webform'
 roles:
-  - administrator
   - editor

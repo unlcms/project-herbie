@@ -7,5 +7,4 @@ dependencies:
 id: edit_any_builder_page_content
 label: 'edit any builder_page content'
 roles:
-  - administrator
   - editor

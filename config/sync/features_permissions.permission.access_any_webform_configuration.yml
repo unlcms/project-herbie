@@ -1,8 +1,0 @@
-uuid: d57305a1-9c54-4003-a7e2-e781d4a41586
-langcode: en
-status: true
-dependencies: {  }
-id: access_any_webform_configuration
-label: 'access any webform configuration'
-roles:
-  - administrator

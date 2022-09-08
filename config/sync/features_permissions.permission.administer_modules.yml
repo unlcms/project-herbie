@@ -1,8 +1,0 @@
-uuid: aff8c3af-6b98-4b31-8ede-3bb776372a14
-langcode: en
-status: true
-dependencies: {  }
-id: administer_modules
-label: 'administer modules'
-roles:
-  - administrator

@@ -7,5 +7,4 @@ dependencies:
 id: edit_any_person_content
 label: 'edit any person content'
 roles:
-  - administrator
   - editor

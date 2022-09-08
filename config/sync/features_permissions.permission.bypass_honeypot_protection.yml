@@ -5,5 +5,4 @@ dependencies: {  }
 id: bypass_honeypot_protection
 label: 'bypass honeypot protection'
 roles:
-  - administrator
   - authenticated

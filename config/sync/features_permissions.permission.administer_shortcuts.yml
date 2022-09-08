@@ -1,8 +1,0 @@
-uuid: dacfaf4a-8b9a-4c1c-ae06-8a275a8616ec
-langcode: en
-status: true
-dependencies: {  }
-id: administer_shortcuts
-label: 'administer shortcuts'
-roles:
-  - administrator

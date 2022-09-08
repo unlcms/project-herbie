@@ -1,8 +1,0 @@
-uuid: 1e954c4a-457b-4204-8024-945e38058ff0
-langcode: en
-status: true
-dependencies: {  }
-id: administer_layout_builder_modal
-label: 'administer layout builder modal'
-roles:
-  - administrator

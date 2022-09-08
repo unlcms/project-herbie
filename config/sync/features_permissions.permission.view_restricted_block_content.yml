@@ -5,5 +5,4 @@ dependencies: {  }
 id: view_restricted_block_content
 label: 'view restricted block content'
 roles:
-  - administrator
   - editor

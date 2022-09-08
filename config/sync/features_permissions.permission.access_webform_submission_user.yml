@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_webform_submission_user
 label: 'access webform submission user'
 roles:
-  - administrator
   - authenticated

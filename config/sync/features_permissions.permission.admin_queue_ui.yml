@@ -1,8 +1,0 @@
-uuid: 336cd165-6889-49c8-9e2e-1e20d0cace04
-langcode: en
-status: true
-dependencies: {  }
-id: admin_queue_ui
-label: 'admin queue_ui'
-roles:
-  - administrator

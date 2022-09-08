@@ -1,8 +1,0 @@
-uuid: 25125fe2-c8c7-42ea-a2e2-a1485b13f588
-langcode: en
-status: true
-dependencies: {  }
-id: administer_site_configuration
-label: 'administer site configuration'
-roles:
-  - administrator

@@ -1,8 +1,0 @@
-uuid: 61916954-d4f1-4668-aea4-f5d9e3febde8
-langcode: en
-status: true
-dependencies: {  }
-id: administer_pathauto
-label: 'administer pathauto'
-roles:
-  - administrator

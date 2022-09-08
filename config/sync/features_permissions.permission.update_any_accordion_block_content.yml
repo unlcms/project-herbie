@@ -5,5 +5,4 @@ dependencies: {  }
 id: update_any_accordion_block_content
 label: 'update any accordion block content'
 roles:
-  - administrator
   - editor

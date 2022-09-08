@@ -1,8 +1,0 @@
-uuid: 8e503e98-0112-408f-8c33-8abef3c97310
-langcode: en
-status: true
-dependencies: {  }
-id: delete_unl_directory_entry_external_entity
-label: 'delete unl_directory_entry external entity'
-roles:
-  - administrator

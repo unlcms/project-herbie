@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_hero_block_content
 label: 'create hero block content'
 roles:
-  - administrator
   - editor

@@ -5,5 +5,4 @@ dependencies: {  }
 id: access_media_overview
 label: 'access media overview'
 roles:
-  - administrator
   - editor

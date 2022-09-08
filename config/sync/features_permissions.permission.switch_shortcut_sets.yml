@@ -1,8 +1,0 @@
-uuid: a5ca2d57-6d66-4af3-a2ff-b4d086492e9c
-langcode: en
-status: true
-dependencies: {  }
-id: switch_shortcut_sets
-label: 'switch shortcut sets'
-roles:
-  - administrator

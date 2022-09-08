@@ -1,8 +1,0 @@
-uuid: bce5d437-2921-4b5b-922d-51bbb0a6a819
-langcode: en
-status: true
-dependencies: {  }
-id: add_any_content_to_books
-label: 'add any content to books'
-roles:
-  - administrator

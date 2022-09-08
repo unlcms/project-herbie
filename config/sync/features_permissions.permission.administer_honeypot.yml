@@ -1,8 +1,0 @@
-uuid: 966f3d22-5213-4e0e-878d-a9647a40d349
-langcode: en
-status: true
-dependencies: {  }
-id: administer_honeypot
-label: 'administer honeypot'
-roles:
-  - administrator

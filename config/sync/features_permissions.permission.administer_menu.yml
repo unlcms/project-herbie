@@ -1,8 +1,0 @@
-uuid: dc20091f-5927-456e-9052-b6e23bb3476b
-langcode: en
-status: true
-dependencies: {  }
-id: administer_menu
-label: 'administer menu'
-roles:
-  - administrator

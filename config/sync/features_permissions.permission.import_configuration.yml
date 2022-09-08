@@ -1,8 +1,0 @@
-uuid: ea3b4165-f235-4def-9c09-b2ab66710d6d
-langcode: en
-status: true
-dependencies: {  }
-id: import_configuration
-label: 'import configuration'
-roles:
-  - administrator

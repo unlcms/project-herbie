@@ -5,5 +5,4 @@ dependencies: {  }
 id: view_the_administration_theme
 label: 'view the administration theme'
 roles:
-  - administrator
   - editor

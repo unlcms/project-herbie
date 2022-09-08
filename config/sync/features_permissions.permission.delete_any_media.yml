@@ -1,8 +1,0 @@
-uuid: ebe527dd-3f16-4bb3-a263-9e1ceaab0580
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_media
-label: 'delete any media'
-roles:
-  - administrator

@@ -7,5 +7,4 @@ dependencies:
 id: delete_builder_page_revisions
 label: 'delete builder_page revisions'
 roles:
-  - administrator
   - editor

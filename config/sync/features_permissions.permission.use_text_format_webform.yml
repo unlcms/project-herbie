@@ -7,5 +7,4 @@ dependencies:
 id: use_text_format_webform
 label: 'use text format webform'
 roles:
-  - administrator
   - authenticated

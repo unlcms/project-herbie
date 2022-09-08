@@ -32,7 +32,7 @@ dependencies:
     - webform
 id: editor
 label: Editor
-weight: -7
+weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'

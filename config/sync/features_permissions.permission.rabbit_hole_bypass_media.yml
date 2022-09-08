@@ -1,8 +1,0 @@
-uuid: e78decbd-3902-41bc-9a3f-2270e7f11952
-langcode: en
-status: true
-dependencies: {  }
-id: rabbit_hole_bypass_media
-label: 'rabbit hole bypass media'
-roles:
-  - administrator

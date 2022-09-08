@@ -7,5 +7,4 @@ dependencies:
 id: use_text_format_block_body
 label: 'use text format block_body'
 roles:
-  - administrator
   - authenticated

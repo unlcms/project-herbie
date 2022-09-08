@@ -5,5 +5,4 @@ dependencies: {  }
 id: manage_layout_builder_component_attributes
 label: 'manage layout builder component attributes'
 roles:
-  - administrator
   - editor

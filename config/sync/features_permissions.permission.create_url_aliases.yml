@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_url_aliases
 label: 'create url aliases'
 roles:
-  - administrator
   - editor

@@ -7,5 +7,4 @@ dependencies:
 id: delete_person_revisions
 label: 'delete person revisions'
 roles:
-  - administrator
   - editor

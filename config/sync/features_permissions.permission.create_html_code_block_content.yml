@@ -5,5 +5,4 @@ dependencies: {  }
 id: create_html_code_block_content
 label: 'create html_code block content'
 roles:
-  - administrator
   - coder

@@ -1,8 +1,0 @@
-uuid: 36c36a23-9df7-4722-8a39-efd5480bf2ff
-langcode: en
-status: true
-dependencies: {  }
-id: delete_own_webform
-label: 'delete own webform'
-roles:
-  - administrator
