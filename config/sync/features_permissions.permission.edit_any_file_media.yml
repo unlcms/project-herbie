@@ -8,3 +8,4 @@ id: edit_any_file_media
 label: 'edit any file media'
 roles:
   - editor
+  - site_admin

@@ -1,0 +1,8 @@
+uuid: 68b052f8-4e62-43e0-a93b-ab2639c7b2cb
+langcode: en
+status: true
+dependencies: {  }
+id: administer_webform
+label: 'administer webform'
+roles:
+  - site_admin

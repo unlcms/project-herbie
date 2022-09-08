@@ -6,3 +6,4 @@ id: create_webform
 label: 'create webform'
 roles:
   - editor
+  - site_admin

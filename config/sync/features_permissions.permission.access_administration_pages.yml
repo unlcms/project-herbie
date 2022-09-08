@@ -5,4 +5,6 @@ dependencies: {  }
 id: access_administration_pages
 label: 'access administration pages'
 roles:
+  - coder
   - editor
+  - site_admin

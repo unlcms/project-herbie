@@ -8,7 +8,6 @@ dependencies:
     - filter.format.standard
     - filter.format.webform
   module:
-    - contextual
     - filter
     - honeypot
     - media
@@ -23,7 +22,6 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
-  - 'access contextual links'
   - 'access webform submission user'
   - 'bypass honeypot protection'
   - 'edit own webform'

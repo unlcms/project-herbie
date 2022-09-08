@@ -1,0 +1,9 @@
+uuid: fd3389b8-2eab-4897-ab62-bb28dd30d720
+langcode: en
+status: true
+dependencies: {  }
+id: access_taxonomy_overview
+label: 'access taxonomy overview'
+roles:
+  - editor
+  - site_admin

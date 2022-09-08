@@ -8,3 +8,4 @@ id: edit_any_book_content
 label: 'edit any book content'
 roles:
   - editor
+  - site_admin

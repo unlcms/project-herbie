@@ -1,8 +1,9 @@
-uuid: ef607189-c971-45c9-851e-d418e02eb55a
+uuid: 700b455d-be83-4b1e-bf01-7969dadff645
 langcode: en
 status: true
 dependencies: {  }
 id: load_twig_templates_from_file_system
 label: 'load twig templates from file system'
 roles:
-  - editor
+  - coder
+  - site_admin

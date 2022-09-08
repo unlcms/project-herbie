@@ -8,3 +8,4 @@ id: create_book_content
 label: 'create book content'
 roles:
   - editor
+  - site_admin

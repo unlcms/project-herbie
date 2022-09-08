@@ -8,3 +8,4 @@ id: create_image_media
 label: 'create image media'
 roles:
   - editor
+  - site_admin

@@ -8,3 +8,4 @@ id: revert_person_revisions
 label: 'revert person revisions'
 roles:
   - editor
+  - site_admin

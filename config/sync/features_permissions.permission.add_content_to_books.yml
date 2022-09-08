@@ -6,3 +6,4 @@ id: add_content_to_books
 label: 'add content to books'
 roles:
   - editor
+  - site_admin

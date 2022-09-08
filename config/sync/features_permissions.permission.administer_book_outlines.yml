@@ -6,3 +6,4 @@ id: administer_book_outlines
 label: 'administer book outlines'
 roles:
   - editor
+  - site_admin

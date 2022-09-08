@@ -5,4 +5,5 @@ dependencies: {  }
 id: view_user_email_addresses
 label: 'view user email addresses'
 roles:
+  - editor
   - site_admin

@@ -8,3 +8,4 @@ id: delete_own_person_content
 label: 'delete own person content'
 roles:
   - editor
+  - site_admin

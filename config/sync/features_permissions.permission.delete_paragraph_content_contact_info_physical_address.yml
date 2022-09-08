@@ -6,3 +6,4 @@ id: delete_paragraph_content_contact_info_physical_address
 label: 'delete paragraph content contact_info_physical_address'
 roles:
   - editor
+  - site_admin

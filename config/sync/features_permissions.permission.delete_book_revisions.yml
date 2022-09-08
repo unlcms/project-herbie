@@ -8,3 +8,4 @@ id: delete_book_revisions
 label: 'delete book revisions'
 roles:
   - editor
+  - site_admin

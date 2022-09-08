@@ -6,3 +6,4 @@ id: update_any_hero_block_content
 label: 'update any hero block content'
 roles:
   - editor
+  - site_admin

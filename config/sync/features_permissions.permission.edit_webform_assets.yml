@@ -1,0 +1,8 @@
+uuid: 3e0f30a7-5321-452f-b754-b8842ca07a62
+langcode: en
+status: true
+dependencies: {  }
+id: edit_webform_assets
+label: 'edit webform assets'
+roles:
+  - coder

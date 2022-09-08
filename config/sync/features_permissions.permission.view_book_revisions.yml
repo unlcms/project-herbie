@@ -8,3 +8,4 @@ id: view_book_revisions
 label: 'view book revisions'
 roles:
   - editor
+  - site_admin

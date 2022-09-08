@@ -1,8 +1,9 @@
-uuid: 1f773649-b81d-4a7b-b6c9-963d88454bbd
+uuid: df261b2e-ea11-4a16-8ae2-a34839627d79
 langcode: en
 status: true
 dependencies: {  }
 id: access_contextual_links
 label: 'access contextual links'
 roles:
-  - authenticated
+  - editor
+  - site_admin

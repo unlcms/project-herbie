@@ -6,3 +6,4 @@ id: delete_paragraph_content_contact_info_email
 label: 'delete paragraph content contact_info_email'
 roles:
   - editor
+  - site_admin

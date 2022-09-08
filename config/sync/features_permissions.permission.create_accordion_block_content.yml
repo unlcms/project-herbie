@@ -6,3 +6,4 @@ id: create_accordion_block_content
 label: 'create accordion block content'
 roles:
   - editor
+  - site_admin

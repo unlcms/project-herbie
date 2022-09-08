@@ -6,3 +6,4 @@ id: create_hero_block_content
 label: 'create hero block content'
 roles:
   - editor
+  - site_admin

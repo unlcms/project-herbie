@@ -6,3 +6,4 @@ id: edit_any_webform
 label: 'edit any webform'
 roles:
   - editor
+  - site_admin

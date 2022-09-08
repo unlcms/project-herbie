@@ -8,3 +8,4 @@ id: create_person_content
 label: 'create person content'
 roles:
   - editor
+  - site_admin

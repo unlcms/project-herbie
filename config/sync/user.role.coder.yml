@@ -5,16 +5,29 @@ dependencies:
   config:
     - filter.format.html_code
   module:
+    - asset_injector
     - block_content_permissions
     - field_css
     - filter
+    - system
+    - toolbar
+    - twig_ui
+    - webform
 id: coder
 label: Coder
 weight: -6
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access css fields'
+  - 'access toolbar'
+  - 'administer css assets injector'
+  - 'administer js assets injector'
+  - 'administer twig templates'
   - 'create html_code block content'
   - 'delete any html_code block content'
+  - 'edit webform assets'
+  - 'load twig templates from file system'
   - 'update any html_code block content'
   - 'use text format html_code'
+  - 'view the administration theme'

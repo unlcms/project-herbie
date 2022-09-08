@@ -10,3 +10,4 @@ id: delete_news_revisions
 label: 'delete news revisions'
 roles:
   - editor
+  - site_admin

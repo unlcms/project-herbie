@@ -8,3 +8,4 @@ id: delete_person_revisions
 label: 'delete person revisions'
 roles:
   - editor
+  - site_admin

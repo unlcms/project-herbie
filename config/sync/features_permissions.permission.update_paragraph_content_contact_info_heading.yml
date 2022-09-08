@@ -6,3 +6,4 @@ id: update_paragraph_content_contact_info_heading
 label: 'update paragraph content contact_info_heading'
 roles:
   - editor
+  - site_admin

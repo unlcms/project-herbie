@@ -8,3 +8,4 @@ id: revert_book_revisions
 label: 'revert book revisions'
 roles:
   - editor
+  - site_admin

@@ -6,3 +6,4 @@ id: update_paragraph_content_contact_info_post_office_box_add
 label: 'update paragraph content contact_info_post_office_box_add'
 roles:
   - editor
+  - site_admin

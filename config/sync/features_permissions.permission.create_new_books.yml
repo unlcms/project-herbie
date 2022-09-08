@@ -6,3 +6,4 @@ id: create_new_books
 label: 'create new books'
 roles:
   - editor
+  - site_admin

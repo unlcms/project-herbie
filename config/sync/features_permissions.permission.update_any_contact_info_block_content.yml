@@ -6,3 +6,4 @@ id: update_any_contact_info_block_content
 label: 'update any contact_info block content'
 roles:
   - editor
+  - site_admin

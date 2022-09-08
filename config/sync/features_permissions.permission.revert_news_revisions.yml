@@ -10,3 +10,4 @@ id: revert_news_revisions
 label: 'revert news revisions'
 roles:
   - editor
+  - site_admin

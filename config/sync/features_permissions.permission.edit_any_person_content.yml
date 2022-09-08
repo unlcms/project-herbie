@@ -8,3 +8,4 @@ id: edit_any_person_content
 label: 'edit any person content'
 roles:
   - editor
+  - site_admin

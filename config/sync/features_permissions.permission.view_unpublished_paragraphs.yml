@@ -6,3 +6,4 @@ id: view_unpublished_paragraphs
 label: 'view unpublished paragraphs'
 roles:
   - editor
+  - site_admin

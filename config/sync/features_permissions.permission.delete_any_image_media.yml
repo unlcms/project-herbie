@@ -8,3 +8,4 @@ id: delete_any_image_media
 label: 'delete any image media'
 roles:
   - editor
+  - site_admin

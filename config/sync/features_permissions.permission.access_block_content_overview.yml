@@ -6,3 +6,4 @@ id: access_block_content_overview
 label: 'access block content overview'
 roles:
   - editor
+  - site_admin

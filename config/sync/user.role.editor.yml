@@ -12,9 +12,9 @@ dependencies:
     - node.type.news
     - node.type.person
   module:
-    - asset_injector
     - block_content_permissions
     - book
+    - contextual
     - entity_usage
     - layout_builder
     - layout_builder_component_attributes
@@ -24,11 +24,9 @@ dependencies:
     - paragraphs
     - paragraphs_type_permissions
     - path
-    - redirect
     - system
+    - taxonomy
     - toolbar
-    - twig_ui
-    - unl_config
     - webform
 id: editor
 label: Editor
@@ -38,17 +36,18 @@ permissions:
   - 'access administration pages'
   - 'access block content overview'
   - 'access content overview'
+  - 'access contextual links'
   - 'access entity usage statistics'
   - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
   - 'access webform overview'
   - 'add content to books'
   - 'administer block content types'
   - 'administer book outlines'
-  - 'administer css assets injector'
   - 'administer main menu items'
-  - 'administer redirects'
-  - 'administer twig templates'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'
@@ -64,6 +63,7 @@ permissions:
   - 'create new books'
   - 'create news content'
   - 'create paragraph content accordion_item'
+  - 'create paragraph content contact_info_contact_point'
   - 'create paragraph content contact_info_email'
   - 'create paragraph content contact_info_fax'
   - 'create paragraph content contact_info_heading'
@@ -88,13 +88,12 @@ permissions:
   - 'delete any news content'
   - 'delete any person content'
   - 'delete any remote_video media'
-  - 'delete any webform'
-  - 'delete any webform submission'
   - 'delete book revisions'
   - 'delete builder_page revisions'
   - 'delete news revisions'
   - 'delete own person content'
   - 'delete paragraph content accordion_item'
+  - 'delete paragraph content contact_info_contact_point'
   - 'delete paragraph content contact_info_email'
   - 'delete paragraph content contact_info_fax'
   - 'delete paragraph content contact_info_heading'
@@ -111,15 +110,11 @@ permissions:
   - 'edit any person content'
   - 'edit any remote_video media'
   - 'edit any webform'
-  - 'edit any webform submission'
-  - 'edit own person content'
-  - 'load twig templates from file system'
   - 'manage layout builder component attributes'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
   - 'revert person revisions'
-  - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
   - 'update any card_circle_image block content'
@@ -127,6 +122,7 @@ permissions:
   - 'update any content block content'
   - 'update any hero block content'
   - 'update paragraph content accordion_item'
+  - 'update paragraph content contact_info_contact_point'
   - 'update paragraph content contact_info_email'
   - 'update paragraph content contact_info_fax'
   - 'update paragraph content contact_info_heading'
@@ -152,3 +148,4 @@ permissions:
   - 'view restricted block content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view user email addresses'

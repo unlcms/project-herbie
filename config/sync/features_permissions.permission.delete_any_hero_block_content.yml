@@ -6,3 +6,4 @@ id: delete_any_hero_block_content
 label: 'delete any hero block content'
 roles:
   - editor
+  - site_admin

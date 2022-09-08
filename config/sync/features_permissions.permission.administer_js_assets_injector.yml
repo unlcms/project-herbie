@@ -1,0 +1,8 @@
+uuid: 9a5a7411-73e6-4703-9862-e83dbc833620
+langcode: en
+status: true
+dependencies: {  }
+id: administer_js_assets_injector
+label: 'administer js assets injector'
+roles:
+  - coder

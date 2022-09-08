@@ -6,3 +6,4 @@ id: delete_paragraph_content_contact_info_margin
 label: 'delete paragraph content contact_info_margin'
 roles:
   - editor
+  - site_admin

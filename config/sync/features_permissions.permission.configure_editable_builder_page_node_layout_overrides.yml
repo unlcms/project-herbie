@@ -8,3 +8,4 @@ id: configure_editable_builder_page_node_layout_overrides
 label: 'configure editable builder_page node layout overrides'
 roles:
   - editor
+  - site_admin

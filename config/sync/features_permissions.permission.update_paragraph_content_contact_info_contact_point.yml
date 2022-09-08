@@ -1,0 +1,9 @@
+uuid: 49eed9f0-6a7e-448a-bcca-8c4e8c733761
+langcode: en
+status: true
+dependencies: {  }
+id: update_paragraph_content_contact_info_contact_point
+label: 'update paragraph content contact_info_contact_point'
+roles:
+  - editor
+  - site_admin

@@ -8,3 +8,4 @@ id: revert_builder_page_revisions
 label: 'revert builder_page revisions'
 roles:
   - editor
+  - site_admin

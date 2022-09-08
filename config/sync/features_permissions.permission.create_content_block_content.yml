@@ -6,3 +6,4 @@ id: create_content_block_content
 label: 'create content block content'
 roles:
   - editor
+  - site_admin

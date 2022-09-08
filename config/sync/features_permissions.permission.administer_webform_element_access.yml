@@ -1,0 +1,8 @@
+uuid: 3b0acdcb-3d7d-4b21-b4ff-20e7fbd3f4b6
+langcode: en
+status: true
+dependencies: {  }
+id: administer_webform_element_access
+label: 'administer webform element access'
+roles:
+  - site_admin

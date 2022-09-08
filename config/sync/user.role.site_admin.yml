@@ -1,12 +1,160 @@
 uuid: eee67aa7-8419-4c24-a761-2b38f59cfb5a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.book
+    - node.type.builder_page
+    - node.type.news
+    - node.type.person
+  module:
+    - block_content_permissions
+    - book
+    - contextual
+    - entity_usage
+    - layout_builder
+    - layout_builder_component_attributes
+    - media
+    - menu_admin_per_menu
+    - node
+    - paragraphs
+    - paragraphs_type_permissions
+    - path
+    - redirect
+    - system
+    - taxonomy
+    - toolbar
+    - twig_ui
+    - unl_config
+    - views_ui
+    - webform
 id: site_admin
 label: 'Site admin'
 weight: -7
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access block content overview'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access entity usage statistics'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
   - 'access user profiles'
+  - 'access webform overview'
+  - 'add content to books'
+  - 'administer block content types'
+  - 'administer book outlines'
+  - 'administer main menu items'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer twig templates'
   - 'administer users'
+  - 'administer views'
+  - 'administer webform'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'configure editable builder_page node layout overrides'
+  - 'create accordion block content'
+  - 'create and edit custom blocks'
+  - 'create book content'
+  - 'create builder_page content'
+  - 'create card block content'
+  - 'create card_circle_image block content'
+  - 'create contact_info block content'
+  - 'create content block content'
+  - 'create file media'
+  - 'create hero block content'
+  - 'create image media'
+  - 'create new books'
+  - 'create news content'
+  - 'create paragraph content accordion_item'
+  - 'create paragraph content contact_info_contact_point'
+  - 'create paragraph content contact_info_email'
+  - 'create paragraph content contact_info_fax'
+  - 'create paragraph content contact_info_heading'
+  - 'create paragraph content contact_info_margin'
+  - 'create paragraph content contact_info_phone'
+  - 'create paragraph content contact_info_physical_address'
+  - 'create paragraph content contact_info_post_office_box_add'
+  - 'create person content'
+  - 'create remote_video media'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any accordion block content'
+  - 'delete any book content'
+  - 'delete any builder_page content'
+  - 'delete any card block content'
+  - 'delete any card_circle_image block content'
+  - 'delete any contact_info block content'
+  - 'delete any content block content'
+  - 'delete any file media'
+  - 'delete any hero block content'
+  - 'delete any image media'
+  - 'delete any news content'
+  - 'delete any person content'
+  - 'delete any remote_video media'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete book revisions'
+  - 'delete builder_page revisions'
+  - 'delete news revisions'
+  - 'delete own person content'
+  - 'delete paragraph content accordion_item'
+  - 'delete paragraph content contact_info_contact_point'
+  - 'delete paragraph content contact_info_email'
+  - 'delete paragraph content contact_info_fax'
+  - 'delete paragraph content contact_info_heading'
+  - 'delete paragraph content contact_info_margin'
+  - 'delete paragraph content contact_info_phone'
+  - 'delete paragraph content contact_info_physical_address'
+  - 'delete paragraph content contact_info_post_office_box_add'
+  - 'delete person revisions'
+  - 'edit any book content'
+  - 'edit any builder_page content'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any news content'
+  - 'edit any person content'
+  - 'edit any remote_video media'
+  - 'edit any webform'
+  - 'load twig templates from file system'
+  - 'manage layout builder component attributes'
+  - 'revert book revisions'
+  - 'revert builder_page revisions'
+  - 'revert news revisions'
+  - 'revert person revisions'
+  - 'unl administer site configuration'
+  - 'update any accordion block content'
+  - 'update any card block content'
+  - 'update any card_circle_image block content'
+  - 'update any contact_info block content'
+  - 'update any content block content'
+  - 'update any hero block content'
+  - 'update paragraph content accordion_item'
+  - 'update paragraph content contact_info_contact_point'
+  - 'update paragraph content contact_info_email'
+  - 'update paragraph content contact_info_fax'
+  - 'update paragraph content contact_info_heading'
+  - 'update paragraph content contact_info_margin'
+  - 'update paragraph content contact_info_phone'
+  - 'update paragraph content contact_info_physical_address'
+  - 'update paragraph content contact_info_post_office_box_add'
+  - 'view any webform submission'
+  - 'view book revisions'
+  - 'view builder_page revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view person revisions'
+  - 'view restricted block content'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'
   - 'view user email addresses'

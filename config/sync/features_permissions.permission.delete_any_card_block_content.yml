@@ -6,3 +6,4 @@ id: delete_any_card_block_content
 label: 'delete any card block content'
 roles:
   - editor
+  - site_admin

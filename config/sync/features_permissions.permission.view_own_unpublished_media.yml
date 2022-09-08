@@ -6,3 +6,4 @@ id: view_own_unpublished_media
 label: 'view own unpublished media'
 roles:
   - editor
+  - site_admin

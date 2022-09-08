@@ -6,3 +6,4 @@ id: delete_any_content_block_content
 label: 'delete any content block content'
 roles:
   - editor
+  - site_admin

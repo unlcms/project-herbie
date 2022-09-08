@@ -6,3 +6,4 @@ id: create_paragraph_content_contact_info_email
 label: 'create paragraph content contact_info_email'
 roles:
   - editor
+  - site_admin

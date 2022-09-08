@@ -1,8 +1,0 @@
-uuid: 52c145be-d257-422c-97c4-89a1a4ee1b6c
-langcode: en
-status: true
-dependencies: {  }
-id: edit_any_webform_submission
-label: 'edit any webform submission'
-roles:
-  - editor

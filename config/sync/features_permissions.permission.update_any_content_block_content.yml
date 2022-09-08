@@ -6,3 +6,4 @@ id: update_any_content_block_content
 label: 'update any content block content'
 roles:
   - editor
+  - site_admin

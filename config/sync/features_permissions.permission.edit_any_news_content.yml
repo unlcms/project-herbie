@@ -10,3 +10,4 @@ id: edit_any_news_content
 label: 'edit any news content'
 roles:
   - editor
+  - site_admin

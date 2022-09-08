@@ -5,4 +5,5 @@ dependencies: {  }
 id: access_user_profiles
 label: 'access user profiles'
 roles:
+  - editor
   - site_admin

@@ -1,0 +1,9 @@
+uuid: 637d9ddd-e2f9-46b8-8af5-f3ad77fd3858
+langcode: en
+status: true
+dependencies: {  }
+id: create_paragraph_content_contact_info_contact_point
+label: 'create paragraph content contact_info_contact_point'
+roles:
+  - editor
+  - site_admin

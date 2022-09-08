@@ -1,0 +1,9 @@
+uuid: 706bc57a-a8bc-45a0-8594-a432eb2f9ed0
+langcode: en
+status: true
+dependencies: {  }
+id: delete_paragraph_content_contact_info_contact_point
+label: 'delete paragraph content contact_info_contact_point'
+roles:
+  - editor
+  - site_admin

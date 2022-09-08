@@ -10,3 +10,4 @@ id: create_news_content
 label: 'create news content'
 roles:
   - editor
+  - site_admin

@@ -6,3 +6,4 @@ id: update_any_card_circle_image_block_content
 label: 'update any card_circle_image block content'
 roles:
   - editor
+  - site_admin

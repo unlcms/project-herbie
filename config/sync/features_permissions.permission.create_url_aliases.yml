@@ -6,3 +6,4 @@ id: create_url_aliases
 label: 'create url aliases'
 roles:
   - editor
+  - site_admin

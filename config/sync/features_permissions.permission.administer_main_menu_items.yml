@@ -6,3 +6,4 @@ id: administer_main_menu_items
 label: 'administer main menu items'
 roles:
   - editor
+  - site_admin

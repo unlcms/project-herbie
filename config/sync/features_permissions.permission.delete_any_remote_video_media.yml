@@ -8,3 +8,4 @@ id: delete_any_remote_video_media
 label: 'delete any remote_video media'
 roles:
   - editor
+  - site_admin

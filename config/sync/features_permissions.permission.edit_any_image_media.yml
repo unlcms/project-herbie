@@ -8,3 +8,4 @@ id: edit_any_image_media
 label: 'edit any image media'
 roles:
   - editor
+  - site_admin
