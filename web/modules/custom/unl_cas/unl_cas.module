@@ -41,3 +41,11 @@ function unl_cas_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
   // Always disable the Administrator role. It should be managed via Drush.
   $form['account']['roles']['administrator']['#disabled'] = TRUE;
 }
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function unl_cas_menu_links_discovered_alter(&$links) {
+  unset($links['admin_toolbar_tools.extra_links:user.admin_create']);
+  unset($links['cas.bulk_add_users']);
+}
