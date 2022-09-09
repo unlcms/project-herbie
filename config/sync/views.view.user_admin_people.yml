@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - user.role.administrator
     - user.role.coder
     - user.role.editor
     - user.role.site_admin
@@ -598,18 +597,18 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        roles_target_id_1:
-          id: roles_target_id_1
-          table: user__roles
-          field: roles_target_id
+        name:
+          id: name
+          table: users_field_data
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: user
-          entity_field: roles
-          plugin_id: user_roles
-          operator: 'not empty'
-          value: {  }
+          entity_field: name
+          plugin_id: string
+          operator: '!='
+          value: admin
           group: 1
           exposed: false
           expose:
@@ -626,7 +625,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -639,9 +638,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-        roles_target_id_2:
-          id: roles_target_id_2
+        roles_target_id_1:
+          id: roles_target_id_1
           table: user__roles
           field: roles_target_id
           relationship: none
@@ -650,9 +648,8 @@ display:
           entity_type: user
           entity_field: roles
           plugin_id: user_roles
-          operator: not
-          value:
-            administrator: administrator
+          operator: 'not empty'
+          value: {  }
           group: 1
           exposed: false
           expose:
@@ -755,7 +752,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       css_class: ''
