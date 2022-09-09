@@ -3,9 +3,14 @@
 namespace Drupal\unl_views\Access;
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 class ProductionAccess {
+
+  use MessengerTrait;
+  use StringTranslationTrait;
 
   /**
    * _custom_access callback to help prevent editing of specified views on Production.
@@ -34,6 +39,7 @@ class ProductionAccess {
     foreach ($forbidden_views as $view_id) {
       // @TODO Improve this to avoid a false positive on something like 'content_recent'
       if (strpos($current_path,'/admin/structure/views/view/'.$view_id) === 0) {
+        $this->messenger()->addWarning($this->t('This view is only editable in a Development environment.'));
         return AccessResult::forbidden();
       }
     }
