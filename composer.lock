@@ -11232,16 +11232,16 @@
         },
         {
             "name": "unlcms/unl_user",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_user.git",
-                "reference": "cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d"
+                "reference": "546099b498bf09041f936a5f3ea8cbc0f9bc1cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d",
-                "reference": "cce00b4ab3cccbbf33ca9e6fb64d39d3915f0a8d",
+                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/546099b498bf09041f936a5f3ea8cbc0f9bc1cc3",
+                "reference": "546099b498bf09041f936a5f3ea8cbc0f9bc1cc3",
                 "shasum": ""
             },
             "require": {
@@ -11265,9 +11265,9 @@
             "description": "Populate user data with values from LDAP & allow searching for users to add.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_user/issues",
-                "source": "https://github.com/unlcms/unl_user/tree/1.1"
+                "source": "https://github.com/unlcms/unl_user/tree/1.2"
             },
-            "time": "2022-08-03T19:41:49+00:00"
+            "time": "2022-09-08T21:03:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

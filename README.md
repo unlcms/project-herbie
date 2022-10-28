@@ -80,6 +80,16 @@ When asked to select an Installation Profile, select _Use existing configuration
 
 Decide if you want to run a multisite installation.  (See "Running Multisite" below.) 
 
+#### Local Settings
+
+Create a file at `web/sites/default/settings.php` and add the LDAP password:
+
+```php
+<?php
+
+$config['unl_user.settings']['password'] = 'PASSWORD_GOES_HERE';
+```
+
 ## Upgrading Drupal Core (or a module)
 
 Run this on a development site and commit composer.json, composer.lock, and any changes to `config/sync`.
