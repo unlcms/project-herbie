@@ -82,7 +82,7 @@ Decide if you want to run a multisite installation.  (See "Running Multisite" be
 
 #### Local Settings
 
-Create a file at `web/sites/default/settings.php` and add the LDAP password:
+Create a file at `web/sites/default/settings.local.php` and add the LDAP password:
 
 ```php
 <?php
