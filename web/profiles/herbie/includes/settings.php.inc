@@ -5,6 +5,25 @@
  */
 $settings['config_sync_directory'] = '../config/sync';
 
+/**
+ * Trusted host configuration.
+ */
+$settings['trusted_host_patterns'] = [
+  '^unl\.edu$',
+  '^.+\.unl\.edu$',
+  '^.+\.nebraska\.edu$',
+  '^.+\.unomaha\.edu$',
+  '^.+\.unk\.edu$',
+  '^.+\.unmc\.edu$',
+];
+
+/*
+ * Private file path:
+ *
+ * A local file system path where private files will be stored.
+ */
+$settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
+
 /*
  * Set environment-specific configuration.
  */
@@ -72,13 +91,6 @@ else {
   // For local development, the temp directory should be set
   // in settings.local.php.
 }
-
-/*
- * Private file path:
- *
- * A local file system path where private files will be stored.
- */
-$settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
 
 /*
  * Increase PHP's memory_limit for Drush.
