@@ -146,6 +146,21 @@ Twig caching is disabled and Twig autoloading is enabled; debug cacheability hea
 CSS and JS aggregation is disabled; and file permission hardening is disabled.  See 
 /profiles/herbie/includes/settings.php.inc for more details. These settings can be overridden in settings.local.php.
 
+## Drush
+
+Drush can be run on the default site:
+```
+vendor/bin/drush <drush-commands>
+```
+or on a specific site:
+```
+vendor/bin/drush -l https://cms-local.unl.edu/multisite1/ <drush-commands>
+```
+or on all sites in a multisite installation:
+```
+php drush-all-sites.php <drush-commands>
+```
+
 ## Features
 
 Are written to `web/modules/custom/features` and part of the `herbie` feature bundle.
@@ -154,11 +169,11 @@ Are written to `web/modules/custom/features` and part of the `herbie` feature bu
 
 In a development site, make the changes, bump the **Version** on `admin/config/development/features/edit/herbie_FEATURE` and click _Write_. Then commit changes.
 
-### Updating Multisites with the Feature update
+### Updating Multisite sites with the Feature update
 
-Deploy changes. Then run `drush fim herbie_FEATURE` on all sites.
+Deploy changes. Then run `php drush-all-sites.php fim herbie_FEATURE` where _herbie_FEATURE_ is the name of the feature.
 
-## Running Multisite
+## Installing & Running Multisite
 
 The [unl_multisite module](https://github.com/unlcms/unl_multisite) provides a web interface to run 
 a [Drupal multisite](https://www.drupal.org/docs/multisite-drupal) setup so additional sites can exist in 
