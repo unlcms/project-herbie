@@ -71,7 +71,10 @@ Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_i
 
 ```
 cp web/sites/default/default.settings.php web/sites/default/settings.php
+cp web/sites/all/settings.php.sample web/sites/all/settings.php
 ```
+
+Edit `web/sites/all/settings.php` and set the LDAP password.
 
 Navigate to _http://example.unl.edu/project-herbie/web/_ (or set up a virtual host, _cms-local.unl.edu_ is the recommended name) in your browser. 
 (See [Installing Drupal](https://www.drupal.org/docs/installing-drupal))
@@ -80,15 +83,12 @@ When asked to select an Installation Profile, select _Use existing configuration
 
 Decide if you want to run a multisite installation.  (See "Running Multisite" below.) 
 
-#### Local Settings
+## Common Settings for All Sites
 
-Create a file at `web/sites/default/settings.local.php` and add the LDAP password:
+Settings that apply to all sites can be included in one of two places:
 
-```php
-<?php
-
-$config['unl_user.settings']['password'] = 'PASSWORD_GOES_HERE';
-```
+1. `web/profiles/herbie/includes/settings.php.inc` which is committed to the repo.
+2. `web/sites/all/settings.php` which is not committed and is appropriate for sensitive info or environment specific overrides to things set in (1).
 
 ## Upgrading Drupal Core (or a module)
 
