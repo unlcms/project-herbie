@@ -131,7 +131,13 @@ AddEncoding gzip svgz
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
-  # RewriteBase /
+  RewriteBase /
+
+  # Add a trailing slash. This is mostly accomplished with the Redirect module,
+  # however this is needed for the root of a multisite site on the default
+  # domain such as https://cms.unl.edu/examplesite -> https://cms.unl.edu/examplesite/
+  RewriteCond %{REQUEST_METHOD} !=post [NC]
+  RewriteRule ^(.*(?:^|/)[^/\.]+)$ $1/ [L,R=301]
 
   # Redirect common PHP files to their new locations.
   RewriteCond %{REQUEST_URI} ^(.*)?/(install\.php) [OR]
