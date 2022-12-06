@@ -11,7 +11,7 @@ While it is possible to run Drupal on a variety of web servers, database servers
 the officially supported configuration at UNL is as follows:
 
 - Linux (any modern, supported distribution)
-- PHP 7.4 or greater
+- PHP 8.1 or greater
 - Apache 2.4 or greater
 - MariaDB 10.6 or greater
 
