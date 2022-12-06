@@ -57,6 +57,7 @@ module:
   herbie_news: 0
   honeypot: 0
   image: 0
+  image_class: 0
   image_effects: 0
   imagemagick: 0
   inline_block_title_automatic: 0
