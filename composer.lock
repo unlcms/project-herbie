@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7ec73289dcf965dbfc4ae8c1f0277c1",
+    "content-hash": "011e270e07500e27c8b32b3d39836ba4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4386,30 +4386,31 @@
             }
         },
         {
-            "name": "drupal/media_library_extras",
-            "version": "1.0.0-alpha2",
+            "name": "drupal/media_embed_view_mode_restrictions",
+            "version": "1.0.0-beta1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/media_library_extras.git",
-                "reference": "8.x-1.0-alpha2"
+                "url": "https://git.drupalcode.org/project/media_embed_view_mode_restrictions.git",
+                "reference": "1.0.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_extras-8.x-1.0-alpha2.zip",
-                "reference": "8.x-1.0-alpha2",
-                "shasum": "2df883658392de945dbb5549324bf5b4b84270a9"
+                "url": "https://ftp.drupal.org/files/projects/media_embed_view_mode_restrictions-1.0.0-beta1.zip",
+                "reference": "1.0.0-beta1",
+                "shasum": "937ca4810d1b970d37dac03e9bb46ff529860370"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/ckeditor": "*",
+                "drupal/core": "^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha2",
-                    "datestamp": "1627910135",
+                    "version": "1.0.0-beta1",
+                    "datestamp": "1664411347",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Project has not opted into security advisory coverage!"
                     }
                 }
             },
@@ -4421,20 +4422,12 @@
                 {
                     "name": "Chris Burge",
                     "homepage": "https://www.drupal.org/user/1826152"
-                },
-                {
-                    "name": "b_sharpe",
-                    "homepage": "https://www.drupal.org/user/2512258"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
                 }
             ],
-            "description": "Provides extra functionality and features to core media library.",
-            "homepage": "https://www.drupal.org/project/media_library_extras",
+            "description": "Allows views modes to be restricted on a per-bundle basis for media embedding",
+            "homepage": "https://www.drupal.org/project/media_embed_view_mode_restrictions",
             "support": {
-                "source": "https://git.drupalcode.org/project/media_library_extras"
+                "source": "https://git.drupalcode.org/project/media_embed_view_mode_restrictions"
             }
         },
         {
@@ -15509,7 +15502,7 @@
         "drupal/inline_block_title_automatic": 15,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
-        "drupal/media_library_extras": 15,
+        "drupal/media_embed_view_mode_restrictions": 10,
         "drupal/rabbit_hole": 10
     },
     "prefer-stable": true,

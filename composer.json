@@ -146,7 +146,7 @@
         "drupal/linkit": "^5.0",
         "drupal/linkit_media_library": "^1.0@alpha",
         "drupal/markup": "^1.0@beta",
-        "drupal/media_library_extras": "^1.0@alpha",
+        "drupal/media_embed_view_mode_restrictions": "^1.0@beta",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/oembed_providers": "^2.1",
