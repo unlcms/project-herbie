@@ -1,9 +1,0 @@
-uuid: 2df41604-c5f5-4ead-8f91-c88a828b4b9f
-langcode: en
-status: true
-dependencies: {  }
-id: delete_paragraph_content_contact_info_heading
-label: 'delete paragraph content contact_info_heading'
-roles:
-  - editor
-  - site_admin

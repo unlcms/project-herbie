@@ -1,9 +1,0 @@
-uuid: 0d634861-c5dc-4018-b503-e29ef9ab977e
-langcode: en
-status: true
-dependencies: {  }
-id: delete_paragraph_content_contact_info_post_office_box_add
-label: 'delete paragraph content contact_info_post_office_box_add'
-roles:
-  - editor
-  - site_admin

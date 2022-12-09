@@ -1,9 +1,0 @@
-uuid: 7740a148-5b59-4def-8c1e-b54f37ad2ab4
-langcode: en
-status: true
-dependencies: {  }
-id: delete_paragraph_content_accordion_item
-label: 'delete paragraph content accordion_item'
-roles:
-  - editor
-  - site_admin

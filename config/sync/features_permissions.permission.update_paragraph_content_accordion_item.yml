@@ -1,9 +1,0 @@
-uuid: c9cabc8c-0c55-4e8d-8fa8-81947b63e4a6
-langcode: en
-status: true
-dependencies: {  }
-id: update_paragraph_content_accordion_item
-label: 'update paragraph content accordion_item'
-roles:
-  - editor
-  - site_admin

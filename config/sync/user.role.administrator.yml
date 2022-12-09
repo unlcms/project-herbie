@@ -42,7 +42,6 @@ dependencies:
     - node
     - oembed_providers
     - paragraphs
-    - paragraphs_type_permissions
     - path
     - pathauto
     - queue_ui
@@ -159,7 +158,6 @@ permissions:
   - 'administer webform submission'
   - 'bypass honeypot protection'
   - 'bypass node access'
-  - 'bypass paragraphs type content access'
   - 'cancel account'
   - 'change own username'
   - 'configure all builder_page node layout overrides'

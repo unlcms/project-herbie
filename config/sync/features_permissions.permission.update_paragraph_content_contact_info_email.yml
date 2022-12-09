@@ -1,9 +1,0 @@
-uuid: 59a0543b-2842-4c04-ab79-066cab27512f
-langcode: en
-status: true
-dependencies: {  }
-id: update_paragraph_content_contact_info_email
-label: 'update paragraph content contact_info_email'
-roles:
-  - editor
-  - site_admin

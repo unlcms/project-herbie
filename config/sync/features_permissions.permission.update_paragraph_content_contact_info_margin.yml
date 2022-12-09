@@ -1,9 +1,0 @@
-uuid: 6fbe898f-115a-489f-b520-fae6d8348dda
-langcode: en
-status: true
-dependencies: {  }
-id: update_paragraph_content_contact_info_margin
-label: 'update paragraph content contact_info_margin'
-roles:
-  - editor
-  - site_admin

@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - media
-    - paragraphs_type_permissions
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -15,12 +14,3 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view media'
-  - 'view paragraph content accordion_item'
-  - 'view paragraph content contact_info_contact_point'
-  - 'view paragraph content contact_info_email'
-  - 'view paragraph content contact_info_fax'
-  - 'view paragraph content contact_info_heading'
-  - 'view paragraph content contact_info_margin'
-  - 'view paragraph content contact_info_phone'
-  - 'view paragraph content contact_info_physical_address'
-  - 'view paragraph content contact_info_post_office_box_add'

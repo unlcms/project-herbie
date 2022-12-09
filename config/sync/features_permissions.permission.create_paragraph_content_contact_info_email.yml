@@ -1,9 +1,0 @@
-uuid: c1313fcf-3751-4979-99fd-84f669e702a9
-langcode: en
-status: true
-dependencies: {  }
-id: create_paragraph_content_contact_info_email
-label: 'create paragraph content contact_info_email'
-roles:
-  - editor
-  - site_admin

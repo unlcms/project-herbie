@@ -1,9 +1,0 @@
-uuid: 642cedec-a7a8-46bd-ac1b-5618b3a26f18
-langcode: en
-status: true
-dependencies: {  }
-id: update_paragraph_content_contact_info_post_office_box_add
-label: 'update paragraph content contact_info_post_office_box_add'
-roles:
-  - editor
-  - site_admin

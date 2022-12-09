@@ -1,9 +1,0 @@
-uuid: 632cd6d4-b7d3-4764-a149-3a2289728a6a
-langcode: en
-status: true
-dependencies: {  }
-id: delete_paragraph_content_contact_info_margin
-label: 'delete paragraph content contact_info_margin'
-roles:
-  - editor
-  - site_admin
