@@ -269,6 +269,9 @@
             },
             "drupal/media_library_extras": {
                 "3108619 - Allow View Mode Options to be Restricted on a Per-bundle Basis for Media Embed": "patches/media_library_extras-media_embed_view_mode_restrictions-3108619-10.patch"
+            },
+            "drush/drush": {
+                "Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }
         },
         "drupal-scaffold": {

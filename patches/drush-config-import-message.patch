@@ -1,0 +1,15 @@
+diff --git a/src/Drupal/Commands/config/ConfigImportCommands.php b/src/Drupal/Commands/config/ConfigImportCommands.php
+index 9e6866bc4..b602d62e2 100644
+--- a/src/Drupal/Commands/config/ConfigImportCommands.php
++++ b/src/Drupal/Commands/config/ConfigImportCommands.php
+@@ -216,6 +216,10 @@ class ConfigImportCommands extends DrushCommands
+      */
+     public function import(array $options = ['source' => self::REQ, 'partial' => false, 'diff' => false])
+     {
++        // UNL project-herbie notice
++        $this->logger()->notice(('You cannot run config:import. Refer to https://github.com/unlcms/project-herbie#configuration-management.'));
++        return;
++
+         // Determine source directory.
+         $source_storage_dir = ConfigCommands::getDirectory($options['source']);
+ 
