@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_md_898
+label: 'Hero (md) 898x336'
+effects:
+  5346a413-8548-41c9-8d76-35d832844552:
+    uuid: 5346a413-8548-41c9-8d76-35d832844552
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 898
+      height: 336
+      crop_type: focal_point

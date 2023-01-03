@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_md_1596
+label: 'Hero (md) 1596x336'
+effects:
+  9c1de90b-38a2-4f58-81c0-d73203ff2826:
+    uuid: 9c1de90b-38a2-4f58-81c0-d73203ff2826
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 336
+      crop_type: focal_point

@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16_9_1440x810
+    - image.style.16_9_1920x1080
+    - image.style.16_9_240x135
+    - image.style.16_9_2880x1620
+    - image.style.16_9_3840x2160
+    - image.style.16_9_480x270
+    - image.style.16_9_960x540
+id: card_block
+label: 'Card Block'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 16_9_1440x810
+        - 16_9_1920x1080
+        - 16_9_240x135
+        - 16_9_2880x1620
+        - 16_9_3840x2160
+        - 16_9_480x270
+        - 16_9_960x540
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 16_9_3840x2160
