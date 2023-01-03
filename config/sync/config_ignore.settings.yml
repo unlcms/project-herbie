@@ -3,6 +3,7 @@ _core:
 ignored_config_entities:
   - 'block.block.*'
   - ~block.block.booknavigation
+  - ~block.block.booknavigation_herbie
   - ~block.block.breadcrumbs
   - ~block.block.mainnavigation
   - ~block.block.mainpagecontent
