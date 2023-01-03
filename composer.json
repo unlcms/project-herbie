@@ -249,14 +249,14 @@
         },
         "patches": {
             "drupal/core": {
-                "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-26-D8.patch",
+                "2827910 - Add Option to Display Top Level page in BookNavigationBlock": "patches/allow-top-item-to-show-2827910-54.patch",
                 "3056149 - Include 'is_active' value in book tree items": "patches/drupal-book_tree_active_item-3056149-9.patch",
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-30-D9.patch",
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/502430-90.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "3080606 - Re-order Layout Builder sections": "patches/3080606-71.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
-                "3092795 - Restore styling for embedded media edit button": "patches/3092795-22.patch"
+                "3092795 - Restore styling for embedded media edit button": "patches/3092795-41.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"

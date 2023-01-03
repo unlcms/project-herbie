@@ -1,11 +1,12 @@
-diff --git a/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css b/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
+diff --git a/core/modules/ckeditor/css/plugins/drupalmedia/ckeditor.drupalmedia.css b/core/modules/ckeditor/css/plugins/drupalmedia/ckeditor.drupalmedia.css
 index 82923ff63e..0232f3554e 100644
---- a/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
-+++ b/core/modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css
-@@ -22,14 +22,6 @@ drupal-media {
+--- a/core/modules/ckeditor/css/plugins/drupalmedia/ckeditor.drupalmedia.css
++++ b/core/modules/ckeditor/css/plugins/drupalmedia/ckeditor.drupalmedia.css
+@@ -21,14 +21,6 @@ drupal-media {
+   text-align: center;
  }
- 
- /**
+
+-/**
 - * Fix positioning without delete button. Can be removed with this issue:
 - * @see https://www.drupal.org/project/drupal/issues/3074859
 - */
@@ -13,10 +14,9 @@ index 82923ff63e..0232f3554e 100644
 -  right: 10px;
 -}
 -
--/**
+ /**
   * Allow alignment to display in CKEditor.
   */
- drupal-media[data-align=left],
 @@ -39,3 +31,36 @@ drupal-media[data-align=right] {
  drupal-media[data-align=center] {
    display: flex;

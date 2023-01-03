@@ -1,0 +1,373 @@
+diff --git a/core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php b/core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php
+index f39057308c..24d0dc4c9f 100644
+--- a/core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php
++++ b/core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php
+@@ -211,6 +211,7 @@ public function testBlockMigration() {
+       'provider' => 'book',
+       'label_display' => '0',
+       'block_mode' => 'book pages',
++      'show_top_item' => FALSE,
+     ];
+     $this->assertEntity('book', [], 'sidebar', 'olivero', -4, $settings);
+
+diff --git a/core/modules/book/config/schema/book.schema.yml b/core/modules/book/config/schema/book.schema.yml
+index 97d2f933d7..02123932e7 100644
+--- a/core/modules/book/config/schema/book.schema.yml
++++ b/core/modules/book/config/schema/book.schema.yml
+@@ -32,3 +32,6 @@ block.settings.book_navigation:
+     block_mode:
+       type: string
+       label: 'Block display mode'
++    show_top_item:
++      type: boolean
++      label: 'Show top level item'
+diff --git a/core/modules/book/src/Plugin/Block/BookNavigationBlock.php b/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
+index ff682c27e9..2ca94b9f37 100644
+--- a/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
++++ b/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
+@@ -88,6 +88,7 @@ public static function create(ContainerInterface $container, array $configuratio
+   public function defaultConfiguration() {
+     return [
+       'block_mode' => "all pages",
++      'show_top_item' => FALSE,
+     ];
+   }
+
+@@ -105,7 +106,21 @@ public function blockForm($form, FormStateInterface $form_state) {
+       '#options' => $options,
+       '#default_value' => $this->configuration['block_mode'],
+       '#description' => $this->t("If <em>Show block on all pages</em> is selected, the block will contain the automatically generated menus for all of the site's books. If <em>Show block only on book pages</em> is selected, the block will contain only the one menu corresponding to the current page's book. In this case, if the current page is not in a book, no block will be displayed. The <em>Page specific visibility settings</em> or other visibility settings can be used in addition to selectively display this block."),
+     ];
++    $form['book_block_mode_book_pages'] = [
++      '#type' => 'container',
++      '#states' => [
++        'visible' => [
++          'input[name="settings[book_block_mode]"]' => ['value' => 'book pages'],
++        ],
++      ],
++    ];
++    $form['book_block_mode_book_pages']['show_top_item'] = [
++      '#type' => 'checkbox',
++      '#title' => $this->t('Show top level item'),
++      '#default_value' => $this->configuration['show_top_item'],
++      '#description' => $this->t('Normally when the option <em>Show block only on book pages</em> is selected the Book Navigation Block will not show a link to the very top-level page of the current book, in other words the first page in the current book will not be shown in the navigation. Enabling this option will cause the first page in the book to appear in the navigation with all other pages displayed below it.'),
++    ];
+
+     return $form;
+   }
+@@ -115,6 +130,7 @@ public function blockForm($form, FormStateInterface $form_state) {
+    */
+   public function blockSubmit($form, FormStateInterface $form_state) {
+     $this->configuration['block_mode'] = $form_state->getValue('book_block_mode');
++    $this->configuration['show_top_item'] = $form_state->getValue('book_block_mode_book_pages')['show_top_item'];
+   }
+
+   /**
+@@ -168,6 +184,11 @@ public function build() {
+       // Only show the block if the user has view access for the top-level node.
+       if ($nid) {
+         $tree = $this->bookManager->bookTreeAllData($node->book['bid'], $node->book);
++
++        if ($this->configuration['show_top_item']) {
++          return $this->bookManager->bookTreeOutput($tree);
++        }
++
+         // There should only be one element at the top level.
+         $data = array_shift($tree);
+         $below = $this->bookManager->bookTreeOutput($data['below']);
+diff --git a/core/modules/book/tests/src/Functional/BookBlockTest.php b/core/modules/book/tests/src/Functional/BookBlockTest.php
+new file mode 100644
+index 0000000000..b58418d24a
+--- /dev/null
++++ b/core/modules/book/tests/src/Functional/BookBlockTest.php
+@@ -0,0 +1,290 @@
++<?php
++
++namespace Drupal\Tests\book\Functional;
++
++use Drupal\Tests\BrowserTestBase;
++use Drupal\node\Entity\Node;
++use Drupal\node\Entity\NodeType;
++
++/**
++ * Test if the book list is created correctly.
++ *
++ * @group book
++ */
++class BookBlockTest extends BrowserTestBase {
++
++  use BookTestTrait;
++
++  /**
++   * {@inheritdoc}
++   */
++  protected static $modules = [
++    'system',
++    'user',
++    'node',
++    'field',
++    'text',
++    'book',
++    'block',
++    'node_access_test',
++  ];
++
++  /**
++   * {@inheritdoc}
++   */
++  protected $defaultTheme = 'classy';
++
++  /**
++   * A user with permission to view a book and access printer-friendly version.
++   *
++   * @var \Drupal\user\UserInterface
++   */
++  protected $webUser;
++
++  /**
++   * A user with permission to create and edit books and to administer blocks.
++   *
++   * @var \Drupal\user\UserInterface
++   */
++  protected $adminUser;
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function setUp(): void {
++    parent::setUp();
++    $this->drupalPlaceBlock('system_breadcrumb_block');
++    $this->drupalPlaceBlock('page_title_block');
++
++    // node_access_test requires a node_access_rebuild().
++    node_access_rebuild();
++
++    // Create users.
++    $this->bookAuthor = $this->drupalCreateUser([
++      'create new books',
++      'create book content',
++      'edit own book content',
++      'add content to books',
++      'view own unpublished content',
++    ]);
++    $this->webUser = $this->drupalCreateUser([
++      'access printer-friendly version',
++      'node test view',
++    ]);
++    $this->adminUser = $this->drupalCreateUser([
++      'create new books',
++      'create book content',
++      'edit any book content',
++      'delete any book content',
++      'add content to books',
++      'administer blocks',
++      'administer permissions',
++      'administer book outlines',
++      'node test view',
++      'administer content types',
++      'administer site configuration',
++    ]);
++
++    $node_type = NodeType::create([
++      'type' => $this->randomMachineName(),
++      'name' => $this->randomString(),
++    ]);
++    $node_type->save();
++    $book_config = $this->config('book.settings');
++    $allowed_types = $book_config->get('allowed_types');
++    $allowed_types[] = $node_type->id();
++    $book_config->set('allowed_types', $allowed_types)->save();
++
++    // Create books for testing.
++    // Code by @chx.
++    // See https://www.drupal.org/project/drupal/issues/2470896#comment-13922196
++    // To test every possible combination of root-child / child-child, two
++    // trees are needed. The first level below the root needs to have two
++    // leaves and similarly a second level is needed with two-two leaves each:
++    //
++    //        1
++    //      /   \
++    //     /     \
++    //    2       3
++    //   / \     / \
++    //  /   \   /   \
++    // 4     5 6     7
++    //
++    // These are the actual node IDs, these are enforced as auto increment
++    // is not reliable.
++    //
++    // Similarly, the second tree root is node 8, the first two leaves are
++    // 9 and 10, the third level is 11, 12, 13, 14:
++    //        8
++    //      /   \
++    //     /     \
++    //    9       10
++    //   / \     / \
++    //  /   \   /   \
++    // 11   12 13   14
++    for ($root = 1; $root <= 8; $root += 7) {
++      for ($i = 0; $i <= 6; $i++) {
++        /** @var \Drupal\node\NodeInterface $node */
++        $node = Node::create([
++          'title' => $this->randomMachineName(),
++          'type' => $node_type->id(),
++        ]);
++        switch ($i) {
++          case 0:
++            $node->book['bid'] = 'new';
++            $node->book['pid'] = 0;
++            $node->book['depth'] = 1;
++            break;
++
++          case 1: case 2:
++              $node->book['bid'] = $root;
++              $node->book['pid'] = $root;
++              $node->book['depth'] = 2;
++            break;
++
++          case 3: case 4:
++              $node->book['bid'] = $root;
++              $node->book['pid'] = $root + 1;
++              $node->book['depth'] = 3;
++            break;
++
++          case 5: case 6:
++              $node->book['bid'] = $root;
++              $node->book['pid'] = $root + 2;
++              $node->book['depth'] = 3;
++            break;
++
++        }
++        // This is necessary to make the table of contents consistent across
++        // test runs.
++        $node->book['weight'] = $i;
++        $node->nid->value = $root + $i;
++        $node->enforceIsNew();
++        $node->save();
++      }
++    }
++
++    // Create an article content type that we will use for testing.
++    $type = $this->container->get('entity_type.manager')->getStorage('node_type')
++      ->create([
++        'type' => 'article',
++        'name' => 'Article',
++      ]);
++    $type->save();
++    $this->container->get('router.builder')->rebuild();
++  }
++
++  /**
++   * Tests if book title is added to book navigation block on book pages.
++   */
++  public function testBookNavigationBlockTitleDisplay() {
++    /** @var \Drupal\book\BookManagerInterface $bm */
++    $bm = $this->container->get('book.manager');
++    $books = $bm->getAllBooks();
++    $this->assertNotEmpty($books);
++
++    $items = [];
++    foreach ($books as $book) {
++      $bid = $book['bid'];
++      $build = $bm->bookTreeOutput($bm->bookTreeAllData($bid));
++      $items[$bid] = $build['#items'];
++    }
++
++    // Log in as administrator.
++    $this->drupalLogin($this->adminUser);
++
++    // Place the book navigation block in the content area.
++    $block_url = 'admin/structure/block/add/book_navigation/classy';
++    $edit = [
++      'region' => 'content',
++    ];
++    $this->drupalGet($block_url);
++    $this->submitForm($edit, 'Save block');
++
++    // Set the book nav block to be shown on all pages.
++    $edit = [
++      'settings[book_block_mode]' => 'all pages',
++    ];
++    $this->drupalGet('admin/structure/block/manage/booknavigation');
++    $this->submitForm($edit, 'Save block');
++
++    // CASE 1.
++    // Book nav block is shown on all pages.
++    // Check that nav block is shown a non-book page.
++    // Both book titles should appear.
++    // Create an article.
++    $edit = [
++      'edit-title-0-value' => 'Article: ' . $this->randomMachineName(),
++    ];
++    $this->drupalGet('node/add/article');
++    $this->submitForm($edit, 'Save');
++
++    // Load article and check that both book titles are listed.
++    $this->drupalGet('node/15');
++    $this->assertSession()->pageTextContains($books[1]["title"]);
++    $this->assertSession()->pageTextContains($books[8]["title"]);
++
++    // CASE 2.
++    // Book nav block is shown on all pages.
++    // Load a page in a book. Title of that book should appear in nav block.
++    // Pages within that book should appear below the title.
++    // The title of the other book should appear, but none of its pages.
++    // Load a page from the first book.
++    $this->drupalGet('node/5');
++    // Verify that book nav block is shown.
++    $this->assertSession()->pageTextContains('Book navigation');
++    // Check for title of first book.
++    $this->assertSession()->pageTextContains($books[1]["title"]);
++    // Check for title of page within first book.
++    $this->assertSession()->pageTextContains($items[1][1]['below'][3]["title"]);
++    // Check that title of page within second book does not appear.
++    $this->assertSession()->responseNotContains($items[8][8]['below'][10]['below'][14]["title"]);
++
++    // Do the same test for the other book.
++    $this->drupalGet('node/14');
++    $this->assertSession()->pageTextContains('Book navigation');
++    $this->assertSession()->pageTextContains($books[8]["title"]);
++    $this->assertSession()->pageTextContains($items[8][8]['below'][9]["title"]);
++    $this->assertSession()->responseNotContains($items[1][1]['below'][3]["title"]);
++
++    // CASE 3.
++    // Set the book nav block to be shown on book pages only.
++    // Include title of top page.
++    $edit = [
++      'settings[book_block_mode]' => 'book pages',
++    ];
++    $this->drupalGet('admin/structure/block/manage/booknavigation');
++    $this->submitForm($edit, 'Save block');
++    // Set the book nav block to include top page in book.
++    $edit = [
++      'settings[book_block_mode_book_pages][show_top_item]' => TRUE,
++    ];
++    $this->drupalGet('admin/structure/block/manage/booknavigation');
++    $this->submitForm($edit, 'Save block');
++    // Load one of the book pages (node/11 is in book 2).
++    $this->drupalGet('node/11');
++    // Check that block is loaded.
++    $this->assertSession()->pageTextContains('Book navigation');
++    // Check that the title of book 2 is shown.
++    $this->assertSession()->pageTextContains($books[8]["title"]);
++
++    // CASE 4.
++    // Set the book nav block to be shown on book pages only.
++    // Do not include title of top page.
++    $edit = [
++      'settings[book_block_mode_book_pages][show_top_item]' => FALSE,
++    ];
++    $this->drupalGet('admin/structure/block/manage/booknavigation');
++    $this->submitForm($edit, 'Save block');
++
++    // Load a page in book 2.
++    // The title of that book should not appear.
++    // The title of the other book should not appear.
++    // A page within that book should appear.
++    $this->drupalGet('node/11');
++    $this->assertSession()->pageTextContains('Book navigation');
++    $this->assertSession()->pageTextNotContains($books[8]["title"]);
++    $this->assertSession()->pageTextContains($items[8][8]['below'][9]["title"]);
++  }
++
++}
