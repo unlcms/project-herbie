@@ -2,6 +2,8 @@ uuid: 2ea94864-b17d-4619-983f-2a9caaae9b24
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 5STVMYbeat0HEyf83G-a6xEEy0v73C3ONHjn5A8DN7s
 id: contact_info_email
 label: 'Contact Info Email'
 icon_uuid: null

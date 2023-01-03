@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.accordion
     - field.storage.block_content.b_accordion_title
+_core:
+  default_config_hash: Tg3HTLuIpwcmfAYbEQw9BjDPpT9BkhICy6SukHNUuIo
 id: block_content.accordion.b_accordion_title
 field_name: b_accordion_title
 entity_type: block_content

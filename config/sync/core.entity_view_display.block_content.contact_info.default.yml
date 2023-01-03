@@ -7,6 +7,8 @@ dependencies:
     - field.field.block_content.contact_info.b_cinfo_contact_point
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: AxZZpmrZzYYz1e-Km_zF1vE1FTxWSqZQjs48JVwbUjE
 id: block_content.contact_info.default
 targetEntityType: block_content
 bundle: contact_info

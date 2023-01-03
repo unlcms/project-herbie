@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+id: configure_editable_builder_page_node_layout_overrides
+label: 'configure editable builder_page node layout overrides'
+roles:
+  - editor
+  - site_admin

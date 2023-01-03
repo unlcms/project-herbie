@@ -12,6 +12,8 @@ dependencies:
     - image.style.hero_md_673
   module:
     - focal_point
+_core:
+  default_config_hash: t-aFoU7aA942ODLGV82tkEMXqtnPJMX13w_NUf80KzA
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero

@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html_code
+    - field.field.block_content.html_code.b_html_code_css
+    - field.field.block_content.html_code.b_html_code_html
+  module:
+    - field_css
+    - text
+id: block_content.html_code.default
+targetEntityType: block_content
+bundle: html_code
+mode: default
+content:
+  b_html_code_css:
+    type: css
+    label: hidden
+    settings:
+      location: head
+      prefix: entity-item
+      fixed_prefix_value: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  b_html_code_html:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

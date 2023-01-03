@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_contact_point
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: igWHb381ClIiZE46_QXpZI2WHHprVP35zzKRiItvddo
 id: block_content.contact_info.b_cinfo_contact_point
 field_name: b_cinfo_contact_point
 entity_type: block_content

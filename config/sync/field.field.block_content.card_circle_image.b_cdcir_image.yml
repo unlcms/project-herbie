@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_cdcir_image
   module:
     - image
+_core:
+  default_config_hash: KpAqX23hSP5M9_-83qurK5auofSZj9uFf8Bz_NJtu74
 id: block_content.card_circle_image.b_cdcir_image
 field_name: b_cdcir_image
 entity_type: block_content

@@ -8,6 +8,8 @@ dependencies:
     - field.field.block_content.accordion.b_accordion_title
   module:
     - paragraphs
+_core:
+  default_config_hash: SE1DuxxWUmZ5KNIEzG6plUPYDhoa4369GrNN6e19K24
 id: block_content.accordion.default
 targetEntityType: block_content
 bundle: accordion

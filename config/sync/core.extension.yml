@@ -55,6 +55,7 @@ module:
   filter: 0
   focal_point: 0
   herbie_book: 0
+  herbie_builder_page: 0
   herbie_news: 0
   herbie_person: 0
   honeypot: 0

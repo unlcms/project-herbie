@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - block_body
+_core:
+  default_config_hash: SJKDfUOfV8qMV5nSvuEu9oU7CrpF4GgSdeRFImiK7lM
 id: block_content.card.b_card_body
 field_name: b_card_body
 entity_type: block_content

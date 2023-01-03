@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_overline
+id: block_content.card.b_card_overline
+field_name: b_card_overline
+entity_type: block_content
+bundle: card
+label: Overline
+description: 'A descriptor that is displayed over the <em>Headline</em>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

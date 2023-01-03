@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_hero_size
   module:
     - options
+_core:
+  default_config_hash: _H-mqz5KQBbpE-z1XuXNIFFu68DPef9mTMUwGwJOIaU
 id: block_content.hero.b_hero_size
 field_name: b_hero_size
 entity_type: block_content

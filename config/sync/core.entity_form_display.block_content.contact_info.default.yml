@@ -7,6 +7,8 @@ dependencies:
     - field.field.block_content.contact_info.b_cinfo_contact_point
   module:
     - paragraphs
+_core:
+  default_config_hash: J6NWqUVdwj8B7Ohvfo6vcIojninHr1CJ8lZNFCMfVQM
 id: block_content.contact_info.default
 targetEntityType: block_content
 bundle: contact_info

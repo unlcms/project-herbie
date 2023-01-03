@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_card_cta_style
   module:
     - options
+_core:
+  default_config_hash: LFzTDig72EtUcpO_mfm4wmlIkvAZaOoaxpPsPp1BaR0
 id: block_content.card.b_card_cta_style
 field_name: b_card_cta_style
 entity_type: block_content

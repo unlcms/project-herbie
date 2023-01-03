@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - node
+_core:
+  default_config_hash: SPfwBBIm3iQ3BsP3F4QlHPCGLaZFhzy0R5jpbPjBc1A
 id: node.s_n_hero
 field_name: s_n_hero
 entity_type: node

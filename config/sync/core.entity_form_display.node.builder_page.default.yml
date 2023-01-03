@@ -11,6 +11,8 @@ dependencies:
     - inline_entity_form
     - path
     - text
+_core:
+  default_config_hash: gtvfiLzHvjhJnh4OXMFELdgQ81CZj94gbkrZiwntcsc
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page

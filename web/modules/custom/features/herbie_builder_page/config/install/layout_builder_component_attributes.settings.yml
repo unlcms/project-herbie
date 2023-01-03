@@ -1,0 +1,15 @@
+allowed_block_attributes:
+  id: false
+  class: true
+  style: false
+  data: false
+allowed_block_title_attributes:
+  id: false
+  class: false
+  style: false
+  data: false
+allowed_block_content_attributes:
+  id: false
+  class: false
+  style: false
+  data: false

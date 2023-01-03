@@ -6,6 +6,8 @@ dependencies:
     - block_content.type.hero
     - field.storage.node.s_n_hero
     - node.type.builder_page
+_core:
+  default_config_hash: l6sz65Ci9IX6pBtWEOqme0SekuFLPEwIqWjxYBGYzFc
 id: node.builder_page.s_n_hero
 field_name: s_n_hero
 entity_type: node

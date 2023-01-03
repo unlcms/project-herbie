@@ -2,6 +2,8 @@ uuid: 7aa2559a-e1a8-4d22-af58-3644bfe7d250
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: qiDukVg-NcMCFZwpTxedPTRimA_LdY40WNl3-kC8STM
 id: contact_info_physical_address
 label: 'Contact Info Physical Address'
 icon_uuid: null

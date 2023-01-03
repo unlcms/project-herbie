@@ -9,6 +9,8 @@ dependencies:
   module:
     - field_css
     - text
+_core:
+  default_config_hash: grLlZ2bVdX0y7noEymwiblSrYpY-JAfub3sEBcQBjRw
 id: block_content.html_code.default
 targetEntityType: block_content
 bundle: html_code

@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_html_code_css
   module:
     - field_css
+_core:
+  default_config_hash: Hd56xZORqWYA-RJu9s1BTcBB-YPq60cudr3ThRV5BDM
 id: block_content.html_code.b_html_code_css
 field_name: b_html_code_css
 entity_type: block_content

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_heading
+label: 'Contact Info Heading'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

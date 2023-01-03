@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.field.block_content.hero.b_hero_image
+    - field.field.block_content.hero.b_hero_overline
+    - field.field.block_content.hero.b_hero_size
+    - field.field.block_content.hero.b_hero_subhead
+    - field.field.block_content.hero.b_hero_title
+    - responsive_image.styles.hero_medium
+  module:
+    - dcf_lazyload
+    - options
+    - responsive_image
+id: block_content.hero.default
+targetEntityType: block_content
+bundle: hero
+mode: default
+content:
+  b_hero_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: hero_medium
+      image_link: ''
+    third_party_settings:
+      dcf_lazyload:
+        dcf_lazyload_enable: false
+    weight: 0
+    region: content
+  b_hero_overline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  b_hero_size:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  b_hero_subhead:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  b_hero_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

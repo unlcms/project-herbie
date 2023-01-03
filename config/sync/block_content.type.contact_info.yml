@@ -2,6 +2,8 @@ uuid: c4cbc804-ae93-4a3c-b16a-30386fa8eb1a
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: YI8f0mcnKRGk5bEP11lpwoWp-MB2SxsMLjvHsLehYw0
 id: contact_info
 label: 'Contact Info'
 revision: 0

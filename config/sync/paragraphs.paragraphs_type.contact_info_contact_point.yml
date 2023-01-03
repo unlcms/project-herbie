@@ -2,6 +2,8 @@ uuid: 121aadcb-5886-4935-aeb9-11657e4488c4
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 69xxBJAirrcMql5fHMOqiqaNsbhIOfokfNUsW9kJSTg
 id: contact_info_contact_point
 label: 'Contact Info Contact Point'
 icon_uuid: null

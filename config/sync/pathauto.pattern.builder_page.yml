@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: hR-LhTyPEICXRO3_13-F4G0LIS8AsfjQu6cBcBi_JXM
 id: builder_page
 label: 'Builder Page'
 type: 'canonical_entities:node'

@@ -2,6 +2,8 @@ uuid: 98fe1a19-9213-4424-8d58-b910f7b090fa
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: LURMyibzkyH1jfYoR7FAoQpqJiMoRefpe_7EVdoNoMc
 id: hero
 label: Hero
 revision: 1

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_subhead
+id: block_content.card.b_card_subhead
+field_name: b_card_subhead
+entity_type: block_content
+bundle: card
+label: Subhead
+description: 'A sub-headline that is displayed below the <em>Headline</em>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

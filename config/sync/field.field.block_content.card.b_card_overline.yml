@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.card
     - field.storage.block_content.b_card_overline
+_core:
+  default_config_hash: gOMIXCdH7UT-TU_AqAOj7z8rBrqOueKHZ0aIQ9gS5kU
 id: block_content.card.b_card_overline
 field_name: b_card_overline
 entity_type: block_content

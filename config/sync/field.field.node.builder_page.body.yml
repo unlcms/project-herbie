@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - standard
+_core:
+  default_config_hash: V185gyauZhPfD4yg4FANcYFIO39CtFkwKJDK9YEhI_c
 id: node.builder_page.body
 field_name: body
 entity_type: node

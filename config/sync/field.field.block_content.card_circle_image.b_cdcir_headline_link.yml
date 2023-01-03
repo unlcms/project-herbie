@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_cdcir_headline_link
   module:
     - link
+_core:
+  default_config_hash: TaNBxFJ9BUbiwG4-Emw30ybkcByPR3biwU1jd-JzqNA
 id: block_content.card_circle_image.b_cdcir_headline_link
 field_name: b_cdcir_headline_link
 entity_type: block_content

@@ -2,6 +2,8 @@ uuid: df8421ce-cc50-41db-a7a5-80b469d2c2db
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: E1zGg5laF4rLTt3JjZVBH-8oOOH8jd_aP5LwJlozVZY
 id: contact_info_margin
 label: 'Contact Info Margin'
 icon_uuid: null

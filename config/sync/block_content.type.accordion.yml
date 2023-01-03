@@ -2,6 +2,8 @@ uuid: 721cf0a3-7249-4b69-a173-a17eaddd35f8
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: erkKTd0ZPJOgiVFV0Z-75iJJvEzicMYtYLOkDhwuAPo
 id: accordion
 label: Accordion
 revision: 0

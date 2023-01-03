@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.card
     - field.storage.block_content.b_card_headline
+_core:
+  default_config_hash: GzO_d0lofGbxkpK38RjWI0iAxazGH52agYGWPKZQVew
 id: block_content.card.b_card_headline
 field_name: b_card_headline
 entity_type: block_content

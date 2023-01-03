@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_hero_image
   module:
     - image
+_core:
+  default_config_hash: GtAIR-GSqvn6sGBAx26DuZjXGQMyHj42PG3VQXZvsKw
 id: block_content.hero.b_hero_image
 field_name: b_hero_image
 entity_type: block_content

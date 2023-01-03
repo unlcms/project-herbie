@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_card_headline_link
   module:
     - link
+_core:
+  default_config_hash: cpIiP65NA25KRKXBaFsruiYVMJCcxfDDJwlgoc4CBmE
 id: block_content.card.b_card_headline_link
 field_name: b_card_headline_link
 entity_type: block_content

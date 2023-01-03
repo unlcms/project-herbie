@@ -18,6 +18,8 @@ dependencies:
     - image
     - link
     - text
+_core:
+  default_config_hash: S06cm_C44c5VE18VclfJO2NLoHaaGQhlJ8bWRFCVU6k
 id: block_content.card.default
 targetEntityType: block_content
 bundle: card

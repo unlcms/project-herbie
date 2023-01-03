@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.hero
     - field.storage.block_content.b_hero_overline
+_core:
+  default_config_hash: iXEyBok7R-96AM-il-CCcyHlY_SdLiL4DXGWUvGfRr8
 id: block_content.hero.b_hero_overline
 field_name: b_hero_overline
 entity_type: block_content

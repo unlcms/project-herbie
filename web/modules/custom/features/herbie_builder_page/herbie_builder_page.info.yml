@@ -1,0 +1,35 @@
+name: 'Builder page'
+description: 'Provides Builder page content type and related configuration. Choose custom grid layouts for one-off <em>builder pages</em>.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - allowed_formats
+  - block_content
+  - crop
+  - dcf_layouts
+  - dcf_lazyload
+  - entity_reference_revisions
+  - features_permissions
+  - field
+  - field_css
+  - focal_point
+  - herbie_news
+  - herbie_person
+  - image
+  - inline_entity_form
+  - layout_builder
+  - layout_builder_component_attributes
+  - layout_builder_modal
+  - layout_builder_restrictions
+  - link
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - pathauto
+  - responsive_image
+  - text
+  - user
+version: '1.0'
+package: Herbie

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.builder_page
+_core:
+  default_config_hash: bMAknbA7Q9N3cXMuUCLuDO_DI-fzqTSpWVs2il03Z8Y
 id: delete_builder_page_revisions
 label: 'delete builder_page revisions'
 roles:

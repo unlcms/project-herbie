@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+revision: 1
+description: 'Hero banner that appears at the top of a page.'

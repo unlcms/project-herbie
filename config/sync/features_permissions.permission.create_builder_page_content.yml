@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.builder_page
+_core:
+  default_config_hash: TObS-s95s-HaJdyOZsnTh-w7wcubjpjzWV_3umyqGPI
 id: create_builder_page_content
 label: 'create builder_page content'
 roles:

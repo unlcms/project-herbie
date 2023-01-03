@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_card_card_presentation
   module:
     - options
+_core:
+  default_config_hash: wyYfXpJaVDUxp51D4hkMG9NwBV1xmetYnEzHB7jmHyM
 id: block_content.card.b_card_card_presentation
 field_name: b_card_card_presentation
 entity_type: block_content

@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - html_code
+_core:
+  default_config_hash: SdzGfF3tdT6jdTof5GH7ks7ZFaulj3R428bLfV26GC8
 id: block_content.html_code.b_html_code_html
 field_name: b_html_code_html
 entity_type: block_content

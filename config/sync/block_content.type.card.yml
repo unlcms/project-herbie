@@ -2,6 +2,8 @@ uuid: 997b86fa-f860-485c-b828-7da9f0c3eef9
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: vC7nALbDbyaQAox_zUMfevK1uCChQrihkatgrqKj804
 id: card
 label: Card
 revision: 0

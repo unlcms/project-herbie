@@ -2,6 +2,8 @@ uuid: 88e3c372-3b58-4aca-9353-31ff607dc445
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: '-1o8liHi06cAnae5iJlIL7WwbsKmV3Y-KKvec-mCdWM'
 id: contact_info_phone
 label: 'Contact Info Phone'
 icon_uuid: null

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: create_builder_page_content
+label: 'create builder_page content'
+roles:
+  - editor
+  - site_admin

@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.card_circle_image
     - field.storage.block_content.b_cdcir_headline
+_core:
+  default_config_hash: 1S0lKwS45wSpTAmN5kmzfrvAjk-AGpRnYTEQCPRLNXQ
 id: block_content.card_circle_image.b_cdcir_headline
 field_name: b_cdcir_headline
 entity_type: block_content

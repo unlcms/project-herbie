@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_margin
+label: 'Contact Info Margin'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

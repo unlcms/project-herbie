@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.b_hero_title
+id: block_content.hero.b_hero_title
+field_name: b_hero_title
+entity_type: block_content
+bundle: hero
+label: 'Hero title'
+description: 'Leave empty to use the <em>Title</em>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

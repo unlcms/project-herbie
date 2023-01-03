@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.field.block_content.contact_info.b_cinfo_contact_point
+  module:
+    - entity_reference_revisions
+id: block_content.contact_info.default
+targetEntityType: block_content
+bundle: contact_info
+mode: default
+content:
+  b_cinfo_contact_point:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

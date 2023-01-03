@@ -10,6 +10,8 @@ dependencies:
     - allowed_formats
     - field_css
     - text
+_core:
+  default_config_hash: _WCNOComBWj2J6oN7XPpVoovUmLD9El6BV8-ylwHp44
 id: block_content.html_code.default
 targetEntityType: block_content
 bundle: html_code

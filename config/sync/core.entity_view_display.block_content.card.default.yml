@@ -20,6 +20,8 @@ dependencies:
     - options
     - responsive_image
     - text
+_core:
+  default_config_hash: _J3J50ESTz7p_RrybndlcB3Aa3KvjhTmAD0220447T8
 id: block_content.card.default
 targetEntityType: block_content
 bundle: card

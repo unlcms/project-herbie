@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card
+label: Card
+revision: 0
+description: 'A styled content block with a headline and body that optionally includes a picture, overline, subhead, and call-to-action button'

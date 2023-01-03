@@ -8,6 +8,8 @@ dependencies:
     - field.field.block_content.accordion.b_accordion_title
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: qr9p40Fptb2b8coI-q305GzemxJQEWAC-iaeNR5vPB4
 id: block_content.accordion.default
 targetEntityType: block_content
 bundle: accordion

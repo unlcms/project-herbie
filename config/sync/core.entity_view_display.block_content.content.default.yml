@@ -7,6 +7,8 @@ dependencies:
     - field.field.block_content.content.body
   module:
     - text
+_core:
+  default_config_hash: viGT8Mj9cTPkaogt9fBkK2HClKvVbB9QsKl67qWajsQ
 id: block_content.content.default
 targetEntityType: block_content
 bundle: content

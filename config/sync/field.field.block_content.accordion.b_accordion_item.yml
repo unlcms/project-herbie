@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: BlFIrj07dAk2B_CJqrzCPj4wVF9YzrcEkeUQrBQyG90
 id: block_content.accordion.b_accordion_item
 field_name: b_accordion_item
 entity_type: block_content

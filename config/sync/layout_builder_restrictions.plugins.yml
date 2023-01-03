@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: HT76S44w3C7fNe31wTe9AOkE3qRktkmpa9ENKh0MVS0
 plugin_config:
   entity_view_mode_restriction_by_region:
     enabled: true

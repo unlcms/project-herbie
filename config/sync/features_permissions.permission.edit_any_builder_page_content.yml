@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.builder_page
+_core:
+  default_config_hash: a4yMXZdrcbOgNHTTQNzkVKRkAwcMzhyM8il2ff49sAU
 id: edit_any_builder_page_content
 label: 'edit any builder_page content'
 roles:

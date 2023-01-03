@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info
+label: 'Contact Info'
+revision: 0
+description: 'A block containing contact information for the website owner (e.g. locations, addresses, phone numbers)'

@@ -2,6 +2,8 @@ uuid: bfcf89e0-2d13-4c98-9cfe-3c54c8a45e76
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: u_YMH1Qm_-YFEJWKpYAYFkuMqJ30rNgshuVoqqLQnME
 id: contact_info_fax
 label: 'Contact Info Fax'
 icon_uuid: null

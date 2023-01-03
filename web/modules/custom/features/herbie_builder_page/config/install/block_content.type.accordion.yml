@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: accordion
+label: Accordion
+revision: 0
+description: 'A list of accordion items that can be expanded and collapsed'

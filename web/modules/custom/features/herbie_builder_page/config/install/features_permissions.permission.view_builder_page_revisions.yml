@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.builder_page
+id: view_builder_page_revisions
+label: 'view builder_page revisions'
+roles:
+  - editor
+  - site_admin

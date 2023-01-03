@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: html_code
+label: 'HTML Code'
+revision: 1
+description: 'A block that allows for direct HTML and CSS editing'
