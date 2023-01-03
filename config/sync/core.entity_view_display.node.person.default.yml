@@ -19,6 +19,8 @@ dependencies:
     - telephone
     - text
     - user
+_core:
+  default_config_hash: ZRi1CJ9WIE5TDOih3P7co6ViLpC0KGlNQNYyOv2vG0Y
 id: node.person.default
 targetEntityType: node
 bundle: person

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: lkt84vd8MrNltsvyAjfeur6yirwJ9sqZYaxerwgM-JE
 id: node.person.title
 field_name: title
 entity_type: node

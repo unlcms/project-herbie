@@ -56,6 +56,7 @@ module:
   focal_point: 0
   herbie_book: 0
   herbie_news: 0
+  herbie_person: 0
   honeypot: 0
   image: 0
   image_class: 0

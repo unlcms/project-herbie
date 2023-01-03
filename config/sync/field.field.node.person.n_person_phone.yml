@@ -7,6 +7,8 @@ dependencies:
     - node.type.person
   module:
     - telephone
+_core:
+  default_config_hash: aXfPu0ZDdTr7xzK14GCymVjWHVUTu_fjdhcNXbdx4no
 id: node.person.n_person_phone
 field_name: n_person_phone
 entity_type: node

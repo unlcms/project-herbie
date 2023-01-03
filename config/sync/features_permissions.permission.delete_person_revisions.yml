@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: pJsxAEYIfj6LErQ5CHILqKQIM5T6kEadlAfRFhH-xr4
 id: delete_person_revisions
 label: 'delete person revisions'
 roles:

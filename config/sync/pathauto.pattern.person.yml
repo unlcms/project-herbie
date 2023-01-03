@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: CNJoZWbKwDtIYT0s5_4WdaC4u9u0mesYaoVrPmmLsus
 id: person
 label: Person
 type: 'canonical_entities:node'

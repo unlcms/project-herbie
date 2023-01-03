@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: l29sYxjmS1nuqO8KIpJVEkI0betnAWZkrj8t8tYYSEc
 id: create_person_content
 label: 'create person content'
 roles:

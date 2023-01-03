@@ -9,6 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: 096REJwiSK6kzEYzhWcsJxH_2iWZbu4Vo9LnHqG3GH0
 name: Person
 type: person
 description: 'A person''s bio and/or contact information.'

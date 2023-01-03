@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: XNAVgzU5Ty0b5H4QZfraotxW7HdYKoAXlzLnWjPuJmA
 id: node.n_person_address
 field_name: n_person_address
 entity_type: node

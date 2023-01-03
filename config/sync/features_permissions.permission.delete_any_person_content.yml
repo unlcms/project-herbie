@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: Hvd2-jczm8Frt3Ife-fvuWos845MfQgsK-xHwFTJSKE
 id: delete_any_person_content
 label: 'delete any person content'
 roles:

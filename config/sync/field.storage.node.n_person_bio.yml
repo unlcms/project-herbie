@@ -5,6 +5,8 @@ dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: r9sSPyE8R4pClAytcW1Q6ScJsuZasIsMOBxxcpPpi0M
 id: node.n_person_bio
 field_name: n_person_bio
 entity_type: node

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: Q6mLpFNzydwU7MamuWrWioYYFpSttji1FrsgplC-XSA
 id: view_person_revisions
 label: 'view person revisions'
 roles:

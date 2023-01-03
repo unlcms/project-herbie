@@ -7,6 +7,8 @@ dependencies:
     - node.type.person
   module:
     - link
+_core:
+  default_config_hash: _bpn4ezVa8SDrJd7hWEkoZRS31tzezqJ_ktKyTjEazk
 id: node.person.n_person_website
 field_name: n_person_website
 entity_type: node

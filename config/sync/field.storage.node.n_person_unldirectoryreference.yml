@@ -5,6 +5,8 @@ dependencies:
   module:
     - external_entities
     - node
+_core:
+  default_config_hash: G3dwkwQ70kAFBGytE16o3891Y5OCfQqwlLIucYCKGLI
 id: node.n_person_unldirectoryreference
 field_name: n_person_unldirectoryreference
 entity_type: node

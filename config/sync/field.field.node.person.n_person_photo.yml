@@ -7,6 +7,8 @@ dependencies:
     - node.type.person
   module:
     - image
+_core:
+  default_config_hash: y5vTFWiDwWxu57YF2fGngB2hRMmYaj0r1eabzkRC5lU
 id: node.person.n_person_photo
 field_name: n_person_photo
 entity_type: node

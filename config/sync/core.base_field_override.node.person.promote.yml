@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.person
+_core:
+  default_config_hash: BXVMtNBFvM17JP77rTBxsz_UxnkNJwCT7NnbGnbMypw
 id: node.person.promote
 field_name: promote
 entity_type: node
