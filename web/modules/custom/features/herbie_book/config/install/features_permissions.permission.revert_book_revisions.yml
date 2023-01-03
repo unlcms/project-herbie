@@ -1,11 +1,8 @@
-uuid: 92a269ac-92d1-4dd6-9b86-b6f46c47588a
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.book
-_core:
-  default_config_hash: p2klqulxDWOgs1Rj7ZpFvfqk-PdwNdhNatDytVn7UmM
 id: revert_book_revisions
 label: 'revert book revisions'
 roles:

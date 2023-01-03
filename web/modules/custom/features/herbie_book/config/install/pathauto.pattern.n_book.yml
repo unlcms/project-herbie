@@ -1,11 +1,8 @@
-uuid: 41ef3291-fc8b-4f5d-b711-a555d354ea5d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: ekSxnpt34fXhWL_Ry6T3Z_FL1Fd5yMCanq54d81d08Y
 id: n_book
 label: 'Book node'
 type: 'canonical_entities:node'

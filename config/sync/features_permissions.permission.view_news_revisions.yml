@@ -9,5 +9,5 @@ _core:
 id: view_news_revisions
 label: 'view news revisions'
 roles:
+  - administrator
   - editor
-  - site_admin

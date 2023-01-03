@@ -9,5 +9,5 @@ _core:
 id: create_news_content
 label: 'create news content'
 roles:
+  - administrator
   - editor
-  - site_admin

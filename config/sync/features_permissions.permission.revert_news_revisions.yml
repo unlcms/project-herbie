@@ -9,5 +9,5 @@ _core:
 id: revert_news_revisions
 label: 'revert news revisions'
 roles:
+  - administrator
   - editor
-  - site_admin
