@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
