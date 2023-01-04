@@ -1,6 +1,6 @@
 # Drupal 9 at UNL (Project Herbie)
 
-A multisite installation hosted at http://cms.unl.edu/ developed by the [Digital Experience Group](https://ucomm.unl.edu/) 
+A multisite installation hosted at https://cms.unl.edu/ developed by the [Digital Experience Group](https://ucomm.unl.edu/) 
 and supported by DXG and ITS.
 
 ## Requirements
@@ -17,8 +17,8 @@ the officially supported configuration at UNL is as follows:
 
 Latest verified working configuration:
 
-- PHP 7.4.28
-- Apache 2.4.48
+- PHP 8.1.10
+- Apache 2.4.54
 - MariaDB 10.7.3
 
 Composer, PHP's dependency manager, is necessary to install this project. 
@@ -30,6 +30,10 @@ It may be necessary to replace `composer` with `php composer.phar` (or similar).
 ### DDEV Support
 
 See the _DDEV-README.md_ file in this project.
+
+## Production Environment & Deployment Procedure
+
+See the important notes in the [DXG Wiki](https://git.unl.edu/dxg/internal-documentation/-/wikis/cms.unl.edu). 
 
 ## Installation
 
