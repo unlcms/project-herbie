@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.m_rv_thumbnail_height
+    - media.type.remote_video
+id: media.remote_video.m_rv_thumbnail_height
+field_name: m_rv_thumbnail_height
+entity_type: media
+bundle: remote_video
+label: 'Thumbnail height'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

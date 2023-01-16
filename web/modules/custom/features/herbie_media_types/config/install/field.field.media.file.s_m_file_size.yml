@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_file_size
+    - media.type.file
+id: media.file.s_m_file_size
+field_name: s_m_file_size
+entity_type: media
+bundle: file
+label: 'File size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

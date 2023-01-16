@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.m_rv_html_representation
+    - media.type.remote_video
+id: media.remote_video.m_rv_html_representation
+field_name: m_rv_html_representation
+entity_type: media
+bundle: remote_video
+label: 'The HTML representation of the resource'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

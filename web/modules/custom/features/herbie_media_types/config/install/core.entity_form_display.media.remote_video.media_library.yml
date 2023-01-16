@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.remote_video.field_media_oembed_video
+    - media.type.remote_video
+id: media.remote_video.media_library
+targetEntityType: media
+bundle: remote_video
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_oembed_video: true
+  m_rv_author_name: true
+  m_rv_author_url: true
+  m_rv_default_name: true
+  m_rv_html_representation: true
+  m_rv_provider_name: true
+  m_rv_provider_url: true
+  m_rv_resource_title: true
+  m_rv_resource_type: true
+  m_rv_source_url: true
+  m_rv_suggested_cache_lifetime: true
+  m_rv_thumbnail_height: true
+  m_rv_thumbnail_local_uri: true
+  m_rv_thumbnail_width: true
+  path: true
+  s_m_height: true
+  s_m_width: true
+  status: true
+  uid: true
