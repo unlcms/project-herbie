@@ -215,6 +215,7 @@
         "post-drupal-scaffold-cmd": [
             "cd web && patch -p1 < ../patches/custom-index.php.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
