@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media_type_remote_video
+entity_type_id: media_type
+entity_id: remote_video
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+id: unl_mediahub
+label: 'UNL Mediahub'
+provider_url: 'https://mediahub.unl.edu'
+endpoints:
+  -
+    schemes:
+      - 'https://mediahub.unl.edu/media/*'
+      - 'http://mediahub.unl.edu/media/*'
+    url: 'https://mediahub.unl.edu/oembed'
+    discovery: false
+    formats:
+      json: true
+      xml: false

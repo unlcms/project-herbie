@@ -1,4 +1,3 @@
-uuid: 09882158-4347-4129-87bd-ab21d0ee9271
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - oembed_providers.bucket.video
   module:
     - oembed_providers
-_core:
-  default_config_hash: r2UZkg5Zg58wrUJJXkK5H0KOZoECBkWW47HOv4DmJqg
 id: remote_video
 label: 'Remote Video'
 description: ''

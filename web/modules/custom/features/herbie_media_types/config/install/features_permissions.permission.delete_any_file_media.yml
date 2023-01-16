@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+id: delete_any_file_media
+label: 'delete any file media'
+roles:
+  - editor
+  - site_admin

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.provider.unl_mediahub
+id: video
+label: 'Remote Video'
+description: null
+providers:
+  - 'UNL Mediahub'

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: create_remote_video_media
+label: 'create remote_video media'
+roles:
+  - editor
+  - site_admin

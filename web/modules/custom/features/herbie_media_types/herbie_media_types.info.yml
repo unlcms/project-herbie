@@ -1,0 +1,11 @@
+name: 'Media Types'
+description: 'A bundle of Media Types.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'drupal:media'
+  - 'features_permissions:features_permissions'
+  - 'oembed_providers:oembed_providers'
+  - 'rabbit_hole:rabbit_hole'
+version: '1.0'
+package: Herbie

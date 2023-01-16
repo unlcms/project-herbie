@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+id: create_file_media
+label: 'create file media'
+roles:
+  - editor
+  - site_admin

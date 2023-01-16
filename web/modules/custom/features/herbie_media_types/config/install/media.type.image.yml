@@ -1,18 +1,17 @@
-uuid: 8ff4906b-7fc6-4e70-85d5-3af55b79a7b5
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: AKlg03WnfdeJogBbj0j8JF6W4eGFFZzXi2kv5Eb94eo
-id: file
-label: File
+id: image
+label: Image
 description: ''
-source: file
+source: image
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
-  source_field: field_media_file
+  source_field: field_media_image
 field_map:
   name: name
   mimetype: s_m_mime_type
   filesize: s_m_file_size
+  width: s_m_width
+  height: s_m_height

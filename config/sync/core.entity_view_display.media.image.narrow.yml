@@ -13,6 +13,7 @@ dependencies:
     - responsive_image.styles.narrow
   module:
     - dcf_lazyload
+    - image_class
     - layout_builder
     - responsive_image
 third_party_settings:
@@ -31,8 +32,10 @@ content:
       responsive_image_style: narrow
       image_link: ''
     third_party_settings:
+      image_class:
+        class: ''
       dcf_lazyload:
-        dcf_lazyload_enable: true
+        dcf_lazyload_enable: false
     weight: 0
     region: content
 hidden:
