@@ -65,7 +65,7 @@ This command will create a symlink of `/vendor/unl/wdntemplates/wdn` at `/web/wd
 The wdntemplates package is a Node.js project that uses Grunt. This command will also install 
 the Node.js project and run the default Grunt task.
 
-To receive upstream updates, navigate to `/vendor/wdn` and run `git pull`.
+To receive upstream updates, navigate to `vendor/unl/wdntemplates` and run `git pull`.
 
 #### Manual
 
