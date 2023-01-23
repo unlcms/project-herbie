@@ -31,7 +31,6 @@ ignored_config_entities:
   - 'system.site:mail'
   - 'system.site:slogan'
   - 'system.site:page.front'
-  - unl_breadcrumbs.settings
   - unl_news.settings
   - unl_system.settings
   - 'webform.webform.*'
