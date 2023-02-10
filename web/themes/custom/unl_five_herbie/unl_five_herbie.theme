@@ -109,9 +109,25 @@ function unl_five_herbie_preprocess_field(&$variables) {
    * Image field in Hero block type.
    */
   if ($field_name == 'b_hero_image') {
+    $hero_type = $variables['element']['#object']->get('b_hero_type')->getValue()[0]['value'];
+
     // Add needed classes to the <img> tag inside a Hero block.
     foreach ($variables['items'] as $key => $item) {
-      $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
+      if ($hero_type === '1') {
+        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
+      }
+      elseif ($hero_type === '2')  {
+        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover tl-slow-zoom-in';
+      }
+    }
+  }
+
+  /*
+   * Link field in Hero block type
+   */
+  if ($field_name == 'b_hero_links') {
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
     }
   }
 

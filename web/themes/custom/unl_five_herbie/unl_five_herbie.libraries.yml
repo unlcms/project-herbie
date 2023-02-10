@@ -9,3 +9,8 @@ person:
   css:
     theme:
       css/theme/person.css: {}
+hero_2:
+  version: VERSION
+  css:
+    theme:
+      css/theme/hero_2.css: {}

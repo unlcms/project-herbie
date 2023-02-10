@@ -1,29 +1,71 @@
+{% set value = item.content.b_hero_type.0 %}
+
 {% for item in items %}
-  <!-- InstanceBeginEditable name="hero" -->
-  <div class="dcf-hero unl-hero-notch-stripe dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-mb-6 unl-bg-darker-gray{% if unl_hide_page_title %} dcf-sr-only{% endif %}"{{ item.attributes }}>
-    <!-- InstanceEndEditable -->
-    <div class="dcf-hero-group-1">
-      {{ breadcrumbs }}
-      {% if unl_no_page_title is not defined %}
-        <header class="dcf-page-title" id="dcf-page-title">
-          <!-- InstanceBeginEditable name="pagetitle" -->
-          {{ item.content.b_hero_overline }}
-          {% if item.content.b_hero_title.0 %}
-            {{ item.content.b_hero_title }}
-          {% else %}
-            <h1>{{ page_title }}</h1>
-          {% endif %}
-          {{ item.content.b_hero_subhead }}
-          <!-- InstanceEndEditable -->
-        </header>
-      {% endif %}
-      <!-- InstanceBeginEditable name="herogroup1" -->
+
+  {% if item.content.b_hero_type[0]['#markup'] == "1" %}
+    <!-- InstanceBeginEditable name="hero" -->
+    <div class="dcf-hero unl-hero-notch-stripe dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-mb-6 unl-bg-darker-gray{% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
       <!-- InstanceEndEditable -->
-    </div>
-    <!-- InstanceBeginEditable name="herogroup2" -->
-    <div class="dcf-hero-group-2 dcf-w-100% {{ hero_size_class }}">
-      {{ item.content.b_hero_image }}
-    </div>
+      <div class="dcf-hero-group-1">
+        {{ breadcrumbs }}
+
+        {% if unl_no_page_title is not defined %}
+          <header class="dcf-page-title" id="dcf-page-title">
+            <!-- InstanceBeginEditable name="pagetitle" -->
+            {{ item.content.b_hero_overline }}
+            <h1>
+              {% if item.content.b_hero_title.0 %}
+                {{ item.content.b_hero_title }}
+              {% else %}
+                {{ page_title }}
+              {% endif %}
+            </h1>
+            {{ item.content.b_hero_subhead }}
+          <!-- InstanceEndEditable -->
+          </header>
+        {% endif %}
+
+      </div>
+      <!-- InstanceBeginEditable name="herogroup2" -->
+      <div class="dcf-hero-group-2 dcf-w-100% {{ hero_size_class }}">
+        {{ item.content.b_hero_image }}
+      </div>
     <!-- InstanceEndEditable -->
-  </div>
+    </div>
+
+  {% else %}
+
+    {{ attach_library('unl_five_herbie/hero_2') }}
+    <!-- InstanceBeginEditable name="hero" -->
+    <div class="dcf-hero tl-hero-home {% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
+      <!-- InstanceEndEditable -->
+      <div class="dcf-hero-group-2 dcf-bleed tl-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
+        {{ breadcrumbs }}
+
+        {% if unl_no_page_title is not defined %}
+          <header class="dcf-z-1 tl-hero-heading tl-hero-heading-l">
+            <!-- InstanceBeginEditable name="pagetitle" -->
+            <h1 class="dcf-d-inline dcf-txt-h1 unl-cream unl-bg-darkest-gray tl-hero-heading-box">
+              {% if item.content.b_hero_title.0 %}
+                {{ item.content.b_hero_title }}
+              {% else %}
+                {{ page_title }}
+              {% endif %}
+            </h1>
+          <!-- InstanceEndEditable -->
+          </header>
+        {% endif %}
+
+        <!-- InstanceBeginEditable name="herogroup2" -->
+        <div class="tl-hero-img dcf-ratio dcf-ratio-16x9">
+          {{ item.content.b_hero_image }}
+        </div>
+
+        {{ item.content.b_hero_links }}
+      <!-- InstanceEndEditable -->
+      </div>
+    </div>
+
+  {% endif %}
+
 {% endfor %}

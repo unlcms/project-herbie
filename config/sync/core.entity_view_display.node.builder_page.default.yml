@@ -22,6 +22,7 @@ third_party_settings:
         layout_id: dcf_onecol_section
         layout_settings:
           label: ''
+          context_mapping: {  }
           column_widths: '100'
           title: ''
           title_classes: {  }
@@ -32,7 +33,6 @@ third_party_settings:
           section_element_id: ''
           column_classes:
             col_1: {  }
-          context_mapping: {  }
         components:
           df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
             uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
