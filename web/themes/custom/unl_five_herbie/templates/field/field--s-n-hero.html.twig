@@ -37,15 +37,15 @@
 
     {{ attach_library('unl_five_herbie/hero_2') }}
     <!-- InstanceBeginEditable name="hero" -->
-    <div class="dcf-hero tl-hero-home {% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
+    <div class="dcf-hero unlcms-hero-home {% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
       <!-- InstanceEndEditable -->
-      <div class="dcf-hero-group-2 dcf-bleed tl-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
+      <div class="dcf-hero-group-2 dcf-bleed unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
         {{ breadcrumbs }}
 
         {% if unl_no_page_title is not defined %}
-          <header class="dcf-z-1 tl-hero-heading tl-hero-heading-l">
+          <header class="dcf-z-1 unlcms-hero-heading unlcms-hero-heading-l">
             <!-- InstanceBeginEditable name="pagetitle" -->
-            <h1 class="dcf-d-inline dcf-txt-h1 unl-cream unl-bg-darkest-gray tl-hero-heading-box">
+            <h1 class="dcf-d-inline dcf-txt-h1 unl-cream unl-bg-darkest-gray unlcms-hero-heading-box">
               {% if item.content.b_hero_title.0 %}
                 {{ item.content.b_hero_title }}
               {% else %}
@@ -57,7 +57,7 @@
         {% endif %}
 
         <!-- InstanceBeginEditable name="herogroup2" -->
-        <div class="tl-hero-img dcf-ratio dcf-ratio-16x9">
+        <div class="unlcms-hero-img dcf-ratio dcf-ratio-16x9">
           {{ item.content.b_hero_image }}
         </div>
 

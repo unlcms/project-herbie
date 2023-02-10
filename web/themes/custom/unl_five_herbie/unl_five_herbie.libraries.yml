@@ -14,3 +14,7 @@ hero_2:
   css:
     theme:
       css/theme/hero_2.css: {}
+  js:
+    js/theme/hero_2.js: {}
+
+

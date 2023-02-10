@@ -117,7 +117,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
         $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
       }
       elseif ($hero_type === '2')  {
-        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover tl-slow-zoom-in';
+        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover unlcms-slow-zoom-in unlcms-hero-animation';
       }
     }
   }
