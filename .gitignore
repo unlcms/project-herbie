@@ -45,3 +45,6 @@
 !/.ddev/config.yaml
 !/.ddev/docker-compose.chromedriver.yml
 !/.ddev/docker-compose.environment.yml
+
+# MAC files
+.DS_Store
