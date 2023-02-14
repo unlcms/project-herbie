@@ -1,4 +1,4 @@
-.unlcms-hero-home .dcf-breadcrumbs {
+.unlcms-hero-home .dcf-breadcrumbs-wrapper {
   display: none;
 }
 
@@ -61,7 +61,7 @@
   }
 
   .unlcms-hero-btn-group-l {
-    grid-area: 3 / 2 / 4 / -1;
+    grid-area: 3 / 2 / 4 / -2;
   }
 
   .unlcms-hero-btn-group-r {
