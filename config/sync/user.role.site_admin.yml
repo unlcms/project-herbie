@@ -15,6 +15,7 @@ dependencies:
     - book
     - contextual
     - entity_usage
+    - feeds
     - layout_builder
     - layout_builder_component_attributes
     - media
@@ -40,6 +41,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
+  - 'access feed overview'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access site reports'
@@ -50,6 +52,7 @@ permissions:
   - 'add content to books'
   - 'administer block content types'
   - 'administer book outlines'
+  - 'administer feeds'
   - 'administer main menu items'
   - 'administer redirects'
   - 'administer taxonomy'
