@@ -63,3 +63,8 @@ p.dcf-inverse a,
 .dcf-inverse .more-link a {
   color: #fefdfa !important;
 }
+
+/* This needs to be implimented in main css */
+.unl-cream a:not(.dcf-btn-secondary) {color:#fefdfa!important}
+
+.unl-cream a:hover {color:#fefdfa!important}

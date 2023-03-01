@@ -11,7 +11,7 @@ dependencies:
 id: unl_five_herbie_mainnavigation
 theme: unl_five_herbie
 region: navlinks
-weight: -2
+weight: -3
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_email.p_b_cinfo_email_email
+    - paragraphs.paragraphs_type.contact_info_email
+id: paragraph.contact_info_email.default
+targetEntityType: paragraph
+bundle: contact_info_email
+mode: default
+content:
+  p_b_cinfo_email_email:
+    type: email_default
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

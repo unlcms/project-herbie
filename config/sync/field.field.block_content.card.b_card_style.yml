@@ -1,0 +1,23 @@
+uuid: 1d98b262-a80b-42f5-b1e9-e8a6e43f4b41
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card
+    - field.storage.block_content.b_card_style
+  module:
+    - options
+id: block_content.card.b_card_style
+field_name: b_card_style
+entity_type: block_content
+bundle: card
+label: 'Card style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: creme
+default_value_callback: ''
+settings: {  }
+field_type: list_string

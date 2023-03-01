@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_contact_point.p_b_cinfo_attributes
+    - paragraphs.paragraphs_type.contact_info_contact_point
+  module:
+    - paragraphs
+id: paragraph.contact_info_contact_point.default
+targetEntityType: paragraph
+bundle: contact_info_contact_point
+mode: default
+content:
+  p_b_cinfo_attributes:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

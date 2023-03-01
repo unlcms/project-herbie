@@ -1,6 +1,6 @@
 _core:
   default_config_hash: yBklcYJqiyzlSPHHHKvoxew3sJTI62kS9lchdu1aa7E
-quality: 85
+quality: 100
 binaries: imagemagick
 path_to_binaries: ''
 prepend: ''

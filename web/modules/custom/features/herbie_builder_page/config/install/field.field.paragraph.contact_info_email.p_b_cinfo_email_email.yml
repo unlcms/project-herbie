@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_email_email
+    - paragraphs.paragraphs_type.contact_info_email
+id: paragraph.contact_info_email.p_b_cinfo_email_email
+field_name: p_b_cinfo_email_email
+entity_type: paragraph
+bundle: contact_info_email
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -5,18 +5,14 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
-    - field.field.block_content.hero.b_hero_links
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
-    - field.field.block_content.hero.b_hero_type
-    - responsive_image.styles.hero_medium
   module:
-    - dcf_lazyload
-    - link
+    - image
+    - image_class
     - options
-    - responsive_image
 _core:
   default_config_hash: NCm7V0AV3b7lHtFCNAvUCCqFSxHYgMIjQr8vwYvn9nM
 id: block_content.hero.default
@@ -25,27 +21,17 @@ bundle: hero
 mode: default
 content:
   b_hero_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: hero_medium
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
-      dcf_lazyload:
-        dcf_lazyload_enable: false
+      image_class:
+        class: ''
     weight: 0
-    region: content
-  b_hero_links:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 8
     region: content
   b_hero_overline:
     type: string
@@ -77,12 +63,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  b_hero_type:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 9
     region: content
 hidden: {  }

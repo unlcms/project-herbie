@@ -1,2 +1,4 @@
 bundle: herbie
+excluded:
+  - field.storage.block_content.b_card_style
 required: true

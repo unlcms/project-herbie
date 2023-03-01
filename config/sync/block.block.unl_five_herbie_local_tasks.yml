@@ -9,7 +9,7 @@ _core:
 id: unl_five_herbie_local_tasks
 theme: unl_five_herbie
 region: navlinks
-weight: -3
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

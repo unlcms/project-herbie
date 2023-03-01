@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: photo_hero
+label: 'Photo Hero'
+revision: 0
+description: 'Hero banner with title and buttons'

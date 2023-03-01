@@ -9,7 +9,7 @@ dependencies:
 id: unl_five_herbie_content
 theme: unl_five_herbie
 region: content
-weight: 0
+weight: -6
 provider: null
 plugin: system_main_block
 settings:

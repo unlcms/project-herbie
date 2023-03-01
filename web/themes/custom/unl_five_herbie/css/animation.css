@@ -1,0 +1,4 @@
+.unlcms-hero-animation {
+  /* before - transform: scale(1.13, 1.13); */
+  translate: none; rotate: none; scale: none; transform: scale(1, 1);
+}
