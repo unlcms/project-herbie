@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - paragraphs
+id: paragraph.p_b_cinfo_margin_markup
+field_name: p_b_cinfo_margin_markup
+entity_type: paragraph
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

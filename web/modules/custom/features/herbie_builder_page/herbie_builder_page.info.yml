@@ -18,6 +18,7 @@ dependencies:
   - 'drupal:book'
   - 'drupal:config'
   - 'drupal:contextual'
+  - 'drupal:editor'
   - 'drupal:field'
   - 'drupal:field_ui'
   - 'drupal:file'
