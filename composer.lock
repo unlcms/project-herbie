@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cd8643ea55e439a4725a827d7fbe5a5",
+    "content-hash": "de570142612fd006dba0ed679bf7f592",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -4708,26 +4708,26 @@
         },
         {
             "name": "drupal/markup",
-            "version": "1.0.0-beta5",
+            "version": "2.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/markup.git",
-                "reference": "8.x-1.0-beta5"
+                "reference": "2.0.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/markup-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "dcd4dc20d8ff45830dad9d4df9f75c7421df4d9e"
+                "url": "https://ftp.drupal.org/files/projects/markup-2.0.0-beta6.zip",
+                "reference": "2.0.0-beta6",
+                "shasum": "8f3b8e21814ee51776e757bc4d279483ee393b66"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.9 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1645738831",
+                    "version": "2.0.0-beta6",
+                    "datestamp": "1675927815",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4744,10 +4744,6 @@
                     "homepage": "https://www.drupal.org/user/291091"
                 },
                 {
-                    "name": "Deciphered",
-                    "homepage": "https://www.drupal.org/user/103796"
-                },
-                {
                     "name": "bcostlow",
                     "homepage": "https://www.drupal.org/user/1340686"
                 },
@@ -4756,8 +4752,16 @@
                     "homepage": "https://www.drupal.org/user/202205"
                 },
                 {
+                    "name": "Deciphered",
+                    "homepage": "https://www.drupal.org/user/103796"
+                },
+                {
                     "name": "ebeyrent",
                     "homepage": "https://www.drupal.org/user/23897"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "mqanneh",
