@@ -1,6 +1,5 @@
 window.addEventListener('inlineJSReady', function() {
 
-  console.log("Javascript")
   WDN.initializePlugin('scroll-animations');
 
   require(['plugins/gsap/gsap', 'plugins/gsap/ScrollTrigger'], (gsapModule, ScrollTriggerModule) => {
