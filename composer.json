@@ -114,7 +114,7 @@
         "drupal/block_form_alter": "^2.0",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/cas": "^2.0",
-        "drupal/ckeditor_config": "^3.0",
+        "drupal/ckeditor_config": "^3.4",
         "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
         "drupal/config_ignore": "^2.1",

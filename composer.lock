@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c057ec35dd78d1bc066913e94ba41499",
+    "content-hash": "e389b4b440a0840608964095408fa315",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -1951,27 +1951,27 @@
         },
         {
             "name": "drupal/ckeditor_config",
-            "version": "3.2.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_config.git",
-                "reference": "8.x-3.2"
+                "reference": "8.x-3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "14356c083cb31cf970fa8a5dfcfc360889c93186"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.4.zip",
+                "reference": "8.x-3.4",
+                "shasum": "3f7c35758023de6311693dc94fcd09d047dd58e8"
             },
             "require": {
                 "drupal/ckeditor": "^1.0",
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.0|^10.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.2",
-                    "datestamp": "1663798889",
+                    "version": "8.x-3.4",
+                    "datestamp": "1676656972",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1980,7 +1980,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
