@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d72076914c3116b4cf19539c0460b25",
+    "content-hash": "f1a81280d7b00903c0df661eaed3e1b8",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5580,20 +5580,20 @@
         },
         {
             "name": "drupal/twig_ui",
-            "version": "1.0.1",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/twig_ui.git",
-                "reference": "1.0.1"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/twig_ui-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "f80837632836c827262865a6b230cf9f050a65e4"
+                "url": "https://ftp.drupal.org/files/projects/twig_ui-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "d4aefe6ab51847b5598d883d92dc9992d5b27497"
             },
             "require": {
-                "drupal/core": "^8.8.4 || ^9"
+                "drupal/core": "^9.3|^10"
             },
             "require-dev": {
                 "drupal/codemirror_editor": "^1.0"
@@ -5604,8 +5604,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1651355038",
+                    "version": "2.0.1",
+                    "datestamp": "1676415997",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
