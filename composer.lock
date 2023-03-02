@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52c459c942d0ecc0feb216eb2e442ffc",
+    "content-hash": "0b36b4da7fb369f539b8a5f59e3f3447",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -12094,20 +12094,20 @@
         },
         {
             "name": "unlcms/unl_breadcrumbs",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_breadcrumbs.git",
-                "reference": "635bfbcd15f272df7d4b28dc25126d6a13756bb0"
+                "reference": "7dc63e08922fa7256d811c3aac98d908aade97bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/635bfbcd15f272df7d4b28dc25126d6a13756bb0",
-                "reference": "635bfbcd15f272df7d4b28dc25126d6a13756bb0",
+                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/7dc63e08922fa7256d811c3aac98d908aade97bd",
+                "reference": "7dc63e08922fa7256d811c3aac98d908aade97bd",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -12124,9 +12124,9 @@
             "description": "UNL breadcrumb implementation",
             "support": {
                 "issues": "https://github.com/unlcms/unl_breadcrumbs/issues",
-                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.0.2"
+                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.0.3"
             },
-            "time": "2022-05-26T21:21:10+00:00"
+            "time": "2023-02-23T16:09:35+00:00"
         },
         {
             "name": "unlcms/unl_dcf",
@@ -12205,20 +12205,20 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "1.0.5",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "d23a3d1dacc3ce9fb62ba90c9409ae0838f3a2f0"
+                "reference": "5aca9271d224a654c41ec7272207755add86a3ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/d23a3d1dacc3ce9fb62ba90c9409ae0838f3a2f0",
-                "reference": "d23a3d1dacc3ce9fb62ba90c9409ae0838f3a2f0",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/5aca9271d224a654c41ec7272207755add86a3ef",
+                "reference": "5aca9271d224a654c41ec7272207755add86a3ef",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "richardbporter/drush-users-commands": "^3.1"
             },
             "type": "drupal-module",
@@ -12233,26 +12233,26 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/1.0.5"
+                "source": "https://github.com/unlcms/unl_multisite/tree/1.1"
             },
-            "time": "2022-12-14T19:19:45+00:00"
+            "time": "2023-03-02T21:12:52+00:00"
         },
         {
             "name": "unlcms/unl_user",
-            "version": "1.3",
+            "version": "1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_user.git",
-                "reference": "eb0232508b9e7a82cd4ece54eacb806f125225f3"
+                "reference": "d427a06113570e7e2e7d133ae2f3ea42567d6445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/eb0232508b9e7a82cd4ece54eacb806f125225f3",
-                "reference": "eb0232508b9e7a82cd4ece54eacb806f125225f3",
+                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/d427a06113570e7e2e7d133ae2f3ea42567d6445",
+                "reference": "d427a06113570e7e2e7d133ae2f3ea42567d6445",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "symfony/ldap": "~3.4"
             },
             "type": "drupal-module",
@@ -12272,9 +12272,9 @@
             "description": "Populate user data with values from LDAP & allow searching for users to add.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_user/issues",
-                "source": "https://github.com/unlcms/unl_user/tree/1.3"
+                "source": "https://github.com/unlcms/unl_user/tree/1.4"
             },
-            "time": "2022-10-28T22:14:52+00:00"
+            "time": "2023-02-23T16:10:28+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
