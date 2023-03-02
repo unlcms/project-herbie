@@ -146,7 +146,7 @@
         "drupal/layout_builder_modal": "^1.2",
         "drupal/layout_builder_operation_link": "^2.0",
         "drupal/layout_builder_restrictions": "^2.0",
-        "drupal/linkit": "^5.0",
+        "drupal/linkit": "6.0.x-dev@dev",
         "drupal/linkit_media_library": "^1.0@alpha",
         "drupal/markup": "^1.0@beta",
         "drupal/media_embed_view_mode_restrictions": "^1.0@beta",
