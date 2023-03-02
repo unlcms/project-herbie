@@ -160,7 +160,7 @@
         "drupal/redirect": "^1.5",
         "drupal/select2": "^1.13",
         "drupal/token": "^1.0",
-        "drupal/twig_tweak": "^2.0",
+        "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^1.0",
         "drupal/upgrade_status": "^4.0@alpha",
         "drupal/webform": "^6.1",
