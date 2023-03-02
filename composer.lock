@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8202c0c76a2b078c34a4fb24beee1f1",
+    "content-hash": "ee92493f184347ea8e181e97922c08aa",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3853,26 +3853,26 @@
         },
         {
             "name": "drupal/image_class",
-            "version": "1.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/image_class.git",
-                "reference": "8.x-1.1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/image_class-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "a7bdd41300907a36eff926145facc09cf0f4c1d6"
+                "url": "https://ftp.drupal.org/files/projects/image_class-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "925121c1828424bfbd0f8325472ba68004c79853"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1636460420",
+                    "version": "2.0.0",
+                    "datestamp": "1672733104",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
