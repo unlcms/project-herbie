@@ -185,8 +185,7 @@
     },
     "require-dev": {
         "drupal/config_inspector": "^2.1",
-        "drupal/core-dev": "^9",
-        "drupal/twig_xdebug": "^1.1"
+        "drupal/core-dev": "^9"
     },
     "conflict": {
         "drupal/drupal": "*"
