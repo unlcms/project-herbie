@@ -7,6 +7,7 @@ dependencies:
   - 'asset_injector:asset_injector'
   - 'auto_entitylabel:auto_entitylabel'
   - 'block_content_permissions:block_content_permissions'
+  - 'ckeditor:ckeditor'
   - 'codemirror_editor:codemirror_editor'
   - 'config_split:config_split'
   - 'crop:crop'

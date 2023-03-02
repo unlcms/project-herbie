@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.block_body
+    - filter.format.block_body_centered
+    - filter.format.standard
+    - filter.format.webform
+  module:
+    - filter
+    - honeypot
+    - media
+    - system
+    - webform
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
