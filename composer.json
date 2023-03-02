@@ -163,7 +163,7 @@
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
         "drupal/upgrade_status": "^4.0@alpha",
-        "drupal/webform": "^6.1",
+        "drupal/webform": "^6.2@beta",
         "drush/drush": "^11",
         "jackocnr/intl-tel-input": "16.1.0",
         "nigelotoole/progress-tracker": "^2.0",
