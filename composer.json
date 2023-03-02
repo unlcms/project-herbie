@@ -110,7 +110,7 @@
         "drupal/allowed_formats": "^2.0",
         "drupal/asset_injector": "^2.7",
         "drupal/auto_entitylabel": "^3.0@beta",
-        "drupal/block_content_permissions": "^1.6",
+        "drupal/block_content_permissions": "^1.11",
         "drupal/block_form_alter": "^2.0",
         "drupal/block_type_templates": "^1.0@alpha",
         "drupal/cas": "^2.0",
