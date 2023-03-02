@@ -117,7 +117,7 @@
         "drupal/ckeditor_config": "^3.4",
         "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
-        "drupal/config_ignore": "^2.1",
+        "drupal/config_ignore": "^2.4",
         "drupal/config_split": "^1.4",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
