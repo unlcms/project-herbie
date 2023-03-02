@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_lg_1596
+label: 'Hero (lg) 1596x448'
+effects:
+  47794400-56d9-41e6-83ce-62dbce4d9823:
+    uuid: 47794400-56d9-41e6-83ce-62dbce4d9823
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 5000
+      crop_type: focal_point

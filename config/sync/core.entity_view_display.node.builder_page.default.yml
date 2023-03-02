@@ -96,22 +96,21 @@ third_party_settings:
               - unl_person_list
             'Custom block types':
               - accordion
-              - card
               - card_circle_image
               - content
               - html_code
+              - photo_hero
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
-              - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
               - 'inline_block:html_code'
+              - 'inline_block:photo_hero'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            User: {  }
             Webform: {  }
             core: {  }
         dcf_threecol_section:
@@ -168,18 +167,22 @@ third_party_settings:
             Webform: {  }
             core: {  }
       denylisted_blocks: {  }
+      restricted_categories:
+        dcf_onecol_section:
+          all_regions:
+            - 'Custom blocks'
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'
+      - 'Custom blocks'
       - Forms
       - 'Inline blocks'
       - 'Lists (Views)'
       - Menus
       - System
-      - User
       - Webform
       - core
     entity_view_mode_restriction:
@@ -190,6 +193,7 @@ third_party_settings:
         - dcf_fourcol_section
       denylisted_blocks: {  }
       allowlisted_blocks: {  }
+      restricted_categories: {  }
 _core:
   default_config_hash: m-Emnc-_9M7Sgjt06DeQTg7VANHTwWE1wF4mcmAcELU
 id: node.builder_page.default

@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.standard
+  module:
+    - ckeditor
+format: standard
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Format
+            - Bold
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - Styles
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - DrupalMediaLibrary
+            - Blockquote
+            - Table
+        -
+          name: Tools
+          items:
+            - SpecialChar
+            - ShowBlocks
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: standard
+    stylescombo:
+      styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button\r\np.dcf-txt-xs|Extra small\r\np.dcf-txt-sm|Small\r\np.dcf-txt-md|Medium\r\np.dcf-txt-lg|Large\r\np.unl-font-serif|Serif"
+    customconfig:
+      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = \"showborders\"\r\njustifyClasses = [\"dcf-txt-left\", \"dcf-txt-center\", \"dcf-txt-right\", null]"
+    dcf_base:
+      enabled_plugins:
+        dcf_table: dcf_table
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

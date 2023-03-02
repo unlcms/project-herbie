@@ -4,13 +4,11 @@ dependencies:
   config:
     - block_content.type.card
     - field.field.block_content.card.b_card_body
-    - field.field.block_content.card.b_card_card_presentation
     - field.field.block_content.card.b_card_cta
-    - field.field.block_content.card.b_card_cta_style
     - field.field.block_content.card.b_card_headline
-    - field.field.block_content.card.b_card_headline_link
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
+    - field.field.block_content.card.b_card_style
     - field.field.block_content.card.b_card_subhead
     - image.style.16_9_240x135
   module:
@@ -30,12 +28,6 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  b_card_card_presentation:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   b_card_cta:
     type: link_default
     weight: 8
@@ -44,12 +36,6 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  b_card_cta_style:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   b_card_headline:
     type: string_textfield
     weight: 1
@@ -57,14 +43,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  b_card_headline_link:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   b_card_image:
     type: image_image
@@ -81,6 +59,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  b_card_style:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
     third_party_settings: {  }
   b_card_subhead:
     type: string_textfield

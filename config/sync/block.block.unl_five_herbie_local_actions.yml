@@ -9,7 +9,7 @@ _core:
 id: unl_five_herbie_local_actions
 theme: unl_five_herbie
 region: content_top
-weight: -2
+weight: -5
 provider: null
 plugin: local_actions_block
 settings:

@@ -109,27 +109,68 @@ function unl_five_herbie_preprocess_field(&$variables) {
    * Image field in Hero block type.
    */
   if ($field_name == 'b_hero_image') {
-    $hero_type = $variables['element']['#object']->get('b_hero_type')->getValue()[0]['value'];
-
     // Add needed classes to the <img> tag inside a Hero block.
     foreach ($variables['items'] as $key => $item) {
-      if ($hero_type === '1') {
         $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-h-100% dcf-obj-fit-cover';
-      }
-      elseif ($hero_type === '2')  {
-        $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover unlcms-slow-zoom-in unlcms-hero-animation';
-      }
     }
   }
 
   /*
-   * Link field in Hero block type
+   * Photo Hero Block Fields
    */
-  if ($field_name == 'b_hero_links') {
-    foreach ($variables['items'] as $key => $item) {
-      $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
+  $photoHeroFields = array('b_photohero_image', 'b_photohero_links');
+
+  if (in_array($field_name, $photoHeroFields)) {
+
+    switch ($field_name) {
+
+      case 'b_photohero_image':
+        // Add needed classes to the <img> tag inside a Photo Hero block.
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover unlcms-slow-zoom-in unlcms-hero-animation';
+        }
+        break;
+
+      case 'b_photohero_links':
+          // Add needed classes to the <a> tag inside a Hero block.
+          foreach ($variables['items'] as $key => $item) {
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
+          }
+          break;
     }
   }
+
+  /*
+   * Card Block Fields
+   */
+  $cardFields = array('b_card_image', 'b_card_cta','b_card_style', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
+
+  if (in_array($field_name, $cardFields)) {
+
+    $card_style = $variables['element']['#object']->get('b_card_style')->getValue();
+    $variables['items'][0]['data']['card_style'] = isset($card_style[0]['value']) ? $card_style[0]['value'] : '';
+
+    switch ($field_name) {
+
+      case 'b_card_image':
+        // Add needed classes to the <img> tag
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-ratio-child dcf-obj-fit-cover';
+        }
+        break;
+
+      case 'b_card_cta':
+        foreach ($variables['items'] as $key => $item) {
+          if ($card_style[0]['value'] == 'scarlet') {
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-secondary';
+          }
+          else {
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
+          }
+        }
+        break;
+  }
+}
 
   /*
    * Entity reference field that references a Hero block.
@@ -151,52 +192,10 @@ function unl_five_herbie_preprocess_field(&$variables) {
     $variables['hero_size_class'] = $variables['items'][0]['content']['b_hero_size'][0]['#markup'];
    }
 
-
-  /*
-   * Card block type.
-   */
-  // $section_classes is NULL if nothing is returned.
-  $section_classes = $variables['element']['#object']->__get('#section_classes');
-
-  switch ($field_name) {
-    case 'b_card_overline':
-    case 'b_card_headline':
-    case 'b_card_subhead':
-    case 'b_card_body':
-    case 'b_card_cta':
-    case 'b_card_image':
-      // Add to all Card fields.
-      $variables['items'][0]['data']['section_classes'] = $section_classes;
-
-      $card_presentation = $variables['element']['#object']->get('b_card_card_presentation')->getValue();
-      $variables['items'][0]['data']['card_presentation'] = isset($card_presentation[0]['value']) ? $card_presentation[0]['value'] : '';
-
-      // Loop through individual Card fields.
-      switch ($field_name) {
-        case 'b_card_headline':
-          $headline_link = $variables['element']['#object']->get('b_card_headline_link')->first();
-          $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
-          $variables['items'][0]['data']['headline_link'] = $headline_link;
-
-          $overline = $variables['element']['#object']->get('b_card_overline')->getValue();
-          $variables['items'][0]['data']['overline'] = isset($overline[0]['value']) ? $overline[0]['value'] : '';
-
-          $subhead = $variables['element']['#object']->get('b_card_subhead')->getValue();
-          $variables['items'][0]['data']['subhead'] = isset($subhead[0]['value']) ? $subhead[0]['value'] : '';
-          break;
-
-        case 'b_card_cta':
-          $cta_style = $variables['element']['#object']->get('b_card_cta_style')->getValue();
-          $variables['items'][0]['data']['cta_style'] = isset($cta_style[0]['value']) ? $cta_style[0]['value'] : '';
-          break;
-      }
-
-      break;
-  }
-
   /*
    * Card + Cirle Image block type.
    */
+  $section_classes = $variables['element']['#object']->__get('#section_classes');
   switch ($field_name) {
     case 'b_cdcir_headline':
     case 'b_cdcir_body':

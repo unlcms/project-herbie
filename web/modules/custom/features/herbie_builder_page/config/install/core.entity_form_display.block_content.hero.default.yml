@@ -4,38 +4,25 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
-    - field.field.block_content.hero.b_hero_links
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
-    - field.field.block_content.hero.b_hero_type
     - image.style.hero_md_673
   module:
-    - focal_point
-    - link
+    - image
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero
 mode: default
 content:
   b_hero_image:
-    type: image_focal_point
+    type: image_image
     weight: 0
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: hero_md_673
-      preview_link: true
-      offsets: '50,50'
-    third_party_settings: {  }
-  b_hero_links:
-    type: link_default
-    weight: 29
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   b_hero_overline:
     type: string_textfield
@@ -66,12 +53,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  b_hero_type:
-    type: options_select
-    weight: -1
-    region: content
-    settings: {  }
     third_party_settings: {  }
 hidden:
   info: true

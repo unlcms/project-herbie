@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_margin.p_b_cinfo_margin_markup
+    - paragraphs.paragraphs_type.contact_info_margin
+id: paragraph.contact_info_margin.default
+targetEntityType: paragraph
+bundle: contact_info_margin
+mode: default
+content: {  }
+hidden:
+  p_b_cinfo_margin_markup: true

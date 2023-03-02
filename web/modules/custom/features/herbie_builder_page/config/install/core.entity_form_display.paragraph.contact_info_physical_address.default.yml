@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
+    - paragraphs.paragraphs_type.contact_info_physical_address
+id: paragraph.contact_info_physical_address.default
+targetEntityType: paragraph
+bundle: contact_info_physical_address
+mode: default
+content:
+  p_b_cinfo_padd_city:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_postal_code:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_st_address:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_state:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

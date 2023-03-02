@@ -1,0 +1,23 @@
+uuid: 3c007060-0278-44f0-a1d1-52e39b2a977d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_hero
+    - field.storage.block_content.b_photohero_links
+  module:
+    - link
+id: block_content.photo_hero.b_photohero_links
+field_name: b_photohero_links
+entity_type: block_content
+bundle: photo_hero
+label: 'Hero links'
+description: 'Buttons on the hero '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

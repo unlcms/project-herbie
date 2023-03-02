@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_heading.p_b_cinfo_heading_heading
+    - paragraphs.paragraphs_type.contact_info_heading
+id: paragraph.contact_info_heading.default
+targetEntityType: paragraph
+bundle: contact_info_heading
+mode: default
+content:
+  p_b_cinfo_heading_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

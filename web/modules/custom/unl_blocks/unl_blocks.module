@@ -122,30 +122,30 @@ function unl_blocks_form_block_form_alter(array &$form, FormStateInterface &$for
 
 }
 
-/**
- * Implements hook_entity_view_alter().
- */
-function unl_blocks_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
-  if ($entity->getEntityTypeId() == 'block_content'
-    && $entity->bundle() == 'hero'
-    ) {
+// /**
+//  * Implements hook_entity_view_alter().
+//  */
+// function unl_blocks_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+//   if ($entity->getEntityTypeId() == 'block_content'
+//     && $entity->bundle() == 'hero'
+//     ) {
 
-    // Swap out responsive image style for b_hero_image based on
-    // b_hero_size field value.
-    $hero_size = $build["b_hero_size"]["#items"]->getValue()[0]['value'];
+//     // Swap out responsive image style for b_hero_image based on
+//     // b_hero_size field value.
+//     $hero_size = $build["b_hero_size"]["#items"]->getValue()[0]['value'];
 
-    switch ($hero_size) {
-      case 'dcf-hero-sm':
-        $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_small';
-        break;
+//     switch ($hero_size) {
+//       case 'dcf-hero-sm':
+//         $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_small';
+//         break;
 
-      case 'dcf-hero-md':
-        $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_medium';
-        break;
+//       case 'dcf-hero-md':
+//         $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_medium';
+//         break;
 
-      case 'dcf-hero-lg':
-        $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_large';
-        break;
-    }
-  }
-}
+//       case 'dcf-hero-lg':
+//         $build["b_hero_image"][0]["#responsive_image_style_id"] = 'hero_large';
+//         break;
+//     }
+//   }
+// }

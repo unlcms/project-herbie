@@ -4,20 +4,18 @@ dependencies:
   config:
     - block_content.type.card
     - field.field.block_content.card.b_card_body
-    - field.field.block_content.card.b_card_card_presentation
     - field.field.block_content.card.b_card_cta
-    - field.field.block_content.card.b_card_cta_style
     - field.field.block_content.card.b_card_headline
-    - field.field.block_content.card.b_card_headline_link
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
+    - field.field.block_content.card.b_card_style
     - field.field.block_content.card.b_card_subhead
-    - responsive_image.styles.card_block
   module:
     - dcf_lazyload
+    - image
+    - image_class
     - link
     - options
-    - responsive_image
     - text
 id: block_content.card.default
 targetEntityType: block_content
@@ -31,13 +29,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  b_card_card_presentation:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 9
-    region: content
   b_card_cta:
     type: link
     label: hidden
@@ -50,13 +41,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  b_card_cta_style:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
-    region: content
   b_card_headline:
     type: string
     label: hidden
@@ -65,25 +49,17 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  b_card_headline_link:
-    type: link_separate
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 2
-    region: content
   b_card_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: card_block
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
+      image_class:
+        class: ''
       dcf_lazyload:
         dcf_lazyload_enable: true
     weight: 6
@@ -95,6 +71,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 5
+    region: content
+  b_card_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   b_card_subhead:
     type: string

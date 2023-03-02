@@ -1,0 +1,8 @@
+uuid: 32b0c65c-328a-491b-aaee-b37aafb8a0bc
+langcode: en
+status: true
+dependencies: {  }
+id: photo_hero
+label: 'Photo Hero'
+revision: 0
+description: 'Hero banner with title and buttons'

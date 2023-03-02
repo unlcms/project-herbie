@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_lg_2129
+label: 'Hero (lg) 2129x448'
+effects:
+  390fa93b-4ed0-4c61-af58-75a7408352ec:
+    uuid: 390fa93b-4ed0-4c61-af58-75a7408352ec
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2129
+      height: 448
+      crop_type: focal_point

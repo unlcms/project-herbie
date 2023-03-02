@@ -36,21 +36,16 @@
  * @see template_preprocess_field()
  */
 #}
-{% set element_attributes = create_attribute() %}
-{% set element_attributes = element_attributes.addClass('dcf-txt-h4') %}
-{% set link_attributes = create_attribute() %}
+
+{% set headline_attributes = create_attribute() %}
+{% set headline_attributes = headline_attributes.addClass('dcf-txt-h4') %}
 
 {% for item in items %}
-  {% if item.data.card_presentation == 'transparent' and 'dcf-inverse' in item.data.section_classes %}
-    {% set element_attributes = element_attributes.addClass('dcf-inverse') %}
-    {% set link_attributes = link_attributes.addClass('dcf-inverse') %}
+  {% set card_style = item.data.card_style %}
+
+  {% if card_style == 'scarlet' %}
+    {% set headline_attributes = headline_attributes.addClass('unl-cream') %}
   {% endif %}
-  {% if item.data.subhead is not empty %}
-    {% set element_attributes = element_attributes.addClass('dcf-mb-0') %}
-  {% endif %}
-  {% if item.data.headline_link is not empty %}
-    <h3 {{element_attributes}}><a {{ link_attributes }}href="{{ item.data.headline_link }}">{{ item.content }}</a></h3>
-  {% else %}
-    <h3 {{element_attributes}}>{{ item.content }}</h3>
-  {% endif %}
+
+  <h3 {{ headline_attributes }}>{{ item.content }}</h3>
 {% endfor %}

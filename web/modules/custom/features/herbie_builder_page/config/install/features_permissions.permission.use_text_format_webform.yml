@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.webform
+id: use_text_format_webform
+label: 'use text format webform'
+roles:
+  - authenticated

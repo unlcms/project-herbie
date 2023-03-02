@@ -11,7 +11,7 @@ _core:
 id: unl_five_herbie_messages
 theme: unl_five_herbie
 region: content_top
-weight: -3
+weight: -6
 provider: null
 plugin: system_messages_block
 settings:

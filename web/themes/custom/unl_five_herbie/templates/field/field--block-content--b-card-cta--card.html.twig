@@ -1,3 +1,4 @@
+
 {#
 /**
  * @file
@@ -36,37 +37,7 @@
  * @see template_preprocess_field()
  */
 #}
-{% set element_attributes = create_attribute() %}
-{% set element_attributes = element_attributes.addClass(['dcf-btn', 'dcf-mt-6']) %}
-
-{# Create mapping of background colors to foreground colors #}
-{%
-  set bg_color_mapping = {
-    'unl-bg-scarlet': 'unl-scarlet',
-    'unl-bg-darkest-gray': 'unl-darkest-gray',
-    'unl-bg-darker-gray': 'unl-darker-gray',
-    'unl-bg-dark-gray': 'unl-dark-gray'
-  }
-%}
 
 {% for item in items %}
-  {# For transparent cards with dark section backgrounds #}
-  {% if item.data.card_presentation == 'transparent' and 'dcf-inverse' in item.data.section_classes %}
-    {% if item.data.cta_style == 'primary' %}
-      {% set section_classes = array_flip(item.data.section_classes) %}
-      {% set bg_color = intersect_key(bg_color_mapping, section_classes)|first %}
-      {% set element_attributes = element_attributes.addClass(bg_color) %}
-      {% set element_attributes = element_attributes.addClass('dcf-btn-inverse-primary') %}
-    {% elseif item.content['cta_style'] == 'secondary' %}
-      {% set element_attributes = element_attributes.addClass('dcf-btn-inverse-secondary') %}
-    {% endif %}
-  {# For every other scenario #}
-  {% else %}
-    {% if item.data.cta_style == 'primary' %}
-      {% set element_attributes = element_attributes.addClass('dcf-btn-primary') %}
-    {% elseif item.content['cta_style'] == 'secondary' %}
-      {% set element_attributes = element_attributes.addClass('dcf-btn-secondary') %}
-    {% endif %}    
-  {% endif %}
-  <a href="{{ item.content['#url'] }}" {{ element_attributes }}>{{ item.content['#title'] }}</a>
+  {{ item.content }}
 {% endfor %}

@@ -4,17 +4,25 @@ global-styling:
     theme:
       css/media.css: {}
       css/wdn-overrides.css: {}
+
 person:
   version: VERSION
   css:
     theme:
       css/theme/person.css: {}
-hero_2:
+
+photo_hero:
   version: VERSION
   css:
     theme:
-      css/theme/hero_2.css: {}
+      css/theme/photo_hero.css: {}
   js:
-    js/theme/hero_2.js: {}
+    js/theme/photo_hero.js: {}
+
+card:
+  version: VERSION
+  js:
+    js/theme/card.js: {}
+
 
 

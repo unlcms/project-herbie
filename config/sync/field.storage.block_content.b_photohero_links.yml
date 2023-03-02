@@ -1,0 +1,19 @@
+uuid: ed394c39-8e46-4f1e-8a5c-d7f81b9f590d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.b_photohero_links
+field_name: b_photohero_links
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

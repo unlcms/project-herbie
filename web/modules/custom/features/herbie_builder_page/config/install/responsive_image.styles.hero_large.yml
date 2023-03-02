@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_lg_1197
+    - image.style.hero_lg_1596
+    - image.style.hero_lg_2129
+    - image.style.hero_lg_673
+    - image.style.hero_lg_898
+    - image.style.hero_md_1197
+id: hero_large
+label: 'Hero Large'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_lg_1197
+        - hero_lg_1596
+        - hero_lg_2129
+        - hero_lg_673
+        - hero_lg_898
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_lg_1197
+        - hero_lg_1596
+        - hero_lg_2129
+        - hero_lg_673
+        - hero_lg_898
+        - hero_md_1197
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 2x
+breakpoint_group: responsive_image
+fallback_image_style: hero_lg_898

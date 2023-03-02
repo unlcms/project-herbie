@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_contact_point.p_b_cinfo_attributes
+    - paragraphs.paragraphs_type.contact_info_contact_point
+  module:
+    - entity_reference_revisions
+id: paragraph.contact_info_contact_point.default
+targetEntityType: paragraph
+bundle: contact_info_contact_point
+mode: default
+content:
+  p_b_cinfo_attributes:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

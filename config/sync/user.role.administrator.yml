@@ -53,7 +53,6 @@ dependencies:
     - taxonomy
     - toolbar
     - twig_ui
-    - unl_breadcrumbs
     - unl_news
     - views_ui
     - webform
@@ -142,7 +141,6 @@ permissions:
   - 'administer themes'
   - 'administer twig templates'
   - 'administer twig ui templates settings'
-  - 'administer unl breadcrumbs'
   - 'administer unl news'
   - 'administer unl_directory_entry display'
   - 'administer unl_directory_entry fields'

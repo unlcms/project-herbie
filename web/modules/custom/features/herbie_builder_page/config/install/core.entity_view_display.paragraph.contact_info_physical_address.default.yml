@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
+    - paragraphs.paragraphs_type.contact_info_physical_address
+  module:
+    - options
+id: paragraph.contact_info_physical_address.default
+targetEntityType: paragraph
+bundle: contact_info_physical_address
+mode: default
+content:
+  p_b_cinfo_padd_city:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_b_cinfo_padd_postal_code:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  p_b_cinfo_padd_st_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  p_b_cinfo_padd_state:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

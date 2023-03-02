@@ -1,0 +1,19 @@
+uuid: d8866205-86fa-464d-ab2c-7b1953307046
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_hero
+    - field.storage.block_content.b_photohero_title
+id: block_content.photo_hero.b_photohero_title
+field_name: b_photohero_title
+entity_type: block_content
+bundle: photo_hero
+label: 'Hero title'
+description: 'Leave empty to use the <em>Title</em>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
