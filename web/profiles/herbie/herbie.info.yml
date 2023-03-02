@@ -2,7 +2,7 @@ name: Herbie
 type: profile
 description: 'Based on Minimal. Exists for the purpose of possible future expansion.'
 version: VERSION
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 install:
   - node
   - block
