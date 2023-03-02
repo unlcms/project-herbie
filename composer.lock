@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5493a717015c8afe58fce7d895a5c79d",
+    "content-hash": "935da1097d4a6f364afc535f180ffd6e",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3049,30 +3049,27 @@
         },
         {
             "name": "drupal/external_entities",
-            "version": "2.0.0-alpha5",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/external_entities.git",
-                "reference": "8.x-2.0-alpha5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/external_entities-8.x-2.0-alpha5.zip",
-                "reference": "8.x-2.0-alpha5",
-                "shasum": "ce2402ec96805598f3664e8a61ad68b30190b92b"
+                "reference": "372bbff0b9e9608f7ee036a369bd4b893e53e54d"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "galbar/jsonpath": "^2.0"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-2.0-alpha5",
-                    "datestamp": "1648796532",
+                    "version": "8.x-2.0-alpha5+12-dev",
+                    "datestamp": "1677063974",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3082,24 +3079,20 @@
             ],
             "authors": [
                 {
-                    "name": "Hanno",
-                    "homepage": "https://www.drupal.org/user/18826"
-                },
-                {
-                    "name": "Jelle_S",
-                    "homepage": "https://www.drupal.org/user/829198"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
                     "name": "attiks",
                     "homepage": "https://www.drupal.org/user/105002"
                 },
                 {
                     "name": "clemens.tolboom",
                     "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "Hanno",
+                    "homepage": "https://www.drupal.org/user/18826"
+                },
+                {
+                    "name": "Jelle_S",
+                    "homepage": "https://www.drupal.org/user/829198"
                 },
                 {
                     "name": "pefferen",
@@ -3116,6 +3109,10 @@
                 {
                     "name": "rp7",
                     "homepage": "https://www.drupal.org/user/219330"
+                },
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
                 }
             ],
             "description": "Allows using remote entities, for example through a REST interface.",
@@ -11850,21 +11847,21 @@
         },
         {
             "name": "unlcms/external_entities_unldirectory",
-            "version": "2.0.2",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/external_entities_unldirectory.git",
-                "reference": "37bbb9c285a93e9cff169bdbb37e57ebc201e738"
+                "reference": "d4b41177e2712695d472d2f06a9d71fa65d16b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/37bbb9c285a93e9cff169bdbb37e57ebc201e738",
-                "reference": "37bbb9c285a93e9cff169bdbb37e57ebc201e738",
+                "url": "https://api.github.com/repos/unlcms/external_entities_unldirectory/zipball/d4b41177e2712695d472d2f06a9d71fa65d16b35",
+                "reference": "d4b41177e2712695d472d2f06a9d71fa65d16b35",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/external_entities": "2.0.*"
+                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/external_entities": "^2"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -11878,9 +11875,9 @@
             "description": "Reference UNL Directory data as external entities.",
             "support": {
                 "issues": "https://github.com/unlcms/external_entities_unldirectory/issues",
-                "source": "https://github.com/unlcms/external_entities_unldirectory/tree/2.0.2"
+                "source": "https://github.com/unlcms/external_entities_unldirectory/tree/2.0.4"
             },
-            "time": "2021-07-14T14:24:39+00:00"
+            "time": "2023-03-02T20:46:55+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -16242,7 +16239,7 @@
         "drupal/auto_entitylabel": 10,
         "drupal/block_type_templates": 15,
         "drupal/entity_share": 20,
-        "drupal/external_entities": 15,
+        "drupal/external_entities": 20,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
         "drupal/field_css": 5,
