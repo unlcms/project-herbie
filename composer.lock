@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b36b4da7fb369f539b8a5f59e3f3447",
+    "content-hash": "249029e84fae080dba0303187e5b3029",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -2670,17 +2670,17 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "3.13.0",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "8.x-3.13"
+                "reference": "4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.13.zip",
-                "reference": "8.x-3.13",
-                "shasum": "b84176544265d4c6aa17917d66335527c9498c5a"
+                "url": "https://ftp.drupal.org/files/projects/ctools-4.0.3.zip",
+                "reference": "4.0.3",
+                "shasum": "4f389b14bd2120069386c2f28f8c4cd49bd2ebfc"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -2688,8 +2688,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.13",
-                    "datestamp": "1668631846",
+                    "version": "4.0.3",
+                    "datestamp": "1668631947",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
