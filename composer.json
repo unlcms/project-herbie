@@ -135,7 +135,7 @@
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
-        "drupal/focal_point": "^1.5",
+        "drupal/focal_point": "^2.0@alpha",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^1.1",
         "drupal/image_effects": "^3.3",
