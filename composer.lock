@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "096f3207fc4bee9903dc594c5f835eee",
+    "content-hash": "bdbdf10fb3a525250b9644acfc087007",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -2953,20 +2953,14 @@
         },
         {
             "name": "drupal/entity_share",
-            "version": "3.0.0-rc4",
+            "version": "dev-3.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_share.git",
-                "reference": "8.x-3.0-rc4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_share-8.x-3.0-rc4.zip",
-                "reference": "8.x-3.0-rc4",
-                "shasum": "7233bd364baae32bc19eb89816116dda9872d22f"
+                "reference": "f34d178b6b9a3e816aa7fbd93f4b8835721755f9"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^9 || ^10",
                 "league/oauth2-client": "^2.4"
             },
             "conflict": {
@@ -2974,9 +2968,10 @@
             },
             "require-dev": {
                 "drupal/block_field": "~1.0",
-                "drupal/dynamic_entity_reference": "~2.0",
+                "drupal/dynamic_entity_reference": "~3.0 || ~4.0",
                 "drupal/entity_share_client": "*",
                 "drupal/field_group": "~3.0",
+                "drupal/json_api_book": "~1.0",
                 "drupal/jsonapi_extras": "~3.14",
                 "drupal/key": "~1.14",
                 "drupal/metatag": "~1.0",
@@ -2990,12 +2985,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-3.0-rc4",
-                    "datestamp": "1650308107",
+                    "version": "8.x-3.0-rc4+24-dev",
+                    "datestamp": "1677770193",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16399,7 +16397,7 @@
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
         "drupal/block_type_templates": 15,
-        "drupal/entity_share": 5,
+        "drupal/entity_share": 20,
         "drupal/external_entities": 15,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,

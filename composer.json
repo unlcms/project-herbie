@@ -126,7 +126,7 @@
         "drupal/ctools": "^3.0",
         "drupal/diff": "^1.0",
         "drupal/entity_reference_revisions": "^1.0",
-        "drupal/entity_share": "^3.0@RC",
+        "drupal/entity_share": "3.x-dev@dev",
         "drupal/entity_usage": "^2.0",
         "drupal/external_entities": "^2.0@alpha",
         "drupal/features": "^3.12",
