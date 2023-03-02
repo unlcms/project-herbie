@@ -1,23 +1,23 @@
 name: 'News item'
 description: 'Provides News item content type and related configuration. A timely update, notice, or general news item.'
 type: module
-core_version_requirement: '^8.9 || ^9'
+core_version_requirement: '^9.4 || ^10'
 dependencies:
-  - allowed_formats
-  - dcf_lazyload
-  - features_permissions
-  - field
-  - field_group
-  - file
-  - image
-  - link
-  - menu_ui
-  - node
-  - path
-  - pathauto
-  - responsive_image
-  - text
-  - user
-  - views
-version: '1.0'
+  - 'allowed_formats:allowed_formats'
+  - 'dcf_lazyload:dcf_lazyload'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:responsive_image'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'features_permissions:features_permissions'
+  - 'field_group:field_group'
+  - 'pathauto:pathauto'
+version: 1.0.1
 package: Herbie
