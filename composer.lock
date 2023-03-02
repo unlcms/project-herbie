@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "935da1097d4a6f364afc535f180ffd6e",
+    "content-hash": "c7565547e1257fc5fc1abbbada13f74f",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3178,30 +3178,27 @@
         },
         {
             "name": "drupal/features",
-            "version": "3.12.0",
+            "version": "dev-5.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/features.git",
-                "reference": "8.x-3.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.12.zip",
-                "reference": "8.x-3.12",
-                "shasum": "f28d6e7d3340e32666a3e8ae515ed746dbe86b98"
+                "reference": "c320e65876e8c2a5cedd26e2e2ffecc21b40213e"
             },
             "require": {
-                "drupal/config_update": "^1.4",
-                "drupal/core": "^8.8 || ^9"
+                "drupal/config_update": "^1.4 || ^2",
+                "drupal/core": "^9.4 || ^10"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-5.0.x": "5.0.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-3.12",
-                    "datestamp": "1612830531",
+                    "version": "5.0.x-dev",
+                    "datestamp": "1674747693",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
                 "drush": {
@@ -3260,30 +3257,30 @@
         },
         {
             "name": "drupal/features_permissions",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/features_permissions.git",
-                "reference": "1.0.0"
+                "reference": "1.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features_permissions-1.0.0.zip",
-                "reference": "1.0.0",
-                "shasum": "a9f9a2aa882fbba734867fc169399c2423ed2b14"
+                "url": "https://ftp.drupal.org/files/projects/features_permissions-1.1.0.zip",
+                "reference": "1.1.0",
+                "shasum": "66c3b047d2c51077cec882d7cafc5f1fc1b4d8de"
             },
             "require": {
-                "drupal/core": "^8.8|^9.0",
-                "drupal/features": "^3.0"
+                "drupal/core": "^9.0|^10.0",
+                "drupal/features": "^3.0|^5.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0",
-                    "datestamp": "1648053054",
+                    "version": "1.1.0",
+                    "datestamp": "1674750728",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -16240,6 +16237,7 @@
         "drupal/block_type_templates": 15,
         "drupal/entity_share": 20,
         "drupal/external_entities": 20,
+        "drupal/features": 20,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
         "drupal/field_css": 5,
