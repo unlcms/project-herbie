@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e894855d62a3c46f4613a5e4000f59a",
+    "content-hash": "1cd8643ea55e439a4725a827d7fbe5a5",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -4609,32 +4609,30 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "5.0.0-beta13",
+            "version": "dev-6.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "8.x-5.0-beta13"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-5.0-beta13.zip",
-                "reference": "8.x-5.0-beta13",
-                "shasum": "9215fbea84166cabc9b7a2d9a04dedaffb9fc1ed"
+                "reference": "d95a39274cb73b0096e16fbbc9d5abe80e790c79"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9.4 || ^10"
             },
             "require-dev": {
+                "drupal/ckeditor": "*",
                 "drupal/imce": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-6.0.x": "6.0.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-5.0-beta13",
-                    "datestamp": "1632946970",
+                    "version": "6.0.0-beta3+7-dev",
+                    "datestamp": "1667937361",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16405,6 +16403,7 @@
         "drupal/feeds_ex": 10,
         "drupal/field_css": 5,
         "drupal/focal_point": 15,
+        "drupal/linkit": 20,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/media_embed_view_mode_restrictions": 10,
