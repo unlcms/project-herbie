@@ -2,7 +2,11 @@
 /drush/
 /vendor/
 /web/core/
-/web/modules/contrib/
+/web/modules/contrib
+# Drupal 10 hotfixes
+!/web/modules/contrib/block_type_templates
+!/web/modules/contrib/field_css
+!/web/modules/contrib/media_embed_view_mode_restrictions
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/

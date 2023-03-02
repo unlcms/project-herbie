@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * This is the module extends core's MediaEmbed functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\media_embed_view_mode_restrictions\Plugin\Filter\MediaEmbedDecorator;
+
+/**
+ * Implements hook_filter_info_alter().
+ */
+function media_embed_view_mode_restrictions_filter_info_alter(&$info) {
+  // Replace filter class with custom class that decorates core MediaEmbed.
+  $info['media_embed']['class'] = MediaEmbedDecorator::class;
+}
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function media_embed_view_mode_restrictions_config_schema_info_alter(&$definitions) {
+  // Add this module's schema to filter_settings.media_embed.
+  $definitions['filter_settings.media_embed']['mapping']['bundle_view_modes'] = [
+    'type' => 'sequence',
+    'label' => 'View mode configuration per bundle',
+    'sequence' => [
+      'type' => 'mapping',
+      'label' => 'Bundle configuration',
+      'mapping' => [
+        'default_view_mode' => [
+          'type' => 'string',
+          'label' => 'Default view mode',
+        ],
+        'allowed_view_modes' => [
+          'type' => 'sequence',
+          'label' => 'Allowed view modes',
+          'sequence' => [
+            'type' => 'string',
+            'label' => 'Allowed view modes',
+          ],
+        ],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Restrict view modes available on 'editor_media_dialog' form.
+ */
+function media_embed_view_mode_restrictions_form_editor_media_dialog_alter(&$form, FormStateInterface $form_state) {
+  $build_info = $form_state->getBuildInfo();
+  /** @var \Drupal\editor\Entity\Editor */
+  $editor = $build_info['args'][0];
+  /** @var \Drupal\filter\FilterPluginCollection */
+  $filters = $editor->getFilterFormat()->filters();
+  /** @var \Drupal\media_embed_view_mode_restrictions\MediaEmbed */
+  $media_embed_filter_settings = $filters->get('media_embed')->settings;
+
+  // Load media entity by UUID and get bundle.
+  $storage = $form_state->getStorage();
+  $media_uuid = $storage['media_embed_element']['data-entity-uuid'];
+  $media_loaded_by_uuid = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties(['uuid' => $media_uuid]);
+  /** @var \Drupal\media\Entity\Media */
+  $media_loaded_by_uuid = reset($media_loaded_by_uuid);
+  $bundle = $media_loaded_by_uuid->bundle();
+
+  // Check if settings exist for bundle.
+  if (isset($media_embed_filter_settings['bundle_view_modes'][$bundle])) {
+    // Get allowed view modes.
+    $bundle_settings = $media_embed_filter_settings['bundle_view_modes'][$bundle];
+    $view_mode_options = $bundle_settings['allowed_view_modes'];
+    $default_view_mode = $bundle_settings['default_view_mode'];
+    // \Drupal\media\Form\EditorMediaDialog::buildForm stores
+    // the default view mode in $form_state as
+    // 'filter_default_view_mode'; thus, it needs overridden with the
+    // bundle-specific default view mode.
+    // This can be removed when https://www.drupal.org/node/3109289 is fixed.
+    $form_state->set('filter_default_view_mode', $default_view_mode);
+  }
+  else {
+    $view_mode_options = $media_embed_filter_settings['allowed_view_modes'];
+    $default_view_mode = $media_embed_filter_settings['default_view_mode'];
+  }
+
+  // Load media view modes.
+  /** @var \Drupal\Core\Entity\EntityDisplayRepository */
+  $entity_display_repo = \Drupal::service('entity_display.repository');
+  $media_view_modes = $entity_display_repo->getViewModes('media');
+
+  // Loop through allowed view modes and set label.
+  foreach ($view_mode_options as $id => $view_mode) {
+    $view_mode_options[$id] = $media_view_modes[$id]['label'];
+  }
+
+  // Override view_mode field.
+  $form['view_mode']['#options'] = $view_mode_options;
+  $form['view_mode']['#access'] = count($view_mode_options) >= 2;
+  $form['view_mode']['#default_value'] = (isset($storage['media_embed_element']['data-view-mode'])) ? $storage['media_embed_element']['data-view-mode'] : $default_view_mode;
+}
+
+/**
+ * Implements hook_ckeditor_plugin_info_alter().
+ *
+ * This can be removed when https://www.drupal.org/node/3109289 is fixed.
+ */
+function media_embed_view_mode_restrictions_ckeditor_plugin_info_alter(array &$plugins) {
+  // Override plugin class, so that we can replace the plugin.js file.
+  if (isset($plugins['drupalmedia'])) {
+    $plugins['drupalmedia']['class'] = 'Drupal\media_embed_view_mode_restrictions\Plugin\CKEditorPlugin\DrupalMediaDecorator';
+  }
+}

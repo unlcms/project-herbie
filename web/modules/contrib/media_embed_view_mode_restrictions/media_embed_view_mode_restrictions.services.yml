@@ -1,0 +1,11 @@
+services:
+  # This can be removed when https://www.drupal.org/node/3109289 is fixed.
+  media_embed_view_mode_restrictions.route_subscriber:
+    class: Drupal\media_embed_view_mode_restrictions\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  # Decorates core media_library.opener.editor service.
+  media_embed_view_mode_restrictions.media_library.opener.editor:
+    decorates: media_library.opener.editor
+    class: Drupal\media_embed_view_mode_restrictions\MediaLibraryEditorOpenerDecorator
+    arguments: ['@entity_type.manager']
