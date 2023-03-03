@@ -1,0 +1,3 @@
+services:
+  unl_utility.manager:
+    class: Drupal\unl_utility\UNLUtilityTraitManager

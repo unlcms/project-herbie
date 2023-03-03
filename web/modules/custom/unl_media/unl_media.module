@@ -25,7 +25,7 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
   ];
   if (in_array($form_id, $media_edit_form_ids)) {
     // Get entity ID to pass to view.
-    $entity = UNLUtilityTrait::getRouteEntity();
+    $entity = \Drupal::service('unl_utility.manager')->getRouteEntity();
     $entity_id = $entity->id();
 
     $form['media_metadata'] = [

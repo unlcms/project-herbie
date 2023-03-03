@@ -21,7 +21,7 @@ function unl_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id)
   // "use unl code block" permissions and then loads the library on Layout
   // Builder forms and on the block admin form. If the CodeMirror library is
   // already loaded on the page, then the AJAX issue is sidestepped.
-  if ((UNLUtilityTrait::stringEndsWith($form_id, 'layout_builder_form') || $form_id == 'block_admin_display_form')
+  if ((\Drupal::service('unl_utility.manager')->stringEndsWith($form_id, 'layout_builder_form') || $form_id == 'block_admin_display_form')
     && (\Drupal::currentUser()->hasPermission('create html_code block content')
       || \Drupal::currentUser()->hasPermission('edit html_code block content'))
     ) {
