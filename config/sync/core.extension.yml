@@ -115,6 +115,7 @@ module:
   unl_five_ckeditor: 0
   unl_media: 0
   unl_menu: 0
+  unl_multisite: 0
   unl_news: 0
   unl_pathauto: 0
   unl_person: 0
@@ -125,7 +126,6 @@ module:
   unl_utility: 0
   unl_views: 0
   unl_webform: 0
-  upgrade_status: 0
   user: 0
   views_ui: 0
   webform: 0
