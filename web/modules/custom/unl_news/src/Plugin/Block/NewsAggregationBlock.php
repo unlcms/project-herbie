@@ -99,6 +99,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     $query = $node_storage->getQuery();
 
     $ids = $query->condition('status', 1)
+      ->accessCheck(FALSE)
       ->condition('type', 'news')
       ->sort('created', 'DESC')
       ->pager($this->configuration['quantity'])
