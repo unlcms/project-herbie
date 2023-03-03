@@ -2,10 +2,13 @@
 
 namespace Drupal\unl_twig;
 
+use Twig\TwigFunction;
+use Twig\Extension\AbstractExtension;
+
 /**
  * Extend Drupal's Twig_Extension class.
  */
-class UnlTwigExtension extends \Twig_Extension {
+class UnlTwigExtension extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -19,9 +22,9 @@ class UnlTwigExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return [
-      new \Twig_SimpleFunction('intersect', 'array_intersect'),
-      new \Twig_SimpleFunction('intersect_key', 'array_intersect_key'),
-      new \Twig_SimpleFunction('array_flip', 'array_flip'),
+      new TwigFunction('intersect', 'array_intersect'),
+      new TwigFunction('intersect_key', 'array_intersect_key'),
+      new TwigFunction('array_flip', 'array_flip'),
     ];
   }
 
