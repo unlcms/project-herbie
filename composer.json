@@ -172,6 +172,7 @@
         "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_breadcrumbs": "^1.0",
+        "unlcms/unl_cas": "^2",
         "unlcms/unl_dcf": "^1.1",
         "unlcms/unl_five": "^10",
         "unlcms/unl_multisite": "^1.1",

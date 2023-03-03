@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "536edda8ce7d12782073d743b3546474",
+    "content-hash": "f51c096b989cfdfde88178f557f74207",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -11925,6 +11925,41 @@
                 "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.0.3"
             },
             "time": "2023-02-23T16:09:35+00:00"
+        },
+        {
+            "name": "unlcms/unl_cas",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_cas.git",
+                "reference": "eb37c937372ac456b4a0ea822890456aacae78ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/eb37c937372ac456b4a0ea822890456aacae78ef",
+                "reference": "eb37c937372ac456b4a0ea822890456aacae78ef",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/cas": "^2.0",
+                "drupal/core": "^8 || ^9 || ^10",
+                "unlcms/unl_user": "^1.0.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "UNL customizations for use with the CAS and UNL User modules.",
+            "support": {
+                "issues": "https://github.com/unlcms/unl_cas/issues",
+                "source": "https://github.com/unlcms/unl_cas/tree/2.0"
+            },
+            "time": "2023-03-03T19:44:12+00:00"
         },
         {
             "name": "unlcms/unl_dcf",
