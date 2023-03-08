@@ -33,7 +33,7 @@ filters:
     status: true
     weight: -44
     settings:
-      allowed_html: '<p> <em> <strong> <ul type> <ol start type> <li> <s> <sup> <sub> <a href hreflang class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary">'
+      allowed_html: '<br> <p> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary" hreflang href> <ul type> <ol type start> <strong> <em> <s> <sub> <sup> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -75,13 +75,3 @@ filters:
       default_view_mode: default
       allowed_view_modes: {  }
       allowed_media_types: {  }
-      bundle_view_modes:
-        file:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        image:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        remote_video:
-          default_view_mode: default
-          allowed_view_modes: {  }

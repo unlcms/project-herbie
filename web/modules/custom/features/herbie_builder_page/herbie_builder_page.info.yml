@@ -7,7 +7,6 @@ dependencies:
   - 'asset_injector:asset_injector'
   - 'auto_entitylabel:auto_entitylabel'
   - 'block_content_permissions:block_content_permissions'
-  - 'ckeditor:ckeditor'
   - 'codemirror_editor:codemirror_editor'
   - 'config_split:config_split'
   - 'crop:crop'
@@ -17,6 +16,7 @@ dependencies:
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:book'
+  - 'drupal:ckeditor5'
   - 'drupal:config'
   - 'drupal:contextual'
   - 'drupal:editor'
@@ -66,5 +66,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.4
+version: 1.0.5
 package: Herbie
