@@ -1,62 +1,102 @@
-uuid: ed87216f-ba6d-4074-a179-8c6ec29c4f49
+uuid: 04ee8fdf-91ce-4956-99b4-a6f5aedbe08e
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.standard
   module:
-    - ckeditor
+    - ckeditor5
 format: standard
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Format
-            - Bold
-            - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - Styles
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - DrupalMediaLibrary
-            - Blockquote
-            - Table
-        -
-          name: Tools
-          items:
-            - SpecialChar
-            - ShowBlocks
+    items:
+      - heading
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - alignment
+      - style
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - blockQuote
+      - insertTable
+      - '|'
+      - specialCharacters
+      - sourceEditing
   plugins:
-    drupallink:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<p class>'
+        - '<a hreflang title target>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id class>'
+        - '<h3 id class>'
+        - '<table class>'
+        - '<drupal-media title>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary Button'
+          element: '<a class="dcf-btn dcf-btn-primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-secondary">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-tertiary">'
+        -
+          label: 'Inverse Primary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-primary">'
+        -
+          label: 'Inverse Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-secondary">'
+        -
+          label: 'Inverse Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
+        -
+          label: 'Extra small'
+          element: '<p class="dcf-txt-xs">'
+        -
+          label: Small
+          element: '<p class="dcf-txt-sm">'
+        -
+          label: Medium
+          element: '<p class="dcf-txt-md">'
+        -
+          label: Large
+          element: '<p class="dcf-txt-lg">'
+        -
+          label: Serif
+          element: '<p class="unl-font-serif">'
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: standard
-    stylescombo:
-      styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button\r\np.dcf-txt-xs|Extra small\r\np.dcf-txt-sm|Small\r\np.dcf-txt-md|Medium\r\np.dcf-txt-lg|Large\r\np.unl-font-serif|Serif"
-    customconfig:
-      ckeditor_custom_config: "forcePasteAsPlainText = true\r\nremovePlugins = \"showborders\"\r\njustifyClasses = [\"dcf-txt-left\", \"dcf-txt-center\", \"dcf-txt-right\", null]"
-    dcf_base:
-      enabled_plugins:
-        dcf_table: dcf_table
+    media_media:
+      allow_view_mode_override: true
 image_upload:
   status: false
   scheme: public

@@ -15,8 +15,7 @@ module:
   book: 0
   breakpoint: 0
   cas: 0
-  ckeditor: 0
-  ckeditor_config: 0
+  ckeditor5: 0
   codemirror_editor: 0
   config: 0
   config_filter: 0
@@ -29,7 +28,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  dcf_ckeditor: 0
   dcf_classes: 0
   dcf_layouts: 0
   diff: 0
@@ -79,7 +77,6 @@ module:
   linkit_media_library: 0
   markup: 0
   media: 0
-  media_embed_view_mode_restrictions: 0
   media_library: 0
   menu_block: 0
   menu_ui: 0
@@ -110,6 +107,7 @@ module:
   unl_blocks: 0
   unl_breadcrumbs: 0
   unl_cas: 0
+  unl_ckeditor5: 0
   unl_config: 0
   unl_events: 0
   unl_five_ckeditor: 0

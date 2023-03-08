@@ -26,13 +26,3 @@ filters:
       default_view_mode: default
       allowed_view_modes: {  }
       allowed_media_types: {  }
-      bundle_view_modes:
-        file:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        image:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        remote_video:
-          default_view_mode: default
-          allowed_view_modes: {  }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a97d5f0e928929a5c07623230a48f1a4",
+    "content-hash": "7cd8c5dc691223210c323710c2161d45",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -1700,150 +1700,6 @@
                 "source": "https://git.drupalcode.org/project/cas",
                 "issues": "http://drupal.org/project/issues/cas",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/ckeditor",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "d3dd8bfb2301b749599ba48cf76208becdf0eeb3"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1662977541",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dczepierga",
-                    "homepage": "https://www.drupal.org/user/911466"
-                },
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Jorrit",
-                    "homepage": "https://www.drupal.org/user/161217"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "Magnus",
-                    "homepage": "https://www.drupal.org/user/73919"
-                },
-                {
-                    "name": "mkesicki",
-                    "homepage": "https://www.drupal.org/user/922884"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "p.wiaderny",
-                    "homepage": "https://www.drupal.org/user/2956619"
-                },
-                {
-                    "name": "vokiel",
-                    "homepage": "https://www.drupal.org/user/2793801"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "wwalc",
-                    "homepage": "https://www.drupal.org/user/184556"
-                },
-                {
-                    "name": "xjm",
-                    "homepage": "https://www.drupal.org/user/65776"
-                }
-            ],
-            "description": "WYSIWYG editing for rich text fields using CKEditor.",
-            "homepage": "https://www.drupal.org/project/ckeditor",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor"
-            }
-        },
-        {
-            "name": "drupal/ckeditor_config",
-            "version": "3.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_config.git",
-                "reference": "8.x-3.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_config-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "3f7c35758023de6311693dc94fcd09d047dd58e8"
-            },
-            "require": {
-                "drupal/ckeditor": "^1.0",
-                "drupal/core": "^9.0|^10.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-3.4",
-                    "datestamp": "1676656972",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Burge",
-                    "homepage": "https://www.drupal.org/u/chris-burge",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Martin Klíma (martin_klima)",
-                    "homepage": "https://www.drupal.org/u/martin_klima",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Extends core CKEditor to support custom configuration.",
-            "homepage": "https://www.drupal.org/project/ckeditor_config",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_config",
-                "issues": "https://www.drupal.org/project/issues/ckeditor_config"
             }
         },
         {
@@ -4432,11 +4288,17 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "dev-6.0.x",
+            "version": "6.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "d95a39274cb73b0096e16fbbc9d5abe80e790c79"
+                "reference": "6.0.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.0-beta4.zip",
+                "reference": "6.0.0-beta4",
+                "shasum": "94274f0af2315ca91d9be8fc4e5103c9566860f0"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -4447,15 +4309,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-6.0.x": "6.0.x-dev"
-                },
                 "drupal": {
-                    "version": "6.0.0-beta3+7-dev",
-                    "datestamp": "1667937361",
+                    "version": "6.0.0-beta4",
+                    "datestamp": "1678030708",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -4473,6 +4332,10 @@
                 {
                     "name": "johnwebdev",
                     "homepage": "https://www.drupal.org/user/3331569"
+                },
+                {
+                    "name": "mark_fullmer",
+                    "homepage": "https://www.drupal.org/user/2612816"
                 }
             ],
             "description": "Linkit - Enriched linking experience",
@@ -16080,7 +15943,7 @@
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
         "drupal/focal_point": 15,
-        "drupal/linkit": 20,
+        "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,

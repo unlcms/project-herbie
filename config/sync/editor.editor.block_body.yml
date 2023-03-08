@@ -1,57 +1,90 @@
-uuid: 64d9a0cb-59e7-499b-bbaf-1d2eeab68f81
+uuid: 98550565-de43-470f-b8f6-65ee2bc76b93
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.block_body
   module:
-    - ckeditor
+    - ckeditor5
 format: block_body
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Format
-            - Bold
-            - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - Styles
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - DrupalMediaLibrary
-        -
-          name: Tools
-          items:
-            - SpecialChar
-            - ShowBlocks
+    items:
+      - heading
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - style
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - '|'
+      - specialCharacters
+      - sourceEditing
   plugins:
-    drupallink:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<a hreflang title target>'
+        - '<drupal-media title>'
+        - '<p class>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary Button'
+          element: '<a class="dcf-btn dcf-btn-primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-secondary">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-tertiary">'
+        -
+          label: 'Inverse Primary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-primary">'
+        -
+          label: 'Inverse Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-secondary">'
+        -
+          label: 'Inverse Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
+        -
+          label: 'Extra small'
+          element: '<p class="dcf-txt-xs">'
+        -
+          label: Small
+          element: '<p class="dcf-txt-sm">'
+        -
+          label: Medium
+          element: '<p class="dcf-txt-md">'
+        -
+          label: Large
+          element: '<p class="dcf-txt-lg">'
+        -
+          label: Serif
+          element: '<p class="unl-font-serif">'
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: standard
-    stylescombo:
-      styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button\r\np.dcf-txt-xs|Extra small\r\np.dcf-txt-sm|Small\r\np.dcf-txt-md|Medium\r\np.dcf-txt-lg|Large\r\np.unl-font-serif|Serif"
-    customconfig:
-      ckeditor_custom_config: 'forcePasteAsPlainText = true'
-    dcf_base:
-      enabled_plugins:
-        dcf_table: '0'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: false
   scheme: public
