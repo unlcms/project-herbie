@@ -11,14 +11,10 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
-      - heading
       - bold
       - italic
       - strikethrough
-      - superscript
-      - subscript
       - alignment
-      - style
       - '|'
       - link
       - '|'
@@ -29,36 +25,39 @@ settings:
       - blockQuote
       - insertTable
       - '|'
+      - heading
+      - '|'
+      - superscript
+      - subscript
       - specialCharacters
-      - sourceEditing
+      - '|'
+      - style
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
         - center
-        - justify
         - left
-        - right
     ckeditor5_heading:
       enabled_headings:
         - heading2
         - heading3
+        - heading4
+        - heading5
+        - heading6
     ckeditor5_list:
       reversed: false
       startIndex: true
-    ckeditor5_sourceEditing:
-      allowed_tags:
-        - '<cite>'
-        - '<p class>'
-        - '<a hreflang title target>'
-        - '<blockquote cite>'
-        - '<ul type>'
-        - '<ol type>'
-        - '<h2 id class>'
-        - '<h3 id class>'
-        - '<table class>'
-        - '<drupal-media title>'
     ckeditor5_style:
       styles:
+        -
+          label: 'Extra small'
+          element: '<p class="dcf-txt-xs">'
+        -
+          label: Small
+          element: '<p class="dcf-txt-sm">'
+        -
+          label: Large
+          element: '<p class="dcf-txt-lg">'
         -
           label: 'Primary Button'
           element: '<a class="dcf-btn dcf-btn-primary">'
@@ -68,30 +67,6 @@ settings:
         -
           label: 'Tertiary Button'
           element: '<a class="dcf-btn dcf-btn-tertiary">'
-        -
-          label: 'Inverse Primary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-primary">'
-        -
-          label: 'Inverse Secondary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-secondary">'
-        -
-          label: 'Inverse Tertiary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
-        -
-          label: 'Extra small'
-          element: '<p class="dcf-txt-xs">'
-        -
-          label: Small
-          element: '<p class="dcf-txt-sm">'
-        -
-          label: Medium
-          element: '<p class="dcf-txt-md">'
-        -
-          label: Large
-          element: '<p class="dcf-txt-lg">'
-        -
-          label: Serif
-          element: '<p class="unl-font-serif">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: standard

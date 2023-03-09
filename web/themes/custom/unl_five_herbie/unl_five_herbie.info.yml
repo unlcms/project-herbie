@@ -10,6 +10,9 @@ libraries:
 ckeditor_stylesheets:
   - css/media.css
 
+ckeditor5-stylesheets:
+  - css/media.css
+
 libraries-override:
   core/classList: false
   core/html5shiv: false
