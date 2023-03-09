@@ -266,10 +266,6 @@
             "drupal/features_permissions": {
                 "Custom - Need to check isset": "patches/features_permissions_isset.patch"
             },
-            "drupal/media_embed_view_mode_restrictions": {
-                "3313439 - update database error - TypeError: array_intersect_key()": "patches/updb-error-media_embed_view_mode_restrictions-3313439-13.patch",
-                "3314109 - Handle ckeditor changes": "patches/3314109.patch"
-            },
             "drush/drush": {
                 "Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }
