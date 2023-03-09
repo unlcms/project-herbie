@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.narrow
-    - core.entity_view_mode.media.remote_video
     - core.entity_view_mode.media.wide
   module:
     - editor
@@ -29,23 +28,23 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: true
+    status: false
     weight: -50
     settings:
       filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
-    status: true
+    status: false
     weight: -48
     settings:
-      allowed_html: '<br> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg"> <h2> <h3> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <s> <sub> <sup> <ul> <ol start> <li> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
+      allowed_html: '<a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary"> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
-    status: true
+    status: false
     weight: -49
     settings: {  }
   filter_align:
@@ -85,10 +84,10 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
+      default_view_mode: narrow
       allowed_view_modes:
+        default: default
         narrow: narrow
-        remote_video: remote_video
         wide: wide
       allowed_media_types:
         image: image

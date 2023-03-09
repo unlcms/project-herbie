@@ -19,173 +19,40 @@ dependencies:
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
     - field.field.media.remote_video.s_m_width
-    - image.style.thumbnail
     - media.type.remote_video
   module:
-    - image
     - media
-    - user
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
 mode: default
 content:
-  created:
-    type: timestamp
-    label: hidden
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_media_oembed_video:
     type: oembed
-    label: above
+    label: hidden
     settings:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
-    weight: 6
-    region: content
-  m_rv_author_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  m_rv_author_url:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  m_rv_default_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  m_rv_html_representation:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  m_rv_provider_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  m_rv_provider_url:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  m_rv_resource_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  m_rv_resource_type:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  m_rv_source_url:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 18
-    region: content
-  m_rv_suggested_cache_lifetime:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  m_rv_thumbnail_height:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 17
-    region: content
-  m_rv_thumbnail_local_uri:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 15
-    region: content
-  m_rv_thumbnail_width:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
-  s_m_height:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 19
-    region: content
-  s_m_width:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  thumbnail:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  uid:
-    type: author
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  created: true
+  m_rv_author_name: true
+  m_rv_author_url: true
+  m_rv_default_name: true
+  m_rv_html_representation: true
+  m_rv_provider_name: true
+  m_rv_provider_url: true
+  m_rv_resource_title: true
+  m_rv_resource_type: true
+  m_rv_source_url: true
+  m_rv_suggested_cache_lifetime: true
+  m_rv_thumbnail_height: true
+  m_rv_thumbnail_local_uri: true
+  m_rv_thumbnail_width: true
   name: true
+  s_m_height: true
+  s_m_width: true
+  thumbnail: true
+  uid: true

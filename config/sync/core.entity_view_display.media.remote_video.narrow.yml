@@ -1,9 +1,9 @@
-uuid: 96004d85-b8a8-45f9-be1e-aa56ae775091
+uuid: 2c694403-8efb-45f0-9553-54073e3eab39
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.remote_video
+    - core.entity_view_mode.media.narrow
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.m_rv_author_name
     - field.field.media.remote_video.m_rv_author_url
@@ -28,10 +28,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: media.remote_video.remote_video
+id: media.remote_video.narrow
 targetEntityType: media
 bundle: remote_video
-mode: remote_video
+mode: narrow
 content:
   field_media_oembed_video:
     type: oembed
