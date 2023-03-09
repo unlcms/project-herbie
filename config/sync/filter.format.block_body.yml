@@ -39,7 +39,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<br> <p class> <h2 id> <h3 id> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary" hreflang title target href data-entity-type data-entity-uuid data-entity-substitution> <ul type> <ol type start> <drupal-media title data-entity-type data-entity-uuid alt data-caption data-align> <strong> <em> <s> <sub> <sup> <li>'
+      allowed_html: '<br> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg"> <h2> <h3> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <s> <sub> <sup> <ul> <ol start> <li> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -86,7 +86,10 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_view_modes: {  }
+      allowed_view_modes:
+        narrow: narrow
+        remote_video: remote_video
+        wide: wide
       allowed_media_types:
         image: image
         remote_video: remote_video
