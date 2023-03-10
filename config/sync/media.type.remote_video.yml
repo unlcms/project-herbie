@@ -5,12 +5,16 @@ dependencies:
   config:
     - oembed_providers.bucket.video
   module:
+    - crop
     - oembed_providers
+third_party_settings:
+  crop:
+    image_field: null
 _core:
   default_config_hash: r2UZkg5Zg58wrUJJXkK5H0KOZoECBkWW47HOv4DmJqg
 id: remote_video
 label: 'Remote Video'
-description: ''
+description: 'A remotely hosted video from <a href="https://mediahub.unl.edu/">mediahub.unl.edu</a>.'
 source: 'oembed:video'
 queue_thumbnail_downloads: false
 new_revision: false
