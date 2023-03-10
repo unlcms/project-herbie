@@ -10,18 +10,31 @@
 }
 
 /* Since images are always inside a container element, they're always 100% wide. */
+.media-entity.view-mode--default img
 .media-entity.view-mode--narrow img,
 .media-entity.view-mode--wide img {
   width: 100%;
 }
 
-/* Set width on media element. */
-.media-entity.view-mode--narrow {
+/* Set widths on media elements.
+   - Prepended with .unl since inside ckeditor there is an additional
+     wrapper that shrinks the item to 50% of the wrapper container.
+   - Applies to:
+     - Narrow view mode.
+     - Any view mode chosen with alignment with desired text wrapping.
+*/
+.unl .media-entity.view-mode--narrow,
+.unl .align-left.media-entity,
+.unl .align-right.media-entity {
+  width: 50%;
+}
+
+.align-center.media-entity.view-mode--narrow {
   width: 50%;
 }
 
 .media-entity.view-mode--wide,
-.media-entity.view-mode--remote_video {
+.media-entity.media-entity-bundle--remote_video.view-mode--default {
   width: 100%;
 }
 
@@ -54,7 +67,7 @@
 }
 
 /* Set remote video iframe width and height to fill width. */
-.media-entity.view-mode--remote_video iframe {
+.media-entity.media-entity-bundle--remote_video iframe {
   width: 100%;
   height: 100%;
 }
@@ -62,3 +75,4 @@
 .figure--embedded-media figcaption {
   margin-top: 1em;
 }
+

@@ -31,7 +31,7 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
+<div{{ attributes.addClass('media-entity-bundle--' ~ media.bundle()) }}>
   {{ title_suffix.contextual_links }}
   {{ content }}
 </div>
