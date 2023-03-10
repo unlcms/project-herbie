@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\media\Entity\Media;
-use Drupal\unl_utility\UNLUtilityTrait;
 
 /**
  * Implements hook_form_alter().
@@ -62,80 +60,6 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function unl_media_form_editor_media_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  $storage = $form_state->getStorage();
-  $media_uuid = $storage['media_embed_element']['data-entity-uuid'];
-  $media_loaded_by_uuid = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties(['uuid' => $media_uuid]);
-  $media_loaded_by_uuid = reset($media_loaded_by_uuid);
-  $bundle = $media_loaded_by_uuid->bundle();
-  // Add bundle to $form_state storage.
-  $storage['bundle'] = $bundle;
-  $form_state->setStorage($storage);
-
-  if ($bundle == 'image') {
-    // Limit options to certain view modes.
-    // Can be removed when Media Library Extras has committed
-    // https://www.drupal.org/project/media_library_extras/issues/3108619
-    $form['view_mode']['#options'] = [
-      'narrow' => 'Narrow',
-      'wide' => 'Wide'
-    ];
-    // Hide align field for 'Wide' view mode, which is 100% wide.
-   $form['align']['#states'] = [
-      'invisible' => [
-        ':input[name="attributes[data-view-mode]"]' => ['value' => 'wide'],
-      ],
-    ];
-  }
-  if ($bundle == 'remote_video') {
-    // Limit options to certain view modes.
-    // Can be removed when Media Library Extras has committed
-    // https://www.drupal.org/project/media_library_extras/issues/3108619
-    $form['view_mode']['#options'] = [
-      'remote_video' => 'Remote Video',
-    ];
-    // Videos are always 100% wide.
-    unset($form['align']);
-  }
-
-  $form['#validate'][] = '_unl_media_media_embed_dialog_validate';
-}
-
-/**
- * Validation function for the 'editor_media_dialog' form.
- *
- * @param array $form
- *   Nested array of form elements that comprise the form.
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   The current state of the form.
- */
-function _unl_media_media_embed_dialog_validate($form, FormStateInterface &$form_state) {
-  $storage = $form_state->getStorage();
-  $bundle = $storage['bundle'];
-  $values = $form_state->getValues();
-
-  if ($bundle == 'image') {
-    // If view mode is set to 'wide', then set data-align to "none".
-    if ($values['attributes']['data-view-mode'] == 'wide') {
-      $form_state->setValue(['attributes', 'data-align'], 'none');
-    }
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function unl_media_form_editor_link_dialog_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  global $base_url;
-
-  // Replace default help text.
-  $form['attributes']['href']['#description'] = t('<strong>Existing content:</strong> Start typing to select an autocomplete option<br><span class="indent">For content on @base_url</span><br><strong>External URLs:</strong> Type full URL<br><span class="indent">For content on sites other than @base_url</span><br><strong>Files (media):</strong> Click on the <em>Media Library</em> button below:', ['@base_url' => $base_url]);
-  $form['#attached']['library'][] = 'unl_media/editor_dialog_modal';
-}
-
-/**
  * Implements template_preprocess_responsive_image_formatter().
  */
 function unl_media_preprocess_responsive_image_formatter(&$variables) {
@@ -153,11 +77,15 @@ function unl_media_preprocess_media(&$variables) {
 }
 
 /**
- * Implements template_preprocess_filter_caption().
+ * Implements hook_preprocess_HOOK() for setting classes.
  */
 function unl_media_preprocess_filter_caption(&$variables) {
   // For <drupal-media> elements rendered with captions, get the view
   // mode and add a corresponding class to the <figure> element.
+  //
+  // Limitation: if the default view mode is selected by the user,
+  //   it is not added to the <drupal-media> tag and not discoverable here,
+  //   thus the class added will be 'view-mode--'.
   //
   // Convert the markup to a DOM element.
   $element_string = $variables['node']->__toString();
