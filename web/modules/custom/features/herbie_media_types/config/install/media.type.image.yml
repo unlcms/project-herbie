@@ -1,9 +1,14 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: image
 label: Image
-description: ''
+description: 'A nice photo or other image file.'
 source: image
 queue_thumbnail_downloads: false
 new_revision: false
