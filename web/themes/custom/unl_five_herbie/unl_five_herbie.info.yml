@@ -12,6 +12,7 @@ ckeditor_stylesheets:
 
 ckeditor5-stylesheets:
   - css/media.css
+  - css/ckeditor5-media.css
 
 libraries-override:
   core/classList: false
