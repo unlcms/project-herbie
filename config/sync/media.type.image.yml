@@ -1,12 +1,17 @@
 uuid: d590e09d-c9f6-4b3e-93a8-da66dc79f3a2
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 _core:
   default_config_hash: SrzXMnDlCqrykI3GWE1ZFzSDEXambf_jHFSYy-mGMqQ
 id: image
 label: Image
-description: ''
+description: 'A nice photo or other image file.'
 source: image
 queue_thumbnail_downloads: false
 new_revision: false

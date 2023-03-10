@@ -1,12 +1,17 @@
 uuid: 8ff4906b-7fc6-4e70-85d5-3af55b79a7b5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 _core:
   default_config_hash: AKlg03WnfdeJogBbj0j8JF6W4eGFFZzXi2kv5Eb94eo
 id: file
 label: File
-description: ''
+description: 'An uploaded file or document, such as a PDF.'
 source: file
 queue_thumbnail_downloads: false
 new_revision: false
