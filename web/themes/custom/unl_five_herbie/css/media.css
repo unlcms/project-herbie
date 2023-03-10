@@ -1,7 +1,5 @@
-/* Override unl_five styles */
-.align-left,
-.align-right {
-  margin-bottom: 0;
+.align-center {
+  clear: both;
 }
 
 /* Remove whitespace under element */
@@ -21,7 +19,7 @@
      wrapper that shrinks the item to 50% of the wrapper container.
    - Applies to:
      - Narrow view mode.
-     - Any view mode chosen with alignment with desired text wrapping.
+     - Left and right alignment means there should always be text wrapping.
 */
 .unl .media-entity.view-mode--narrow,
 .unl .align-left.media-entity,
@@ -29,7 +27,12 @@
   width: 50%;
 }
 
+.unl .align-center .media-entity.view-mode--narrow {
+  width: unset;
+}
+
 .align-center.media-entity.view-mode--narrow {
+  margin: auto;
   width: 50%;
 }
 
@@ -53,17 +56,27 @@
 }
 
 /* When image is inside figure, set width on figure element. */
-.figure--embedded-media.view-mode--narrow {
+.figure--embedded-media:not(.view-mode--wide, .view-mode--default) {
   width: 50%;
 }
 
+.figure--embedded-media.view-mode--narrow .media-entity.view-mode--narrow {
+  width: 100%;
+}
+
+.figure--embedded-media.view-mode--default,
 .figure--embedded-media.view-mode--wide {
   width: 100%;
 }
 
+.figure--embedded-media.view-mode--default .media-entity,
 .figure--embedded-media.view-mode--narrow .media-entity,
 .figure--embedded-media.view-mode--wide .media-entity {
   width: 100%;
+}
+
+.figure--embedded-media figcaption {
+  margin-top: .5em;
 }
 
 /* Set remote video iframe width and height to fill width. */
@@ -71,8 +84,3 @@
   width: 100%;
   height: 100%;
 }
-
-.figure--embedded-media figcaption {
-  margin-top: 1em;
-}
-
