@@ -15,7 +15,7 @@ settings:
       - strikethrough
       - superscript
       - subscript
-      - style
+      - removeFormat
       - '|'
       - link
       - '|'
@@ -23,36 +23,10 @@ settings:
       - numberedList
       - '|'
       - specialCharacters
-      - sourceEditing
   plugins:
     ckeditor5_list:
       reversed: false
       startIndex: true
-    ckeditor5_sourceEditing:
-      allowed_tags:
-        - '<ul type>'
-        - '<ol type>'
-        - '<a hreflang>'
-    ckeditor5_style:
-      styles:
-        -
-          label: 'Primary Button'
-          element: '<a class="dcf-btn dcf-btn-primary">'
-        -
-          label: 'Secondary Button'
-          element: '<a class="dcf-btn dcf-btn-secondary">'
-        -
-          label: 'Tertiary Button'
-          element: '<a class="dcf-btn dcf-btn-tertiary">'
-        -
-          label: 'Inverse Primary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-primary">'
-        -
-          label: 'Inverse Secondary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-secondary">'
-        -
-          label: 'Inverse Tertiary Button'
-          element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
     linkit_extension:
       linkit_enabled: false
 image_upload:
