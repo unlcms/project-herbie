@@ -1,9 +1,14 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: file
 label: File
-description: ''
+description: 'An uploaded file or document, such as a PDF.'
 source: file
 queue_thumbnail_downloads: false
 new_revision: false
