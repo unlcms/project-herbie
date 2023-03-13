@@ -1,4 +1,4 @@
-# Drupal 9 at UNL (Project Herbie)
+# Drupal 10 at UNL (Project Herbie)
 
 A multisite installation hosted at https://cms.unl.edu/ developed by the [Digital Experience Group](https://ucomm.unl.edu/)
 and supported by DXG and ITS.
