@@ -113,6 +113,7 @@
         "drupal/block_content_permissions": "^1.11",
         "drupal/block_form_alter": "^2.0",
         "drupal/cas": "^2.0",
+        "drupal/ckeditor": "^1.0",
         "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
         "drupal/config_ignore": "^2.4",
