@@ -1,0 +1,89 @@
+diff --git a/core/modules/book/src/BookManager.php b/core/modules/book/src/BookManager.php
+index 06dd84fdce..b59379dba2 100644
+--- a/core/modules/book/src/BookManager.php
++++ b/core/modules/book/src/BookManager.php
+@@ -636,6 +636,13 @@ protected function buildItems(array $tree) {
+         $element['in_active_trail'] = TRUE;
+       }
+
++      // Set a helper variable to indicate whether the link belongs to
++      // the current page.
++      $element['is_active'] = FALSE;
++      if ($data['link']['is_active']) {
++        $element['is_active'] = TRUE;
++      }
++
+       // Allow book-specific theme overrides.
+       $element['attributes'] = new Attribute();
+       $element['title'] = $data['link']['title'];
+@@ -1111,7 +1118,14 @@ protected function buildBookOutlineData(array $links, array $parents = [], $dept
+    */
+   protected function buildBookOutlineRecursive(&$links, $parents, $depth) {
+     $tree = [];
++    $node = \Drupal::routeMatch()->getParameter('node');
++    // The instanceof check doesn't filter out NULLs.
++    if ($node != NULL && !($node instanceof NodeInterface)) {
++      $node = $this->entityTypeManager->getStorage('node')->load($node);
++    }
+     while ($item = array_pop($links)) {
++      // Check if item belongs to the current page.
++      $item['is_active'] = ($node && $node->id() == $item['nid']) ? TRUE : FALSE;
+       // We need to determine if we're on the path to root so we can later build
+       // the correct active trail.
+       $item['in_active_trail'] = in_array($item['nid'], $parents);
+diff --git a/core/modules/book/src/Plugin/Block/BookNavigationBlock.php b/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
+index 86d957739f..589f7d4311 100644
+--- a/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
++++ b/core/modules/book/src/Plugin/Block/BookNavigationBlock.php
+@@ -141,6 +141,7 @@ public function build() {
+           // Since we know we will only display a link to the top node, there
+           // is no reason to run an additional menu tree query for each book.
+           $book['in_active_trail'] = FALSE;
++          $book['is_active'] = FALSE;
+           // Check whether user can access the book link.
+           $book_node = $this->nodeStorage->load($book['nid']);
+           $book['access'] = $book_node->access('view');
+diff --git a/core/modules/book/templates/book-tree.html.twig b/core/modules/book/templates/book-tree.html.twig
+index 3d3069cb45..39b88b2257 100644
+--- a/core/modules/book/templates/book-tree.html.twig
++++ b/core/modules/book/templates/book-tree.html.twig
+@@ -16,6 +16,7 @@
+  *   - is_collapsed: TRUE if the link has children within the current book tree
+  *     that are not currently visible.
+  *   - in_active_trail: TRUE if the link is in the active trail.
++ *   - is_active: TRUE if the link is for the current page.
+  *
+  * @ingroup themeable
+  */
+diff --git a/core/themes/olivero/templates/navigation/book-tree.html.twig b/core/themes/olivero/templates/navigation/book-tree.html.twig
+index bc16f5acce..010217d020 100644
+--- a/core/themes/olivero/templates/navigation/book-tree.html.twig
++++ b/core/themes/olivero/templates/navigation/book-tree.html.twig
+@@ -16,6 +16,7 @@
+  *   - is_collapsed: TRUE if the link has children within the current book tree
+  *     that are not currently visible.
+  *   - in_active_trail: TRUE if the link is in the active trail.
++ *   - is_active: TRUE if the link is for the current page.
+  */
+ #}
+ {% import _self as book_tree %}
+@@ -42,6 +43,7 @@
+           item.is_expanded ? 'menu__item--expanded',
+           item.is_collapsed ? 'menu__item--collapsed',
+           item.in_active_trail ? 'menu__item--active-trail',
++          item.is_active ? 'menu-item--active',
+         ]
+       %}
+       {% set link_classes = [
+diff --git a/core/themes/stable9/templates/navigation/book-tree.html.twig b/core/themes/stable9/templates/navigation/book-tree.html.twig
+index bbb5c93a97..182a358b55 100644
+--- a/core/themes/stable9/templates/navigation/book-tree.html.twig
++++ b/core/themes/stable9/templates/navigation/book-tree.html.twig
+@@ -16,6 +16,7 @@
+  *   - is_collapsed: TRUE if the link has children within the current book tree
+  *     that are not currently visible.
+  *   - in_active_trail: TRUE if the link is in the active trail.
++ *   - is_active: TRUE if the link is for the current page.
+  */
+ #}
+ {% import _self as book_tree %}

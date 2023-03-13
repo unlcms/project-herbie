@@ -44,8 +44,8 @@ function _unl_menu_menu_link_content_menu_link_content_form_validate($form, Form
   $values = $form_state->getValues();
 
   // Clear certain errors which may already be set.
-  UNLUtilityTrait::formStateClearError($form_state, 'link][0');
-  UNLUtilityTrait::formStateClearError($form_state, 'link][0][uri');
+  \Drupal::service('unl_utility.manager')->formStateClearError($form_state, 'link][0');
+  \Drupal::service('unl_utility.manager')->formStateClearError($form_state, 'link][0][uri');
 
   $uri = $values['link'][0]['uri'];
 

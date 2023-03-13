@@ -1,10 +1,10 @@
 name: 'Book page'
 description: 'Provides Book page content type and related configuration. <em>Books</em> have a built-in hierarchical navigation. Use for handbooks or tutorials.'
 type: module
-core_version_requirement: '^8.9 || ^9'
+core_version_requirement: '^9.4 || ^10'
 dependencies:
-  - features_permissions
-  - node
-  - pathauto
-version: '1.0'
+  - 'drupal:node'
+  - 'features_permissions:features_permissions'
+  - 'pathauto:pathauto'
+version: 1.0.1
 package: Herbie

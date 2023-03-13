@@ -4,48 +4,31 @@ dependencies:
   config:
     - filter.format.webform
   module:
-    - ckeditor
+    - ckeditor5
 format: webform
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - Styles
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Tools
-          items:
-            - SpecialChar
-            - ShowBlocks
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - specialCharacters
   plugins:
-    drupallink:
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    linkit_extension:
       linkit_enabled: false
-      linkit_profile: ''
-    stylescombo:
-      styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button"
-    customconfig:
-      ckeditor_custom_config: 'forcePasteAsPlainText = true'
-    dcf_base:
-      enabled_plugins:
-        dcf_table: '0'
 image_upload:
   status: false
   scheme: public

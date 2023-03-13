@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.narrow
-    - core.entity_view_mode.media.remote_video
     - core.entity_view_mode.media.wide
   module:
+    - codemirror_editor
     - editor
     - linkit
     - media
@@ -28,36 +28,36 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: true
-    weight: -50
+    status: false
+    weight: -49
     settings:
       filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
-    status: true
+    status: false
     weight: -48
     settings:
-      allowed_html: '<p class> <br> <a href hreflang data-entity-type data-entity-uuid data-entity-substitution title target class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary"> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id class> <h3 id class> <s> <sup> <sub> <table class> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
+      allowed_html: '<p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg"> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
-    status: true
-    weight: -49
+    status: false
+    weight: -50
     settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: -46
+    weight: -47
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: -45
+    weight: -46
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -75,30 +75,29 @@ filters:
     id: linkit
     provider: linkit
     status: true
-    weight: -47
+    weight: -45
     settings:
       title: false
   media_embed:
     id: media_embed
     provider: media
     status: true
-    weight: 100
+    weight: -44
     settings:
-      default_view_mode: default
+      default_view_mode: narrow
       allowed_view_modes:
+        default: default
         narrow: narrow
-        remote_video: remote_video
         wide: wide
       allowed_media_types:
         image: image
         remote_video: remote_video
-      bundle_view_modes:
-        image:
-          default_view_mode: narrow
-          allowed_view_modes:
-            narrow: narrow
-            wide: wide
-        remote_video:
-          default_view_mode: remote_video
-          allowed_view_modes:
-            remote_video: remote_video
+  codemirror_editor:
+    id: codemirror_editor
+    provider: codemirror_editor
+    status: false
+    weight: -39
+    settings:
+      lineWrapping: false
+      lineNumbers: true
+      foldGutter: false

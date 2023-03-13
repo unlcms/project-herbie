@@ -1,7 +1,7 @@
 name: UNLedu 5.3 Project Herbie
 type: theme
 description: 'Subtheme for unl_five.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 base theme: unl_five
 
 libraries:
@@ -9,6 +9,10 @@ libraries:
 
 ckeditor_stylesheets:
   - css/media.css
+
+ckeditor5-stylesheets:
+  - css/media.css
+  - css/ckeditor5-media.css
 
 libraries-override:
   core/classList: false

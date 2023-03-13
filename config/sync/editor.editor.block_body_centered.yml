@@ -1,47 +1,42 @@
-uuid: 52496a32-4e0a-4d38-8a86-94fa50dce19e
+uuid: 96bec831-dec1-4a73-8088-a381d7514cdf
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.block_body_centered
   module:
-    - ckeditor
+    - ckeditor5
 format: block_body_centered
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - Styles
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Tools
-          items:
-            - SpecialChar
-            - ShowBlocks
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - '|'
+      - link
+      - '|'
+      - superscript
+      - subscript
+      - specialCharacters
+      - '|'
+      - style
   plugins:
-    drupallink:
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary Button'
+          element: '<a class="dcf-btn dcf-btn-primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-secondary">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-tertiary">'
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: standard
-    stylescombo:
-      styles: "a.dcf-btn.dcf-btn-primary|Primary Button\r\na.dcf-btn.dcf-btn-secondary|Secondary Button\r\na.dcf-btn.dcf-btn-tertiary|Tertiary Button\r\na.dcf-btn.dcf-btn-inverse-primary|Inverse Primary Button\r\na.dcf-btn.dcf-btn-inverse-secondary|Inverse Secondary Button\r\na.dcf-btn.dcf-btn-inverse-tertiary|Inverse Tertiary Button"
-    customconfig:
-      ckeditor_custom_config: 'forcePasteAsPlainText = true'
-    dcf_base:
-      enabled_plugins:
-        dcf_table: '0'
 image_upload:
   status: false
   scheme: public

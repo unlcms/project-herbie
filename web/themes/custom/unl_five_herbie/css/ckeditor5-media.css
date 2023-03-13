@@ -1,0 +1,106 @@
+/**
+ * CKEditor 5 styles for Media.
+ *
+ * This is complicated because:
+ *   - CKEditor puts in wrappers that aren't present in unl_five.
+ *   - Media gets rendered in the editor with classes such as .align-center that do
+ *       not get swapped in real-time inside the editor when other alignments are chosen.
+ *   - We want different behavior between Images and Remote Video:
+ *       - If a Remote Video is in Default view mode, we always want it to be 100% width.
+ *       - We want Images that are aligned left or right to be 50% floated regardless of view mode.
+ */
+
+
+/* The editor puts a wrapper in that sets anything centered to be "max-width: 50%",
+ * however, we would like to show that (given certain settings) the media
+ * will fill the container.
+ */
+.ck-content .drupal-media-style-align-center {
+    max-width: unset !important;
+    width: unset !important;
+}
+
+.ck-content .drupal-media.ck-widget:not(.drupal-media-style-align-left, .drupal-media-style-align-center, .drupal-media-style-align-right) {
+    margin-left: unset;
+    margin-right: unset;
+    text-align: unset;
+}
+.ck-content .drupal-media-style-align-left,
+.ck-content .drupal-media-style-align-right {
+    width: 50% !important;
+}
+.ck-content .drupal-media-style-align-left .media-entity.view-mode--narrow,
+.ck-content .drupal-media-style-align-right .media-entity.view-mode--narrow {
+    width: 100% !important;
+}
+.ck-content .drupal-media.ck-widget:not(.drupal-media-style-align-center) .align-center {
+    margin: unset !important;
+    width: unset;
+}
+
+
+/**
+ * Image (.media-entity-bundle--image)
+ **/
+
+.ck-content .drupal-media.ck-widget:not(.drupal-media-style-align-left, .drupal-media-style-align-center, .drupal-media-style-align-right) .view-mode--narrow.media-entity-bundle--image {
+    float: none;
+    width: 50%;
+}
+.ck-content .drupal-media.ck-widget:not(.drupal-media-style-align-center) .media-entity.view-mode--narrow.media-entity-bundle--image:not(.align-left, .align-center, .align-right) {
+    width: 50%;
+}
+.ck-editor .drupal-media-style-align-center .media-entity.view-mode--narrow.media-entity-bundle--image {
+    float: none;
+    margin: auto;
+    width: 50%;
+}
+
+
+/**
+ * Remote video (.media-entity-bundle--remote_video)
+ **/
+
+/* Not supported in Firefox as of v110 https://caniuse.com/?search=has */
+.ck-content .drupal-media.ck-widget:has(div .view-mode--narrow.media-entity-bundle--remote_video) {
+    width: 50% !important;
+}
+.ck-content .drupal-media-style-align-center:has(div .media-entity-bundle--remote_video) {
+    width: 100% !important;
+}
+.ck-content .drupal-media.ck-widget:has(div .view-mode--default.media-entity-bundle--remote_video) {
+    width: 100% !important;
+    max-width: 100%;
+}
+.ck-content .drupal-media.ck-widget .view-mode--narrow.media-entity-bundle--remote_video {
+    width: 100% !important;
+}
+.ck-content .drupal-media-style-align-center .view-mode--narrow.media-entity-bundle--remote_video {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*
+ * Styles copied from unl/wdntemplates needed for Remote Video wrappers.
+ */
+.ck-content .dcf-ratio {
+    overflow: hidden !important;
+    position: relative !important;
+}
+.ck-content .dcf-ratio-16x9::before {
+    padding-top: 56.25% !important;
+}
+.ck-content .dcf-ratio::before {
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+}
+.ck-content .dcf-ratio-child {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+}

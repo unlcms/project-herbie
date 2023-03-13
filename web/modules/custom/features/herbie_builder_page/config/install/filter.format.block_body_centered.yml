@@ -4,7 +4,6 @@ dependencies:
   module:
     - editor
     - linkit
-    - media
 name: 'Block Body - Centered'
 format: block_body_centered
 weight: 0
@@ -34,7 +33,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<p> <br> <em> <strong> <h3 id> <s> <sup> <sub> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title target class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary">'
+      allowed_html: '<br> <p> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <s> <sub> <sup>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -74,22 +73,3 @@ filters:
     weight: -43
     settings:
       title: false
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
-      bundle_view_modes:
-        file:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        image:
-          default_view_mode: default
-          allowed_view_modes: {  }
-        remote_video:
-          default_view_mode: default
-          allowed_view_modes: {  }
