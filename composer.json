@@ -157,6 +157,8 @@
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.5",
         "drupal/select2": "^1.13",
+        "drupal/seven": "^1.0@alpha",
+        "drupal/stable": "^2.0",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
