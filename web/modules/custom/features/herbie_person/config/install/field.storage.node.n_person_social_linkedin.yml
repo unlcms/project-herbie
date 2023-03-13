@@ -3,17 +3,17 @@ status: true
 dependencies:
   module:
     - node
-id: node.n_person_address
-field_name: n_person_address
+id: node.n_person_social_linkedin
+field_name: n_person_social_linkedin
 entity_type: node
 type: string
 settings:
-  max_length: 128
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core
 locked: false
-cardinality: 5
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

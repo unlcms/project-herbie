@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_social_pinterest
+    - node.type.person
+id: node.person.n_person_social_pinterest
+field_name: n_person_social_pinterest
+entity_type: node
+bundle: person
+label: Pinterest
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

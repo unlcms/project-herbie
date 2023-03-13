@@ -46,6 +46,15 @@ class PersonBlock extends BlockBase {
       '#options' => $options,
     ];
 
+    $form['view_mode'] = [
+      '#type' => 'select',
+      '#title' => $this->t('View mode'),
+      '#required' => TRUE,
+      '#multiple' => FALSE,
+      '#default_value' => 'teaser',
+      '#options' => ['teaser', 'teaser_small', 'teaser_featured'],
+    ];
+
     return $form;
   }
 
@@ -55,6 +64,8 @@ class PersonBlock extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['persons'] = $form_state
       ->getValue('persons');
+    $this->configuration['view_mode'] = $form_state
+      ->getValue('view_mode');
   }
 
   /**
@@ -71,6 +82,7 @@ class PersonBlock extends BlockBase {
         ],
       ),
       '#nodes' => $this->configuration['persons'],
+      '#view_mode' => $this->configuration['view_mode'],
     ];
   }
 }

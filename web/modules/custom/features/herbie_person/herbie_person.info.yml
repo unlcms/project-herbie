@@ -7,6 +7,7 @@ dependencies:
   - 'drupal:field'
   - 'drupal:file'
   - 'drupal:image'
+  - 'drupal:layout_builder'
   - 'drupal:link'
   - 'drupal:menu_ui'
   - 'drupal:node'
@@ -18,5 +19,5 @@ dependencies:
   - 'features_permissions:features_permissions'
   - 'field_group:field_group'
   - 'pathauto:pathauto'
-version: 1.0.1
+version: 1.0.2
 package: Herbie
