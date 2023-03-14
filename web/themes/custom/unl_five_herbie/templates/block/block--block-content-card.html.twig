@@ -25,56 +25,61 @@
  * @see template_preprocess_block()
  */
 #}
-
-
-{% block content %}
-  {% set outer_wrapper_attributes = create_attribute() %}
-  {% set cardblock_wrapper_attributes = create_attribute() %}
-  {% set image_wrapper_attributes = create_attribute() %}
-
-  {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-card dcf-card-as-link dcf-d-flex dcf-flex-col unl-box-shadow dcf-mb-8 dcf-mt-8') %}
-  {% set cardblock_wrapper_attributes = cardblock_wrapper_attributes.addClass('dcf-card-block dcf-2nd') %}
-  {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-ratio dcf-ratio-4x3') %}
-
-  {% set card_style = render_var(content.b_card_style[0]) %}
-  {% set image_size = render_var(content.b_image_size[0]) %}
-
-  {% if card_style == 'creme' %}
-    {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-bg-cream') %}
-  {% elseif card_style == 'scarlet' %}
-    {% set outer_wrapper_attributes = outer_wrapper_attributes.removeClass('dcf-b-solid') %}
-    {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass(['unl-bg-scarlet', 'unl-cream', 'unl-b-lighter-gray']) %}
-  {% elseif card_style == 'white' %}
-    {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-bg-white') %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {% set outer_wrapper_attributes = create_attribute() %}
+    {% set cardblock_wrapper_attributes = create_attribute() %}
+    {% set image_wrapper_attributes = create_attribute() %}
 
-  {# Commented out if for the future we would want to add this as an option #}
-  {# {% if image_size == '1x1' %}
-{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-1x1') %}
-{% elseif image_size == '4x3' %}
-{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-4x3') %}
-{% elseif image_size == '16x9' %}
-{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-16x9') %}
-{% endif %} #}
+    {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-card dcf-card-as-link dcf-d-flex dcf-flex-col unl-box-shadow dcf-mb-8 dcf-mt-8') %}
+    {% set cardblock_wrapper_attributes = cardblock_wrapper_attributes.addClass('dcf-card-block dcf-2nd') %}
+    {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-ratio dcf-ratio-4x3') %}
 
-  <div {{ outer_wrapper_attributes }}>
-    <div {{ cardblock_wrapper_attributes }}>
-      {% if content.b_card_overline[0] or content.b_card_subhead[0] %}
-        {{ content.b_card_overline }}
-        {{ content.b_card_headline }}
-        {{ content.b_card_subhead }}
-      {% else %}
-        {{ content.b_card_headline }}
-      {% endif %}
+    {% set card_style = render_var(content.b_card_style[0]) %}
+    {% set image_size = render_var(content.b_image_size[0]) %}
 
-      {{ content.b_card_body }}
+    {% if card_style == 'creme' %}
+      {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-bg-cream') %}
+    {% elseif card_style == 'scarlet' %}
+      {% set outer_wrapper_attributes = outer_wrapper_attributes.removeClass('dcf-b-solid') %}
+      {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass(['unl-bg-scarlet', 'unl-cream', 'unl-b-lighter-gray']) %}
+    {% elseif card_style == 'white' %}
+      {% set outer_wrapper_attributes = outer_wrapper_attributes.addClass('dcf-bg-white') %}
+    {% endif %}
 
-      {% if content.b_card_cta[0]['#url']%}
-      {{ attach_library('unl_five_herbie/card') }}
-      {{ content.b_card_cta }}
-      {% endif %}
+    {# Commented out if for the future we would want to add this as an option #}
+    {# {% if image_size == '1x1' %}
+  {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-1x1') %}
+  {% elseif image_size == '4x3' %}
+  {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-4x3') %}
+  {% elseif image_size == '16x9' %}
+  {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio-16x9') %}
+  {% endif %} #}
+
+    <div {{ outer_wrapper_attributes }}>
+      <div {{ cardblock_wrapper_attributes }}>
+        {% if content.b_card_overline[0] or content.b_card_subhead[0] %}
+          {{ content.b_card_overline }}
+          {{ content.b_card_headline }}
+          {{ content.b_card_subhead }}
+        {% else %}
+          {{ content.b_card_headline }}
+        {% endif %}
+
+        {{ content.b_card_body }}
+
+        {% if content.b_card_cta[0]['#url']%}
+        {{ attach_library('unl_five_herbie/card') }}
+        {{ content.b_card_cta }}
+        {% endif %}
+      </div>
+
+      <div {{ image_wrapper_attributes }}>{{ content.b_card_image }}</div>
     </div>
-
-    <div {{ image_wrapper_attributes }}>{{ content.b_card_image }}</div>
-  </div>
-{% endblock %}
+  {% endblock %}
+</div>

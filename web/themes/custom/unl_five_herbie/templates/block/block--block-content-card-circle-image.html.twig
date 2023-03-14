@@ -25,18 +25,24 @@
  * @see template_preprocess_block()
  */
 #}
-
-{% block content %}
-<div {{ attributes.addClass(['dcf-mb-0', 'dcf-d-flex', 'dcf-flex-col', 'dcf-ai-center', 'dcf-txt-center']) }}>
+<div{{ attributes }}>
   {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
   {{ title_suffix }}
-  <div class="dcf-2nd">
-    {{ content.b_cdcir_headline }}
-    {{ content.b_cdcir_body }}
-    {{ content.b_cdcir_cta }}
+  {% block content %}
+  <div {{ attributes.addClass(['dcf-mb-0', 'dcf-d-flex', 'dcf-flex-col', 'dcf-ai-center', 'dcf-txt-center']) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="dcf-2nd">
+      {{ content.b_cdcir_headline }}
+      {{ content.b_cdcir_body }}
+      {{ content.b_cdcir_cta }}
+    </div>
+    <div class="dcf-1st dcf-mb-5 dcf-w-100% dcf-w-max-xs dcf-ratio dcf-ratio-1x1">
+      {{ content.b_cdcir_image }}
+    </div>
   </div>
-  <div class="dcf-1st dcf-mb-5 dcf-w-100% dcf-w-max-xs dcf-ratio dcf-ratio-1x1">
-    {{ content.b_cdcir_image }}
-  </div>
+  {% endblock %}
 </div>
-{% endblock %}
