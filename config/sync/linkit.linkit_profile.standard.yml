@@ -12,21 +12,21 @@ matchers:
     id: 'entity:node'
     uuid: febe5175-934c-4722-8699-0ed2925301bf
     settings:
-      metadata: 'Node id: [node:nid]'
+      metadata: 'Node ID: [node:nid]; Path: [node:url:relative]'
       bundles: {  }
       group_by_bundle: true
       substitution_type: canonical
-      limit: 100
-      include_unpublished: false
+      limit: 20
+      include_unpublished: true
     weight: 0
   fcab5e68-0b19-43f4-8899-83158cbc3f57:
     id: 'entity:media'
     uuid: fcab5e68-0b19-43f4-8899-83158cbc3f57
     settings:
-      metadata: 'Media id: [media:mid]'
+      metadata: 'Media ID: [media:mid]'
       bundles:
         file: file
       group_by_bundle: false
       substitution_type: media
-      limit: 100
+      limit: 20
     weight: 0
