@@ -1,6 +1,6 @@
 {
     "name": "unlcms/project-herbie",
-    "description": "Drupal 9 at UNL (based on drupal/recommended-project)",
+    "description": "Drupal at UNL (based on drupal/recommended-project)",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/unlcms/project-herbie",
@@ -181,7 +181,6 @@
         "unlcms/unl_user": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "require-dev": {
