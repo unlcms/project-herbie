@@ -23,7 +23,6 @@ dependencies:
   module:
     - field_group
     - media
-    - path
 third_party_settings:
   field_group:
     group_m_remote_video_attributes:
@@ -46,7 +45,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 5
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -176,12 +175,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   s_m_height:
     type: string_textfield
     weight: 18
@@ -198,13 +191,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 4
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 1
@@ -217,3 +203,5 @@ content:
     third_party_settings: {  }
 hidden:
   name: true
+  path: true
+  status: true

@@ -12,7 +12,6 @@ dependencies:
   module:
     - field_group
     - focal_point
-    - path
 third_party_settings:
   field_group:
     group_m_image_attributes:
@@ -24,7 +23,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 6
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -44,7 +43,7 @@ content:
     third_party_settings: {  }
   field_media_image:
     type: image_focal_point
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
@@ -52,17 +51,8 @@ content:
       preview_link: true
       offsets: '50,50'
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 4
+  replace_file:
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -98,13 +88,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 2
@@ -115,4 +98,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  path: true
+  status: true
