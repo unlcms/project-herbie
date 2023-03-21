@@ -16,6 +16,7 @@ dependencies:
     - contextual
     - entity_usage
     - feeds
+    - file_delete
     - layout_builder
     - layout_builder_component_attributes
     - media
@@ -126,3 +127,4 @@ permissions:
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view user email addresses'
+  - 'delete files'

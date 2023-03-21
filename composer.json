@@ -133,6 +133,7 @@
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/field_group": "^3.0",
+        "drupal/file_delete": "^2.0",
         "drupal/focal_point": "2.x-dev@dev",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^2.0",
