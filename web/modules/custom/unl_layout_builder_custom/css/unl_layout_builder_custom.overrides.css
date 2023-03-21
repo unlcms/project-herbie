@@ -2,7 +2,7 @@
   width: 20px;
   height: 50px;
   top: 20vw;
-  background: #444;
+  background: #999;
   box-shadow: -2px -2px 4px -2px rgba(0, 0, 0, 0.3333), -2px 3px 4px -2px rgba(0, 0, 0, 0.3333);
   display: flex;
   align-items: center;
@@ -22,9 +22,8 @@
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-resizable-w {
-  left: -21px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-resizable-w:before {
