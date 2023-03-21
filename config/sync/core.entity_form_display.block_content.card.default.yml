@@ -9,7 +9,6 @@ dependencies:
     - field.field.block_content.card.b_card_headline
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
-    - field.field.block_content.card.b_card_style
     - field.field.block_content.card.b_card_subhead
     - image.style.16_9_240x135
   module:
@@ -62,12 +61,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  b_card_style:
-    type: options_select
-    weight: 26
-    region: content
-    settings: {  }
     third_party_settings: {  }
   b_card_subhead:
     type: string_textfield

@@ -1,0 +1,13 @@
+uuid: bb755d47-4117-46d0-a869-b401839931bc
+langcode: en
+status: true
+dependencies: {  }
+id: block_background_style_light
+label: Cream
+classes: unl-bg-cream
+type: component
+group: background
+block_restrictions:
+  - 'inline_block:card'
+layout_restrictions: {  }
+weight: 0

@@ -5,6 +5,11 @@ global-styling:
       css/media.css: {}
       css/wdn-overrides.css: {}
 
+layout-builder:
+  css:
+    component:
+      css/layout-builder.css: { weight: -500, preprocess: false }
+
 person:
   version: VERSION
   css:

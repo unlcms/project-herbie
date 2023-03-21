@@ -1,0 +1,59 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_layout_builder_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'layout_builder_add_block':
+    case 'layout_builder_update_block':
+
+      // Add our LBS heading before style options.
+      _unl_layout_builder_custom_add_lbs_heading($form);
+
+    case 'layout_builder_configure_section':
+
+      // Add our LBS heading before style options.
+      _unl_layout_builder_custom_add_lbs_heading($form);
+
+    case 'fragment_region_item_layout_builder_form':
+    case 'fragment_region_item_after_content_layout_builder_form':
+    case 'node_page_layout_builder_form':
+      $form['#attached']['library'][] = 'unl_layout_builder_custom/unl_layout_builder_custom.overrides';
+      break;
+  }
+}
+
+
+
+/**
+ * Add an element to delineate the layout builder styles form section.
+ */
+function _unl_layout_builder_custom_add_lbs_heading(&$form) {
+  $children = Element::children($form);
+
+  $styles = array_filter($children, function ($v) {
+    return (strpos($v, 'layout_builder_style_') === 0);
+  });
+
+  if (!empty($styles)) {
+    $form['lbs_heading'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'layout-builder-style-heading',
+        ],
+      ],
+      'markup' => [
+        '#prefix' => '<span>',
+        '#markup' => t('Display options'),
+        '#suffix' => '</span>',
+      ],
+      '#weight' => 80,
+    ];
+  }
+}
+

@@ -1,0 +1,13 @@
+uuid: f90b05c7-759f-40bc-acad-ddf9ec4cd626
+langcode: en
+status: true
+dependencies: {  }
+id: block_background_style_brand
+label: Scarlet
+classes: unl-bg-scarlet
+type: component
+group: background
+block_restrictions:
+  - 'inline_block:card'
+layout_restrictions: {  }
+weight: 0

@@ -9,14 +9,12 @@ dependencies:
     - field.field.block_content.card.b_card_headline
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
-    - field.field.block_content.card.b_card_style
     - field.field.block_content.card.b_card_subhead
+    - image.style.16_9_960x540
   module:
-    - dcf_lazyload
     - image
     - image_class
     - link
-    - options
     - text
 _core:
   default_config_hash: _J3J50ESTz7p_RrybndlcB3Aa3KvjhTmAD0220447T8
@@ -57,14 +55,12 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: 16_9_960x540
       image_loading:
         attribute: lazy
     third_party_settings:
       image_class:
-        class: ''
-      dcf_lazyload:
-        dcf_lazyload_enable: true
+        class: 'dcf-d-block dcf-ratio-child dcf-obj-fit-cover'
     weight: 6
     region: content
   b_card_overline:
@@ -74,13 +70,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 5
-    region: content
-  b_card_style:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 10
     region: content
   b_card_subhead:
     type: string
