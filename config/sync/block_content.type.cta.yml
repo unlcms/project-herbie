@@ -1,0 +1,8 @@
+uuid: f44dbff2-1788-4cda-a9df-46b070474916
+langcode: en
+status: true
+dependencies: {  }
+id: cta
+label: 'Call to action'
+revision: 0
+description: 'Combines a bold headline, optional text, and a button link.'

@@ -135,6 +135,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
         "drupal/focal_point": "2.x-dev@dev",
+        "drupal/heading": "^1.7",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^2.0",
         "drupal/image_effects": "^3.3",

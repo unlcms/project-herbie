@@ -46,6 +46,7 @@ dependencies:
   - 'features_permissions:features_permissions'
   - 'field_css:field_css'
   - 'focal_point:focal_point'
+  - 'heading:heading'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
   - 'honeypot:honeypot'
@@ -66,5 +67,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.8
+version: 1.0.10
 package: Herbie

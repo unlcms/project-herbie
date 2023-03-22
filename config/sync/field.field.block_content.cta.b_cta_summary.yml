@@ -1,0 +1,26 @@
+uuid: d31be3ae-6242-4f31-8f5d-87f7894fbb2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.storage.block_content.b_cta_summary
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - block_body
+id: block_content.cta.b_cta_summary
+field_name: b_cta_summary
+entity_type: block_content
+bundle: cta
+label: Summary
+description: 'Enter a single line of summary or teaser text to the call-to-action block.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -8,6 +8,7 @@ classes: unl-bg-dark-gray
 type: component
 group: background
 block_restrictions:
+  - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
 weight: 0
