@@ -1,0 +1,12 @@
+name: 'File Delete'
+type: module
+description: 'This module provides the ability to easily delete files within Drupal administration.'
+core_version_requirement: ^8 || ^9 || ^10
+package: 'Administration'
+dependencies:
+  - drupal:file
+
+# Information added by Drupal.org packaging script on 2022-10-04
+version: '2.0.0'
+project: 'file_delete'
+datestamp: 1664902820

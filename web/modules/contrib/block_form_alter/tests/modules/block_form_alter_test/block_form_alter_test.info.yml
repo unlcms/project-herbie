@@ -1,0 +1,18 @@
+name: 'Block Form Alter Test'
+description: 'Provides block form alter test functions'
+package: Testing
+
+type: module
+core_version_requirement: ^9 | ^10
+
+dependencies:
+  - drupal:block_form_alter
+  - drupal:layout_builder
+  - drupal:block_content
+  - drupal:node
+  - drupal:field
+
+# Information added by Drupal.org packaging script on 2022-07-14
+version: '2.0.0'
+project: 'block_form_alter'
+datestamp: 1657764159

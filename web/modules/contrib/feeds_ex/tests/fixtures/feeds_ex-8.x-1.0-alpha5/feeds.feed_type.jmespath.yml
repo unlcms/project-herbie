@@ -1,0 +1,77 @@
+uuid: 91c601fd-ce86-e102-b15e-bad9262a90c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - node.type.article
+  module:
+    - feeds_ex
+    - node
+id: jmespath
+label: JMESPath
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jmespath
+parser_configuration:
+  context:
+    value: items
+  sources:
+    title:
+      label: title
+      value: title
+    description:
+      label: description
+      value: description
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: article
+custom_sources:
+  title:
+    label: title
+    value: title
+    machine_name: title
+  description:
+    label: description
+    value: description
+    machine_name: description
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique:
+      value: '1'
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: description
+      summary: ''
+    settings:
+      language: null
+      format: plain_text

@@ -1,0 +1,20 @@
+.CodeMirror {
+  height: auto;
+  border: solid 1px #bbb;
+  font-size: 14px;
+}
+
+.cme-code {
+  white-space: pre-wrap;
+  background-color: #fafafa;
+  border: solid 1px #bbb;
+  display: block;
+}
+
+.cme-readonly .CodeMirror-cursor {
+  display: none !important;
+}
+
+.cme-code::first-line {
+  line-height: 0;
+}

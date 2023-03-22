@@ -1,0 +1,22 @@
+{
+    "name": "drupal/linkit_media_library",
+    "description": "This module adds a 'Media Library' button to the Link ('drupallink') CKEditor dialog allowing the insertion of links from the media library.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/linkit_media_library",
+    "authors": [
+        {
+            "name": "Nate Andersen (oknate)",
+            "homepage": "https://www.drupal.org/u/oknate",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://drupal.org/project/issues/linkit_media_library",
+        "source": "https://git.drupalcode.org/project/linkit_media_library"
+    },
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/linkit": "^5 || ^6"
+    }
+}

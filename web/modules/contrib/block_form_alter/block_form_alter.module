@@ -1,0 +1,126 @@
+<?php
+
+/**
+ * @file
+ * This module provides block form alter functions.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function block_form_alter_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  /*
+   * Blocks are plugins; however, plugin information is not consistently
+   * available from the various modules that render block forms (both core
+   * and contrib). Resultantly, it is necessary to perform a variety of checks
+   * to determine the plugin of a given block.
+   *
+   * Block forms for all plugins, excluding block_content and inline_block, can
+   * be altered with hook_block_plugin_form_alter().
+   *
+   * Block forms for the block_content and inline_block plugins can be altered
+   * with hook_block_type_form_alter().
+   */
+
+  // If block form is rendered by Block module.
+  if ($form_id == 'block_form') {
+    $build_info = $form_state->getBuildInfo();
+    $plugin_id = $build_info['callback_object']->getEntity()->getPluginId();
+    _block_form_alter_block_plugin_form_alter_invoke($form, $form_state, $plugin_id);
+  }
+
+  // If block form is rendered by Block Content module.
+  elseif (preg_match('/block_content_(.*)_edit_form/', $form_id, $matches) || preg_match('/block_content_(.*)_form/', $form_id, $matches)) {
+    $block_type = $matches[1];
+    _block_form_alter_block_type_form_alter_invoke($form, $form_state, $block_type);
+  }
+
+  // If block form is rendered by Layout Builder module.
+  elseif ($form_id == 'layout_builder_add_block' || $form_id == 'layout_builder_update_block') {
+    if ($form_id == 'layout_builder_add_block') {
+      $storage = $form_state->getStorage();
+      $component_config = $storage['layout_builder__component']->get('configuration');
+
+    }
+    elseif ($form_id == 'layout_builder_update_block') {
+      $build_info = $form_state->getBuildInfo();
+      $block = $build_info['callback_object']->getCurrentComponent();
+      $component_config = $block->get('configuration');
+    }
+    $block_id = explode(':', $component_config['id']);
+    $plugin_id = $block_id[0];
+
+    // Inline blocks.
+    if ($plugin_id == 'inline_block') {
+      // Because the block form is added with a process function for
+      // inline blocks, it is necessary to alter them via a subsequent process
+      // function.
+      $form['settings']['block_form']['#process'][] = '_block_form_alter_block_type_form_alter_inline_block_process';
+    }
+    // All other block plugins.
+    else {
+      _block_form_alter_block_plugin_form_alter_invoke($form, $form_state, $plugin_id);
+    }
+  }
+}
+
+/**
+ * Process callback for inline block forms.
+ *
+ * @param array $element
+ *   The containing element.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ *
+ * @return array
+ *   The containing element, as altered.
+ */
+function _block_form_alter_block_type_form_alter_inline_block_process(array &$element, FormStateInterface &$form_state) {
+  $block_type = $element['#block']->bundle();
+  _block_form_alter_block_type_form_alter_invoke($element, $form_state, $block_type);
+  return $element;
+}
+
+/**
+ * Helper function to alter forms for block_content and inline_block plugins.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ * @param string $block_type
+ *   The machine name of the custom block bundle.
+ */
+function _block_form_alter_block_type_form_alter_invoke(array &$form, FormStateInterface &$form_state, string $block_type) {
+  \Drupal::moduleHandler()->invokeAll('block_type_form_alter', [
+    &$form,
+    &$form_state,
+    $block_type,
+  ]);
+}
+
+/**
+ * Helper function to alter forms for block plugins.
+ *
+ * Block forms for the 'block_content' and 'inline_content' plugins must use
+ * _block_form_alter_block_type_form_alter_invoke().
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ * @param string $plugin
+ *   The machine name of the plugin implementing the block.
+ */
+function _block_form_alter_block_plugin_form_alter_invoke(array &$form, FormStateInterface &$form_state, string $plugin) {
+  if ($plugin == 'block_content' || $plugin == 'inline_block') {
+    return;
+  }
+  \Drupal::moduleHandler()->invokeAll('block_plugin_form_alter', [
+    &$form,
+    &$form_state,
+    $plugin,
+  ]);
+}

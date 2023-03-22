@@ -1,0 +1,10 @@
+name: Select2
+type: module
+description: Makes entity reference fields more user-friendly using <a href="https://github.com/select2/select2">Select2</a>.
+package: User interface
+core_version_requirement: ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2022-11-22
+version: '8.x-1.14'
+project: 'select2'
+datestamp: 1669104466

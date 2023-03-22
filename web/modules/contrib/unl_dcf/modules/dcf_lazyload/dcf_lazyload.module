@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * This module provides DCF Lazy Loading integration.
+ */
+
+use Drupal\Core\Form\FormState;
+use Drupal\Core\Template\AttributeString;
+use Drupal\dcf_lazyload\DcfLazyloadPostrender;
+
+module_load_include('inc', 'dcf_lazyload', 'dcf_lazyload.field_formatter');
+module_load_include('inc', 'dcf_lazyload', 'dcf_lazyload.views_field');
+
+/**
+ * Implements template_preprocess_responsive_image_formatter().
+ */
+function dcf_lazyload_preprocess_responsive_image_formatter(&$variables) {
+  // Check for data passed from dcf_lazyload_preprocess_views_view_field()
+  // or dcf_lazyload_preprocess_field().
+  $dcf_lazyload_enabled = $variables['item']->__get('dcf_lazyload_enable');
+  if ($dcf_lazyload_enabled) {
+    $variables['responsive_image']['#attributes']['class'][] = 'dcf-lazy-load';
+    $variables['responsive_image']['#attributes']['class'][] = 'dcf-ratio-child';
+    $variables['responsive_image']['#attributes']['loading'] = 'lazy';
+    $variables['item']->__unset('dcf_lazyload_enable');
+  }
+
+  $dcf_lazyload_sizes = $variables['item']->__get('dcf_lazyload_sizes');
+  if ($dcf_lazyload_sizes) {
+    // The 'sizes' attribute is added to the render array when the
+    // responsive image style is applied, so pass through the desired
+    // value in a 'data-sizes' attribute to rewrite later.
+    $variables['responsive_image']['#attributes']['data-sizes'] = 'auto';
+    $variables['item']->__unset('dcf_lazyload_sizes');
+  }
+}
+
+/**
+ * Implements hook_preprocess_responsive_image().
+ */
+function dcf_lazyload_preprocess_responsive_image(&$variables) {
+  // The formatter settings are not available; however, it's possible to
+  // key off of the 'dcf-lazy-load' class.
+  if (isset($variables['attributes']['class']) && in_array('dcf-lazy-load', $variables['attributes']['class'])) {
+    $src = $variables['img_element']['#uri'];
+    $variables['img_element']['#attributes']['data-src'] = new AttributeString('data-src', $src);
+    $variables['img_element']['#uri'] = "data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+
+    $srcset = $variables['img_element']['#attributes']['srcset']->value();
+    $variables['img_element']['#attributes']['data-srcset'] = new AttributeString('data-srcset', $srcset);
+    unset($variables['img_element']['#attributes']['srcset']);
+
+    // Rewrite 'sizes' attribute if 'data-sizes' is set.
+    if (isset($variables['img_element']['#attributes']['data-sizes'])) {
+      $variables['img_element']['#attributes']['sizes'] = new AttributeString('sizes', $variables['img_element']['#attributes']['data-sizes']);
+      unset($variables['img_element']['#attributes']['data-sizes']);
+    }
+
+    $variables['img_element']['#attributes']['width'] = $variables['width'];
+    $variables['img_element']['#attributes']['height'] = $variables['height'];
+
+    // #suffix is run through Xss::filterAdmin(), so a post-render function
+    // must be used instead to add <noscript>.
+    $variables['img_element']['#post_render'][] = [DcfLazyloadPostrender::class, 'dcfLazyloadPostrender'];
+  }
+}
+
+/**
+ * Callback function to convert checkbox values to boolean before submitting.
+ *
+ * @param array $element
+ *   An array representing the element being rendered.
+ * @param int $input
+ *   An integer representing a boolean value.
+ * @param \Drupal\Core\Form\FormState $form_state
+ *   The current state of the form.
+ *
+ * @return bool
+ *   The input integer cast to a boolean value.
+ */
+function _dcf_lazyload_checkbox_boolean(array $element, $input, FormState $form_state) {
+  // If $input is false, then return default value per API docs.
+  if ($input === FALSE) {
+    return $element['#default_value'];
+  }
+  return (bool) $input;
+}

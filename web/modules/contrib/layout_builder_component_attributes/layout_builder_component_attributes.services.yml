@@ -1,0 +1,6 @@
+services:
+  layout_builder_component_attributes.section_component_build_render_array_subscriber:
+    class: Drupal\layout_builder_component_attributes\EventSubscriber\LayoutBuilderComponentRenderArray
+    arguments: []
+    tags:
+      - { name: event_subscriber }

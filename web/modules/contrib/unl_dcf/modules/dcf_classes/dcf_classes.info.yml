@@ -1,0 +1,5 @@
+name: 'DCF Classes'
+description: 'Configuration to specify DCF CSS classes that can be used by other modules.'
+package: DCF
+core_version_requirement: ^8.8 || ^9 || ^10
+type: module

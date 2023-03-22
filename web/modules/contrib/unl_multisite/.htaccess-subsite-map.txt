@@ -1,0 +1,5 @@
+# Copy this file to the web root and rename .htaccess-subsite-map.txt 
+# This file is used by the unl_multisite module.
+# Do not edit it unless you know what you are doing!
+
+# %UNL_CREATION_TOOL_STUB%

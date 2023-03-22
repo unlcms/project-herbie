@@ -1,0 +1,15 @@
+.layout--dcf-onecol-section.unl-dcf-onecol-75-centered {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.layout--dcf-onecol-section.unl-dcf-onecol-75-centered .layout__region--first {
+  width: 100%;
+}
+
+@media only screen and (min-width: 671.3px) {
+  .layout--dcf-onecol-section.unl-dcf-onecol-75-centered .layout__region--first {
+    width: 75%;
+  }
+}

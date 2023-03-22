@@ -1,0 +1,5 @@
+entity.layout_builder_style.collection:
+  title: 'Layout builder styles'
+  route_name: entity.layout_builder_style.collection
+  description: 'Manage layout builder styles.'
+  parent: system.admin_config_content

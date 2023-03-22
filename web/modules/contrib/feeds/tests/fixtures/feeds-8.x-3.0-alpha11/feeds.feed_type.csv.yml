@@ -1,0 +1,64 @@
+uuid: 91c601fd-ce86-499e-b15e-bbd9262a90d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - node.type.article
+  module:
+    - node
+id: csv
+label: CSV
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: article
+custom_sources:
+  title:
+    label: title
+    value: title
+    machine_name: title
+  body:
+    label: body
+    value: body
+    machine_name: body
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: null
+      format: plain_text

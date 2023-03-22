@@ -1,0 +1,13 @@
+access block content overview:
+  title: 'Access the Block Content overview page'
+  description: ''
+administer block content types:
+  title: 'Administer block content types'
+  description: 'Maintain the types of block content available.'
+  restrict access: true
+view restricted block content:
+  title: 'View restricted block content'
+  description: 'View full list on the Block Content overview page ignoring the create/update/delete filter.'
+
+permission_callbacks:
+  - Drupal\block_content_permissions\Permissions::get

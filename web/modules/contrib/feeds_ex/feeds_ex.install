@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install/enable/update hooks for feeds_ex.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function feeds_ex_uninstall() {
+  \Drupal::state()->delete('feeds_ex_jmespath_compile_dir');
+}

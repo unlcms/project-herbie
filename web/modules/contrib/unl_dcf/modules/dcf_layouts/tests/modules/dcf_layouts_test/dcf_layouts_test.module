@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * This module provides testing functionality for DCF Layouts.
+ */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements template_preprocess_block().
+ */
+function dcf_layouts_test_preprocess_block(&$variables) {
+  // Add block classes, which were added by classy theme by
+  // core/themes/classy/templates/block/block.html.twig.
+  $variables['attributes']['class'][] = 'block';
+  $variables['attributes']['class'][] = 'block-' . Html::cleanCssIdentifier($variables['configuration']['provider']);
+  $variables['attributes']['class'][] = 'block-' . Html::cleanCssIdentifier($variables['plugin_id']);
+}

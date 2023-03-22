@@ -1,0 +1,11 @@
+name: 'Feeds test multiple cron runs'
+type: module
+description: 'Ensures only a limited amount of items can get imported per cron run.'
+package: Testing
+dependencies:
+  - feeds
+
+# Information added by Drupal.org packaging script on 2022-12-08
+version: '8.x-3.0-beta3'
+project: 'feeds'
+datestamp: 1670512826

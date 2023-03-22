@@ -1,0 +1,9 @@
+layout_builder_block_attributes:
+  title: 'Manage attributes'
+  route_name: 'layout_builder_component_attributes.manage_attributes'
+  group: 'layout_builder_block'
+  options:
+    attributes:
+      class: ['use-ajax']
+      data-dialog-type: dialog
+      data-dialog-renderer: off_canvas

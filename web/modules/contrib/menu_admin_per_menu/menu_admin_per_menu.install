@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for menu_admin_per_menu module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function menu_admin_per_menu_install() {
+  // Set module weight bigger than menu_ui module.
+  module_set_weight('menu_admin_per_menu', 1);
+}

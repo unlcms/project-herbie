@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the linkit_media_library module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function linkit_media_library_install() {
+  // Add a media matcher to the default linkit profile.
+  $default_profile = \Drupal::entityTypeManager()
+    ->getStorage('linkit_profile')
+    ->load('default');
+
+  if ($default_profile) {
+    $matchers = $default_profile->getMatchers();
+    foreach ($matchers as $matcher) {
+      if ($matcher->getPluginId() === 'entity:media') {
+        // If the default profile already has a media matcher, we don't need
+        // to add one.
+        return;
+      }
+    }
+
+    /** @var \Drupal\linkit\MatcherManager $matcherManager */
+    $matcher_manager = \Drupal::service('plugin.manager.linkit.matcher');
+    if ($matcher_manager->getDefinition('entity:media')) {
+      // Add an entity:media matcher to the profile.
+      /** @var \Drupal\linkit\MatcherInterface $plugin */
+      $media_matcher = $matcher_manager->createInstance('entity:media');
+
+      $default_profile->addMatcher($media_matcher->getConfiguration());
+      $default_profile->save();
+    }
+  }
+
+}

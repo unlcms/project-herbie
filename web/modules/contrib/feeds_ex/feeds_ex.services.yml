@@ -1,0 +1,5 @@
+services:
+  feeds_ex.json_utility:
+    class: Drupal\feeds_ex\Utility\JsonUtility
+  feeds_ex.xml_utility:
+    class: Drupal\feeds_ex\Utility\XmlUtility

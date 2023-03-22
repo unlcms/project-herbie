@@ -1,0 +1,85 @@
+editor:
+  js:
+    js/editor.js: {}
+  css:
+    component:
+      css/editor.css: {}
+  drupalSettings:
+    codeMirrorEditor:
+      # These values will be set by codemirror_js_settings_build().
+      buttonsBaseUrl: null
+      theme: null
+      mode: 'text/html'
+      modeSelect: {}
+      lineWrapping: false
+      lineNumbers: false
+      readOnly: false
+      foldGutter: false
+      width: null
+      height: null
+      toolbar: true
+      autoCloseTags: true
+      styleActiveLine: false
+      buttons:
+        - 'bold'
+        - 'italic'
+        - 'underline'
+        - 'strike-through'
+        - 'list-numbered'
+        - 'list-bullet'
+        - 'link'
+        - 'horizontal-rule'
+        - 'undo'
+        - 'redo'
+        - 'clear-formatting'
+        - 'enlarge'
+        - 'shrink'
+  dependencies:
+    - codemirror_editor/codemirror
+    - codemirror_editor/toolbar
+    - core/drupal
+    - core/drupal.debounce
+    - core/drupalSettings
+    - core/jquery
+    - core/js-cookie
+    - core/once
+    - editor/drupal.editor
+
+toolbar:
+  js:
+    js/toolbar.js: {}
+  css:
+    component:
+      css/toolbar.css: {}
+  dependencies:
+    - codemirror_editor/codemirror
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/js-cookie
+
+formatter:
+  js:
+    js/formatter.js: {}
+  css:
+    component:
+      css/formatter.css: {}
+  drupalSettings:
+    codeMirrorFormatter:
+      # This value will be set by codemirror_js_settings_build().
+      theme: null
+      mode: text/html
+      lineWrapping: false
+      lineNumbers: true
+      readOnly: false
+      foldGutter: false
+      width: null
+      height: null
+      autoCloseTags: true
+      styleActiveLine: false
+  dependencies:
+    - codemirror_editor/codemirror
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/once

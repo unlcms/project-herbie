@@ -1,0 +1,16 @@
+{
+    "require": {
+        "mtdowling/jmespath.php": {
+            "version": "2.6.1",
+            "url": "https://github.com/jmespath/jmespath.php/archive/2.6.1.zip"
+        },
+        "softcreatr/jsonpath": {
+            "version": "0.7.5",
+            "url": "https://github.com/SoftCreatR/JSONPath/archive/0.7.5.zip"
+        },
+        "arthurkushman/query-path": {
+            "version": "3.1.4",
+            "url": "https://github.com/arthurkushman/querypath/archive/3.1.4.zip"
+        }
+    }
+}

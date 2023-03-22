@@ -1,0 +1,15 @@
+{
+    "name": "drupal/layout_builder_component_attributes",
+    "description": "Allows editors to add HTML attributes to Layout Builder components (blocks)",
+    "type": "drupal-module",
+    "homepage": "https://drupal.org/project/layout_builder_component_attributes",
+    "support": {
+        "issues": "https://drupal.org/project/issues/layout_builder_component_attributes",
+        "source": "https://cgit.drupalcode.org/layout_builder_component_attributes"
+    },
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/core": "^9.0|^10.0",
+        "neilime/php-css-lint": "^2.0|^3.0"
+    }
+}

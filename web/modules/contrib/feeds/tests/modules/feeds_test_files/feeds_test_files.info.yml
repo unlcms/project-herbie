@@ -1,0 +1,11 @@
+name: 'Feeds test files'
+type: module
+description: 'Generates source files.'
+package: Testing
+dependencies:
+  - feeds
+
+# Information added by Drupal.org packaging script on 2022-12-08
+version: '8.x-3.0-beta3'
+project: 'feeds'
+datestamp: 1670512826

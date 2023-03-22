@@ -1,0 +1,58 @@
+feeds.log:
+  path: '/feed/{feeds_feed}/log'
+  defaults:
+    _entity_list: 'feeds_import_log'
+    _title: 'Logs'
+  options:
+    parameters:
+      feeds_feed:
+        type: 'entity:feeds_feed'
+  requirements:
+    _entity_access: 'feeds_feed.view'
+    _permission: 'feeds_log.access'
+    feeds_feed: \d+
+
+entity.feeds_import_log.canonical:
+  path: '/feed/{feeds_feed}/log/{feeds_import_log}'
+  defaults:
+    _controller: '\Drupal\feeds_log\Controller\FeedLogController::view'
+    _title_callback: '\Drupal\feeds_log\Controller\FeedLogController::title'
+  requirements:
+    _entity_access: 'feeds_import_log.view'
+    feeds_feed: \d+
+    feeds_import_log: \d+
+
+entity.feeds_import_log.delete_form:
+  path: '/feed/{feeds_feed}/log/{feeds_import_log}/delete'
+  defaults:
+    _entity_form: 'feeds_import_log.delete'
+  options:
+    _admin_route: TRUE
+    parameters:
+      feeds_import_log:
+        type: 'entity:feeds_import_log'
+  requirements:
+    _entity_access: 'feeds_import_log.delete'
+    feeds_feed: \d+
+    feeds_import_log: \d+
+
+entity.feeds_feed.clear_logs:
+  path: '/feed/{feeds_feed}/log/clear'
+  defaults:
+    _entity_form: 'feeds_feed.clear_logs'
+  options:
+    parameters:
+      feeds_feed:
+        type: 'entity:feeds_feed'
+  requirements:
+    _entity_access: 'feeds_feed.view'
+    _permission: 'feeds_log.access'
+    feeds_feed: \d+
+
+feeds_log.settings:
+  path: '/admin/config/content/feeds_log'
+  defaults:
+    _form: '\Drupal\feeds_log\Form\SettingsForm'
+    _title: 'Feeds Log settings'
+  requirements:
+    _permission: 'feeds_log.access'

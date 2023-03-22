@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * Block content permissions module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function block_content_permissions_block_content_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  switch ($operation) {
+    case 'delete':
+    case 'update':
+      // Get block content type.
+      $bundle_type = $entity->bundle();
+      // Check operation permission for block content.
+      if ($account->hasPermission("$operation any $bundle_type block content")) {
+        return AccessResult::allowed();
+      }
+      else {
+        // Forbid access.
+        return AccessResult::forbidden();
+      }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function block_content_permissions_block_content_type_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  switch ($operation) {
+    case 'delete':
+    case 'update':
+      // Check administer permission for block content types.
+      if ($account->hasPermission('administer block content types')) {
+        return AccessResult::allowed();
+      }
+      else {
+        // Forbid access.
+        return AccessResult::forbidden();
+      }
+    case 'view':
+      if ($account->hasPermission('access block content overview')) {
+        return AccessResult::allowed();
+      }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_create_access().
+ */
+function block_content_permissions_block_content_create_access(AccountInterface $account, array $context, $entity_bundle) {
+  // Check 'create' permission for block content types.
+  // Needed for inline form creation of block content (ex. Inline Entity Form).
+  if ($account->hasPermission("create $entity_bundle block content")) {
+    return AccessResult::allowed();
+  }
+  else {
+    return AccessResult::forbidden();
+  }
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function block_content_permissions_views_pre_build(ViewExecutable $view) {
+  switch ($view->storage->id()) {
+    // On the block content listing page, the "Block Description" column has
+    // "edit" links that always show regardless of permission. Remove the links
+    // to force use of the managed "Operations" column links.
+    case 'block_content':
+      if (!empty($view->field['info']->options['settings']['link_to_entity'])) {
+        $view->field['info']->options['settings']['link_to_entity'] = FALSE;
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function block_content_permissions_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // If user cannot "view restricted block content", filter block_content view
+  // to only include block content the user can create, edit or delete.
+  if ($view->id() == 'block_content') {
+    $account = $view->getUser();
+
+    // Check if user cannot view restricted block content.
+    if (!$account->hasPermission('view restricted block content')) {
+      // Get block content types.
+      $allowedBlockContentTypes = \Drupal::entityQuery('block_content_type')
+        ->accessCheck(TRUE)
+        ->execute();
+
+      // Remove block content types based on user's permissions.
+      foreach ($allowedBlockContentTypes as $type) {
+        $edit = "update any $type block content";
+        $delete = "delete any $type block content";
+        $create = "create $type block content";
+        if (!($account->hasPermission($edit) || $account->hasPermission($delete) || $account->hasPermission($create))) {
+          unset($allowedBlockContentTypes[$type]);
+        }
+      }
+
+      // Restrict query to allowed block content types.
+      if (!empty($allowedBlockContentTypes)) {
+        $query->addWhere('1', 'type', $allowedBlockContentTypes, 'IN');
+      }
+      else {
+        $query->addWhere('1', 'type', '', '=');
+      }
+
+      // Restrict exposed "type" field options to allowed block content types.
+      if (!empty($view->exposed_widgets['type']['#options'])) {
+        foreach ($view->exposed_widgets['type']['#options'] as $key => $value) {
+          if ($key != 'All' && !in_array($key, $allowedBlockContentTypes)) {
+            unset($view->exposed_widgets['type']['#options'][$key]);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function block_content_permissions_local_tasks_alter(&$local_tasks) {
+  // Move block content page and rename.
+  $local_tasks['entity.block_content.collection']['base_route'] = 'system.admin_content';
+  $local_tasks['entity.block_content.collection']['title'] = t('Custom blocks');
+  // Remove local task for block type page.
+  unset($local_tasks['entity.block_content_type.collection']);
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function block_content_permissions_menu_links_discovered_alter(&$links) {
+  // Add menu link for block type page.
+  $links['entity.block_content_type.collection'] = [
+    'title' => t('Block types'),
+    'route_name' => 'entity.block_content_type.collection',
+    'description' => t('Manage block types.'),
+    'parent' => 'system.admin_structure',
+    'provider' => 'block_content',
+    'id' => 'entity.block_content_type.collection',
+  ];
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function block_content_permissions_form_block_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!\Drupal::currentUser()->hasPermission('administer blocks')) {
+    $form['actions']['submit']['#submit'][] = '_block_content_permissions_form_block_content_submit';
+  }
+}
+
+function _block_content_permissions_form_block_content_submit($form, FormStateInterface $form_state) {
+  // Redirect to Custom block library view.
+  $form_state->setRedirect('view.block_content.page_1');
+}

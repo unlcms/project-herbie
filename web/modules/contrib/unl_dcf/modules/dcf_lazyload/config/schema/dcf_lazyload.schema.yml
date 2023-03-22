@@ -1,0 +1,29 @@
+dcf_lazyload_base:
+  type: mapping
+  label: 'DCF Lazy Loading image base display format settings'
+  mapping:
+    dcf_lazyload_enable:
+      type: boolean
+      label: 'DCF Lazy Load enabled'
+
+field.formatter.third_party.dcf_lazyload:
+  type: dcf_lazyload_base
+  label: 'DCF Lazy Load image display format settings'
+
+# Overrides field.formatter.settings.responsive_image from
+# responsive_image.schema.yml. This is why this module's weight is set to 1. 
+# This is hacky. We can switch to third-party settings when
+# https://www.drupal.org/project/drupal/issues/2686145 is committed to core.
+field.formatter.settings.responsive_image:
+  type: mapping
+  label: 'Responsive image list format settings'
+  mapping:
+    responsive_image_style:
+      type: string
+      label: 'Responsive image style'
+    image_link:
+      type: string
+      label: 'Link image to'
+    dcf_lazyload_enable:
+      type: boolean
+      label: 'DCF Lazy Load enabled'

@@ -1,0 +1,7 @@
+services:
+  codemirror_editor.library_builder:
+    class: Drupal\codemirror_editor\LibraryBuilder
+    arguments: ['@config.factory', '@module_handler', '@plugin.manager.codemirror_mode']
+  plugin.manager.codemirror_mode:
+    class: Drupal\codemirror_editor\CodemirrorModePluginManager
+    arguments: ['@module_handler', '@cache.discovery', '@config.factory']

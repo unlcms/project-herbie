@@ -1,0 +1,9 @@
+services:
+  features_permissions.permission_manager:
+    class: Drupal\features_permissions\PermissionManager
+    arguments: ['@entity_type.manager', '@config.factory']
+  config_update_event_subscriber:
+    class: '\Drupal\features_permissions\EventSubscriber\ConfigEventsSubscriber'
+    arguments: ['@features_permissions.permission_manager']
+    tags:
+      - { name: 'event_subscriber' }

@@ -1,0 +1,17 @@
+{
+  "name": "unlcms/unl_cas",
+  "description": "UNL customizations for use with the CAS and UNL User modules.",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Eric Rasmussen (ericras)",
+      "homepage": "https://www.drupal.org/u/ericras",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "^8 || ^9 || ^10",
+    "drupal/cas": "^2.0",
+    "unlcms/unl_user": "^1.0.0"
+  }
+}

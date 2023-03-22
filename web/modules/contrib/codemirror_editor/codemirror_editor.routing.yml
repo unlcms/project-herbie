@@ -1,0 +1,7 @@
+codemirror_editor.settings:
+  path: /admin/config/content/codemirror
+  defaults:
+    _form: Drupal\codemirror_editor\Form\SettingsForm
+    _title: CodeMirror configuration
+  requirements:
+    _permission: administer codemirror editor

@@ -1,0 +1,15 @@
+<?xml version="1.0">
+<root>
+  <item>
+    <guid>1</guid>
+    <title>Lorem ipsum</title>
+    <body>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</body>
+    <alpha>Lorem</alpha>
+  </item>
+  <item>
+    <guid>2</guid>
+    <title>Ut wisi enim ad minim veniam</title>
+    <body>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</body>
+    <alpha>Ut wisi</alpha>
+  </item>
+</root>

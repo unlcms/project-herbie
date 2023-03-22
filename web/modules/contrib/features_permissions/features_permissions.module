@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * The module file for the features_permissions module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function features_permissions_entity_insert(EntityInterface $entity) {
+  if ($entity instanceof RoleInterface) {
+    \Drupal::service('features_permissions.permission_manager')->syncRoleToPermissions($entity, 'insert');
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function features_permissions_entity_update(EntityInterface $entity) {
+  if ($entity instanceof RoleInterface) {
+    \Drupal::service('features_permissions.permission_manager')->syncRoleToPermissions($entity, 'update');
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function features_permissions_entity_delete(EntityInterface $entity) {
+  if ($entity instanceof RoleInterface) {
+    \Drupal::service('features_permissions.permission_manager')->syncRoleToPermissions($entity, 'delete');
+  }
+}

@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Install/update/uninstall functions for the features_permissions module.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ */
+function features_permissions_install() {
+  $permission_manager = \Drupal::service('features_permissions.permission_manager');
+
+  // Create permission config entities by processing all roles.
+  foreach (user_roles() as $role) {
+    // For insert op, all permissions are treated as being added.
+    $permission_manager->syncRoleToPermissions($role, 'insert');
+  }
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function features_permissions_requirements($phase) {
+  $requirements = [];
+
+  $alter_route_title = $route_provider = \Drupal::service('router.route_provider')
+    ->getRouteByName('features.assignment_alter')
+    ->getDefault('_title');
+
+  $description = [
+    '#markup' => t('For the Features Permissions module to function correctly, the "Strip out user permissions" setting needs to be enabled for the following Features bundles:'),
+  ];
+
+  $errors = FALSE;
+
+  // Loop through Features bundles and check for user permission strip setting.
+  $features_bundles = \Drupal::service('entity_type.manager')
+    ->getStorage('features_bundle')
+    ->loadMultiple();
+  foreach ($features_bundles as $bundle) {
+    if (in_array('alter', $bundle->getEnabledAssignments())) {
+      $alter_settings = $bundle->getAssignmentSettings('alter');
+      if ($alter_settings['user_permissions'] == FALSE) {
+        $url = Url::fromRoute(
+          'features.assignment_alter',
+          [
+            'bundle_name' => $bundle->getMachineName(),
+          ]
+        )->toString();
+
+        $description[] = [
+          '#theme' => 'item_list',
+          '#title' => $bundle->getName(),
+          '#items' => [
+            t(
+              'Enable the "Strip out user permissions" setting: <a href="@url">@alter_route_title</a>',
+              [
+                '@url' => $url,
+                '@alter_route_title' => $alter_route_title,
+              ]
+            ),
+          ],
+        ];
+        $errors = TRUE;
+      }
+    }
+  }
+
+  if ($errors) {
+    $requirements['features_permissions'] = [
+      'title' => t('Features Permissions'),
+      'value' => t('"Strip out user permissions" needs enabled'),
+      'description' => $description,
+      'severity' => REQUIREMENT_ERROR,
+    ];
+  }
+
+  return $requirements;
+}

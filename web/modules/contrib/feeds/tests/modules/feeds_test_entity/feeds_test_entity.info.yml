@@ -1,0 +1,12 @@
+name: 'Feeds test entity'
+type: module
+description: 'Provides an entity type where content can be imported for.'
+package: Testing
+dependencies:
+  - entity_test
+  - feeds
+
+# Information added by Drupal.org packaging script on 2022-12-08
+version: '8.x-3.0-beta3'
+project: 'feeds'
+datestamp: 1670512826

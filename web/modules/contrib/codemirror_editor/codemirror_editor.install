@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the CodeMirror editor module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function codemirror_editor_requirements($phase) {
+  $requirements = [];
+
+  // We only check for presence of CodeMirror files when CDN option is off.
+  if ($phase == 'runtime' && !Drupal::config('codemirror_editor.settings')->get('cdn')) {
+
+    $requirements['codemirror'] = [
+      'title' => t('CodeMirror library'),
+    ];
+
+    $cm_library = \Drupal::service('library.discovery')
+      ->getLibraryByName('codemirror_editor', 'codemirror');
+    $assets = array_merge($cm_library['js'], $cm_library['css']);
+
+    $installed = TRUE;
+    foreach ($assets as $asset) {
+      if (!file_exists(DRUPAL_ROOT . '/' . $asset['data'])) {
+        $installed = FALSE;
+        break;
+      }
+    }
+
+    if ($installed) {
+      $requirements['codemirror']['value'] = t('Installed');
+      $requirements['codemirror']['severity'] = REQUIREMENT_INFO;
+    }
+    else {
+      $requirements['codemirror']['value'] = t('Not found');
+      $requirements['codemirror']['severity'] = REQUIREMENT_ERROR;
+      $requirements['codemirror']['description'] = t(
+        'You need to download the <a href=":library_url">CodeMirror library</a> and extract the archive to the <em>libraries/codemirror</em> directory on your server.',
+        [':library_url' => 'https://codemirror.net/']
+      );
+    }
+
+  }
+
+  return $requirements;
+}
+
+/**
+ * Set default value for 'minified' option.
+ */
+function codemirror_editor_update_8601() {
+  \Drupal::configFactory()
+    ->getEditable('codemirror_editor.settings')
+    ->set('minified', TRUE)
+    ->save();
+}

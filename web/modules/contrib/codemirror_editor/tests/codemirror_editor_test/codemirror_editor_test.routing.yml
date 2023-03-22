@@ -1,0 +1,7 @@
+codemirror_editor_test.form:
+  path: '/codemirror-editor-test'
+  defaults:
+    _title: 'Test form'
+    _form: 'Drupal\codemirror_editor_test\Form\CodeMirrorEditorTestForm'
+  requirements:
+    _permission: 'access content'

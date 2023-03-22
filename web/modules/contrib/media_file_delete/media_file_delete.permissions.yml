@@ -1,0 +1,7 @@
+delete any file:
+  title: 'Delete any file'
+  description: 'Delete any file, even if not the owner'
+  restrict access: true
+administer media file delete:
+  title: 'Administer Media File Delete'
+  description: 'Allows users to administer Media File Delete settings'

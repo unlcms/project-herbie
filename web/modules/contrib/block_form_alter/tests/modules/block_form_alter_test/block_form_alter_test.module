@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * This module provides block form alter test functions.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function block_form_alter_test_block_type_form_alter(array &$form, FormStateInterface &$form_state, string $block_type) {
+  if ($block_type == 'test_block') {
+    $form['body']['widget'][0]['#default_value'] = 'test body string';
+  }
+}
+
+/**
+ * Implements hook_block_plugin_form_alter().
+ */
+function block_form_alter_test_block_plugin_form_alter(array &$form, FormStateInterface &$form_state, string $plugin) {
+  if ($plugin == 'system_branding_block') {
+    $form['settings']['block_branding']['use_site_logo']['#default_value'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function block_form_alter_test_theme_registry_alter(&$theme_registry) {
+  $theme_registry['block']['path'] = \Drupal::service('extension.list.module')->getPath('block_form_alter_test') . '/templates/block';
+}

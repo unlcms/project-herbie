@@ -1,0 +1,12 @@
+services:
+  plugin.manager.config_filter:
+    class: Drupal\config_filter\Plugin\ConfigFilterPluginManager
+    parent: default_plugin_manager
+    tags:
+      - { name: config.filter }
+  config_filter.storage_factory:
+    class: Drupal\config_filter\ConfigFilterStorageFactory
+    # The service config_filter.storage.original is set in the service provider depending on the drupal version.
+    arguments: ['@config_filter.storage.original']
+    tags:
+      - { name: service_collector, tag: 'config.filter', call: addConfigFilterManager }

@@ -1,0 +1,59 @@
+layout_builder_styles.style.*:
+  type: config_entity
+  label: 'Layout builder style config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    classes:
+      type: string
+      label: 'Classes'
+    type:
+      type: string
+      label: 'Type'
+    group:
+      type: string
+      label: 'Group'
+    block_restrictions:
+      type: sequence
+      label: 'Block restrictions'
+      sequence:
+        type: string
+    layout_restrictions:
+      type: sequence
+      label: 'Layout restrictions'
+      sequence:
+        type: string
+    weight:
+      type: integer
+      label: 'Weight'
+    uuid:
+      type: string
+
+layout_builder_styles.group.*:
+  type: config_entity
+  label: 'Layout builder style group config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    multiselect:
+      type: string
+      label: 'Multiple styles'
+    form_type:
+      type: string
+      label: 'Form Element'
+    required:
+      type: boolean
+      label: 'Require Selection'
+    weight:
+      type: integer
+      label: 'Weight'
+    uuid:
+      type: string

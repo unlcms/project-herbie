@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file external_entities_unldirectory.module
+ *
+ * Core functionality for the External Entities (UNL Directory) module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for external_entity_type_form().
+ */
+function external_entities_unldirectory_form_external_entity_type_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['#validate'][] = 'external_entities_unldirectory_type_validate';
+}
+
+/**
+ * UNL Directory Client validation handler.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function external_entities_unldirectory_type_validate(array $form, FormStateInterface $form_state) {
+  if ($form_state->getValue('client') == 'unldirectory') {
+    external_entities_unldirectory_type_validate_format($form, $form_state);
+  }
+}
+
+/**
+ * UNL Directory Client format validation handler.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function external_entities_unldirectory_type_validate_format(array $form, FormStateInterface $form_state) {
+  if ($form_state->getValue('format') != 'json') {
+    $form_state->setError($form['storage_settings']['format'], t('UNL Directory Storage client requires JSON format.'));
+  }
+}

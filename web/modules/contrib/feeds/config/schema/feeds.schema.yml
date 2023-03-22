@@ -1,0 +1,223 @@
+# Feeds global settings.
+feeds.settings:
+  type: config_object
+  label: 'Feeds settings'
+  mapping:
+    lock_timeout:
+      type: integer
+      label: 'Feed lock timeout'
+
+# Feed type configuration.
+feeds.feed_type.*:
+  type: config_entity
+  label: 'Feed type'
+  mapping:
+    label:
+      type: label
+      label: 'Name'
+    id:
+      type: string
+      label: 'Machine-readable name'
+    description:
+      type: text
+      label: 'Description'
+    help:
+      type: text
+      label: 'Help'
+    import_period:
+      type: integer
+      label: 'The import period'
+    fetcher:
+      type: string
+      label: 'Fetcher id'
+    fetcher_configuration:
+      label: 'Fetcher configuration'
+      type: feeds.fetcher.[%parent.fetcher]
+    parser:
+      type: string
+      label: 'Parser id'
+    parser_configuration:
+      label: 'Parser configuration'
+      type: feeds.parser.[%parent.parser]
+    processor:
+      type: string
+      label: 'Processor id'
+    processor_configuration:
+      label: 'Processor configuration'
+      type: feeds.processor.entity
+    custom_sources:
+      type: sequence
+      sequence:
+        type: feeds.custom_source.[type]
+    mappings:
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          target:
+            type: string
+          map:
+            type: ignore
+          settings:
+            type: ignore
+          unique:
+            type: ignore
+
+action.configuration.feeds_feed_delete_action:
+  type: action_configuration_default
+  label: 'Delete feeds configuration'
+
+field.storage_settings.feeds_item:
+  type: base_entity_reference_field_settings
+  label: 'Feeds item settings'
+
+field.field_settings.feeds_item:
+  type: mapping
+  label: 'Feeds item settings'
+  mapping:
+    handler:
+      type: string
+      label: 'Reference method'
+    handler_settings:
+      type: entity_reference_selection.[%parent.handler]
+      label: 'Entity reference selection settings'
+
+# Field formatter configurations.
+field.formatter.settings.feeds_item_imported:
+  type: mapping
+  label: 'Feeds item imported display format settings'
+  mapping:
+    date_format:
+      type: string
+      label: 'Date format'
+    custom_date_format:
+      type: string
+      label: 'Custom date format'
+    timezone:
+      type: string
+      label: 'Time zone'
+
+field.formatter.settings.feeds_item_url:
+  type: mapping
+  label: 'Feeds item url display format settings'
+  mapping:
+    url_plain:
+      type: boolean
+      label: 'Display URL as plain text'
+
+field.formatter.settings.feeds_item_target_entity_view:
+  type: field.formatter.settings.entity_reference_entity_view
+
+field.formatter.settings.feeds_item_target_id:
+  type: field.formatter.settings.entity_reference_entity_id
+
+field.formatter.settings.feeds_item_target_label:
+  type: field.formatter.settings.entity_reference_label
+
+# Fetcher configurations.
+feeds.fetcher.http:
+  type: mapping
+  label: 'HTTP fetcher settings'
+  mapping:
+    auto_detect_feeds:
+      type: boolean
+    use_pubsubhubbub:
+      type: boolean
+    always_download:
+      type: boolean
+    fallback_hub:
+      type: string
+    request_timeout:
+      type: integer
+
+feeds.fetcher.directory:
+  type: mapping
+  label: 'Directory fetcher settings'
+  mapping:
+    allowed_extensions:
+      type: string
+    allowed_schemes:
+      type: sequence
+      sequence:
+        type: string
+    recursive_scan:
+      type: boolean
+
+feeds.fetcher.upload:
+  type: mapping
+  label: 'Upload fetcher settings'
+  mapping:
+    allowed_extensions:
+      type: string
+    directory:
+      type: string
+
+# Parser configurations.
+feeds.parser.csv:
+  type: mapping
+  label: 'CSV parser settings'
+  mapping:
+    delimiter:
+      type: string
+    no_headers:
+      type: boolean
+    line_limit:
+      type: integer
+
+feeds.parser.opml:
+  type: mapping
+  label: 'OPML parser settings'
+
+feeds.parser.sitemap:
+  type: mapping
+  label: 'Sitemap XML parser settings'
+
+feeds.parser.syndication:
+  type: mapping
+  label: 'RSS/Atom parser settings'
+
+# Processor configurations.
+feeds.processor.entity:
+  type: mapping
+  label: 'Entity processor settings'
+  mapping:
+    values:
+      type: sequence
+      sequence:
+        type: ignore
+    langcode:
+      type: string
+    insert_new:
+      type: integer
+    update_existing:
+      type: integer
+    update_non_existent:
+      type: string
+    skip_hash_check:
+      type: boolean
+    authorize:
+      type: boolean
+    revision:
+      type: boolean
+    expire:
+      type: integer
+    owner_feed_author:
+      type: boolean
+    owner_id:
+      type: integer
+
+feeds.processor.entity:*:
+  type: feeds.processor.entity
+
+# Custom source configurations.
+feeds.custom_source.*:
+  type: mapping
+  mapping:
+    value:
+      type: string
+    label:
+      type: string
+    machine_name:
+      type: string
+    type:
+      type: string

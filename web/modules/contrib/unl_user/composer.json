@@ -1,0 +1,21 @@
+{
+  "name": "unlcms/unl_user",
+  "description": "Populate user data with values from LDAP & allow searching for users to add.",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Eric Rasmussen (ericras)",
+      "homepage": "https://www.drupal.org/u/ericras",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Michael Fairchild (mfairchild365)",
+      "homepage": "https://www.drupal.org/u/mfairchild365",
+      "role": "Creator"
+    }
+  ],
+  "require": {
+    "drupal/core": "^8 || ^9 || ^10",
+    "symfony/ldap": "~3.4"
+  }
+}

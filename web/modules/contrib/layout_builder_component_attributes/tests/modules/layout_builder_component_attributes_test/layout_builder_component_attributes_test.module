@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Layout Builder Component Attributes Test module.
+ */
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function layout_builder_component_attributes_test_theme_registry_alter(&$theme_registry) {
+  // Use a lifted copy of block.html.twig from the Classy theme.
+  // As opposed to the template file provided by the block module, this file
+  // renders {{ content }} in a wrapper <div> element with content_attributes
+  // being rendered on the wrapper.
+  $theme_registry['block']['path'] = \Drupal::service('extension.list.module')->getPath('layout_builder_component_attributes_test') . '/templates';
+}

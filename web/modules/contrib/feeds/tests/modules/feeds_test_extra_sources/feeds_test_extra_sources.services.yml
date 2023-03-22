@@ -1,0 +1,5 @@
+services:
+  feeds_test_extra_sources.my_feed:
+    class: Drupal\feeds_test_extra_sources\EventSubscriber\MyFeed
+    tags:
+      - {name: event_subscriber}

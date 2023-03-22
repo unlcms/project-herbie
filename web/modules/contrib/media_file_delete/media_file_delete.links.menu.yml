@@ -1,0 +1,5 @@
+media_file_delete.settings:
+  title: 'Media File Delete Settings'
+  description: 'Configure media file deletion behaviours'
+  parent: system.admin_config_media
+  route_name: media_file_delete.settings

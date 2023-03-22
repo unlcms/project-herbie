@@ -1,0 +1,17 @@
+.CodeMirror {
+  height: auto;
+  border: solid 1px #bbb;
+  font-size: 14px;
+}
+
+.cme-readonly .CodeMirror-cursor {
+  display: none !important;
+}
+
+.cme-error {
+  border-color: #e62600;
+}
+
+.CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
+}

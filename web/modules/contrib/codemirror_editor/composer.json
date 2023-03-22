@@ -1,0 +1,17 @@
+{
+    "name": "drupal/codemirror_editor",
+    "type": "drupal-module",
+    "description": "This module integrates the CodeMirror editor library into Drupal.",
+    "keywords": ["Drupal", "CodeMirror"],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/codemirror_editor",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/codemirror_editor",
+        "source": "https://git.drupalcode.org/project/codemirror_editor"
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "drupal/core": "^9.3 || ^10"
+    }
+}

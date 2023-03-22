@@ -1,0 +1,9 @@
+media_file_delete.settings:
+  path: '/admin/config/media/media_file_delete/settings'
+  defaults:
+    _form: '\Drupal\media_file_delete\Form\MediaDeleteSettingsForm'
+    _title: 'Media File Delete settings'
+  requirements:
+    _permission: 'administer media file delete'
+  options:
+    _admin_route: TRUE

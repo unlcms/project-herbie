@@ -1,0 +1,77 @@
+entity.twig_template.collection:
+  path: '/admin/structure/templates'
+  defaults:
+    _form: '\Drupal\twig_ui\Form\TwigTemplateListForm'
+    _title: 'Twig templates'
+  requirements:
+    _permission: 'administer twig templates'
+
+entity.twig_template.add_form:
+  path: '/admin/structure/templates/add'
+  defaults:
+    _entity_form: 'twig_template.add'
+    _title: 'Add Twig template'
+  requirements:
+    _permission: 'administer twig templates'
+
+entity.twig_template.edit_form:
+  path: '/admin/structure/templates/{twig_template}/edit'
+  defaults:
+    _entity_form: 'twig_template.edit'
+    _title: 'Edit Twig template'
+  requirements:
+    _permission: 'administer twig templates'
+
+entity.twig_template.delete_form:
+  path: '/admin/structure/templates/{twig_template}/delete'
+  defaults:
+    _entity_form: 'twig_template.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer twig templates'
+
+entity.twig_template.clone_form:
+  path: '/admin/structure/templates/{twig_template}/clone'
+  defaults:
+    _entity_form: 'twig_template.clone'
+    _title: 'Clone'
+  requirements:
+    _permission: 'administer twig templates'
+
+twig_ui.settings:
+  path: '/admin/config/system/twig_ui'
+  defaults:
+    _form: '\Drupal\twig_ui\Form\SettingsForm'
+    _title: 'Twig UI Templates Settings'
+  requirements:
+    _permission: 'administer twig ui templates settings'
+
+twig_ui.templates_directory_prepare:
+  path: '/admin/twig_ui/templates-directory-prepare'
+  defaults:
+    _form: '\Drupal\twig_ui\Form\TemplatesDirectoryPrepareForm'
+    _title: 'Prepare Twig UI Templates Directory'
+  requirements:
+    _permission: 'administer twig templates'
+
+twig_ui.template_list_load_ajax:
+  methods:  [GET]
+  path: '/ajax/twig-ui/template-list-load/{theme}'
+  defaults:
+    _controller: '\Drupal\twig_ui\Controller\TemplateLoadAjaxController::templates'
+    _title: 'Twig UI Load Template List by Theme'
+  requirements:
+    _permission: 'load twig templates from file system'
+  options:
+    no_cache: 'TRUE'
+
+twig_ui.template_load_ajax:
+  methods:  [GET]
+  path: '/ajax/twig-ui/template-load/{theme}/{template}'
+  defaults:
+    _controller: '\Drupal\twig_ui\Controller\TemplateLoadAjaxController::templateCode'
+    _title: 'Twig UI Load Template Code'
+  requirements:
+    _permission: 'load twig templates from file system'
+  options:
+    no_cache: 'TRUE'

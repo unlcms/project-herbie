@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations.
+ */
+
+/**
+ * Implements hook_queue_info_alter().
+ *
+ * Changes runtime limit for the feeds_feed_refresh queues.
+ */
+function feeds_test_multiple_cron_runs_queue_info_alter(&$queues) {
+  foreach ($queues as $queue_name => $queue) {
+    if (strpos($queue_name, 'feeds_feed_refresh:') === 0) {
+      $queues[$queue_name]['cron']['time'] = \Drupal::config('feeds_test_multiple_cron_runs.settings')->get('import_queue_time');
+    }
+  }
+}

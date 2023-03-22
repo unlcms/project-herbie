@@ -1,0 +1,45 @@
+.cme-toolbar {
+  background: linear-gradient(to bottom, #f5f5f5, #eee);
+  border-bottom: solid 1px #999;
+  padding: 7px 7px 6px 7px;
+  overflow: hidden;
+}
+
+.cme-mode {
+  float: right;
+  height: 26px;
+}
+
+.cme-button {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  padding: 5px;
+  border: outset 1px #ccc;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(to bottom, #fff, #eee);
+}
+
+.cme-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+
+.cme-button:hover {
+  background: #fff;
+}
+
+.cme-button:active {
+  border-style: inset;
+  background: linear-gradient(to bottom, #eee, #fff);
+}
+
+.CodeMirror-fullscreen {
+  z-index: 99999;
+}
+
+.CodeMirror-vscrollbar {
+  margin-top: 40px;
+}

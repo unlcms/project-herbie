@@ -1,0 +1,5 @@
+entity.twig_template.add_form:
+  route_name: 'entity.twig_template.add_form'
+  title: 'Add Twig template'
+  appears_on:
+    - entity.twig_template.collection

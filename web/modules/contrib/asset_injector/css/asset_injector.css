@@ -1,0 +1,4 @@
+body.ace-editor-added .ace-editor {
+  min-height: calc(100vh - 200px);
+  border: 2px solid #ccc;
+}

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Module used for Menu Admin per Menu testing.
+ */
+
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_menu_admin_per_menu_get_permissions_alter().
+ */
+function menu_admin_per_menu_test_menu_admin_per_menu_get_permissions_alter(array &$perm_menus, AccountInterface $account) {
+  if ($account->getAccountName() === 'Menu 3 user') {
+    $perm_menus['administer menu_3 menu items'] = 'menu_3';
+  }
+}

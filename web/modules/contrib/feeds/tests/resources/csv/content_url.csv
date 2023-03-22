@@ -1,0 +1,9 @@
+"guid","title","url",
+1,"Http url",http://example.com
+2,"Https url",https://example.com
+3,"Invalid url",string
+4,"Another invalid url",string string
+5,"Internal url",internal:/node
+6,"Internal url: front page","<front>"
+7,"Internal url: node","/node"
+8,"No link",<nolink>

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: select_account_cancellation_method
+label: 'select account cancellation method'
+roles:
+  - authenticated

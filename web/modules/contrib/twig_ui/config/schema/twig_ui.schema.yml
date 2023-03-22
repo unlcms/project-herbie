@@ -1,0 +1,49 @@
+twig_ui.settings:
+  type: config_object
+  label: 'Twig UI Templates settings'
+  mapping:
+    allowed_themes:
+      type: string
+      label: 'Allowed Themes'
+    allowed_theme_list:
+      type: sequence
+      label: 'Allowed Theme List'
+      sequence:
+        type: string
+        label: 'Theme'
+    default_selected_themes:
+      type: sequence
+      label: 'Default Selected Themes'
+      sequence:
+        type: string
+        label: 'Theme'
+    codemirror_config:
+      type: string
+      label: 'CodeMirror Configuration'
+
+twig_ui.template.*:
+  type: config_entity
+  label: 'Twig templates'
+  mapping:
+    status:
+      type: boolean
+      label: 'The enabled/disabled status'
+    id:
+      type: string
+      label: 'Machine-readable name'
+    label:
+      type: label
+      label: 'Template name'
+    theme_suggestion:
+      type: string
+      label: 'Theme suggestion'
+    template_code:
+      type: string
+      label: 'Template code'
+    themes:
+      type: sequence
+      label: Themes
+      sequence:
+        -
+          type: string
+          label: Theme

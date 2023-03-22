@@ -1,0 +1,10 @@
+entity.layout_builder_style.add_form:
+  route_name: 'entity.layout_builder_style.add_form'
+  title: 'Add layout builder style'
+  appears_on:
+  - entity.layout_builder_style.collection
+entity.layout_builder_style_group.add_form:
+  route_name: 'entity.layout_builder_style_group.add_form'
+  title: 'Add layout builder style group'
+  appears_on:
+  -  entity.layout_builder_style_group.collection

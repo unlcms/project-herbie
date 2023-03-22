@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test2.field_code2
+    - node.type.test2
+  module:
+    - codemirror_editor
+    - text
+    - user
+id: node.test2.default
+targetEntityType: node
+bundle: test2
+mode: default
+content:
+  field_code2:
+    weight: 1
+    label: above
+    settings:
+      mode: text/html
+      lineWrapping: true
+      lineNumbers: true
+      foldGutter: false
+    third_party_settings: {  }
+    type: codemirror_editor
+    region: content
+hidden:
+  links: true

@@ -1,0 +1,91 @@
+# Parser configurations.
+feeds.parser.html:
+  type: feeds_ex_xml_parsers
+  label: 'HTML parser settings'
+
+feeds.parser.jmespath:
+  type: feeds_ex_parser_base
+  label: 'JSON JMESPath parser settings'
+
+feeds.parser.jmespathlines:
+  type: feeds_ex_parser_base
+  label: 'JSON Lines JMESPath parser settings'
+
+feeds.parser.jsonpath:
+  type: feeds_ex_parser_base
+  label: 'JsonPath parser settings'
+
+feeds.parser.jsonpathlines:
+  type: feeds_ex_parser_base
+  label: 'JSON Lines JSONPath parser settings'
+
+feeds.parser.querypathhtml:
+  type: feeds_ex_xml_parsers
+  label: 'QueryPath HTML parser settings'
+
+feeds.parser.querypathxml:
+  type: feeds_ex_xml_parsers
+  label: 'QueryPath XML parser settings'
+
+feeds.parser.xml:
+  type: feeds_ex_xml_parsers
+  label: 'XML parser settings'
+
+# Common parser configurations.
+feeds_ex_parser_base:
+  type: mapping
+  mapping:
+    context:
+      type: mapping
+      mapping:
+        value:
+          type: string
+    source_encoding:
+      type: sequence
+      sequence:
+        type: string
+    display_errors:
+      type: boolean
+    line_limit:
+      type: integer
+
+feeds_ex_xml_parsers:
+  type: feeds_ex_parser_base
+  mapping:
+    use_tidy:
+      type: boolean
+
+# Custom source configurations.
+feeds.custom_source.xml:
+  type: mapping
+  mapping:
+    label:
+      type: string
+    machine_name:
+      type: string
+    value:
+      type: string
+    raw:
+      type: boolean
+    inner:
+      type: boolean
+    type:
+      type: string
+
+feeds.custom_source.querypathxml:
+  type: mapping
+  mapping:
+    label:
+      type: string
+    machine_name:
+      type: string
+    value:
+      type: string
+    attribute:
+      type: string
+    raw:
+      type: boolean
+    inner:
+      type: boolean
+    type:
+      type: string

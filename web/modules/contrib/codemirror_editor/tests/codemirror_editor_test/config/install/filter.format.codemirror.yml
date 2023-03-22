@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'CodeMirror format'
+format: codemirror
+weight: 0
+filters:
+  codemirror_editor:
+    id: codemirror_editor
+    provider: codemirror_editor
+    status: true
+    weight: 0
+    settings:
+      lineWrapping: false
+      lineNumbers: true
+      foldGutter: false

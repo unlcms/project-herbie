@@ -1,0 +1,78 @@
+uuid: 91c601fd-ce86-e106-b15e-bad9262a90c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - node.type.article
+  module:
+    - feeds_ex
+    - node
+id: querypathhtml
+label: QueryPathHtml
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: querypathhtml
+parser_configuration:
+  context:
+    value: .post
+  sources:
+    h3:
+      label: h3
+      value: h3
+    p:
+      label: p
+      value: p
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: article
+custom_sources:
+  h3:
+    label: h3
+    value: h3
+    machine_name: h3
+  p:
+    label: p
+    value: p
+    machine_name: p
+mappings:
+  -
+    target: title
+    map:
+      value: h3
+    unique:
+      value: '1'
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: p
+      summary: ''
+    settings:
+      language: null
+      format: plain_text

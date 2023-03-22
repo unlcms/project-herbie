@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test2.field_code2
+    - node.type.test2
+  module:
+    - codemirror_editor
+    - text
+id: node.test2.default
+targetEntityType: node
+bundle: test2
+mode: default
+content:
+  field_code2:
+    type: codemirror_editor
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+      toolbar: true
+      lineWrapping: false
+      lineNumbers: false
+      foldGutter: false
+      autoCloseTags: true
+      styleActiveLine: false
+      mode: text/html
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

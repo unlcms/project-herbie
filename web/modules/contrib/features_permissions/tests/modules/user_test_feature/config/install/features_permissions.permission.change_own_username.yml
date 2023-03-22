@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: change_own_username
+label: 'change own username'
+roles:
+  - authenticated

@@ -1,0 +1,9 @@
+name: 'UNL Multisite'
+description: 'Admin interface to create and manage multiple site installations.'
+package: UNL
+core_version_requirement: ^8 || ^9 || ^10
+
+type: module
+
+dependencies:
+  - cas:cas

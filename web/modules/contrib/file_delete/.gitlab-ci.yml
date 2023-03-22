@@ -1,0 +1,26 @@
+include:
+  # See https://gitlab.com/drupalspoons/composer-plugin/.
+  remote: 'https://gitlab.com/drupalspoons/composer-plugin/-/raw/master/templates/.gitlab-ci.yml'
+
+  #
+  # Below, projects may override anything in the template above. Some examples.
+  #
+
+  #Use custom image instead of the default wodby/php.
+  #default:
+  #  image:
+  #    name: skpr/php-circleci:${PHP_TAG}-1.x
+
+  # Override of composer-plugin version.
+  #composer:
+  #  variables:
+  #    COMPOSER_PLUGIN_CONSTRAINT: "dev-master"
+
+  # Disable these jobs
+  eslint:
+    rules:
+      - if: $NONEXISTENT == 'true'
+  stylelint:
+    rules:
+      - if: $NONEXISTENT == 'true
+

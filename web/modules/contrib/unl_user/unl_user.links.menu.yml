@@ -1,0 +1,11 @@
+unl_user.settings:
+  title: 'UNL User'
+  description: 'Configure the UNL User module'
+  parent: user.admin_index
+  route_name: unl_user.settings
+  weight: 1
+unl_user.user_import:
+  title: 'Import a user'
+  parent: entity.user.collection
+  route_name: unl_user.user_import
+  weight: -100

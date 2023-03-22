@@ -1,0 +1,81 @@
+# Default language modes.
+clike:
+  label: C-like
+  mime_types:
+    - text/x-csrc
+    - text/x-c++src
+    - text/x-java
+    - text/x-csharp
+    - text/x-objectivec
+    - text/x-scala
+    - text/x-vertex
+    - x-shader/x-fragment
+    - text/x-squirrel
+    - text/x-ceylon
+css:
+  label: CSS
+  mime_types:
+    - text/css
+    - text/x-scss
+    - text/x-less
+htmlmixed:
+  label: HTML mixed
+  mime_types:
+    - text/html
+  dependencies:
+    - xml
+javascript:
+  label: JavaScript
+  mime_types:
+    - text/javascript
+    - application/json
+    - application/ld+json
+    - text/typescript
+    - application/typescript
+markdown:
+  label: Markdown
+  mime_types:
+    - text/x-markdown
+php:
+  label: PHP
+  mime_types:
+    - text/x-php
+    - application/x-httpd-php
+  dependencies:
+    - clike
+python:
+  label: Python
+  mime_types:
+    - text/x-python
+    - text/x-cython
+ruby:
+  label: Ruby
+  mime_types:
+    - text/x-ruby
+sql:
+  label: SQL
+  mime_types:
+    - text/x-sql
+    - text/x-mysql
+    - text/x-mariadb
+    - text/x-cassandra
+    - text/x-plsql
+    - text/x-mssql
+    - text/x-hive
+    - text/x-pgsql
+    - text/x-gql
+    - text/x-gpsql
+    - text/x-esper
+twig:
+  label: Twig
+  mime_types:
+    - text/x-twig
+xml:
+  label: XML
+  mime_types:
+    - application/xml
+    - text/html
+yaml:
+  label: YAML
+  mime_types:
+    - text/x-yaml

@@ -1,0 +1,44 @@
+# Schema for the configuration files of the feeds_log module.
+
+feeds_log.settings:
+  type: config_object
+  label: 'Feeds logging settings'
+  mapping:
+    age_limit:
+      type: integer
+      label: 'How long to keep logged imports'
+    log_dir:
+      type: string
+      label: 'Feeds log directory'
+    stampede:
+      type: mapping
+      label: 'Settings to prevent an overload of import logs'
+      mapping:
+        max_amount:
+          type: integer
+          label: 'The maximum number of allowed logs for a single feed within a certain timeframe'
+        age:
+          type: integer
+          label: 'How long should be looked back for detecting an import log overload'
+
+# Third party settings for feed types.
+feeds.feed_type.*.third_party.feeds_log:
+  type: mapping
+  label: 'Feeds Log settings'
+  mapping:
+    status:
+      type: boolean
+    operations:
+      type: sequence
+      sequence:
+        type: string
+    items:
+      type: sequence
+      sequence:
+        type: string
+    source:
+      type: boolean 
+
+views.access.feeds_log_access:
+  type: mapping
+  label: 'Feeds Log access'

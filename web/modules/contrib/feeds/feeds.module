@@ -1,0 +1,269 @@
+<?php
+
+/**
+ * @file
+ * Feeds hook implementations.
+ */
+
+use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Url;
+use Drupal\feeds\Entity\Feed;
+
+// Ludwig module integration.
+if (\Drupal::hasService('ludwig.require_once')) {
+  $ludwig_require_once = \Drupal::service('ludwig.require_once');
+  $ludwig_require_once->requireOnce('laminas/laminas-servicemanager', 'src/autoload.php', dirname(__FILE__));
+}
+
+/**
+ * Implements hook_help().
+ */
+function feeds_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.feeds':
+      return '<p>' . t('You can find the <a href=":feeds-help" target="_blank" rel="noopener">documention</a> for the Feeds module on drupal.org.', [':feeds-help' => 'https://www.drupal.org/docs/contributed-modules/feeds']) . '</p>';
+
+    case 'entity.feeds_feed_type.collection':
+      return '<p>' . t('Create one or more feed types for pulling content into Drupal.') . '</p>';
+
+    case 'entity.feeds_feed_type.mapping':
+      $doc_link = [
+        '#type' => 'link',
+        '#url' => Url::fromUri('https://www.drupal.org/docs/contributed-modules/feeds/creating-and-editing-import-feeds#mapping'),
+        '#title' => t('Mapping documentation'),
+        '#attributes' => [
+          'target' => '_new',
+        ],
+      ];
+
+      return new FormattableMarkup('<p>@help1</p><p>@help2 @help3</p><p>@help4</p>', [
+        '@help1' => t('Define which elements of a single item of a feed (= %sources_label) map to which content pieces in Drupal (= %targets_label). To avoid importing duplicates, make sure that at least one definition has an %unique_target_label. An unique target means that a value for a target can only occur once. For example, only one item with the URL %example_url can exist.', [
+          '%sources_label' => t('Sources'),
+          '%targets_label' => t('Targets'),
+          '%unique_target_label' => t('Unique target'),
+          '%example_url' => 'http://example.com/content/1',
+        ]),
+        '@help2' => t('On %read_only_label targets a value can only be set the first time.', [
+          '%read_only_label' => t('Read only'),
+        ]),
+        '@help3' => t('Blank sources can be used for tampering: see the <a href=":link" target="_blank">documentation</a>.', [
+          ':link' => 'https://www.drupal.org/docs/contributed-modules/feeds/feeds-howtos/how-to-use-blank-sources',
+        ]),
+        '@help4' => t('See the @doc_link for more information.', [
+          '@doc_link' => \Drupal::service('renderer')->renderRoot($doc_link),
+        ]),
+      ]);
+
+    case 'entity.feeds_feed.import_form':
+      return '<p>' . t("The import task will run immediately, in the web UI. Don't close the browser until the import has been completed or the import would stop.") . '</p>';
+
+    case 'entity.feeds_feed.schedule_import_form':
+      $cron_required = [
+        '#type' => 'link',
+        '#url' => Url::fromUri('https://www.drupal.org/docs/user_guide/en/security-cron.html'),
+        '#title' => t('Requires cron to be configured.'),
+        '#attributes' => [
+          'target' => '_new',
+        ],
+      ];
+      return '<p>' . t('This is useful for large imports. The import task will be put on a queue and handled by a cron task.') . ' ' . \Drupal::service('renderer')->renderRoot($cron_required) . '</p>';
+
+    case 'entity.feeds_feed.edit_form':
+      $feed = $route_match->getParameter('feeds_feed');
+      $type = $feed->getType();
+      $help = $type->getHelp();
+      return (!empty($help) ? Xss::filterAdmin($help) : '');
+
+    case 'entity.feeds_feed.add_form':
+      $type = $route_match->getParameter('feeds_feed_type');
+      $help = $type->getHelp();
+      return (!empty($help) ? Xss::filterAdmin($help) : '');
+
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function feeds_cron() {
+  $ids = \Drupal::entityQuery('feeds_feed')
+    ->accessCheck(FALSE)
+    ->condition('queued', 0)
+    ->condition('next', \Drupal::time()->getRequestTime(), '<=')
+    ->condition('next', -1, '<>')
+    ->condition('status', 1)
+    ->range(0, 100)
+    ->sort('imported')
+    ->execute();
+
+  foreach (Feed::loadMultiple($ids) as $feed) {
+    if (!$feed->isLocked()) {
+      $feed->startCronImport();
+    }
+  }
+
+  // Delete queued timestamp after some time assuming the update has failed.
+  // By default this is 12 hours, equal to the timeout set for locking a feed.
+  $timeout = \Drupal::config('feeds.settings')->get('lock_timeout') ?? 3600 * 12;
+  $ids = \Drupal::entityQuery('feeds_feed')
+    ->accessCheck(FALSE)
+    ->condition('queued', \Drupal::time()->getRequestTime() - $timeout, '<')
+    ->condition('queued', 0, '<>')
+    ->execute();
+
+  foreach (Feed::loadMultiple($ids) as $feed) {
+    $feed->setQueuedTime(0);
+    $feed->save();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function feeds_theme() {
+  return [
+    'feeds_feed_status' => [
+      'variables' => [
+        'progress_importing' => NULL,
+        'progress_clearing' => NULL,
+        'imported' => NULL,
+        'count' => NULL,
+      ],
+      'file' => 'feeds.theme.inc',
+    ],
+    'feeds_feed' => [
+      'render element' => 'elements',
+      'template' => 'feeds_feed',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function feeds_theme_suggestions_feeds_feed(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#feeds_feed'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'feeds_feed__' . $sanitized_view_mode;
+  $suggestions[] = 'feeds_feed__' . $entity->bundle();
+  $suggestions[] = 'feeds_feed__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'feeds_feed__' . $entity->id();
+  $suggestions[] = 'feeds_feed__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_file_download().
+ */
+function feeds_file_download($uri) {
+  // Get the file record based on the URI. If not in the database just return.
+  /** @var \Drupal\file\FileInterface[] $files */
+  $files = \Drupal::entityTypeManager()
+    ->getStorage('file')
+    ->loadByProperties(['uri' => $uri]);
+
+  foreach ($files as $item) {
+    // Since some database servers sometimes use a case-insensitive comparison
+    // by default, double check that the filename is an exact match.
+    if ($item->getFileUri() === $uri) {
+      $file = $item;
+      break;
+    }
+  }
+
+  if (!isset($file)) {
+    return;
+  }
+
+  // Check if this file belongs to Feeds.
+  $usage = \Drupal::service('file.usage')->listUsage($file);
+  if (!isset($usage['feeds'])) {
+    return;
+  }
+
+  $feeds = \Drupal::entityTypeManager()
+    ->getStorage('feeds_feed')
+    ->loadByProperties(['source' => $uri]);
+
+  foreach ($feeds as $feed) {
+    if ($feed->getSource() === $uri && $feed->access('import')) {
+      return file_get_content_headers($file);
+    }
+  }
+
+  return -1;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for field_ui_field_overview_form().
+ *
+ * Removes our field from the Field UI overview form.
+ *
+ * @todo implement the feeds_item field as base field instead? See
+ * https://www.drupal.org/project/feeds/issues/2799225
+ */
+function feeds_form_field_ui_field_overview_form_alter(array &$form, FormStateInterface $form_state) {
+  // @codingStandardsIgnoreStart
+  // if (in_array('feeds_item', $form['#fields'])) {
+
+  //   unset($form['#fields'][array_search('feeds_item', $form['#fields'])]);
+  //   unset($form['fields']['feeds_item']);
+
+  //   $rows_order = $form['fields']['#regions']['content']['rows_order'];
+  //   $key = array_search('feeds_item', $rows_order);
+  //   unset($form['fields']['#regions']['content']['rows_order'][$key]);
+  // }
+  // @codingStandardsIgnoreEnd
+}
+
+/**
+ * Prepares variables for feed templates.
+ *
+ * Default template: feeds_feed.html.twig.
+ *
+ * Most themes utilize their own copy of feeds_feed.html.twig. The default is
+ * located inside "modules/feeds/templates/feeds_feed.html.twig". Look in there
+ * for the full list of variables.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - feed: The feed object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser'...
+ */
+function template_preprocess_feeds_feed(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['feed'] = $feed = $variables['elements']['#feeds_feed'];
+
+  $variables['page'] = $variables['view_mode'] === 'full';
+
+  $variables['date'] = \Drupal::service('renderer')->render($variables['elements']['created']);
+  unset($variables['elements']['created']);
+  $variables['author_name'] = \Drupal::service('renderer')->render($variables['elements']['uid']);
+  unset($variables['elements']['uid']);
+
+  $variables['url'] = $feed->toUrl('canonical', [
+    'language' => $feed->language(),
+  ]);
+  $variables['label'] = $variables['elements']['title'];
+  unset($variables['elements']['title']);
+
+  // Helpful $content variable for templates.
+  $variables += ['content' => []];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Used by RDF to add attributes around the author and date submitted.
+  $variables['author_attributes'] = new Attribute();
+
+  // Add article ARIA role.
+  $variables['attributes']['role'] = 'article';
+}

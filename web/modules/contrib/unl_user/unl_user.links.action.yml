@@ -1,0 +1,6 @@
+unl_user.user_import:
+  title: 'Import user from UNL Directory'
+  route_name: unl_user.user_import
+  appears_on:
+    - entity.user.collection
+  weight: 1

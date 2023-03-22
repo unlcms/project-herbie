@@ -1,0 +1,16 @@
+{
+  "name": "unlcms/external_entities_unldirectory",
+  "description": "Reference UNL Directory data as external entities.",
+  "type": "drupal-module",
+  "require": {
+    "drupal/core": "^8 || ^9 || ^10",
+    "drupal/external_entities": "^2"
+  },
+  "authors": [
+    {
+      "name": "Eric Rasmussen (ericras)",
+      "homepage": "https://www.drupal.org/u/ericras",
+      "role": "Maintainer"
+    }
+  ]
+}

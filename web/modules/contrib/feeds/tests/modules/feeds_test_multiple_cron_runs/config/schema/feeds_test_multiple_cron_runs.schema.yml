@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Feeds test multiple cron runs module.
+feeds_test_multiple_cron_runs.settings:
+  type: config_object
+  label: 'Feeds test multiple cron'
+  mapping:
+    import_queue_time:
+      type: integer
+      label: 'The maximum queue time for feeds_feed_refresh.'

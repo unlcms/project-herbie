@@ -1,0 +1,66 @@
+services:
+  plugin.manager.feeds.fetcher:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['fetcher', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.feeds.parser:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['parser', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.feeds.processor:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['processor', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.feeds.source:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['source', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.feeds.custom_source:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['custom_source', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.feeds.target:
+    class: Drupal\feeds\Plugin\Type\FeedsPluginManager
+    arguments: ['target', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  access_check.feeds.feed_add:
+    class: Drupal\feeds\Access\FeedAddAccessCheck
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: access_check, applies_to: _feeds_feed_add_access }
+  feeds.pubsubhubbub:
+    class: Drupal\feeds\EventSubscriber\PubSubHubbub
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }
+  feeds.import_subscriber:
+    class: Drupal\feeds\EventSubscriber\LazySubscriber
+    tags:
+      - { name: event_subscriber }
+  feeds.bridge.reader:
+    class: Drupal\feeds\Component\ZfExtensionManagerSfContainer
+    calls:
+      - [setContainer, ['@service_container']]
+      - [setStandalone, ['\Laminas\Feed\Reader\StandaloneExtensionManager']]
+    arguments: ['feed.reader.']
+  feed.reader.georssentry:
+    class: Drupal\feeds\Laminas\Extension\Georss\Entry
+  feed.reader.mediarssentry:
+    class: Drupal\feeds\Laminas\Extension\Mediarss\Entry
+  cache.feeds_download:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: ['@cache_factory', 'get']
+    arguments: [feeds_download]
+
+  feeds.entity_finder:
+    class: Drupal\feeds\EntityFinder
+    arguments: ['@entity_type.manager', '@entity.repository']
+  feeds.lock:
+    class: Drupal\feeds\Lock\FeedsLockBackend
+    arguments: ['@database', '@entity_type.manager', '@config.factory', '@logger.channel.feeds']
+    tags:
+      - { name: backend_overridable }
+
+  feeds_plugin_form_factory:
+    class: Drupal\feeds\Plugin\PluginFormFactory
+    arguments: ['@class_resolver']
+
+  logger.channel.feeds:
+    parent: logger.channel_base
+    arguments: ['feeds']

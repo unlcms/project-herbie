@@ -1,0 +1,11 @@
+name: 'Feeds test alter source'
+type: module
+description: 'Adds an event subscriber to alter the parsed result.'
+package: Testing
+dependencies:
+  - feeds
+
+# Information added by Drupal.org packaging script on 2022-12-08
+version: '8.x-3.0-beta3'
+project: 'feeds'
+datestamp: 1670512826

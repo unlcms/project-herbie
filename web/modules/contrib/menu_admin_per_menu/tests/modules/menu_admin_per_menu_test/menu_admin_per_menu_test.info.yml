@@ -1,0 +1,11 @@
+name: Menu Admin per Menu Test
+type: module
+description: 'Module used for Menu Admin per Menu testing'
+package: Testing
+dependencies:
+  - menu_admin_per_menu:menu_admin_per_menu
+
+# Information added by Drupal.org packaging script on 2022-08-19
+version: '8.x-1.5'
+project: 'menu_admin_per_menu'
+datestamp: 1660918824

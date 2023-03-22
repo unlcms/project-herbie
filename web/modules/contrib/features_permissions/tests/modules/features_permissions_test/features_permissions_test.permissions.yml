@@ -1,0 +1,7 @@
+test permission 1:
+  title: 'Test Permission 1'
+  restrict access: true
+test permission 2:
+  title: 'Test Permission 2'
+test permission 3:
+  title: 'Test Permission 3'

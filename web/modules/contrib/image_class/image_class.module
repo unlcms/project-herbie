@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Main file of Image class module.
+ */
+
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ */
+function image_class_field_formatter_third_party_settings_form(FormatterInterface $plugin) {
+  $element = [];
+
+  if (in_array($plugin->getPluginId(), ['image', 'responsive_image', 'media_thumbnail', 'media_responsive_thumbnail'])) {
+    $element['class'] = [
+      '#type' => 'textfield',
+      '#title' => t('Class'),
+      '#description' => t('Enter space seperated classes which will be added to the %img element.', ['%img' => '<img>']),
+      '#default_value' => $plugin->getThirdPartySetting('image_class', 'class'),
+    ];
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ */
+function image_class_field_formatter_settings_summary_alter(&$summary, $context) {
+  /** @var \Drupal\Core\Field\FormatterInterface $formatter */
+  $formatter = $context['formatter'];
+
+  if ($class = $formatter->getThirdPartySetting('image_class', 'class')) {
+    $summary[] = t('Class: @class', ['@class' => $class]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function image_class_preprocess_field(&$variables) {
+  $element = $variables['element'];
+
+  /** @var \Drupal\Core\Entity\FieldableEntityInterface $entity */
+  $entity = $element['#object'];
+
+  $entity_display = EntityViewDisplay::collectRenderDisplay($entity, $element['#view_mode']);
+  $field_display = $entity_display->getComponent($element['#field_name']);
+
+  if (isset($field_display['third_party_settings']['image_class']['class'])) {
+    $class = explode(' ', $field_display['third_party_settings']['image_class']['class']);
+
+    foreach ($variables['items'] as $delta => &$item) {
+      // Preserve any classes that has been set already.
+      if (isset($item['content']['#item_attributes']['class']) && is_array($item['content']['#item_attributes']['class'])) {
+        $class = array_merge($item['content']['#item_attributes']['class'], $class);
+      }
+
+      $item['content']['#item_attributes']['class'] = $class;
+    }
+  }
+}

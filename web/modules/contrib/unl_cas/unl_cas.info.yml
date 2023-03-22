@@ -1,0 +1,9 @@
+name: 'UNL CAS'
+description: 'UNL customizations for use with the CAS and UNL User modules.'
+package: UNL
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+version: 8.x-2.x
+dependencies:
+  - cas:cas
+  - unl:unl_user

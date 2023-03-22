@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * A Feeds framework used to create extensible parsers.
+ */
+
+// Ludwig module integration.
+if (\Drupal::hasService('ludwig.require_once')) {
+  $ludwig_require_once = \Drupal::service('ludwig.require_once');
+  $ludwig_require_once->requireOnce('mtdowling/jmespath.php', 'src/JmesPath.php', dirname(__FILE__));
+  $ludwig_require_once->requireOnce('arthurkushman/query-path', 'src/qp_functions.php', dirname(__FILE__));
+}
+
+/**
+ * Implements hook_theme().
+ */
+function feeds_ex_theme() {
+  return [
+    'feeds_ex_configuration_table' => [
+      'file' => 'feeds_ex.theme.inc',
+      'render element' => 'element',
+    ],
+  ];
+}

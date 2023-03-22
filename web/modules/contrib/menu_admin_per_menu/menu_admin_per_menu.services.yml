@@ -1,0 +1,7 @@
+services:
+  menu_admin_per_menu.route_subscriber:
+    class: Drupal\menu_admin_per_menu\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  menu_admin_per_menu.allowed_menus:
+    class: Drupal\menu_admin_per_menu\Access\MenuAdminPerMenuAccess

@@ -1,0 +1,12 @@
+name: The CodeMirror Editor
+type: module
+description: This module integrates the CodeMirror editor library into Drupal.
+configure: codemirror_editor.settings
+core_version_requirement: ^9.3 || ^10
+dependencies:
+  - drupal:editor
+
+# Information added by Drupal.org packaging script on 2023-03-04
+version: '8.x-1.9'
+project: 'codemirror_editor'
+datestamp: 1677927064

@@ -1,0 +1,3 @@
+feeds_log.access:
+  title: 'Access the Feeds logs'
+  description: 'Allows viewing of <em>all</em> logs for Feeds the user has view access for.'

@@ -1,0 +1,51 @@
+<?php
+
+use Drupal\user\UserInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ */
+function unl_cas_install() {
+  \Drupal::configFactory()->getEditable('user.settings')
+    ->set('register', UserInterface::REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_cas_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Disable and hide things that shouldn't be altered when using the CAS module.
+  $form['account']['mail']['#disabled'] = TRUE;
+  $form['account']['cas_enabled']['#disabled'] = TRUE;
+  $form['account']['cas_username']['#disabled'] = TRUE;
+  $form['account']['name']['#disabled'] = TRUE;
+
+  $form['account']['pass']['#access'] = FALSE;
+  $form['account']['status']['#access'] = FALSE;
+
+  // We want anyone who can access this form to be able to edit a user's roles.
+  // We do this here because we don't want Site Admin to have the full
+  // 'Administer roles and permissions' permission.
+  $form['account']['roles']['#access'] = TRUE;
+
+  if (!User::load(\Drupal::currentUser()->id())->hasRole('administrator')) {
+    // If user isn't an Administrator, they can't assign 'coder' role.
+    $form['account']['roles']['coder']['#disabled'] = TRUE;
+
+    // Limit 'Cancel account' ability to only Administrators.
+    $form['actions']['delete']['#access'] = FALSE;
+  }
+
+  // Always disable the Administrator role. It should be managed via Drush.
+  $form['account']['roles']['administrator']['#disabled'] = TRUE;
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function unl_cas_menu_links_discovered_alter(&$links) {
+  unset($links['admin_toolbar_tools.extra_links:user.admin_create']);
+  unset($links['cas.bulk_add_users']);
+}

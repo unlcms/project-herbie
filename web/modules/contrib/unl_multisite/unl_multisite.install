@@ -1,0 +1,80 @@
+<?php
+
+function unl_multisite_schema() {
+  $schema = array();
+  $schema['unl_sites'] = array(
+    'description' => 'Multisite installations.',
+    'fields' => array(
+      'site_id' => array(
+        'type'     => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'site_path' => array(
+        'type'     => 'varchar',
+        'length'   => 255,
+        'not null' => TRUE,
+        'default'  => '',
+      ),
+      'uri' => array(
+        'type'     => 'varchar',
+        'length'   => 255,
+        'not null' => TRUE,
+        'default'  => '',
+      ),
+      'installed' => array(
+        'type'     => 'int',
+        'not null' => TRUE,
+        'default'  => 0,
+      ),
+    ),
+    'primary key' => array('site_id'),
+    'unique keys' => array(
+      'site_path' => array('site_path'),
+      'uri' => array('uri'),
+    ),
+  );
+
+  $schema['unl_sites_aliases'] = array(
+    'description' => 'Table of URL aliases for multisite sites.',
+    'fields' => array(
+      'site_alias_id' => array(
+        'type'     => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        ),
+      'site_id' => array(
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'base_uri' => array(
+        'type'     => 'varchar',
+        'length'   => 255,
+        'not null' => TRUE,
+      ),
+      'path' => array(
+        'type'     => 'varchar',
+        'length'   => 255,
+        'not null' => TRUE,
+      ),
+      'installed' => array(
+        'type'     => 'int',
+        'not null' => TRUE,
+        'default'  => 0,
+      ),
+    ),
+    'primary key' => array('site_alias_id'),
+    'unique keys' => array(
+      'alias_uri' => array('base_uri', 'path'),
+    ),
+    'foreign keys' => array(
+      'aliased_site' => array(
+        'table' => 'unl_sites',
+        'columns' => array('site_id' => 'site_id'),
+      ),
+    ),
+  );
+
+  return $schema;
+}

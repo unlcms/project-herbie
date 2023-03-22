@@ -1,0 +1,14 @@
+name: 'Feeds Log'
+type: module
+description: 'Detailed logging and reporting for Feeds imports.'
+package: Feeds
+core_version_requirement: ^9.3 || ^10
+configure: feeds_log.settings
+dependencies:
+  - 'drupal:views'
+  - 'feeds:feeds'
+
+# Information added by Drupal.org packaging script on 2022-12-08
+version: '8.x-3.0-beta3'
+project: 'feeds'
+datestamp: 1670512826

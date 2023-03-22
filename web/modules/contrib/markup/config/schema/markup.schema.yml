@@ -1,0 +1,9 @@
+# Schema for the configuration files of the Markup module.
+
+field.field_settings.markup:
+  type: mapping
+  label: 'Field Settings'
+  mapping:
+    markup:
+      label: 'Markup'
+      type: text_format

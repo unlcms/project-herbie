@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains media_file_delete installation functions.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Create configuration object for Media File Delete.
+ */
+function media_file_delete_update_8101(): void {
+  \Drupal::configFactory()->getEditable('media_file_delete.settings')
+    ->set('delete_file_default', FALSE)
+    ->set('disable_delete_control', FALSE)
+    ->save(TRUE);
+}

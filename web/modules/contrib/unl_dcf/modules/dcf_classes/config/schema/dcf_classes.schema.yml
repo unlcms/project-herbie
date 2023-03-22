@@ -1,0 +1,25 @@
+dcf_classes.classes:
+  type: config_object
+  label: 'DCF classes'
+  mapping:
+    heading:
+      type: sequence
+      label: 'Heading classes'
+      sequence:
+        type: string
+    section:
+      type: sequence
+      label: 'Section classes'
+      sequence:
+        type: string
+    section_packages:
+      type: sequence
+      label: 'Section packages'
+      sequence:
+        type: string
+        label: 'Section classes'
+    column:
+      type: sequence
+      label: 'Column classes'
+      sequence:
+        type: string

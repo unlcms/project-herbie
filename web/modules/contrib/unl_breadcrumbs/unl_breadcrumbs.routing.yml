@@ -1,0 +1,7 @@
+unl_breadcrumbs.config:
+  path: /admin/config/user-interface/unl-breadcrumbs
+  defaults:
+    _title: 'UNL Breadcrumbs'
+    _form: '\Drupal\unl_breadcrumbs\Form\SettingsForm'
+  requirements:
+    _permission: 'administer unl breadcrumbs'

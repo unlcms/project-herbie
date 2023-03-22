@@ -1,0 +1,20 @@
+{
+    "name": "drupal/feeds_ex",
+    "type": "drupal-module",
+    "description": "A generic Feeds parser used to create extensible parsers.",
+    "keywords": ["feeds", "parser"],
+    "homepage": "http://drupal.org/project/feeds_ex",
+    "license": "GPL-2.0+",
+    "support": {
+      "issues": "http://drupal.org/project/issues/feeds_ex",
+      "source": "http://cgit.drupalcode.org/feeds_ex"
+    },
+    "require": {
+      "mtdowling/jmespath.php": "^2.0",
+      "softcreatr/jsonpath": "^0.5 || ^0.7 || ^0.8",
+      "arthurkushman/query-path": "^3.0"
+    },
+    "require-dev": {
+      "drupal/feeds": "3.x-dev"
+    }
+}

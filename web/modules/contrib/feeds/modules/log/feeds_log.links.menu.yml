@@ -1,0 +1,5 @@
+feeds_log.settings:
+  title: 'Feeds Log settings'
+  parent: system.admin_config_content
+  description: 'Configure how many logged imports to keep and where to store logged files.'
+  route_name: feeds_log.settings

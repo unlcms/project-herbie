@@ -1,0 +1,8 @@
+.twig-ui-template-list-form .filters-wrapper .form-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+.twig-ui-template-list-form .filters-wrapper .form-submit {
+  margin-left: 0;
+  margin-top: .75em;
+}

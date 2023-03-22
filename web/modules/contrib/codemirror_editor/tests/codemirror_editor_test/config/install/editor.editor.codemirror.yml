@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.codemirror
+  module:
+    - codemirror_editor
+format: codemirror
+editor: codemirror_editor
+settings:
+  toolbar: true
+  lineWrapping: false
+  lineNumbers: false
+  foldGutter: false
+  autoCloseTags: true
+  styleActiveLine: false
+image_upload: {  }

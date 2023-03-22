@@ -1,0 +1,9 @@
+media_file_delete.settings:
+  type: config_object
+  mapping:
+    delete_file_default:
+      type: boolean
+      label: 'Delete files from file system when deleting media entities'
+    disable_delete_control:
+      type: boolean
+      label: 'Disable user control of file deletion'

@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, and update hooks of the module.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_install().
+ */
+function feeds_log_install() {
+  // Enable logs for all feeds.
+  \Drupal::database()->update('feeds_feed')
+    ->fields([
+      'feeds_log' => TRUE,
+    ])
+    ->execute();
+}
+
+/**
+ * Implements hook_schema().
+ */
+function feeds_log_schema() {
+  $schema = [];
+
+  $schema['feeds_import_log_entry'] = [
+    'description' => 'Table that contains logs of operations on entities that occurred during a Feeds import.',
+    'fields' => [
+      'lid' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique log event ID.',
+      ],
+      'import_id' => [
+        'description' => 'The ID of the feeds_import_log entity.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'feed_id' => [
+        'description' => 'The ID of the feed.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'entity_id' => [
+        'description' => 'The ID of the entity that was involved. Can be empty if the entity failed to import.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'entity_type_id' => [
+        'description' => 'The type of the entity that was involved.',
+        'type' => 'varchar_ascii',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'entity_label' => [
+        'description' => 'An alternative for identifying the entity, because the entity may not exist yet or it may have been deleted.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'item' => [
+        'description' => 'Uri of the logged item, if available.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'item_id' => [
+        'description' => 'ID of the item.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'operation' => [
+        'description' => 'Type of the operation, for example "created", "updated", or "cleaned".',
+        'type' => 'varchar_ascii',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'message' => [
+        'description' => 'Text of log message.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+      ],
+      'variables' => [
+        'description' => 'Serialized array of variables that match the message string and that is passed into the t() function.',
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+      ],
+      'timestamp' => [
+        'description' => 'Unix timestamp of when the event occurred.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['lid'],
+    'indexes' => [
+      'import_id' => ['import_id'],
+      'feed_id' => ['feed_id'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Adds the column 'item_id' to 'feeds_import_log_entry'.
+ */
+function feeds_log_update_8001() {
+  $schema = Database::getConnection()->schema();
+  if (!$schema->fieldExists('feeds_import_log_entry', 'item_id')) {
+    $schema->addField('feeds_import_log_entry', 'item_id', [
+      'description' => 'ID of the item.',
+      'type' => 'varchar',
+      'length' => 255,
+      'default' => '',
+    ]);
+  }
+}

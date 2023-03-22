@@ -1,0 +1,386 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for entity_usage module.
+ */
+
+use Drupal\entity_usage\Controller\ListUsageController;
+
+/**
+ * Implements hook_schema().
+ */
+function entity_usage_schema() {
+  $schema['entity_usage'] = [
+    'description' => 'Track entities that reference other entities.',
+    'fields' => [
+      'target_id' => [
+        'description' => 'The target entity ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'target_id_string' => [
+        'description' => 'The target ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'target_type' => [
+        'description' => 'The target entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_id' => [
+        'description' => 'The source entity ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'source_id_string' => [
+        'description' => 'The source ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'source_type' => [
+        'description' => 'The source entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_langcode' => [
+        'description' => 'The source entity language code.',
+        'type' => 'varchar_ascii',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_vid' => [
+        'description' => 'The source entity revision ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'method' => [
+        'description' => 'The method used to track the target, generally the plugin ID.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'field_name' => [
+        'description' => 'The field in the source entity containing the target entity.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'count' => [
+        'description' => 'The number of times the target entity is referenced in this case.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'target_id',
+      'target_id_string',
+      'target_type',
+      'source_id',
+      'source_type',
+      'source_langcode',
+      'source_vid',
+      'method',
+      'field_name',
+    ],
+    'indexes' => [
+      'target_entity' => ['target_type', 'target_id'],
+      'target_entity_string' => ['target_type', 'target_id_string'],
+      'source_entity' => ['source_type', 'source_id'],
+      'source_entity_string' => ['source_type', 'source_id_string'],
+    ],
+  ];
+  return $schema;
+}
+
+/**
+ * Include "method" also as primary key for the {entity_usage} table.
+ */
+function entity_usage_update_8001(&$sandbox) {
+  $database = \Drupal::database();
+  $database->schema()->dropPrimaryKey('entity_usage');
+  $new_primary_keys = ['t_id', 't_type', 're_id', 're_type', 'method'];
+  $database->schema()->addPrimaryKey('entity_usage', $new_primary_keys);
+}
+
+/**
+ * Recreate the entity usage table with the new schema.
+ */
+function entity_usage_update_8201(&$sandbox) {
+  $schema = \Drupal::database()->schema();
+  $schema->dropTable('entity_usage');
+  $new_table_schema = entity_usage_schema();
+  $schema->createTable('entity_usage', $new_table_schema['entity_usage']);
+}
+
+/**
+ * Trigger entity usage statistics in the new schema.
+ */
+function entity_usage_update_8202(&$sandbox) {
+  // This flag is here only to ensure that sites that have already executed
+  // update 8202 will not run entity_usage_post_update_regenerate_2x() again.
+  \Drupal::state()->set('entity_usage_2x_regenerate', TRUE);
+}
+
+/**
+ * Include "target_id_string" also as primary key in schema.
+ */
+function entity_usage_update_8203(&$sandbox) {
+  // Left empty on purpose.
+}
+
+/**
+ * Add source entity index to the entity_usage table.
+ */
+function entity_usage_update_8204(&$sandbox) {
+  // This is deliberately duplicated, instead of calling hook_schema() to
+  // obtain it.
+  $spec = [
+    'description' => 'Track entities that reference other entities.',
+    'fields' => [
+      'target_id' => [
+        'description' => 'The target entity ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'target_id_string' => [
+        'description' => 'The target ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'target_type' => [
+        'description' => 'The target entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_id' => [
+        'description' => 'The source entity ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'source_id_string' => [
+        'description' => 'The source ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => FALSE,
+      ],
+      'source_type' => [
+        'description' => 'The source entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_langcode' => [
+        'description' => 'The source entity language code.',
+        'type' => 'varchar_ascii',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'source_vid' => [
+        'description' => 'The source entity revision ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'method' => [
+        'description' => 'The method used to track the target, generally the plugin ID.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'field_name' => [
+        'description' => 'The field in the source entity containing the target entity.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'count' => [
+        'description' => 'The number of times the target entity is referenced in this case.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'target_id',
+      'target_id_string',
+      'target_type',
+      'source_id',
+      'source_type',
+      'source_langcode',
+      'source_vid',
+      'method',
+      'field_name',
+    ],
+    'indexes' => [
+      'target_entity' => ['target_type', 'target_id'],
+      'target_entity_string' => ['target_type', 'target_id_string'],
+      'source_entity' => ['source_type', 'source_id'],
+      'source_entity_string' => ['source_type', 'source_id_string'],
+    ],
+  ];
+  $schema = \Drupal::database()->schema();
+  if (!$schema->indexExists('entity_usage', 'source_entity')) {
+    $schema->addIndex(
+      'entity_usage',
+      'source_entity',
+      ['source_type','source_id'],
+      $spec
+    );
+  }
+  if (!$schema->indexExists('entity_usage', 'source_entity_string')) {
+    $schema->addIndex(
+      'entity_usage',
+      'source_entity_string',
+      ['source_type','source_id_string'],
+      $spec
+    );
+  }
+}
+
+/**
+ * Initialize the new "usage_controller_items_per_page" config value to 25.
+ */
+function entity_usage_update_8205(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('entity_usage.settings');
+  $items_per_page = $config->get('usage_controller_items_per_page');
+  if (empty($items_per_page)) {
+    $config->set('usage_controller_items_per_page', ListUsageController::ITEMS_PER_PAGE_DEFAULT)->save(TRUE);
+  }
+}
+
+/**
+ * Enlarge 'target_id_string' and 'source_id_string' columns to 255 (#3335488).
+ */
+function entity_usage_update_8206(): void {
+  // In early alpha versions of the module, the "target_id_string" column was
+  // nullable. We will update the column definition to NOT NULL, so make sure no
+  // NULL values are present.
+  $database = \Drupal::database();
+  $database->update('entity_usage')
+    ->fields(['target_id_string' => ''])
+    ->condition('target_id_string', NULL, 'IS NULL')
+    ->execute();
+
+  // Drop all indices involving columns we want to change.
+  $schema = $database->schema();
+  $schema->dropPrimaryKey('entity_usage');
+  $schema->dropIndex('entity_usage', 'target_entity_string');
+  $schema->dropIndex('entity_usage', 'source_entity_string');
+
+  $specs = [
+    'target_id_string' => [
+      'description' => 'The target ID, when the entity uses string IDs.',
+      'type' => 'varchar_ascii',
+      'length' => 255,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+    'source_id_string' => [
+      'description' => 'The source ID, when the entity uses string IDs.',
+      'type' => 'varchar_ascii',
+      'length' => 255,
+      'not null' => FALSE,
+    ],
+  ];
+
+  // Change columns max length.
+  foreach ($specs as $field => $spec) {
+    $schema->changeField('entity_usage', $field, $field, $spec);
+  }
+
+  // Add back the removed primary key index.
+  $schema->addPrimaryKey('entity_usage', [
+    'target_id',
+    'target_id_string',
+    'target_type',
+    'source_id',
+    'source_type',
+    'source_langcode',
+    'source_vid',
+    'method',
+    'field_name',
+  ]);
+
+  // Add back the removed indexes.
+  $schema->addIndex('entity_usage', 'target_entity_string', [
+    'target_type',
+    'target_id_string',
+  ], [
+    'fields' => [
+      'target_id_string' => [
+        'description' => 'The target ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'target_type' => [
+        'description' => 'The target entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'indexes' => [
+      'target_entity_string' => ['target_type', 'target_id_string'],
+    ],
+  ]);
+  $schema->addIndex('entity_usage', 'source_entity_string', [
+    'source_type',
+    'source_id_string',
+  ], [
+    'fields' => [
+      'source_id_string' => [
+        'description' => 'The source ID, when the entity uses string IDs.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'source_type' => [
+        'description' => 'The source entity type.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'indexes' => [
+      'source_entity_string' => ['source_type', 'source_id_string'],
+    ],
+  ]);
+}

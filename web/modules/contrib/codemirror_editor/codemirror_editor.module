@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for CodeMirror editor module.
+ */
+
+use Drupal\codemirror_editor\Element\CodeMirror;
+
+/**
+ * Implements hook_help().
+ */
+function codemirror_editor_help($route_name) {
+  if ($route_name == 'help.page.codemirror_editor') {
+    $output = '';
+    $output .= '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('This module integrates the CodeMirror editor library into Drupal.') . '</p>';
+    $output .= '<p>' . t('Visit the <a href=":project_link">The CodeMirror editor project pages</a> on Drupal.org for more information.', [':project_link' => 'https://www.drupal.org/project/codemirror_editor']) . '</p>';
+    return $output;
+  }
+}
+
+/**
+ * Implements hook_library_info_build().
+ */
+function codemirror_editor_library_info_build() {
+  $library_builder = Drupal::service('codemirror_editor.library_builder');
+  return [
+    'codemirror' => $library_builder->build(),
+  ];
+}
+
+/**
+ * Implements hook_js_settings_build().
+ */
+function codemirror_editor_js_settings_build(array &$settings) {
+  if (isset($settings['codeMirrorEditor'])) {
+    $buttons_path = \Drupal::service('extension.list.module')->getPath('codemirror_editor') . '/images/buttons.svg';
+    $settings['codeMirrorEditor']['buttonsBaseUrl'] = \Drupal::service('file_url_generator')->generateString($buttons_path);
+    $config = Drupal::config('codemirror_editor.settings');
+    $settings['codeMirrorEditor']['theme'] = $config->get('theme');
+  }
+  if (isset($settings['codeMirrorFormatter'])) {
+    $config = Drupal::config('codemirror_editor.settings');
+    $settings['codeMirrorFormatter']['theme'] = $config->get('theme');
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function codemirror_editor_element_info_alter(array &$info) {
+  $info['textarea']['#pre_render'][] = [CodeMirror::class, 'preRenderCodeMirror'];
+}
+
+/**
+ * Loads CodeMirror language modes.
+ *
+ * @return array
+ *   The definitions of CodeMirror language modes.
+ *
+ * @deprecated Use
+ *   Drupal\codemirror_editor\CodemirrorModeManagerInterface::getDefinitions()
+ *   instead.
+ */
+function codemirror_editor_load_modes() {
+  @trigger_error('codemirror_editor_load_modes() is deprecated. Use Drupal\codemirror_editor\CodemirrorModeManagerInterface::getDefinitions() instead', E_USER_DEPRECATED);
+  return Drupal::service('plugin.manager.codemirror_mode')->getDefinitions();
+}
+
+/**
+ * Normalizes language mode.
+ *
+ * @param string $mode
+ *   Language mode to normalize.
+ *
+ * @return string
+ *   Normalized language mode.
+ *
+ * @deprecated Use
+ *   Drupal\codemirror_editor\CodemirrorModeManagerInterface::normalizeMode()
+ *   instead.
+ */
+function codemirror_editor_normalize_mode($mode) {
+  @trigger_error('codemirror_editor_load_modes() is deprecated. Use Drupal\codemirror_editor\CodemirrorModeManagerInterface::normalizeMode() instead', E_USER_DEPRECATED);
+  return Drupal::service('plugin.manager.codemirror_mode')->normalizeMode($mode);
+}

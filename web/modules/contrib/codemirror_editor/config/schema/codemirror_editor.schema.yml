@@ -1,0 +1,99 @@
+codemirror_editor.settings:
+  type: config_object
+  label: CodeMirror settings
+  mapping:
+    cdn:
+      type: boolean
+      label: Load CodeMirror library from CDN
+    minified:
+      type: boolean
+      label: Use minified version of CodeMirror library
+    theme:
+      type: string
+      label: CodeMirror theme
+    language_modes:
+      type: sequence
+      label: Installed language modes
+      sequence:
+        type: string
+        label: Plugin ID
+
+editor.settings.codemirror_editor:
+  type: codemirror_plugin_settings
+  mapping:
+    mode:
+      type: string
+      label: Language mode
+
+field.widget.settings.codemirror_editor:
+  type: codemirror_plugin_settings
+  mapping:
+    mode:
+      type: string
+      label: Language mode
+    rows:
+      type: integer
+      label: Rows
+    placeholder:
+      type: string
+      label: Placeholder
+
+field.formatter.settings.codemirror_editor:
+  type: mapping
+  label: CodeMirror formatter settings
+  mapping:
+    mode:
+      type: string
+      label: Language mode
+    lineWrapping:
+      type: boolean
+      label: Line wrapping
+    lineNumbers:
+      type: boolean
+      label: Line numbers
+    foldGutter:
+      type: boolean
+      label: Fold gutter
+
+filter_settings.codemirror_editor:
+  type: mapping
+  label: CodeMirror filter settings
+  mapping:
+    lineWrapping:
+      type: boolean
+      label: Line wrapping
+    lineNumbers:
+      type: boolean
+      label: Line numbers
+    foldGutter:
+      type: boolean
+      label: Fold gutter
+
+codemirror_plugin_settings:
+  type: mapping
+  label: CodeMirror plugin settings
+  mapping:
+    toolbar:
+      type: boolean
+      label: Load toolbar
+    buttons:
+      type: sequence
+      label: Toolbar buttons
+      sequence:
+        type: string
+        label: Button
+    lineWrapping:
+      type: boolean
+      label: Line wrapping
+    lineNumbers:
+      type: boolean
+      label: Line numbers
+    foldGutter:
+      type: boolean
+      label: Fold gutter
+    autoCloseTags:
+      type: boolean
+      label: Auto close tags
+    styleActiveLine:
+      type: boolean
+      label: Style active line

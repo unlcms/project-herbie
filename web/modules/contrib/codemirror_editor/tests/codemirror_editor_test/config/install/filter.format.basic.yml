@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - codemirror_editor
+name: Basic
+format: basic
+weight: 0
+filters: {}

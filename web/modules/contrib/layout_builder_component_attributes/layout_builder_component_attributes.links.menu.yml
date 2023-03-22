@@ -1,0 +1,5 @@
+layout_builder_component_attributes.config:
+  title: Layout Builder Component Attributes
+  route_name: layout_builder_component_attributes.settings
+  parent: system.admin_config_content
+  description: 'Administer Layout Builder Component Attributes'

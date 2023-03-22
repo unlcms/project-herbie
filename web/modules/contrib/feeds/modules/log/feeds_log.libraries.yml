@@ -1,0 +1,3 @@
+feed_type_settings:
+  js:
+    js/feed_type_settings.js: {}

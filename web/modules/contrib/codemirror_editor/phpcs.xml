@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="codemirror_editor">
+  <description>Default PHP CodeSniffer configuration for CodeMirror Editor module.</description>
+  <arg name="extensions" value="php, yml, module, install"/>
+  <arg name="colors"/>
+  <rule ref="Drupal">
+    <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
+    <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
+    <exclude name="Drupal.Semantics.FunctionTriggerError.TriggerErrorTextLayoutStrict"/>
+    <exclude name="Drupal.Semantics.FunctionTriggerError.TriggerErrorTextLayoutStrict"/>
+    <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
+  </rule>
+  <rule ref="DrupalPractice"/>
+</ruleset>

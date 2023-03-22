@@ -1,0 +1,14 @@
+name: 'Block Form Alter'
+description: 'Provides block form alter functions'
+package: Custom
+
+type: module
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2022-07-14
+version: '2.0.0'
+project: 'block_form_alter'
+datestamp: 1657764159

@@ -1,0 +1,16 @@
+features_permissions.permission.*:
+  type: config_entity
+  label: 'Permission'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: string
+      label: 'Label'
+    roles:
+      type: sequence
+      label: 'Roles'
+      sequence:
+        type: string
+        label: 'Role'

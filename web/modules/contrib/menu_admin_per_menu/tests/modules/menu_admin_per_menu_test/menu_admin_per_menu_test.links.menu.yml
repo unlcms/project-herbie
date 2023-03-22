@@ -1,0 +1,12 @@
+menu_1.link:
+  title: 'Menu 1 link'
+  route_name: <front>
+  menu_name: menu_1
+menu_2.link:
+  title: 'Menu 2 link'
+  route_name: <front>
+  menu_name: menu_2
+menu_3.link:
+  title: 'Menu 3 link'
+  route_name: <front>
+  menu_name: menu_3

@@ -1,0 +1,52 @@
+include:
+  # This remote project centralize our CI "golden path" https://docs.gitlab.com/ee/ci/yaml/#includefile
+  remote: 'https://gitlab.com/drupalspoons/composer-plugin/-/raw/master/templates/.gitlab-ci.yml'
+
+variables:
+  PHP_TAG: "8.1"
+  # Disable default phpunit job in favor of the d9/10 variants below.
+  DCI_SKIP_PHPUNIT: 1
+
+# Set allow_failure to false so that the test fails for coding standards faults.
+phpcs:
+  allow_failure: false
+
+composer:
+  parallel:
+    matrix:
+      - DRUPAL_CORE_CONSTRAINT: [ "^9" ]
+      - DRUPAL_CORE_CONSTRAINT: [ "^10" ]
+  script:
+    # Symlinks the project into Drupal codebase, builds composer.spoons.json, and `composer install`.
+    # Override with you own script if your needs are vastly unusual.
+    - echo -e "\e[0Ksection_start:`date +%s`:my_2_section[collapsed=true]\r\e[0KInstall Dependencies"
+    - bash <(curl -s https://gitlab.com/drupalspoons/composer-plugin/-/raw/master/bin/setup)
+    - echo -e "\e[0Ksection_end:`date +%s`:my_2_section\r\e[0K"
+    - curl -L https://github.com/select2/select2/archive/refs/tags/4.0.13.tar.gz -o select2.tar.gz
+    - mkdir -p web/libraries
+    - tar xzf select2.tar.gz
+    - mv select2-4.0.13 web/libraries/select2
+    # Download facets patch and apply it.
+    - cd web/modules/contrib/facets
+    - curl -L https://www.drupal.org/files/issues/2022-11-17/3310536-2.x-6.patch -o facets.patch
+    - patch -p1 < facets.patch
+
+.phpunit-local:
+  variables:
+    DCI_SKIP_PHPUNIT: 0
+    SELENIUM_CHROME_TAG: "105.0"
+
+phpunit-d9:
+  dependencies:
+    # This syntax comes from https://gitlab.com/gitlab-org/gitlab/-/merge_requests/82734/diffs
+    - "composer: [^9]"
+  extends:
+    - .phpunit-base
+    - .phpunit-local
+
+phpunit-d10:
+  dependencies:
+    - "composer: [^10]"
+  extends:
+    - .phpunit-base
+    - .phpunit-local
