@@ -1,0 +1,21 @@
+uuid: 349bdfaf-113b-423c-9338-793cc2d6ef7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.b_social_media_links_linkedin
+field_name: b_social_media_links_linkedin
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

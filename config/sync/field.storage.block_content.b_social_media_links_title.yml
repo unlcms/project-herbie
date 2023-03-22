@@ -1,0 +1,21 @@
+uuid: d90363b5-72b0-4ac2-9dcf-69839e30ec81
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.b_social_media_links_title
+field_name: b_social_media_links_title
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

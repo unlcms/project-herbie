@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: social_media_links
+label: 'Social media links'
+revision: 0
+description: 'Links to your social media outposts.'

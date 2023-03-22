@@ -1,0 +1,92 @@
+uuid: 6377c203-1503-499d-8c41-52a18745c5b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.field.block_content.social_media_links.b_social_media_links_facebook
+    - field.field.block_content.social_media_links.b_social_media_links_instagram
+    - field.field.block_content.social_media_links.b_social_media_links_linkedin
+    - field.field.block_content.social_media_links.b_social_media_links_pinterest
+    - field.field.block_content.social_media_links.b_social_media_links_snapchat
+    - field.field.block_content.social_media_links.b_social_media_links_title
+    - field.field.block_content.social_media_links.b_social_media_links_twitter
+    - field.field.block_content.social_media_links.b_social_media_links_youtube
+id: block_content.social_media_links.default
+targetEntityType: block_content
+bundle: social_media_links
+mode: default
+content:
+  b_social_media_links_facebook:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_instagram:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_linkedin:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_pinterest:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_snapchat:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_title:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_twitter:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_social_media_links_youtube:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

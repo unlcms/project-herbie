@@ -1,0 +1,19 @@
+uuid: 9d3b3d3e-1364-468a-be14-0c77815a2781
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.b_social_media_links_linkedin
+id: block_content.social_media_links.b_social_media_links_linkedin
+field_name: b_social_media_links_linkedin
+entity_type: block_content
+bundle: social_media_links
+label: Linkedin
+description: 'Enter everything that comes after https://www.linkedin.com/'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
