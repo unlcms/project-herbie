@@ -1,0 +1,14 @@
+name: Field CSS
+type: module
+description: Provides a field that allows for the input of CSS.
+package: Field types
+core_version_requirement: ^8.8.4 || ^9 || ^10
+dependencies:
+  - drupal:field
+test_dependencies:
+  - codemirror_editor:codemirror_editor
+
+# Information added by Drupal.org packaging script on 2020-07-01
+version: '2.0.0-rc4'
+project: 'field_css'
+datestamp: 1593630928
