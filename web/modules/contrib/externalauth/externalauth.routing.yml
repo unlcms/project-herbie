@@ -1,7 +1,0 @@
-externalauth.authmap_delete_form:
-  path: '/admin/people/authmap/{provider}/{uid}/delete'
-  defaults:
-    _form: '\Drupal\externalauth\Form\AuthmapDeleteForm'
-    _title: 'Delete authmap entry'
-  requirements:
-    _permission: 'delete authmap'

@@ -1,5 +1,0 @@
-services:
-  unl_cas.route_subscriber:
-    class: Drupal\unl_cas\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }

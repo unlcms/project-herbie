@@ -1,5 +1,0 @@
-feeds_import_log.delete_action:
-  route_name: entity.feeds_import_log.delete_form
-  title: Delete
-  appears_on:
-    - entity.feeds_import_log.canonical

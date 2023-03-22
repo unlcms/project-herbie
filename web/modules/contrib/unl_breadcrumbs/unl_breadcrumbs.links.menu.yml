@@ -1,5 +1,0 @@
-unl_breadcrumbs.settings:
-  title: UNL Breadcrumbs
-  description: 'Configure UNL Breadcrumbs settings'
-  route_name: unl_breadcrumbs.config
-  parent: system.admin_config_ui

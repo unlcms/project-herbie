@@ -1,4 +1,0 @@
-age_limit: 604800
-stampede:
-  max_amount: 100
-  age: 1800

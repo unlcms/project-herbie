@@ -1,8 +1,0 @@
-{
-    "require": {
-        "neilime/php-css-lint": {
-            "version": "v3.1.3",
-            "url": "https://github.com/neilime/php-css-lint/archive/v3.1.3.zip"
-        }
-    }
-}

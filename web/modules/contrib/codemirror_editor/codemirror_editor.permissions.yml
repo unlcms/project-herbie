@@ -1,3 +1,0 @@
-administer codemirror editor:
-  title: 'Administer CodeMirror configuration'
-  restrict access: true

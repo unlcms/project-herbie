@@ -1,4 +1,0 @@
-services:
-  linkit_media_library.opener.editor:
-    class: Drupal\linkit_media_library\LinkitMediaLibraryEditorOpener
-    arguments: ['@entity_type.manager']

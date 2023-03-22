@@ -1,5 +1,0 @@
-services:
-  feeds_test_events.subscriber:
-    class: Drupal\feeds_test_events\EventSubscriber\FeedsSubscriber
-    tags:
-      - {name: event_subscriber}

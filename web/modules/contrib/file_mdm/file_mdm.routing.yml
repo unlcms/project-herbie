@@ -1,9 +1,0 @@
-# file_mdm module routes
-
-file_mdm.settings:
-  path: '/admin/config/system/file_mdm'
-  defaults:
-    _form: '\Drupal\file_mdm\Form\SettingsForm'
-    _title: 'File metadata manager'
-  requirements:
-    _permission: 'administer site configuration'

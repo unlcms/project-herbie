@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: cancel_account
-label: 'cancel account'
-roles:
-  - authenticated

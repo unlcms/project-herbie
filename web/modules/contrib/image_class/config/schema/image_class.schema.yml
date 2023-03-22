@@ -1,7 +1,0 @@
-field.formatter.third_party.image_class:
-  type: mapping
-  label: 'Image Class entity display settings'
-  mapping:
-    class:
-      type: string
-      label: Class

@@ -1,9 +1,0 @@
-name: 'DCF Layouts Test'
-description: 'Provides testing functionality for DCF Layouts'
-package: Testing
-
-type: module
-core: 8.x
-
-dependencies:
-  - dcf:dcf_layouts

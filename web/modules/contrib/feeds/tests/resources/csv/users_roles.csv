@@ -1,5 +1,0 @@
-name,mail,since,password,role_ids,role_labels
-Morticia,morticia@example.com,1244347500,mort,editor,"Article Editor"
-Fester,fester@example.com,1241865600,fest,manager,"Account Manager"
-Gomez,gomez@example.com,1228572000,gome,tester| |manager,"Software Tester| |Account Manager"
-Pugsley,pugsley@example.com,1228260225,pugs,,

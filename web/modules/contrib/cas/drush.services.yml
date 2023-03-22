@@ -1,5 +1,0 @@
-services:
-  cas.commands:
-    class: \Drupal\cas\Commands\CasCommands
-    tags:
-      - { name: drush.command }
