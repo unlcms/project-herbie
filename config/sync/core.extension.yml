@@ -12,12 +12,10 @@ module:
   block_content_permissions: 0
   block_form_alter: 0
   block_type_templates: 0
-  body_scroll_lock: 0
   book: 0
   breakpoint: 0
   cas: 0
-  ckeditor: 0
-  ckeditor_config: 0
+  ckeditor5: 0
   codemirror_editor: 0
   config: 0
   config_filter: 0
@@ -30,7 +28,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  dcf_ckeditor: 0
   dcf_classes: 0
   dcf_layouts: 0
   diff: 0
@@ -44,6 +41,8 @@ module:
   features: 0
   features_permissions: 0
   features_ui: 0
+  feeds: 0
+  feeds_ex: 0
   field: 0
   field_css: 0
   field_group: 0
@@ -68,6 +67,8 @@ module:
   imagemagick: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
+  jquery_ui: 0
+  jquery_ui_draggable: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
   layout_builder_modal: 0
@@ -143,8 +144,7 @@ module:
   paragraphs: 11
   herbie: 1000
 theme:
-  stable: 0
   unl_five: 0
-  seven: 0
   unl_five_herbie: 0
+  claro: 0
 profile: herbie
