@@ -1,3 +1,5 @@
 <?php
 
 $config['unl_user.settings']['password'] = 'PASSWORD_GOES_HERE';
+
+#$config['imagemagick.settings']['path_to_binaries'] = "/path/to/binaries/";
