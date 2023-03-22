@@ -10,6 +10,13 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_social_fb
+    - field.field.node.person.n_person_social_instagram
+    - field.field.node.person.n_person_social_linkedin
+    - field.field.node.person.n_person_social_pinterest
+    - field.field.node.person.n_person_social_snapchat
+    - field.field.node.person.n_person_social_twitter
+    - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
     - node.type.person
@@ -71,4 +78,11 @@ content:
 hidden:
   n_person_bio: true
   n_person_photo: true
+  n_person_social_fb: true
+  n_person_social_instagram: true
+  n_person_social_linkedin: true
+  n_person_social_pinterest: true
+  n_person_social_snapchat: true
+  n_person_social_twitter: true
+  n_person_social_youtube: true
   n_person_website: true

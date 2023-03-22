@@ -7,7 +7,6 @@ label: 'UNL Directory Entry'
 label_plural: 'UNL Directory Entries'
 description: 'Data from directory.unl.edu.'
 read_only: true
-generate_aliases: null
 field_mapper_id: simple
 field_mapper_config:
   field_mappings:

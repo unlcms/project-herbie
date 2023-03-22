@@ -9,6 +9,7 @@ weight: 0
 folder: ../config/development
 module:
   config_inspector: 0
+  twig_xdebug: 0
   update: 0
 theme: {  }
 blacklist:

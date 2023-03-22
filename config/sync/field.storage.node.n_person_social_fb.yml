@@ -1,22 +1,20 @@
-uuid: 2a1114f2-e7b2-4bf0-8912-5c01d724b8b4
+uuid: fc9e7f75-f995-41fd-b1bb-d0b85c224ade
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: XNAVgzU5Ty0b5H4QZfraotxW7HdYKoAXlzLnWjPuJmA
-id: node.n_person_address
-field_name: n_person_address
+id: node.n_person_social_fb
+field_name: n_person_social_fb
 entity_type: node
 type: string
 settings:
-  max_length: 128
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core
 locked: false
-cardinality: 5
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

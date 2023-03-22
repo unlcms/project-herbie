@@ -1,0 +1,19 @@
+uuid: 0ba8c2f8-ecd7-43a1-8e31-35f5a0d8c787
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_social_linkedin
+    - node.type.person
+id: node.person.n_person_social_linkedin
+field_name: n_person_social_linkedin
+entity_type: node
+bundle: person
+label: LinkedIn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

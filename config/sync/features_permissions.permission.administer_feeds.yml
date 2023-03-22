@@ -1,8 +1,0 @@
-uuid: 29ebdbd9-fdeb-41f5-a2a3-e11f81066e0c
-langcode: en
-status: true
-dependencies: {  }
-id: administer_feeds
-label: 'administer feeds'
-roles:
-  - site_admin

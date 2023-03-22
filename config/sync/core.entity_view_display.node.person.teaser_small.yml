@@ -1,8 +1,9 @@
-uuid: ac5d1302-4e53-40dd-96e0-76cf0e4c8646
+uuid: 30ca4c81-5ab6-4680-a426-70c4312a48cc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser_small
     - field.field.node.person.n_person_address
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
@@ -22,16 +23,21 @@ dependencies:
     - node.type.person
   module:
     - image
+    - layout_builder
     - link
     - telephone
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: ZRi1CJ9WIE5TDOih3P7co6ViLpC0KGlNQNYyOv2vG0Y
-id: node.person.default
+id: node.person.teaser_small
 targetEntityType: node
 bundle: person
-mode: default
+mode: teaser_small
 content:
   links:
     settings: {  }

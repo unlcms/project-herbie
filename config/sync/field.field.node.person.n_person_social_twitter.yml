@@ -1,0 +1,19 @@
+uuid: 89e6795e-b784-418a-af58-58295551bcf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_social_twitter
+    - node.type.person
+id: node.person.n_person_social_twitter
+field_name: n_person_social_twitter
+entity_type: node
+bundle: person
+label: Twitter
+description: 'Enter username'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
