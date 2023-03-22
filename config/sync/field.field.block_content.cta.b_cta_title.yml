@@ -1,0 +1,29 @@
+uuid: 6c952fee-3e4a-4273-b2cf-5ee0a525eb81
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.storage.block_content.b_cta_title
+  module:
+    - heading
+id: block_content.cta.b_cta_title
+field_name: b_cta_title
+entity_type: block_content
+bundle: cta
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  label: Heading
+  allowed_sizes:
+    h2: h2
+    h1: 0
+    h3: 0
+    h4: 0
+    h5: 0
+    h6: 0
+field_type: heading

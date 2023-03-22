@@ -70,10 +70,12 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - cta
               - html_code
             Forms:
               - unl_webform_block
             'Inline blocks':
+              - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
@@ -81,7 +83,6 @@ third_party_settings:
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            User: {  }
             Webform: {  }
             core: {  }
         dcf_onecol_section:
@@ -96,15 +97,15 @@ third_party_settings:
               - unl_person_list
             'Custom block types':
               - accordion
-              - card_circle_image
               - content
+              - cta
               - html_code
               - photo_hero
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
-              - 'inline_block:card_circle_image'
+              - 'inline_block:cta'
               - 'inline_block:content'
               - 'inline_block:html_code'
               - 'inline_block:photo_hero'
@@ -124,10 +125,12 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - cta
               - html_code
             Forms:
               - unl_webform_block
             'Inline blocks':
+              - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
@@ -135,7 +138,6 @@ third_party_settings:
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            User: {  }
             Webform: {  }
             core: {  }
         dcf_twocol_section:
@@ -151,11 +153,13 @@ third_party_settings:
               - card
               - card_circle_image
               - content
+              - cta
               - html_code
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
+              - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
               - 'inline_block:content'
@@ -163,21 +167,16 @@ third_party_settings:
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            User: {  }
             Webform: {  }
             core: {  }
       denylisted_blocks: {  }
-      restricted_categories:
-        dcf_onecol_section:
-          all_regions:
-            - 'Custom blocks'
+      restricted_categories: {  }
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'
-      - 'Custom blocks'
       - Forms
       - 'Inline blocks'
       - 'Lists (Views)'

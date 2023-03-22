@@ -54,6 +54,7 @@ module:
   file_mdm_font: 0
   filter: 0
   focal_point: 0
+  heading: 0
   herbie_book: 0
   herbie_builder_page: 0
   herbie_media_types: 0

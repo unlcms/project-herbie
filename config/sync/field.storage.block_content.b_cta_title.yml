@@ -1,0 +1,19 @@
+uuid: 808243e1-c33c-4f90-b804-1adce82698ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - heading
+id: block_content.b_cta_title
+field_name: b_cta_title
+entity_type: block_content
+type: heading
+settings: {  }
+module: heading
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

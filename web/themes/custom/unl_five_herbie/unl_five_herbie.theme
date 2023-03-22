@@ -154,6 +154,21 @@ function unl_five_herbie_preprocess_field(&$variables) {
   }
 
   /*
+   * Call to action Block Fields
+   */
+  $cardFields = array('b_cta_link', 'b_cta_summary', 'b_cta_title');
+
+  if (in_array($field_name, $cardFields)) {
+    switch ($field_name) {
+      case 'b_cta_link':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary dcf-uppercase';
+        }
+        break;
+    }
+  }
+
+  /*
    * Card Block Fields
    */
   $cardFields = array('b_card_image', 'b_card_cta', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
@@ -165,8 +180,8 @@ function unl_five_herbie_preprocess_field(&$variables) {
           $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
         }
         break;
+    }
   }
-}
 
   /*
    * Entity reference field that references a Hero block.
