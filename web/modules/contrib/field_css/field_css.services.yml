@@ -1,5 +1,0 @@
-services:
-  field_css_block_component_render_array_subscriber:
-    class: '\Drupal\field_css\EventSubscriber\BlockComponentRenderArray'
-    tags:
-      - { name: 'event_subscriber' }
