@@ -92,7 +92,7 @@ Decide if you want to run a multisite installation.  (See "Running Multisite" be
 Settings that apply to all sites can be included in one of two places:
 
 1. `web/profiles/herbie/includes/settings.php.inc` which is committed to the repo.
-2. `web/sites/all/settings.php` which is not committed and is appropriate for sensitive info or environment specific overrides to things set in (1).
+2. `web/sites/all/settings.php` which is not committed and is appropriate for sensitive info or environment specific overrides to things set in (1).  (A sample value can be committed to `web/sites/all/settings.php.sample`.)
 
 ## Upgrading Drupal Core (or a module)
 
