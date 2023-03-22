@@ -1,0 +1,21 @@
+uuid: 4b854258-645c-436b-a25d-2bb393f786ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.b_social_media_links_title
+id: block_content.social_media_links.b_social_media_links_title
+field_name: b_social_media_links_title
+entity_type: block_content
+bundle: social_media_links
+label: Title
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Connect with Us'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,8 @@
+uuid: 0a2545db-4c44-47b5-bba3-9da01e1bf32e
+langcode: en
+status: true
+dependencies: {  }
+id: social_media_links
+label: 'Social media links'
+revision: 0
+description: 'Links to your social media outposts.'

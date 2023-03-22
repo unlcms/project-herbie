@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.b_social_media_links_facebook
+id: block_content.social_media_links.b_social_media_links_facebook
+field_name: b_social_media_links_facebook
+entity_type: block_content
+bundle: social_media_links
+label: 'Facebook profile name'
+description: 'Only enter the profile name.'
+required: false
+translatable: false
+default_value:
+  -
+    value: UNLincoln
+default_value_callback: ''
+settings: {  }
+field_type: string

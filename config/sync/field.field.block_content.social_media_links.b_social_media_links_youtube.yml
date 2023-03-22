@@ -1,0 +1,19 @@
+uuid: 0986131a-1182-4e03-9bc1-e84dd0054e3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.b_social_media_links_youtube
+id: block_content.social_media_links.b_social_media_links_youtube
+field_name: b_social_media_links_youtube
+entity_type: block_content
+bundle: social_media_links
+label: 'Youtube username'
+description: 'Only enter the username.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

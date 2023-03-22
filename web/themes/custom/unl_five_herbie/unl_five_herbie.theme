@@ -156,9 +156,9 @@ function unl_five_herbie_preprocess_field(&$variables) {
   /*
    * Call to action Block Fields
    */
-  $cardFields = array('b_cta_link', 'b_cta_summary', 'b_cta_title');
+  $ctaFields = array('b_cta_link', 'b_cta_summary', 'b_cta_title');
 
-  if (in_array($field_name, $cardFields)) {
+  if (in_array($field_name, $ctaFields)) {
     switch ($field_name) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
@@ -225,6 +225,21 @@ function unl_five_herbie_preprocess_field(&$variables) {
       }
 
       break;
+  }
+
+  /*
+   * Social media links Block Fields
+   */
+  $fields = array('b_social_media_links_title');
+
+  if (in_array($field_name, $fields)) {
+    switch ($field_name) {
+      case 'b_social_media_links_title':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-txt-h5 dcf-txt-center unl-cream dcf-mb-0';
+        }
+        break;
+    }
   }
 }
 

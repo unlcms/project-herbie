@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.b_social_media_links_twitter
+id: block_content.social_media_links.b_social_media_links_twitter
+field_name: b_social_media_links_twitter
+entity_type: block_content
+bundle: social_media_links
+label: 'Twitter username'
+description: 'Only enter the username.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
