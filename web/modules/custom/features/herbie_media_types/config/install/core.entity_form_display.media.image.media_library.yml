@@ -4,6 +4,10 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_media_image
+    - field.field.media.image.s_m_file_size
+    - field.field.media.image.s_m_height
+    - field.field.media.image.s_m_mime_type
+    - field.field.media.image.s_m_width
     - image.style.thumbnail
     - media.type.image
   module:
@@ -15,23 +19,17 @@ mode: media_library
 content:
   field_media_image:
     type: image_image
-    weight: 5
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
   created: true
+  name: true
   path: true
+  replace_file: true
   s_m_file_size: true
   s_m_height: true
   s_m_mime_type: true

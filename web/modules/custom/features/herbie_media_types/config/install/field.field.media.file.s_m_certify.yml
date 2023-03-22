@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_certify
+    - media.type.file
+id: media.file.s_m_certify
+field_name: s_m_certify
+entity_type: media
+bundle: file
+label: 'I Certify the Following is True:'
+description: 'I have done due diligence to assure that this file meets accessibility standards.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

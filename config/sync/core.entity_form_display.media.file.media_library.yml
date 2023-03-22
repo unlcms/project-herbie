@@ -5,24 +5,36 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.file.field_media_file
+    - field.field.media.file.s_m_certify
+    - field.field.media.file.s_m_file_size
+    - field.field.media.file.s_m_mime_type
     - media.type.file
+  module:
+    - file
 id: media.file.media_library
 targetEntityType: media
 bundle: file
 mode: media_library
 content:
-  name:
-    type: string_textfield
+  field_media_file:
+    type: file_generic
     weight: 0
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+    third_party_settings: {  }
+  s_m_certify:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   created: true
-  field_media_file: true
+  name: true
   path: true
+  replace_file: true
   s_m_file_size: true
   s_m_mime_type: true
   status: true

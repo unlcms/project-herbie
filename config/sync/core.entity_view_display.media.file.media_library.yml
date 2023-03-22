@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.file.field_media_file
+    - field.field.media.file.s_m_certify
     - field.field.media.file.s_m_file_size
     - field.field.media.file.s_m_mime_type
     - image.style.medium
@@ -31,6 +32,7 @@ hidden:
   created: true
   field_media_file: true
   name: true
+  s_m_certify: true
   s_m_file_size: true
   s_m_mime_type: true
   uid: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.s_m_certify
     - field.field.media.file.s_m_file_size
     - field.field.media.file.s_m_mime_type
     - image.style.thumbnail
@@ -71,3 +72,8 @@ content:
     region: content
 hidden:
   name: true
+  s_m_certify: true
+  s_m_file_size: true
+  s_m_mime_type: true
+  thumbnail: true
+  uid: true

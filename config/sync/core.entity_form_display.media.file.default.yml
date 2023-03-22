@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.s_m_certify
     - field.field.media.file.s_m_file_size
     - field.field.media.file.s_m_mime_type
     - media.type.file
   module:
     - field_group
     - file
-    - path
 third_party_settings:
   field_group:
     group_m_file_attributes:
@@ -20,7 +20,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -34,30 +34,28 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_media_file:
     type: file_generic
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 4
+  replace_file:
+    weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  s_m_certify:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   s_m_file_size:
     type: string_textfield
@@ -75,16 +73,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -92,4 +83,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  path: true
+  status: true

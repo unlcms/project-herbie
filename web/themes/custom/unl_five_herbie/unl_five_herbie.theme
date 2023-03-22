@@ -5,8 +5,21 @@
  * Contains theme functions for unl_five_herbie.
  */
 
+use Drupal\block\Entity\Block;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function unl_five_herbie_preprocess_html(&$variables) {
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getRouteObject()->getOption('_layout_builder')) {
+    // Add Layout Builder specific CSS settings.
+    $variables['#attached']['library'][] = 'unl_five_herbie/layout-builder';
+  }
+}
 
 /**
  * Implements template_preprocess_region().
@@ -143,30 +156,13 @@ function unl_five_herbie_preprocess_field(&$variables) {
   /*
    * Card Block Fields
    */
-  $cardFields = array('b_card_image', 'b_card_cta','b_card_style', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
+  $cardFields = array('b_card_image', 'b_card_cta', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
 
   if (in_array($field_name, $cardFields)) {
-
-    $card_style = $variables['element']['#object']->get('b_card_style')->getValue();
-    $variables['items'][0]['data']['card_style'] = isset($card_style[0]['value']) ? $card_style[0]['value'] : '';
-
     switch ($field_name) {
-
-      case 'b_card_image':
-        // Add needed classes to the <img> tag
-        foreach ($variables['items'] as $key => $item) {
-          $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-d-block dcf-ratio-child dcf-obj-fit-cover';
-        }
-        break;
-
       case 'b_card_cta':
         foreach ($variables['items'] as $key => $item) {
-          if ($card_style[0]['value'] == 'scarlet') {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-secondary';
-          }
-          else {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
-          }
+          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
         }
         break;
   }
@@ -181,7 +177,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
     $route_match = \Drupal::routeMatch();
     $variables['page_title'] = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
 
-    $breadcrumb_block = \Drupal\block\Entity\Block::load('breadcrumbs');
+    $breadcrumb_block = Block::load('unl_five_herbie_breadcrumbs');
     $breadcrumb_block_content = \Drupal::entityTypeManager()
       ->getViewBuilder('block')
       ->view($breadcrumb_block);

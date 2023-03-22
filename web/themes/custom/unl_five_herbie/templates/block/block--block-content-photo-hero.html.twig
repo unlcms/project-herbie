@@ -26,38 +26,43 @@
  */
 #}
 {{ attach_library('unl_five_herbie/photo_hero') }}
-
-{% block content %}
-
-<!-- InstanceBeginEditable name="photo-hero" -->
-<div class="dcf-hero unlcms-hero-home {% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
-  <!-- InstanceEndEditable -->
-  <div class="dcf-hero-group-2 dcf-bleed unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
-    {# {{ breadcrumbs }} -- removed#}
-    {% if unl_no_page_title is not defined %}
-      <header class="dcf-z-1 unlcms-hero-heading unlcms-hero-heading-l">
-        <!-- InstanceBeginEditable name="pagetitle or photo hero title" -->
-        <h1 class="dcf-d-inline dcf-txt-h1 unl-cream unl-bg-darkest-gray unlcms-hero-heading-box test">
-
-        {% if content.b_photohero_title.0 %}
-            {{ content.b_photohero_title }}
-
-          {% else %}
-            {{ page_title }}
-          {% endif %}
-        </h1>
-      <!-- InstanceEndEditable -->
-      </header>
+<div{{ attributes }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
     {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+    <!-- InstanceBeginEditable name="photo-hero" -->
+    <div class="dcf-hero unlcms-hero-home {% if unl_hide_page_title %} dcf-sr-only{% endif %}" {{ item.attributes }}>
+      <!-- InstanceEndEditable -->
+      <div class="dcf-hero-group-2 dcf-bleed unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
+        {# {{ breadcrumbs }} -- removed#}
+        {% if unl_no_page_title is not defined %}
+          <header class="dcf-z-1 unlcms-hero-heading unlcms-hero-heading-l">
+            <!-- InstanceBeginEditable name="pagetitle or photo hero title" -->
+            <h1 class="dcf-d-inline dcf-txt-h1 unl-cream unl-bg-darkest-gray unlcms-hero-heading-box test">
 
-    <!-- InstanceBeginEditable name="photo hero image" -->
+            {% if content.b_photohero_title.0 %}
+                {{ content.b_photohero_title }}
 
-    <div class="unlcms-hero-img dcf-ratio dcf-ratio-16x9">
-      {{ content.b_photohero_image }}
+              {% else %}
+                {{ page_title }}
+              {% endif %}
+            </h1>
+          <!-- InstanceEndEditable -->
+          </header>
+        {% endif %}
+
+        <!-- InstanceBeginEditable name="photo hero image" -->
+
+        <div class="unlcms-hero-img dcf-ratio dcf-ratio-16x9">
+          {{ content.b_photohero_image }}
+        </div>
+
+        {{ content.b_photohero_links }}
+      <!-- InstanceEndEditable -->
+      </div>
     </div>
-
-    {{ content.b_photohero_links }}
-  <!-- InstanceEndEditable -->
-  </div>
+    {% endblock %}
 </div>
-{% endblock %}
