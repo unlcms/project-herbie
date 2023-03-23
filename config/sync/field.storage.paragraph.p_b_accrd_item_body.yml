@@ -5,6 +5,8 @@ dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: 8tP_2bXE9KeC3EsT_UmlSUuqZuWVZcnI6ewCbSOkBzM
 id: paragraph.p_b_accrd_item_body
 field_name: p_b_accrd_item_body
 entity_type: paragraph

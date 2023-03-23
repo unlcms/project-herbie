@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: QyOlaCUOeGHEnsFN_j5tybe8GET9FKklxyjCqHlELrY
 id: paragraph.p_b_cinfo_poadd_box_number
 field_name: p_b_cinfo_poadd_box_number
 entity_type: paragraph

@@ -1,8 +1,0 @@
-uuid: cf6d2f34-b510-4efc-b85e-ea825f010c12
-langcode: en
-status: true
-dependencies: {  }
-id: administer_webform_submission
-label: 'administer webform submission'
-roles:
-  - site_admin

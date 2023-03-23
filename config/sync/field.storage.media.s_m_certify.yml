@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: xGQSZAl3DO9C-ebr13LDLXkpVwjslCCGmAJWBEdqgYc
 id: media.s_m_certify
 field_name: s_m_certify
 entity_type: media

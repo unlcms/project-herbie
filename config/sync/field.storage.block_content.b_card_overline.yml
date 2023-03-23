@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: 02-3UPaPwN_IytgKFwiege4wTlW4o1TD7Gyio7rDgng
 id: block_content.b_card_overline
 field_name: b_card_overline
 entity_type: block_content

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.m_rv_source_url
     - media.type.remote_video
+_core:
+  default_config_hash: jVC2FgnUmK_dlDgzeCJgxRosg_evFo-OoqBP7vl074E
 id: media.remote_video.m_rv_source_url
 field_name: m_rv_source_url
 entity_type: media

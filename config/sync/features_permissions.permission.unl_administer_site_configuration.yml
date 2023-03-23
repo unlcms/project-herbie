@@ -1,8 +1,0 @@
-uuid: 48f77e98-4bff-461d-a09e-ad38ebf1252c
-langcode: en
-status: true
-dependencies: {  }
-id: unl_administer_site_configuration
-label: 'unl administer site configuration'
-roles:
-  - site_admin

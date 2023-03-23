@@ -12,6 +12,8 @@ dependencies:
     - media.type.file
   module:
     - image
+_core:
+  default_config_hash: vf91iWefkJk6wL8HAeM6tuEfLoHJC6H0Vveg2HX2JWM
 id: media.file.media_library
 targetEntityType: media
 bundle: file

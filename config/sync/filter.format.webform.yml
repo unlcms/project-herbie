@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - editor
+_core:
+  default_config_hash: l6QGEyX4-_uq6eRPxCC5Zc2CjEXLFvtR62BlIazePEc
 name: Webform
 format: webform
 weight: 0

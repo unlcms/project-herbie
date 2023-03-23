@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: r2ADMj_9ozcViyHKOTjqkTEtApdkjwRScsVpyEDQd0s
 id: media.s_m_mime_type
 field_name: s_m_mime_type
 entity_type: media

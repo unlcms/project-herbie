@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: pOJGDQoLpIgFFXAXOBm9nqI10bPA1qdvfEvsg5AjBb8
 name: inline_1440
 label: 'Inline 1440'
 effects:

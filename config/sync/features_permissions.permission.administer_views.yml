@@ -1,8 +1,0 @@
-uuid: c5cc2aaa-6c4f-47bf-9f50-f16d3b0ff7d2
-langcode: en
-status: true
-dependencies: {  }
-id: administer_views
-label: 'administer views'
-roles:
-  - site_admin

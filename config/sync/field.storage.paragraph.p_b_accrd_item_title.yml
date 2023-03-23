@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: mPHRFPo0Fjes3Ac-VYbEwhEgzzFTIvVS73OBEHkV1b0
 id: paragraph.p_b_accrd_item_title
 field_name: p_b_accrd_item_title
 entity_type: paragraph

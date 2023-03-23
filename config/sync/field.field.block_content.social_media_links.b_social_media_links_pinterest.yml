@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_pinterest
+_core:
+  default_config_hash: JTFsmzCrjWybSh0QPdFCSplBnOcb0OLtSnLluNehGZE
 id: block_content.social_media_links.b_social_media_links_pinterest
 field_name: b_social_media_links_pinterest
 entity_type: block_content

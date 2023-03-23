@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: NmmVFg2nx7dvlpx7C1djG0TyWeeAcjlXwkOx7LvlsHk
 name: inline_720
 label: 'Inline 720'
 effects:

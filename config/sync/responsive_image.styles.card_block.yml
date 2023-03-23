@@ -10,6 +10,8 @@ dependencies:
     - image.style.16_9_3840x2160
     - image.style.16_9_480x270
     - image.style.16_9_960x540
+_core:
+  default_config_hash: DDTXD0sM0ZuF7yQeU0HVEdIxRwT7L-nk0TwXW3G76g0
 id: card_block
 label: 'Card Block'
 image_style_mappings:

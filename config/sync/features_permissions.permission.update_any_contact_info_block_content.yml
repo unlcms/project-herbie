@@ -1,9 +1,0 @@
-uuid: 0f9a5cc5-1b95-4972-b94a-f79b35518893
-langcode: en
-status: true
-dependencies: {  }
-id: update_any_contact_info_block_content
-label: 'update any contact_info block content'
-roles:
-  - editor
-  - site_admin

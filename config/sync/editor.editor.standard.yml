@@ -6,6 +6,8 @@ dependencies:
     - filter.format.standard
   module:
     - ckeditor5
+_core:
+  default_config_hash: JRuxZVr_83NmX4TQ9ZkOZJECyq68XSNDsxFbzdOqr6U
 format: standard
 editor: ckeditor5
 settings:

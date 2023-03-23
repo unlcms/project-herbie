@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - link
+_core:
+  default_config_hash: R-dwCG76VQkQ5oDZdjJNEhHNfxxobp27GQwEdIBaVL8
 id: block_content.b_photohero_links
 field_name: b_photohero_links
 entity_type: block_content

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: oZltJeOtYZ-ltDxfWNxcVYdLDIB2gGN2dzxHi8PhpWQ
 name: inline_1920
 label: 'Inline 1920'
 effects:

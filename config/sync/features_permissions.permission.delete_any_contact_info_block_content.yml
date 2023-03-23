@@ -1,9 +1,0 @@
-uuid: c8fd228d-c535-4058-89bf-f2bfdb300513
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_contact_info_block_content
-label: 'delete any contact_info block content'
-roles:
-  - editor
-  - site_admin

@@ -1,9 +1,0 @@
-uuid: dcce305b-6ada-42f1-93fe-1185add70788
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_card_circle_image_block_content
-label: 'delete any card_circle_image block content'
-roles:
-  - editor
-  - site_admin

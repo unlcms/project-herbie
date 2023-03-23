@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: RNCfu20UoIwm9lkQG7EwiYuB7QSbYDmL_au8PdRqi-M
 id: paragraph.p_b_cinfo_fax_fax
 field_name: p_b_cinfo_fax_fax
 entity_type: paragraph

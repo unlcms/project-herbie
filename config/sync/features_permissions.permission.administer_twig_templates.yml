@@ -1,9 +1,0 @@
-uuid: d97e5922-793f-430b-a822-8abeba9cd182
-langcode: en
-status: true
-dependencies: {  }
-id: administer_twig_templates
-label: 'administer twig templates'
-roles:
-  - coder
-  - site_admin

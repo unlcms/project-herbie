@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: OmsXb6SVmuAmrdmK4U785IJcTORWVPefuTm3WPXwKhc
 id: block_content.b_social_media_links_pinterest
 field_name: b_social_media_links_pinterest
 entity_type: block_content

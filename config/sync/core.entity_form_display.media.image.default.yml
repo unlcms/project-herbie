@@ -31,6 +31,8 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
+_core:
+  default_config_hash: 5Qys8fSL48rl8nJw1k-V7nRAICuWWYFjDaMJchTZS0c
 id: media.image.default
 targetEntityType: media
 bundle: image

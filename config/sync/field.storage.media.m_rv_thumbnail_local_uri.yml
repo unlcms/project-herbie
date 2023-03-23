@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: hieIy8lmoVEBpvmzc5PCFWkwvSzN9_P8_-J2lLJdi4Q
 id: media.m_rv_thumbnail_local_uri
 field_name: m_rv_thumbnail_local_uri
 entity_type: media

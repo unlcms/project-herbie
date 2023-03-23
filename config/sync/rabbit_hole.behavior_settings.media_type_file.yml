@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - media.type.file
+_core:
+  default_config_hash: 4-atkhW1NUcfc25ihEVVfd5g2yd-ctpSfApE-U0qEuI
 id: media_type_file
 entity_type_id: media_type
 entity_id: file

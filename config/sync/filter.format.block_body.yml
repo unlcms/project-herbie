@@ -9,6 +9,8 @@ dependencies:
     - editor
     - linkit
     - media
+_core:
+  default_config_hash: wPYQ9yrKlH4WrIcZqCxOpaCn59HrjnPPXPFlYqU5HPg
 name: 'Block Body'
 format: block_body
 weight: 0

@@ -2,6 +2,8 @@ uuid: 7daf43e1-2b75-48d1-8dcb-1425e95745a2
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: kg88b6R_sxqJgj7eP6Th70a2mmF8DdiiIo7gOQom-44
 name: 1_1_960x960
 label: '1:1 (960x960)'
 effects:

@@ -5,6 +5,8 @@ dependencies:
   module:
     - editor
     - linkit
+_core:
+  default_config_hash: Pnw6S7QpWWbAaXK9vzVqmHMGrchGcAdQOJVFBLVXsAQ
 name: 'Block Body - Centered'
 format: block_body_centered
 weight: 0

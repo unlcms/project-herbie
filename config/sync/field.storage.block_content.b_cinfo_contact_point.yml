@@ -6,6 +6,8 @@ dependencies:
     - block_content
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: t-f-75vYS3QiZkgaONc-9CVjb75WmHYvDij5esHLU3c
 id: block_content.b_cinfo_contact_point
 field_name: b_cinfo_contact_point
 entity_type: block_content

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - media.type.remote_video
+_core:
+  default_config_hash: 1TwUJUTiZXRpGX_-YWZYW4j7iBtud2oUHaCGVDIf9dU
 id: media_type_remote_video
 entity_type_id: media_type
 entity_id: remote_video

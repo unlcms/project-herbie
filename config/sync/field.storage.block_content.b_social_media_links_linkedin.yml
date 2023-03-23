@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: S1X7rc4vvY007ygHXL2aZOi7LFvaxwOTdsqBt_2ioWc
 id: block_content.b_social_media_links_linkedin
 field_name: b_social_media_links_linkedin
 entity_type: block_content

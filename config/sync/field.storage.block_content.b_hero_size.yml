@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - options
+_core:
+  default_config_hash: FwvrPb_cwTwPmPU9s7OkUTkwjG1LJI7Ynn-QmuQd938
 id: block_content.b_hero_size
 field_name: b_hero_size
 entity_type: block_content

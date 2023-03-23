@@ -13,7 +13,7 @@ dependencies:
   module:
     - image
 _core:
-  default_config_hash: t-aFoU7aA942ODLGV82tkEMXqtnPJMX13w_NUf80KzA
+  default_config_hash: 0IPTFQ4QsaaIvhHetksXjUvt9XGV68RXjDAdjPi0Ef4
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero

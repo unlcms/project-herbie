@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.m_rv_thumbnail_width
     - media.type.remote_video
+_core:
+  default_config_hash: C6P56FV2fsh8ggeMKv1pVzMYFbO6lSzIUGjvvAka4rs
 id: media.remote_video.m_rv_thumbnail_width
 field_name: m_rv_thumbnail_width
 entity_type: media

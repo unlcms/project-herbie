@@ -1,8 +1,0 @@
-uuid: a03cbece-7121-4393-89e8-c91079b2fe50
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_webform_submission
-label: 'delete any webform submission'
-roles:
-  - site_admin

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: apAFIw7YjtCynG_i1mtNa-AH_TXKuIjUjpwbY8z2nAE
 id: block_content.b_card_subhead
 field_name: b_card_subhead
 entity_type: block_content

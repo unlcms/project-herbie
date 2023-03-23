@@ -1,3 +1,4 @@
+/** Add a handle to adjust size of drawer **/
 .ui-dialog.ui-dialog-off-canvas .ui-resizable-handle {
   width: 20px;
   height: 50px;

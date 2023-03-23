@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: FzYGXB0hl3L1NTqJDZNeuYUmrr13w5i1rUO3SBK2oQQ
 id: paragraph.p_b_cinfo_padd_st_address
 field_name: p_b_cinfo_padd_st_address
 entity_type: paragraph

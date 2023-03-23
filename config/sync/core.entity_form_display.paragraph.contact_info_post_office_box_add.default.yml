@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_postal_code
     - field.field.paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_state
     - paragraphs.paragraphs_type.contact_info_post_office_box_add
+_core:
+  default_config_hash: 3_XveC0flfIB0o_JiDAg8-okqn3b_mpkk6ENES2pkAk
 id: paragraph.contact_info_post_office_box_add.default
 targetEntityType: paragraph
 bundle: contact_info_post_office_box_add

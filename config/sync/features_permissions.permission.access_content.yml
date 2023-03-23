@@ -6,4 +6,3 @@ id: access_content
 label: 'access content'
 roles:
   - anonymous
-  - authenticated

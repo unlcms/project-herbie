@@ -10,6 +10,8 @@ dependencies:
     - editor
     - linkit
     - media
+_core:
+  default_config_hash: kG-oVmUVJwoG1DHTPHWu0G1DdFaDwVOSR-NWV0ekU4I
 name: Standard
 format: standard
 weight: 0

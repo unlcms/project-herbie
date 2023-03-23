@@ -1,31 +1,11 @@
 uuid: 7e5e6587-46de-4143-890c-228d7627f7d5
 langcode: en
 status: true
-dependencies:
-  config:
-    - filter.format.block_body
-    - filter.format.block_body_centered
-    - filter.format.standard
-    - filter.format.webform
-  module:
-    - filter
-    - honeypot
-    - media
-    - system
-    - webform
+dependencies: {  }
 _core:
-  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+  default_config_hash: OI51UAFaMiKhoQrUhY6nejFawP6lwS1lrz4bRBwzjBA
 id: authenticated
 label: 'Authenticated user'
 weight: -9
 is_admin: false
-permissions:
-  - 'access content'
-  - 'access webform submission user'
-  - 'bypass honeypot protection'
-  - 'edit own webform'
-  - 'use text format block_body'
-  - 'use text format block_body_centered'
-  - 'use text format standard'
-  - 'use text format webform'
-  - 'view media'
+permissions: {  }

@@ -1,8 +1,0 @@
-uuid: c58f554b-0327-4066-89b8-de444a0d91ad
-langcode: en
-status: true
-dependencies: {  }
-id: administer_taxonomy
-label: 'administer taxonomy'
-roles:
-  - site_admin

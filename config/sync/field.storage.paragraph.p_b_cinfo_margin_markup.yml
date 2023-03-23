@@ -5,6 +5,8 @@ dependencies:
   module:
     - markup
     - paragraphs
+_core:
+  default_config_hash: TiLATB80G3fwZNtNKsF7FHEo1US7xwmG_NIH2-U4DyQ
 id: paragraph.p_b_cinfo_margin_markup
 field_name: p_b_cinfo_margin_markup
 entity_type: paragraph

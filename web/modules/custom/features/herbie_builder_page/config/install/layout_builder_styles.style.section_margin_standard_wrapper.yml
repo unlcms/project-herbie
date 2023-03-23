@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_margin_standard_wrapper
+label: 'Standard wrapper'
+classes: dcf-wrapper
+type: section
+group: container
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -6

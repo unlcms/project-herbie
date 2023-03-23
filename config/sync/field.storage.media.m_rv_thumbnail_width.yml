@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: yOibJq5y5XvIUXo-phAZFop_C5XmCVTikGth3AzkRL4
 id: media.m_rv_thumbnail_width
 field_name: m_rv_thumbnail_width
 entity_type: media

@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - text
+_core:
+  default_config_hash: bGUT_SZBuAgFYu55-ZsxB4A8APShjECFTWGqCtOGOfU
 id: block_content.b_cdcir_body
 field_name: b_cdcir_body
 entity_type: block_content

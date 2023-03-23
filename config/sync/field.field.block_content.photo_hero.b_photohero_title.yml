@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.photo_hero
     - field.storage.block_content.b_photohero_title
+_core:
+  default_config_hash: P01NwfFty2vk4LuyrY_yqCGcL3K7Qu-9vbWi9wKUQgo
 id: block_content.photo_hero.b_photohero_title
 field_name: b_photohero_title
 entity_type: block_content

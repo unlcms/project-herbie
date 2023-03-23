@@ -11,6 +11,8 @@ dependencies:
   module:
     - image
     - link
+_core:
+  default_config_hash: s-CeHQ1Po1MxiTd9nQlZJDoZWhzqE4ziQ7hrfcy42qU
 id: block_content.photo_hero.default
 targetEntityType: block_content
 bundle: photo_hero

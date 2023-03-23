@@ -1,33 +1,11 @@
 uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
-dependencies:
-  config:
-    - filter.format.html_code
-  module:
-    - asset_injector
-    - block_content_permissions
-    - field_css
-    - filter
-    - system
-    - toolbar
-    - twig_ui
-    - webform
+dependencies: {  }
+_core:
+  default_config_hash: WJG7QxIqzkzKsBiRrYgnmxLJb1UtoIOICqoOhVIxKeM
 id: coder
 label: Coder
 weight: -6
 is_admin: null
-permissions:
-  - 'access administration pages'
-  - 'access css fields'
-  - 'access toolbar'
-  - 'administer css assets injector'
-  - 'administer js assets injector'
-  - 'administer twig templates'
-  - 'create html_code block content'
-  - 'delete any html_code block content'
-  - 'edit webform assets'
-  - 'load twig templates from file system'
-  - 'update any html_code block content'
-  - 'use text format html_code'
-  - 'view the administration theme'
+permissions: {  }

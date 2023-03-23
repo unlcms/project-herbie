@@ -1,9 +1,0 @@
-uuid: d29929e7-a68f-40c7-8144-c3cf3cfef53f
-langcode: en
-status: true
-dependencies: {  }
-id: administer_main_menu_items
-label: 'administer main menu items'
-roles:
-  - editor
-  - site_admin

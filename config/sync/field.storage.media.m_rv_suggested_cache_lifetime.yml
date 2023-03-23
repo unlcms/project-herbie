@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: OUiHaI2pQULWRINIYvPPnP5UN0vCR224pq8btEM3zs4
 id: media.m_rv_suggested_cache_lifetime
 field_name: m_rv_suggested_cache_lifetime
 entity_type: media

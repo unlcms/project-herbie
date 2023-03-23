@@ -55,6 +55,7 @@ dependencies:
   - 'layout_builder_component_attributes:layout_builder_component_attributes'
   - 'layout_builder_modal:layout_builder_modal'
   - 'layout_builder_restrictions:layout_builder_restrictions'
+  - 'layout_builder_styles:layout_builder_styles'
   - 'linkit:linkit'
   - 'markup:markup'
   - 'oembed_providers:oembed_providers'
@@ -67,5 +68,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.11
+version: 1.0.12
 package: Herbie

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: OhU_O2IHbd-627mCtAB4y3dtxyEoODhMKowsxt5a1CQ
 id: paragraph.p_b_cinfo_poadd_postal_code
 field_name: p_b_cinfo_poadd_postal_code
 entity_type: paragraph

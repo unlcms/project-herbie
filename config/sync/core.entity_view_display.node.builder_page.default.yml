@@ -22,15 +22,15 @@ third_party_settings:
         layout_id: dcf_onecol_section
         layout_settings:
           label: ''
-          context_mapping: {  }
           column_widths: '100'
           title: ''
           title_classes: {  }
           title_display: false
+          section_element_id: ''
+          context_mapping: {  }
           section_package: ''
           section_classes: {  }
           block_margin: ''
-          section_element_id: ''
           column_classes:
             col_1: {  }
         components:
@@ -196,7 +196,7 @@ third_party_settings:
       allowlisted_blocks: {  }
       restricted_categories: {  }
 _core:
-  default_config_hash: m-Emnc-_9M7Sgjt06DeQTg7VANHTwWE1wF4mcmAcELU
+  default_config_hash: NcIQoKZcS5kXoqgXqJAN18Vu3SmH2DhFtDpSA_h3DYA
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page

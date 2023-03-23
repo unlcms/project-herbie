@@ -6,6 +6,8 @@ dependencies:
     - filter.format.block_body
   module:
     - ckeditor5
+_core:
+  default_config_hash: AQtAwCbjMwG4pPtNvYFrBdJdXZlnUhi0E7rRM4Vxbw4
 format: block_body
 editor: ckeditor5
 settings:

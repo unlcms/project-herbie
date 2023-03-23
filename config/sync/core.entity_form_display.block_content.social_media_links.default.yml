@@ -12,6 +12,8 @@ dependencies:
     - field.field.block_content.social_media_links.b_social_media_links_title
     - field.field.block_content.social_media_links.b_social_media_links_twitter
     - field.field.block_content.social_media_links.b_social_media_links_youtube
+_core:
+  default_config_hash: 43FwRnoOQ112_ikE6YFMKktbToj8MjErvx3EDgUUCOc
 id: block_content.social_media_links.default
 targetEntityType: block_content
 bundle: social_media_links

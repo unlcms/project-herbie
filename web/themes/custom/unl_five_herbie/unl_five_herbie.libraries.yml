@@ -2,6 +2,7 @@ global-styling:
   version: VERSION
   css:
     theme:
+      css/global.css: {}
       css/media.css: {}
       css/wdn-overrides.css: {}
 

@@ -8,7 +8,7 @@ third_party_settings:
   crop:
     image_field: _none
 _core:
-  default_config_hash: AKlg03WnfdeJogBbj0j8JF6W4eGFFZzXi2kv5Eb94eo
+  default_config_hash: O-iSvm0R1-E9-YzbBRp8twyWPQZDaNTKW7Db6zJAAVo
 id: file
 label: File
 description: 'An uploaded file or document, such as a PDF.'

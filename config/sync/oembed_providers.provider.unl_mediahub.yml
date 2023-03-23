@@ -2,6 +2,8 @@ uuid: fb3a8176-d378-4449-bcc5-d66a137a9939
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ApiSIHmZtULHz-Rg9xDxUnmQWcGn0zq1GbnBhFM0dY0
 id: unl_mediahub
 label: 'UNL Mediahub'
 provider_url: 'https://mediahub.unl.edu'

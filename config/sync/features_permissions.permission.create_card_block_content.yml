@@ -1,9 +1,0 @@
-uuid: 88a8d4ff-1c36-451b-a741-b540486c3c88
-langcode: en
-status: true
-dependencies: {  }
-id: create_card_block_content
-label: 'create card block content'
-roles:
-  - editor
-  - site_admin

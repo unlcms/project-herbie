@@ -12,7 +12,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: mdloh-Quh2jUVkE0DfH0W6Xwj2Ld-OTk_ANLRiQv7Ds
+  default_config_hash: LD2TP1bHHm64ZV78zIaowC6c5JSxCxxUmNIKiC-YgQ8
 id: node.builder_page.teaser
 targetEntityType: node
 bundle: builder_page

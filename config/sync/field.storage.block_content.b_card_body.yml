@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - text
+_core:
+  default_config_hash: ITroHF61ahawnfC8DNootb0uGbcVvOxXEAP-HGM0CpY
 id: block_content.b_card_body
 field_name: b_card_body
 entity_type: block_content

@@ -6,6 +6,8 @@ dependencies:
     - filter.format.block_body_centered
   module:
     - ckeditor5
+_core:
+  default_config_hash: 4KmTLdIeG_RuJPU43kGHutqCVjTgzaH_bbOTv_3wvyM
 format: block_body_centered
 editor: ckeditor5
 settings:

@@ -6,6 +6,8 @@ dependencies:
     - block_content
     - file
     - image
+_core:
+  default_config_hash: hzkmH4Tf0P5FNSUcpmXOf2vH5H9DzxDLpU2mVdD8Z9A
 id: block_content.b_photohero_image
 field_name: b_photohero_image
 entity_type: block_content

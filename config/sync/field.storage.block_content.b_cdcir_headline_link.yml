@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - link
+_core:
+  default_config_hash: PL9e3SwxPQSLCnPqvC-cCMLnbPzcdikzmIg0V9HW00g
 id: block_content.b_cdcir_headline_link
 field_name: b_cdcir_headline_link
 entity_type: block_content

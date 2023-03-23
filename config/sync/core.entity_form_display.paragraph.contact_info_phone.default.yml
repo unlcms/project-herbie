@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_phone.p_b_cinfo_phone_phone
     - paragraphs.paragraphs_type.contact_info_phone
+_core:
+  default_config_hash: KwKc3PPfAHo2HcE411-YerCOHCe4oVEay6TEReqlYbs
 id: paragraph.contact_info_phone.default
 targetEntityType: paragraph
 bundle: contact_info_phone

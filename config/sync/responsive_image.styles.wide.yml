@@ -10,6 +10,8 @@ dependencies:
     - image.style.inline_480
     - image.style.inline_720
     - image.style.inline_960
+_core:
+  default_config_hash: vaxAg235L-TuoCuqxuqq1-5XUR2Ft2zlY15sQzm58XI
 id: wide
 label: Wide
 image_style_mappings:

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: G0v0ozxeDKpidC36tdNeIqsAVxceqWkVkkufXMipnAw
 id: paragraph.p_b_cinfo_phone_phone
 field_name: p_b_cinfo_phone_phone
 entity_type: paragraph

@@ -1,9 +1,0 @@
-uuid: b4b746a1-4aaf-4bed-bbec-66caa7222da1
-langcode: en
-status: true
-dependencies: {  }
-id: view_any_webform_submission
-label: 'view any webform submission'
-roles:
-  - editor
-  - site_admin

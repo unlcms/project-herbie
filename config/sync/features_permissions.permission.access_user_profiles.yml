@@ -1,9 +1,0 @@
-uuid: bb0b95d1-c557-4358-b4d5-d4d16a0f2a38
-langcode: en
-status: true
-dependencies: {  }
-id: access_user_profiles
-label: 'access user profiles'
-roles:
-  - editor
-  - site_admin

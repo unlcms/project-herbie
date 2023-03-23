@@ -1,8 +1,0 @@
-uuid: 020d6fcc-e9f7-45f5-b7de-ae606a99f179
-langcode: en
-status: true
-dependencies: {  }
-id: create_html_code_block_content
-label: 'create html_code block content'
-roles:
-  - coder

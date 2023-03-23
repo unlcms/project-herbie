@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_margin.p_b_cinfo_margin_markup
     - paragraphs.paragraphs_type.contact_info_margin
+_core:
+  default_config_hash: q9ePDhzJR3LUUxIm1eRcx5Ng5hDxF7w7Mv9ZcNl3Reo
 id: paragraph.contact_info_margin.default
 targetEntityType: paragraph
 bundle: contact_info_margin

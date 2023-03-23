@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - filter.format.block_body
-id: use_text_format_block_body
-label: 'use text format block_body'
-roles:
-  - authenticated

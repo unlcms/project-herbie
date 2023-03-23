@@ -11,6 +11,8 @@ dependencies:
     - heading
     - link
     - text
+_core:
+  default_config_hash: Gf90j6nwtnBeLqf5mRfTGKaeLb4JohY1eQk1LyaWWkc
 id: block_content.cta.default
 targetEntityType: block_content
 bundle: cta

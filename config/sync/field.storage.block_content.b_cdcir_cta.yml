@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - link
+_core:
+  default_config_hash: BiQOel750eTTvkMPVRk8zWaJDwXor6rTHI9AyAXLJsg
 id: block_content.b_cdcir_cta
 field_name: b_cdcir_cta
 entity_type: block_content

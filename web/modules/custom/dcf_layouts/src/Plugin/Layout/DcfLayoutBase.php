@@ -32,7 +32,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $configuration = $this->getConfiguration();
-    $config_dcf_classes = \Drupal::config('dcf_classes.classes');
 
     // Allow editors to select the column widths for the section.
     $form['column_widths'] = [
@@ -43,23 +42,22 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#description' => $this->t('Choose the column widths for this layout.'),
     ];
 
-    // Require editors to set a title for the section.
+    // Allow editors to set a title (heading) for the section.
     // This is also stored as the 'Administrative label' in D8.8+.
     $form['title'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Title'),
+      '#title' => $this->t('Section heading'),
       '#default_value' => $configuration['title'],
-      '#description' => $this->t('Optional heading for this section.'),
-      '#required' => TRUE,
     ];
 
-    // Allow editors to display section title on render.
+    // Allow editors to display title on render.
     $form['title_display'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Display title'),
+      '#title' => $this->t('Show Section heading'),
       '#default_value' => $configuration['title_display'],
     ];
 
+    // Allow editors to add classes to the title.
     $options = [
       'dcf-regular' => 'dcf-regular',
       'dcf-txt-h1' => 'dcf-txt-h1',
@@ -76,10 +74,10 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     ];
     $form['title_classes'] = [
       '#type' => 'select',
-      '#title' => $this->t('Title classes'),
+      '#title' => $this->t('Section heading classes'),
       '#default_value' => $configuration['title_classes'],
       '#options' => $options,
-      '#description' => $this->t('Select classes for the title.'),
+      '#description' => $this->t('Optional classes for the Section heading.'),
       '#empty_option' => $this->t('- None -'),
       '#empty_value' => '',
       '#multiple' => TRUE,
@@ -102,10 +100,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#description' => $this->t("The ID attribute on the layout's &lt;div&gt; element"),
       '#default_value' => $configuration['section_element_id'],
     ];
-
-    // Needed until https://www.drupal.org/project/drupal/issues/3080698
-    // is fixed.
-    $form['#attached']['library'][] = 'dcf_layouts/drupal.dialog.off_canvas';
 
     return $form;
   }
@@ -131,11 +125,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $this->configuration['title_display'] = (boolean) $form_state->getValue('title_display');
     $this->configuration['title_classes'] = $form_state->getValue('title_classes');
     $this->configuration['section_element_id'] = $form_state->getValue('advanced')['section_element_id'];
-
-    $column_count = $form_state->get('column_count');
-    for ($i = 1; $i <= $column_count; $i++) {
-      $this->configuration['column_classes']['col_' . $i] = $form_state->getValue('column_classes')[$i];
-    }
   }
 
   /**
@@ -146,7 +135,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $configuration = $this->getConfiguration();
 
     // Initialize attributes.
-    $build['#settings']['section_attributes'] = new Attribute();
+    $build['#settings']['grid_wrapper_attributes'] = new Attribute();
     $build['#settings']['title_attributes'] = new Attribute();
 
     // Don't display title unless 'title_display' is checked.
@@ -159,8 +148,9 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       $build['#settings']['title_attributes']->addClass($configuration['title_classes']);
     }
 
+    // Add the ID if specified.
     if (!empty($configuration['section_element_id'])) {
-      $build['#settings']['section_attributes']->setAttribute('id', $configuration['section_element_id']);
+      $build['#attributes']['id'] = $configuration['section_element_id'];
     }
 
     // Add layout default classes.
@@ -168,6 +158,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       $build['#attributes']['class'] = [];
     }
     $build['#attributes']['class'][] = 'layout';
+    $build['#attributes']['class'][] = 'layout--container';
     $build['#attributes']['class'][] = $this->getPluginDefinition()->getTemplate();
 
     return $build;
