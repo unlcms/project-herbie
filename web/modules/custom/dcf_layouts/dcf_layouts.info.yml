@@ -1,7 +1,7 @@
 name: 'DCF Layouts'
 description: 'Layouts that use Digital Campus Framework markup.'
 package: DCF
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^10
 type: module
 
 dependencies:

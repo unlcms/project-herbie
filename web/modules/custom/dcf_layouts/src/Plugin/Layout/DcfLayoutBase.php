@@ -61,7 +61,18 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     ];
 
     $options = [
-      'dcf-lowercase' => 'Lowercase',
+      'dcf-regular' => 'dcf-regular',
+      'dcf-txt-h1' => 'dcf-txt-h1',
+      'dcf-txt-h2' => 'dcf-txt-h2',
+      'dcf-txt-h3' => 'dcf-txt-h3',
+      'dcf-txt-h4' => 'dcf-txt-h4',
+      'dcf-txt-h5' => 'dcf-txt-h5',
+      'dcf-txt-h6' => 'dcf-txt-h6',
+      'dcf-sr-only' => 'dcf-sr-only',
+      'dcf-d-none@print' => 'dcf-d-none@print',
+      'dcf-capitalize' => 'dcf-capitalize',
+      'dcf-lowercase' => 'dcf-lowercase',
+      'dcf-uppercase' => 'dcf-uppercase',
     ];
     $form['title_classes'] = [
       '#type' => 'select',

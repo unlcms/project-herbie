@@ -1,6 +1,0 @@
-# Needed until https://www.drupal.org/project/drupal/issues/3080698 is fixed.
-drupal.dialog.off_canvas:
-  version: VERSION
-  css:
-    component:
-      css/off-canvas.form.css: {}
