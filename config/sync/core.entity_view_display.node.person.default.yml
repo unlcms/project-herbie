@@ -9,13 +9,6 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
-    - field.field.node.person.n_person_social_fb
-    - field.field.node.person.n_person_social_instagram
-    - field.field.node.person.n_person_social_linkedin
-    - field.field.node.person.n_person_social_pinterest
-    - field.field.node.person.n_person_social_snapchat
-    - field.field.node.person.n_person_social_twitter
-    - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
     - image.style.1_1_240x240
@@ -86,62 +79,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
-    region: content
-  n_person_social_fb:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 110
-    region: content
-  n_person_social_instagram:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 113
-    region: content
-  n_person_social_linkedin:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 114
-    region: content
-  n_person_social_pinterest:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 115
-    region: content
-  n_person_social_snapchat:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 116
-    region: content
-  n_person_social_twitter:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 111
-    region: content
-  n_person_social_youtube:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 112
     region: content
   n_person_unldirectoryreference:
     type: entity_reference_entity_view

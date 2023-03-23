@@ -9,13 +9,6 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
-    - field.field.node.person.n_person_social_fb
-    - field.field.node.person.n_person_social_instagram
-    - field.field.node.person.n_person_social_linkedin
-    - field.field.node.person.n_person_social_pinterest
-    - field.field.node.person.n_person_social_snapchat
-    - field.field.node.person.n_person_social_twitter
-    - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
     - image.style.1_1_240x240
@@ -32,40 +25,21 @@ third_party_settings:
     group_unl_directory_overrides:
       children:
         - n_person_position
+        - n_person_bio
         - n_person_photo
         - n_person_phone
         - n_person_email
         - n_person_address
+        - n_person_website
       label: '(Optional) UNL Directory Overrides'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 20
       format_type: details
       format_settings:
         classes: ''
         id: ''
         open: false
-        required_fields: true
-    group_social_media:
-      children:
-        - n_person_social_linkedin
-        - n_person_social_fb
-        - n_person_social_instagram
-        - n_person_social_snapchat
-        - n_person_social_twitter
-        - n_person_social_youtube
-        - n_person_social_pinterest
-      label: 'Social Media'
-      region: content
-      parent_name: ''
-      weight: 10
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
         required_fields: true
 _core:
   default_config_hash: yd6kb4XjeQyacc5NPmX3pvzjtAnEAcM5dJS4lmXlRRI
@@ -76,7 +50,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -90,7 +64,7 @@ content:
     third_party_settings: {  }
   n_person_bio:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 9
     region: content
     settings:
       rows: 9
@@ -129,62 +103,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  n_person_social_fb:
-    type: string_textfield
-    weight: 16
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_instagram:
-    type: string_textfield
-    weight: 17
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_linkedin:
-    type: string_textfield
-    weight: 15
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_pinterest:
-    type: string_textfield
-    weight: 21
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_snapchat:
-    type: string_textfield
-    weight: 18
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_twitter:
-    type: string_textfield
-    weight: 19
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  n_person_social_youtube:
-    type: string_textfield
-    weight: 20
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   n_person_unldirectoryreference:
     type: entity_reference_autocomplete
     weight: 1
@@ -197,7 +115,7 @@ content:
     third_party_settings: {  }
   n_person_website:
     type: link_default
-    weight: 3
+    weight: 14
     region: content
     settings:
       placeholder_url: ''
@@ -205,27 +123,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -240,7 +158,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -249,7 +167,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }

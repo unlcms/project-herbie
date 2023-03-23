@@ -1,14 +1,14 @@
-uuid: f9f644d0-24c4-4855-9677-1322b05a9d02
+uuid: 7b7ad9a8-bf0c-4980-a9b8-bd1ad6ca418f
 langcode: en
 status: true
 dependencies:
   theme:
-    - seven
+    - unl_five_herbie
 _core:
   default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
-id: seven_page_title
-theme: seven
-region: header
+id: unl_five_herbie_page_title
+theme: unl_five_herbie
+region: hero
 weight: -2
 provider: null
 plugin: page_title_block

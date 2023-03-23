@@ -1,0 +1,8 @@
+uuid: 3207c98d-555a-4024-975b-0795cffdfd44
+langcode: en
+status: true
+dependencies: {  }
+id: access_feed_overview
+label: 'access feed overview'
+roles:
+  - site_admin
