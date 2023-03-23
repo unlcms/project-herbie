@@ -24,7 +24,6 @@ dependencies:
     - config_split
     - contextual
     - crop
-    - dcf_classes
     - entity_usage
     - external_entities
     - field_css
@@ -98,7 +97,6 @@ permissions:
   - 'administer crop'
   - 'administer crop types'
   - 'administer css assets injector'
-  - 'administer dcf classes'
   - 'administer display modes'
   - 'administer entity usage'
   - 'administer external entity types'

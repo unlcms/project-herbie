@@ -1,0 +1,9 @@
+name: 'DCF Lazy Loading Test'
+description: 'Provides testing functionality for DCF Lazy Loading'
+package: Testing
+
+type: module
+core: 8.x
+
+dependencies:
+  - dcf:dcf_lazyload
