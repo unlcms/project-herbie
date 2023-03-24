@@ -32,15 +32,15 @@
 
         <!-- Headline -->
         <div class="unlcms-teaser-person-text dcf-as-center">
-          {{ title_prefix }}
-          {% if page and view_mode == 'full' %}
-            <h1 class="headline dcf-mb-0 dcf-txt-h2"><span class="fn" itemprop="name">{{ label }}</span></h1>
-          {% else %}
-            <div class="dcf-lh-2 dcf-mb-1">
-              <a href="#" class="dcf-txt-h4 dcf-bold dcf-card-link dcf-txt-decor-hover unl-ls-h" itemprop="name">{{ label }}</a>
-            </div>
-          {% endif %}
-          {{ title_suffix }}
+        {{ title_prefix }}
+        {% if page and view_mode == 'full' %}
+          <h1 class="headline dcf-mb-0 dcf-txt-h2" {{ title_attributes }}><span class="fn" itemprop="name">{{ label }}</span></h1>
+        {% else %}
+          <div class="dcf-lh-2 dcf-mb-1">
+            <a href="{{ url }}" class="dcf-txt-h4 dcf-bold dcf-card-link dcf-txt-decor-hover unl-ls-h" itemprop="name">{{ label }}</a>
+          </div>
+        {% endif %}
+        {{ title_suffix }}
 
           {# Position #}
           <div class="dcf-lh-3 dcf-txt-sm dcf-italic">
@@ -73,7 +73,8 @@
                     </svg>
                   </div>
 
-                  <a class="dcf-txt-decor-hover" href="https://maps.unl.edu/NU" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" translate="no">
+                  {# <a  itemprop="address" itemscope="" href="" itemtype="http://schema.org/PostalAddress" translate="no"> #}
+                  <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" translate="no">
                     {% if node.n_person_address.value %}
                       {% for i, value in node.n_person_address %}
                         {% if i == 0 %}
@@ -83,10 +84,10 @@
                           <span itemprop="addressLocality">{{ node.n_person_address[i].value }}</span>,
                         {% endif %}
                         {% if i == 2 %}
-                          <abbr title="Nebraska" itemprop="addressRegion">{{ node.n_person_address[i].value }}</abbr>
+                          <abbr title="Nebraska" itemprop="addressRegion">{{ node.n_person_address[i].value }}</abbr>,
                         {% endif %}
                         {% if i == 3 %}
-                          <span itemprop="postalCode">{{ node.n_person_address[i].value }}</span>
+                          <span itemprop="postalCode">{{ node.n_person_address[i].value }}</span>,
                         {% endif %}
 
                         {% if i == 4 %}
@@ -114,9 +115,11 @@
                         {% endif %}
                       {% endfor %}
                     {% endif %}
-                  </a>
+                  </div>
+                  {# </a> #}
                 </dd>
 
+                {# Phone #}
                 <dt class="dcf-sr-only">Phone</dt>
                 <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
                   <div class="dcf-h-4 dcf-w-4 unl-gray">
@@ -127,21 +130,23 @@
                   </div>
                   <span class="type dcf-d-none">Work</span>
 
-                  <a class="dcf-txt-decor-hover" href="tel:+14024727211" itemprop="telephone">
+                  {# <a class="dcf-txt-decor-hover" href="tel:+14024727211" itemprop="telephone"> #}
                     {% if node.n_person_phone.value %}
+                    <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
                       <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
 
                       {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
                         <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
                       {% endif %}
                     {% else %}
+                    <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
                       <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
 
                       {% if (node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
                         <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
                       {% endif %}
+                    </a>
                     {% endif %}
-                  </a>
                 </dd>
 
                 <dt class="dcf-sr-only">Email</dt>
