@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.s_m_height
     - media.type.remote_video
+_core:
+  default_config_hash: VAPS_AKRGKYmhM-hXafbDDbJUmo2hYB99aUqyincAdg
 id: media.remote_video.s_m_height
 field_name: s_m_height
 entity_type: media

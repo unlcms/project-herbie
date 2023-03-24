@@ -1,8 +1,0 @@
-uuid: e752de0d-ad7f-42a8-87eb-bd39274f37a4
-langcode: en
-status: true
-dependencies: {  }
-id: administer_css_assets_injector
-label: 'administer css assets injector'
-roles:
-  - coder

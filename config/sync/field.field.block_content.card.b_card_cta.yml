@@ -8,7 +8,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: fCmy0E4C6GgbG5UyoM9svpIz3x073jFpHAUm2t8DIKY
+  default_config_hash: zLTbRxaekCl4JqucaYMhY6zd4CSy9tUIWmzJtOCLNFk
 id: block_content.card.b_card_cta
 field_name: b_card_cta
 entity_type: block_content

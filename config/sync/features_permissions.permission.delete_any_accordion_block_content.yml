@@ -1,9 +1,0 @@
-uuid: 3c88ee96-5b3f-4e9f-b9a8-6d557bdb8d13
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_accordion_block_content
-label: 'delete any accordion block content'
-roles:
-  - editor
-  - site_admin

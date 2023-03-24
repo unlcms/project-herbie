@@ -23,6 +23,8 @@ dependencies:
   module:
     - media
     - user
+_core:
+  default_config_hash: B86lZUz1JrLwcn_7j1zahuek-315orI-SR5DEq0PmJc
 id: media_metadata
 label: 'Media Metadata'
 module: views

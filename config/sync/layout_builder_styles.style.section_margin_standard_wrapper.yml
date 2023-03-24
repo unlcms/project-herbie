@@ -1,0 +1,12 @@
+uuid: 1f7b12b5-9cac-48f2-85bd-3d7205824d39
+langcode: en
+status: true
+dependencies: {  }
+id: section_margin_standard_wrapper
+label: 'Standard wrapper'
+classes: dcf-wrapper
+type: section
+group: container
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -6

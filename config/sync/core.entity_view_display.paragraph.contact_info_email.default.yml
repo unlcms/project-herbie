@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_email.p_b_cinfo_email_email
     - paragraphs.paragraphs_type.contact_info_email
+_core:
+  default_config_hash: dL-GlNTtJEK7detpmwzvdal5qd1ypHrfn-1y2p4eUuc
 id: paragraph.contact_info_email.default
 targetEntityType: paragraph
 bundle: contact_info_email

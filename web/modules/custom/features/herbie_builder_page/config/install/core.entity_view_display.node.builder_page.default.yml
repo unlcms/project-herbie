@@ -21,15 +21,15 @@ third_party_settings:
         layout_id: dcf_onecol_section
         layout_settings:
           label: ''
-          context_mapping: {  }
           column_widths: '100'
           title: ''
           title_classes: {  }
           title_display: false
+          section_element_id: ''
+          context_mapping: {  }
           section_package: ''
           section_classes: {  }
           block_margin: ''
-          section_element_id: ''
           column_classes:
             col_1: {  }
         components:

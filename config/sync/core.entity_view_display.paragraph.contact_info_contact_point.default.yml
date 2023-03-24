@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_contact_point
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: PJ0Uol0UXFFXzO_Yidlp1iPPckMyLAyjzppBLJZyM1A
 id: paragraph.contact_info_contact_point.default
 targetEntityType: paragraph
 bundle: contact_info_contact_point

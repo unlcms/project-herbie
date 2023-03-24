@@ -14,7 +14,7 @@ dependencies:
     - image_class
     - options
 _core:
-  default_config_hash: NCm7V0AV3b7lHtFCNAvUCCqFSxHYgMIjQr8vwYvn9nM
+  default_config_hash: L7BvHdUygi_6iGD7fBH0oUIrY428nU3apsmHDftoXuU
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero

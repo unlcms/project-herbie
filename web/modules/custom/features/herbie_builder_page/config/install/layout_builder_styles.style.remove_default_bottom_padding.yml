@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: remove_default_bottom_padding
+label: 'Remove bottom spacing'
+classes: dcf-pb-0
+type: section
+group: spacing
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -2

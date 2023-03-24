@@ -1,9 +1,0 @@
-uuid: d6480cad-a035-4355-9e64-425b68eea863
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_card_block_content
-label: 'delete any card block content'
-roles:
-  - editor
-  - site_admin

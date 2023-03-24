@@ -15,6 +15,7 @@ dependencies:
     - contextual
     - entity_usage
     - feeds
+    - file_delete
     - layout_builder
     - layout_builder_component_attributes
     - media

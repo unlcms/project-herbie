@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_cta_link
   module:
     - link
+_core:
+  default_config_hash: d7d0ZK7F_LK8_7fi3p-BRw22efmNC9REM2zLl9dXfzU
 id: block_content.cta.b_cta_link
 field_name: b_cta_link
 entity_type: block_content

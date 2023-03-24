@@ -1,61 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - core.entity_view_display.node.builder_page.default
-    - filter.format.block_body
-    - filter.format.block_body_centered
-    - filter.format.html_code
-    - filter.format.standard
-    - filter.format.webform
-    - node.type.builder_page
-    - node.type.news
-    - node.type.person
-  module:
-    - asset_injector
-    - auto_entitylabel
-    - block
-    - block_content
-    - block_content_permissions
-    - book
-    - codemirror_editor
-    - config
-    - config_split
-    - contextual
-    - crop
-    - dcf_classes
-    - entity_usage
-    - external_entities
-    - field_css
-    - field_ui
-    - file
-    - filter
-    - honeypot
-    - image
-    - layout_builder
-    - layout_builder_component_attributes
-    - layout_builder_modal
-    - layout_builder_restrictions
-    - linkit
-    - media
-    - node
-    - oembed_providers
-    - paragraphs
-    - path
-    - pathauto
-    - queue_ui
-    - rabbit_hole
-    - redirect
-    - responsive_image
-    - shortcut
-    - system
-    - taxonomy
-    - toolbar
-    - twig_ui
-    - unl_news
-    - views_ui
-    - webform
-    - webform_submission_log
+dependencies: {  }
 id: administrator
 label: Administrator
 weight: -5

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: q4-N5uKIB8iyvM8aBAQ9AMxAqgTEpLxzprAT-IvMaSo
 name: hero_lg_1197
 label: 'Hero (lg) 1197x448'
 effects:

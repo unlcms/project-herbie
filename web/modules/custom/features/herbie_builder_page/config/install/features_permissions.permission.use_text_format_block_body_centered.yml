@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - filter.format.block_body_centered
-id: use_text_format_block_body_centered
-label: 'use text format block_body_centered'
-roles:
-  - authenticated

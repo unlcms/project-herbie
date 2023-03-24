@@ -10,6 +10,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_post_office_box_add
   module:
     - options
+_core:
+  default_config_hash: hmyoLt1BimlEPv-q8o8RRHy3SEkndU7H4CpxHqfmHlY
 id: paragraph.contact_info_post_office_box_add.default
 targetEntityType: paragraph
 bundle: contact_info_post_office_box_add

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: tDj-w_oflrQiXui-DfEzdxGD41nB06ivykyqFYqWvSQ
 id: block_content.b_social_media_links_twitter
 field_name: b_social_media_links_twitter
 entity_type: block_content

@@ -5,6 +5,8 @@ dependencies:
   module:
     - block_content
     - link
+_core:
+  default_config_hash: _JpUvXdmzcL_1UkZ6NLiBadsiB1MqpDAIUcAzn7jQxg
 id: block_content.b_card_cta
 field_name: b_card_cta
 entity_type: block_content

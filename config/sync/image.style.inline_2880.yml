@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: QF9yxazhtFWj_X8MSjUXbeAYJDlBGRpSgTlLLCSeSl4
 name: inline_2880
 label: 'Inline 2880'
 effects:

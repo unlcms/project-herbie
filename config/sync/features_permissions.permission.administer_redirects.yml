@@ -1,8 +1,0 @@
-uuid: f2ca575d-c925-4066-81f5-eebc70bb18b7
-langcode: en
-status: true
-dependencies: {  }
-id: administer_redirects
-label: 'administer redirects'
-roles:
-  - site_admin

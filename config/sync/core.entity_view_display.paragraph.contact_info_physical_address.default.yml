@@ -10,6 +10,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_physical_address
   module:
     - options
+_core:
+  default_config_hash: fdyf027slb3vDEqB2qRjqpSEJa8hM2huShdRucgU7zY
 id: paragraph.contact_info_physical_address.default
 targetEntityType: paragraph
 bundle: contact_info_physical_address

@@ -1,9 +1,0 @@
-uuid: f9c23637-bcad-41da-b679-9d27873203a0
-langcode: en
-status: true
-dependencies: {  }
-id: view_own_unpublished_content
-label: 'view own unpublished content'
-roles:
-  - editor
-  - site_admin

@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
     - paragraphs.paragraphs_type.contact_info_physical_address
+_core:
+  default_config_hash: YqBc569fnOv5BiE0nu22cCXnuUMP8hCAJ41OWJ_73Ik
 id: paragraph.contact_info_physical_address.default
 targetEntityType: paragraph
 bundle: contact_info_physical_address

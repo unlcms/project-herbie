@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: pADh2O-ZMx6CnYdD_PICzi8es8N-j8ax2b933ougLCg
 id: block_content.b_social_media_links_snapchat
 field_name: b_social_media_links_snapchat
 entity_type: block_content

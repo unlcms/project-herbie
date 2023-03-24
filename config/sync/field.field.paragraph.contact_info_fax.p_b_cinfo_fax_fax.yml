@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.p_b_cinfo_fax_fax
     - paragraphs.paragraphs_type.contact_info_fax
+_core:
+  default_config_hash: 5VWgPp12DTHoY_RSHP-BNy1uf5VNEfSCruVDj7NQgt4
 id: paragraph.contact_info_fax.p_b_cinfo_fax_fax
 field_name: p_b_cinfo_fax_fax
 entity_type: paragraph

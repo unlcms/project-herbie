@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_post_office_box_add
   module:
     - options
+_core:
+  default_config_hash: ODCCltBJyV2F_5ONdC_M_FbjugNJUo7U42imbbO6iNo
 id: paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_state
 field_name: p_b_cinfo_poadd_state
 entity_type: paragraph

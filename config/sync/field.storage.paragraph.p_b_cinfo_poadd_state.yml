@@ -5,6 +5,8 @@ dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: TmdHShAy5SoF1amkH4x3Q-E6Bk4Edq1aJjM4aVVmoAM
 id: paragraph.p_b_cinfo_poadd_state
 field_name: p_b_cinfo_poadd_state
 entity_type: paragraph

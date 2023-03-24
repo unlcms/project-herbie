@@ -2,6 +2,7 @@ global-styling:
   version: VERSION
   css:
     theme:
+      css/global.css: {}
       css/media.css: {}
       css/wdn-overrides.css: {}
 
@@ -26,6 +27,9 @@ photo_hero:
 
 card:
   version: VERSION
+  css:
+    theme:
+      css/theme/card.css: {}
   js:
     js/theme/card.js: {}
 

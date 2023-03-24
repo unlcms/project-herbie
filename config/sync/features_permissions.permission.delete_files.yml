@@ -1,8 +1,0 @@
-uuid: cc35f2a4-8e56-45dd-a1cd-2adc3076080d
-langcode: en
-status: true
-dependencies: {  }
-id: delete_files
-label: 'delete files'
-roles:
-  - site_admin

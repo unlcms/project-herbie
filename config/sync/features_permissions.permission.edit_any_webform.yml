@@ -1,9 +1,0 @@
-uuid: 7e642f31-45c6-48a2-8e7d-f88f625b63aa
-langcode: en
-status: true
-dependencies: {  }
-id: edit_any_webform
-label: 'edit any webform'
-roles:
-  - editor
-  - site_admin

@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: 8FRNsb9m9ZgwlCH8FLRerXWncCWJdJXesmUMC56zV3c
 name: inline_960
 label: 'Inline 960'
 effects:

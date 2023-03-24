@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.s_m_width
     - media.type.image
+_core:
+  default_config_hash: 6jt1324PBYYYjqF962bkq4CS1l_CXd1BPliLgDA5TR8
 id: media.image.s_m_width
 field_name: s_m_width
 entity_type: media

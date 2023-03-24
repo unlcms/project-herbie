@@ -12,6 +12,8 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - block_body
+_core:
+  default_config_hash: tMrhiPrhmFQIm37TM416G6T90vz5NZe3-SBfTFWneU8
 id: paragraph.accordion_item.p_b_accrd_item_body
 field_name: p_b_accrd_item_body
 entity_type: paragraph

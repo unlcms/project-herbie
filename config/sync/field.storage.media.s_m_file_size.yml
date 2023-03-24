@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: EP9XSymPmvAinWAuyRXhiRzkh5UJGOjBXRO7S1JpXH4
 id: media.s_m_file_size
 field_name: s_m_file_size
 entity_type: media

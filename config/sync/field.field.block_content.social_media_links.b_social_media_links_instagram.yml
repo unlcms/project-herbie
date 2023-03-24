@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_instagram
+_core:
+  default_config_hash: L6iORRIvoXB3Rb_tXwQQ4bKb6v1XVmkAABdj29h6KUA
 id: block_content.social_media_links.b_social_media_links_instagram
 field_name: b_social_media_links_instagram
 entity_type: block_content

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.p_b_cinfo_poadd_city
     - paragraphs.paragraphs_type.contact_info_post_office_box_add
+_core:
+  default_config_hash: 1W97PFThZg3xkv22iSvHLkehakPCog40CNInBI8GPcw
 id: paragraph.contact_info_post_office_box_add.p_b_cinfo_poadd_city
 field_name: p_b_cinfo_poadd_city
 entity_type: paragraph

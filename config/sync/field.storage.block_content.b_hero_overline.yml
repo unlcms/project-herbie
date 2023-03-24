@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: kg12uCB6_Wf08l9LFLUuvjH45faNmQT5kxewYEWV53U
 id: block_content.b_hero_overline
 field_name: b_hero_overline
 entity_type: block_content

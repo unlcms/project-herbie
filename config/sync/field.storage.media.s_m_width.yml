@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: IBxQom06aximTtUYdXDZHjPrq2cbXo-FVezfvalk-ro
 id: media.s_m_width
 field_name: s_m_width
 entity_type: media

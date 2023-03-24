@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_twitter
+_core:
+  default_config_hash: FLqbgsTMOGwzJAgBbiP36EY0VZuMbmJnvmHXjhH1kLw
 id: block_content.social_media_links.b_social_media_links_twitter
 field_name: b_social_media_links_twitter
 entity_type: block_content

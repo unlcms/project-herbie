@@ -8,7 +8,7 @@ third_party_settings:
   crop:
     image_field: _none
 _core:
-  default_config_hash: SrzXMnDlCqrykI3GWE1ZFzSDEXambf_jHFSYy-mGMqQ
+  default_config_hash: 0bPuWJsp1JUrWtLT2frXeXEsy9p31p1H9R-V_PeZL1o
 id: image
 label: Image
 description: 'A nice photo or other image file.'

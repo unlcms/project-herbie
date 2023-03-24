@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: McrJM9-kZgUBV_49EMBtrnnwhsKpQVYxYUvcZE0Gr_8
 name: hero_md_2129
 label: 'Hero (md) 2129x336'
 effects:

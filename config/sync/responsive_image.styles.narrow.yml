@@ -10,6 +10,8 @@ dependencies:
     - image.style.inline_480
     - image.style.inline_720
     - image.style.inline_960
+_core:
+  default_config_hash: 8nqaixcusyqCrG7Ac11Htrzx-tEB9MN6vArWDmYjR98
 id: narrow
 label: Narrow
 image_style_mappings:

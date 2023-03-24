@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * This module provides install and update functions.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dcf_lazyload_install() {
+  // Can be removed when https://www.drupal.org/project/drupal/issues/2686145
+  // is committed. Weight is set to override
+  // field.formatter.settings.responsive_image schema, which is provided by
+  // the Responsive Image module.
+  module_set_weight('dcf_lazyload', 1);
+}
+
+/**
+ * Set module weight.
+ */
+function dcf_lazyload_update_8101() {
+  // Can be removed when https://www.drupal.org/project/drupal/issues/2686145
+  // is committed. Weight is set to override
+  // field.formatter.settings.responsive_image schema, which is provided by
+  // the Responsive Image module.
+  module_set_weight('dcf_lazyload', 1);
+}
+
+/**
+ * Remove Lazyload source configuration/permission.
+ */
+function dcf_lazyload_update_8102() {
+  // Remove permission "administer dcf lazyload" from all roles.
+  $roles = \Drupal::entityTypeManager()
+    ->getStorage('user_role')
+    ->loadMultiple();
+  foreach ($roles as $role) {
+    if ($role->hasPermission('administer dcf lazyload')) {
+      $role->revokePermission('administer dcf lazyload');
+      $role->save();
+    }
+  }
+
+  // Remove dcf_lazyload.settings config
+  \Drupal::service('config.factory')
+    ->getEditable('dcf_lazyload.settings')
+    ->delete();
+}

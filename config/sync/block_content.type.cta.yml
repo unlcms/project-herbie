@@ -2,6 +2,8 @@ uuid: f44dbff2-1788-4cda-a9df-46b070474916
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ilyHBMSBaHyQnv5sMXCynlfxZCaOC2B050pyUFqoSRQ
 id: cta
 label: 'Call to action'
 revision: 0

@@ -17,7 +17,7 @@ dependencies:
     - link
     - text
 _core:
-  default_config_hash: _J3J50ESTz7p_RrybndlcB3Aa3KvjhTmAD0220447T8
+  default_config_hash: v-_D61EJ3fp2Qu_FtWn9ScSmUk2lHeR5XIyBd2k0gZM
 id: block_content.card.default
 targetEntityType: block_content
 bundle: card

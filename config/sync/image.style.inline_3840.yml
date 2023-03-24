@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - image_effects
+_core:
+  default_config_hash: 6RzPpfrpPv28KLxoP4Tt07c2MAnC4MZeJ9Yte5mMdVU
 name: inline_3840
 label: 'Inline 3840'
 effects:

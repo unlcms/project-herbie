@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.m_rv_suggested_cache_lifetime
     - media.type.remote_video
+_core:
+  default_config_hash: 1dhAO-SfQLGroSDawvjpD4ejryzSRmQLnjv1I9Iptyc
 id: media.remote_video.m_rv_suggested_cache_lifetime
 field_name: m_rv_suggested_cache_lifetime
 entity_type: media

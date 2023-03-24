@@ -1,115 +1,11 @@
 uuid: 9785a012-13f3-431d-9439-f7d19859f9ec
 langcode: en
 status: true
-dependencies:
-  config:
-    - core.entity_view_display.node.builder_page.default
-    - media.type.file
-    - media.type.image
-    - media.type.remote_video
-    - node.type.book
-    - node.type.builder_page
-    - node.type.news
-    - node.type.person
-  module:
-    - block_content_permissions
-    - book
-    - contextual
-    - entity_usage
-    - layout_builder
-    - layout_builder_component_attributes
-    - media
-    - menu_admin_per_menu
-    - node
-    - paragraphs
-    - path
-    - system
-    - taxonomy
-    - toolbar
-    - webform
+dependencies: {  }
+_core:
+  default_config_hash: XExiyQeoeYXhPnCYfy0teKcOuBCFYvHjcpEABKzi7jE
 id: editor
 label: Editor
 weight: -8
 is_admin: null
-permissions:
-  - 'access administration pages'
-  - 'access block content overview'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access entity usage statistics'
-  - 'access media overview'
-  - 'access site in maintenance mode'
-  - 'access taxonomy overview'
-  - 'access toolbar'
-  - 'access user profiles'
-  - 'access webform overview'
-  - 'add content to books'
-  - 'administer block content types'
-  - 'administer book outlines'
-  - 'administer main menu items'
-  - 'configure editable builder_page node layout overrides'
-  - 'create accordion block content'
-  - 'create and edit custom blocks'
-  - 'create book content'
-  - 'create builder_page content'
-  - 'create card block content'
-  - 'create card_circle_image block content'
-  - 'create contact_info block content'
-  - 'create content block content'
-  - 'create file media'
-  - 'create hero block content'
-  - 'create image media'
-  - 'create new books'
-  - 'create news content'
-  - 'create person content'
-  - 'create remote_video media'
-  - 'create url aliases'
-  - 'create webform'
-  - 'delete any accordion block content'
-  - 'delete any book content'
-  - 'delete any builder_page content'
-  - 'delete any card block content'
-  - 'delete any card_circle_image block content'
-  - 'delete any contact_info block content'
-  - 'delete any content block content'
-  - 'delete any file media'
-  - 'delete any hero block content'
-  - 'delete any image media'
-  - 'delete any news content'
-  - 'delete any person content'
-  - 'delete any remote_video media'
-  - 'delete book revisions'
-  - 'delete builder_page revisions'
-  - 'delete news revisions'
-  - 'delete own person content'
-  - 'delete person revisions'
-  - 'edit any book content'
-  - 'edit any builder_page content'
-  - 'edit any file media'
-  - 'edit any image media'
-  - 'edit any news content'
-  - 'edit any person content'
-  - 'edit any remote_video media'
-  - 'edit any webform'
-  - 'manage layout builder component attributes'
-  - 'revert book revisions'
-  - 'revert builder_page revisions'
-  - 'revert news revisions'
-  - 'revert person revisions'
-  - 'update any accordion block content'
-  - 'update any card block content'
-  - 'update any card_circle_image block content'
-  - 'update any contact_info block content'
-  - 'update any content block content'
-  - 'update any hero block content'
-  - 'view any webform submission'
-  - 'view book revisions'
-  - 'view builder_page revisions'
-  - 'view news revisions'
-  - 'view own unpublished content'
-  - 'view own unpublished media'
-  - 'view person revisions'
-  - 'view restricted block content'
-  - 'view the administration theme'
-  - 'view unpublished paragraphs'
-  - 'view user email addresses'
+permissions: {  }

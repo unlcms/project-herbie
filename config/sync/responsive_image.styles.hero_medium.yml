@@ -8,6 +8,8 @@ dependencies:
     - image.style.hero_md_2129
     - image.style.hero_md_673
     - image.style.hero_md_898
+_core:
+  default_config_hash: EFPwBcAqqIkHEKLaXD0DuEg7aNdVvDjDDpZmMDCpn1s
 id: hero_medium
 label: 'Hero Medium'
 image_style_mappings:

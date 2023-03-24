@@ -1,9 +1,0 @@
-uuid: cc13b661-d3ee-4f04-b2ce-0e003ed865c1
-langcode: en
-status: true
-dependencies: {  }
-id: create_contact_info_block_content
-label: 'create contact_info block content'
-roles:
-  - editor
-  - site_admin

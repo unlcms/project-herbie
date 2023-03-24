@@ -1,8 +1,0 @@
-uuid: dacf9e80-c4d5-4b72-9053-625a1aa52b62
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_webform
-label: 'delete any webform'
-roles:
-  - site_admin

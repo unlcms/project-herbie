@@ -10,4 +10,3 @@ id: delete_any_news_content
 label: 'delete any news content'
 roles:
   - administrator
-  - editor

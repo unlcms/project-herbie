@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_photohero_links
   module:
     - link
+_core:
+  default_config_hash: jEerxEbQ4FCY7ykcJHPU2UnkYvcQpQy7bUSA0PVqaY0
 id: block_content.photo_hero.b_photohero_links
 field_name: b_photohero_links
 entity_type: block_content

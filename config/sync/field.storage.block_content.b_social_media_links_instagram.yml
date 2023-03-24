@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: 6yUes6o7JnLyAfiuB_4-1svXRXycZLAS48kwI01mBD4
 id: block_content.b_social_media_links_instagram
 field_name: b_social_media_links_instagram
 entity_type: block_content

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_margin_edge_to_edge
+label: Edge-to-edge
+classes: dcf-edge-to-edge
+type: section
+group: container
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -5

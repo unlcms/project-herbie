@@ -6,6 +6,8 @@ dependencies:
     - block_content
     - file
     - image
+_core:
+  default_config_hash: PDGL0uLWhVAVTNVleMZGIFKJEcv_e8OEUXwp5_SLIjE
 id: block_content.b_card_image
 field_name: b_card_image
 entity_type: block_content

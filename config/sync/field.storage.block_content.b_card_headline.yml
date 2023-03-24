@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: mp4VEkfBXZypttvhRwHUHetIXT58ZTAKjdltID5Llr4
 id: block_content.b_card_headline
 field_name: b_card_headline
 entity_type: block_content

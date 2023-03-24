@@ -1,9 +1,0 @@
-uuid: b40de72d-4c89-41c3-bfa9-91c55c24c75a
-langcode: en
-status: true
-dependencies: {  }
-id: view_unpublished_paragraphs
-label: 'view unpublished paragraphs'
-roles:
-  - editor
-  - site_admin

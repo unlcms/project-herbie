@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.m_rv_thumbnail_local_uri
     - media.type.remote_video
+_core:
+  default_config_hash: UU_OjWwg0cL5ohFoqYQP-BmOocOWMTeSLEUd6pKXg7Y
 id: media.remote_video.m_rv_thumbnail_local_uri
 field_name: m_rv_thumbnail_local_uri
 entity_type: media

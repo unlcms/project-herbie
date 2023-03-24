@@ -1,9 +1,0 @@
-uuid: a67c0931-f13a-4612-a133-e48fe6c8b655
-langcode: en
-status: true
-dependencies: {  }
-id: view_restricted_block_content
-label: 'view restricted block content'
-roles:
-  - editor
-  - site_admin

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.p_b_cinfo_padd_postal_code
     - paragraphs.paragraphs_type.contact_info_physical_address
+_core:
+  default_config_hash: ee5l8jwgf0KxelwdFFTin0jNxrdmToGEa6VcF8hR-Hs
 id: paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
 field_name: p_b_cinfo_padd_postal_code
 entity_type: paragraph

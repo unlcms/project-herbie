@@ -179,7 +179,6 @@
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^2",
-        "unlcms/unl_dcf": "^1.1",
         "unlcms/unl_five": "^10",
         "unlcms/unl_multisite": "^1.1",
         "unlcms/unl_user": "^1.1",

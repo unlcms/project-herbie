@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_heading.p_b_cinfo_heading_heading
     - paragraphs.paragraphs_type.contact_info_heading
+_core:
+  default_config_hash: uvLGWWSOUggSwOUxoz75pI5Ls2Oqvnu83GT92EaYShs
 id: paragraph.contact_info_heading.default
 targetEntityType: paragraph
 bundle: contact_info_heading

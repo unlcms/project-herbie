@@ -14,6 +14,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_post_office_box_add
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: xU788FWw2rokXEgzamXl5qLkZJj3mvcitFC4s793yvQ
 id: paragraph.contact_info_contact_point.p_b_cinfo_attributes
 field_name: p_b_cinfo_attributes
 entity_type: paragraph

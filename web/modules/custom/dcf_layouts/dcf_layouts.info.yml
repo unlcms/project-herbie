@@ -1,0 +1,8 @@
+name: 'DCF Layouts'
+description: 'Layouts that use Digital Campus Framework markup.'
+package: DCF
+core_version_requirement: ^10
+type: module
+
+dependencies:
+  - drupal:layout_discovery

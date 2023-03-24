@@ -10,6 +10,8 @@ dependencies:
     - image.style.1_1_3840x3840
     - image.style.1_1_480x480
     - image.style.1_1_960x960
+_core:
+  default_config_hash: Da88rj2qQpHq3ledgX7e-vxb4Wuy-JVBewanX7kNWAU
 id: card_circle_image_block
 label: 'Card + Circle Image Block'
 image_style_mappings:

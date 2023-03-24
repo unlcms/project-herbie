@@ -1,9 +1,0 @@
-uuid: 251d8cce-6a9d-44fe-bf7b-5ea40d8b7ad1
-langcode: en
-status: true
-dependencies: {  }
-id: create_new_books
-label: 'create new books'
-roles:
-  - editor
-  - site_admin

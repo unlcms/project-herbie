@@ -1,5 +1,95 @@
+/* Reset default styles. */
 .layout-builder-block {
     padding: 0;
     cursor: move;
     background: transparent;
+}
+
+/* Remove default border and padding. */
+.layout-builder {
+    background-color: unset;
+    border: none;
+    padding: 0;
+}
+
+/* Make the labels a little smaller */
+#drupal-off-canvas-wrapper .ui-dialog-titlebar {
+    font-size: .8em;
+}
+#drupal-off-canvas label {
+    font-size: .8em;
+    margin-bottom: 0.5em;
+}
+
+/* .dcf-bleed needs some adjustment when the drawer is open. */
+.dcf-bleed.layout-builder__layout.is-layout-builder-highlighted,
+.dcf-bleed.layout-builder-block.is-layout-builder-highlighted,
+.dcf-bleed.layout-builder__add-block.is-layout-builder-highlighted {
+    margin-left: -40vw !important;
+    margin-right: -40vw !important;
+    width: 80vw;
+}
+
+/* Show an outline on a section for clarity. */
+.layout-builder__section:focus .layout-builder__layout,
+.layout-builder__section:hover .layout-builder__layout {
+    outline: 2px dashed #0036b1;
+    box-shadow: 2px 2px 6px 0px rgba(136,136,136,1);
+}
+
+/* Show the 'Configure section' link on hover. */
+.layout-builder__section:focus .layout-builder__link,
+.layout-builder__section:hover .layout-builder__link {
+    opacity: 1;
+}
+
+.layout-builder__section > .layout-builder__link {
+    padding: 0.7rem 1.3rem 0.7rem 3rem;
+    z-index: 2;
+    background: #f7f7f7;
+    font-size: .8rem;
+    line-height: 0.65;
+    position: absolute;
+    opacity: 0;
+    height: 38px;
+    border: 1px solid #ccc;
+}
+
+.layout-builder__section > .layout-builder__link--remove {
+    z-index: 3;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 38px;
+    width: 40px;
+    margin-left: 0;
+    border: 1px solid #ccc;
+    background: url(/core/misc/icons/bebebe/ex.svg) #fff 50%/16px 16px no-repeat!important;
+}
+
+/* Slim down the appearance of the edit actions at the top. */
+#edit-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+#edit-actions * {
+    margin-right: 1em;
+}
+
+/* Hide the Revert To Defaults checkbox. We don't want editors to wipe out the page. */
+.layout-builder-form #edit-revert {
+    display: none;
+}
+
+/* Hide the revision checkbox. We always want a new revision to be made. */
+.layout-builder-form .vertical-tabs {
+    display: none;
+}
+
+/* Display options heading */
+#drupal-off-canvas .layout-builder-style-heading {
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }

@@ -1,8 +1,0 @@
-uuid: cdd310c2-3c54-4697-99f0-d3301273acce
-langcode: en
-status: true
-dependencies: {  }
-id: access_webform_submission_user
-label: 'access webform submission user'
-roles:
-  - authenticated

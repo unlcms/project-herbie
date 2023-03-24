@@ -1,9 +1,0 @@
-uuid: ac1adfa9-ff65-4c25-a4e8-40edcd6f91c1
-langcode: en
-status: true
-dependencies: {  }
-id: access_entity_usage_statistics
-label: 'access entity usage statistics'
-roles:
-  - editor
-  - site_admin

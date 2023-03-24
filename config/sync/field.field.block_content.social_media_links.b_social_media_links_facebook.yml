@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_facebook
+_core:
+  default_config_hash: Ybv9us9ZUjo8B8Zt95Qk7xTNa611fqz24GpdKDNBNlM
 id: block_content.social_media_links.b_social_media_links_facebook
 field_name: b_social_media_links_facebook
 entity_type: block_content

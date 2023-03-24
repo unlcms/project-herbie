@@ -6,4 +6,3 @@ id: view_media
 label: 'view media'
 roles:
   - anonymous
-  - authenticated

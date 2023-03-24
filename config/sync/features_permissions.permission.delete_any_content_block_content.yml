@@ -1,9 +1,0 @@
-uuid: ebe68d9b-e54a-41f6-9098-853105c1e56f
-langcode: en
-status: true
-dependencies: {  }
-id: delete_any_content_block_content
-label: 'delete any content block content'
-roles:
-  - editor
-  - site_admin

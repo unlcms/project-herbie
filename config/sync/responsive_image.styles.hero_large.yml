@@ -9,6 +9,8 @@ dependencies:
     - image.style.hero_lg_673
     - image.style.hero_lg_898
     - image.style.hero_md_1197
+_core:
+  default_config_hash: yOPIfG0vWMFvDxEyFXk0Uk3vJJrC9e98icrNBM469QM
 id: hero_large
 label: 'Hero Large'
 image_style_mappings:

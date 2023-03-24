@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_margin
   module:
     - markup
+_core:
+  default_config_hash: zkGiWO7AtkpsHl2ZSbmY5H6j0bRqIsMscerOkj9dKOE
 id: paragraph.contact_info_margin.p_b_cinfo_margin_markup
 field_name: p_b_cinfo_margin_markup
 entity_type: paragraph

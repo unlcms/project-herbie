@@ -7,6 +7,8 @@ dependencies:
     - field.storage.block_content.b_cta_title
   module:
     - heading
+_core:
+  default_config_hash: v9YAPZ1Z5Hb5nyU2ofoK5AxxocdoWiID_4yBPEHn6SI
 id: block_content.cta.b_cta_title
 field_name: b_cta_title
 entity_type: block_content

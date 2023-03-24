@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.s_m_certify
     - media.type.file
+_core:
+  default_config_hash: 3AINdqlMiBmGBUM3CNLZE-FSpythSGVNHGG7fy-7q8g
 id: media.file.s_m_certify
 field_name: s_m_certify
 entity_type: media

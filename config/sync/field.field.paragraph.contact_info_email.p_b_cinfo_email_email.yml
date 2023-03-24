@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.p_b_cinfo_email_email
     - paragraphs.paragraphs_type.contact_info_email
+_core:
+  default_config_hash: cFrY7Sa4vufKFFhMEI3NsPgeBWpFSVosV1USoxLT8kE
 id: paragraph.contact_info_email.p_b_cinfo_email_email
 field_name: p_b_cinfo_email_email
 entity_type: paragraph

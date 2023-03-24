@@ -11,7 +11,7 @@ third_party_settings:
   crop:
     image_field: null
 _core:
-  default_config_hash: r2UZkg5Zg58wrUJJXkK5H0KOZoECBkWW47HOv4DmJqg
+  default_config_hash: RTFZYTdmSmOY6yjsXEhX3wk5kqV2VXS0tUBk2AOxXb0
 id: remote_video
 label: 'Remote Video'
 description: 'A remotely hosted video from <a href="https://mediahub.unl.edu/">mediahub.unl.edu</a>.'

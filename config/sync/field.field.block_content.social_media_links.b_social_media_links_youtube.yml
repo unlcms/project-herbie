@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_youtube
+_core:
+  default_config_hash: LWY1PPOcEs8OGZCBcTg3nCS9BSw9B7CS2DGkOyhRM9Q
 id: block_content.social_media_links.b_social_media_links_youtube
 field_name: b_social_media_links_youtube
 entity_type: block_content

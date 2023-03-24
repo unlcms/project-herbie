@@ -5,6 +5,8 @@ dependencies:
   config:
     - block_content.type.social_media_links
     - field.storage.block_content.b_social_media_links_snapchat
+_core:
+  default_config_hash: oF16Irc1JdEinhcMnvSn_uViYPmHJSKXUde753qSJzU
 id: block_content.social_media_links.b_social_media_links_snapchat
 field_name: b_social_media_links_snapchat
 entity_type: block_content

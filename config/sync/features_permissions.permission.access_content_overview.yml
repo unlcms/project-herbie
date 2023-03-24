@@ -1,9 +1,0 @@
-uuid: ffb99ef6-7c69-44ea-8c2b-31a84def4bba
-langcode: en
-status: true
-dependencies: {  }
-id: access_content_overview
-label: 'access content overview'
-roles:
-  - editor
-  - site_admin

@@ -6,6 +6,8 @@ dependencies:
     - block_content
     - file
     - image
+_core:
+  default_config_hash: YpcEe8WnRQlBBV5L4CIPI0ILMNrYuqwObW4zVKMLlqE
 id: block_content.b_cdcir_image
 field_name: b_cdcir_image
 entity_type: block_content

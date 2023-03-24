@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.contact_info_fax.p_b_cinfo_fax_fax
     - paragraphs.paragraphs_type.contact_info_fax
+_core:
+  default_config_hash: 8vUtbQilxaFrEiTnClgAcF1RzEvTImda5xPR0VB-i2c
 id: paragraph.contact_info_fax.default
 targetEntityType: paragraph
 bundle: contact_info_fax
