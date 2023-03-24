@@ -1,18 +1,5 @@
-{# <div{{ attributes }}>
-  {% for nid in nodes %}
-    {{ drupal_entity('node', nid, view_mode) }}
-  {% endfor %}
-</div> #}
-
-{#
 <div{{ attributes }}>
   {% for nid in nodes %}
-    {{ drupal_entity('node', nid, view_mode) }}
+    {{ drupal_entity('node', nid, 'teaser') }}
   {% endfor %}
 </div>
-
-
-<pre>
-  {{ dump(view_mode) }}
-  {{ dd(view_mode) }}
-</pre>
