@@ -118,7 +118,7 @@ drush cache:rebuild
 
 ## Configuration Management
 
-This project uses Drupal 9 Configuration Management to store the present/base/main configuration of a new site.
+This project uses Drupal Configuration Management to store the present/base/main configuration of a new site.
 
 After making changes, use `drush config:export` to export config to `config/sync` and commit.
 This config is used during a site installation to instantiate a site.
