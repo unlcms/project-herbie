@@ -1,3 +1,5 @@
+{{ attach_library('unl_five_herbie/card') }}
+
 {% set attributes = attributes ?: create_attribute() %}
 {% set card_classes = ['dcf-card', 'dcf-card-as-link', 'dcf-d-flex', 'dcf-flex-col', 'unl-box-shadow'] %}
 
@@ -18,7 +20,6 @@
       {{ content.b_card_body }}
 
       {% if content.b_card_cta[0]['#url']%}
-        {{ attach_library('unl_five_herbie/card') }}
         {{ content.b_card_cta }}
       {% endif %}
     </div>

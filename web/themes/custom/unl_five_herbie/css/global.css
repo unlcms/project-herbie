@@ -2,7 +2,3 @@
     padding-top: 3em;
     padding-bottom: 3em;
 }
-
-.layout__region .dcf-card+.dcf-card {
-    margin-top: 2em;
-}
