@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: section_padding_bottom_extra
 label: 'Add extra bottom spacing'
-classes: dcf-pb-8
+classes: dcf-pb-10
 type: section
 group: spacing
 block_restrictions: {  }
