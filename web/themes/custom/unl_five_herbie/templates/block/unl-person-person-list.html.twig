@@ -9,12 +9,7 @@
   ])
 %}
 
-
-{% set orderedListAttribute = create_attribute() %}
-{% set orderedListAttribute = orderedListAttribute.addClass('dcf-list-bare dcf-d-grid unlcms-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-9') %}
-
-<ol {{orderedListAttribute}}>
-
+<ol {{attributes}}>
   {% for nid in nodes %}
   {{ drupal_entity('node', nid, 'teaser') }}
   {% endfor %}
