@@ -71,7 +71,9 @@
 #edit-actions {
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
+    margin: 1em;
+    padding: 1em;
+    background: #eff6fc;
 }
 #edit-actions * {
     margin-right: 1em;

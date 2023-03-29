@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.s_n_page_options
+    - node.type.builder_page
+  module:
+    - options
+id: node.builder_page.s_n_page_options
+field_name: s_n_page_options
+entity_type: node
+bundle: builder_page
+label: 'Page options'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -44,6 +44,7 @@ dependencies:
   - 'external_entities:external_entities'
   - 'features_permissions:features_permissions'
   - 'field_css:field_css'
+  - 'field_group:field_group'
   - 'focal_point:focal_point'
   - 'heading:heading'
   - 'herbie_news:herbie_news'
@@ -67,5 +68,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.13
+version: 1.0.14
 package: Herbie

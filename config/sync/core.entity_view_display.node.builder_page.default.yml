@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.builder_page.body
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
+    - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
   module:
     - dcf_layouts
     - layout_builder
     - layout_builder_restrictions
+    - options
     - text
     - user
 third_party_settings:
@@ -22,12 +24,12 @@ third_party_settings:
         layout_id: dcf_onecol_section
         layout_settings:
           label: ''
+          context_mapping: {  }
           column_widths: '100'
           title: ''
           title_classes: {  }
           title_display: false
           section_element_id: ''
-          context_mapping: {  }
           section_package: ''
           section_classes: {  }
           block_margin: ''
@@ -50,6 +52,21 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
+          64e0e397-2212-4eb3-8f40-0981b2d5d510:
+            uuid: 64e0e397-2212-4eb3-8f40-0981b2d5d510
+            region: first
+            configuration:
+              id: 'field_block:node:builder_page:s_n_page_options'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
@@ -222,5 +239,12 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  s_n_page_options:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: first
 hidden:
   layout_builder__layout: true
