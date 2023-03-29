@@ -40,22 +40,24 @@ function unl_five_herbie_preprocess_region(&$variables) {
   if ($variables['region'] == 'hero') {
     $current_route = \Drupal::routeMatch();
     $node = $current_route->getParameter('node');
-
-    // Hide the page title with .dcf-sr-only if option is picked.
-    if ($node->hasField('s_n_page_options') && !$node->get('s_n_page_options')->isEmpty()) {
-      $publish_options = $node->get('s_n_page_options')->getValue();
-      if (array_search('title_hidden', array_column($publish_options, 'value')) !== FALSE) {
-        $variables['title_hidden'] = TRUE;
+    if ($node instanceof NodeInterface) {
+      // Create a Twig title_hidden variable to hide the page title
+      // with .dcf-sr-only if user picks that option.
+      if ($node->hasField('s_n_page_options') && !$node->get('s_n_page_options')->isEmpty()) {
+        $publish_options = $node->get('s_n_page_options')->getValue();
+        if (array_search('title_hidden', array_column($publish_options, 'value')) !== FALSE) {
+          $variables['title_hidden'] = TRUE;
+        }
       }
-    }
 
-    // Add the Hero field (s_n_hero) to the hero region template, region--hero.html.twig.
-    if ($node instanceof NodeInterface && $node->hasField('s_n_hero') && !$node->get('s_n_hero')->isEmpty()) {
-      $variables['s_n_hero'] = $node->get('s_n_hero')->view(['label' => 'hidden', 'type' => 'entity_reference_entity_view'])[0];
+      // Add the Hero field (s_n_hero) to the hero region template, region--hero.html.twig.
+      if ($node instanceof NodeInterface && $node->hasField('s_n_hero') && !$node->get('s_n_hero')->isEmpty()) {
+        $variables['s_n_hero'] = $node->get('s_n_hero')->view(['label' => 'hidden', 'type' => 'entity_reference_entity_view'])[0];
 
-      // Set a variable with the b_hero_size CSS class since rendering the field
-      // directly into the template will include breaking HTML comments if twig debugging is enabled.
-      $variables['hero_size_class'] = $variables['s_n_hero']['b_hero_size'][0]['#markup'];
+        // Set a variable with the b_hero_size CSS class since rendering the field
+        // directly into the template will include breaking HTML comments if twig debugging is enabled.
+        $variables['hero_size_class'] = $variables['s_n_hero']['b_hero_size'][0]['#markup'];
+      }
     }
   }
 }
@@ -240,6 +242,25 @@ function unl_five_herbie_preprocess_field(&$variables) {
  * Implements template_preprocess_layout().
  */
 function unl_five_herbie_preprocess_layout(&$variables) {
+  // Hide the second sidebar and make the first full width if user selects "Hide sidebar(s)".
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    if ($node->hasField('s_n_page_options') && !$node->get('s_n_page_options')->isEmpty()) {
+      $publish_options = $node->get('s_n_page_options')->getValue();
+      if (array_search('no_sidebars', array_column($publish_options, 'value')) !== FALSE) {
+        $variables['region_attributes']['first']->removeClass('dcf-col-25%-start@md');
+        $variables['region_attributes']['first']->removeClass('dcf-col-33%-start@md');
+        $variables['region_attributes']['first']->removeClass('dcf-col-50%-start@md');
+        $variables['region_attributes']['first']->removeClass('dcf-col-67%-start@md');
+        $variables['region_attributes']['first']->removeClass('dcf-col-75%-start@md');
+        $variables['region_attributes']['second']->addClass('dcf-d-none');
+      }
+    }
+  }
+
+  // Make section Layout Builder Styles array available to each block in the layout.
+  // Values can be accessed in a Twig template with data.section_lbs, see unl_five_herbie_preprocess_block().
   if (isset($variables['settings']['layout_builder_styles_style']) && !empty($variables['settings']['layout_builder_styles_style'])) {
     $layout_builder_styles = $variables['settings']['layout_builder_styles_style'];
     // Replace numeric keys with the value.
@@ -247,9 +268,6 @@ function unl_five_herbie_preprocess_layout(&$variables) {
       $section_layout_builder_styles[$value] = $value;
     }
   }
-
-  // Make section Layout Builder Styles array available to each block in the layout.
-  // Values can be accessed in a Twig template with data.section_lbs, see unl_five_herbie_preprocess_block().
   if (isset($section_layout_builder_styles) && !empty($section_layout_builder_styles)) {
     // Loop through each region.
     foreach ($variables['content'] as $region_id => $region) {

@@ -58,6 +58,7 @@ dependencies:
   - 'layout_builder_styles:layout_builder_styles'
   - 'linkit:linkit'
   - 'markup:markup'
+  - 'menu_block:menu_block'
   - 'oembed_providers:oembed_providers'
   - 'paragraphs:paragraphs'
   - 'pathauto:pathauto'
@@ -68,5 +69,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.14
+version: 1.0.15
 package: Herbie

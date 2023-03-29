@@ -7,11 +7,12 @@ dependencies:
     - field.field.node.builder_page.s_n_hero
     - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
+    - system.menu.main
   module:
     - dcf_layouts
     - layout_builder
     - layout_builder_restrictions
-    - options
+    - menu_block
     - text
     - user
 third_party_settings:
@@ -20,23 +21,41 @@ third_party_settings:
     allow_custom: true
     sections:
       -
-        layout_id: dcf_onecol_section
+        layout_id: dcf_twocol_section
         layout_settings:
-          label: ''
+          label: Content
           context_mapping: {  }
-          column_widths: '100'
-          title: ''
+          column_widths: 75-25
+          title: Content
           title_classes: {  }
           title_display: false
           section_element_id: ''
-          section_package: ''
-          section_classes: {  }
-          block_margin: ''
-          column_classes:
-            col_1: {  }
+          layout_builder_styles_style:
+            - ''
+            - section_margin_standard_wrapper
         components:
-          df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
-            uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
+          c2cc3a0c-4e50-40c4-89f4-ceed1583582b:
+            uuid: c2cc3a0c-4e50-40c4-89f4-ceed1583582b
+            region: second
+            configuration:
+              id: 'menu_block:main'
+              label: Menu
+              label_display: visible
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: child
+              label_link: true
+              label_type: root
+              level: 2
+              depth: 0
+              expand_all_items: false
+              parent: 'main:'
+              suggestion: main_sidebar
+            weight: 0
+            additional: {  }
+          7f56d3ac-40c1-4cf2-98cc-9f08e6a414e1:
+            uuid: 7f56d3ac-40c1-4cf2-98cc-9f08e6a414e1
             region: first
             configuration:
               id: 'field_block:node:builder_page:body'
@@ -45,27 +64,13 @@ third_party_settings:
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
             weight: 0
-            additional: {  }
-          64e0e397-2212-4eb3-8f40-0981b2d5d510:
-            uuid: 64e0e397-2212-4eb3-8f40-0981b2d5d510
-            region: first
-            configuration:
-              id: 'field_block:node:builder_page:s_n_page_options'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: list_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
@@ -183,18 +188,23 @@ third_party_settings:
               - 'inline_block:content'
               - 'inline_block:html_code'
             'Lists (Views)': {  }
-            Menus: {  }
+            Menus:
+              - 'menu_block:main'
             System: {  }
             Webform: {  }
             core: {  }
       denylisted_blocks: {  }
-      restricted_categories: {  }
+      restricted_categories:
+        dcf_twocol_section:
+          all_regions:
+            - 'Custom blocks'
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'
+      - 'Custom blocks'
       - Forms
       - 'Inline blocks'
       - 'Lists (Views)'
@@ -236,12 +246,6 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  s_n_page_options:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
-    region: first
 hidden:
   layout_builder__layout: true
+  s_n_page_options: true

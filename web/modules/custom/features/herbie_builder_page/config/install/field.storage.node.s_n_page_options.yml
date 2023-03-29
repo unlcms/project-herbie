@@ -13,6 +13,9 @@ settings:
     -
       value: title_hidden
       label: 'Visually hide page title'
+    -
+      value: no_sidebars
+      label: 'Hide sidebar(s)'
   allowed_values_function: ''
 module: options
 locked: false
