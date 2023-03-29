@@ -27,11 +27,6 @@ third_party_settings:
           title_display: false
           section_element_id: ''
           context_mapping: {  }
-          section_package: ''
-          section_classes: {  }
-          block_margin: ''
-          column_classes:
-            col_1: {  }
         components:
           df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
             uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1

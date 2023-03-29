@@ -9,7 +9,6 @@ use Drupal\block\Entity\Block;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 
-
 /**
  * Implements hook_preprocess_html().
  */
@@ -59,19 +58,20 @@ function unl_five_herbie_preprocess_block(&$variables) {
   }
 
   if (isset($variables['content']['#block_content'])) {
-    $section_classes = $variables['content']['#block_content']->__get('#section_classes');
-    $variables['data']['section_classes'] = $section_classes;
+    $section_layout_builder_styles = $variables['content']['#block_content']->__get('#section_lbs');
+    $variables['data']['section_lbs'] = $section_layout_builder_styles;
   }
   elseif (isset($variables['content']['#view'])) {
-    $section_classes = $variables['content']['#view']->storage->get('#section_classes');
+    $section_layout_builder_styles = $variables['content']['#view']->storage->get('#section_lbs');
   }
   elseif (isset($variables['content']['#object'])) {
-    $section_classes = $variables['content']['#object']->__get('#section_classes');
+    $section_layout_builder_styles = $variables['content']['#object']->__get('#section_lbs');
   }
 
-  // Set dcf-inverse on the main heading label in the block template.
-  if (isset($section_classes) && in_array('dcf-inverse', $section_classes)) {
-    $variables['title_attributes']['class'][] = 'dcf-inverse';
+  // Set unl-cream on the main heading label in the block template.
+  // Note that in many cases the label isn't being used in lieu of a "headline" field.
+  if (isset($section_layout_builder_styles) && in_array('section_background_style_brand', $section_layout_builder_styles)) {
+    $variables['title_attributes']['class'][] = 'unl-cream';
   }
 
   // Make host available to contact_info custom block.
@@ -206,14 +206,14 @@ function unl_five_herbie_preprocess_field(&$variables) {
   /*
    * Card + Cirle Image block type.
    */
-  $section_classes = $variables['element']['#object']->__get('#section_classes');
+  $section_layout_builder_styles = $variables['element']['#object']->__get('#section_lbs');
   switch ($field_name) {
     case 'b_cdcir_headline':
     case 'b_cdcir_body':
     case 'b_cdcir_cta':
     case 'b_cdcir_image':
       // Add to all Card fields.
-      $variables['items'][0]['data']['section_classes'] = $section_classes;
+      $variables['items'][0]['data']['section_lbs'] = $section_layout_builder_styles;
 
       // Loop through individual Card + Circle Image fields.
       switch ($field_name) {
@@ -247,19 +247,17 @@ function unl_five_herbie_preprocess_field(&$variables) {
  * Implements template_preprocess_layout().
  */
 function unl_five_herbie_preprocess_layout(&$variables) {
-  // If a DCF section style package is used, then populate $section_classes
-  // with its classes.
-  if (isset($variables['settings']['section_package']) && !empty($variables['settings']['section_package'])) {
-    $config_dcf_classes = \Drupal::config('dcf_classes.classes');
-    $section_packages = $config_dcf_classes->get('section_packages');
-    $section_classes = explode(' ', $section_packages[$variables['settings']['section_package']]);
-  }
-  elseif (isset($variables['settings']['section_classes']) && !empty($variables['settings']['section_classes'])) {
-    $section_classes = $variables['settings']['section_classes'];
+  if (isset($variables['settings']['layout_builder_styles_style']) && !empty($variables['settings']['layout_builder_styles_style'])) {
+    $layout_builder_styles = $variables['settings']['layout_builder_styles_style'];
+    // Replace numeric keys with the value.
+    foreach($layout_builder_styles as $value) {
+      $section_layout_builder_styles[$value] = $value;
+    }
   }
 
-  // Make section classes array available to each block in the layout.
-  if (isset($section_classes) && !empty($section_classes)) {
+  // Make section Layout Builder Styles array available to each block in the layout.
+  // Values can be accessed in a Twig template with data.section_lbs, see unl_five_herbie_preprocess_block().
+  if (isset($section_layout_builder_styles) && !empty($section_layout_builder_styles)) {
     // Loop through each region.
     foreach ($variables['content'] as $region_id => $region) {
       if (substr($region_id, 0, 1) !== '#') {
@@ -267,13 +265,13 @@ function unl_five_herbie_preprocess_layout(&$variables) {
         foreach ($region as $block_id => $block) {
           if (substr($block_id, 0, 1) !== '#') {
             if (isset($variables['content'][$region_id][$block_id]['content']['#block_content'])) {
-              $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_classes', $section_classes);
+              $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_lbs', $section_layout_builder_styles);
             }
             elseif (isset($variables['content'][$region_id][$block_id]['content']['#view'])) {
-              $variables['content'][$region_id][$block_id]['content']['#view']->storage->set('#section_classes', $section_classes);
+              $variables['content'][$region_id][$block_id]['content']['#view']->storage->set('#section_lbs', $section_layout_builder_styles);
             }
             elseif (isset($variables['content'][$region_id][$block_id]['content']['#object'])) {
-              $variables['content'][$region_id][$block_id]['content']['#object']->__set('#section_classes', $section_classes);
+              $variables['content'][$region_id][$block_id]['content']['#object']->__set('#section_lbs', $section_layout_builder_styles);
             }
           }
         }
@@ -286,12 +284,12 @@ function unl_five_herbie_preprocess_layout(&$variables) {
  * Implements template_preprocess_views_view_fields().
  */
 function unl_five_herbie_preprocess_views_view_fields(&$variables) {
-  // Apply .dcf-inverse to View fields if view is being included in a dark
+  // Apply .unl-cream to View fields if view is being included in a dark
   // Layout Builder section.
-  $section_classes = $variables['view']->storage->get('#section_classes');
-  if (in_array('dcf-inverse', $section_classes)) {
+  $section_layout_builder_styles = $variables['view']->storage->get('#section_lbs');
+  if (in_array('section_background_style_brand', $section_layout_builder_styles)) {
     foreach ($variables['fields'] as $field) {
-      $field->element_attributes->addClass('class', 'dcf-inverse');
+      $field->element_attributes->addClass('class', 'unl-cream');
     }
   }
 }

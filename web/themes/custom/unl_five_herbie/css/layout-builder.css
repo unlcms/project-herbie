@@ -93,3 +93,8 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
+/* The .dcf-card class background-color isn't powerful enough by itself. */
+.layout-builder-block.dcf-card {
+    background-color: var(--bg-card);
+}
