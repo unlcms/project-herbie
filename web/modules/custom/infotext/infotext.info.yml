@@ -1,0 +1,5 @@
+name: CKEditor5 Link Help Text
+type: module
+description: 'Provides help text when linking.'
+package: UNL
+core_version_requirement: ^9.4 || ^10

@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: section_padding_top_extra
 label: 'Add extra top spacing'
-classes: dcf-pt-8
+classes: dcf-pt-10
 type: section
 group: spacing
 block_restrictions: {  }

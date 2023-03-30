@@ -2019,16 +2019,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "10.0.5",
+            "version": "10.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "dad1e9f8e98bd7818ffc37b41cf4d7e483048b43"
+                "reference": "d9fe0494de876ede8f778041212fcb02bb70591a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/dad1e9f8e98bd7818ffc37b41cf4d7e483048b43",
-                "reference": "dad1e9f8e98bd7818ffc37b41cf4d7e483048b43",
+                "url": "https://api.github.com/repos/drupal/core/zipball/d9fe0494de876ede8f778041212fcb02bb70591a",
+                "reference": "d9fe0494de876ede8f778041212fcb02bb70591a",
                 "shasum": ""
             },
             "require": {
@@ -2171,13 +2171,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/10.0.5"
+                "source": "https://github.com/drupal/core/tree/10.0.7"
             },
-            "time": "2023-03-15T14:30:13+00:00"
+            "time": "2023-03-24T16:45:21+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "10.0.5",
+            "version": "10.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2221,13 +2221,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.0.5"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.0.7"
             },
             "time": "2023-03-09T21:24:32+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "10.0.5",
+            "version": "10.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -2262,22 +2262,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/10.0.5"
+                "source": "https://github.com/drupal/core-project-message/tree/10.0.7"
             },
             "time": "2022-07-01T08:33:05+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "10.0.5",
+            "version": "10.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "a4a5c5290ff90ce1eb2aa31dc4913cb29e9679a3"
+                "reference": "954185cbe080bb39d18d4bb1afe563b8352dc7c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/a4a5c5290ff90ce1eb2aa31dc4913cb29e9679a3",
-                "reference": "a4a5c5290ff90ce1eb2aa31dc4913cb29e9679a3",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/954185cbe080bb39d18d4bb1afe563b8352dc7c3",
+                "reference": "954185cbe080bb39d18d4bb1afe563b8352dc7c3",
                 "shasum": ""
             },
             "require": {
@@ -2285,7 +2285,7 @@
                 "composer/semver": "~3.3.2",
                 "doctrine/annotations": "~1.13.3",
                 "doctrine/lexer": "~1.2.3",
-                "drupal/core": "10.0.5",
+                "drupal/core": "10.0.7",
                 "egulias/email-validator": "~3.2.1",
                 "guzzlehttp/guzzle": "~7.5.0",
                 "guzzlehttp/promises": "~1.5.2",
@@ -2341,9 +2341,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/10.0.5"
+                "source": "https://github.com/drupal/core-recommended/tree/10.0.7"
             },
-            "time": "2023-03-15T14:30:13+00:00"
+            "time": "2023-03-24T16:45:21+00:00"
         },
         {
             "name": "drupal/crop",
@@ -11611,16 +11611,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.6",
+            "version": "10.5.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "2cd3e2c843b4e26ef65eff541fec03f318a9c59a"
+                "reference": "edc08ed129b3fc3e9c6976f6590a5d2f03fa64d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/2cd3e2c843b4e26ef65eff541fec03f318a9c59a",
-                "reference": "2cd3e2c843b4e26ef65eff541fec03f318a9c59a",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/edc08ed129b3fc3e9c6976f6590a5d2f03fa64d6",
+                "reference": "edc08ed129b3fc3e9c6976f6590a5d2f03fa64d6",
                 "shasum": ""
             },
             "require": {
@@ -11638,9 +11638,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.6"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.8"
             },
-            "time": "2023-03-15T15:05:17+00:00"
+            "time": "2023-03-29T22:13:56+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -12232,16 +12232,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.4",
+            "version": "2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9"
+                "reference": "c7cffaad16a60636a776017eac5bd8cd0095c32f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
-                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
+                "url": "https://api.github.com/repos/composer/composer/zipball/c7cffaad16a60636a776017eac5bd8cd0095c32f",
+                "reference": "c7cffaad16a60636a776017eac5bd8cd0095c32f",
                 "shasum": ""
             },
             "require": {
@@ -12325,7 +12325,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.4"
+                "source": "https://github.com/composer/composer/tree/2.5.5"
             },
             "funding": [
                 {
@@ -12341,7 +12341,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-15T12:10:06+00:00"
+            "time": "2023-03-21T10:50:05+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -12897,7 +12897,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "10.0.5",
+            "version": "10.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -12943,7 +12943,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/10.0.5"
+                "source": "https://github.com/drupal/core-dev/tree/10.0.7"
             },
             "time": "2023-02-23T15:40:18+00:00"
         },
@@ -13781,16 +13781,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.6",
+            "version": "1.10.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "50d089a3e0904b0fe7e2cf2d4fd37d427d64235a"
+                "reference": "0166aef76e066f0dd2adc2799bdadfa1635711e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/50d089a3e0904b0fe7e2cf2d4fd37d427d64235a",
-                "reference": "50d089a3e0904b0fe7e2cf2d4fd37d427d64235a",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0166aef76e066f0dd2adc2799bdadfa1635711e9",
+                "reference": "0166aef76e066f0dd2adc2799bdadfa1635711e9",
                 "shasum": ""
             },
             "require": {
@@ -13819,8 +13819,11 @@
                 "static analysis"
             ],
             "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.10.6"
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
             },
             "funding": [
                 {
@@ -13836,7 +13839,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-09T16:55:12+00:00"
+            "time": "2023-03-24T10:28:16+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

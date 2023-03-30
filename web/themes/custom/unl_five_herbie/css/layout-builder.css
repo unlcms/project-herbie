@@ -5,6 +5,11 @@
     background: transparent;
 }
 
+/* Contextual links will be covered up if a block is too short. */
+.layout-builder-block.contextual-region {
+    min-height: 150px;
+}
+
 /* Remove default border and padding. */
 .layout-builder {
     background-color: unset;
@@ -71,9 +76,12 @@
 #edit-actions {
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
+    margin: 1em;
+    padding: 1em;
+    background: #ffd74e;
 }
 #edit-actions * {
+    margin-bottom: 0 !important;
     margin-right: 1em;
 }
 
@@ -92,4 +100,9 @@
     border-bottom: 1px solid #999;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+/* The .dcf-card class background-color isn't powerful enough by itself. */
+.layout-builder-block.dcf-card {
+    background-color: var(--bg-card);
 }

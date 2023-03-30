@@ -10,7 +10,6 @@ dependencies:
   - 'codemirror_editor:codemirror_editor'
   - 'config_split:config_split'
   - 'crop:crop'
-  - 'dcf_classes:dcf_classes'
   - 'dcf_layouts:dcf_layouts'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:block'
@@ -45,6 +44,7 @@ dependencies:
   - 'external_entities:external_entities'
   - 'features_permissions:features_permissions'
   - 'field_css:field_css'
+  - 'field_group:field_group'
   - 'focal_point:focal_point'
   - 'heading:heading'
   - 'herbie_news:herbie_news'
@@ -58,6 +58,7 @@ dependencies:
   - 'layout_builder_styles:layout_builder_styles'
   - 'linkit:linkit'
   - 'markup:markup'
+  - 'menu_block:menu_block'
   - 'oembed_providers:oembed_providers'
   - 'paragraphs:paragraphs'
   - 'pathauto:pathauto'
@@ -68,5 +69,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.0.12
+version: 1.0.15
 package: Herbie

@@ -1,0 +1,16 @@
+{
+  "name": "unlcms/infotext",
+  "description": "Provides help text on the Link plugin..",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Eric Rasmussen",
+      "email": "ericrasmussen1@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "require" : {
+    "drupal/core": "^9.4 || ^10"
+  },
+  "license": "GPL-2.0-or-later"
+}

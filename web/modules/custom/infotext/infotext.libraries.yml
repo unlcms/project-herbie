@@ -1,0 +1,4 @@
+ckeditor5:
+  version: VERSION
+  js:
+    js/build/infotext.js: { minified: false }

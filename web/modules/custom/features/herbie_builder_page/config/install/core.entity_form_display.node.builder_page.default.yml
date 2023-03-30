@@ -5,11 +5,31 @@ dependencies:
     - field.field.node.builder_page.body
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
+    - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
   module:
+    - field_group
     - inline_entity_form
     - path
     - text
+third_party_settings:
+  field_group:
+    group_page_options:
+      children:
+        - s_n_page_options
+      label: 'Page options'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 99
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page
@@ -59,6 +79,14 @@ content:
       allow_duplicate: false
       collapsible: true
       collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  s_n_page_options:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -93,7 +121,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

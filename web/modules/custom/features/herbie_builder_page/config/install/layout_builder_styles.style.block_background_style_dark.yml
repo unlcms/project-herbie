@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: block_background_style_dark
 label: 'Dark Gray'
-classes: unl-bg-dark-gray
+classes: "unl-bg-dark-gray\r\nunl-cream"
 type: component
 group: background
 block_restrictions:

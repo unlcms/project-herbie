@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: section_margin_standard_wrapper
 label: 'Standard wrapper'
-classes: dcf-wrapper
+classes: "unlcms-section-standard-wrapper\r\ndcf-bleed\r\ndcf-wrapper"
 type: section
 group: container
 block_restrictions: {  }

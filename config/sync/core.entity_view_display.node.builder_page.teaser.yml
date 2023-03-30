@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.builder_page.body
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
+    - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
   module:
     - text
@@ -34,3 +35,4 @@ content:
 hidden:
   layout_builder__layout: true
   s_n_hero: true
+  s_n_page_options: true

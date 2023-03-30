@@ -1,0 +1,13 @@
+infotext_extension:
+  ckeditor5:
+    plugins:
+      - infotext.Infotext
+  drupal:
+    label: Infotext
+    library: infotext/ckeditor5
+    class: Drupal\infotext\Plugin\CKEditor5Plugin\Infotext
+    elements:
+      - <a data-entity-type data-entity-uuid data-entity-substitution>
+    conditions:
+      plugins:
+        - ckeditor5_link
