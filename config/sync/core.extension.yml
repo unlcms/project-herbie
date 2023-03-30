@@ -64,6 +64,7 @@ module:
   image_class: 0
   image_effects: 0
   imagemagick: 0
+  infotext: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
   jquery_ui: 0

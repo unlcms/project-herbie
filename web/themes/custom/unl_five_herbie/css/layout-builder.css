@@ -5,6 +5,11 @@
     background: transparent;
 }
 
+/* Contextual links will be covered up if a block is too short. */
+.layout-builder-block.contextual-region {
+    min-height: 150px;
+}
+
 /* Remove default border and padding. */
 .layout-builder {
     background-color: unset;
@@ -73,9 +78,10 @@
     justify-content: center;
     margin: 1em;
     padding: 1em;
-    background: #eff6fc;
+    background: #ffd74e;
 }
 #edit-actions * {
+    margin-bottom: 0 !important;
     margin-right: 1em;
 }
 
