@@ -1,5 +1,5 @@
 name: Person
-description: 'Provides Person content type and related configuration. A person''s bio and/or contact information.'
+description: "Provides Person content type and related configuration. A person's bio and/or contact information."
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
@@ -19,5 +19,5 @@ dependencies:
   - 'features_permissions:features_permissions'
   - 'field_group:field_group'
   - 'pathauto:pathauto'
-version: 1.0.2
+version: 1.0.3
 package: Herbie

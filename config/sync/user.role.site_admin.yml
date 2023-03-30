@@ -1,11 +1,16 @@
 uuid: eee67aa7-8419-4c24-a761-2b38f59cfb5a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.simple
+  module:
+    - filter
 _core:
-  default_config_hash: yKrpQ8nAChj2XQRxQHiD_SrGy1kR5sDGusA6On1Dfk8
+  default_config_hash: GQO86ipMELKO7cGhz9S2ouS_sJzIvdMNGKdPLN7Sk5M
 id: site_admin
 label: 'Site admin'
 weight: -7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'use text format simple'

@@ -1,0 +1,19 @@
+uuid: a0056894-86c6-451e-8c7f-58a0312b0011
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_social_fb
+    - node.type.person
+id: node.person.n_person_social_fb
+field_name: n_person_social_fb
+entity_type: node
+bundle: person
+label: Facebook
+description: 'Enter username'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

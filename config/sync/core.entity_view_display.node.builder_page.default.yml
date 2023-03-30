@@ -6,14 +6,11 @@ dependencies:
     - field.field.node.builder_page.body
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
-    - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
-    - system.menu.main
   module:
     - dcf_layouts
     - layout_builder
     - layout_builder_restrictions
-    - menu_block
     - text
     - user
 third_party_settings:
@@ -22,41 +19,23 @@ third_party_settings:
     allow_custom: true
     sections:
       -
-        layout_id: dcf_twocol_section
+        layout_id: dcf_onecol_section
         layout_settings:
-          label: Content
+          label: ''
           context_mapping: {  }
-          column_widths: 75-25
-          title: Content
+          column_widths: '100'
+          title: ''
           title_classes: {  }
           title_display: false
           section_element_id: ''
-          layout_builder_styles_style:
-            - ''
-            - section_margin_standard_wrapper
+          section_package: ''
+          section_classes: {  }
+          block_margin: ''
+          column_classes:
+            col_1: {  }
         components:
-          c2cc3a0c-4e50-40c4-89f4-ceed1583582b:
-            uuid: c2cc3a0c-4e50-40c4-89f4-ceed1583582b
-            region: second
-            configuration:
-              id: 'menu_block:main'
-              label: Menu
-              label_display: visible
-              provider: menu_block
-              context_mapping: {  }
-              follow: false
-              follow_parent: child
-              label_link: true
-              label_type: root
-              level: 2
-              depth: 0
-              expand_all_items: false
-              parent: 'main:'
-              suggestion: main_sidebar
-            weight: 0
-            additional: {  }
-          7f56d3ac-40c1-4cf2-98cc-9f08e6a414e1:
-            uuid: 7f56d3ac-40c1-4cf2-98cc-9f08e6a414e1
+          df00a0ac-af4b-4bda-90a2-ec1fd6694af1:
+            uuid: df00a0ac-af4b-4bda-90a2-ec1fd6694af1
             region: first
             configuration:
               id: 'field_block:node:builder_page:body'
@@ -65,7 +44,6 @@ third_party_settings:
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
@@ -189,23 +167,18 @@ third_party_settings:
               - 'inline_block:content'
               - 'inline_block:html_code'
             'Lists (Views)': {  }
-            Menus:
-              - 'menu_block:main'
+            Menus: {  }
             System: {  }
             Webform: {  }
             core: {  }
       denylisted_blocks: {  }
-      restricted_categories:
-        dcf_twocol_section:
-          all_regions:
-            - 'Custom blocks'
+      restricted_categories: {  }
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'
-      - 'Custom blocks'
       - Forms
       - 'Inline blocks'
       - 'Lists (Views)'
@@ -251,4 +224,3 @@ content:
     region: content
 hidden:
   layout_builder__layout: true
-  s_n_page_options: true

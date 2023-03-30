@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser_featured
+    - field.field.node.person.n_additional
+    - field.field.node.person.n_education
     - field.field.node.person.n_person_address
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
@@ -167,4 +169,6 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
-hidden: {  }
+hidden:
+  n_additional: true
+  n_education: true

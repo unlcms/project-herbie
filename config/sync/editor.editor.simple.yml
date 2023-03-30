@@ -1,0 +1,33 @@
+uuid: 34802d16-14c0-4317-954f-4ddb53f965cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.simple
+  module:
+    - ckeditor5
+format: simple
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - specialCharacters
+      - subscript
+      - superscript
+      - '|'
+      - link
+      - bulletedList
+      - numberedList
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    linkit_extension:
+      linkit_enabled: false
+image_upload: {  }

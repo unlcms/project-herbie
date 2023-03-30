@@ -8,7 +8,7 @@ dependencies:
   module:
     - file
 _core:
-  default_config_hash: XV1DYEVaUQbmYWxTUbUc9x9w02mkxrohdyooDbc51qQ
+  default_config_hash: JllVXSeiMIp53R8GyzL3Syw0-bn7PzBs4zhowiCsEFI
 id: media.file.field_media_file
 field_name: field_media_file
 entity_type: media
@@ -22,7 +22,7 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: media/file
+  file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods'
   max_filesize: '40 MB'
   description_field: false

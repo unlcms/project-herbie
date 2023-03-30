@@ -65,3 +65,75 @@
   }
 
 }
+
+
+
+
+  .unlcms-grid-person-detail-bio h2,
+  .unlcms-grid-person-detail-bio p:not(.dcf-subhead)+h2 {
+    border-top: 1px solid var(--b-light-gray);
+    color: var(--dark-gray);
+    font-size: .75em;
+    letter-spacing: .06em;
+    margin-top: 3.16em !important;
+    padding-top: 1em;
+    text-transform: uppercase;
+    background-color: none;
+
+  }
+
+  .unlcms-grid-person-detail-bio h2 ~ p,
+  .unlcms-grid-person-detail-bio h2 ~ ol,
+  .unlcms-grid-person-detail-bio h2 ~ ul {
+    font-size: .84em;
+
+  }
+
+  .unlcms-grid-person-detail-bio-background {
+    background-color: none;
+  }
+
+  .unlcms-grid-person-detail-bio h3 {
+    font-size: 1.33em;
+  }
+
+  @media screen and (max-width: 42.09em) {
+
+    .unlcms-grid-person-detail {
+      width: 100%;
+      /* fill width of wrapper if no bio text is present */
+    }
+
+  }
+
+  @media screen and (min-width: 42.09em) {
+
+    .unlcms-grid-person-detail {
+      grid-template-columns: minmax(10em, 23.68em) minmax(auto, 35.52em);
+    }
+
+    .unlcms-grid-person-detail-img {
+      grid-area: 1 / 1 / -1 / 2;
+    }
+
+    .unlcms-grid-person-detail-info {
+      grid-area: 1 / 2 / -1 / -1;
+    }
+
+    .unlcms-grid-person-detail-bio :last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  @media screen and (min-width: 56.12em) {
+
+    .unlcms-hero-person-detail {
+      margin-bottom: 1.83em;
+      /* margin-bottom: 3.16em – 1.33em (dcf-pt-5) */
+    }
+
+  }
+
+
+
