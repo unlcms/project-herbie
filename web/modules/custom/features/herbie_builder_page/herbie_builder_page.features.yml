@@ -1,2 +1,5 @@
 bundle: herbie
+excluded:
+  - user.role.authenticated
+  - user.role.administrator
 required: true

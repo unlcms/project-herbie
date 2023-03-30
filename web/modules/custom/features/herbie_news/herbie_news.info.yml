@@ -16,8 +16,7 @@ dependencies:
   - 'drupal:text'
   - 'drupal:user'
   - 'drupal:views'
-  - 'features_permissions:features_permissions'
   - 'field_group:field_group'
   - 'pathauto:pathauto'
-version: 1.0.1
+version: 1.1.0
 package: Herbie

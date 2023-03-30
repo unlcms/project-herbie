@@ -1,8 +1,0 @@
-uuid: 7fe9b47f-c9ee-4cfa-9422-1f9fa28cd1ab
-langcode: en
-status: true
-dependencies: {  }
-id: view_media
-label: 'view media'
-roles:
-  - anonymous

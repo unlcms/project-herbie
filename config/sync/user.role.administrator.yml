@@ -1,11 +1,17 @@
 uuid: f58d1996-2f1d-481e-a1ac-20d478820acb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - webform
+    - webform_submission_log
 _core:
-  default_config_hash: RXmKQw1jA3nR3lWohWNJeKTsIyxPDPcELzX5Cecggj8
+  default_config_hash: VGHm5fIwt4PFqLCznSyCw0mvvwyQUGerK4PWzg7QkD8
 id: administrator
 label: Administrator
 weight: -5
-is_admin: true
-permissions: {  }
+is_admin: false
+permissions:
+  - 'access webform submission log'
+  - 'view any webform submission'
+  - 'view own webform submission'

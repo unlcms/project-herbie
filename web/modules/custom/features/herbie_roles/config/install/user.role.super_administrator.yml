@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: super_administrator
+label: 'Super administrator'
+weight: -4
+is_admin: true
+permissions: {  }

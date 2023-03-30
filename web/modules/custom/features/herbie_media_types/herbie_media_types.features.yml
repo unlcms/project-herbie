@@ -1,2 +1,6 @@
 bundle: herbie
+excluded:
+  - user.role.editor
+  - user.role.site_admin
+  - user.role.coder
 required: true

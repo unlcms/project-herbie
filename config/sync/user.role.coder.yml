@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: WJG7QxIqzkzKsBiRrYgnmxLJb1UtoIOICqoOhVIxKeM
+  default_config_hash: K9t_jofegA_W-oRLqfgMaJBLD8KJ3S5pRSrHEyCkJAI
 id: coder
 label: Coder
 weight: -6

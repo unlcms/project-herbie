@@ -38,7 +38,6 @@ module:
   external_entities_pathauto: 0
   external_entities_unldirectory: 0
   features: 0
-  features_permissions: 0
   features_ui: 0
   feeds: 0
   feeds_ex: 0
@@ -59,6 +58,7 @@ module:
   herbie_media_types: 0
   herbie_news: 0
   herbie_person: 0
+  herbie_roles: 0
   honeypot: 0
   image: 0
   image_class: 0
