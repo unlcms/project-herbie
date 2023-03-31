@@ -107,6 +107,7 @@
         "composer/installers": "^2.1",
         "cweagans/composer-patches": "^1.6.5",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/administerusersbyrole": "^3.3",
         "drupal/allowed_formats": "^2.0",
         "drupal/asset_injector": "^2.7",
         "drupal/auto_entitylabel": "^3.0@beta",

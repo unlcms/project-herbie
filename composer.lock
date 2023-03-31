@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c22f611648f031eac9a62bf8fb44c565",
+    "content-hash": "08d0cba2b084f055144019e7b9def5e1",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -1348,6 +1348,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/administerusersbyrole",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/administerusersbyrole.git",
+                "reference": "8.x-3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/administerusersbyrole-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "fb936106724af431d77387ef0f48107b08dfbe55"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.3",
+                    "datestamp": "1665571039",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AdamPS",
+                    "homepage": "https://www.drupal.org/user/2650563"
+                },
+                {
+                    "name": "mrfelton",
+                    "homepage": "https://www.drupal.org/user/305669"
+                },
+                {
+                    "name": "smokris",
+                    "homepage": "https://www.drupal.org/user/161913"
+                }
+            ],
+            "description": "Allows site builders to set up fine-grained permissions for allowing \"sub-admin\" users to edit and delete other users.",
+            "homepage": "https://www.drupal.org/project/administerusersbyrole",
+            "support": {
+                "source": "https://git.drupalcode.org/project/administerusersbyrole"
             }
         },
         {

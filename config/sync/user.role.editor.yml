@@ -16,6 +16,7 @@ dependencies:
     - node.type.news
     - node.type.person
   module:
+    - administerusersbyrole
     - block_content_permissions
     - book
     - contextual
@@ -49,6 +50,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'access user profiles'
+  - 'access users overview'
   - 'add content to books'
   - 'administer book outlines'
   - 'administer main menu items'
@@ -141,3 +143,4 @@ permissions:
   - 'view unl_directory_entry external entity collection'
   - 'view unpublished paragraphs'
   - 'view user email addresses'
+  - 'view users by role'

@@ -1,11 +1,12 @@
 uuid: 2dea529b-9303-4145-9f4f-8fe2e61a74e2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - user.role.coder
     - user.role.editor
     - user.role.site_admin
+    - user.role.viewer
   module:
     - user
 _core:
@@ -477,6 +478,7 @@ display:
           operator: or
           value:
             all: all
+            viewer: viewer
             editor: editor
             site_admin: site_admin
             coder: coder
@@ -497,10 +499,12 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              viewer: '0'
               editor: '0'
               site_admin: '0'
               coder: '0'
               administrator: '0'
+              super_administrator: '0'
             reduce: true
           is_grouped: false
           group_info:

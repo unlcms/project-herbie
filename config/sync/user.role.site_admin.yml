@@ -16,6 +16,7 @@ dependencies:
     - node.type.news
     - node.type.person
   module:
+    - administerusersbyrole
     - block
     - block_content_permissions
     - book
@@ -67,6 +68,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'access users overview'
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission log'
@@ -82,9 +84,9 @@ permissions:
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
-  - 'administer users'
   - 'administer views'
   - 'administer webform submission'
+  - 'allow empty user mail'
   - 'bypass node access'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
@@ -106,6 +108,7 @@ permissions:
   - 'create social_media_links block content'
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
+  - 'create users'
   - 'create webform'
   - 'delete any accordion block content'
   - 'delete any book content'
@@ -158,12 +161,14 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own webform'
   - 'edit own webform submission'
+  - 'edit users by role'
   - 'load twig templates from file system'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
   - 'revert person revisions'
+  - 'role-assign users by role'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
@@ -191,3 +196,4 @@ permissions:
   - 'view unl_directory_entry external entity collection'
   - 'view unpublished paragraphs'
   - 'view user email addresses'
+  - 'view users by role'

@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: UiTY9bhUKWJOIWDlOKM3akeeyHuJJRspXETsv3SY6jw
+roles:
+  viewer: safe
+  editor: safe
+  site_admin: safe
+  coder: unsafe
+  administrator: unsafe

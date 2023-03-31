@@ -3,6 +3,7 @@ description: 'Provides all the role (with permissions included) config objects.'
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
+  - 'administerusersbyrole:administerusersbyrole'
   - 'asset_injector:asset_injector'
   - 'block_content_permissions:block_content_permissions'
   - 'drupal:block'
@@ -39,5 +40,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.1.1
+version: 1.1.2
 package: Herbie
