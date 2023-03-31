@@ -1,11 +1,18 @@
 uuid: f0a68b95-44a5-4ded-9266-5c9836990bc6
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - external_entities
+    - media
+    - system
 _core:
   default_config_hash: ZKV6dDsC6baQ4eVbllwE1uPbEXYGCJB0ghpFzQNuR3g
 id: anonymous
 label: 'Anonymous user'
 weight: -10
 is_admin: false
-permissions: {  }
+permissions:
+  - 'access content'
+  - 'view media'
+  - 'view unl_directory_entry external entity'

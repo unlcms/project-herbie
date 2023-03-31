@@ -32,7 +32,6 @@ dependencies:
   - 'drupal:options'
   - 'drupal:path'
   - 'drupal:responsive_image'
-  - 'drupal:shortcut'
   - 'drupal:system'
   - 'drupal:taxonomy'
   - 'drupal:text'
@@ -68,5 +67,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.1.0
+version: 1.1.1
 package: Herbie
