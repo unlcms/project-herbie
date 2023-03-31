@@ -8,6 +8,7 @@ module:
   allowed_formats: 0
   asset_injector: 0
   auto_entitylabel: 0
+  automated_cron: 0
   block: 0
   block_content: 0
   block_content_permissions: 0
@@ -36,6 +37,7 @@ module:
   entity_reference_revisions: 0
   entity_share: 0
   entity_share_client: 0
+  entity_share_cron: 0
   entity_share_lock: 0
   entity_share_server: 0
   entity_usage: 0
