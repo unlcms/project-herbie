@@ -17,5 +17,5 @@ dependencies:
   - 'external_entities:external_entities'
   - 'field_group:field_group'
   - 'pathauto:pathauto'
-version: 1.1.0
+version: 1.1.1
 package: Herbie
