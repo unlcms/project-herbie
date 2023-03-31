@@ -1,0 +1,6 @@
+name: 'UNL Content Hub'
+description: 'Modifications in support of Entity Share and Content Hub.'
+package: UNL
+
+type: module
+core_version_requirement: ^9 || ^10

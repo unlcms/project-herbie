@@ -83,7 +83,6 @@ permissions:
   - 'administer unl news'
   - 'administer webform submission'
   - 'allow empty user mail'
-  - 'bypass node access'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'

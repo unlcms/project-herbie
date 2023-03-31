@@ -56,7 +56,6 @@ permissions:
   - 'administer book outlines'
   - 'administer main menu items'
   - 'administer nodes'
-  - 'bypass node access'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'
