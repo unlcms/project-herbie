@@ -1,0 +1,12 @@
+uuid: 5f6e2124-9861-4135-a8a8-80f5ccb080ae
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FNjR1hSSML_NNBB70zKRNhK4orcznhBnuXGYj-ZquF4
+id: p_n_major_points_of_pride
+label: 'Points of Pride'
+icon_uuid: null
+icon_default: null
+description: 'Icon and backing statement for Majors pages'
+behavior_plugins: {  }

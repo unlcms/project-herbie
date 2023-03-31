@@ -1,0 +1,8 @@
+bundle: herbie
+excluded:
+  - twig_ui.template.field__n_careers_list
+  - twig_ui.template.field__n_grad_schools_list
+  - twig_ui.template.field__n_internships_list
+  - twig_ui.template.paragraphs_item__notable_course
+  - twig_ui.template.paragraphs_item__point_of_pride
+required: true

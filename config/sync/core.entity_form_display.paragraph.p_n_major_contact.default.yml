@@ -1,0 +1,64 @@
+uuid: fc1e34a7-1448-4fc8-810d-51c43c73a2b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p_n_major_contact.p_n_contact_email
+    - field.field.paragraph.p_n_major_contact.p_n_contact_image
+    - field.field.paragraph.p_n_major_contact.p_n_contact_name
+    - field.field.paragraph.p_n_major_contact.p_n_contact_phone
+    - field.field.paragraph.p_n_major_contact.p_n_contact_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.p_n_major_contact
+  module:
+    - image
+_core:
+  default_config_hash: l39hkHTsiRAYa5VZnnDnuSd-lakAWnwnYiZ6wIPiAZo
+id: paragraph.p_n_major_contact.default
+targetEntityType: paragraph
+bundle: p_n_major_contact
+mode: default
+content:
+  p_n_contact_email:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_n_contact_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  p_n_contact_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_n_contact_phone:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_n_contact_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

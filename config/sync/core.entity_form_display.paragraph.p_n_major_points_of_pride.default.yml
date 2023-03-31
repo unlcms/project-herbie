@@ -1,0 +1,43 @@
+uuid: cad653a7-92ca-4526-8a04-27121c02dac7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_icon
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_statement
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_support
+    - paragraphs.paragraphs_type.p_n_major_points_of_pride
+_core:
+  default_config_hash: 5RR5NqgI6ylPfTDgr1-6l_xuCrwGcHLghi8bYKzdxk8
+id: paragraph.p_n_major_points_of_pride.default
+targetEntityType: paragraph
+bundle: p_n_major_points_of_pride
+mode: default
+content:
+  p_n_pop_icon:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_n_pop_statement:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_n_pop_support:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: 2d682ea0-9554-48ea-b6c2-073b092410da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: cKkl-amqiO8XMe0IBS8zWQQOQvccnk5ZyW0RNgopbmk
+id: node.n_major_grad_schools_list
+field_name: n_major_grad_schools_list
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

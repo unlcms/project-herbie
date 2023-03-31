@@ -1,0 +1,32 @@
+uuid: 1ef8f23b-1602-4a37-be59-a69a3da5767d
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - paragraphs
+_core:
+  default_config_hash: 6OVTJ8JTaS6eqfxqigTJJzel2aQHXkIjSQ27x8uKyEw
+id: paragraph.p_n_otc_image
+field_name: p_n_otc_image
+entity_type: paragraph
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 6e02b98f-1efe-4f8e-b381-c74f58f74263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_internships_title
+    - node.type.major
+_core:
+  default_config_hash: koCRUaqONfWZSVJWnvYYqIkd18y1vW24StpxfS9rlLQ
+id: node.major.n_major_internships_title
+field_name: n_major_internships_title
+entity_type: node
+bundle: major
+label: 'Internships Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

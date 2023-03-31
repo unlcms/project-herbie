@@ -1,0 +1,23 @@
+uuid: 12f33ba5-d642-43e2-b19f-60a928a801ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: EOwCGdfwhXqOGagZTMzOs2V2VfbR7TH2I6SQxQyKE7M
+id: node.n_major_academics_experiential
+field_name: n_major_academics_experiential
+entity_type: node
+type: string
+settings:
+  max_length: 225
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

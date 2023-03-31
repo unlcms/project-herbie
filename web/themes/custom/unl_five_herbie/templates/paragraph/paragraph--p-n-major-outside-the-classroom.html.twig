@@ -1,0 +1,20 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-w-max-md dcf-bg-white dcf-rounded unl-box-shadow dcf-card-as-link'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="dcf-1st dcf-ratio dcf-ratio-16x9">
+    {{ (content.p_n_otc_image) }}
+  </div>
+  <div class="dcf-2nd dcf-p-5 dcf-pt-3 dcf-pb-0">
+    <h3 class="dcf-lh-3 dcf-txt-h6 dcf-mb-0"><a href="{{ paragraph.p_n_otc_link.uri }}">{{ (content.p_n_otc_title) }}</a></h3>
+  </div>
+  <div class="dcf-3rd dcf-grow-1 dcf-txt-decor-none dcf-txt-sm dcf-p-5 dcf-d-block">
+    {{ paragraph.p_n_otc_link.title }}
+  </div>
+</div>

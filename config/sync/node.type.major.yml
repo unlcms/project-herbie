@@ -1,0 +1,20 @@
+uuid: 087cdfb8-12ee-4f24-b306-ab9ea46aefaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: I5FnZ1dI7QiClwQb-97rHdZAAq6Xy9yOORVuR0aFAsY
+name: Major
+type: major
+description: 'To aggregate and display major information.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

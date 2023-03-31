@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: p_n_major_points_of_pride
+label: 'Points of Pride'
+icon_uuid: null
+icon_default: null
+description: 'Icon and backing statement for Majors pages'
+behavior_plugins: {  }

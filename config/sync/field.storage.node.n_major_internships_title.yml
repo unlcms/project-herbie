@@ -1,0 +1,23 @@
+uuid: e282393b-52bc-4c8f-92c7-3307d79b8b6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: C7SFnAd8bo-XrG52qlwYZ5hDguJoKEdWr_IfhtdZ1Eg
+id: node.n_major_internships_title
+field_name: n_major_internships_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 368d209c-74c5-4261-b75c-588682dc3ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_contact_phone
+    - paragraphs.paragraphs_type.p_n_major_contact
+_core:
+  default_config_hash: SLvjlj75U_NbiFv3pVH5FQXqCJBG0O8HBosr2tKZyi8
+id: paragraph.p_n_major_contact.p_n_contact_phone
+field_name: p_n_contact_phone
+entity_type: paragraph
+bundle: p_n_major_contact
+label: 'Contact Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,71 @@
+uuid: 64823c15-23e6-45ae-9c04-e63b3b8c9c64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p_n_major_featured_faculty.p_n_faculty_about
+    - field.field.paragraph.p_n_major_featured_faculty.p_n_faculty_link
+    - field.field.paragraph.p_n_major_featured_faculty.p_n_faculty_name
+    - field.field.paragraph.p_n_major_featured_faculty.p_n_job_title
+    - field.field.paragraph.p_n_major_featured_faculty.p_n_portrait
+    - paragraphs.paragraphs_type.p_n_major_featured_faculty
+  module:
+    - image
+    - image_class
+    - link
+_core:
+  default_config_hash: 1nSgXbOcnZGenEDCryKB9LI8pGuoxlRlvnSB0ez6NT4
+id: paragraph.p_n_major_featured_faculty.default
+targetEntityType: paragraph
+bundle: p_n_major_featured_faculty
+mode: default
+content:
+  p_n_faculty_about:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  p_n_faculty_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  p_n_faculty_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  p_n_job_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_n_portrait:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: dcf-ratio-child
+    weight: 2
+    region: content
+hidden: {  }

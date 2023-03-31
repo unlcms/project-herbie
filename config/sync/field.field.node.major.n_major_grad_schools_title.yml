@@ -1,0 +1,21 @@
+uuid: 4673348d-0891-4fd5-80f3-c25b9a5cc41a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_grad_schools_title
+    - node.type.major
+_core:
+  default_config_hash: T49i16eUQJUMTDyeQ_NeZGfk-vBE3mM_a8YeBnEVhKE
+id: node.major.n_major_grad_schools_title
+field_name: n_major_grad_schools_title
+entity_type: node
+bundle: major
+label: 'Grad Schools Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

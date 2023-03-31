@@ -1,0 +1,22 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-grid dcf-col-gap-vw dcf-row-gap-4 dcf-ai-center dcf-w-max-xl'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="dcf-col-100% dcf-col-33%-start@sm dcf-col-25%-start@md dcf-txt-center dcf-d-flex dcf-flex-col dcf-ai-center">
+    <div class="dcf-ratio dcf-ratio-1x1 dcf-circle dcf-b-solid dcf-b-2 unl-b-dark-gray dcf-w-100% dcf-w-max-xs dcf-mb-4">
+      {{ (content.p_n_portrait) }}
+    </div>
+  </div>
+  <div class="dcf-col-100% dcf-col-67%-end@sm dcf-col-75%-end@md dcf-d-flex dcf-flex-col dcf-jc-center">
+    <h2 class="dcf-txt-h3 dcf-mb-1">Featured Faculty</h2>
+    <p class="dcf-mb-1"><strong>{{ (content.p_n_faculty_name) }}</strong>, {{ (content.p_n_job_title) }}</p>
+    <p class="dcf-italic">{{ (content.p_n_faculty_about) }}</p>
+    <p>{{ (content.p_n_faculty_link) }}</p>
+  </div>
+</div>

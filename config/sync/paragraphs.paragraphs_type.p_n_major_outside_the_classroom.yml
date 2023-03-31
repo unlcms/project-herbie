@@ -1,0 +1,12 @@
+uuid: 95d0dd6f-6083-448b-9cad-d340c3af1c73
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-6E1QixwP9fW3PPCSID4-Hpl-M4f_ROwo5p9EJvoEFA'
+id: p_n_major_outside_the_classroom
+label: 'Outside The Classroom'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

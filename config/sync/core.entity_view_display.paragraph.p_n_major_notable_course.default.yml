@@ -1,0 +1,32 @@
+uuid: df08ac69-bdd1-4f6d-aa5c-f6647458fc02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p_n_major_notable_course.p_n_course_desc
+    - field.field.paragraph.p_n_major_notable_course.p_n_course_title
+    - paragraphs.paragraphs_type.p_n_major_notable_course
+_core:
+  default_config_hash: srJLv1iWQd-IoB15ic97ZqnZWpzoq8nuJB1rC1N_4Lo
+id: paragraph.p_n_major_notable_course.default
+targetEntityType: paragraph
+bundle: p_n_major_notable_course
+mode: default
+content:
+  p_n_course_desc:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_n_course_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

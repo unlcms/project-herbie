@@ -1,0 +1,12 @@
+uuid: a52f14b0-7579-4582-81fa-e1cfd56184f2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: J-eFW_HiXzhX0n185ndaALya6uKdhqjPGVHQi-bNRmM
+id: p_n_major_notable_course
+label: 'Notable Course'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

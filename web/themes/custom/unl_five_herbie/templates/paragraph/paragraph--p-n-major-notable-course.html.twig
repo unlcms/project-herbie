@@ -1,0 +1,12 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+<details{{ attributes.addClass(classes) }}>
+  <summary>{{ content.p_n_course_title }}</summary>
+  <p class="dcf-txt-sm">{{ content.p_n_course_desc }}</p>
+</details>

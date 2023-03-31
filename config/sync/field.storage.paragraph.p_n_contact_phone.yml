@@ -1,0 +1,23 @@
+uuid: 597e2907-8aae-4635-8673-f7be8b0792fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: 6_nZzEksLweuxGgOhAayGKC-5GhaE6Imz4AcDiTG7xE
+id: paragraph.p_n_contact_phone
+field_name: p_n_contact_phone
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
