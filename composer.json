@@ -129,7 +129,6 @@
         "drupal/entity_usage": "^2.0",
         "drupal/external_entities": "2.x-dev@dev",
         "drupal/features": "5.0.x-dev@dev",
-        "drupal/features_permissions": "^1.1",
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/field_group": "^3.0",
@@ -267,9 +266,6 @@
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
-            },
-            "drupal/features_permissions": {
-                "Custom - Need to check isset": "patches/features_permissions_isset.patch"
             },
             "drush/drush": {
                 "Do not allow config:import to be run": "patches/drush-config-import-message.patch"

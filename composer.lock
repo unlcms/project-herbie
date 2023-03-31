@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f6c125d44754faa3377123a1ef22ee0",
+    "content-hash": "c22f611648f031eac9a62bf8fb44c565",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -2999,52 +2999,6 @@
             "homepage": "https://www.drupal.org/project/features",
             "support": {
                 "source": "https://git.drupalcode.org/project/features"
-            }
-        },
-        {
-            "name": "drupal/features_permissions",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/features_permissions.git",
-                "reference": "1.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features_permissions-1.1.0.zip",
-                "reference": "1.1.0",
-                "shasum": "66c3b047d2c51077cec882d7cafc5f1fc1b4d8de"
-            },
-            "require": {
-                "drupal/core": "^9.0|^10.0",
-                "drupal/features": "^3.0|^5.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.0",
-                    "datestamp": "1674750728",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Burge",
-                    "homepage": "https://www.drupal.org/user/1826152"
-                }
-            ],
-            "description": "Creates exportable permission config entities from roles for Features",
-            "homepage": "https://drupal.org/project/features_permissions",
-            "support": {
-                "source": "https://cgit.drupalcode.org/features_permissions",
-                "issues": "https://drupal.org/project/issues/features_permissions"
             }
         },
         {
@@ -11576,16 +11530,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "2.0",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "eb37c937372ac456b4a0ea822890456aacae78ef"
+                "reference": "53b4e974e6cc324292104706ece6eb6faaa87633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/eb37c937372ac456b4a0ea822890456aacae78ef",
-                "reference": "eb37c937372ac456b4a0ea822890456aacae78ef",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/53b4e974e6cc324292104706ece6eb6faaa87633",
+                "reference": "53b4e974e6cc324292104706ece6eb6faaa87633",
                 "shasum": ""
             },
             "require": {
@@ -11605,9 +11559,9 @@
             "description": "UNL customizations for use with the CAS and UNL User modules.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/2.0"
+                "source": "https://github.com/unlcms/unl_cas/tree/2.1"
             },
-            "time": "2023-03-03T19:44:12+00:00"
+            "time": "2023-03-30T23:02:47+00:00"
         },
         {
             "name": "unlcms/unl_five",

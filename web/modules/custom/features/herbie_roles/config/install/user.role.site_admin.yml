@@ -1,12 +1,9 @@
-uuid: eee67aa7-8419-4c24-a761-2b38f59cfb5a
 langcode: en
 status: true
 dependencies:
   module:
     - webform
     - webform_submission_log
-_core:
-  default_config_hash: dtYv0rA7Rm2zwvCJjNtVeTsmqDQ2uz1RFIjbpS5fvyQ
 id: site_admin
 label: 'Site admin'
 weight: -7

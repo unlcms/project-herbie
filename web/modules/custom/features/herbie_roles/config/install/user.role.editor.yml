@@ -1,11 +1,8 @@
-uuid: 9785a012-13f3-431d-9439-f7d19859f9ec
 langcode: en
 status: true
 dependencies:
   module:
     - webform
-_core:
-  default_config_hash: NSZODsJb0380zd4CocnagNgGBzka6mYWPYems1AiAJI
 id: editor
 label: Editor
 weight: -8

@@ -4,7 +4,6 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'drupal:node'
-  - 'features_permissions:features_permissions'
   - 'pathauto:pathauto'
-version: 1.0.1
+version: 1.1.0
 package: Herbie
