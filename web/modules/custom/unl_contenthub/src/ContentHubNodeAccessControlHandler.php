@@ -20,7 +20,7 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $node, $operation, AccountInterface $account) {
-    if ($operation == 'update' || $operation == 'delete'
+    if (($operation == 'update' || $operation == 'delete')
       && $account->hasPermission('edit any builder_page content')) {
       // Using 'edit any builder_page content' as the base permission for any
       // custom content type that may need editing. Because all permissions are
