@@ -1,14 +1,190 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+    - filter.format.block_body
+    - filter.format.standard
+    - filter.format.webform
+    - filter.format.webform_default
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.book
+    - node.type.builder_page
+    - node.type.news
+    - node.type.person
   module:
+    - block
+    - block_content_permissions
+    - book
+    - contextual
+    - entity_usage
+    - external_entities
+    - feeds
+    - file
+    - file_delete
+    - filter
+    - layout_builder
+    - media
+    - media_file_delete
+    - menu_admin_per_menu
+    - node
+    - paragraphs
+    - path
+    - rabbit_hole
+    - redirect
+    - system
+    - taxonomy
+    - toolbar
+    - twig_ui
+    - unl_breadcrumbs
+    - unl_config
+    - unl_news
+    - views_ui
     - webform
     - webform_submission_log
 id: site_admin
 label: 'Site admin'
-weight: -7
+weight: -6
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access any webform configuration'
+  - 'access block content overview'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access entity usage statistics'
+  - 'access feed overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access own webform configuration'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform help'
+  - 'access webform overview'
   - 'access webform submission log'
+  - 'add content to books'
+  - 'administer blocks'
+  - 'administer book outlines'
+  - 'administer content types'
+  - 'administer feeds'
+  - 'administer main menu items'
+  - 'administer nodes'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer twig templates'
+  - 'administer unl breadcrumbs'
+  - 'administer unl news'
+  - 'administer users'
+  - 'administer views'
+  - 'administer webform submission'
+  - 'bypass node access'
+  - 'configure editable builder_page node layout overrides'
+  - 'create accordion block content'
+  - 'create and edit custom blocks'
+  - 'create book content'
+  - 'create builder_page content'
+  - 'create card block content'
+  - 'create contact_info block content'
+  - 'create content block content'
+  - 'create cta block content'
+  - 'create file media'
+  - 'create hero block content'
+  - 'create image media'
+  - 'create new books'
+  - 'create news content'
+  - 'create person content'
+  - 'create photo_hero block content'
+  - 'create remote_video media'
+  - 'create social_media_links block content'
+  - 'create unl_directory_entry external entity'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any accordion block content'
+  - 'delete any book content'
+  - 'delete any builder_page content'
+  - 'delete any card block content'
+  - 'delete any contact_info block content'
+  - 'delete any content block content'
+  - 'delete any cta block content'
+  - 'delete any file'
+  - 'delete any file media'
+  - 'delete any hero block content'
+  - 'delete any image media'
+  - 'delete any news content'
+  - 'delete any person content'
+  - 'delete any photo_hero block content'
+  - 'delete any remote_video media'
+  - 'delete any social_media_links block content'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete book revisions'
+  - 'delete builder_page revisions'
+  - 'delete files'
+  - 'delete news revisions'
+  - 'delete own book content'
+  - 'delete own builder_page content'
+  - 'delete own file media'
+  - 'delete own image media'
+  - 'delete own news content'
+  - 'delete own person content'
+  - 'delete own remote_video media'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete person revisions'
+  - 'delete unl_directory_entry external entity'
+  - 'edit any book content'
+  - 'edit any builder_page content'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any news content'
+  - 'edit any person content'
+  - 'edit any remote_video media'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit own book content'
+  - 'edit own builder_page content'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own news content'
+  - 'edit own person content'
+  - 'edit own remote_video media'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'load twig templates from file system'
+  - 'rabbit hole bypass media'
+  - 'revert book revisions'
+  - 'revert builder_page revisions'
+  - 'revert news revisions'
+  - 'revert person revisions'
+  - 'unl administer site configuration'
+  - 'update any accordion block content'
+  - 'update any card block content'
+  - 'update any contact_info block content'
+  - 'update any content block content'
+  - 'update any cta block content'
+  - 'update any hero block content'
+  - 'update any photo_hero block content'
+  - 'update any social_media_links block content'
+  - 'update unl_directory_entry external entity'
+  - 'use text format block_body'
+  - 'use text format standard'
+  - 'use text format webform'
+  - 'use text format webform_default'
   - 'view any webform submission'
+  - 'view book revisions'
+  - 'view builder_page revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view own webform submission'
+  - 'view person revisions'
+  - 'view the administration theme'
+  - 'view unl_directory_entry external entity'
+  - 'view unl_directory_entry external entity collection'
+  - 'view unpublished paragraphs'
+  - 'view user email addresses'

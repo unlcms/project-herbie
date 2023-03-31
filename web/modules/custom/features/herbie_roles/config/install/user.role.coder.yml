@@ -1,8 +1,22 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - asset_injector
+    - block_content_permissions
+    - field_css
+    - filter
 id: coder
 label: Coder
-weight: -6
+weight: -5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access css fields'
+  - 'administer css assets injector'
+  - 'administer js assets injector'
+  - 'create html_code block content'
+  - 'delete any html_code block content'
+  - 'update any html_code block content'
+  - 'use text format html_code'

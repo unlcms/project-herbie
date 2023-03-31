@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+    - node.type.builder_page
+    - node.type.news
+    - node.type.person
+  module:
+    - entity_usage
+    - file
+    - media
+    - node
+    - paragraphs
+    - system
+    - toolbar
+id: viewer
+label: Viewer
+weight: -8
+is_admin: null
+permissions:
+  - 'access entity usage statistics'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'view book revisions'
+  - 'view builder_page revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view person revisions'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'
