@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
     - filter.format.block_body
+    - filter.format.html_code
     - filter.format.standard
     - filter.format.webform
     - filter.format.webform_default
@@ -16,6 +17,7 @@ dependencies:
     - node.type.person
   module:
     - administerusersbyrole
+    - asset_injector
     - block
     - block_content_permissions
     - book
@@ -73,7 +75,9 @@ permissions:
   - 'administer blocks'
   - 'administer book outlines'
   - 'administer content types'
+  - 'administer css assets injector'
   - 'administer feeds'
+  - 'administer js assets injector'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
@@ -177,6 +181,7 @@ permissions:
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
   - 'use text format block_body'
+  - 'use text format html_code'
   - 'use text format standard'
   - 'use text format webform'
   - 'use text format webform_default'

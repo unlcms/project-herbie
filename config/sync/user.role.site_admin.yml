@@ -39,11 +39,9 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - twig_ui
     - unl_breadcrumbs
     - unl_config
     - unl_news
-    - views_ui
     - webform
     - webform_submission_log
 _core:
@@ -75,16 +73,13 @@ permissions:
   - 'add content to books'
   - 'administer blocks'
   - 'administer book outlines'
-  - 'administer content types'
   - 'administer feeds'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
   - 'administer taxonomy'
-  - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
-  - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'
   - 'bypass node access'
@@ -162,7 +157,6 @@ permissions:
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit users by role'
-  - 'load twig templates from file system'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'

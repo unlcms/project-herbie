@@ -5,18 +5,19 @@ dependencies:
     - filter.format.html_code
   module:
     - asset_injector
-    - block_content_permissions
-    - field_css
     - filter
+    - node
+    - twig_ui
+    - views_ui
 id: coder
-label: Coder
+label: Developer
 weight: -5
 is_admin: null
 permissions:
-  - 'access css fields'
+  - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'
-  - 'create html_code block content'
-  - 'delete any html_code block content'
-  - 'update any html_code block content'
+  - 'administer twig templates'
+  - 'administer views'
+  - 'load twig templates from file system'
   - 'use text format html_code'

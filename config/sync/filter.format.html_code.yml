@@ -1,9 +1,7 @@
 uuid: af20ac61-0872-4bfe-a689-a29b1b5daa31
 langcode: en
 status: true
-dependencies:
-  module:
-    - media
+dependencies: {  }
 name: 'HTML Code'
 format: html_code
 weight: 0
