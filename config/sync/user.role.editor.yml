@@ -20,6 +20,7 @@ dependencies:
     - block_content_permissions
     - book
     - contextual
+    - entity_share_client
     - entity_usage
     - external_entities
     - file
@@ -112,6 +113,8 @@ permissions:
   - 'edit own news content'
   - 'edit own person content'
   - 'edit own remote_video media'
+  - entity_share_client_display_errors
+  - entity_share_client_pull_content
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'

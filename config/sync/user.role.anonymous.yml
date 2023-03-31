@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - entity_share_server
     - external_entities
     - media
     - system
@@ -14,5 +15,6 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - entity_share_server_access_channels
   - 'view media'
   - 'view unl_directory_entry external entity'

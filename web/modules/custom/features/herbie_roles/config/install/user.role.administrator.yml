@@ -22,6 +22,7 @@ dependencies:
     - block_content_permissions
     - book
     - contextual
+    - entity_share_client
     - entity_usage
     - external_entities
     - feeds
@@ -163,6 +164,8 @@ permissions:
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit users by role'
+  - entity_share_client_display_errors
+  - entity_share_client_pull_content
   - 'load twig templates from file system'
   - 'rabbit hole bypass media'
   - 'revert book revisions'

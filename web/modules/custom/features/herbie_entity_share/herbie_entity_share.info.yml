@@ -1,0 +1,7 @@
+name: 'Entity share'
+type: module
+core_version_requirement: '^9.4 || ^10'
+dependencies:
+  - entity_share_client
+version: 1.0.0
+package: Herbie
