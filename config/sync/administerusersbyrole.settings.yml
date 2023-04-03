@@ -4,5 +4,5 @@ roles:
   viewer: safe
   editor: safe
   site_admin: safe
-  coder: unsafe
+  coder: safe
   administrator: unsafe
