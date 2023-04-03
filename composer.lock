@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a71f7894a4be3de8599f7bb1416fed3",
+    "content-hash": "4eb192edd00e6636694c026974fa30a7",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -8567,16 +8567,16 @@
         },
         {
             "name": "richardbporter/drush-users-commands",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/richardbporter/drush-users-commands.git",
-                "reference": "ef592d02f1f1a0824583ead2ce9087f3952dd897"
+                "reference": "bb7acd507970d4c87706dfb89fc3144c602cd2a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/richardbporter/drush-users-commands/zipball/ef592d02f1f1a0824583ead2ce9087f3952dd897",
-                "reference": "ef592d02f1f1a0824583ead2ce9087f3952dd897",
+                "url": "https://api.github.com/repos/richardbporter/drush-users-commands/zipball/bb7acd507970d4c87706dfb89fc3144c602cd2a0",
+                "reference": "bb7acd507970d4c87706dfb89fc3144c602cd2a0",
                 "shasum": ""
             },
             "require": {
@@ -8586,8 +8586,8 @@
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "drupal/core-composer-scaffold": "^9.3",
-                "drupal/core-recommended": "^9.3",
+                "drupal/core-composer-scaffold": "^9.3 || ^10.0",
+                "drupal/core-recommended": "^9.3 || ^10.0",
                 "mglaman/drupal-check": "^1.4",
                 "phpunit/phpunit": "^9.5",
                 "squizlabs/php_codesniffer": "^3",
@@ -8657,9 +8657,9 @@
             ],
             "support": {
                 "issues": "https://github.com/richardbporter/drush-users-commands/issues",
-                "source": "https://github.com/richardbporter/drush-users-commands/tree/3.2.0"
+                "source": "https://github.com/richardbporter/drush-users-commands/tree/3.2.1"
             },
-            "time": "2022-12-06T03:14:23+00:00"
+            "time": "2023-03-05T20:22:07+00:00"
         },
         {
             "name": "robinherbots/jquery.inputmask",
