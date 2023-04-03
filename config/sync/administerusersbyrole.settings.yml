@@ -5,4 +5,4 @@ roles:
   editor: safe
   site_admin: safe
   coder: safe
-  administrator: unsafe
+  administrator: perm

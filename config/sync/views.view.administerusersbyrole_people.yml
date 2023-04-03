@@ -477,6 +477,8 @@ display:
             description: ''
             use_operator: false
             operator: roles_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: role
             required: false
             remember: false
@@ -484,7 +486,12 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              viewer: '0'
+              editor: '0'
+              site_admin: '0'
+              coder: '0'
               administrator: '0'
+              super_administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -577,6 +584,48 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        roles_target_id_1:
+          id: roles_target_id_1
+          table: user__roles
+          field: roles_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: roles
+          plugin_id: user_roles
+          operator: 'not empty'
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
       filter_groups:
         operator: AND
         groups:
@@ -661,7 +710,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags:
             - administerusersbyrole_edit_access
@@ -694,6 +743,8 @@ display:
     display_options:
       defaults:
         show_admin_links: false
+        filters: true
+        filter_groups: true
       show_admin_links: false
       display_extenders: {  }
       path: admin/people/list

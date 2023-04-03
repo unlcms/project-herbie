@@ -166,6 +166,7 @@ permissions:
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit users by role'
+  - 'edit users with role administrator'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'load twig templates from file system'
@@ -175,6 +176,7 @@ permissions:
   - 'revert news revisions'
   - 'revert person revisions'
   - 'role-assign users by role'
+  - 'role-assign users with role administrator'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
