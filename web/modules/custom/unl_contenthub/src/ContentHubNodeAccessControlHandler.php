@@ -5,6 +5,7 @@ namespace Drupal\unl_contenthub;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
 use Drupal\node\NodeAccessControlHandler;
 
 /**
@@ -39,7 +40,8 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    if (isset($entity_bundle) && $entity_bundle == 'major') {
+    if (!$this->siteIsContentHub() && isset($entity_bundle)
+      && $entity_bundle == 'major') {
       // Content belonging to this bundle needs to be created
       // at the Content Hub site.
       return AccessResult::forbidden();
@@ -56,6 +58,25 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
     }
 
     return parent::checkCreateAccess($account, $context, $entity_bundle);
+  }
+
+  /**
+   * Determines if the site is an instance of Content Hub.
+   *
+   * @return bool
+   */
+  protected function siteIsContentHub() {
+    $siteBase = rtrim(Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString(),'/');
+
+    $remotes = \Drupal::entityTypeManager()->getStorage('remote')->loadMultiple();
+
+    foreach($remotes as $label => $remote) {
+      if ($remote->get('url') == $siteBase) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
   }
 
 }
