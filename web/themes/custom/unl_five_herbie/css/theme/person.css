@@ -135,5 +135,8 @@
 
   }
 
+  .page-node-type-person .dcf-hero-group-1 h1 {
+    display: none;
+  }
 
 
