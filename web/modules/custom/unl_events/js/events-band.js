@@ -8,13 +8,8 @@
     attach: function attach(context, settings) {
       // Check if WDN object is defined.
       if ('undefined' !== typeof WDN) {
-        // $('#events-band', context).once('band_initiated').each(function () {
-        //   initEventsBand();
-        // });
-
         const elements = once('band_initiated', '#events-band', context);
         elements.forEach(initEventsBand);
-
       }
       // If WDN object isn't defined, then wait for inlineJSReady event.
       else {
