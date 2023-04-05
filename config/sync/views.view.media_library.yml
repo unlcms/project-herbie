@@ -230,54 +230,6 @@ display:
             field_identifier: name_1
           exposed: true
       filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: media
-          entity_field: status
-          plugin_id: boolean
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: 'Publishing status'
-            description: null
-            use_operator: false
-            operator: status_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: status
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: true
-          group_info:
-            label: Published
-            description: ''
-            identifier: status
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: Published
-                operator: '='
-                value: '1'
-              2:
-                title: Unpublished
-                operator: '='
-                value: '0'
         name:
           id: name
           table: media_field_data
@@ -366,88 +318,6 @@ display:
               1: {  }
               2: {  }
               3: {  }
-        langcode:
-          id: langcode
-          table: media_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: langcode_op
-            label: Language
-            description: ''
-            use_operator: false
-            operator: langcode_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: langcode
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              administrator: '0'
-              authenticated: authenticated
-              anonymous: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        status_extra:
-          id: status_extra
-          table: media_field_data
-          field: status_extra
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: media
-          plugin_id: media_status
-          operator: '='
-          value: ''
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: default
         options:
@@ -482,7 +352,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - user
         - user.permissions
       tags:
         - 'config:core.entity_view_display.media.file.default'
@@ -493,7 +362,7 @@ display:
         - 'config:core.entity_view_display.media.image.wide'
         - 'config:core.entity_view_display.media.remote_video.default'
         - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
+        - 'config:core.entity_view_display.media.remote_video.narrow'
   page:
     id: page
     display_title: Page
@@ -788,7 +657,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - user
         - user.permissions
       tags:
         - 'config:core.entity_view_display.media.file.default'
@@ -799,7 +667,7 @@ display:
         - 'config:core.entity_view_display.media.image.wide'
         - 'config:core.entity_view_display.media.remote_video.default'
         - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
+        - 'config:core.entity_view_display.media.remote_video.narrow'
   widget:
     id: widget
     display_title: Widget
@@ -1128,7 +996,7 @@ display:
         - 'config:core.entity_view_display.media.image.wide'
         - 'config:core.entity_view_display.media.remote_video.default'
         - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.remote_video'
+        - 'config:core.entity_view_display.media.remote_video.narrow'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'

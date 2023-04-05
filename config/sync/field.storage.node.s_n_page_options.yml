@@ -1,0 +1,27 @@
+uuid: 7655cec9-9b5d-4e98-8682-2cd081e81529
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.s_n_page_options
+field_name: s_n_page_options
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: title_hidden
+      label: 'Visually hide page title'
+    -
+      value: no_sidebars
+      label: 'Hide sidebar(s)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

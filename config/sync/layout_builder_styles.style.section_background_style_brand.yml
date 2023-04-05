@@ -1,0 +1,12 @@
+uuid: 061959fd-24d9-44bf-b7b8-1b5952ae4881
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_style_brand
+label: Scarlet
+classes: "unl-bg-scarlet\r\nunl-cream"
+type: section
+group: background
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -7
