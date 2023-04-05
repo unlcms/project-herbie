@@ -98,18 +98,18 @@ function unl_five_herbie_preprocess_block(&$variables) {
 /**
  * Implements template_preprocess_node__TYPE().
  */
-function unl_five_herbie_preprocess_node__news(&$variables) {
-  // Insert an instance news_recent block_1 into the News node template. Rather
-  // than use a standard block, this is done to keep the CSS wrappers separate
-  // so the same block_1 can be used in Layout Builder with different
-  // color sections.
-  $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
-  $variables['content']['news_recent_block_output'] = $block->build();
+// function unl_five_herbie_preprocess_node__news(&$variables) {
+//   // Insert an instance news_recent block_1 into the News node template. Rather
+//   // than use a standard block, this is done to keep the CSS wrappers separate
+//   // so the same block_1 can be used in Layout Builder with different
+//   // color sections.
+//   $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
+//   $variables['content']['news_recent_block_output'] = $block->build();
 
-  $view = Views::getView('news_recent');
-  $view->setDisplay('block_1');
-  $variables['content']['news_recent_title'] = $view->getTitle();
-}
+//   $view = Views::getView('news_recent');
+//   $view->setDisplay('block_1');
+//   $variables['content']['news_recent_title'] = $view->getTitle();
+// }
 
 /**
  * Implements template_preprocess_field().
@@ -117,15 +117,20 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 function unl_five_herbie_preprocess_field(&$variables) {
   $field_name = $variables['field_name'];
 
+  // if ($field_name == 'n_news_image') {
+  //   $variables['items'][0]['#item']["attributes"]["itemprop"] = "image";
+  // }
+
   /*
    * Image field in News content type.
    */
   if ($field_name == 'n_news_image' && $variables['element']['#view_mode'] == 'teaser') {
     foreach ($variables['items'] as $key => $item) {
-      $classes = ['dcf-d-block', 'dcf-ratio-child', 'dcf-obj-fit-cover', 'dcf-animate-on-scroll'];
+      $classes = ['dcf-ratio-child', 'dcf-obj-fit-cover','dcf-animate-on-scroll'];
       $variables['items'][$key]['content']['#item_attributes']['class'] = $variables['items'][$key]['content']['#item_attributes']['class'] ?? [];
       $variables['items'][$key]['content']['#item_attributes']['class'] = array_merge($variables['items'][$key]['content']['#item_attributes']['class'], $classes);
       $variables['items'][$key]['content']['#item_attributes']['aria-hidden'] = 'true';
+      $variables['items'][$key]['content']['#item_attributes']["itemprop"] = "image";
 
       $values = $variables['items'][$key]['content']['#item']->getValue();
       $values['alt'] = "";

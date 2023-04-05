@@ -33,5 +33,24 @@ card:
   js:
     js/theme/card.js: {}
 
+news_teaser:
+  version: VERSION
+  css:
+    theme:
+      css/theme/news_teaser.css: {}
+  js:
+    js/theme/news_teaser.js: {}
+
+news_article:
+  version: VERSION
+  css:
+    theme:
+      css/theme/news_article.css: {}
+  js:
+    js/theme/news_article.js: {}
+
+
+
+
 
 
