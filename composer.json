@@ -155,7 +155,6 @@
         "drupal/media_file_delete": "^1.3",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
-        "drupal/nodeaccess": "^2.0@alpha",
         "drupal/oembed_providers": "^2.1",
         "drupal/paragraphs": "^1.8",
         "drupal/pathauto": "^1.3",

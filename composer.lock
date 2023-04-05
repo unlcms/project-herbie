@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c4f631cb83b4db35d457f490d9481d3",
+    "content-hash": "4eb192edd00e6636694c026974fa30a7",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -4952,70 +4952,6 @@
             "homepage": "https://www.drupal.org/project/menu_block",
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_block"
-            }
-        },
-        {
-            "name": "drupal/nodeaccess",
-            "version": "2.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/nodeaccess.git",
-                "reference": "2.0.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/nodeaccess-2.0.0-alpha2.zip",
-                "reference": "2.0.0-alpha2",
-                "shasum": "535962616aa353873cb50e35b76db81532da6c9e"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-alpha2",
-                    "datestamp": "1676128517",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "alison",
-                    "homepage": "https://www.drupal.org/user/453248"
-                },
-                {
-                    "name": "devdesagar",
-                    "homepage": "https://www.drupal.org/user/3569773"
-                },
-                {
-                    "name": "jungle",
-                    "homepage": "https://www.drupal.org/user/2919723"
-                },
-                {
-                    "name": "Kushal Bansal",
-                    "homepage": "https://www.drupal.org/user/3478917"
-                },
-                {
-                    "name": "LeDucDuBleuet",
-                    "homepage": "https://www.drupal.org/user/103166"
-                },
-                {
-                    "name": "waspper",
-                    "homepage": "https://www.drupal.org/user/858842"
-                }
-            ],
-            "description": "Provides per node access control.",
-            "homepage": "https://www.drupal.org/project/nodeaccess",
-            "support": {
-                "source": "https://git.drupalcode.org/project/nodeaccess"
             }
         },
         {
@@ -16408,7 +16344,6 @@
         "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
-        "drupal/nodeaccess": 15,
         "drupal/rabbit_hole": 10,
         "drupal/seven": 15,
         "drupal/webform": 10
