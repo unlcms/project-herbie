@@ -1,0 +1,21 @@
+uuid: 5e9ddc1e-275b-4cb5-8283-9368dbe73a15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_internships_list
+    - node.type.major
+_core:
+  default_config_hash: Y5dzeSIr2TIvu0BlNPAR_XrMKvpmxh00q6SULPp_Lyo
+id: node.major.n_major_internships_list
+field_name: n_major_internships_list
+entity_type: node
+bundle: major
+label: 'Internships List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

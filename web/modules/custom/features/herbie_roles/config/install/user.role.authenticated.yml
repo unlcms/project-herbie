@@ -1,8 +1,15 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - external_entities
+    - media
+    - system
 id: authenticated
 label: 'Authenticated user'
 weight: -9
 is_admin: false
-permissions: {  }
+permissions:
+  - 'access content'
+  - 'view media'
+  - 'view unl_directory_entry external entity'

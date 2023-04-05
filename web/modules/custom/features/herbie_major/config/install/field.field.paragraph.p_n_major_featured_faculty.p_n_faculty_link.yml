@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_faculty_link
+    - paragraphs.paragraphs_type.p_n_major_featured_faculty
+  module:
+    - link
+id: paragraph.p_n_major_featured_faculty.p_n_faculty_link
+field_name: p_n_faculty_link
+entity_type: paragraph
+bundle: p_n_major_featured_faculty
+label: 'Faculty Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

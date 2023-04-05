@@ -1,0 +1,21 @@
+uuid: 6441b2bd-43f9-45d3-998b-41a91f26ebaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_academics_experiential
+    - node.type.major
+_core:
+  default_config_hash: f6kndWf3kbI5ZC7xms9yEd0oAAR0auFxnMdwudI9McQ
+id: node.major.n_major_academics_experiential
+field_name: n_major_academics_experiential
+entity_type: node
+bundle: major
+label: 'Academics Experiential'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

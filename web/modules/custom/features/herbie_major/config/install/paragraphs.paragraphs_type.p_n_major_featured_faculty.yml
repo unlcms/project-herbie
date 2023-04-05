@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: p_n_major_featured_faculty
+label: 'Featured Faculty'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

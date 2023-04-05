@@ -1,0 +1,40 @@
+uuid: 2c7e921c-26f3-4263-9be9-5564eb634887
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_contact_image
+    - paragraphs.paragraphs_type.p_n_major_contact
+  module:
+    - image
+_core:
+  default_config_hash: UVNHzfH5riiwtalH2B6PfE1zimzRtf6yA96Hy7K4Mng
+id: paragraph.p_n_major_contact.p_n_contact_image
+field_name: p_n_contact_image
+entity_type: paragraph
+bundle: p_n_major_contact
+label: 'Contact Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

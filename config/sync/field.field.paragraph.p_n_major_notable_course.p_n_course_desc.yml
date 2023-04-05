@@ -1,0 +1,21 @@
+uuid: e57485a2-82ac-4cc1-ad14-f36847b6d7a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_course_desc
+    - paragraphs.paragraphs_type.p_n_major_notable_course
+_core:
+  default_config_hash: OLuBal6tMb3W4ZoAmR9yR690phkB9wIgWW74rGFpX-A
+id: paragraph.p_n_major_notable_course.p_n_course_desc
+field_name: p_n_course_desc
+entity_type: paragraph
+bundle: p_n_major_notable_course
+label: 'Course Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

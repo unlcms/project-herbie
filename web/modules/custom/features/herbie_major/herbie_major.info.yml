@@ -1,0 +1,25 @@
+name: Major
+description: 'To aggregate and display major information.'
+type: module
+core_version_requirement: '^9.4 || ^10'
+dependencies:
+  - 'allowed_formats:allowed_formats'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'entity_reference_revisions:entity_reference_revisions'
+  - 'entity_share:entity_share_server'
+  - 'field_group:field_group'
+  - 'focal_point:focal_point'
+  - 'image_class:image_class'
+  - 'paragraphs:paragraphs'
+  - 'pathauto:pathauto'
+  - 'twig_ui:twig_ui'
+version: 1.1.1
+package: Herbie

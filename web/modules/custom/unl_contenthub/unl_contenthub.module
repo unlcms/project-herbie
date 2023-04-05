@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function unl_contenthub_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['node'])) {
+    $entity_types['node']->setHandlerClass('access', 'Drupal\unl_contenthub\ContentHubNodeAccessControlHandler');
+  }
+}

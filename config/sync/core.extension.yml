@@ -4,9 +4,12 @@ module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
+  administerusersbyrole: 0
   allowed_formats: 0
   asset_injector: 0
   auto_entitylabel: 0
+  automated_cron: 0
+  big_pipe: 0
   block: 0
   block_content: 0
   block_content_permissions: 0
@@ -34,6 +37,11 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  entity_share: 0
+  entity_share_client: 0
+  entity_share_cron: 0
+  entity_share_lock: 0
+  entity_share_server: 0
   entity_usage: 0
   external_entities: 0
   external_entities_pathauto: 0
@@ -56,6 +64,8 @@ module:
   heading: 0
   herbie_book: 0
   herbie_builder_page: 0
+  herbie_entity_share: 0
+  herbie_major: 0
   herbie_media_types: 0
   herbie_news: 0
   herbie_person: 0
@@ -69,6 +79,7 @@ module:
   inline_entity_form: 0
   jquery_ui: 0
   jquery_ui_draggable: 0
+  jsonapi: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
   layout_builder_modal: 0
@@ -87,6 +98,7 @@ module:
   media_file_delete_entity_usage: 0
   media_library: 0
   menu_block: 0
+  menu_link_content: 0
   menu_ui: 0
   mysql: 0
   node: 0
@@ -101,7 +113,7 @@ module:
   responsive_image: 0
   rh_media: 0
   select2: 0
-  shortcut: 0
+  serialization: 0
   sophron: 0
   syslog: 0
   system: 0
@@ -116,6 +128,7 @@ module:
   unl_breadcrumbs: 0
   unl_cas: 0
   unl_config: 0
+  unl_contenthub: 0
   unl_events: 0
   unl_layout_builder_custom: 0
   unl_media: 0
@@ -137,14 +150,13 @@ module:
   webform_ui: 0
   dcf_lazyload: 1
   menu_admin_per_menu: 1
-  menu_link_content: 1
   pathauto: 1
   externalauth: 10
   views: 10
   paragraphs: 11
   herbie: 1000
 theme:
+  claro: 0
   unl_five: 0
   unl_five_herbie: 0
-  claro: 0
 profile: herbie

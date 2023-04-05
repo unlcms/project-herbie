@@ -1,11 +1,26 @@
 uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - asset_injector
+    - filter
+    - node
+    - twig_ui
+    - views_ui
 _core:
   default_config_hash: K9t_jofegA_W-oRLqfgMaJBLD8KJ3S5pRSrHEyCkJAI
 id: coder
-label: Coder
-weight: -6
+label: Developer
+weight: -5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'administer content types'
+  - 'administer css assets injector'
+  - 'administer js assets injector'
+  - 'administer twig templates'
+  - 'administer views'
+  - 'load twig templates from file system'
+  - 'use text format html_code'

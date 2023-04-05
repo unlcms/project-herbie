@@ -1,0 +1,21 @@
+uuid: 29e29536-b726-4779-a689-f8a5aa621495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_areas_emphasis
+    - node.type.major
+_core:
+  default_config_hash: Hf4rOJwZqR5zEO8X0VhsmYxi22PButKWk1N1gnEjb3k
+id: node.major.n_major_areas_emphasis
+field_name: n_major_areas_emphasis
+entity_type: node
+bundle: major
+label: 'Areas of Emphasis'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

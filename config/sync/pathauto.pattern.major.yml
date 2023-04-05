@@ -1,0 +1,24 @@
+uuid: 4815e10a-3dda-495a-8b6c-d818ed5bc0f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: hukoqKflD5ibeJgGcLoRQmiKeFF44ph2o3XDFQfg6QU
+id: major
+label: Major
+type: 'canonical_entities:node'
+pattern: 'major/[node:title]'
+selection_criteria:
+  c326c991-c933-430a-ac56-5d01cac08d9e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c326c991-c933-430a-ac56-5d01cac08d9e
+    context_mapping:
+      node: node
+    bundles:
+      major: major
+selection_logic: and
+weight: -5
+relationships: {  }

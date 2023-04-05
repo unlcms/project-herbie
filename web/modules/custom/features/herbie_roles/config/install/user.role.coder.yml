@@ -1,8 +1,23 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - asset_injector
+    - filter
+    - node
+    - twig_ui
+    - views_ui
 id: coder
-label: Coder
-weight: -6
+label: Developer
+weight: -5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'administer content types'
+  - 'administer css assets injector'
+  - 'administer js assets injector'
+  - 'administer twig templates'
+  - 'administer views'
+  - 'load twig templates from file system'
+  - 'use text format html_code'

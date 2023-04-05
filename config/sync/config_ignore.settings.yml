@@ -29,6 +29,8 @@ ignored_config_entities:
   - ~block.block.unl_five_local_tasks
   - ~block.block.unl_five_messages
   - ~block.block.unl_five_page_title
+  - entity_share_client.remote.content_hub_development
+  - 'entity_share_cron.settings:remotes.content_hub_development'
   - 'system.site:name'
   - 'system.site:mail'
   - 'system.site:slogan'

@@ -1,0 +1,41 @@
+uuid: 49a45fb1-881f-480e-8a6a-b294e2e5db4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_icon
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_statement
+    - field.field.paragraph.p_n_major_points_of_pride.p_n_pop_support
+    - paragraphs.paragraphs_type.p_n_major_points_of_pride
+_core:
+  default_config_hash: 5UImD-DebadYXhw8Arn3LXs0k9_-APiNvlHu3rwHmv8
+id: paragraph.p_n_major_points_of_pride.default
+targetEntityType: paragraph
+bundle: p_n_major_points_of_pride
+mode: default
+content:
+  p_n_pop_icon:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  p_n_pop_statement:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_n_pop_support:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

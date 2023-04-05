@@ -1,0 +1,23 @@
+uuid: 940cd4f6-6842-48d2-bcd4-3f4acd01073f
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: RDLz4gaSJhYrTj8_p7qNj8kcCZMNxquCTAnQWhZ3Hqk
+id: node.n_major_contact
+field_name: n_major_contact
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
