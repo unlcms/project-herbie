@@ -77,13 +77,16 @@ class PersonBlock extends BlockBase {
        ],
      ];
 
+    $view_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', 'person');
+    unset($view_modes['default']);
+
     $form['view_mode'] = [
       '#type' => 'select',
       '#title' => $this->t('View mode'),
       '#required' => TRUE,
       '#multiple' => FALSE,
       '#default_value' => 'teaser',
-      '#options' => ['teaser', 'teaser_small', 'teaser_featured'],
+      '#options' => $view_modes,
     ];
 
     return $form;
