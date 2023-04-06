@@ -1,0 +1,21 @@
+uuid: 98305461-5681-4e93-b6e2-27ca8a38c8e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_person_social_fb
+field_name: n_person_social_fb
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

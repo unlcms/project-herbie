@@ -1,13 +1,16 @@
 {%
   set attributes = attributes.addClass([
-    'dcf-grid-full',
-    'dcf-grid-halves@sm',
-    'dcf-col-gap-8',
-    'dcf-row-gap-8'
+    'dcf-list-bare',
+    'dcf-d-grid',
+    'unlcms-abbr-teaser-person-list',
+    'dcf-col-gap-vw',
+    'dcf-row-gap-6',
+    'dcf-mb-9'
   ])
 %}
-<div{{ attributes }}>
+
+<ol {{attributes}}>
   {% for nid in nodes %}
-    {{ drupal_entity('node', nid, 'teaser') }}
+  {{ drupal_entity('node', nid, 'teaser') }}
   {% endfor %}
-</div>
+</ol>

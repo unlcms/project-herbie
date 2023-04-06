@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser_featured
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
@@ -23,33 +24,24 @@ dependencies:
     - node.type.person
   module:
     - image
+    - layout_builder
     - link
     - telephone
     - text
     - user
-id: node.person.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.person.teaser_featured
 targetEntityType: node
 bundle: person
-mode: default
+mode: teaser_featured
 content:
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
-    region: content
-  n_additional:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 117
-    region: content
-  n_education:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 118
     region: content
   n_person_address:
     type: string
@@ -177,4 +169,6 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
-hidden: {  }
+hidden:
+  n_additional: true
+  n_education: true

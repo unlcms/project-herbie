@@ -77,6 +77,15 @@ class PersonBlock extends BlockBase {
        ],
      ];
 
+    $form['view_mode'] = [
+      '#type' => 'select',
+      '#title' => $this->t('View mode'),
+      '#required' => TRUE,
+      '#multiple' => FALSE,
+      '#default_value' => 'teaser',
+      '#options' => ['teaser', 'teaser_small', 'teaser_featured'],
+    ];
+
     return $form;
   }
 
@@ -85,6 +94,9 @@ class PersonBlock extends BlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     parent::blockSubmit($form, $form_state);
+
+    $this->configuration['view_mode'] = $form_state->getValue('view_mode');
+      
     // Can't use $form_state->getValue('persons') as it gives the values sorted
     // in a numerically ascending manner, not respecting user sorting.
     $this->configuration['persons'] = $form_state->getCompleteFormState()->getUserInput()['settings']['persons'];
@@ -104,6 +116,7 @@ class PersonBlock extends BlockBase {
         ],
       ),
       '#nodes' => $this->configuration['persons'],
+      '#view_mode' => $this->configuration['view_mode'],
     ];
   }
 }

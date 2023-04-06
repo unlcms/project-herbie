@@ -1,5 +1,5 @@
 name: Person
-description: 'Provides Person content type and related configuration. A person''s bio and/or contact information.'
+description: "Provides Person content type and related configuration. A person's bio and/or contact information."
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
@@ -7,6 +7,7 @@ dependencies:
   - 'drupal:field'
   - 'drupal:file'
   - 'drupal:image'
+  - 'drupal:layout_builder'
   - 'drupal:link'
   - 'drupal:menu_ui'
   - 'drupal:node'
@@ -16,6 +17,7 @@ dependencies:
   - 'drupal:user'
   - 'external_entities:external_entities'
   - 'field_group:field_group'
+  - 'herbie_news:herbie_news'
   - 'pathauto:pathauto'
-version: 1.1.0
+version: 1.1.2
 package: Herbie

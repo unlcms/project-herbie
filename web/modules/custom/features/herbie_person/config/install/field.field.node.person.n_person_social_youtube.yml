@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_person_social_youtube
+    - node.type.person
+id: node.person.n_person_social_youtube
+field_name: n_person_social_youtube
+entity_type: node
+bundle: person
+label: YouTube
+description: "Enter username without the '@' symbol"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
