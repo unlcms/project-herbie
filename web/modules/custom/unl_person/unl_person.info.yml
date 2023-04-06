@@ -8,4 +8,5 @@ core_version_requirement: ^8 || ^9 || ^10
 version: 1.x
 
 dependencies:
-- twig_tweak:twig_tweak
+  - select2:select2
+  - twig_tweak:twig_tweak
