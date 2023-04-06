@@ -10,7 +10,7 @@ field_name: n_person_social_fb
 entity_type: node
 bundle: person
 label: Facebook
-description: 'Enter username'
+description: "Enter username without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }

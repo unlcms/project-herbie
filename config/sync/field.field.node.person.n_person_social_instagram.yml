@@ -10,7 +10,7 @@ field_name: n_person_social_instagram
 entity_type: node
 bundle: person
 label: Instagram
-description: ''
+description: "Enter username without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }

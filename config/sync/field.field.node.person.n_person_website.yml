@@ -13,7 +13,7 @@ id: node.person.n_person_website
 field_name: n_person_website
 entity_type: node
 bundle: person
-label: 'Personal website'
+label: 'Personal website(s)'
 description: ''
 required: false
 translatable: false

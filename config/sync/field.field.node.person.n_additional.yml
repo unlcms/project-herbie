@@ -17,7 +17,7 @@ field_name: n_additional
 entity_type: node
 bundle: person
 label: Additional
-description: ''
+description: 'For publications and other intellectual contributions, e.g. "Publications", "Articles", "Performances", etc. Include <b>Heading 2</b> headings (found in the select box above that says <b>Paragraph</b>) to create sections.'
 required: false
 translatable: false
 default_value: {  }

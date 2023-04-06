@@ -38,29 +38,32 @@ third_party_settings:
         - n_person_phone
         - n_person_email
         - n_person_address
-      label: '(Optional) UNL Directory Overrides'
+      label: '(Optional) UNL Directory overrides'
       region: content
       parent_name: ''
-      weight: 13
+      weight: 2
       format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
         open: false
+        description: 'Values entered in this section will override the data that comes from the UNL Directory.'
         required_fields: true
     group_social_media:
       children:
-        - n_person_social_linkedin
+        - n_person_website
         - n_person_social_fb
-        - n_person_social_instagram
-        - n_person_social_snapchat
         - n_person_social_twitter
         - n_person_social_youtube
+        - n_person_social_instagram
+        - n_person_social_linkedin
         - n_person_social_pinterest
-      label: 'Social Media'
+        - n_person_social_snapchat
+      label: 'Social media & Personal website'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -78,13 +81,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   n_additional:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -94,7 +97,7 @@ content:
     third_party_settings: {  }
   n_education:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -112,7 +115,7 @@ content:
     third_party_settings: {  }
   n_person_bio:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 4
     region: content
     settings:
       rows: 9
@@ -153,7 +156,7 @@ content:
     third_party_settings: {  }
   n_person_social_fb:
     type: string_textfield
-    weight: 17
+    weight: 6
     region: content
     settings:
       size: 60
@@ -161,7 +164,7 @@ content:
     third_party_settings: {  }
   n_person_social_instagram:
     type: string_textfield
-    weight: 18
+    weight: 9
     region: content
     settings:
       size: 60
@@ -169,7 +172,7 @@ content:
     third_party_settings: {  }
   n_person_social_linkedin:
     type: string_textfield
-    weight: 15
+    weight: 10
     region: content
     settings:
       size: 60
@@ -177,7 +180,7 @@ content:
     third_party_settings: {  }
   n_person_social_pinterest:
     type: string_textfield
-    weight: 22
+    weight: 11
     region: content
     settings:
       size: 60
@@ -185,7 +188,7 @@ content:
     third_party_settings: {  }
   n_person_social_snapchat:
     type: string_textfield
-    weight: 19
+    weight: 12
     region: content
     settings:
       size: 60
@@ -193,7 +196,7 @@ content:
     third_party_settings: {  }
   n_person_social_twitter:
     type: string_textfield
-    weight: 20
+    weight: 7
     region: content
     settings:
       size: 60
@@ -201,7 +204,7 @@ content:
     third_party_settings: {  }
   n_person_social_youtube:
     type: string_textfield
-    weight: 21
+    weight: 8
     region: content
     settings:
       size: 60
@@ -227,27 +230,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -262,7 +265,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -271,7 +274,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

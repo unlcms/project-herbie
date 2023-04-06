@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
+    - field.field.node.news.n_person_reference
     - image.style.16_9_240x135
     - node.type.news
   module:
@@ -162,4 +163,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  n_person_reference: true
