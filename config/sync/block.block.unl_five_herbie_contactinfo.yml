@@ -1,0 +1,25 @@
+uuid: b79fb583-f235-4f71-87e4-d4542f4d924b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:dedfe3db-cc05-4da8-9e96-d617a4d40e4f'
+  module:
+    - block_content
+  theme:
+    - unl_five_herbie
+id: unl_five_herbie_contactinfo
+theme: unl_five_herbie
+region: contactinfo
+weight: 0
+provider: null
+plugin: 'block_content:dedfe3db-cc05-4da8-9e96-d617a4d40e4f'
+settings:
+  id: 'block_content:dedfe3db-cc05-4da8-9e96-d617a4d40e4f'
+  label: 'Contact Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

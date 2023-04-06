@@ -124,6 +124,7 @@
         "drupal/core-recommended": "^10",
         "drupal/crop": "^2.1",
         "drupal/ctools": "^4.0",
+        "drupal/default_content": "^2.0@alpha",
         "drupal/diff": "^1.0",
         "drupal/entity_reference_revisions": "^1.0",
         "drupal/entity_share": "^3.0@RC",

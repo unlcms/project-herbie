@@ -19,12 +19,14 @@ ignored_config_entities:
   - ~block.block.unl_five_content
   - ~block.block.unl_five_herbie_branding
   - ~block.block.unl_five_herbie_breadcrumbs
+  - ~block.block.unl_five_herbie_contactinfo
   - ~block.block.unl_five_herbie_content
   - ~block.block.unl_five_herbie_local_actions
   - ~block.block.unl_five_herbie_local_tasks
   - ~block.block.unl_five_herbie_mainnavigation
   - ~block.block.unl_five_herbie_messages
   - ~block.block.unl_five_herbie_page_title
+  - ~block.block.unl_five_herbie_relatedlinks
   - ~block.block.unl_five_local_actions
   - ~block.block.unl_five_local_tasks
   - ~block.block.unl_five_messages
