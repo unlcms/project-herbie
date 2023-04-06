@@ -23,6 +23,7 @@ class PersonBlock extends BlockBase {
   public function defaultConfiguration() {
     return [
       'persons' => [],
+      'view_mode' => 'teaser',
     ];
   }
 
