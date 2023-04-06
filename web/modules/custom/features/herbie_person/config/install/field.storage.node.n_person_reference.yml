@@ -3,17 +3,15 @@ status: true
 dependencies:
   module:
     - node
-id: node.n_person_address
-field_name: n_person_address
+id: node.n_person_reference
+field_name: n_person_reference
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 128
-  case_sensitive: false
-  is_ascii: false
+  target_type: node
 module: core
 locked: false
-cardinality: 4
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

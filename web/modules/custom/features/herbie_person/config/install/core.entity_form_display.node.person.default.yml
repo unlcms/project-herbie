@@ -49,13 +49,13 @@ third_party_settings:
         required_fields: true
     group_social_media:
       children:
-        - n_person_social_linkedin
         - n_person_social_fb
-        - n_person_social_instagram
-        - n_person_social_snapchat
         - n_person_social_twitter
         - n_person_social_youtube
+        - n_person_social_instagram
+        - n_person_social_linkedin
         - n_person_social_pinterest
+        - n_person_social_snapchat
       label: 'Social Media'
       region: content
       parent_name: ''
@@ -158,7 +158,7 @@ content:
     third_party_settings: {  }
   n_person_social_instagram:
     type: string_textfield
-    weight: 18
+    weight: 20
     region: content
     settings:
       size: 60
@@ -166,7 +166,7 @@ content:
     third_party_settings: {  }
   n_person_social_linkedin:
     type: string_textfield
-    weight: 15
+    weight: 21
     region: content
     settings:
       size: 60
@@ -182,7 +182,7 @@ content:
     third_party_settings: {  }
   n_person_social_snapchat:
     type: string_textfield
-    weight: 19
+    weight: 23
     region: content
     settings:
       size: 60
@@ -190,7 +190,7 @@ content:
     third_party_settings: {  }
   n_person_social_twitter:
     type: string_textfield
-    weight: 20
+    weight: 18
     region: content
     settings:
       size: 60
@@ -198,7 +198,7 @@ content:
     third_party_settings: {  }
   n_person_social_youtube:
     type: string_textfield
-    weight: 21
+    weight: 19
     region: content
     settings:
       size: 60
