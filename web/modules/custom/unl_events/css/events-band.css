@@ -1,0 +1,20 @@
+/**
+ * Move the background from the inserted band up a level to the CMS
+ * generated wrapper so that the block heading is inside the background.
+ */
+
+.unl-upcoming-events .unl-bg-grit {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.unl-upcoming-events {
+  background-color: var(--bg-lightest-gray) !important;
+  background-image: url(https://unlcms.unl.edu/wdn/templates_5.3/images/bg-grit.png) !important;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 192dpi) {
+  .unl-upcoming-events {
+    background-image: url(https://unlcms.unl.edu/wdn/templates_5.3/images/bg-grit_2x.png) !important;
+  }
+}
