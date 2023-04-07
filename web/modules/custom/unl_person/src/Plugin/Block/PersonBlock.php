@@ -23,6 +23,7 @@ class PersonBlock extends BlockBase {
   public function defaultConfiguration() {
     return [
       'persons' => [],
+      'view_mode' => 'teaser',
     ];
   }
 
@@ -77,13 +78,16 @@ class PersonBlock extends BlockBase {
        ],
      ];
 
+    $view_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', 'person');
+    unset($view_modes['default']);
+
     $form['view_mode'] = [
       '#type' => 'select',
       '#title' => $this->t('View mode'),
       '#required' => TRUE,
       '#multiple' => FALSE,
       '#default_value' => 'teaser',
-      '#options' => ['teaser', 'teaser_small', 'teaser_featured'],
+      '#options' => $view_modes,
     ];
 
     return $form;
@@ -96,7 +100,7 @@ class PersonBlock extends BlockBase {
     parent::blockSubmit($form, $form_state);
 
     $this->configuration['view_mode'] = $form_state->getValue('view_mode');
-      
+
     // Can't use $form_state->getValue('persons') as it gives the values sorted
     // in a numerically ascending manner, not respecting user sorting.
     $this->configuration['persons'] = $form_state->getCompleteFormState()->getUserInput()['settings']['persons'];

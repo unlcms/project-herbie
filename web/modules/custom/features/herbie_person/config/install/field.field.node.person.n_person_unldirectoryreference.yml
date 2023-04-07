@@ -8,7 +8,7 @@ id: node.person.n_person_unldirectoryreference
 field_name: n_person_unldirectoryreference
 entity_type: node
 bundle: person
-label: 'UNL Directory Reference'
+label: 'UNL Directory reference'
 description: 'For fastest results, enter a My.UNL ID such as <em>hhusker1</em>. Searching by name may return a limited set of results.'
 required: false
 translatable: false
@@ -20,5 +20,6 @@ settings:
     target_bundles: null
     sort:
       field: _none
+      direction: ASC
     auto_create: false
 field_type: entity_reference

@@ -11,3 +11,7 @@ install:
   - dynamic_page_cache
 themes:
   - stark
+default_content:
+  block_content:
+    - 260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8
+    - dedfe3db-cc05-4da8-9e96-d617a4d40e4f

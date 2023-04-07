@@ -32,6 +32,7 @@ module:
   datetime_range: 0
   dblog: 0
   dcf_layouts: 0
+  default_content: 0
   diff: 0
   dynamic_page_cache: 0
   editor: 0
