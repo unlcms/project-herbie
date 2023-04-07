@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: content
-label: Content
+label: 'Text area'
 revision: 0
-description: 'A generic content block with a WYSIWYG editor'
+description: 'A generic content block with a WYSIWYG editor.'
