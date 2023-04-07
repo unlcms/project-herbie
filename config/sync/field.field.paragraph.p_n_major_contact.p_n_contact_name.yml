@@ -1,0 +1,21 @@
+uuid: 56e511df-8883-41e6-8539-3e17ccc18370
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_contact_name
+    - paragraphs.paragraphs_type.p_n_major_contact
+_core:
+  default_config_hash: Log6eOtaXKf8IeuSf_5aGTSH7d4OYjh772f7FAaI4O4
+id: paragraph.p_n_major_contact.p_n_contact_name
+field_name: p_n_contact_name
+entity_type: paragraph
+bundle: p_n_major_contact
+label: 'Contact Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: 4G3ZLDsRi9C4iY4bCwOic0mB4J30EDCdhYfFHWClXos
+cron_interval: 7200
+page_limit: 5
+remotes:
+  content_hub:
+    enabled: true
+    channels:
+      content_hub_major:
+        enabled: true
+        import_config: content_hub_standard
+        operations:
+          create: false
+          update: true

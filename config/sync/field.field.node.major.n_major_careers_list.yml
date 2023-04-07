@@ -1,0 +1,21 @@
+uuid: fb38bbe4-2e7c-4c5d-bc7d-3b402782ef3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_careers_list
+    - node.type.major
+_core:
+  default_config_hash: JN0I9cmxphccvPwMALlcN-tDtz9f6fZe1CmkdPps6dM
+id: node.major.n_major_careers_list
+field_name: n_major_careers_list
+entity_type: node
+bundle: major
+label: 'Careers List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

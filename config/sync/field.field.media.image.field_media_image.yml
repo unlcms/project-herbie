@@ -8,7 +8,7 @@ dependencies:
   module:
     - image
 _core:
-  default_config_hash: lNI2mgpQV-Sm1aADa9aG4HUA7_JUZ-bAbxKq6CAkZPE
+  default_config_hash: vOSWRBPTr3ovXCByRAGzSZXsqWGa5HgjI0tlPEq_CMg
 id: media.image.field_media_image
 field_name: field_media_image
 entity_type: media
@@ -22,7 +22,7 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_directory: media/image
   file_extensions: 'gif jpg jpeg png'
   max_filesize: '40 MB'
   max_resolution: 5000x5000

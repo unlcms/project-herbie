@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub_standard
+label: 'Content Hub Standard'
+import_maxsize: 20
+import_processor_settings:
+  changed_time:
+    weights:
+      process_entity: 100
+  default_data_processor:
+    weights:
+      is_entity_importable: -10
+      post_entity_save: 0
+      prepare_importable_entity_data: -100
+    policy: locked
+    update_policy: false
+  entity_reference:
+    weights:
+      process_entity: 10
+    max_recursion_depth: -1
+  physical_file:
+    weights:
+      process_entity: 0
+    rename: false

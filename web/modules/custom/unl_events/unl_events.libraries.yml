@@ -1,7 +1,11 @@
 events_band:
   version: VERSION
+  css:
+    theme:
+      css/events-band.css: {}
   js:
     js/events-band.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
     - core/once

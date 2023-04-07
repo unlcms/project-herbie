@@ -1,0 +1,23 @@
+uuid: d63845c4-1384-47c4-9e4e-8ee624b2567b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: kjrg-BJ48k8fmVLq8YocfdGst_I05zh5aGLRo5uFvnk
+id: node.n_major_4year_link
+field_name: n_major_4year_link
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

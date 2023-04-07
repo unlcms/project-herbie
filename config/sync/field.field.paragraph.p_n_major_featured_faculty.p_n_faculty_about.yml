@@ -1,0 +1,21 @@
+uuid: cd5dabca-a214-444e-9ac8-0a65da77a467
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_faculty_about
+    - paragraphs.paragraphs_type.p_n_major_featured_faculty
+_core:
+  default_config_hash: hGy_7LOSv29lgoJX0Q77P_xiMSM0y4b14coy4TljjRU
+id: paragraph.p_n_major_featured_faculty.p_n_faculty_about
+field_name: p_n_faculty_about
+entity_type: paragraph
+bundle: p_n_major_featured_faculty
+label: 'Faculty About'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

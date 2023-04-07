@@ -1,0 +1,5 @@
+bundle: herbie
+excluded:
+  - entity_share_client.import_config.content_hub_standard
+  - entity_share_client.remote.content_hub
+required: true

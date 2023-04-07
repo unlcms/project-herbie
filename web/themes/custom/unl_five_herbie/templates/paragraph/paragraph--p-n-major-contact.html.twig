@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-d-flex',
+    'dcf-jc-center'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="dcf-w-max-lg dcf-w-100% dcf-txt-center">
+    <div class="entity entity-paragraphs-item paragraphs-item-contact">
+      <div class="content dcf-d-inline-flex dcf-jc-center dcf-ac-center dcf-col-gap-5 dcf-row-gap-5 dcf-mr-auto dcf-ml-auto">
+        <div class="dcf-ratio dcf-ratio-1x1 dcf-w-11" >
+          {{ (content.p_n_contact_image) }}
+        </div>
+        <div class="dcf-d-flex dcf-flex-col dcf-as-center dcf-txt-left">
+          <h3 class="dcf-txt-lg dcf-mb-1 unl-cream">{{ (content.p_n_contact_name) }}</h3>
+          <p class="dcf-txt-sm dcf-mb-0 unl-cream">{{ (content.p_n_contact_title) }}<br>
+            <a class="unl-cream" href="tel:+1{{ paragraph.p_n_contact_phone.value|replace({'-':''}) }}" aria-label="{{ paragraph.p_n_contact_phone.value|replace({'-': '.'})|split('')|join(' ') }}">{{ (content.p_n_contact_phone) }}</a><br>
+            <a class="unl-cream" href="mailto:{{ (content.p_n_contact_email) }}">{{ (content.p_n_contact_email) }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

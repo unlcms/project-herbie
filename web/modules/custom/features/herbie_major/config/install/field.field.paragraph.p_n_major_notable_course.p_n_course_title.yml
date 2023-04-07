@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_course_title
+    - paragraphs.paragraphs_type.p_n_major_notable_course
+id: paragraph.p_n_major_notable_course.p_n_course_title
+field_name: p_n_course_title
+entity_type: paragraph
+bundle: p_n_major_notable_course
+label: 'Course Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

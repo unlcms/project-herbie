@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub_major
+label: 'Content Hub Major'
+channel_entity_type: node
+channel_bundle: major
+channel_langcode: und
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+channel_maxsize: 20
+access_by_permission: true
+authorized_roles: {  }
+authorized_users: {  }

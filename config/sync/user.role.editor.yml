@@ -2,13 +2,147 @@ uuid: 9785a012-13f3-431d-9439-f7d19859f9ec
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_display.node.builder_page.default
+    - filter.format.block_body
+    - filter.format.standard
+    - filter.format.webform
+    - filter.format.webform_default
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.book
+    - node.type.builder_page
+    - node.type.news
+    - node.type.person
   module:
+    - administerusersbyrole
+    - block_content_permissions
+    - book
+    - contextual
+    - entity_share_client
+    - entity_usage
+    - external_entities
+    - file
+    - filter
+    - layout_builder
+    - media
+    - menu_admin_per_menu
+    - node
+    - paragraphs
+    - rabbit_hole
+    - system
+    - toolbar
     - webform
 _core:
   default_config_hash: NSZODsJb0380zd4CocnagNgGBzka6mYWPYems1AiAJI
 id: editor
 label: Editor
-weight: -8
+weight: -7
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access block content overview'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access entity usage statistics'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access users overview'
+  - 'add content to books'
+  - 'administer book outlines'
+  - 'administer main menu items'
+  - 'administer nodes'
+  - 'configure editable builder_page node layout overrides'
+  - 'create accordion block content'
+  - 'create and edit custom blocks'
+  - 'create book content'
+  - 'create builder_page content'
+  - 'create card block content'
+  - 'create contact_info block content'
+  - 'create content block content'
+  - 'create cta block content'
+  - 'create file media'
+  - 'create hero block content'
+  - 'create image media'
+  - 'create new books'
+  - 'create news content'
+  - 'create person content'
+  - 'create photo_hero block content'
+  - 'create remote_video media'
+  - 'create social_media_links block content'
+  - 'create unl_directory_entry external entity'
+  - 'delete any accordion block content'
+  - 'delete any card block content'
+  - 'delete any contact_info block content'
+  - 'delete any content block content'
+  - 'delete any cta block content'
+  - 'delete any file media'
+  - 'delete any hero block content'
+  - 'delete any image media'
+  - 'delete any photo_hero block content'
+  - 'delete any remote_video media'
+  - 'delete any social_media_links block content'
+  - 'delete book revisions'
+  - 'delete builder_page revisions'
+  - 'delete news revisions'
+  - 'delete own book content'
+  - 'delete own builder_page content'
+  - 'delete own file media'
+  - 'delete own image media'
+  - 'delete own news content'
+  - 'delete own person content'
+  - 'delete own remote_video media'
+  - 'delete person revisions'
+  - 'delete unl_directory_entry external entity'
+  - 'edit any book content'
+  - 'edit any builder_page content'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any news content'
+  - 'edit any person content'
+  - 'edit any remote_video media'
+  - 'edit own book content'
+  - 'edit own builder_page content'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own news content'
+  - 'edit own person content'
+  - 'edit own remote_video media'
+  - entity_share_client_display_errors
+  - entity_share_client_pull_content
+  - 'rabbit hole bypass media'
+  - 'revert book revisions'
+  - 'revert builder_page revisions'
+  - 'revert news revisions'
+  - 'revert person revisions'
+  - 'update any accordion block content'
+  - 'update any card block content'
+  - 'update any contact_info block content'
+  - 'update any content block content'
+  - 'update any cta block content'
+  - 'update any hero block content'
+  - 'update any photo_hero block content'
+  - 'update any social_media_links block content'
+  - 'update unl_directory_entry external entity'
+  - 'use text format block_body'
+  - 'use text format standard'
+  - 'use text format webform'
+  - 'use text format webform_default'
+  - 'view any webform submission'
+  - 'view book revisions'
+  - 'view builder_page revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view own webform submission'
+  - 'view person revisions'
+  - 'view the administration theme'
+  - 'view unl_directory_entry external entity'
+  - 'view unl_directory_entry external entity collection'
+  - 'view unpublished paragraphs'
+  - 'view user email addresses'
+  - 'view users by role'

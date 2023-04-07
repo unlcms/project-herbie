@@ -1,0 +1,23 @@
+uuid: 18664f98-3a2e-47d3-8929-c89bda3a9a5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: '-4kDh--oN9qcveg5uwdD6kO3S5VPYfjhT0AAiaKCmlU'
+id: node.n_major_career_prep
+field_name: n_major_career_prep
+entity_type: node
+type: string
+settings:
+  max_length: 225
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

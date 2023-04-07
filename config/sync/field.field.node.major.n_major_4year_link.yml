@@ -1,0 +1,21 @@
+uuid: 942596b8-e533-4cb3-8417-bc98a396bf55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_4year_link
+    - node.type.major
+_core:
+  default_config_hash: 8wqwISkjf1nQfA44mVdsdseF1nAfRU4XzpSnqIwwjkw
+id: node.major.n_major_4year_link
+field_name: n_major_4year_link
+entity_type: node
+bundle: major
+label: '4 Year Plan Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

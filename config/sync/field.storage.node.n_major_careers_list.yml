@@ -1,0 +1,23 @@
+uuid: d6cfbb73-f1d3-49b3-a465-a05fd816259f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: DktNc6Kuf3ZzymI_EwhWRAOR0nDmRuV-aT0lV7VNmF0
+id: node.n_major_careers_list
+field_name: n_major_careers_list
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

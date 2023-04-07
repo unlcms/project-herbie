@@ -1,0 +1,8 @@
+name: 'Entity share'
+type: module
+core_version_requirement: '^9.4 || ^10'
+dependencies:
+  - 'entity_share:entity_share_client'
+  - 'entity_share_cron:entity_share_cron'
+version: 1.0.1
+package: Herbie

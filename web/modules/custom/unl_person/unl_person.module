@@ -9,6 +9,7 @@ function unl_person_theme($existing, $type, $theme, $path) {
       'variables' => [
         'attributes' => [],
         'nodes' => [],
+        'view_mode' => [],
       ],
     ],
   ];

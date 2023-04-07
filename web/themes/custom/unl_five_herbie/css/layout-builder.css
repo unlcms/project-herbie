@@ -106,3 +106,8 @@
 .layout-builder-block.dcf-card {
     background-color: var(--bg-card);
 }
+
+/* Select2 used for the unl_person PersonBlock search needs a bump up. */
+.select2-container {
+  z-index: 1300;
+}

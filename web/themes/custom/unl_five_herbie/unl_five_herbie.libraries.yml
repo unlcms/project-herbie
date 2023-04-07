@@ -11,6 +11,12 @@ layout-builder:
     component:
       css/layout-builder.css: { weight: -500, preprocess: false }
 
+major:
+  version: VERSION
+  css:
+    theme:
+      css/theme/major.css: {}
+
 person:
   version: VERSION
   css:

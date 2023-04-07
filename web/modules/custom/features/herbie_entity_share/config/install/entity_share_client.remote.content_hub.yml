@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub
+label: 'Content Hub'
+url: 'https://contenthub.unl.edu'
+auth:
+  pid: anonymous
+  uuid: 1dffd3c8-77ae-4382-afff-d59c86aa07c5
+  data:
+    credential_provider: entity_share
+    storage_key: 1dffd3c8-77ae-4382-afff-d59c86aa07c5

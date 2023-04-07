@@ -13,7 +13,7 @@ settings:
   is_ascii: false
 module: core
 locked: false
-cardinality: 5
+cardinality: 4
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

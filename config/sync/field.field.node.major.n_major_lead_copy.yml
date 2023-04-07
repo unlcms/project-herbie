@@ -1,0 +1,21 @@
+uuid: c10ab4f5-2eed-4d36-a826-0aeaa7419e36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_lead_copy
+    - node.type.major
+_core:
+  default_config_hash: 8hVbadN5AaAaq7veBISXPMnX657D0dl9D_GLQRmk-qk
+id: node.major.n_major_lead_copy
+field_name: n_major_lead_copy
+entity_type: node
+bundle: major
+label: 'Lead Copy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

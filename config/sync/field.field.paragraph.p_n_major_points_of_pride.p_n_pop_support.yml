@@ -1,0 +1,21 @@
+uuid: dec173f6-903d-4212-ac9b-836de4fd86d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_pop_support
+    - paragraphs.paragraphs_type.p_n_major_points_of_pride
+_core:
+  default_config_hash: DRAudWwBLFy772wsl2DWMvFwaKz18YwbVvSvaPptysY
+id: paragraph.p_n_major_points_of_pride.p_n_pop_support
+field_name: p_n_pop_support
+entity_type: paragraph
+bundle: p_n_major_points_of_pride
+label: p_n_pop_support
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

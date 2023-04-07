@@ -1,0 +1,25 @@
+uuid: 8cd008f7-97d4-45df-9d17-960c2defdf40
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+  module:
+    - block_content
+  theme:
+    - unl_five_herbie
+id: unl_five_herbie_relatedlinks
+theme: unl_five_herbie
+region: leftcollinks
+weight: 0
+provider: null
+plugin: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+settings:
+  id: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+  label: 'Related Links'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

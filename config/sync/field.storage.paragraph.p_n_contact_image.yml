@@ -1,0 +1,32 @@
+uuid: f6f43b68-4f9e-46a4-b9dd-e45a2c2ef703
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - paragraphs
+_core:
+  default_config_hash: Zv9hO2nOdy3tRE7fXOI1YxvTv7v_BvMux9RGMT8m92E
+id: paragraph.p_n_contact_image
+field_name: p_n_contact_image
+entity_type: paragraph
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

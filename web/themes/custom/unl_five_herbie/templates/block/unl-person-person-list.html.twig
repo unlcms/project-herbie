@@ -11,6 +11,6 @@
 
 <ol {{attributes}}>
   {% for nid in nodes %}
-  {{ drupal_entity('node', nid, 'teaser') }}
+  {{ drupal_entity('node', nid, view_mode) }}
   {% endfor %}
 </ol>

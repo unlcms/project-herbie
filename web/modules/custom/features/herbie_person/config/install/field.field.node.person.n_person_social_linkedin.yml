@@ -9,7 +9,7 @@ field_name: n_person_social_linkedin
 entity_type: node
 bundle: person
 label: LinkedIn
-description: ''
+description: "Enter everything that comes after 'https://www.linkedin.com/' from your profile's URL address."
 required: false
 translatable: false
 default_value: {  }

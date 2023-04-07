@@ -1,0 +1,23 @@
+uuid: f6e190f7-280e-428b-874b-a60ebf54d652
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: l-_vYgp2QYuDTdJ9Y9Hwt3pgHZ6nTNmL1V4aAvUm7_o
+id: node.n_major_point_pride
+field_name: n_major_point_pride
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

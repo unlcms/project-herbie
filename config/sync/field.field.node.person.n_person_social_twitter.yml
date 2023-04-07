@@ -10,7 +10,7 @@ field_name: n_person_social_twitter
 entity_type: node
 bundle: person
 label: Twitter
-description: 'Enter username'
+description: "Enter username without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }

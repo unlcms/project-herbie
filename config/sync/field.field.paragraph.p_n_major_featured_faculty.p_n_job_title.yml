@@ -1,0 +1,21 @@
+uuid: b0d47ae6-b2eb-4394-8d6f-d43177e764b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_n_job_title
+    - paragraphs.paragraphs_type.p_n_major_featured_faculty
+_core:
+  default_config_hash: ZCItz8_ipkYGbMxmPbrk_CxSbYEfkKOgsxkrEXyB7s4
+id: paragraph.p_n_major_featured_faculty.p_n_job_title
+field_name: p_n_job_title
+entity_type: paragraph
+bundle: p_n_major_featured_faculty
+label: 'Job Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

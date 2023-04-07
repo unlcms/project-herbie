@@ -1,0 +1,12 @@
+uuid: 25208040-38d2-4c15-ba20-68720d3dbd3e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mtThMhaI1ucioVJJeQcP0jZy1oZR90tjTK8U7nSaz0g
+id: p_n_major_featured_faculty
+label: 'Featured Faculty'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

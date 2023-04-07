@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.major.n_major_4year_link
+    - field.field.node.major.n_major_academics_experiential
+    - field.field.node.major.n_major_apply_link
+    - field.field.node.major.n_major_areas_emphasis
+    - field.field.node.major.n_major_career_prep
+    - field.field.node.major.n_major_careers_list
+    - field.field.node.major.n_major_careers_title
+    - field.field.node.major.n_major_community
+    - field.field.node.major.n_major_contact
+    - field.field.node.major.n_major_courses_image
+    - field.field.node.major.n_major_featured_faculty
+    - field.field.node.major.n_major_grad_schools_list
+    - field.field.node.major.n_major_grad_schools_title
+    - field.field.node.major.n_major_hero_image
+    - field.field.node.major.n_major_internships_list
+    - field.field.node.major.n_major_internships_title
+    - field.field.node.major.n_major_lead_copy
+    - field.field.node.major.n_major_notable_courses
+    - field.field.node.major.n_major_outside_the_classroom
+    - field.field.node.major.n_major_point_pride
+    - field.field.node.major.n_major_program_features
+    - field.field.node.major.n_major_program_features_image
+    - node.type.major
+  module:
+    - user
+id: node.major.teaser
+targetEntityType: node
+bundle: major
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  n_major_4year_link: true
+  n_major_academics_experiential: true
+  n_major_apply_link: true
+  n_major_areas_emphasis: true
+  n_major_career_prep: true
+  n_major_careers_list: true
+  n_major_careers_title: true
+  n_major_community: true
+  n_major_contact: true
+  n_major_courses_image: true
+  n_major_featured_faculty: true
+  n_major_grad_schools_list: true
+  n_major_grad_schools_title: true
+  n_major_hero_image: true
+  n_major_internships_list: true
+  n_major_internships_title: true
+  n_major_lead_copy: true
+  n_major_notable_courses: true
+  n_major_outside_the_classroom: true
+  n_major_point_pride: true
+  n_major_program_features: true
+  n_major_program_features_image: true

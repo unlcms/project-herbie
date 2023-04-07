@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub_development
+label: 'Content Hub (Development)'
+url: 'https://cms-local.unl.edu/contenthub'
+auth:
+  pid: anonymous
+  uuid: 9890584a-4f8f-409b-afef-41b95748eed1
+  data:
+    credential_provider: entity_share
+    storage_key: 9890584a-4f8f-409b-afef-41b95748eed1

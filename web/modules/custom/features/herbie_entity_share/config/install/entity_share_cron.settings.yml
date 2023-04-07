@@ -1,0 +1,21 @@
+cron_interval: 7200
+page_limit: 5
+remotes:
+  content_hub:
+    enabled: true
+    channels:
+      content_hub_major:
+        enabled: true
+        import_config: content_hub_standard
+        operations:
+          create: false
+          update: true
+  content_hub_development:
+    enabled: true
+    channels:
+      content_hub_major:
+        enabled: true
+        import_config: content_hub_standard
+        operations:
+          create: false
+          update: true

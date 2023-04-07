@@ -3,4 +3,5 @@ excluded:
   - user.role.editor
   - user.role.site_admin
   - user.role.coder
+  - views.view.user_admin_people
 required: true

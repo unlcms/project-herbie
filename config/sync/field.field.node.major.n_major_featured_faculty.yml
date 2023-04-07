@@ -1,0 +1,72 @@
+uuid: 69185db5-3ba8-4ad6-9a0c-f2dc260efdb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_featured_faculty
+    - node.type.major
+    - paragraphs.paragraphs_type.p_n_major_featured_faculty
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: HHWiLq3U3G5xq97q0tJDQIPNYb4YQECAvgwZsc2FvV4
+id: node.major.n_major_featured_faculty
+field_name: n_major_featured_faculty
+entity_type: node
+bundle: major
+label: 'Featured Faculty'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      p_n_major_featured_faculty: p_n_major_featured_faculty
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 14
+        enabled: false
+      contact_info_contact_point:
+        weight: 15
+        enabled: false
+      contact_info_email:
+        weight: 16
+        enabled: false
+      contact_info_fax:
+        weight: 17
+        enabled: false
+      contact_info_heading:
+        weight: 18
+        enabled: false
+      contact_info_margin:
+        weight: 19
+        enabled: false
+      contact_info_phone:
+        weight: 20
+        enabled: false
+      contact_info_physical_address:
+        weight: 21
+        enabled: false
+      contact_info_post_office_box_add:
+        weight: 22
+        enabled: false
+      p_n_major_contact:
+        weight: 24
+        enabled: false
+      p_n_major_featured_faculty:
+        weight: 25
+        enabled: true
+      p_n_major_notable_course:
+        weight: 26
+        enabled: false
+      p_n_major_outside_the_classroom:
+        weight: 27
+        enabled: false
+      p_n_major_points_of_pride:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

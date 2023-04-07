@@ -1,0 +1,21 @@
+uuid: 42497e20-0eca-4a3d-b2f5-cd1622c969c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_career_prep
+    - node.type.major
+_core:
+  default_config_hash: 7nSKffU590XlvNafvSjArOGB2E1f63yTHzLfNeOHeVY
+id: node.major.n_major_career_prep
+field_name: n_major_career_prep
+entity_type: node
+bundle: major
+label: 'Career Preparedness'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

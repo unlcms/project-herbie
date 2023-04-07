@@ -1,2 +1,4 @@
 bundle: herbie
+excluded:
+  - filter.format.html_code
 required: true

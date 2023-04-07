@@ -1,0 +1,12 @@
+uuid: 322a4e8c-2a44-465b-bc07-83d09558d681
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: d-tJDVTkbRsWM-a35i8cNpjbVyjVjUy6ZOGgbfGRbL4
+id: p_n_major_contact
+label: 'Major Contact'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

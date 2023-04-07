@@ -1,0 +1,23 @@
+uuid: 692a155f-28f4-448f-898f-de67e6a9e839
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: 7jiPRx0gZe5kYAxuPyEl0l5v4oxtJc3azPSB_aZh0OY
+id: node.n_major_outside_the_classroom
+field_name: n_major_outside_the_classroom
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
