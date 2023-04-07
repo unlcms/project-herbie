@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: photo_hero
-label: 'Photo Hero'
+label: 'Display banner'
 revision: 0
-description: 'Hero banner with title and buttons'
+description: 'Hero-type banner with title and buttons.'

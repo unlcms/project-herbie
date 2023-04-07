@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: b4qWBVRhQGQ1LPIj57v6XI_0__MX8kimsH8FyKoJgKA
 id: content
-label: Content
+label: 'Text area'
 revision: 0
-description: 'A generic content block with a WYSIWYG editor'
+description: 'A generic content block with a WYSIWYG editor.'
