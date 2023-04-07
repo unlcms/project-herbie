@@ -1,0 +1,37 @@
+uuid: f5d54fd2-5cb3-4df2-b700-acdcd5b9b861
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_cloud_item.p_b_logo_cloud_image
+    - field.field.paragraph.logo_cloud_item.p_b_logo_cloud_link
+    - paragraphs.paragraphs_type.logo_cloud_item
+  module:
+    - link
+id: paragraph.logo_cloud_item.default
+targetEntityType: paragraph
+bundle: logo_cloud_item
+mode: default
+content:
+  p_b_logo_cloud_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  p_b_logo_cloud_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,42 @@
+uuid: b0766904-9f09-4325-877c-00392c74a82b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_cloud
+    - field.field.block_content.logo_cloud.b_logo_cloud_item
+  module:
+    - paragraphs
+id: block_content.logo_cloud.default
+targetEntityType: block_content
+bundle: logo_cloud
+mode: default
+content:
+  b_logo_cloud_item:
+    type: paragraphs
+    weight: 27
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: logo_cloud_item
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

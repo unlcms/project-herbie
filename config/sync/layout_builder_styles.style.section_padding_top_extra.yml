@@ -2,11 +2,13 @@ uuid: f3f99a1e-282a-400e-bead-4795919b6768
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: dC2B_2b-Im-NalQ5QpdBQFhT1mCgLN0LhVETcAeb0eY
 id: section_padding_top_extra
 label: 'Add extra top spacing'
 classes: dcf-pt-10
 type: section
 group: spacing
+weight: -1
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: -1

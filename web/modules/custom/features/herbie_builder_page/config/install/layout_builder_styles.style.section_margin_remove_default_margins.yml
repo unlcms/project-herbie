@@ -6,6 +6,6 @@ label: 'Remove default vertical spacing'
 classes: dcf-p-0
 type: section
 group: spacing
+weight: -4
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: -4

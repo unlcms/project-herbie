@@ -2,13 +2,15 @@ uuid: bb755d47-4117-46d0-a869-b401839931bc
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: WNd7KgwAYa9OJIy6Dru9UuGoz3MjG01B5TvGsI3xbiY
 id: block_background_style_light
 label: Cream
 classes: unl-bg-cream
 type: component
 group: background
+weight: -10
 block_restrictions:
   - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
-weight: -10

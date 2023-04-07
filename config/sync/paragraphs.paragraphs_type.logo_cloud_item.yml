@@ -1,0 +1,10 @@
+uuid: e01398a7-41bc-4f3b-9921-b780092e846e
+langcode: en
+status: true
+dependencies: {  }
+id: logo_cloud_item
+label: 'Logo cloud item'
+icon_uuid: null
+icon_default: null
+description: 'An individual logo and link for use in a Logo cloud block.'
+behavior_plugins: {  }

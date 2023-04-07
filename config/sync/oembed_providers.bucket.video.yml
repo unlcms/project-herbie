@@ -5,9 +5,9 @@ dependencies:
   config:
     - oembed_providers.provider.unl_mediahub
 _core:
-  default_config_hash: 5gVdy5E0gzwxLgwP8T0TOfOZEz99Uj2ICx3nWU1nIdI
+  default_config_hash: Z0p8Ss5306gFj9qlIh6LH0l05LBPws1qjiI0TNZ7gns
 id: video
 label: 'Remote Video'
-description: null
 providers:
   - 'UNL Mediahub'
+description: null

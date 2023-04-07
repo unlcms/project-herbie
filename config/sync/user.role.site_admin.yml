@@ -46,7 +46,7 @@ dependencies:
     - webform
     - webform_submission_log
 _core:
-  default_config_hash: dtYv0rA7Rm2zwvCJjNtVeTsmqDQ2uz1RFIjbpS5fvyQ
+  default_config_hash: RYtaIhRvKsuvKIHP_VucmBHavcyaPPuKOZU9jnMjIAs
 id: site_admin
 label: 'Site admin'
 weight: -6

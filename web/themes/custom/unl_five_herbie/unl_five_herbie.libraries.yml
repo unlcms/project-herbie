@@ -39,5 +39,9 @@ card:
   js:
     js/theme/card.js: {}
 
-
+logo_cloud:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/logo_cloud.css: {}
 

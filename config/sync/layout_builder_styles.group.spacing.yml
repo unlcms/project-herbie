@@ -2,6 +2,8 @@ uuid: 3a021b68-359f-4251-9483-58a911695f7e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: bKTUfqDNk1sC5fZ_W9CpjVkviBuN7asiCWIQNpopxcQ
 id: spacing
 label: Spacing
 multiselect: multiple

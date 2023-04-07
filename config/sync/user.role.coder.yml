@@ -11,7 +11,7 @@ dependencies:
     - twig_ui
     - views_ui
 _core:
-  default_config_hash: K9t_jofegA_W-oRLqfgMaJBLD8KJ3S5pRSrHEyCkJAI
+  default_config_hash: e_wgK3u6DJXex7VJ7NgqcpN53OnF52HfNNaK18TNPwA
 id: coder
 label: Developer
 weight: -5

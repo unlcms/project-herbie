@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_cloud_item.p_b_logo_cloud_image
+    - field.field.paragraph.logo_cloud_item.p_b_logo_cloud_link
+    - paragraphs.paragraphs_type.logo_cloud_item
+  module:
+    - link
+    - media_library
+id: paragraph.logo_cloud_item.default
+targetEntityType: paragraph
+bundle: logo_cloud_item
+mode: default
+content:
+  p_b_logo_cloud_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  p_b_logo_cloud_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

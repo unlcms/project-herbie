@@ -122,6 +122,7 @@ third_party_settings:
               - content
               - cta
               - html_code
+              - logo_cloud
               - photo_hero
               - social_media_links
             Forms:
@@ -129,10 +130,11 @@ third_party_settings:
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
-              - 'inline_block:content'
-              - 'inline_block:html_code'
               - 'inline_block:photo_hero'
+              - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
               - 'inline_block:social_media_links'
+              - 'inline_block:content'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -179,6 +181,7 @@ third_party_settings:
               - content
               - cta
               - html_code
+              - logo_cloud
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -186,8 +189,9 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:card_circle_image'
-              - 'inline_block:content'
               - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
+              - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'
@@ -223,7 +227,7 @@ third_party_settings:
       allowlisted_blocks: {  }
       restricted_categories: {  }
 _core:
-  default_config_hash: NcIQoKZcS5kXoqgXqJAN18Vu3SmH2DhFtDpSA_h3DYA
+  default_config_hash: EvBzHKQDThswABkVSYzhPkva2AAMKWC3RlOn3kqyByQ
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page
