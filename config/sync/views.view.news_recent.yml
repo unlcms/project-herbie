@@ -27,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Recent News'
+      title: News
       fields:
         title:
           id: title
@@ -197,6 +197,7 @@ display:
     display_plugin: block
     position: 3
     display_options:
+      title: 'Recent News'
       fields:
         n_news_image:
           id: n_news_image
@@ -401,6 +402,7 @@ display:
           items_per_page: 4
       arguments: {  }
       defaults:
+        title: false
         css_class: false
         pager: false
         link_display: false
@@ -430,6 +432,9 @@ display:
     display_plugin: page
     position: 2
     display_options:
+      title: News
+      defaults:
+        title: false
       display_extenders: {  }
       path: news
     cache_metadata:

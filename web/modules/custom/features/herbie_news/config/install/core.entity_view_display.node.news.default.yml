@@ -8,12 +8,13 @@ dependencies:
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
+    - field.field.node.news.n_person_reference
     - node.type.news
-    - responsive_image.styles.news_lead_image
   module:
     - dcf_lazyload
+    - image
+    - image_class
     - link
-    - responsive_image
     - text
     - user
 id: node.news.default
@@ -55,12 +56,16 @@ content:
     weight: 5
     region: content
   n_news_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: news_lead_image
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
+      image_class:
+        class: 'dcf-ratio-child dcf-obj-fit-cover'
       dcf_lazyload:
         dcf_lazyload_enable: true
     weight: 1
@@ -80,5 +85,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  n_person_reference:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
     region: content
 hidden: {  }

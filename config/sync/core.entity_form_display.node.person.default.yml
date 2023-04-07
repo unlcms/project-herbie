@@ -72,27 +72,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-    group_social_media:
-      children:
-        - n_person_social_linkedin
-        - n_person_social_fb
-        - n_person_social_instagram
-        - n_person_social_snapchat
-        - n_person_social_twitter
-        - n_person_social_youtube
-        - n_person_social_pinterest
-      label: 'Social Media'
-      region: content
-      parent_name: ''
-      weight: 12
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
 _core:
   default_config_hash: yd6kb4XjeQyacc5NPmX3pvzjtAnEAcM5dJS4lmXlRRI
 id: node.person.default

@@ -61,7 +61,6 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function defaultConfiguration() {
     return [
-      'subhead' => '',
       'quantity' => 16,
     ];
   }
@@ -70,13 +69,6 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-
-    $form['subhead'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Subhead'),
-      '#description' => $this->t('The subhead that will appear in the block above the news items.'),
-      '#default_value' => $this->configuration['subhead'],
-    ];
 
     $form['quantity'] = [
       '#type' => 'select',
@@ -99,7 +91,6 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
-    $this->configuration['subhead'] = $form_state->getValue('subhead');
   }
 
   /**
@@ -141,8 +132,6 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     $return = [
       '#theme' => 'unl_news_news_aggregation_block',
       '#items' => $items,
-      // '#read_more' => $this->configuration['read_more'],
-      '#subhead' => $this->configuration['subhead'],
       '#cache' => [
         'tags' => ['node_list:news'],
       ],

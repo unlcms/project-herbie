@@ -58,16 +58,13 @@
 	{{ attachment_before }}
 
 	{% if rows -%}
-		{# <div class="dcf-pt-9 dcf-pb-9"> #}
-		<div class="dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
-			{# <h2 class="dcf-mb-6 dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Latest News</h2> #}
+
 			<ol class="dcf-list-bare dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
 				{% for row in rows %}
 					{{ row }}
 				{% endfor %}
 			</ol>
-		</div>
-		{# </div> #}
+
 	{% elseif empty -%}
 		{{ empty }}
 	{% endif %}

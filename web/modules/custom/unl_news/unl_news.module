@@ -25,7 +25,6 @@ function unl_news_theme($existing, $type, $theme, $path) {
     ],
     'unl_news_news_aggregation_block' => [
       'variables' => [
-        'subhead' => '',
         'items' => [],
         'pager' => [],
       ],
