@@ -11,10 +11,10 @@ dependencies:
     - responsive_image
     - user
 id: news_recent
-label: 'Recent News'
+label: 'Recent news'
 module: views
-description: ''
-tag: ''
+description: 'Recent News item nodes.'
+tag: news
 base_table: node_field_data
 base_field: nid
 display:
@@ -88,7 +88,7 @@ display:
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options: '5, 10, 15, 20'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
             offset: false
@@ -402,6 +402,9 @@ display:
         title: false
         css_class: false
         pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
         link_display: false
         link_url: false
         style: true
@@ -409,11 +412,14 @@ display:
         fields: false
         arguments: false
       css_class: ''
+      use_more: true
+      use_more_always: false
+      use_more_text: 'More news'
       link_display: page_1
       link_url: ''
       display_extenders: {  }
       allow:
-        items_per_page: false
+        items_per_page: true
     cache_metadata:
       max-age: -1
       contexts:

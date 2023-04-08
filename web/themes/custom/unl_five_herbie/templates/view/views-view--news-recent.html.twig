@@ -1,0 +1,55 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+
+{{ attach_library('unl_five_herbie/news_teaser') }}
+
+<div{{ attributes.addClass(classes) }}>
+
+  {{ title }}
+
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  {% if rows -%}
+    {% if display_id == 'block_1' %}
+      <div class="unlcms-teaser-news-border dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
+        <h2 class="unlcms-teaser-news-heading dcf-mb-6 dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Latest News</h2>
+  {% endif %}
+        <div class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
+          {{ rows }}
+        </div>
+  {% if display_id == 'block_1' %}
+        {# Using the {{ more }} link doesn't work because the "More link text" doesn't show for some reason. #}
+        <div class="dcf-d-flex dcf-jc-flex-end">
+          <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{ file_url('news') }}">More news</a>
+        </div>
+      </div>
+    {% endif %}
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
+
+  {{ attachment_after }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

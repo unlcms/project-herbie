@@ -28,15 +28,10 @@
 
 }
 
-.page-node-25 .dcf-main-content h2 {
-  letter-spacing: .06em!important;
-  font-size: .75em!important;
-  margin-bottom: 1.78em!important;
-  color: #6b6b68 !important;
-  text-transform: uppercase!important;
-  border-top-style: solid!important;
-  border-top-color: #e3e3e2!important;
-  padding-top: 0.75em!important;
-  border-top-width: 1px!important;
-  /* dcf-mb-6 dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray */
+/* Don't show the 'Latest News' heading on Builder Pages. */
+.page-node-type-builder-page .unlcms-teaser-news-border {
+  border: none !important;
+}
+.page-node-type-builder-page .unlcms-teaser-news-heading {
+  display: none;
 }

@@ -61,7 +61,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function defaultConfiguration() {
     return [
-      'quantity' => 16,
+      'quantity' => 8,
     ];
   }
 
@@ -132,6 +132,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     $return = [
       '#theme' => 'unl_news_news_aggregation_block',
       '#items' => $items,
+      '#quantity' => $this->configuration['quantity'],
       '#cache' => [
         'tags' => ['node_list:news'],
       ],

@@ -17,7 +17,6 @@ dependencies:
     - dcf_lazyload
     - image_class
     - responsive_image
-    - text
     - user
 _core:
   default_config_hash: gnj9nJaOHi-kF1nF1IhOR8yxmy8LvDlcYch4qht4u2E
@@ -26,18 +25,10 @@ targetEntityType: node
 bundle: news
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 1
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   n_news_image:
     type: responsive_image
@@ -53,6 +44,7 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   n_news_canonical_url: true
   n_news_foreign_key: true
   n_news_image_credit: true

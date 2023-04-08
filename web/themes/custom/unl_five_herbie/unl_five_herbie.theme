@@ -98,18 +98,18 @@ function unl_five_herbie_preprocess_block(&$variables) {
 /**
  * Implements template_preprocess_node__TYPE().
  */
-// function unl_five_herbie_preprocess_node__news(&$variables) {
-//   // Insert an instance news_recent block_1 into the News node template. Rather
-//   // than use a standard block, this is done to keep the CSS wrappers separate
-//   // so the same block_1 can be used in Layout Builder with different
-//   // color sections.
-//   $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
-//   $variables['content']['news_recent_block_output'] = $block->build();
-
-//   $view = Views::getView('news_recent');
-//   $view->setDisplay('block_1');
-//   $variables['content']['news_recent_title'] = $view->getTitle();
-// }
+function unl_five_herbie_preprocess_node__news(&$variables) {
+  // Determine URL, depending on whether local content or remote
+  // (Nebraska Today) content.
+  if ($canonical_url = $variables['node']->get('n_news_canonical_url')->getString()) {
+    $variables['link'] = $canonical_url;
+    $variables['source'] = 'remote';
+  }
+  else {
+    $variables['link'] = $variables['url'];
+    $variables['source'] = 'local';
+  }
+}
 
 /**
  * Implements template_preprocess_field().
