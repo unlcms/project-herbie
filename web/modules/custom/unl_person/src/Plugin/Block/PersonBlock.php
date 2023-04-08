@@ -100,7 +100,7 @@ class PersonBlock extends BlockBase {
     parent::blockSubmit($form, $form_state);
 
     $this->configuration['view_mode'] = $form_state->getValue('view_mode');
-      
+
     // Can't use $form_state->getValue('persons') as it gives the values sorted
     // in a numerically ascending manner, not respecting user sorting.
     $this->configuration['persons'] = $form_state->getCompleteFormState()->getUserInput()['settings']['persons'];

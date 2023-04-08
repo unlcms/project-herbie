@@ -17,6 +17,8 @@ dependencies:
   - 'drupal:user'
   - 'drupal:views'
   - 'field_group:field_group'
+  - 'herbie_person:herbie_person'
+  - 'image_class:image_class'
   - 'pathauto:pathauto'
-version: 1.1.0
+version: 1.1.1
 package: Herbie

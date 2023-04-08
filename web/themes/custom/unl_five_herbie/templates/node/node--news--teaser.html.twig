@@ -9,25 +9,35 @@
     'clearfix',
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+{{ attach_library('unl_five_herbie/news_teaser') }}
 
-    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-mb-8">
-      <div class="dcf-col-100% dcf-col-33%-start@md">
-        {{ content.n_news_image }}
-      </div>
-      <div class="dcf-col-100% dcf-col-67%-end@md">
-        {{ title_prefix }}
-        <h2{{ title_attributes.addClass('dcf-mb-0') }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-        {% set createdDate = node.getCreatedTime|date('F j, Y') %}
-        <h3 class="dcf-subhead dcf-mt-1">{{ createdDate }}</h3>
-        {{ title_suffix }}
+<div {{ attributes.addClass(classes) }}>
+	<li class="dcf-mb-0">
+		<article class="dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/NewsArticle">
 
-        <div{{ content_attributes }}>
-          {{ content.body }}
+			<div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
+				{{ content.n_news_image }}
+			</div>
+
+			<div class="dcf-col-100% dcf-col-67%-end@md">
+				{{ title_prefix }}
+
+				<h3 {{ title_attributes.addClass("dcf-txt-h6 dcf-mb-0") }} itemprop="headline">
+					<a href="{{ url }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark">
+						{{ label }}</a>
+				</h3>
+
+				{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+				<div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">
+        {{ createdDate }}
         </div>
-      </div>
-    </div>
 
-</article>
+				{{ title_suffix }}
+				<div{{content_attributes}}>
+					{{ content.body }}
+				</div>
+
+			</div>
+		</article>
+	</li>
+</div>

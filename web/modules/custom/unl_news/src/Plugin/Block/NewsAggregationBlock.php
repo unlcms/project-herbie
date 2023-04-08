@@ -69,15 +69,17 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
+
     $form['quantity'] = [
       '#type' => 'select',
-      '#title' => $this->t('Items per page'),
+      '#title' => $this->t('Items shown'),
       '#options' => [
+        4 => '4',
+        8 => '8',
         12 => '12',
         16 => '16',
-        20 => '20',
       ],
-      '#description' => $this->t('The number of news items to display per page'),
+      '#description' => $this->t('The number of news items to display.'),
       '#default_value' => $this->configuration['quantity'],
     ];
 
@@ -102,13 +104,14 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       ->accessCheck(FALSE)
       ->condition('type', 'news')
       ->sort('created', 'DESC')
-      ->pager($this->configuration['quantity'])
+      ->range(0, $this->configuration['quantity'])
       ->execute();
     $articles = $node_storage->loadMultiple($ids);
 
     $items = [];
     foreach ($articles as $nid => $article) {
       $items[$nid]['title'] = $article->get('title')->getString();
+      $items[$nid]['created'] = $article->getCreatedTime();
 
       // Determine URL, depending on whether local content or remote
       // (Nebraska Today) content.
@@ -129,9 +132,6 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     $return = [
       '#theme' => 'unl_news_news_aggregation_block',
       '#items' => $items,
-      '#pager' => [
-        '#type' => 'pager',
-      ],
       '#cache' => [
         'tags' => ['node_list:news'],
       ],
