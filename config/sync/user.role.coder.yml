@@ -6,8 +6,10 @@ dependencies:
     - filter.format.html_code
   module:
     - asset_injector
+    - field_ui
     - filter
     - node
+    - paragraphs
     - twig_ui
     - views_ui
 _core:
@@ -20,7 +22,14 @@ permissions:
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
   - 'administer twig templates'
+  - 'administer user fields'
   - 'administer views'
   - 'load twig templates from file system'
   - 'use text format html_code'

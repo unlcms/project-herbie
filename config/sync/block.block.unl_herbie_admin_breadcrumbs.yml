@@ -1,0 +1,20 @@
+uuid: a80f5309-ec6c-4743-811a-3b8ce7a072d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_herbie_admin
+id: unl_herbie_admin_breadcrumbs
+theme: unl_herbie_admin
+region: breadcrumb
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

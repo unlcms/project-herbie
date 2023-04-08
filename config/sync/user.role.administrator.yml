@@ -27,6 +27,7 @@ dependencies:
     - entity_usage
     - external_entities
     - feeds
+    - field_ui
     - file
     - file_delete
     - filter
@@ -83,12 +84,19 @@ permissions:
   - 'administer feeds'
   - 'administer js assets injector'
   - 'administer main menu items'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
   - 'administer nodes'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
   - 'administer redirects'
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
+  - 'administer user fields'
   - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'

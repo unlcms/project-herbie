@@ -1,0 +1,20 @@
+uuid: b0704182-39b7-4b81-897d-f0693db25449
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_herbie_admin
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: unl_herbie_admin_local_actions
+theme: unl_herbie_admin
+region: content
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
