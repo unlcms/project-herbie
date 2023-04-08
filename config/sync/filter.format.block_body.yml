@@ -10,7 +10,7 @@ dependencies:
     - linkit
     - media
 _core:
-  default_config_hash: wPYQ9yrKlH4WrIcZqCxOpaCn59HrjnPPXPFlYqU5HPg
+  default_config_hash: K9XcdRCSbrpvzzZzK1QuxWM1IiTV4rX0iigd8tw2SLI
 name: 'Block Body'
 format: block_body
 weight: 0

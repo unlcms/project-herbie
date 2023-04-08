@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: tJO9CHUE9fjHxuA709DoypnN9M6oSeFiIaMOdsX5Aqg
+layout_builder_iframe_routes:
+  - layout_builder.add_block
+  - layout_builder.update_block
+  - layout_builder.translate_block
+  - layout_builder.translate_inline_block
+custom_routes: {  }

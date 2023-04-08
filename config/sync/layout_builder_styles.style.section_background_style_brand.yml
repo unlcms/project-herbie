@@ -2,11 +2,13 @@ uuid: 061959fd-24d9-44bf-b7b8-1b5952ae4881
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: QAnzV4DRUqyfDHBvJghIUhoI6renSiZ0gp5TFQEE-pk
 id: section_background_style_brand
 label: Scarlet
 classes: "unl-bg-scarlet\r\nunl-cream"
 type: section
 group: background
+weight: -7
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: -7

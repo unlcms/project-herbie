@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_cloud
+    - field.field.block_content.logo_cloud.b_logo_cloud_item
+  module:
+    - entity_reference_revisions
+id: block_content.logo_cloud.default
+targetEntityType: block_content
+bundle: logo_cloud
+mode: default
+content:
+  b_logo_cloud_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

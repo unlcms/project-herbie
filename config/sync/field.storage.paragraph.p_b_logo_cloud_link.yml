@@ -1,0 +1,19 @@
+uuid: 6745faf8-829a-4100-9fc5-b83e3a527643
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.p_b_logo_cloud_link
+field_name: p_b_logo_cloud_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

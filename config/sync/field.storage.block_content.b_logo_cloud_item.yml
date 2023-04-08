@@ -1,0 +1,21 @@
+uuid: a8d7ebd4-6292-456e-9a4e-5a250de2d686
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - paragraphs
+id: block_content.b_logo_cloud_item
+field_name: b_logo_cloud_item
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

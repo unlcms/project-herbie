@@ -55,8 +55,8 @@ news_article:
   js:
     js/theme/news_article.js: {}
 
-
-
-
-
-
+logo_cloud:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/logo_cloud.css: {}

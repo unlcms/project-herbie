@@ -8,7 +8,7 @@ dependencies:
     - media
     - system
 _core:
-  default_config_hash: ZKV6dDsC6baQ4eVbllwE1uPbEXYGCJB0ghpFzQNuR3g
+  default_config_hash: 68rVss6EhJ70dZP3kK2ULmGVWGpw2_UrSNFAUiVDxu8
 id: anonymous
 label: 'Anonymous user'
 weight: -10

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: logo_cloud_item
+label: 'Logo cloud item'
+icon_uuid: null
+icon_default: null
+description: 'An individual logo and link for use in a Logo cloud block.'
+behavior_plugins: {  }

@@ -2,11 +2,13 @@ uuid: 1a90fe2f-7341-433f-b2df-6faf604e3413
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: F8t4srtfENOOjXrfoJQwpiXvHy2iQApaptEq7Pb39gw
 id: section_padding_bottom_extra
 label: 'Add extra bottom spacing'
 classes: dcf-pb-10
 type: section
 group: spacing
+weight: 0
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: 0

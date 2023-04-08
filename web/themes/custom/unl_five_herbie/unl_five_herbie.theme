@@ -303,7 +303,8 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
   // Apply .unl-cream to View fields if view is being included in a dark
   // Layout Builder section.
   $section_layout_builder_styles = $variables['view']->storage->get('#section_lbs');
-  if (in_array('section_background_style_brand', $section_layout_builder_styles)) {
+  if (is_array($section_layout_builder_styles) &&
+    in_array('section_background_style_brand', $section_layout_builder_styles)) {
     foreach ($variables['fields'] as $field) {
       $field->element_attributes->addClass('class', 'unl-cream');
     }

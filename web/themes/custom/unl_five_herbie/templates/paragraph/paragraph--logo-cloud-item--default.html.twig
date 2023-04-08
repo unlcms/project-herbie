@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-mb-0 dcf-ratio dcf-ratio-4x3 unl-bg-cream@dark unlcms-li-logo',
+  ]
+%}
+{% block paragraph %}
+  <li{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% if content.p_b_logo_cloud_link[0]['#url'] %}
+        <a class="dcf-ratio-child dcf-d-flex dcf-ai-center dcf-p-3" href="{{ content.p_b_logo_cloud_link[0]['#url'] }}">
+      {% else %}
+        <div class="dcf-ratio-child dcf-d-flex dcf-ai-center dcf-p-3">
+      {% endif %}
+        {{ content.p_b_logo_cloud_image }}
+      {% if content.p_b_logo_cloud_link[0]['#url'] %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+    {% endblock %}
+  </li>
+{% endblock paragraph %}

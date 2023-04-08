@@ -2,11 +2,13 @@ uuid: c11f1050-0d1f-4183-826c-aafdfd484d3d
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: jRgf6IywaXeuqheliSTrn9dbApdSE42XVaVAYVI0u5Y
 id: section_margin_remove_default_margins
 label: 'Remove default vertical spacing'
 classes: dcf-p-0
 type: section
 group: spacing
+weight: -4
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: -4

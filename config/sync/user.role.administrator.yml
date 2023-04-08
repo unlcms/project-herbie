@@ -50,7 +50,7 @@ dependencies:
     - webform
     - webform_submission_log
 _core:
-  default_config_hash: VGHm5fIwt4PFqLCznSyCw0mvvwyQUGerK4PWzg7QkD8
+  default_config_hash: _AH43AtkhyIHwSNiL8xiiBcFzTS9PTNgkYYktiBPiz0
 id: administrator
 label: Administrator
 weight: -4

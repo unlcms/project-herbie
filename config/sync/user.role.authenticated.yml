@@ -7,7 +7,7 @@ dependencies:
     - media
     - system
 _core:
-  default_config_hash: 3KQlweQpKqy91o1wHMkW_KfTl3AGvERY73SO5KuuM8U
+  default_config_hash: ui2e3Eb7FufQhVaAjwcyBNb2prP1llg1ZKLSlq2AFf8
 id: authenticated
 label: 'Authenticated user'
 weight: -9

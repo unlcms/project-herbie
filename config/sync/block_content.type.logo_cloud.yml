@@ -1,0 +1,8 @@
+uuid: 12caf2c4-4c10-412d-b910-816d44e344bf
+langcode: en
+status: true
+dependencies: {  }
+id: logo_cloud
+label: 'Logo cloud'
+revision: 0
+description: 'A grouping of logos typically used to showcase affiliates.'
