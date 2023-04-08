@@ -15,6 +15,7 @@ dependencies:
     - paragraphs
     - system
     - toolbar
+    - webform_node
 _core:
   default_config_hash: Z3OOVhYKI-1mToZSwV032-uFnaXlAIDpeWOG32SrWeI
 id: viewer
@@ -35,3 +36,4 @@ permissions:
   - 'view person revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view webform submissions own node'

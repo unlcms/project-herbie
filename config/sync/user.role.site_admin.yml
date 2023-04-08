@@ -44,6 +44,7 @@ dependencies:
     - unl_config
     - unl_news
     - webform
+    - webform_node
     - webform_submission_log
 _core:
   default_config_hash: RYtaIhRvKsuvKIHP_VucmBHavcyaPPuKOZU9jnMjIAs
@@ -138,6 +139,8 @@ permissions:
   - 'delete own webform submission'
   - 'delete person revisions'
   - 'delete unl_directory_entry external entity'
+  - 'delete webform submissions any node'
+  - 'delete webform submissions own node'
   - 'edit any book content'
   - 'edit any builder_page content'
   - 'edit any file media'
@@ -157,6 +160,8 @@ permissions:
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit users by role'
+  - 'edit webform submissions any node'
+  - 'edit webform submissions own node'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'rabbit hole bypass media'
@@ -193,3 +198,5 @@ permissions:
   - 'view unpublished paragraphs'
   - 'view user email addresses'
   - 'view users by role'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

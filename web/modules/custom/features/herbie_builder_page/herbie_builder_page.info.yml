@@ -49,6 +49,7 @@ dependencies:
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
+  - 'herbie_webform:herbie_webform'
   - 'honeypot:honeypot'
   - 'image_class:image_class'
   - 'inline_entity_form:inline_entity_form'
@@ -68,5 +69,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.1.5
+version: 1.1.6
 package: Herbie

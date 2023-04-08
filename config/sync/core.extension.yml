@@ -70,6 +70,7 @@ module:
   herbie_news: 0
   herbie_person: 0
   herbie_roles: 0
+  herbie_webform: 0
   honeypot: 0
   image: 0
   image_class: 0
@@ -147,6 +148,7 @@ module:
   user: 0
   views_ui: 0
   webform: 0
+  webform_node: 0
   webform_submission_log: 0
   webform_ui: 0
   dcf_lazyload: 1

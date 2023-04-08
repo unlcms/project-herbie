@@ -2,4 +2,6 @@ bundle: herbie
 excluded:
   - user.role.authenticated
   - user.role.administrator
+  - editor.editor.webform
+  - filter.format.webform
 required: true

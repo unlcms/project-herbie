@@ -34,6 +34,7 @@ dependencies:
     - system
     - toolbar
     - webform
+    - webform_node
 _core:
   default_config_hash: V5wvbRBDf_qpE6ZtYmzxyrgjxAnbcL_YB2HL-HulvmI
 id: editor
@@ -146,3 +147,4 @@ permissions:
   - 'view unpublished paragraphs'
   - 'view user email addresses'
   - 'view users by role'
+  - 'view webform submissions own node'

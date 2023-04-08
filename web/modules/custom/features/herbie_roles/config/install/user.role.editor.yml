@@ -33,6 +33,7 @@ dependencies:
     - system
     - toolbar
     - webform
+    - webform_node
 id: editor
 label: Editor
 weight: -7
@@ -143,3 +144,4 @@ permissions:
   - 'view unpublished paragraphs'
   - 'view user email addresses'
   - 'view users by role'
+  - 'view webform submissions own node'

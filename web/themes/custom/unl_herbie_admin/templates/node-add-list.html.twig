@@ -52,7 +52,7 @@
 <h2 class="heading-c">System-wide types</h2>
 <dl{{ attributes.addClass('admin-list') }}>
   {% for key, bundle in bundles %}
-    {% if key in ['book', 'news', 'person'] %}
+    {% if key in ['book', 'news', 'person', 'webform'] %}
       {#
       Add 'admin-item__link' class to the link attributes.
       This is needed for keeping the original attributes of the link's url.
@@ -76,6 +76,7 @@
 {% set bundles = bundles | filter((v, k) => k != 'book') %}
 {% set bundles = bundles | filter((v, k) => k != 'news') %}
 {% set bundles = bundles | filter((v, k) => k != 'person') %}
+{% set bundles = bundles | filter((v, k) => k != 'webform') %}
 
 {% if bundles is not empty%}
   <h2 class="heading-c">This site's custom types</h2>
