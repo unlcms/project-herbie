@@ -12,32 +12,32 @@
 {{ attach_library('unl_five_herbie/news_teaser') }}
 
 <div {{ attributes.addClass(classes) }}>
-	<li class="dcf-mb-0">
-		<article class="dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/NewsArticle">
+  <li class="dcf-mb-0">
+    <article class="dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/NewsArticle">
 
-			<div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
-				{{ content.n_news_image }}
-			</div>
+      <div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
+        {{ content.n_news_image }}
+      </div>
 
-			<div class="dcf-col-100% dcf-col-67%-end@md">
-				{{ title_prefix }}
+      <div class="dcf-col-100% dcf-col-67%-end@md">
+        {{ title_prefix }}
 
-				<h3 {{ title_attributes.addClass("dcf-txt-h6 dcf-mb-0") }} itemprop="headline">
-					<a href="{{ url }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark">
-						{{ label }}</a>
-				</h3>
+        <h3 {{ title_attributes.addClass("dcf-txt-h6 dcf-mb-0") }} itemprop="headline">
+          <a href="{{ url }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark">
+            {{ label }}</a>
+        </h3>
 
-				{% set createdDate = node.getCreatedTime|date('F j, Y') %}
-				<div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">
+        {% set createdDate = node.getCreatedTime|date('F j, Y') %}
+        <div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">
         {{ createdDate }}
         </div>
 
-				{{ title_suffix }}
-				<div{{content_attributes}}>
-					{{ content.body }}
-				</div>
+        {{ title_suffix }}
+        <div{{content_attributes}}>
+          {{ content.body }}
+        </div>
 
-			</div>
-		</article>
-	</li>
+      </div>
+    </article>
+  </li>
 </div>

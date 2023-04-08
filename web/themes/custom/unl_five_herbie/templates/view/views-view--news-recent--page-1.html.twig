@@ -44,40 +44,40 @@
   ]
 %}
 <div{{attributes.addClass(classes)}}>
-	{{ title_prefix }}
-	{{ title }}
-	{{ title_suffix }}
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
 
-	{% if header %}
-		<header>
-			{{ header }}
-		</header>
-	{% endif %}
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
 
-	{{ exposed }}
-	{{ attachment_before }}
+  {{ exposed }}
+  {{ attachment_before }}
 
-	{% if rows -%}
+  {% if rows -%}
 
-			<ol class="dcf-list-bare dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
-				{% for row in rows %}
-					{{ row }}
-				{% endfor %}
-			</ol>
+      <ol class="dcf-list-bare dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
+        {% for row in rows %}
+          {{ row }}
+        {% endfor %}
+      </ol>
 
-	{% elseif empty -%}
-		{{ empty }}
-	{% endif %}
-	{{ pager }}
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
 
-	{{ attachment_after }}
-	{{ more }}
+  {{ attachment_after }}
+  {{ more }}
 
-	{% if footer %}
-		<footer>
-			{{ footer }}
-		</footer>
-	{% endif %}
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
 
-	{{ feed_icons }}
+  {{ feed_icons }}
 </div>
