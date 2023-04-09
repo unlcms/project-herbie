@@ -32,6 +32,8 @@ dependencies:
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
+  - 'herbie_webform:herbie_webform'
+  - 'honeypot:honeypot'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
   - 'paragraphs:paragraphs'
@@ -44,5 +46,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.1.8
+version: 1.1.9
 package: Herbie

@@ -45,7 +45,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 4
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -57,12 +57,6 @@ targetEntityType: media
 bundle: remote_video
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_media_oembed_video:
     type: oembed_textfield
     weight: 0
@@ -201,17 +195,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 2
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
+  created: true
   name: true
   path: true
   status: true
+  uid: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - external_entities
+    - honeypot
     - media
     - system
 _core:
@@ -14,5 +15,6 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'bypass honeypot protection'
   - 'view media'
   - 'view unl_directory_entry external entity'

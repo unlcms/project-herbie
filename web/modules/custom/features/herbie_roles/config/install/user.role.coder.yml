@@ -1,14 +1,13 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.html_code
   module:
     - asset_injector
+    - block
     - field_ui
-    - filter
     - node
     - paragraphs
+    - system
     - twig_ui
     - views_ui
 id: coder
@@ -16,6 +15,8 @@ label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access site reports'
+  - 'administer blocks'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'
@@ -26,7 +27,6 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer twig templates'
-  - 'administer user fields'
   - 'administer views'
   - 'load twig templates from file system'
-  - 'use text format html_code'
+  - 'view the administration theme'
