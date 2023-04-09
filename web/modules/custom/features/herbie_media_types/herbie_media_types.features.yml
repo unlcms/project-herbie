@@ -4,4 +4,5 @@ excluded:
   - user.role.site_admin
   - user.role.coder
   - views.view.user_admin_people
+  - field.storage.media.s_m_tags
 required: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wide
+label: Wide
+targetEntityType: media
+cache: true

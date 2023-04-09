@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.image.s_m_file_size
     - field.field.media.image.s_m_height
     - field.field.media.image.s_m_mime_type
+    - field.field.media.image.s_m_tags
     - field.field.media.image.s_m_width
     - image.style.thumbnail
     - media.type.image
@@ -24,7 +25,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -40,7 +41,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -83,6 +84,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  s_m_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   s_m_width:
     type: string_textfield
     weight: 9
@@ -93,7 +104,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS

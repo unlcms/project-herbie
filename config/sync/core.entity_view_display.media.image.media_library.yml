@@ -8,6 +8,7 @@ dependencies:
     - field.field.media.image.s_m_file_size
     - field.field.media.image.s_m_height
     - field.field.media.image.s_m_mime_type
+    - field.field.media.image.s_m_tags
     - field.field.media.image.s_m_width
     - image.style.medium
     - media.type.image
@@ -38,5 +39,6 @@ hidden:
   s_m_file_size: true
   s_m_height: true
   s_m_mime_type: true
+  s_m_tags: true
   s_m_width: true
   uid: true

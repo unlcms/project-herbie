@@ -17,6 +17,7 @@ dependencies:
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_tags
     - field.field.media.remote_video.s_m_width
     - media.type.remote_video
   module:
@@ -44,7 +45,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -58,7 +59,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -182,6 +183,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  s_m_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   s_m_width:
     type: string_textfield
     weight: 19
@@ -192,7 +203,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS

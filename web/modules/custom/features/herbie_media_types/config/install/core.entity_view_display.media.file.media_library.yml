@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.file.s_m_certify
     - field.field.media.file.s_m_file_size
     - field.field.media.file.s_m_mime_type
+    - field.field.media.file.s_m_tags
     - image.style.medium
     - media.type.file
   module:
@@ -34,4 +35,5 @@ hidden:
   s_m_certify: true
   s_m_file_size: true
   s_m_mime_type: true
+  s_m_tags: true
   uid: true
