@@ -204,30 +204,6 @@ function unl_five_herbie_preprocess_field(&$variables) {
   }
 
   /*
-   * Card + Cirle Image block type.
-   */
-  $section_layout_builder_styles = $variables['element']['#object']->__get('#section_lbs');
-  switch ($field_name) {
-    case 'b_cdcir_headline':
-    case 'b_cdcir_body':
-    case 'b_cdcir_cta':
-    case 'b_cdcir_image':
-      // Add to all Card fields.
-      $variables['items'][0]['data']['section_lbs'] = $section_layout_builder_styles;
-
-      // Loop through individual Card + Circle Image fields.
-      switch ($field_name) {
-        case 'b_cdcir_headline':
-          $headline_link = $variables['element']['#object']->get('b_cdcir_headline_link')->first();
-          $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
-          $variables['items'][0]['data']['headline_link'] = $headline_link;
-          break;
-      }
-
-      break;
-  }
-
-  /*
    * Social media links Block Fields
    */
   $fields = array('b_social_media_links_title');
