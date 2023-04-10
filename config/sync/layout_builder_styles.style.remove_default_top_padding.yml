@@ -9,6 +9,6 @@ label: 'Remove top spacing'
 classes: dcf-pt-0
 type: section
 group: spacing
-weight: -3
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: -3
