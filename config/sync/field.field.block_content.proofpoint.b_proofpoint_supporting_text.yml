@@ -1,0 +1,19 @@
+uuid: 9709f4de-8a66-4c45-8fa2-0df266b05b5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.storage.block_content.b_proofpoint_supporting_text
+id: block_content.proofpoint.b_proofpoint_supporting_text
+field_name: b_proofpoint_supporting_text
+entity_type: block_content
+bundle: proofpoint
+label: 'Supporting text'
+description: 'Text explaining the figure or display source of data.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

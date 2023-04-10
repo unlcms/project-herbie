@@ -6,6 +6,6 @@ label: 'Add extra bottom spacing'
 classes: dcf-pb-10
 type: section
 group: spacing
-weight: 0
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: 0
