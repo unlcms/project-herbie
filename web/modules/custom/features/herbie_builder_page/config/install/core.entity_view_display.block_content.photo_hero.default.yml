@@ -8,6 +8,7 @@ dependencies:
     - field.field.block_content.photo_hero.b_photohero_title
   module:
     - image
+    - image_class
     - link
 id: block_content.photo_hero.default
 targetEntityType: block_content
@@ -16,13 +17,15 @@ mode: default
 content:
   b_photohero_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      image_class:
+        class: ''
     weight: 2
     region: content
   b_photohero_links:

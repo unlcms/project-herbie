@@ -2,11 +2,13 @@ uuid: 27fb679b-068e-4ce2-b232-8b41202c0799
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 66aZ7F7nJAg1RJYrnKbYm98RV7PW3BP4XuotGkRZogI
 id: remove_default_top_padding
 label: 'Remove top spacing'
 classes: dcf-pt-0
 type: section
 group: spacing
+weight: -3
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: -3

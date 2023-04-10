@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: kyb2pyTN-RtZ_INnPmymnWYZtaVhi9MvNASi_XiAz9w
+  default_config_hash: yIMS4dGyHi9yCpOg3l5z-3a3ysdZlPt3j2-t_j6E-Ms
 id: photo_hero
 label: 'Display banner'
 revision: 0

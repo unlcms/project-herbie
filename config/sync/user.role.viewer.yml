@@ -15,11 +15,15 @@ dependencies:
     - paragraphs
     - system
     - toolbar
+    - webform_node
+_core:
+  default_config_hash: Z3OOVhYKI-1mToZSwV032-uFnaXlAIDpeWOG32SrWeI
 id: viewer
 label: Viewer
 weight: -8
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
@@ -33,3 +37,5 @@ permissions:
   - 'view person revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

@@ -7,27 +7,37 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
+    'dcf-card-as-link',
+    'unlcms-img-zoom-hover',
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+{{ attach_library('unl_five_herbie/news_teaser') }}
 
-    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-mb-8">
-      <div class="dcf-col-100% dcf-col-33%-start@md">
-        {{ content.n_news_image }}
-      </div>
-      <div class="dcf-col-100% dcf-col-67%-end@md">
-        {{ title_prefix }}
-        <h2{{ title_attributes.addClass('dcf-mb-0') }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-        {% set createdDate = node.getCreatedTime|date('F j, Y') %}
-        <h3 class="dcf-subhead dcf-mt-1">{{ createdDate }}</h3>
-        {{ title_suffix }}
+<article{{ attributes.addClass(classes) }} itemscope itemtype="https://schema.org/NewsArticle">
+  <div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
+    {{ content.n_news_image }}
+  </div>
 
-        <div{{ content_attributes }}>
-          {{ content.body }}
-        </div>
-      </div>
+  {% if source == 'remote' %}
+    <div class="dcf-mb-4 dcf-badge dcf-badge-pill unl-bg-dark-gray">From Nebraska Today</div>
+  {% endif %}
+
+  <div class="dcf-col-100% dcf-col-67%-end@md">
+    {{ title_prefix }}
+    <h3{{ title_attributes.addClass("dcf-txt-h6 dcf-mb-0") }} itemprop="headline">
+      <a href="{{ link }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark">
+        {{ label }}
+      </a>
+    </h3>
+
+    {% set createdDate = node.getCreatedTime|date('F j, Y') %}
+    <div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">
+      {{ createdDate }}
     </div>
+    {{ title_suffix }}
 
+    <div{{ content_attributes }}>
+      {{ content.body }}
+    </div>
+  </div>
 </article>

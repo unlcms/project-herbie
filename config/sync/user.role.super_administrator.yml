@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: tnJJYMJXbpKxN_oW0-d0yDjTCD4NA9SFm71rG6A5a2Q
+  default_config_hash: lhYsrjoF3L-0xEw4bmAw5laZ27Tsyv9dMDbTdKZg4dY
 id: super_administrator
 label: 'Super administrator'
 weight: -3

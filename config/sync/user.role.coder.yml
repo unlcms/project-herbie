@@ -2,25 +2,32 @@ uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.html_code
   module:
     - asset_injector
-    - filter
+    - field_ui
     - node
+    - paragraphs
+    - system
     - twig_ui
     - views_ui
 _core:
-  default_config_hash: K9t_jofegA_W-oRLqfgMaJBLD8KJ3S5pRSrHEyCkJAI
+  default_config_hash: e_wgK3u6DJXex7VJ7NgqcpN53OnF52HfNNaK18TNPwA
 id: coder
 label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access site reports'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
   - 'administer twig templates'
   - 'administer views'
   - 'load twig templates from file system'
-  - 'use text format html_code'
+  - 'view the administration theme'

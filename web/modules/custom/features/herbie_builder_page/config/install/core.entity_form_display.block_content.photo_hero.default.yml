@@ -17,7 +17,7 @@ mode: default
 content:
   b_photohero_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
@@ -33,7 +33,7 @@ content:
     third_party_settings: {  }
   b_photohero_title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60

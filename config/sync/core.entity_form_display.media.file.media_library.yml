@@ -8,6 +8,7 @@ dependencies:
     - field.field.media.file.s_m_certify
     - field.field.media.file.s_m_file_size
     - field.field.media.file.s_m_mime_type
+    - field.field.media.file.s_m_tags
     - media.type.file
   module:
     - file
@@ -31,6 +32,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  s_m_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

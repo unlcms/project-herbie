@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
+    - field.field.node.news.n_person_reference
     - image.style.16_9_240x135
     - node.type.news
   module:
@@ -106,6 +107,16 @@ content:
     weight: 11
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  n_person_reference:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }

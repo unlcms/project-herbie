@@ -1,0 +1,73 @@
+uuid: 8d964251-9e8b-4af3-af5c-ecf5cd1931aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_cloud
+    - field.storage.block_content.b_logo_cloud_item
+    - paragraphs.paragraphs_type.logo_cloud_item
+  module:
+    - entity_reference_revisions
+id: block_content.logo_cloud.b_logo_cloud_item
+field_name: b_logo_cloud_item
+entity_type: block_content
+bundle: logo_cloud
+label: 'Logo cloud item'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      logo_cloud_item: logo_cloud_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 16
+        enabled: false
+      contact_info_contact_point:
+        weight: 17
+        enabled: false
+      contact_info_email:
+        weight: 18
+        enabled: false
+      contact_info_fax:
+        weight: 19
+        enabled: false
+      contact_info_heading:
+        weight: 20
+        enabled: false
+      contact_info_margin:
+        weight: 21
+        enabled: false
+      contact_info_phone:
+        weight: 22
+        enabled: false
+      contact_info_physical_address:
+        weight: 23
+        enabled: false
+      contact_info_post_office_box_add:
+        weight: 24
+        enabled: false
+      logo_cloud_item:
+        weight: 25
+        enabled: true
+      p_n_major_contact:
+        weight: 26
+        enabled: false
+      p_n_major_featured_faculty:
+        weight: 27
+        enabled: false
+      p_n_major_notable_course:
+        weight: 28
+        enabled: false
+      p_n_major_outside_the_classroom:
+        weight: 29
+        enabled: false
+      p_n_major_points_of_pride:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

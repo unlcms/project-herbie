@@ -11,7 +11,7 @@ dependencies:
     - linkit
     - media
 _core:
-  default_config_hash: kG-oVmUVJwoG1DHTPHWu0G1DdFaDwVOSR-NWV0ekU4I
+  default_config_hash: 5anSBiLTqs4dOkhLlIFIaJ8nZp-aMBQXtZ42IK2ONWo
 name: Standard
 format: standard
 weight: 0

@@ -5,6 +5,8 @@ dependencies:
   module:
     - node
     - options
+_core:
+  default_config_hash: yrmt9Q13w7_T0NvBlpLf1KC1BvX0cwo9vFD2mq5FW4g
 id: node.s_n_page_options
 field_name: s_n_page_options
 entity_type: node

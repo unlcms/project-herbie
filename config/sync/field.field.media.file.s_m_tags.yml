@@ -1,0 +1,29 @@
+uuid: a74a3a33-ae3c-44fc-8e5d-589778c17dbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.s_m_tags
+    - media.type.file
+    - taxonomy.vocabulary.media_tags
+id: media.file.s_m_tags
+field_name: s_m_tags
+entity_type: media
+bundle: file
+label: Tags
+description: 'Non-public tags for file organization and filtering.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_tags: media_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

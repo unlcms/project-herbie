@@ -1,0 +1,37 @@
+.unlcms-img-zoom-hover:hover img {
+  transform: scale(1.03);
+}
+
+.unlcms-img-zoom-hover img,
+.unlcms-img-zoom-hover:hover img {
+  transition: transform 250ms cubic-bezier(.25, .46, .45, .94) ;
+}
+
+.unlcms-teaser-news-img,
+.unlcms-teaser-news-text {
+  grid-column: 1 / -1;
+}
+
+.unlcms-teaser-news {
+  container-type: inline-size;
+}
+
+@container (min-width: 42.09rem) {
+
+  .unlcms-teaser-news-img {
+    grid-column: 1 / span 5;
+  }
+
+  .unlcms-teaser-news-text {
+    grid-column: span 7 / -1;
+  }
+
+}
+
+/* Don't show the 'Latest News' heading on Builder Pages. */
+.page-node-type-builder-page .unlcms-teaser-news-border {
+  border: none !important;
+}
+.page-node-type-builder-page .unlcms-teaser-news-heading {
+  display: none;
+}

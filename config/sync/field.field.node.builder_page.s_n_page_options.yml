@@ -7,6 +7,8 @@ dependencies:
     - node.type.builder_page
   module:
     - options
+_core:
+  default_config_hash: oZfdOLoowNeU-MS8FP0PHh760TJ1S9T4fYxaCUSCzX8
 id: node.builder_page.s_n_page_options
 field_name: s_n_page_options
 entity_type: node

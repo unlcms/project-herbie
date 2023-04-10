@@ -70,6 +70,7 @@ module:
   herbie_news: 0
   herbie_person: 0
   herbie_roles: 0
+  herbie_webform: 0
   honeypot: 0
   image: 0
   image_class: 0
@@ -83,7 +84,7 @@ module:
   jsonapi: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
-  layout_builder_modal: 0
+  layout_builder_iframe_modal: 0
   layout_builder_operation_link: 0
   layout_builder_restrictions: 0
   layout_builder_restrictions_by_region: 0
@@ -101,6 +102,9 @@ module:
   menu_block: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   mysql: 0
   node: 0
   oembed_providers: 0
@@ -147,6 +151,7 @@ module:
   user: 0
   views_ui: 0
   webform: 0
+  webform_node: 0
   webform_submission_log: 0
   webform_ui: 0
   dcf_lazyload: 1
@@ -160,4 +165,5 @@ theme:
   claro: 0
   unl_five: 0
   unl_five_herbie: 0
+  unl_herbie_admin: 0
 profile: herbie

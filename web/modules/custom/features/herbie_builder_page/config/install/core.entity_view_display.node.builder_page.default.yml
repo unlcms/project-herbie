@@ -110,7 +110,6 @@ third_party_settings:
           all_regions:
             'Aggregated Content':
               - unl_news_aggregation
-              - unl_recent_news
               - unl_upcoming_events
             'Content fields':
               - 'field_block:node:builder_page:body'
@@ -121,6 +120,7 @@ third_party_settings:
               - content
               - cta
               - html_code
+              - logo_cloud
               - photo_hero
               - social_media_links
             Forms:
@@ -128,10 +128,11 @@ third_party_settings:
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
-              - 'inline_block:content'
-              - 'inline_block:html_code'
               - 'inline_block:photo_hero'
+              - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
               - 'inline_block:social_media_links'
+              - 'inline_block:content'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -139,25 +140,24 @@ third_party_settings:
             core: {  }
         dcf_threecol_section:
           all_regions:
-            'Aggregated Content':
-              - unl_recent_news
+            'Aggregated Content': {  }
             'Chaos Tools': {  }
             'Content fields': {  }
             'Curated Lists': {  }
             'Custom block types':
               - card
-              - card_circle_image
               - content
               - cta
               - html_code
+              - photo_hero
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:cta'
               - 'inline_block:card'
-              - 'inline_block:card_circle_image'
-              - 'inline_block:content'
+              - 'inline_block:photo_hero'
               - 'inline_block:html_code'
+              - 'inline_block:content'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
@@ -165,8 +165,7 @@ third_party_settings:
             core: {  }
         dcf_twocol_section:
           all_regions:
-            'Aggregated Content':
-              - unl_recent_news
+            'Aggregated Content': {  }
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
@@ -174,19 +173,21 @@ third_party_settings:
             'Custom block types':
               - accordion
               - card
-              - card_circle_image
               - content
               - cta
               - html_code
+              - logo_cloud
+              - photo_hero
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
-              - 'inline_block:card_circle_image'
-              - 'inline_block:content'
+              - 'inline_block:photo_hero'
               - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
+              - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'

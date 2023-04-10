@@ -16,17 +16,10 @@ use Drupal\node\NodeInterface;
  */
 function unl_news_theme($existing, $type, $theme, $path) {
   return [
-    'unl_news_recent_news_block' => [
-      'variables' => [
-        'subhead' => '',
-        'items' => [],
-        'more_link' => '',
-      ],
-    ],
     'unl_news_news_aggregation_block' => [
       'variables' => [
         'items' => [],
-        'pager' => [],
+        'quantity' => [],
       ],
     ],
   ];

@@ -113,6 +113,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  n_person_reference:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   path:
     type: path
     weight: 6
@@ -163,5 +173,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  n_person_reference: true
+hidden: {  }

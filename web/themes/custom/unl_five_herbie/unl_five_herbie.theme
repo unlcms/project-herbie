@@ -99,16 +99,16 @@ function unl_five_herbie_preprocess_block(&$variables) {
  * Implements template_preprocess_node__TYPE().
  */
 function unl_five_herbie_preprocess_node__news(&$variables) {
-  // Insert an instance news_recent block_1 into the News node template. Rather
-  // than use a standard block, this is done to keep the CSS wrappers separate
-  // so the same block_1 can be used in Layout Builder with different
-  // color sections.
-  $block = \Drupal::service('plugin.manager.block')->createInstance('views_block:news_recent-block_1');
-  $variables['content']['news_recent_block_output'] = $block->build();
-
-  $view = Views::getView('news_recent');
-  $view->setDisplay('block_1');
-  $variables['content']['news_recent_title'] = $view->getTitle();
+  // Determine URL, depending on whether local content or remote
+  // (Nebraska Today) content.
+  if ($canonical_url = $variables['node']->get('n_news_canonical_url')->getString()) {
+    $variables['link'] = $canonical_url;
+    $variables['source'] = 'remote';
+  }
+  else {
+    $variables['link'] = $variables['url'];
+    $variables['source'] = 'local';
+  }
 }
 
 /**
@@ -117,15 +117,20 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 function unl_five_herbie_preprocess_field(&$variables) {
   $field_name = $variables['field_name'];
 
+  // if ($field_name == 'n_news_image') {
+  //   $variables['items'][0]['#item']["attributes"]["itemprop"] = "image";
+  // }
+
   /*
    * Image field in News content type.
    */
   if ($field_name == 'n_news_image' && $variables['element']['#view_mode'] == 'teaser') {
     foreach ($variables['items'] as $key => $item) {
-      $classes = ['dcf-d-block', 'dcf-ratio-child', 'dcf-obj-fit-cover', 'dcf-animate-on-scroll'];
+      $classes = ['dcf-ratio-child', 'dcf-obj-fit-cover','dcf-animate-on-scroll'];
       $variables['items'][$key]['content']['#item_attributes']['class'] = $variables['items'][$key]['content']['#item_attributes']['class'] ?? [];
       $variables['items'][$key]['content']['#item_attributes']['class'] = array_merge($variables['items'][$key]['content']['#item_attributes']['class'], $classes);
       $variables['items'][$key]['content']['#item_attributes']['aria-hidden'] = 'true';
+      $variables['items'][$key]['content']['#item_attributes']["itemprop"] = "image";
 
       $values = $variables['items'][$key]['content']['#item']->getValue();
       $values['alt'] = "";
@@ -196,30 +201,6 @@ function unl_five_herbie_preprocess_field(&$variables) {
         }
         break;
     }
-  }
-
-  /*
-   * Card + Cirle Image block type.
-   */
-  $section_layout_builder_styles = $variables['element']['#object']->__get('#section_lbs');
-  switch ($field_name) {
-    case 'b_cdcir_headline':
-    case 'b_cdcir_body':
-    case 'b_cdcir_cta':
-    case 'b_cdcir_image':
-      // Add to all Card fields.
-      $variables['items'][0]['data']['section_lbs'] = $section_layout_builder_styles;
-
-      // Loop through individual Card + Circle Image fields.
-      switch ($field_name) {
-        case 'b_cdcir_headline':
-          $headline_link = $variables['element']['#object']->get('b_cdcir_headline_link')->first();
-          $headline_link = !empty($headline_link) ? $headline_link->getUrl() : '';
-          $variables['items'][0]['data']['headline_link'] = $headline_link;
-          break;
-      }
-
-      break;
   }
 
   /*
@@ -298,7 +279,8 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
   // Apply .unl-cream to View fields if view is being included in a dark
   // Layout Builder section.
   $section_layout_builder_styles = $variables['view']->storage->get('#section_lbs');
-  if (in_array('section_background_style_brand', $section_layout_builder_styles)) {
+  if (is_array($section_layout_builder_styles) &&
+    in_array('section_background_style_brand', $section_layout_builder_styles)) {
     foreach ($variables['fields'] as $field) {
       $field->element_attributes->addClass('class', 'unl-cream');
     }

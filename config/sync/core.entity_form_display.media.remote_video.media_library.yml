@@ -19,26 +19,38 @@ dependencies:
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_tags
     - field.field.media.remote_video.s_m_width
     - media.type.remote_video
+  module:
+    - media
 _core:
-  default_config_hash: PWAdpb_QGHwBcPwCvLgNzsmR7-6_7hyRuM_X7n6neKk
+  default_config_hash: gKmBZmLx9PrxdKmBl8EIlunJakbFxTwr4HWTmCO3Goc
 id: media.remote_video.media_library
 targetEntityType: media
 bundle: remote_video
 mode: media_library
 content:
-  name:
-    type: string_textfield
+  field_media_oembed_video:
+    type: oembed_textfield
     weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  s_m_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
-  field_media_oembed_video: true
   m_rv_author_name: true
   m_rv_author_url: true
   m_rv_default_name: true
@@ -52,6 +64,7 @@ hidden:
   m_rv_thumbnail_height: true
   m_rv_thumbnail_local_uri: true
   m_rv_thumbnail_width: true
+  name: true
   path: true
   s_m_height: true
   s_m_width: true

@@ -1,0 +1,20 @@
+uuid: 6ca225dc-7f6d-4f3a-be3a-c0646b1b0ba2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.p_b_logo_cloud_image
+field_name: p_b_logo_cloud_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

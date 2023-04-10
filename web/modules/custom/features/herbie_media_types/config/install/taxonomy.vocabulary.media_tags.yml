@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Media tags'
+vid: media_tags
+description: 'Non-public tags for file organization and filtering.'
+weight: 0

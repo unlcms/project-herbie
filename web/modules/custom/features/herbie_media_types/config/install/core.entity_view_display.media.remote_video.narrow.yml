@@ -18,6 +18,7 @@ dependencies:
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_tags
     - field.field.media.remote_video.s_m_width
     - media.type.remote_video
   module:
@@ -58,6 +59,7 @@ hidden:
   m_rv_thumbnail_width: true
   name: true
   s_m_height: true
+  s_m_tags: true
   s_m_width: true
   thumbnail: true
   uid: true

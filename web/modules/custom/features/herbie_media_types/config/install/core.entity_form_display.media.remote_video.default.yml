@@ -17,6 +17,7 @@ dependencies:
     - field.field.media.remote_video.m_rv_thumbnail_local_uri
     - field.field.media.remote_video.m_rv_thumbnail_width
     - field.field.media.remote_video.s_m_height
+    - field.field.media.remote_video.s_m_tags
     - field.field.media.remote_video.s_m_width
     - media.type.remote_video
   module:
@@ -44,7 +45,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: hidden
@@ -56,12 +57,6 @@ targetEntityType: media
 bundle: remote_video
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_media_oembed_video:
     type: oembed_textfield
     weight: 0
@@ -182,16 +177,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  s_m_width:
-    type: string_textfield
-    weight: 19
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
+  s_m_tags:
+    type: entity_reference_autocomplete_tags
     weight: 1
     region: content
     settings:
@@ -200,7 +187,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  s_m_width:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
+  created: true
   name: true
   path: true
   status: true
+  uid: true

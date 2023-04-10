@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: card_circle_image
-label: 'Card + Circle Image'
-revision: 0
-description: 'A styled content block with a headline, body, circular image that optionally includes a call-to-action button'

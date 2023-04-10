@@ -1,0 +1,20 @@
+uuid: a726876f-72fa-4a1f-b7bf-88c02e9975d1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_herbie_admin
+_core:
+  default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
+id: unl_herbie_admin_page_title
+theme: unl_herbie_admin
+region: header
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

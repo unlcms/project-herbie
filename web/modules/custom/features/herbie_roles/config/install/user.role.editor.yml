@@ -4,9 +4,9 @@ dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
     - filter.format.block_body
+    - filter.format.simple
     - filter.format.standard
     - filter.format.webform
-    - filter.format.webform_default
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -14,6 +14,8 @@ dependencies:
     - node.type.builder_page
     - node.type.news
     - node.type.person
+    - node.type.webform
+    - taxonomy.vocabulary.media_tags
   module:
     - administerusersbyrole
     - block_content_permissions
@@ -31,15 +33,16 @@ dependencies:
     - paragraphs
     - rabbit_hole
     - system
+    - taxonomy
     - toolbar
     - webform
+    - webform_node
 id: editor
 label: Editor
 weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
@@ -65,12 +68,14 @@ permissions:
   - 'create file media'
   - 'create hero block content'
   - 'create image media'
+  - 'create logo_cloud block content'
   - 'create new books'
   - 'create news content'
   - 'create person content'
   - 'create photo_hero block content'
   - 'create remote_video media'
   - 'create social_media_links block content'
+  - 'create terms in media_tags'
   - 'create unl_directory_entry external entity'
   - 'delete any accordion block content'
   - 'delete any card block content'
@@ -80,6 +85,7 @@ permissions:
   - 'delete any file media'
   - 'delete any hero block content'
   - 'delete any image media'
+  - 'delete any logo_cloud block content'
   - 'delete any photo_hero block content'
   - 'delete any remote_video media'
   - 'delete any social_media_links block content'
@@ -93,8 +99,10 @@ permissions:
   - 'delete own news content'
   - 'delete own person content'
   - 'delete own remote_video media'
+  - 'delete own webform content'
   - 'delete person revisions'
   - 'delete unl_directory_entry external entity'
+  - 'delete webform revisions'
   - 'edit any book content'
   - 'edit any builder_page content'
   - 'edit any file media'
@@ -102,6 +110,7 @@ permissions:
   - 'edit any news content'
   - 'edit any person content'
   - 'edit any remote_video media'
+  - 'edit any webform content'
   - 'edit own book content'
   - 'edit own builder_page content'
   - 'edit own file media'
@@ -109,6 +118,7 @@ permissions:
   - 'edit own news content'
   - 'edit own person content'
   - 'edit own remote_video media'
+  - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'rabbit hole bypass media'
@@ -116,19 +126,21 @@ permissions:
   - 'revert builder_page revisions'
   - 'revert news revisions'
   - 'revert person revisions'
+  - 'revert webform revisions'
   - 'update any accordion block content'
   - 'update any card block content'
   - 'update any contact_info block content'
   - 'update any content block content'
   - 'update any cta block content'
   - 'update any hero block content'
+  - 'update any logo_cloud block content'
   - 'update any photo_hero block content'
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
   - 'use text format block_body'
+  - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
-  - 'use text format webform_default'
   - 'view any webform submission'
   - 'view book revisions'
   - 'view builder_page revisions'
@@ -143,3 +155,6 @@ permissions:
   - 'view unpublished paragraphs'
   - 'view user email addresses'
   - 'view users by role'
+  - 'view webform revisions'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

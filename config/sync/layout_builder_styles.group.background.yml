@@ -2,6 +2,8 @@ uuid: 8a0b6ac0-619e-433f-9ca9-b3635ed87112
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: CQa8SlGDzIONFyOUD0lGy2VYzWxinu2egJQyv-xsL4g
 id: background
 label: Background
 multiselect: single

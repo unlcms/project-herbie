@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - image.style.thumbnail
+    - taxonomy.vocabulary.media_tags
   module:
     - entity_usage
     - image
     - media
+    - taxonomy
     - user
 _core:
   default_config_hash: rRzAWaXpJGYA2gPG6BmGxy8gfFd4srCc-LQY3JB6tR8
@@ -720,6 +722,58 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        s_m_tags_target_id:
+          id: s_m_tags_target_id
+          table: media__s_m_tags
+          field: s_m_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: s_m_tags_target_id_op
+            label: Tags
+            description: ''
+            use_operator: false
+            operator: s_m_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: s_m_tags_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              viewer: '0'
+              editor: '0'
+              site_admin: '0'
+              coder: '0'
+              administrator: '0'
+              super_administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: media_tags
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
       style:
         type: table
         options:
@@ -842,6 +896,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }
   media_page_list:
@@ -860,5 +915,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }

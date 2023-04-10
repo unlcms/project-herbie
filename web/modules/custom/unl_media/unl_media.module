@@ -11,9 +11,6 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  // Adds a media_metadata form element to media edit forms that renders a view
-  // with meta data about the media entity.
-  //
   // Alter media edit forms: media_BUNDLE_edit_form.
   // Media edit forms have unique form id's.
   $media_edit_form_ids = [
@@ -21,7 +18,11 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
     'media_image_edit_form',
     'media_remote_video_edit_form',
   ];
+
   if (in_array($form_id, $media_edit_form_ids)) {
+    // Adds a media_metadata form element to media edit forms that renders a view
+    // with meta data about the media entity.
+
     // Get entity ID to pass to view.
     $entity = \Drupal::service('unl_utility.manager')->getRouteEntity();
     $entity_id = $entity->id();
@@ -56,6 +57,12 @@ function unl_media_form_alter(&$form, FormStateInterface &$form_state, $form_id)
         ];
         break;
     }
+
+    // Hide the revision info. With the use of media_entity_file_replace and
+    // media_file_delete we don't want revisions of Media.
+    $form['revision']['#type'] = 'hidden';
+    $form['revision_information']['#type'] = 'hidden';
+    $form['revision_log_message']['#type'] = 'hidden';
   }
 }
 

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: b4qWBVRhQGQ1LPIj57v6XI_0__MX8kimsH8FyKoJgKA
+  default_config_hash: 6otFtrsyjbAhtHv_oaIBJHFA3w0qkdf3BOhUR5g8l4k
 id: content
 label: 'Text area'
 revision: 0

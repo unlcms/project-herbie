@@ -9,6 +9,7 @@ dependencies:
   - 'drupal:block'
   - 'drupal:book'
   - 'drupal:contextual'
+  - 'drupal:field_ui'
   - 'drupal:file'
   - 'drupal:filter'
   - 'drupal:layout_builder'
@@ -31,6 +32,8 @@ dependencies:
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
+  - 'herbie_webform:herbie_webform'
+  - 'honeypot:honeypot'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
   - 'paragraphs:paragraphs'
@@ -41,6 +44,7 @@ dependencies:
   - 'unl_config:unl_config'
   - 'unl_news:unl_news'
   - 'webform:webform'
+  - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.1.6
+version: 1.1.10
 package: Herbie

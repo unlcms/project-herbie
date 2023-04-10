@@ -32,7 +32,7 @@ third_party_settings:
         required_fields: true
         weight: 99
 _core:
-  default_config_hash: gtvfiLzHvjhJnh4OXMFELdgQ81CZj94gbkrZiwntcsc
+  default_config_hash: xYsDrJFgDLnfXeRa4Dsncikn3j30zPvGUhtsOo4laCI
 id: node.builder_page.default
 targetEntityType: node
 bundle: builder_page

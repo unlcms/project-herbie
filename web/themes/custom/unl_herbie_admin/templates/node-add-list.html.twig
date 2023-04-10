@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * UNL theme implementation to list node types available for adding content
+ * in custom sections.
+ *
+ * Available variables:
+ * - bundles: A list of content types, each with the following properties:
+ *   - label: Content type label.
+ *   - add_link: \Drupal\Core\Link link instance to create an entity of this
+ *     content type. This is a GeneratedLink originally and is switched by
+ *     claro_preprocess_node_add_list().
+ *   - description: Description of this type of content.
+ *
+ * @todo Revisit after https://www.drupal.org/node/3026221 has been solved.
+ *
+ * @see template_preprocess_node_add_list()
+ * @see claro_preprocess_node_add_list()
+ */
+#}
+{%
+  set item_classes = [
+  'admin-item',
+]
+%}
+
+<dl{{ attributes.addClass('admin-list') }}>
+  {% for key, bundle in bundles %}
+    {% if key == 'builder_page' %}
+      {#
+      Add 'admin-item__link' class to the link attributes.
+      This is needed for keeping the original attributes of the link's url.
+      #}
+      {% set bundle_attributes = bundle.add_link.url.getOption('attributes') ?: {} %}
+      {% set link_attributes = create_attribute(bundle_attributes).addClass('admin-item__link') %}
+      <div{{ create_attribute({ class: item_classes }) }}>
+        <dt class="admin-item__title">
+          <a href="{{ bundle.add_link.url }}"{{ link_attributes|without('href') }}>
+            {{ bundle.add_link.text }}
+          </a>
+        </dt>
+        {# Don't print empty description wrapper if there is no description #}
+        {% if bundle.description %}
+          <dd class="admin-item__description">{{ bundle.description }}</dd>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</dl>
+{% set bundles = bundles | filter((v, k) => k != 'builder_page') %}
+
+<h2 class="heading-c">System-wide types</h2>
+<dl{{ attributes.addClass('admin-list') }}>
+  {% for key, bundle in bundles %}
+    {% if key in ['book', 'news', 'person', 'webform'] %}
+      {#
+      Add 'admin-item__link' class to the link attributes.
+      This is needed for keeping the original attributes of the link's url.
+      #}
+      {% set bundle_attributes = bundle.add_link.url.getOption('attributes') ?: {} %}
+      {% set link_attributes = create_attribute(bundle_attributes).addClass('admin-item__link') %}
+      <div{{ create_attribute({ class: item_classes }) }}>
+        <dt class="admin-item__title">
+          <a href="{{ bundle.add_link.url }}"{{ link_attributes|without('href') }}>
+            {{ bundle.add_link.text }}
+          </a>
+        </dt>
+        {# Don't print empty description wrapper if there is no description #}
+        {% if bundle.description %}
+          <dd class="admin-item__description">{{ bundle.description }}</dd>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</dl>
+{% set bundles = bundles | filter((v, k) => k != 'book') %}
+{% set bundles = bundles | filter((v, k) => k != 'news') %}
+{% set bundles = bundles | filter((v, k) => k != 'person') %}
+{% set bundles = bundles | filter((v, k) => k != 'webform') %}
+
+{% if bundles is not empty%}
+  <h2 class="heading-c">This site's custom types</h2>
+  <dl{{ attributes.addClass('admin-list') }}>
+    {% for key, bundle in bundles %}
+      {#
+      Add 'admin-item__link' class to the link attributes.
+      This is needed for keeping the original attributes of the link's url.
+      #}
+      {% set bundle_attributes = bundle.add_link.url.getOption('attributes') ?: {} %}
+      {% set link_attributes = create_attribute(bundle_attributes).addClass('admin-item__link') %}
+      <div{{ create_attribute({ class: item_classes }) }}>
+        <dt class="admin-item__title">
+          <a href="{{ bundle.add_link.url }}"{{ link_attributes|without('href') }}>
+            {{ bundle.add_link.text }}
+          </a>
+        </dt>
+        {# Don't print empty description wrapper if there is no description #}
+        {% if bundle.description %}
+          <dd class="admin-item__description">{{ bundle.description }}</dd>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </dl>
+{% endif %}

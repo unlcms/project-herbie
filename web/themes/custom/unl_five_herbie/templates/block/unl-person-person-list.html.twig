@@ -1,26 +1,26 @@
 {% if view_mode == 'teaser_featured'%}
 
-	{% for nid in nodes %}
-		<article {{ attributes }}>
-			<div {{ content_attributes }}>
-				<div {{ attributes.addClass('dcf-mt-9 dcf-mb-10') }}>
-					<div class="dcf-d-flex dcf-jc-center">
-						<div class="dcf-flex-grow-1 dcf-w-max-xl dcf-card-as-link dcf-grid dcf-col-gap-vw dcf-row-gap-3 unlcms-img-zoom-hover unlcms-teaser-person" itemscope itemtype="https://schema.org/Person">
+  {% for nid in nodes %}
+    <article {{ attributes }}>
+      <div {{ content_attributes }}>
+        <div {{ attributes.addClass('dcf-mt-9 dcf-mb-10') }}>
+          <div class="dcf-d-flex dcf-jc-center">
+            <div class="dcf-flex-grow-1 dcf-w-max-xl dcf-card-as-link dcf-grid dcf-col-gap-vw dcf-row-gap-3 unlcms-img-zoom-hover unlcms-teaser-person" itemscope itemtype="https://schema.org/Person">
 
-							{{ drupal_entity('node', nid, view_mode) }}
-						</div>
-					</div>
-				</div>
-			</div>
-		</article>
-	{% endfor %}
+              {{ drupal_entity('node', nid, view_mode) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
 
 {% else %}
 
-	<ol {{attributes.addClass(['dcf-list-bare', 'dcf-d-grid', 'unlcms-abbr-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-6','dcf-mb-9'])}}>
-		{% for nid in nodes %}
-			{{ drupal_entity('node', nid, view_mode) }}
-		{% endfor %}
-	</ol>
+  <ol {{attributes.addClass(['dcf-list-bare', 'dcf-d-grid', 'unlcms-abbr-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-6','dcf-mb-9'])}}>
+    {% for nid in nodes %}
+      {{ drupal_entity('node', nid, view_mode) }}
+    {% endfor %}
+  </ol>
 
 {% endif %}
