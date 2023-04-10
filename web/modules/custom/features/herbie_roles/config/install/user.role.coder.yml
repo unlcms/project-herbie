@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - asset_injector
-    - block
     - field_ui
     - node
     - paragraphs
@@ -16,7 +15,6 @@ weight: -5
 is_admin: null
 permissions:
   - 'access site reports'
-  - 'administer blocks'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'
