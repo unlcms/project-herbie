@@ -21,7 +21,7 @@ third_party_settings:
       label: 'Page options'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 10
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -82,7 +82,7 @@ content:
       allow_duplicate: false
       collapsible: true
       collapsed: false
-      revision: false
+      revision: true
       removed_reference: optional
     third_party_settings: {  }
   s_n_page_options:

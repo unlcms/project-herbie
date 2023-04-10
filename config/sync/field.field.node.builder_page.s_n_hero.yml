@@ -1,4 +1,4 @@
-uuid: 1dc966ac-ade4-4984-bb29-3746426c4707
+uuid: 50f153e2-e6ea-4005-87ba-cfd77d18829e
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,14 @@ dependencies:
     - block_content.type.hero
     - field.storage.node.s_n_hero
     - node.type.builder_page
-_core:
-  default_config_hash: l6sz65Ci9IX6pBtWEOqme0SekuFLPEwIqWjxYBGYzFc
+  module:
+    - entity_reference_revisions
 id: node.builder_page.s_n_hero
 field_name: s_n_hero
 entity_type: node
 bundle: builder_page
 label: Hero
-description: ''
+description: 'A featured photo displayed at the top of the page.'
 required: false
 translatable: false
 default_value: {  }
@@ -25,6 +25,7 @@ settings:
       hero: hero
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: entity_reference_revisions
