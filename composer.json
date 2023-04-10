@@ -273,7 +273,7 @@
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             },
             "drush/drush": {
-                "Do not allow config:import to be run": "patches/drush-config-import-message.patch"
+                "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }
         },
         "drupal-scaffold": {
