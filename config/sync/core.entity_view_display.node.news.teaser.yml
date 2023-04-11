@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.news.n_person_reference
     - node.type.news
   module:
-    - image
     - user
 _core:
   default_config_hash: gnj9nJaOHi-kF1nF1IhOR8yxmy8LvDlcYch4qht4u2E
@@ -28,13 +27,11 @@ content:
     weight: 1
     region: content
   n_news_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: medium__widescreen
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

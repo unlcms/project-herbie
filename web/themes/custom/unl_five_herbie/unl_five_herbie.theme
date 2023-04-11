@@ -117,27 +117,6 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 function unl_five_herbie_preprocess_field(&$variables) {
   $field_name = $variables['field_name'];
 
-  // if ($field_name == 'n_news_image') {
-  //   $variables['items'][0]['#item']["attributes"]["itemprop"] = "image";
-  // }
-
-  /*
-   * Image field in News content type.
-   */
-  if ($field_name == 'n_news_image' && $variables['element']['#view_mode'] == 'teaser') {
-    foreach ($variables['items'] as $key => $item) {
-      $classes = ['dcf-ratio-child', 'dcf-obj-fit-cover','dcf-animate-on-scroll'];
-      $variables['items'][$key]['content']['#item_attributes']['class'] = $variables['items'][$key]['content']['#item_attributes']['class'] ?? [];
-      $variables['items'][$key]['content']['#item_attributes']['class'] = array_merge($variables['items'][$key]['content']['#item_attributes']['class'], $classes);
-      $variables['items'][$key]['content']['#item_attributes']['aria-hidden'] = 'true';
-      $variables['items'][$key]['content']['#item_attributes']["itemprop"] = "image";
-
-      $values = $variables['items'][$key]['content']['#item']->getValue();
-      $values['alt'] = "";
-      $values = $variables['items'][$key]['content']['#item']->setValue($values, TRUE);
-    }
-  }
-
   /*
    * Image field in Hero block type.
    */
