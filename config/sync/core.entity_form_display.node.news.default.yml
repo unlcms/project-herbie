@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_person_reference
-    - image.style.16_9_240x135
     - node.type.news
   module:
     - field_group
@@ -95,7 +94,7 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: 16_9_240x135
+      preview_image_style: ''
     third_party_settings: {  }
   n_news_image_credit:
     type: string_textfield

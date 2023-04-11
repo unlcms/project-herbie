@@ -9,10 +9,7 @@ dependencies:
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
-    - image.style.16_9_960x540
   module:
-    - image
-    - image_class
     - link
     - text
 id: block_content.card.default
@@ -48,17 +45,13 @@ content:
     weight: 1
     region: content
   b_card_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: 16_9_960x540
-      image_loading:
-        attribute: lazy
-    third_party_settings:
-      image_class:
-        class: 'dcf-d-block dcf-ratio-child dcf-obj-fit-cover'
-    weight: 6
+      view_mode: medium__fullscreen
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   b_card_overline:
     type: string

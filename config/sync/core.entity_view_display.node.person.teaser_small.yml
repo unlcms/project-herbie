@@ -21,12 +21,14 @@ dependencies:
     - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
-    - image.style.1_1_240x240
     - node.type.person
+    - responsive_image.styles.medium__square
   module:
-    - image
+    - dcf_lazyload
+    - image_class
     - layout_builder
     - link
+    - responsive_image
     - telephone
     - text
     - user
@@ -42,7 +44,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
   n_person_address:
     type: string
@@ -50,21 +52,21 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 7
     region: content
   n_person_bio:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 4
     region: content
   n_person_email:
     type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 6
     region: content
   n_person_phone:
     type: telephone_link
@@ -72,18 +74,20 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   n_person_photo:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: medium__square
       image_link: ''
-      image_style: 1_1_240x240
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 109
+    third_party_settings:
+      image_class:
+        class: ''
+      dcf_lazyload:
+        dcf_lazyload_enable: false
+    weight: 15
     region: content
   n_person_position:
     type: string
@@ -91,7 +95,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   n_person_social_fb:
     type: string
@@ -99,7 +103,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 110
+    weight: 8
     region: content
   n_person_social_instagram:
     type: string
@@ -107,7 +111,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 113
+    weight: 11
     region: content
   n_person_social_linkedin:
     type: string
@@ -115,7 +119,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 12
     region: content
   n_person_social_pinterest:
     type: string
@@ -123,7 +127,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 115
+    weight: 13
     region: content
   n_person_social_snapchat:
     type: string
@@ -131,7 +135,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 116
+    weight: 14
     region: content
   n_person_social_twitter:
     type: string
@@ -139,7 +143,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 111
+    weight: 9
     region: content
   n_person_social_youtube:
     type: string
@@ -147,7 +151,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 112
+    weight: 10
     region: content
   n_person_unldirectoryreference:
     type: entity_reference_entity_view
@@ -156,7 +160,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   n_person_website:
     type: link
@@ -168,7 +172,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
 hidden:
   n_additional: true

@@ -1,0 +1,25 @@
+uuid: 1e7ecb9d-a97a-440d-b2f6-3270c9461d72
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+_core:
+  default_config_hash: 6RzPpfrpPv28KLxoP4Tt07c2MAnC4MZeJ9Yte5mMdVU
+name: no_crop_3840
+label: 'No crop (3840)'
+effects:
+  ed6ae605-0ff6-416e-9c49-eaaffb9db47e:
+    uuid: ed6ae605-0ff6-416e-9c49-eaaffb9db47e
+    id: image_scale
+    weight: -9
+    data:
+      width: 3840
+      height: null
+      upscale: true
+  9ba5758f-6339-4d31-8c36-097195e3c14b:
+    uuid: 9ba5758f-6339-4d31-8c36-097195e3c14b
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

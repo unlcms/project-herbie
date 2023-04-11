@@ -6,7 +6,6 @@ dependencies:
     - field.field.block_content.photo_hero.b_photohero_image
     - field.field.block_content.photo_hero.b_photohero_links
     - field.field.block_content.photo_hero.b_photohero_title
-    - image.style.hero_md_673
   module:
     - image
     - link
@@ -21,7 +20,7 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: hero_md_673
+      preview_image_style: ''
     third_party_settings: {  }
   b_photohero_links:
     type: link_default

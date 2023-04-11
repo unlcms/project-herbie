@@ -1,0 +1,10 @@
+uuid: 3e088b86-f46c-4664-b000-526c5e0f6064
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.full__no_crop
+label: 'Full - No crop'
+targetEntityType: media
+cache: true
