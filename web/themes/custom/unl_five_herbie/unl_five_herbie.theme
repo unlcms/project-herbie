@@ -130,18 +130,11 @@ function unl_five_herbie_preprocess_field(&$variables) {
   /*
    * Photo Hero Block Fields
    */
-  $photoHeroFields = array('b_photohero_image', 'b_photohero_links');
+  $photoHeroFields = array('b_photohero_links');
 
   if (in_array($field_name, $photoHeroFields)) {
 
     switch ($field_name) {
-
-      case 'b_photohero_image':
-        // Add needed classes to the <img> tag inside a Photo Hero block.
-        foreach ($variables['items'] as $key => $item) {
-          $variables['items'][$key]['content']['#item_attributes']['class'][] = 'dcf-ratio-child dcf-obj-fit-cover unlcms-slow-zoom-in unlcms-hero-animation';
-        }
-        break;
 
       case 'b_photohero_links':
           // Add needed classes to the <a> tag inside a Hero block.
