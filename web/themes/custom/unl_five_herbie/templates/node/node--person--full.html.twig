@@ -51,6 +51,7 @@
                     {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
                   {% endif %}
 
+                  {% if node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value %}
                   <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
                     <span class="organization-unit dcf-d-block dcf-txt-sm">
                       <span itemprop="name">{{ node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value }}</span>
@@ -59,6 +60,8 @@
                       <span itemprop="name">University of Nebraska-Lincoln</span>
                     </span>
                   </span>
+                  {% endif %}
+
                 </p>
               </div>
 
@@ -114,11 +117,6 @@
                               {% if i == 'postal-code' %}
                                 <span itemprop="postalCode">{{ addressFields.value }}</span>
                               {% endif %}
-
-                              {% if i == 4 %}
-                                {# Add country #}
-                                <abbr class="dcf-d-none" itemprop="addressCountry">{{ addressFields.value }}</abbr>
-                              {% endif %}
                             {% endfor %}
                           {% endif %}
                         </div>
@@ -126,54 +124,58 @@
                     {% endif %}
 
                     <!-- Phone -->
-                    <dt class="dcf-sr-only">Phone</dt>
-                    <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                      <div class="dcf-h-4 dcf-w-4 unl-gray">
-                        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
-                          <path d="M5.001 5h14v14h-14zM5.001 20v1.5A2.501 2.501 0 0 0 7.5 24h9c1.378 0 2.5-1.121 2.5-2.5V20H5.001zM12 22.5a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zM19 4V2.5C19 1.121 17.878 0 16.5 0h-9a2.501 2.501 0 0 0-2.499 2.5V4H19zM9.5 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/><path fill="none" d="M0 0h24v24H0z"/>
-                        </svg>
-                      </div>
+                    {% if node.n_person_phone.value or node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value %}
+                      <dt class="dcf-sr-only">Phone</dt>
+                      <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                        <div class="dcf-h-4 dcf-w-4 unl-gray">
+                          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
+                            <path d="M5.001 5h14v14h-14zM5.001 20v1.5A2.501 2.501 0 0 0 7.5 24h9c1.378 0 2.5-1.121 2.5-2.5V20H5.001zM12 22.5a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zM19 4V2.5C19 1.121 17.878 0 16.5 0h-9a2.501 2.501 0 0 0-2.499 2.5V4H19zM9.5 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/><path fill="none" d="M0 0h24v24H0z"/>
+                          </svg>
+                        </div>
 
-                      {% if node.n_person_phone.value %}
-                        <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
-                          <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
+                        {% if node.n_person_phone.value %}
+                          <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
+                            <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
 
-                          {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
-                            <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus
-                              {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
-                          {% endif %}
-                        {% else %}
-                          <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
-                            <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
-
-                            {% if (node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
-                              <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
-                                {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
+                            {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
+                              <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus
+                                {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
                             {% endif %}
+                          {% else %}
+                            <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
+                              <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
+
+                              {% if (node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
+                                <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
+                                  {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
+                              {% endif %}
+                            </a>
+                          {% endif %}
+                        </dd>
+                      </dd>
+                    {% endif %}
+
+                    <!-- Email -->
+                    {% if node.n_person_email.value or node.n_person_unldirectoryreference.entity.ee_unldir_mail.value %}
+                      <dt class="dcf-sr-only">Email</dt>
+                      <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                        <div class="dcf-h-4 dcf-w-4 unl-gray">
+                          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
+                            <path d="m12.002 12.36 10.095-8.03A1.99 1.99 0 0 0 21.001 4h-18c-.387 0-.746.115-1.053.307l10.054 8.053z"/><path d="m22.764 5.076-10.468 8.315a.488.488 0 0 1-.594-.001L1.26 5.036c-.16.287-.259.612-.26.964v11c.001 1.103.898 2 2.001 2h17.998c1.103 0 2-.897 2.001-2V6c0-.335-.09-.647-.236-.924z"/><path fill="none" d="M0 0h24v24H0z"/>
+                          </svg>
+                        </div>
+
+                        {% if node.n_person_email.value %}
+                          <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_email.value|lower }}" itemprop="email">
+                            <span class="dcf-txt-nowrap">{{ node.n_person_email.value|lower }}</span>
+                          </a>
+                        {% else %}
+                          <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
+                            <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</span>
                           </a>
                         {% endif %}
                       </dd>
-                    </dd>
-
-                    <!-- Email -->
-                    <dt class="dcf-sr-only">Email</dt>
-                    <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                      <div class="dcf-h-4 dcf-w-4 unl-gray">
-                        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
-                          <path d="m12.002 12.36 10.095-8.03A1.99 1.99 0 0 0 21.001 4h-18c-.387 0-.746.115-1.053.307l10.054 8.053z"/><path d="m22.764 5.076-10.468 8.315a.488.488 0 0 1-.594-.001L1.26 5.036c-.16.287-.259.612-.26.964v11c.001 1.103.898 2 2.001 2h17.998c1.103 0 2-.897 2.001-2V6c0-.335-.09-.647-.236-.924z"/><path fill="none" d="M0 0h24v24H0z"/>
-                        </svg>
-                      </div>
-
-                      {% if node.n_person_email.value %}
-                        <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_email.value|lower }}" itemprop="email">
-                          <span class="dcf-txt-nowrap">{{ node.n_person_email.value|lower }}</span>
-                        </a>
-                      {% else %}
-                        <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
-                          <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</span>
-                        </a>
-                      {% endif %}
-                    </dd>
+                    {% endif %}
 
                     <!-- Website -->
                     {% if node.n_person_website.value %}
@@ -268,7 +270,8 @@
               </div>
 
               <!-- Bio, Education, Additional... -->
-              {% if (node.n_person_bio.value or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_courses.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_papers.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_performances.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledgepresentations.value is not iterable) and page and view_mode == 'full' %}
+              {% if (node.n_person_bio.value or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable )
+                and page and view_mode == 'full' %}
 
                 <!-- Bio -->
                 {% if node.n_person_bio.value is not empty or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not empty %}
