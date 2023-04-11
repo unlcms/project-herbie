@@ -5,12 +5,14 @@ dependencies:
     - block_content.type.hero
     - field.storage.node.s_n_hero
     - node.type.builder_page
+  module:
+    - entity_reference_revisions
 id: node.builder_page.s_n_hero
 field_name: s_n_hero
 entity_type: node
 bundle: builder_page
 label: Hero
-description: ''
+description: 'A featured photo displayed at the top of the page.'
 required: false
 translatable: false
 default_value: {  }
@@ -22,6 +24,7 @@ settings:
       hero: hero
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: entity_reference_revisions
