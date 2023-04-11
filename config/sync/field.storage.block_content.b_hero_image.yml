@@ -1,29 +1,17 @@
-uuid: a0d035f7-e836-4d69-b701-61b9207a7bb8
+uuid: ca7cf955-fb71-4156-99f9-59106b4b3f24
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - file
-    - image
-_core:
-  default_config_hash: 5nGCQfZbpzlBH_Ximl8esKrOFUg0fLdFnUOIKx_b2_Y
+    - media
 id: block_content.b_hero_image
 field_name: b_hero_image
 entity_type: block_content
-type: image
+type: entity_reference
 settings:
-  target_type: file
-  display_field: false
-  display_default: false
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

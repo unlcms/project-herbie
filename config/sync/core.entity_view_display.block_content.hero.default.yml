@@ -9,12 +9,8 @@ dependencies:
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
-    - responsive_image.styles.full__widescreen
   module:
-    - dcf_lazyload
-    - image_class
     - options
-    - responsive_image
 _core:
   default_config_hash: L7BvHdUygi_6iGD7fBH0oUIrY428nU3apsmHDftoXuU
 id: block_content.hero.default
@@ -23,16 +19,12 @@ bundle: hero
 mode: default
 content:
   b_hero_image:
-    type: responsive_image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      responsive_image_style: full__widescreen
-      image_link: ''
-    third_party_settings:
-      image_class:
-        class: ''
-      dcf_lazyload:
-        dcf_lazyload_enable: false
+      view_mode: full__widescreen
+      link: false
+    third_party_settings: {  }
     weight: 0
     region: content
   b_hero_overline:
