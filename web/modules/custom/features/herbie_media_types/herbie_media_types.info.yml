@@ -26,7 +26,6 @@ dependencies:
   - 'drupal:views'
   - 'drupal:views_ui'
   - 'entity_usage:entity_usage'
-  - 'feeds:feeds'
   - 'field_css:field_css'
   - 'field_group:field_group'
   - 'file_delete:file_delete'

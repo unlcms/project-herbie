@@ -25,7 +25,6 @@ dependencies:
   - 'entity_share:entity_share_server'
   - 'entity_usage:entity_usage'
   - 'external_entities:external_entities'
-  - 'feeds:feeds'
   - 'field_css:field_css'
   - 'file_delete:file_delete'
   - 'herbie_builder_page:herbie_builder_page'
@@ -46,5 +45,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.1.10
+version: 1.1.11
 package: Herbie
