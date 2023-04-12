@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_720x405
+label: '16:9 (720x405)'
+effects:
+  2059811c-8069-498f-83c2-6fc085e58f92:
+    uuid: 2059811c-8069-498f-83c2-6fc085e58f92
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 720
+      height: 405
+      anchor: center-center

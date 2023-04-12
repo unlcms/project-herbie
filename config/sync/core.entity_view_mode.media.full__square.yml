@@ -1,0 +1,10 @@
+uuid: da0461c0-bc06-41ae-896b-24180f010bb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.full__square
+label: 'Full - Square'
+targetEntityType: media
+cache: true

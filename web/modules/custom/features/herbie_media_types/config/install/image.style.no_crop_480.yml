@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: no_crop_480
+label: 'No crop (480)'
+effects:
+  808547f1-4c54-4647-bf6a-110268dc0ff9:
+    uuid: 808547f1-4c54-4647-bf6a-110268dc0ff9
+    id: image_scale
+    weight: -9
+    data:
+      width: 480
+      height: null
+      upscale: true
+  e644049d-8e50-4524-b5e1-dde91674c983:
+    uuid: e644049d-8e50-4524-b5e1-dde91674c983
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

@@ -1,0 +1,10 @@
+uuid: c83d4e30-bc4c-4a43-a7c6-86ff787c51b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.full__fullscreen
+label: 'Full - Fullscreen'
+targetEntityType: media
+cache: true

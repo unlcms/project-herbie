@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+  enforced:
+    module:
+      - media_library
+name: media_library
+label: 'Media Library thumbnail (220x220)'
+effects:
+  75b076a8-1234-4b42-85db-bf377c4d8d5f:
+    uuid: 75b076a8-1234-4b42-85db-bf377c4d8d5f
+    id: image_scale
+    weight: -9
+    data:
+      width: 220
+      height: 220
+      upscale: false
+  c442c1b9-b0dc-48ba-94a4-19d9db0b7aee:
+    uuid: c442c1b9-b0dc-48ba-94a4-19d9db0b7aee
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

@@ -1,29 +1,17 @@
-uuid: 902138e5-cdda-45c0-9f61-819e5f3b0bcb
+uuid: d1d1e95e-0cad-473e-a65e-f00c9ca8beb4
 langcode: en
 status: true
 dependencies:
   module:
-    - file
-    - image
+    - media
     - node
-_core:
-  default_config_hash: UhAgJOGrUwlPbXd-jd00EFnKY8uoI6gmo2OAHvnNKTE
 id: node.n_news_image
 field_name: n_news_image
 entity_type: node
-type: image
+type: entity_reference
 settings:
-  target_type: file
-  display_field: false
-  display_default: false
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

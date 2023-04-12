@@ -8,8 +8,6 @@ dependencies:
     - field.field.block_content.photo_hero.b_photohero_links
     - field.field.block_content.photo_hero.b_photohero_title
   module:
-    - image
-    - image_class
     - link
 _core:
   default_config_hash: kOcB0UwCNvu1Ol-UWJSiVl_tbQL0Fdx-8G6eCknX830
@@ -19,16 +17,12 @@ bundle: photo_hero
 mode: default
 content:
   b_photohero_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings:
-      image_class:
-        class: ''
+      view_mode: full__widescreen
+      link: false
+    third_party_settings: {  }
     weight: 2
     region: content
   b_photohero_links:

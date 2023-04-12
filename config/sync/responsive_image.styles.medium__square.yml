@@ -1,0 +1,31 @@
+uuid: 82891bc8-d7f4-4fce-9293-30e9ab58140c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1_1_1440x1440
+    - image.style.1_1_1920x1920
+    - image.style.1_1_2880x2880
+    - image.style.1_1_3840x3840
+    - image.style.1_1_480x480
+    - image.style.1_1_720x720
+    - image.style.1_1_960x960
+id: medium__square
+label: 'Medium - Square'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 960px) calc(33.33vw - 5em), (min-width: 720px) calc(50vw - 3.75em), 100vw'
+      sizes_image_styles:
+        - 1_1_1440x1440
+        - 1_1_1920x1920
+        - 1_1_2880x2880
+        - 1_1_3840x3840
+        - 1_1_480x480
+        - 1_1_720x720
+        - 1_1_960x960
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 1_1_720x720

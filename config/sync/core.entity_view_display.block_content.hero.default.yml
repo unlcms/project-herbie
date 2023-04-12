@@ -10,8 +10,6 @@ dependencies:
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
   module:
-    - image
-    - image_class
     - options
 _core:
   default_config_hash: L7BvHdUygi_6iGD7fBH0oUIrY428nU3apsmHDftoXuU
@@ -21,16 +19,12 @@ bundle: hero
 mode: default
 content:
   b_hero_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings:
-      image_class:
-        class: ''
+      view_mode: full__widescreen
+      link: false
+    third_party_settings: {  }
     weight: 0
     region: content
   b_hero_overline:
