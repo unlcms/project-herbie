@@ -4,6 +4,6 @@ dependencies:
   module:
     - media
 id: media.narrow
-label: Narrow
+label: 'Narrow (WYSIWYG)'
 targetEntityType: media
 cache: true

@@ -1,0 +1,25 @@
+uuid: c34358e5-ba4f-4df0-ad67-97c678d882f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+_core:
+  default_config_hash: oZltJeOtYZ-ltDxfWNxcVYdLDIB2gGN2dzxHi8PhpWQ
+name: no_crop_1920
+label: 'No crop (1920)'
+effects:
+  b7ad1cbf-7cac-495b-817b-1b74445555b6:
+    uuid: b7ad1cbf-7cac-495b-817b-1b74445555b6
+    id: image_scale
+    weight: -9
+    data:
+      width: 1920
+      height: null
+      upscale: true
+  da0993ff-38ca-45b8-a50a-6e0c97a4ba72:
+    uuid: da0993ff-38ca-45b8-a50a-6e0c97a4ba72
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

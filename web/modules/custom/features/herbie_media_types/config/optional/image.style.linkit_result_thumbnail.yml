@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: linkit_result_thumbnail
+label: 'Linkit result thumbnail'
+effects:
+  2943df29-38ea-459c-ba1d-290489bb1807:
+    uuid: 2943df29-38ea-459c-ba1d-290489bb1807
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 50
+      height: 50
+      anchor: center-center
+  d6e97f8e-731f-44d5-8441-3cdf3b296dea:
+    uuid: d6e97f8e-731f-44d5-8441-3cdf3b296dea
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true
