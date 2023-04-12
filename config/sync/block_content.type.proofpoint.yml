@@ -1,0 +1,8 @@
+uuid: b50c2b61-b5b3-4561-b9d1-4aee7d20a084
+langcode: en
+status: true
+dependencies: {  }
+id: proofpoint
+label: 'Proof point'
+revision: 0
+description: 'Display statistic with headers. '

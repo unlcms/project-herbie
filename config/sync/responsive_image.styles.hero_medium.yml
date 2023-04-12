@@ -1,0 +1,29 @@
+uuid: 1b61cdbf-8177-4472-a573-fc8075ecd9ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_md_1197
+    - image.style.hero_md_1596
+    - image.style.hero_md_2129
+    - image.style.hero_md_673
+    - image.style.hero_md_898
+_core:
+  default_config_hash: EFPwBcAqqIkHEKLaXD0DuEg7aNdVvDjDDpZmMDCpn1s
+id: hero_medium
+label: 'Hero Medium'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_md_1197
+        - hero_md_1596
+        - hero_md_2129
+        - hero_md_673
+        - hero_md_898
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: hero_md_2129

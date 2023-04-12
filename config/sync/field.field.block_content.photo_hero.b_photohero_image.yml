@@ -1,11 +1,14 @@
-uuid: 4041f591-4ff3-456d-aa97-50d26b769792
+uuid: 2e082a2d-74da-4b7a-b3dd-f3e3cdf0bf96
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.photo_hero
     - field.storage.block_content.b_photohero_image
-    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 82udKeFcnqHrpJCCRviM58zxgyyvsaQ6uO9c7yHg5YY
 id: block_content.photo_hero.b_photohero_image
 field_name: b_photohero_image
 entity_type: block_content
@@ -17,13 +20,21 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      image: image
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: true
-    auto_create_bundle: ''
-field_type: entity_reference
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'block/photohero/image/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '10 MB'
+  max_resolution: 5000x5000
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

@@ -1,29 +1,40 @@
-uuid: 926fd616-bb5b-4dfa-8e22-c31f4f1e78ee
+uuid: b90d9842-9f51-46a6-9882-a18cf0321366
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.n_news_image
-    - media.type.image
     - node.type.news
+  module:
+    - image
+_core:
+  default_config_hash: 5trSuy3qC7E2tPqVzoO1GB6S0XjPSOibfCj01YhQgZU
 id: node.news.n_news_image
 field_name: n_news_image
 entity_type: node
 bundle: news
-label: Image
-description: ''
+label: 'Lead image'
+description: 'Images should conform to a 16:9 aspect ratio. Automatic cropping will be applied to images.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      image: image
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: true
-    auto_create_bundle: image
-field_type: entity_reference
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'node/news/image/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: '40 MB'
+  max_resolution: 5000x5000
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

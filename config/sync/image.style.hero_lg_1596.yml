@@ -1,0 +1,19 @@
+uuid: baa2e42f-bf14-4f49-82a5-7cfb940b1b15
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: OTUq_vuTDldMki6fFKaa8uu7OWkAPLTXZtZAb91UYrA
+name: hero_lg_1596
+label: 'Hero (lg) 1596x448'
+effects:
+  47794400-56d9-41e6-83ce-62dbce4d9823:
+    uuid: 47794400-56d9-41e6-83ce-62dbce4d9823
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 448
+      crop_type: focal_point

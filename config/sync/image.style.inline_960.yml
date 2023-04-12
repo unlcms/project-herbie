@@ -1,0 +1,25 @@
+uuid: 60bdc900-a817-4143-9cea-8e696da41cf3
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+_core:
+  default_config_hash: 8FRNsb9m9ZgwlCH8FLRerXWncCWJdJXesmUMC56zV3c
+name: inline_960
+label: 'Inline 960'
+effects:
+  c70aa7bc-a113-45c7-8397-90b731c47b42:
+    uuid: c70aa7bc-a113-45c7-8397-90b731c47b42
+    id: image_scale
+    weight: -9
+    data:
+      width: 960
+      height: null
+      upscale: true
+  a6d43657-b24a-4872-abf3-8169de68a24c:
+    uuid: a6d43657-b24a-4872-abf3-8169de68a24c
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

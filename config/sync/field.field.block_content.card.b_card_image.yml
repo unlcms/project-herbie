@@ -1,29 +1,40 @@
-uuid: 8d245015-bd96-4c98-b827-24009be66011
+uuid: 0c13b094-589a-494d-9df1-bbc4f9bd9324
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.card
     - field.storage.block_content.b_card_image
-    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: Hq8bj_HvxbD7fJGtiCa3q7DNbW3-rtXnBvxIRnhkAxY
 id: block_content.card.b_card_image
 field_name: b_card_image
 entity_type: block_content
 bundle: card
 label: Image
-description: ''
+description: 'An image that is displayed at the top of the card'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      image: image
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'block/card/image/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '40 MB'
+  max_resolution: 5000x5000
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

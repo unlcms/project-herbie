@@ -9,8 +9,8 @@ label: 'Dark Gray'
 classes: "unl-bg-dark-gray\r\nunl-cream"
 type: component
 group: background
-weight: -9
 block_restrictions:
   - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
+weight: -9

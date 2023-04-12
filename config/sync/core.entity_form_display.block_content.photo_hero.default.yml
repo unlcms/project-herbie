@@ -7,9 +7,10 @@ dependencies:
     - field.field.block_content.photo_hero.b_photohero_image
     - field.field.block_content.photo_hero.b_photohero_links
     - field.field.block_content.photo_hero.b_photohero_title
+    - image.style.hero_md_673
   module:
+    - image
     - link
-    - media_library
 _core:
   default_config_hash: s-CeHQ1Po1MxiTd9nQlZJDoZWhzqE4ziQ7hrfcy42qU
 id: block_content.photo_hero.default
@@ -18,11 +19,12 @@ bundle: photo_hero
 mode: default
 content:
   b_photohero_image:
-    type: media_library_widget
-    weight: 1
+    type: image_image
+    weight: 0
     region: content
     settings:
-      media_types: {  }
+      progress_indicator: throbber
+      preview_image_style: hero_md_673
     third_party_settings: {  }
   b_photohero_links:
     type: link_default
@@ -34,7 +36,7 @@ content:
     third_party_settings: {  }
   b_photohero_title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60

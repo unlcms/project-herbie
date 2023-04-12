@@ -1,0 +1,19 @@
+uuid: a321a3c6-80c2-44d9-9039-e12a10b354fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.storage.block_content.b_proofpoint_suffix
+id: block_content.proofpoint.b_proofpoint_suffix
+field_name: b_proofpoint_suffix
+entity_type: block_content
+bundle: proofpoint
+label: Suffix
+description: 'Symbol or text displayed right after the figure value.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

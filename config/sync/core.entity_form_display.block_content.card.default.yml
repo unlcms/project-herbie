@@ -10,9 +10,10 @@ dependencies:
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
+    - image.style.16_9_240x135
   module:
+    - image
     - link
-    - media_library
     - text
 _core:
   default_config_hash: nh2_kmN1rtQwlUeGGgUsKiwyo_TXgANaGA0jxYxy_zc
@@ -23,7 +24,7 @@ mode: default
 content:
   b_card_body:
     type: text_textarea
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 5
@@ -31,7 +32,7 @@ content:
     third_party_settings: {  }
   b_card_cta:
     type: link_default
-    weight: 6
+    weight: 8
     region: content
     settings:
       placeholder_url: ''
@@ -46,15 +47,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   b_card_image:
-    type: media_library_widget
-    weight: 4
+    type: image_image
+    weight: 7
     region: content
     settings:
-      media_types: {  }
+      progress_indicator: throbber
+      preview_image_style: 16_9_240x135
     third_party_settings: {  }
   b_card_overline:
     type: string_textfield
-    weight: 2
+    weight: 3
     region: content
     settings:
       size: 60
@@ -62,7 +64,7 @@ content:
     third_party_settings: {  }
   b_card_subhead:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
