@@ -22,7 +22,7 @@ window.addEventListener('inlineJSReady', function() {
       motionQuery.addEventListener('change', handleReduceMotion);
 
       animations.push(
-        gsap.to('.unlcms-slow-zoom-in', {
+        gsap.to('.unlcms-hero-img img', {
           scale: 1.13,
           duration: 30,
           paused: true

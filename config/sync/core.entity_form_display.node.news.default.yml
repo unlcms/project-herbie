@@ -10,12 +10,11 @@ dependencies:
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_person_reference
-    - image.style.16_9_240x135
     - node.type.news
   module:
     - field_group
-    - image
     - link
+    - media_library
     - path
     - text
 third_party_settings:
@@ -23,16 +22,18 @@ third_party_settings:
     group_n_news_image:
       children:
         - n_news_image
-        - n_news_image_credit
         - n_news_image_cutline
+        - n_news_image_credit
       label: 'Lead image'
       region: content
       parent_name: ''
       weight: 1
-      format_type: fieldset
+      format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
+        open: true
         description: ''
         required_fields: true
     group_nebraska_today:
@@ -90,16 +91,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
   n_news_image:
-    type: image_image
-    weight: 9
+    type: media_library_widget
+    weight: 27
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: 16_9_240x135
+      media_types: {  }
     third_party_settings: {  }
   n_news_image_credit:
     type: string_textfield
-    weight: 10
+    weight: 29
     region: content
     settings:
       size: 60
@@ -107,7 +107,7 @@ content:
     third_party_settings: {  }
   n_news_image_cutline:
     type: string_textfield
-    weight: 11
+    weight: 28
     region: content
     settings:
       size: 60

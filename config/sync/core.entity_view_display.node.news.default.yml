@@ -12,9 +12,6 @@ dependencies:
     - field.field.node.news.n_person_reference
     - node.type.news
   module:
-    - dcf_lazyload
-    - image
-    - image_class
     - link
     - text
     - user
@@ -59,18 +56,12 @@ content:
     weight: 5
     region: content
   n_news_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings:
-      image_class:
-        class: 'dcf-ratio-child dcf-obj-fit-cover'
-      dcf_lazyload:
-        dcf_lazyload_enable: true
+      view_mode: large__widescreen
+      link: false
+    third_party_settings: {  }
     weight: 1
     region: content
   n_news_image_credit:

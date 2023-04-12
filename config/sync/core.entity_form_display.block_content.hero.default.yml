@@ -9,9 +9,8 @@ dependencies:
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
-    - image.style.hero_md_673
   module:
-    - image
+    - media_library
 _core:
   default_config_hash: 0IPTFQ4QsaaIvhHetksXjUvt9XGV68RXjDAdjPi0Ef4
 id: block_content.hero.default
@@ -20,12 +19,11 @@ bundle: hero
 mode: default
 content:
   b_hero_image:
-    type: image_image
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: hero_md_673
+      media_types: {  }
     third_party_settings: {  }
   b_hero_overline:
     type: string_textfield

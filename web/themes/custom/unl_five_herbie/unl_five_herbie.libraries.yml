@@ -23,6 +23,12 @@ person:
     theme:
       css/theme/person.css: {}
 
+hero:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/hero.css: {}
+
 photo_hero:
   version: VERSION
   css:

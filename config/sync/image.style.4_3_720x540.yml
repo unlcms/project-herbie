@@ -1,0 +1,15 @@
+uuid: a4062917-8c2a-4387-a4cf-201b2560f6c8
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_720x540
+label: '4:3 (720x540)'
+effects:
+  003455fe-ad41-42f2-9ca5-92cc5aeb5cf3:
+    uuid: 003455fe-ad41-42f2-9ca5-92cc5aeb5cf3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 720
+      height: 540
+      anchor: center-center
