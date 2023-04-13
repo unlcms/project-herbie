@@ -25,6 +25,7 @@ dependencies:
     - entity_share_client
     - entity_usage
     - external_entities
+    - feeds
     - file
     - file_delete
     - filter
@@ -58,6 +59,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
+  - 'access feed overview'
   - 'access files overview'
   - 'access media overview'
   - 'access own webform configuration'
@@ -72,6 +74,7 @@ permissions:
   - 'access webform submission log'
   - 'add content to books'
   - 'administer book outlines'
+  - 'administer feeds'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'

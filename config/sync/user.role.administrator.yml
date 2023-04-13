@@ -26,6 +26,7 @@ dependencies:
     - entity_share_client
     - entity_usage
     - external_entities
+    - feeds
     - field_ui
     - file
     - file_delete
@@ -62,6 +63,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
+  - 'access feed overview'
   - 'access files overview'
   - 'access media overview'
   - 'access own webform configuration'
@@ -78,6 +80,7 @@ permissions:
   - 'administer book outlines'
   - 'administer content types'
   - 'administer css assets injector'
+  - 'administer feeds'
   - 'administer js assets injector'
   - 'administer main menu items'
   - 'administer node display'

@@ -1,0 +1,21 @@
+diff --git a/feeds.install b/feeds.install
+index f632e902..8b28e837 100644
+--- a/feeds.install
++++ b/feeds.install
+@@ -11,11 +11,11 @@ use Drupal\Core\Url;
+  * Implements hook_install().
+  */
+ function feeds_install() {
+-  $messenger = \Drupal::messenger();
+-  $messenger->addStatus(t('To configure feeds, start by adding a <a href=":feed_type_add_url">feed type</a>. For more information <a target="feeds-guide" href=":guide_url">read the guide</a>.', [
+-    ':feed_type_add_url' => Url::fromUri('internal:/admin/structure/feeds/add')->toString(),
+-    ':guide_url' => 'https://www.drupal.org/docs/8/modules/feeds/creating-and-editing-import-feeds',
+-  ]));
++//  $messenger = \Drupal::messenger();
++//  $messenger->addStatus(t('To configure feeds, start by adding a <a href=":feed_type_add_url">feed type</a>. For more information <a target="feeds-guide" href=":guide_url">read the guide</a>.', [
++//    ':feed_type_add_url' => Url::fromUri('internal:/admin/structure/feeds/add')->toString(),
++//    ':guide_url' => 'https://www.drupal.org/docs/8/modules/feeds/creating-and-editing-import-feeds',
++//  ]));
+ }
+ 
+ /**
