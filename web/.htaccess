@@ -83,7 +83,7 @@ AddEncoding gzip svgz
   # Do not uncomment the previous line.
   RewriteRule .*/cron.php cron.php
   RewriteRule .*/update.php update.php
-  RewriteRule ^(.*?/(core\/assets|core\/misc|core\/modules|core\/themes|modules|sites|themes))(.*) ${drupal_unl_multisite:$1|$1}$3 [DPI]
+  RewriteRule ^(.*?/(core\/assets|core\/misc|core\/modules|core\/themes|libraries|modules|sites|themes))(.*) ${drupal_unl_multisite:$1|$1}$3 [DPI]
 
   RewriteCond ${drupal_unl_multisite://%{HTTP_HOST}%{REQUEST_URI}|NOT_FOUND} !^NOT_FOUND$
   RewriteRule (.*) ${drupal_unl_multisite://%{HTTP_HOST}%{REQUEST_URI}|$1} [R,L]

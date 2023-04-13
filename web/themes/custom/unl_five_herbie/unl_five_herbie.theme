@@ -189,7 +189,10 @@ function unl_five_herbie_preprocess_layout(&$variables) {
   $current_route = \Drupal::routeMatch();
   $node = $current_route->getParameter('node');
   if ($node instanceof NodeInterface) {
-    if ($node->hasField('s_n_page_options') && !$node->get('s_n_page_options')->isEmpty()) {
+    if ($variables['settings']['label'] == 'Content' &&
+      $node->hasField('s_n_page_options') &&
+      !$node->get('s_n_page_options')->isEmpty())
+    {
       $publish_options = $node->get('s_n_page_options')->getValue();
       if (array_search('no_sidebars', array_column($publish_options, 'value')) !== FALSE) {
         $variables['region_attributes']['first']->removeClass('dcf-col-25%-start@md');
