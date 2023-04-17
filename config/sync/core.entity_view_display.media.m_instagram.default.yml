@@ -1,0 +1,52 @@
+uuid: 6a057161-5e69-4ff5-8568-1ba269ca78e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.m_instagram.field_media_image_1
+    - field.field.media.m_instagram.m_instagram_file_size
+    - field.field.media.m_instagram.m_instagram_height
+    - field.field.media.m_instagram.m_instagram_mime_type
+    - field.field.media.m_instagram.m_instagram_tags
+    - field.field.media.m_instagram.m_instagram_username
+    - field.field.media.m_instagram.m_instagram_width
+    - media.type.m_instagram
+  module:
+    - image
+    - image_class
+id: media.m_instagram.default
+targetEntityType: media
+bundle: m_instagram
+mode: default
+content:
+  field_media_image_1:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 0
+    region: content
+  m_instagram_username:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  m_instagram_file_size: true
+  m_instagram_height: true
+  m_instagram_mime_type: true
+  m_instagram_tags: true
+  m_instagram_width: true
+  name: true
+  thumbnail: true
+  uid: true

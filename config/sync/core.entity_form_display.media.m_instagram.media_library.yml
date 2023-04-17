@@ -1,0 +1,59 @@
+uuid: a03cf7df-4e68-4ffb-b2fb-1385914a80bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.m_instagram.field_media_image_1
+    - field.field.media.m_instagram.m_instagram_file_size
+    - field.field.media.m_instagram.m_instagram_height
+    - field.field.media.m_instagram.m_instagram_mime_type
+    - field.field.media.m_instagram.m_instagram_tags
+    - field.field.media.m_instagram.m_instagram_username
+    - field.field.media.m_instagram.m_instagram_width
+    - image.style.thumbnail
+    - media.type.m_instagram
+  module:
+    - image
+id: media.m_instagram.media_library
+targetEntityType: media
+bundle: m_instagram
+mode: media_library
+content:
+  field_media_image_1:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  m_instagram_tags:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  m_instagram_username:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  m_instagram_file_size: true
+  m_instagram_height: true
+  m_instagram_mime_type: true
+  m_instagram_width: true
+  name: true
+  path: true
+  replace_file: true
+  status: true
+  uid: true

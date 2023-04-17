@@ -1,0 +1,21 @@
+uuid: a6c9c406-4026-45b8-b249-99f273813e97
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_instagram_height
+field_name: m_instagram_height
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

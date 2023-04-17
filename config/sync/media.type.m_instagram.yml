@@ -1,0 +1,23 @@
+uuid: 44338153-592a-4429-aed2-6240efa7ac6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
+id: m_instagram
+label: Instagram
+description: 'Displays image with Instagram icon.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map:
+  name: name
+  mimetype: m_instagram_mime_type
+  filesize: m_instagram_file_size
+  width: m_instagram_width
+  height: m_instagram_height

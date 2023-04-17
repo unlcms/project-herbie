@@ -1,0 +1,21 @@
+uuid: ba39b69c-0dea-49fa-a2a2-777952977e98
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.m_instagram_width
+field_name: m_instagram_width
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

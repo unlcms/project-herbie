@@ -1,0 +1,19 @@
+uuid: f6e31da3-cf39-45b1-820f-3ac66927c507
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.m_instagram_mime_type
+    - media.type.m_instagram
+id: media.m_instagram.m_instagram_mime_type
+field_name: m_instagram_mime_type
+entity_type: media
+bundle: m_instagram
+label: 'MIME type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

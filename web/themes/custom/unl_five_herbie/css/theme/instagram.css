@@ -1,0 +1,11 @@
+
+  .unlcms-bg-scrim-bottom::after {
+    background-image: linear-gradient(rgba(36,36,35,0),rgba(36,36,35,.95));
+    bottom: 0;
+    content: '';
+    height: 300%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }

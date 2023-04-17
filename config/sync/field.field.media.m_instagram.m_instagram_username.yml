@@ -1,0 +1,19 @@
+uuid: 4148a2d7-6729-470b-8581-97717fdcb227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.m_instagram_username
+    - media.type.m_instagram
+id: media.m_instagram.m_instagram_username
+field_name: m_instagram_username
+entity_type: media
+bundle: m_instagram
+label: Username
+description: 'Username of Instagram user.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
