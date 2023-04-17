@@ -264,7 +264,8 @@
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-30-D9.patch",
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/502430-90.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
-                "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch"
+                "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
+                "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
