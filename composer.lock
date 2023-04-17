@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ed3f2d38dc5bdb52077ec5fc301c38d",
+    "content-hash": "dc0c8e230ebc3a694b6ed13fd69fbf16",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -11963,21 +11963,21 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "1.1.1",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "ae1a06a406453da93f585c0c67cf2af36237c998"
+                "reference": "1c1bde98d6d3dde71ae124d849efdc888ba3b41f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/ae1a06a406453da93f585c0c67cf2af36237c998",
-                "reference": "ae1a06a406453da93f585c0c67cf2af36237c998",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/1c1bde98d6d3dde71ae124d849efdc888ba3b41f",
+                "reference": "1c1bde98d6d3dde71ae124d849efdc888ba3b41f",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
-                "richardbporter/drush-users-commands": "^3.1"
+                "richardbporter/drush-users-commands": "^3.2.1"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -11991,9 +11991,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/1.1.1"
+                "source": "https://github.com/unlcms/unl_multisite/tree/1.2"
             },
-            "time": "2023-03-03T21:57:03+00:00"
+            "time": "2023-04-12T21:59:52+00:00"
         },
         {
             "name": "unlcms/unl_user",
