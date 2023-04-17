@@ -4,6 +4,6 @@ dependencies:
   module:
     - media
 id: media.wide
-label: 'Wide (WYSIWYG)'
+label: Wide
 targetEntityType: media
 cache: true

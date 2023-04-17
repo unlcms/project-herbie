@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1_1_480x480
+id: instagram
+label: Instagram
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 1_1_480x480
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '_original image_'

@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - media
-id: media.large__fullscreen
-label: 'Large - Fullscreen'
-targetEntityType: media
-cache: true

@@ -10,7 +10,7 @@ dependencies:
     - field.field.media.image.s_m_tags
     - field.field.media.image.s_m_width
     - media.type.image
-    - responsive_image.styles.medium__no_crop
+    - responsive_image.styles.narrow
   module:
     - dcf_lazyload
     - image_class
@@ -29,7 +29,7 @@ content:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: medium__no_crop
+      responsive_image_style: narrow
       image_link: ''
     third_party_settings:
       image_class:
