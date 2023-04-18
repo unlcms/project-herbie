@@ -45,5 +45,5 @@ dependencies:
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.0.0
+version: 2.0.1
 package: Herbie
