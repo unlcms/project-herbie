@@ -279,6 +279,9 @@
             "drupal/heading": {
                 "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
             },
+            "drupal/layout_builder_iframe_modal": {
+                "3316931 - Add config schema for custom routes": "patches/layout_builder_iframe_modal-add_config_schema_custom_routes-3316931-3.patch"
+            },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"
             },
