@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.field.block_content.proofpoint.b_proofpoint_figure
+    - field.field.block_content.proofpoint.b_proofpoint_lead_header
+    - field.field.block_content.proofpoint.b_proofpoint_main_header
+    - field.field.block_content.proofpoint.b_proofpoint_prefix
+    - field.field.block_content.proofpoint.b_proofpoint_suffix
+    - field.field.block_content.proofpoint.b_proofpoint_supporting_text
+id: block_content.proofpoint.default
+targetEntityType: block_content
+bundle: proofpoint
+mode: default
+content:
+  b_proofpoint_figure:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  b_proofpoint_lead_header:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  b_proofpoint_main_header:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  b_proofpoint_prefix:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  b_proofpoint_suffix:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  b_proofpoint_supporting_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

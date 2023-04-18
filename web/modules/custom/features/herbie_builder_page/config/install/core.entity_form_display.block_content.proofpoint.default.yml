@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.field.block_content.proofpoint.b_proofpoint_figure
+    - field.field.block_content.proofpoint.b_proofpoint_lead_header
+    - field.field.block_content.proofpoint.b_proofpoint_main_header
+    - field.field.block_content.proofpoint.b_proofpoint_prefix
+    - field.field.block_content.proofpoint.b_proofpoint_suffix
+    - field.field.block_content.proofpoint.b_proofpoint_supporting_text
+id: block_content.proofpoint.default
+targetEntityType: block_content
+bundle: proofpoint
+mode: default
+content:
+  b_proofpoint_figure:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_proofpoint_lead_header:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_proofpoint_main_header:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_proofpoint_prefix:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_proofpoint_suffix:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_proofpoint_supporting_text:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

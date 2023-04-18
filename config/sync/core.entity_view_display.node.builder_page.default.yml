@@ -95,7 +95,6 @@ third_party_settings:
               - cta
               - html_code
               - proofpoint
-              - proof_point
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -103,7 +102,6 @@ third_party_settings:
               - 'inline_block:card'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
-              - 'inline_block:proof_point'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus: {  }
@@ -127,7 +125,6 @@ third_party_settings:
               - logo_cloud
               - photo_hero
               - proofpoint
-              - proof_point
               - social_media_links
             Forms:
               - unl_webform_block
@@ -138,7 +135,6 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
-              - 'inline_block:proof_point'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -159,7 +155,6 @@ third_party_settings:
               - html_code
               - photo_hero
               - proofpoint
-              - proof_point
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -168,7 +163,6 @@ third_party_settings:
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
-              - 'inline_block:proof_point'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus: {  }
@@ -191,7 +185,6 @@ third_party_settings:
               - logo_cloud
               - photo_hero
               - proofpoint
-              - proof_point
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -202,7 +195,6 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
-              - 'inline_block:proof_point'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:

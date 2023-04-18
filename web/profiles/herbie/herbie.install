@@ -1,6 +1,23 @@
 <?php
 
 /**
+ * Implements hook_install_tasks().
+ *
+ * hook_install() can't be used in a profile when installing from existing
+ * config, so this technique is used.
+ * https://www.drupal.org/project/drupal/issues/2982052#comment-13044759
+ *
+ * Here we set a flag to identify we are doing a site install so that
+ * we can sidestep the RELEASE SAVEPOINT ProxySQL issue detailed here:
+ * https://github.com/unlcms/project-herbie/issues/366
+ */
+function herbie_install_tasks(&$install_state) {
+  // Referenced in patched version of core/modules/mysql/src/Driver/Database/mysql/Connection.php.
+  \Drupal::state()->set('is_herbie_install', TRUE);
+  return [];
+}
+
+/**
  * Uninstall Chosen module.
  */
 function herbie_update_8101(&$sandbox) {
