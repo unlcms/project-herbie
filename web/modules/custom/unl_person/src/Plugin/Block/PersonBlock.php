@@ -86,7 +86,7 @@ class PersonBlock extends BlockBase {
       '#title' => $this->t('View mode'),
       '#required' => TRUE,
       '#multiple' => FALSE,
-      '#default_value' => 'teaser',
+      '#default_value' => $this->configuration['view_mode'],
       '#options' => $view_modes,
     ];
 
