@@ -9,6 +9,6 @@ label: Edge-to-edge
 classes: "unlcms-section-edge-to-edge\r\ndcf-bleed"
 type: section
 group: container
-weight: -5
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: -5

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.storage.block_content.b_proofpoint_prefix
+id: block_content.proofpoint.b_proofpoint_prefix
+field_name: b_proofpoint_prefix
+entity_type: block_content
+bundle: proofpoint
+label: Prefix
+description: 'Symbol or text displayed right before the figure value.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

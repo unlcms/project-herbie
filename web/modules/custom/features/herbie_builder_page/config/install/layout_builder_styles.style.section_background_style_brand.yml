@@ -6,6 +6,6 @@ label: Scarlet
 classes: "unl-bg-scarlet\r\nunl-cream"
 type: section
 group: background
-weight: -7
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: -7

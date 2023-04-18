@@ -6,6 +6,6 @@ label: 'Add extra top spacing'
 classes: dcf-pt-10
 type: section
 group: spacing
-weight: -1
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: -1

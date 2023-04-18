@@ -6,6 +6,6 @@ label: 'Standard wrapper'
 classes: "unlcms-section-standard-wrapper\r\ndcf-bleed\r\ndcf-wrapper"
 type: section
 group: container
-weight: -6
 block_restrictions: {  }
 layout_restrictions: {  }
+weight: -6

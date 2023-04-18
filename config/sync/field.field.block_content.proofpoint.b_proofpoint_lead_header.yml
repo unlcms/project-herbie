@@ -1,0 +1,19 @@
+uuid: 44e052bc-0a4d-4ee9-9892-de9fe6ba7933
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.proofpoint
+    - field.storage.block_content.b_proofpoint_lead_header
+id: block_content.proofpoint.b_proofpoint_lead_header
+field_name: b_proofpoint_lead_header
+entity_type: block_content
+bundle: proofpoint
+label: 'Lead header'
+description: 'Bold text displayed above the figure value.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
