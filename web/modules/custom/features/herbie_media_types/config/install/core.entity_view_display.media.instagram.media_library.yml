@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.instagram.field_media_image_1
+    - field.field.media.instagram.m_instagram_file_size
+    - field.field.media.instagram.m_instagram_height
+    - field.field.media.instagram.m_instagram_mime_type
+    - field.field.media.instagram.m_instagram_tags
+    - field.field.media.instagram.m_instagram_username
+    - field.field.media.instagram.m_instagram_width
+    - image.style.medium
+    - media.type.instagram
+  module:
+    - image
+id: media.instagram.media_library
+targetEntityType: media
+bundle: instagram
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_image_1: true
+  m_instagram_file_size: true
+  m_instagram_height: true
+  m_instagram_mime_type: true
+  m_instagram_tags: true
+  m_instagram_username: true
+  m_instagram_width: true
+  name: true
+  uid: true
