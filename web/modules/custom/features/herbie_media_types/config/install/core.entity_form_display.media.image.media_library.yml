@@ -12,7 +12,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.image
   module:
-    - image
+    - svg_image
 id: media.image.media_library
 targetEntityType: media
 bundle: image

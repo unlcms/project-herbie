@@ -13,7 +13,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.image
   module:
-    - image
+    - svg_image
 _core:
   default_config_hash: 13Ff8EAy1hSGSdxu-0-tcLH17QNqDgy0Rix3Bdcqo0k
 id: media.image.media_library
