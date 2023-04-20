@@ -1,0 +1,29 @@
+diff --git a/core/modules/media_library/src/Form/AddFormBase.php b/core/modules/media_library/src/Form/AddFormBase.php
+index b43f0a5b27..3f85a6207f 100644
+--- a/core/modules/media_library/src/Form/AddFormBase.php
++++ b/core/modules/media_library/src/Form/AddFormBase.php
+@@ -314,11 +314,19 @@ protected function buildEntityFormElement(MediaInterface $media, array $form, Fo
+     $source = $media->getSource();
+     $plugin_definition = $source->getPluginDefinition();
+     if ($thumbnail_uri = $source->getMetadata($media, $plugin_definition['thumbnail_uri_metadata_attribute'])) {
+-      $element['preview']['thumbnail'] = [
+-        '#theme' => 'image_style',
+-        '#style_name' => 'media_library',
+-        '#uri' => $thumbnail_uri,
+-      ];
++      $extension = pathinfo($thumbnail_uri, PATHINFO_EXTENSION);
++      if (strtolower($extension) === 'svg') {
++        $element['preview']['thumbnail'] = [
++          '#theme' => 'image',
++          '#uri' => $thumbnail_uri,
++        ];
++      } else {
++        $element['preview']['thumbnail'] = [
++          '#theme' => 'image_style',
++          '#style_name' => 'media_library',
++          '#uri' => $thumbnail_uri,
++        ];
++      }
+     }
+
+     $form_display = EntityFormDisplay::collectRenderDisplay($media, 'media_library');
