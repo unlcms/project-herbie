@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('unl_five_herbie/instagram') }}
+
+<div{{ attributes.addClass('media-entity-bundle--' ~ media.bundle()) }}>
+  {{ title_suffix.contextual_links }}
+
+  <div class="dcf-ratio dcf-ratio-1x1">
+    <figure class="dcf-ratio-child unlcms-scrim-bottom">
+
+       <picture>
+        {{content.field_media_image_1}}
+       </picture>
+
+      <figcaption class="dcf-absolute dcf-pin-bottom dcf-pin-left dcf-w-100% dcf-d-flex dcf-ai-center dcf-pt-2 dcf-pb-2 dcf-pl-3 dcf-pr-3 dcf-txt-xs dcf-z-1 unl-cream unlcms-bg-scrim-bottom">
+        <svg class="dcf-h-5 dcf-w-5 dcf-mr-2 dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 4.33c6.41 0 7.17 0 9.7.14a13.28 13.28 0 0 1 4.46.83 7.44 7.44 0 0 1 2.76 1.79 7.44 7.44 0 0 1 1.79 2.76 13.28 13.28 0 0 1 .83 4.46c.12 2.53.14 3.29.14 9.7s0 7.17-.14 9.7a13.28 13.28 0 0 1-.83 4.46 8 8 0 0 1-4.55 4.55 13.28 13.28 0 0 1-4.46.83c-2.53.12-3.29.14-9.7.14s-7.17 0-9.7-.14a13.28 13.28 0 0 1-4.46-.83 7.44 7.44 0 0 1-2.76-1.79 7.44 7.44 0 0 1-1.79-2.76 13.28 13.28 0 0 1-.83-4.46c-.12-2.53-.14-3.29-.14-9.7s0-7.17.14-9.7a13.28 13.28 0 0 1 .83-4.46 7.44 7.44 0 0 1 1.8-2.77 7.44 7.44 0 0 1 2.76-1.79 13.28 13.28 0 0 1 4.46-.83c2.53-.12 3.29-.14 9.7-.14M24 0c-6.52 0-7.34 0-9.9.14a17.61 17.61 0 0 0-5.82 1.12A11.76 11.76 0 0 0 4 4a11.76 11.76 0 0 0-2.74 4.28 17.6 17.6 0 0 0-1.12 5.83C0 16.66 0 17.48 0 24s0 7.34.14 9.9a17.6 17.6 0 0 0 1.11 5.82A11.76 11.76 0 0 0 4 44a11.76 11.76 0 0 0 4.25 2.77 17.59 17.59 0 0 0 5.83 1.12c2.55.12 3.38.14 9.9.14s7.34 0 9.9-.14a17.56 17.56 0 0 0 5.82-1.12 12.27 12.27 0 0 0 7-7 17.59 17.59 0 0 0 1.12-5.83c.18-2.6.18-3.42.18-9.94s0-7.34-.14-9.9a17.56 17.56 0 0 0-1.12-5.82A11.76 11.76 0 0 0 44 4a11.76 11.76 0 0 0-4.25-2.77A17.6 17.6 0 0 0 33.9.15C31.34 0 30.52 0 24 0zm0 11.68A12.32 12.32 0 1 0 36.32 24 12.32 12.32 0 0 0 24 11.67zM24 32a8 8 0 1 1 8-8 8 8 0 0 1-8 8zM36.81 8.31a2.88 2.88 0 1 0 2.88 2.88 2.88 2.88 0 0 0-2.88-2.88z"></path>
+        </svg>
+        <span class="dcf-sr-only">Photo by Instagram user </span><cite class="dcf-roman">{{content.m_instagram_username}}</cite>
+      </figcaption>
+
+    </figure>
+  </div>
+</div>

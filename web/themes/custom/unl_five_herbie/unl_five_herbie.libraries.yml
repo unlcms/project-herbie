@@ -66,3 +66,9 @@ logo_cloud:
   css:
     theme:
       css/theme/block/logo_cloud.css: {}
+
+instagram:
+  version: VERSION
+  css:
+    theme:
+      css/theme/media_type/instagram.css: {}
