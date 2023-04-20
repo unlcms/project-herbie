@@ -1,6 +1,6 @@
 _core:
   default_config_hash: dwMYPgAnj9KBO77SLEv9Z42NDJAbuxe0uU9eGC8qw3M
-account: ' UA-xxxxx-yy'
+account: ''
 domain_mode: 0
 cross_domains: ''
 visibility:
