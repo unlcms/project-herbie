@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: timeline
+label: Timeline
+revision: 0
+description: 'A rectangular display of a list of events in chronological order along a line.'

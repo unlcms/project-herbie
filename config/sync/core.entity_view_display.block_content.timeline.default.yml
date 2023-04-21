@@ -1,0 +1,33 @@
+uuid: 09ab9032-5406-41b5-be08-a8041ffd9650
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.timeline
+    - field.field.block_content.timeline.b_timeline_item
+    - field.field.block_content.timeline.b_timeline_timeline_heading
+  module:
+    - entity_reference_revisions
+id: block_content.timeline.default
+targetEntityType: block_content
+bundle: timeline
+mode: default
+content:
+  b_timeline_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  b_timeline_timeline_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

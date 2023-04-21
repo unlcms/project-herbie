@@ -1,0 +1,28 @@
+{{ attach_library('unl_five_herbie/timeline') }}
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-relative',
+  ]
+%}
+
+{% block paragraph %}
+	<li{{attributes.addClass(classes)}}>
+		{% block content %}
+			<div class="dcf-card">
+				<div class="dcf-card-block">
+					<h3>
+						{{ content.p_b_timeline_title }}
+					</h3>
+					<p>
+						{{ content.p_b_timeline_body	}}
+					</p>
+				</div>
+			</div>
+		{% endblock %}
+	</li>
+{% endblock paragraph %}
