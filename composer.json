@@ -168,6 +168,7 @@
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",
+        "drupal/svg_image": "^3.0",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
@@ -266,7 +267,8 @@
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/502430-90.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
-                "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch"
+                "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch",
+                "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
