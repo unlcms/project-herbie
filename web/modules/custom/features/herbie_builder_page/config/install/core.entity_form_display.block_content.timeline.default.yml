@@ -4,6 +4,7 @@ dependencies:
   config:
     - block_content.type.timeline
     - field.field.block_content.timeline.b_timeline_item
+    - field.field.block_content.timeline.b_timeline_style
     - field.field.block_content.timeline.b_timeline_timeline_heading
   module:
     - field_group
@@ -15,7 +16,7 @@ third_party_settings:
       label: 'Timeline Details'
       region: hidden
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -30,7 +31,7 @@ mode: default
 content:
   b_timeline_item:
     type: paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -46,6 +47,12 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
+    third_party_settings: {  }
+  b_timeline_style:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
     third_party_settings: {  }
   b_timeline_timeline_heading:
     type: string_textfield

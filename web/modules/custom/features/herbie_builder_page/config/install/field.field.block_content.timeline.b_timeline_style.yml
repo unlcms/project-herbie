@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.timeline
+    - field.storage.block_content.b_timeline_style
+  module:
+    - options
+id: block_content.timeline.b_timeline_style
+field_name: b_timeline_style
+entity_type: block_content
+bundle: timeline
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: vertical
+default_value_callback: ''
+settings: {  }
+field_type: list_string

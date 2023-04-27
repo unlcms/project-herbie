@@ -5,9 +5,11 @@ dependencies:
   config:
     - block_content.type.timeline
     - field.field.block_content.timeline.b_timeline_item
+    - field.field.block_content.timeline.b_timeline_style
     - field.field.block_content.timeline.b_timeline_timeline_heading
   module:
     - entity_reference_revisions
+    - options
 id: block_content.timeline.default
 targetEntityType: block_content
 bundle: timeline
@@ -21,6 +23,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  b_timeline_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   b_timeline_timeline_heading:
     type: string
