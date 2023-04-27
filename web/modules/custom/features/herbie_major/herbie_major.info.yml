@@ -16,10 +16,11 @@ dependencies:
   - 'entity_reference_revisions:entity_reference_revisions'
   - 'entity_share:entity_share_server'
   - 'field_group:field_group'
-  - 'focal_point:focal_point'
+  - 'herbie_media_types:herbie_media_types'
   - 'image_class:image_class'
   - 'paragraphs:paragraphs'
   - 'pathauto:pathauto'
+  - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
-version: 1.1.1
+version: 1.2.0
 package: Herbie

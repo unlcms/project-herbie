@@ -29,7 +29,6 @@ dependencies:
   - 'field_css:field_css'
   - 'field_group:field_group'
   - 'file_delete:file_delete'
-  - 'focal_point:focal_point'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
@@ -46,5 +45,5 @@ dependencies:
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.0.1
+version: 2.1.0
 package: Herbie

@@ -13,7 +13,7 @@ dependencies:
     - media.type.image
   module:
     - field_group
-    - focal_point
+    - svg_image
 third_party_settings:
   field_group:
     group_m_image_attributes:
@@ -40,14 +40,12 @@ bundle: image
 mode: default
 content:
   field_media_image:
-    type: image_focal_point
+    type: image_image
     weight: 0
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
     third_party_settings: {  }
   replace_file:
     weight: 1

@@ -44,7 +44,6 @@ dependencies:
   - 'external_entities:external_entities'
   - 'field_css:field_css'
   - 'field_group:field_group'
-  - 'focal_point:focal_point'
   - 'heading:heading'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
