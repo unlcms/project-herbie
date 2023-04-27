@@ -165,6 +165,24 @@ function unl_five_herbie_preprocess_field(&$variables) {
     }
   }
 
+   /*
+   * Timeline Block Fields
+   */
+  $timelineFields = array('b_timeline_style', 'b_timeline_item', );
+
+  if (in_array($field_name, $timelineFields)) {
+
+  $timelineStyle = $variables['element']['#object']->get('b_timeline_style')->getValue();
+
+    switch ($field_name) {
+      case 'b_timeline_item':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['timelineData']['timelineStyle'] = isset($timelineStyle[0]['value']) ? strval($timelineStyle[0]['value']) : '';
+                }
+        break;
+    }
+  }
+
   /*
    * Social media links Block Fields
    */
