@@ -290,6 +290,9 @@
             },
             "drush/drush": {
                 "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
+            },
+            "drupal/field_css": {
+                "3313270 - update deprecated function": "patches/depricated-function-itemprefixes-3313270-01.patch"
             }
         },
         "drupal-scaffold": {
