@@ -1,0 +1,14 @@
+uuid: 92de141d-bafa-4ff3-8aac-6a1f7dbfafb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.instagram
+id: media_type_instagram
+entity_type_id: media_type
+entity_id: instagram
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

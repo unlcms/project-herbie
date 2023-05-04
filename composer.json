@@ -137,6 +137,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
         "drupal/focal_point": "2.x-dev@dev",
+        "drupal/google_analytics": "^4.0",
         "drupal/heading": "^1.7",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^2.0",
@@ -168,6 +169,7 @@
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",
+        "drupal/svg_image": "^3.0",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
@@ -265,13 +267,24 @@
                 "3060292 - Drupal\\media\\Entity\\Media::prepareSave should convert URL object metadata to string before saving" : "patches/drupal_media-resource_convert_url_object_to_string-3060292-30-D9.patch",
                 "502430 - Allow the book outline functionality on non-book-enabled node types to be hidden": "patches/502430-90.patch",
                 "Custom - Allow '@' in CSS selectors for Views displays": "patches/custom-views-DisplayPluginBase-valid-css-selector.patch",
-                "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch"
+                "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
+                "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch",
+                "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
+            },
+            "drupal/feeds": {
+                "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
+            },
+            "drupal/heading": {
+                "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
+            },
+            "drupal/layout_builder_iframe_modal": {
+                "3316931 - Add config schema for custom routes": "patches/layout_builder_iframe_modal-add_config_schema_custom_routes-3316931-3.patch"
             },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"

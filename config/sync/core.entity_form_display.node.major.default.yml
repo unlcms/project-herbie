@@ -29,10 +29,9 @@ dependencies:
     - node.type.major
   module:
     - field_group
-    - focal_point
-    - image
     - paragraphs
     - path
+    - svg_image
     - text
 third_party_settings:
   field_group:
@@ -239,14 +238,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   n_major_hero_image:
-    type: image_focal_point
+    type: image_image
     weight: 12
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
     third_party_settings: {  }
   n_major_internships_list:
     type: string_textfield

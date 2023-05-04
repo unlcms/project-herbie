@@ -26,11 +26,9 @@ dependencies:
   - 'drupal:views'
   - 'drupal:views_ui'
   - 'entity_usage:entity_usage'
-  - 'feeds:feeds'
   - 'field_css:field_css'
   - 'field_group:field_group'
   - 'file_delete:file_delete'
-  - 'focal_point:focal_point'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
@@ -43,8 +41,9 @@ dependencies:
   - 'paragraphs:paragraphs'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.0.0
+version: 2.1.0
 package: Herbie

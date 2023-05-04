@@ -97,7 +97,7 @@
     display: block !important;
     width: 100% !important;
 }
-.ck-content .dcf-ratio-child {
+.ck-content .media-entity-bundle--remote_video .dcf-ratio-child {
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;

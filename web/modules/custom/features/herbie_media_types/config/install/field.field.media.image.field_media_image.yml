@@ -20,7 +20,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: media/image
-  file_extensions: 'gif jpg jpeg png'
+  file_extensions: 'gif jpg jpeg png svg'
   max_filesize: '40 MB'
   max_resolution: 5000x5000
   min_resolution: ''

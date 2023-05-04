@@ -60,7 +60,7 @@ module:
   file_mdm_exif: 0
   file_mdm_font: 0
   filter: 0
-  focal_point: 0
+  google_analytics: 0
   heading: 0
   herbie_book: 0
   herbie_builder_page: 0
@@ -120,6 +120,8 @@ module:
   select2: 0
   serialization: 0
   sophron: 0
+  svg_image: 0
+  svg_image_responsive: 0
   syslog: 0
   system: 0
   taxonomy: 0

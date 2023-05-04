@@ -28,6 +28,7 @@ dependencies:
     - file
     - file_delete
     - filter
+    - google_analytics
     - layout_builder
     - media
     - media_file_delete
@@ -69,9 +70,11 @@ permissions:
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission log'
+  - 'add JS snippets for google analytics'
   - 'add content to books'
   - 'administer book outlines'
   - 'administer feeds'
+  - 'administer google analytics'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
@@ -170,6 +173,7 @@ permissions:
   - 'edit webform submissions own node'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'opt-in or out of google analytics tracking'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'
@@ -188,6 +192,7 @@ permissions:
   - 'update any photo_hero block content'
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
+  - 'use PHP for google analytics tracking visibility'
   - 'use text format block_body'
   - 'use text format simple'
   - 'use text format standard'

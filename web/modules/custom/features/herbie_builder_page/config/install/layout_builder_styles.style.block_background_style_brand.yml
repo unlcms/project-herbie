@@ -6,8 +6,8 @@ label: Scarlet
 classes: unl-bg-scarlet
 type: component
 group: background
-weight: -8
 block_restrictions:
   - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
+weight: -8

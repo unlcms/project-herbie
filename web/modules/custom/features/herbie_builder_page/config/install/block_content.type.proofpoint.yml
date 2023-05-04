@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: proofpoint
+label: 'Proof point'
+revision: 0
+description: 'Display statistic with headers. '

@@ -1,0 +1,14 @@
+diff --git a/config/schema/layout_builder_iframe_modal.schema.yml b/config/schema/layout_builder_iframe_modal.schema.yml
+index a1da4de..77543fb 100644
+--- a/config/schema/layout_builder_iframe_modal.schema.yml
++++ b/config/schema/layout_builder_iframe_modal.schema.yml
+@@ -8,3 +8,9 @@ layout_builder_iframe_modal.settings:
+       sequence:
+         type: string
+         label: 'Route'
++    custom_routes:
++      type: sequence
++      label: 'Custom Iframe routes'
++      sequence:
++        type: string
++        label: 'Route'

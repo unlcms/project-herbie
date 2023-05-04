@@ -24,7 +24,6 @@ image_formats:
     enabled: false
   SVG:
     mime_type: image/svg+xml
-    enabled: false
   WEBP:
     mime_type: image/webp
   AVIF:

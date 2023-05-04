@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
+id: instagram
+label: Instagram
+description: 'Image with Instagram logo and username.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map:
+  name: field_media_image_1
+  mimetype: m_instagram_mime_type
+  filesize: m_instagram_file_size
+  width: m_instagram_width
+  height: m_instagram_height

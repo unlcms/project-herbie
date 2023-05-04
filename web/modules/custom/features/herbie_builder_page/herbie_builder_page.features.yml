@@ -4,7 +4,6 @@ excluded:
   - user.role.administrator
   - editor.editor.webform
   - filter.format.webform
-  - crop.type.focal_point
   - image.style.1_1_1440x1440
   - image.style.1_1_1920x1920
   - image.style.1_1_2880x2880
