@@ -1,0 +1,21 @@
+uuid: 75fea238-9452-4d55-b905-3239aab0fc27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_college
+    - node.type.major
+  module:
+    - options
+id: node.major.n_major_college
+field_name: n_major_college
+entity_type: node
+bundle: major
+label: College
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

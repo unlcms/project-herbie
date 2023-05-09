@@ -1,19 +1,14 @@
-uuid: 0831b2da-7360-4fb9-871b-8a85c16b9c32
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: 4pVMu08L92IbK_tIyMLzyUfz7WsumygX6APnjy3BI3E
-id: node.n_major_apply_link
-field_name: n_major_apply_link
+id: node.n_major_huskers_do_intro
+field_name: n_major_huskers_do_intro
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 255
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1

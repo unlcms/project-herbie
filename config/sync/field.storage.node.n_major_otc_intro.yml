@@ -1,0 +1,19 @@
+uuid: f4a3ade7-77f4-465d-ad08-aed04e27b6da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_otc_intro
+field_name: n_major_otc_intro
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
