@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: Major
 type: major
-description: 'To aggregate and display major information.'
+description: 'To aggregate and display major information for colleges.'
 help: ''
 new_revision: true
 preview_mode: 1

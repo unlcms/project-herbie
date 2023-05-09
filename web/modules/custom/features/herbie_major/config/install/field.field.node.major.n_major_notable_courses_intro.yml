@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_notable_courses_intro
+    - node.type.major
+id: node.major.n_major_notable_courses_intro
+field_name: n_major_notable_courses_intro
+entity_type: node
+bundle: major
+label: 'Notable Courses Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
