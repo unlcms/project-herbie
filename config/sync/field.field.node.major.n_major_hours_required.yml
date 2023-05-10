@@ -1,0 +1,19 @@
+uuid: 3fc22a3c-bf77-4b33-825a-0079e64bf165
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_hours_required
+    - node.type.major
+id: node.major.n_major_hours_required
+field_name: n_major_hours_required
+entity_type: node
+bundle: major
+label: 'Hours Required'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

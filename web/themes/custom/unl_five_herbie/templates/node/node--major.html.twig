@@ -16,18 +16,17 @@
 
   <div{{ content_attributes }}>
     <!--HERO-->
-    <div class="dcf-bleed">
-      <div class="dcf-hero-mod unl-bg-darkest-gray">
-        <!-- InstanceEndEditable -->
-        <div class="dcf-hero-mod-group-1 dcf-z-2 dcf-d-flex dcf-flex-col dcf-jc-end">
-          <div class="cf-hero-mod-group-1-wrapper dcf-wrapper dcf-grid dcf-col-gap-vw dcf-row-gap-3 dcf-pt-6 dcf-pb-6 unl-bg-darkest-gray unl-bg-grit">
-            <header id="dcf-page-title"
-                    class="dcf-page-title dcf-hero-mod-title dcf-col-100% dcf-col-50%-start@md  dcf-col-67%-start@lg dcf-d-flex dcf-flex-col dcf-ai-start dcf-jc-center">
-              <!-- InstanceBeginEditable name="pagetitle" -->
-              <h1 class="dcf-uppercase unl-cream dcf-txt-xl dcf-bold">{{ label }}</h1>
+	  <div id="hero" class="dcf-bleed">
+			<div class="dcf-hero-majors unl-bg-darkest-gray">
+				<!-- InstanceEndEditable -->
+				<div class="dcf-hero-majors-group-1 dcf-z-2 dcf-d-flex dcf-flex-col dcf-jc-end">
+					<div class="dcf-hero-mod-group-1-wrapper dcf-wrapper dcf-pt-6 dcf-pb-6 unl-bg-darkest-gray unl-bg-grit">
+						<header id="dcf-page-title" class="dcf-page-title dcf-hero-majors-title">
+							<!-- InstanceBeginEditable name="pagetitle" -->
+							<h1 class="dcf-txt-xl-at-md unl-cream">{{ label }}</h1>
               <!-- InstanceEndEditable -->
             </header>
-            <div class="dcf-hero-mod-actions dcf-col-100% dcf-col-25%-end@md dcf-col-33%-end@lg dcf-d-flex dcf-flex-wrap dcf-flex-row dcf-ai-center dcf-jc-start dcf-col-gap-3 dcf-row-gap-3">
+            <div class="dcf-hero-majors-actions dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-gap-4">
               <!-- InstanceBeginEditable name="herogroup1" -->
               <a href="https://admissions.unl.edu/nebraska/info-request/" class="dcf-btn dcf-btn-inverse-secondary dcf-txt-xs">Request Information</a>
               <a href="https://admissions.unl.edu/visit/" class="dcf-btn dcf-btn-inverse-secondary dcf-txt-xs">Visit</a>
@@ -37,7 +36,7 @@
           </div>
         </div>
         <!-- InstanceBeginEditable name="herogroup2" -->
-        <div class="dcf-hero-mod-group-2 dcf-z-1 dcf-w-100% dcf-overflow-hidden">
+        <div class="dcf-hero-majors-group-2 dcf-z-1 dcf-ratio dcf-ratio-4x3 dcf-ratio-16x9@md">
           {{ (content.n_major_hero_image) }}
         </div>
         <!-- InstanceEndEditable -->
@@ -45,32 +44,40 @@
     </div>
 
     <!--Intro-->
-    {% if node.n_major_areas_emphasis.value is not empty %}
-      <div class="dcf-bleed dcf-wrapper dcf-bg-white dcf-pt-8 dcf-pb-6">
-        <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
-          <div class="dcf-col-100% dcf-col-67%-start@md dcf-d-flex dcf-flex-col dcf-jc-center">
+      <div id="intro" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
+			  <div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-ai-center">
+				  <div class="dcf-col-100% dcf-col-67%-start@lg dcf-txt-lg dcf-w-max-xl">
+            {{ (content.n_major_intro_video) }}
             <div class="dcf-txt-lg">{{ (content.n_major_lead_copy) }}
             </div>
           </div>
-          <div class="dcf-col-100% dcf-col-33%-end@md">
-            <div class="unl-bg-lightest-gray dcf-p-5 dcf-rounded">
-              <h2 class="dcf-txt-h6">Areas of Emphasis</h2>
-              {{ (content.n_major_areas_emphasis) }}
+          <div class="dcf-col-100% dcf-col-33%-end@lg">
+            <div class="unl-bg-lightest-gray dcf-p-5 dcf-pb-3 dcf-rounded">
+            <ul class="dcf-list-bare dcf-mb-0 dcf-txt-sm">
+							<li>
+								<h2 class="dcf-txt-md dcf-mb-1">College</h2>
+								{{ (content.n_major_college) }}
+							</li>
+							<li>
+								<h2 class="dcf-txt-md dcf-mb-1">Hours Required</h2>
+								{{ (content.n_major_hours_required) }}
+							</li>
+							<li>
+								<h2 class="dcf-txt-md dcf-mb-1">Minors Available</h2>
+								{{ (content.n_major_minors) }}
+							</li>
+							<li>
+								<h2 class="dcf-txt-md dcf-mb-1">Areas of Emphasis</h2>
+								{{ (content.n_major_areas_emphasis) }}
+							</li>
+						</ul>
             </div>
           </div>
         </div>
       </div>
-    {% else %}
-      <div class="dcf-bleed dcf-wrapper dcf-pt-10 dcf-pb-6">
-        <div class="dcf-w-max-xl">
-          <div class="dcf-txt-lg">{{ (content.n_major_lead_copy) }}
-          </div>
-        </div>
-      </div>
-    {% endif %}
 
     <!--Proof Points-->
-    <div class="dcf-bleed dcf-bg-white dcf-wrapper dcf-pt-8 dcf-pb-6">
+    <div id="points-of-pride" class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6">
       <h2 class="unl-section-headline dcf-txt-center dcf-mb-5">The Nebraska Difference</h2>
       {% if node.n_major_point_pride|length == 3 %}
         <div class="dcf-d-flex dcf-jc-center">
@@ -88,28 +95,54 @@
     </div>
 
     <!--Feature Callout-->
-    <div class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6 dcf-overflow-hidden">
-      <h2 class="unl-section-headline dcf-mb-2">Program Features</h2>
-      <div class="dcf-bleed dcf-d-grid unl-grid-cols dcf-ai-center">
-        <div class="dcf-2nd dcf-pt-6 dcf-pl-7 dcf-pb-6 dcf-pr-7 dcf-z-1 unl-bg-lighter-gray dev-section-featured-region-2">
-          {{ (content.n_major_program_features) }}
-        </div>
-        <div class="dcf-1st dcf-relative dev-section-featured-region-1">
-          <div class="dcf-ratio dcf-ratio-16x9 tl-bg-block mobile-img-width">
-            {{ (content.n_major_program_features_image) }}
-          </div>
-          <div class="dcf-absolute dcf-pin-top dcf-pin-left dcf-ratio dcf-ratio-16x9 asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt mobile-screen">
-            <div class="dcf-ratio-child unl-bg-dots-gray"></div>
+		<div id="features" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
+      <div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-ai-center">
+				<div class="dcf-col-100% dcf-col-33%-end@lg dcf-2nd@lg">
+					<div class="dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg dcf-overflow-visible">
+						{{ (content.n_major_program_features_image) }}
+						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
+							<div class="dcf-ratio-child unl-bg-scarlet unl-bg-grit"></div>
+						</div>
+					</div>
+				</div>
+				<div class="dcf-col-100% dcf-col-67%-start@lg dcf-1st@lg dcf-w-max-xl">
+					<h2 class="unl-section-headline dcf-mb-2">Program Features</h2>
+			      {{ (content.n_major_program_features) }}
+				</div>
+			</div>
+		</div>
+
+    <!--Notable Courses-->
+    <div id="notable-courses" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
+			<div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-ai-start">
+				<div class="dcf-col-100% dcf-col-25%-start@md dcf-col-33%-start@lg">
+					<div class="dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md dcf-overflow-visible">
+						{{ (content.n_major_courses_image) }}
+						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt">
+							<div class="dcf-ratio-child unl-bg-dots-gray dcf-circle-at-md"></div>
+						</div>
+					</div>
+				</div>
+				<div class="dcf-col-100% dcf-col-75%-end@md dcf-col-67%-end@lg">
+					<h2 class="unl-section-headline dcf-mb-1">Notable Courses</h2>
+					<div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_notable_courses_intro) }}
+					</div>
+          {{ (content.n_major_notable_courses) }}
+          <div class="dcf-mt-6">
+            <a href="{{ (content.n_major_4year_link) }}"
+               class="dcf-btn dcf-btn-primary dcf-mb-4">Explore the {{ label }} 4-Year Plan</a>
           </div>
         </div>
       </div>
     </div>
 
-
     <!--RECENT PLACEMENTS-->
-    <div class="dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-8 dcf-pb-8">
-      <h2 class="unl-section-headline dcf-mb-2">Huskers Do Big Things</h2>
-
+		<div id="learning-outcomes" class="dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-8 dcf-pb-8">
+			<h2 class="unl-section-headline dcf-mb-1">Huskers Do Big Things</h2>
+			<div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_huskers_do_intro) }}
+					</div>
       <div class="dcf-grid-thirds@md dcf-col-gap-vw dcf-row-gap-6">
         <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
           <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_internships_title) }}
@@ -129,14 +162,16 @@
           {{ (content.n_major_grad_schools_list) }}
         </div>
       </div>
-
     </div>
 
     <!--OUTSIDE THE CLASSROOM-->
-    <div class="dcf-bleed unl-bg-cream">
+		<div id="learning-experiences" class="dcf-bleed unl-bg-cream">
       <div class="dcf-wrapper dcf-pt-8 dcf-pb-6 dcf-relative dcf-z-1">
-        <h2 class="unl-section-headline dcf-mb-2">Outside the Classroom</h2>
-        <div class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-pb-7">
+        <h2 class="unl-section-headline dcf-mb-1">Outside the Classroom</h2>
+        <div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_otc_intro) }}
+					</div>
+        <div class="dcf-grid-halves@sm dcf-grid-fourths@xl dcf-col-gap-vw dcf-row-gap-6 dcf-pb-7">
           {{ (content.n_major_outside_the_classroom) }}
         </div>
       </div>
@@ -145,14 +180,14 @@
     </div>
 
     <!--Featured Faculty-->
-    <div class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6">
+    <div id="faculty" class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6">
       <div class="dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-ai-start dcf-jc-center dcf-gap-4">
         {{ (content.n_major_featured_faculty) }}
       </div>
     </div>
 
     <!--MINDSETS-->
-    <div class="dcf-bleed dcf-overflow-hidden dcf-pt-8 dcf-pb-6">
+    <div id="mindsets" class="dcf-bleed dcf-overflow-hidden dcf-pt-8 dcf-pb-6">
       <div class="dcf-relative dcf-z-1 dcf-wrapper dcf-pb-6">
 
         <div class="dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-ai-center dcf-gap-6">
@@ -232,35 +267,11 @@
       </div>
     </div>
 
-
-    <!--Notable Courses-->
-    <div class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-10 dcf-overflow-hidden">
-      <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
-        <div class="dcf-col-100% dcf-col-33%-start@md">
-          <div class="dcf-1st dcf-relative dev-section-featured-region-1">
-            <div class="dcf-ratio dcf-ratio-1x1 dcf-circle tl-bg-block mobile-img-width">
-              {{ (content.n_major_courses_image) }}
-            </div>
-            <div class="dcf-absolute dcf-pin-top dcf-pin-left dcf-ratio dcf-ratio-1x1 dcf-circle asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt mobile-screen">
-              <div class="dcf-ratio-child unl-bg-dots-gray"></div>
-            </div>
-          </div>
-        </div>
-        <div class="dcf-col-100% dcf-col-67%-end@md">
-          <h2 class="unl-section-headline dcf-mb-2">Notable Courses</h2>
-          {{ (content.n_major_notable_courses) }}
-          <div class="dcf-mt-6">
-            <a href="{{ (content.n_major_4year_link) }}"
-               class="dcf-btn dcf-btn-primary dcf-mb-4">Explore the {{ label }} 4-Year Plan</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!--CONTACT-->
-    <div class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-gap-6 unl-bg-darkest-gray unl-bg-grit dcf-pt-8 dcf-pb-8">
-      <div class="dcf-w-max-lg dcf-w-100% dcf-txt-center">
-        <h2 class="dcf-txt-h4 dcf-mb-0 unl-cream dcf-txt-center">We're Here to Help</h2>
+    <div id="contact" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center unl-bg-darkest-gray unl-bg-grit unl-cream dcf-pt-8 dcf-pb-8">
+      <div class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-txt-center">
+        <h2 class="dcf-txt-h3 dcf-mb-1 unl-cream">Have Questions? <span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span></h2>
+        <p class="dcf-w-100% dcf-w-max-md dcf-mb-6 dcf-txt-sm">If you have questions about {{ label }}, the {{ (content.n_major_college) }}, or navigating the application process, contact us.</p>
       </div>
       {{ (content.n_major_contact) }}
     </div>

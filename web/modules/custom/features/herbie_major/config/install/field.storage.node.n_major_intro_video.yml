@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - node
-id: node.n_major_apply_link
-field_name: n_major_apply_link
+id: node.n_major_intro_video
+field_name: n_major_intro_video
 entity_type: node
 type: string
 settings:

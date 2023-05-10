@@ -1,14 +1,15 @@
+uuid: 973c4941-31dc-4bf4-8cef-31f7292ea5e3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.n_major_apply_link
+    - field.storage.node.n_major_minors
     - node.type.major
-id: node.major.n_major_apply_link
-field_name: n_major_apply_link
+id: node.major.n_major_minors
+field_name: n_major_minors
 entity_type: node
 bundle: major
-label: 'Apply Link'
+label: Minors
 description: ''
 required: false
 translatable: false

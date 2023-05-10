@@ -1,0 +1,19 @@
+uuid: 58a08e8d-77e4-449f-9ed1-8d1261a86709
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_notable_courses_intro
+field_name: n_major_notable_courses_intro
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

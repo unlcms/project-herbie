@@ -1,0 +1,11 @@
+{% for item in items %}
+	{% if item.timelineData.timelineStyle == "horizontal" %}
+		<li class="dcf-relative dcf-pt-6">
+			{{ item.content }}
+		</li>
+	{% else %}
+		<li class="dcf-relative">
+			{{ item.content }}
+		</li>
+	{% endif %}
+{% endfor %}

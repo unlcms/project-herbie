@@ -1,0 +1,21 @@
+uuid: 7c14943a-1bb5-473e-a324-470b2f914126
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_intro_video
+field_name: n_major_intro_video
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
