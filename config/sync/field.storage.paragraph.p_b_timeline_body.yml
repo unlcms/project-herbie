@@ -1,0 +1,19 @@
+uuid: 220e8724-23dd-42d6-a275-63ca0cd16160
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.p_b_timeline_body
+field_name: p_b_timeline_body
+entity_type: paragraph
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

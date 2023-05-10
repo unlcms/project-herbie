@@ -126,6 +126,7 @@ third_party_settings:
               - photo_hero
               - proofpoint
               - social_media_links
+              - timeline
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -137,6 +138,7 @@ third_party_settings:
               - 'inline_block:proofpoint'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
+              - 'inline_block:timeline'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
