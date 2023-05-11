@@ -68,5 +68,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.3.5
+version: 1.3.6
 package: Herbie

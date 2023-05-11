@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: section_margin_remove_default_margins
 label: 'Remove default vertical spacing'
-classes: dcf-p-0
+classes: "dcf-pb-0\r\ndcf-pt-0"
 type: section
 group: spacing
 block_restrictions: {  }
