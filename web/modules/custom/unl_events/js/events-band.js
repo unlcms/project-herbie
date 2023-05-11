@@ -21,8 +21,11 @@
   };
 
   function initEventsBand() {
-    define.amd = define.origAmd;
-    delete define.origAmd;
+    if (define.amd === undefined) {
+      define.amd = define.origAmd;
+      delete define.origAmd;
+    }
+    window.WDNPluginsExecuting++;
 
     var json = $("script[data-selector-json=wdn-events-band-settings]")['0'].innerHTML;
     var json = JSON.parse(json);
@@ -35,8 +38,11 @@
     );
 
     function enableAMD() {
-      define.origAmd = define.amd;
-      delete define.amd;
+      window.WDNPluginsExecuting--;
+      if (define.origAmd === undefined && window.WDNPluginsExecuting === 0) {
+        define.origAmd = define.amd;
+        delete define.amd;
+      }
     }
   }
 
