@@ -165,6 +165,7 @@
         "drupal/queue_ui": "^3.1",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.5",
+        "drupal/scanner": "1.x-dev@dev",
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",

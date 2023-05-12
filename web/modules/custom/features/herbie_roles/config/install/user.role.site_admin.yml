@@ -38,6 +38,7 @@ dependencies:
     - path
     - rabbit_hole
     - redirect
+    - scanner
     - system
     - taxonomy
     - toolbar
@@ -174,6 +175,7 @@ permissions:
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'opt-in or out of google analytics tracking'
+  - 'perform search and replace'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ba0e5fc5f271af9d12c2f18e678ec94",
+    "content-hash": "601febd7b87209c1f7ae945104e045a4",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5626,6 +5626,82 @@
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect"
+            }
+        },
+        {
+            "name": "drupal/scanner",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scanner.git",
+                "reference": "0beb366c01cfc759ebc9d247b5edffb30f1dc333"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/paragraphs": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc6+15-dev",
+                    "datestamp": "1675541923",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "aasarava",
+                    "homepage": "https://www.drupal.org/user/181407"
+                },
+                {
+                    "name": "codebymikey",
+                    "homepage": "https://www.drupal.org/user/3573206"
+                },
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "fizk",
+                    "homepage": "https://www.drupal.org/user/473174"
+                },
+                {
+                    "name": "MikeyR",
+                    "homepage": "https://www.drupal.org/user/715156"
+                },
+                {
+                    "name": "mpearrow",
+                    "homepage": "https://www.drupal.org/user/13144"
+                },
+                {
+                    "name": "Shreya Shetty",
+                    "homepage": "https://www.drupal.org/user/2943029"
+                },
+                {
+                    "name": "starbow",
+                    "homepage": "https://www.drupal.org/user/33290"
+                }
+            ],
+            "description": "Perform search and replace on chosen text fields.",
+            "homepage": "https://drupal.org/project/scanner",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/scanner",
+                "issues": "https://drupal.org/project/issues/scanner"
             }
         },
         {
@@ -16709,6 +16785,7 @@
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,
+        "drupal/scanner": 20,
         "drupal/seven": 15,
         "drupal/webform": 10
     },
