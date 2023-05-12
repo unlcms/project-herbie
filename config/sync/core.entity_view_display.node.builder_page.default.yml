@@ -90,8 +90,7 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
@@ -103,7 +102,8 @@ third_party_settings:
             Menus:
               - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_onecol_section:
           all_regions:
@@ -114,8 +114,7 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
@@ -129,7 +128,8 @@ third_party_settings:
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_threecol_section:
           all_regions:
@@ -138,8 +138,7 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
@@ -153,7 +152,8 @@ third_party_settings:
             Menus:
               - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_twocol_section:
           all_regions:
@@ -162,8 +162,7 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
@@ -178,7 +177,8 @@ third_party_settings:
             Menus:
               - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
       denylisted_blocks: {  }
       restricted_categories:
