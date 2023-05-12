@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.node_include
+    - field.storage.block_content.b_nodeinclude_node
+    - node.type.book
+    - node.type.builder_page
+    - node.type.major
+    - node.type.news
+    - node.type.person
+id: block_content.node_include.b_nodeinclude_node
+field_name: b_nodeinclude_node
+entity_type: block_content
+bundle: node_include
+label: Node
+description: "<p>Choose the piece of content to embed.</p>\r\n<p><i>Note that there is no check made to prevent a circular include loop. Causing such a loop will prevent the page from loading and it will have to be deleted from /admin/content and recreated.</i></p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      book: book
+      builder_page: builder_page
+      major: major
+      news: news
+      person: person
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: book
+field_type: entity_reference

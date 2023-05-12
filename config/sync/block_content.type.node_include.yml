@@ -1,0 +1,8 @@
+uuid: 5c312d53-6824-43c1-ac5f-cda4d060e6d7
+langcode: en
+status: true
+dependencies: {  }
+id: node_include
+label: 'Node include'
+revision: 0
+description: 'Reference another node on the site for embedding.'
