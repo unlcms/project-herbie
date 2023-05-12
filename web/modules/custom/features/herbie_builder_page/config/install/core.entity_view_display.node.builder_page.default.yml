@@ -86,24 +86,21 @@ third_party_settings:
           all_regions:
             'Aggregated Content': {  }
             'Chaos Tools': {  }
-            'Content fields': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - card
-              - content
-              - cta
-              - html_code
-              - proofpoint
             Forms:
               - unl_webform_block
             'Inline blocks':
+              - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
               - 'inline_block:content'
             'Lists (Views)': {  }
-            Menus: {  }
+            Menus:
+              - 'menu_block:main'
             System: {  }
             Webform: {  }
             core: {  }
@@ -116,16 +113,6 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
-            'Custom block types':
-              - accordion
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
-              - social_media_links
-              - timeline
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -147,26 +134,23 @@ third_party_settings:
           all_regions:
             'Aggregated Content': {  }
             'Chaos Tools': {  }
-            'Content fields': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - card
-              - content
-              - cta
-              - html_code
-              - photo_hero
-              - proofpoint
             Forms:
               - unl_webform_block
             'Inline blocks':
+              - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
-            Menus: {  }
+            Menus:
+              - 'menu_block:main'
             System: {  }
             Webform: {  }
             core: {  }
@@ -177,15 +161,6 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - accordion
-              - card
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -196,6 +171,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
@@ -207,6 +183,20 @@ third_party_settings:
       restricted_categories:
         dcf_twocol_section:
           all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_onecol_section:
+          all_regions:
+            - 'Chaos Tools'
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_threecol_section:
+          all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_fourcol_section:
+          all_regions:
+            - 'Custom block types'
             - 'Custom blocks'
     allowed_block_categories:
       - 'Aggregated Content'
