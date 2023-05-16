@@ -4,6 +4,7 @@ dependencies:
   module:
     - asset_injector
     - field_ui
+    - google_analytics
     - node
     - paragraphs
     - system
@@ -15,6 +16,7 @@ weight: -5
 is_admin: null
 permissions:
   - 'access site reports'
+  - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer js assets injector'

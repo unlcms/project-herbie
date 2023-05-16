@@ -71,7 +71,6 @@ permissions:
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission log'
-  - 'add JS snippets for google analytics'
   - 'add content to books'
   - 'administer book outlines'
   - 'administer feeds'
@@ -174,7 +173,6 @@ permissions:
   - 'edit webform submissions own node'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
-  - 'opt-in or out of google analytics tracking'
   - 'perform search and replace'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
@@ -194,7 +192,6 @@ permissions:
   - 'update any photo_hero block content'
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
-  - 'use PHP for google analytics tracking visibility'
   - 'use text format block_body'
   - 'use text format simple'
   - 'use text format standard'
