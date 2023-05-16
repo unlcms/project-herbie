@@ -92,6 +92,7 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer redirects'
+  - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer unl breadcrumbs'

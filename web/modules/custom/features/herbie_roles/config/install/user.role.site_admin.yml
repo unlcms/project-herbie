@@ -78,6 +78,7 @@ permissions:
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
+  - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
