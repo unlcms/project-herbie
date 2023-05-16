@@ -286,25 +286,10 @@ class SettingsForm extends ConfigFormBase {
   }
 
   /**
-   * Initiates batch processing with Batch API.
-   *
-   * Replace with service when/if
-   * https://www.drupal.org/project/queue_ui/issues/3214399
-   * is committed.
+   * Initiates batch processing with queue_ui.batch service.
    */
   public function manualBatch() {
-    $batch = [
-      'title' => $this->t('Processing queues'),
-      'operations' => [],
-      'finished' => ['\Drupal\queue_ui\QueueUIBatch', 'finish'],
-    ];
-
-    $batch['operations'][] = [
-      '\Drupal\queue_ui\QueueUIBatch::step',
-      [self::QUEUE_NAME],
-    ];
-
-    batch_set($batch);
+    \Drupal::service('queue_ui.batch')->batch([self::QUEUE_NAME]);
   }
 
   /**
