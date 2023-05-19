@@ -47,6 +47,7 @@ module:
   external_entities_pathauto: 0
   external_entities_unldirectory: 0
   features: 0
+  features_readonly: 0
   features_ui: 0
   feeds: 0
   feeds_ex: 0

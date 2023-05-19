@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "601febd7b87209c1f7ae945104e045a4",
+    "content-hash": "6e09af838b6011afd7bda2274395e23f",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -12055,6 +12055,41 @@
             "time": "2023-03-02T20:46:55+00:00"
         },
         {
+            "name": "unlcms/features_readonly",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/features_readonly.git",
+                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/be5a124b448e47acf1f725af837a81b6b063d05a",
+                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10",
+                "drupal/features": "^5.0.0"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Enables making configuration managed by Features read-only to prevent changes.",
+            "support": {
+                "issues": "https://github.com/unlcms/features_readonly/issues",
+                "source": "https://github.com/unlcms/features_readonly/tree/1.0"
+            },
+            "time": "2023-05-19T21:15:27+00:00"
+        },
+        {
             "name": "unlcms/project-herbie-composer-plugin",
             "version": "1.1.3",
             "source": {
@@ -16787,7 +16822,8 @@
         "drupal/rabbit_hole": 10,
         "drupal/scanner": 20,
         "drupal/seven": 15,
-        "drupal/webform": 10
+        "drupal/webform": 10,
+        "unlcms/features_readonly": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

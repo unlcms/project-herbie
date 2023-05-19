@@ -183,6 +183,7 @@
         "robinherbots/jquery.inputmask": "5.0.5",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
+        "unlcms/features_readonly": "^1.0@dev",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^2",
