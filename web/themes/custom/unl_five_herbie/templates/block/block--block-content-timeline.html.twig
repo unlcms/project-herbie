@@ -1,0 +1,26 @@
+{{ attach_library('unl_five_herbie/timeline') }}
+
+{% set verticalListClass = ['dcf-list-bare', 'dcf-relative', 'dcf-mb-0', 'dcf-pt-6', 'dcf-pb-6', 'unlcms-timeline', 'unlcms-timeline-vertical'] %}
+{% set horizontalListClass = ['dcf-bleed', 'dcf-list-bare', 'dcf-d-flex', 'dcf-flex-no-wrap', 'dcf-gap-4' ,'dcf-mt-6' ,'dcf-mb-0' ,'dcf-pb-1' ,'dcf-bg-no-repeat', 'dcf-overflow-x-scroll' ,'unlcms-timeline' ,'unlcms-timeline-horizontal'] %}
+
+{% if content.b_timeline_style[0]['#markup'] == 'horizontal' %}
+	{% set orderedListClass = horizontalListClass %}
+{% else %}
+	{% set orderedListClass = verticalListClass %}
+{% endif %}
+
+<div{{attributes}}>
+	<div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 unl-bg-light-gray">
+		{% if content.b_timeline_timeline_heading %}
+			{{ title_prefix }}
+			<h2>{{content.b_timeline_timeline_heading}}</h2>
+			{{ title_suffix }}
+		{% endif %}
+
+		<ol {{attributes.addclass(orderedListClass)}} tabindex="0">
+			{% block content %}
+				{{ content.b_timeline_item}}
+			{% endblock %}
+		</ol>
+	</div>
+</div>

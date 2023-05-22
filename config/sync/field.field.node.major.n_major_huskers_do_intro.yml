@@ -1,0 +1,19 @@
+uuid: 9c389854-1a7b-4198-9f0a-944d7c2acb6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_huskers_do_intro
+    - node.type.major
+id: node.major.n_major_huskers_do_intro
+field_name: n_major_huskers_do_intro
+entity_type: node
+bundle: major
+label: 'Huskers Do Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

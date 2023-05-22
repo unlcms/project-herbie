@@ -1,0 +1,19 @@
+uuid: 32e410e2-c7cf-4494-8e73-d59bc03f6b7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_otc_intro
+    - node.type.major
+id: node.major.n_major_otc_intro
+field_name: n_major_otc_intro
+entity_type: node
+bundle: major
+label: 'Outside the Classroom Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

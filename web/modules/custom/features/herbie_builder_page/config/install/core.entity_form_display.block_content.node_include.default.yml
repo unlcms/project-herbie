@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.node_include
+    - field.field.block_content.node_include.b_nodeinclude_node
+id: block_content.node_include.default
+targetEntityType: block_content
+bundle: node_include
+mode: default
+content:
+  b_nodeinclude_node:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  info: true

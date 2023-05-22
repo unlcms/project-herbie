@@ -1,0 +1,36 @@
+_core:
+  default_config_hash: m3e3lR0iNbau3eUO2RZya6iS06zv02m1JJe8X-PZuhk
+scanner_mode: true
+scanner_wholeword: true
+scanner_regex: false
+scanner_published: false
+scanner_pathauto: false
+scanner_language: all
+enabled_content_types:
+  'paragraph:accordion_item': 'paragraph:accordion_item'
+  'paragraph:timeline_item': 'paragraph:timeline_item'
+  'node:book': 'node:book'
+  'node:builder_page': 'node:builder_page'
+  'node:news': 'node:news'
+  'node:person': 'node:person'
+  'node:webform': 'node:webform'
+fields_of_selected_content_type:
+  'paragraph:accordion_item:p_b_accrd_item_body': 'paragraph:accordion_item:p_b_accrd_item_body'
+  'paragraph:accordion_item:p_b_accrd_item_title': 'paragraph:accordion_item:p_b_accrd_item_title'
+  'paragraph:timeline_item:p_b_timeline_body': 'paragraph:timeline_item:p_b_timeline_body'
+  'paragraph:timeline_item:p_b_timeline_title': 'paragraph:timeline_item:p_b_timeline_title'
+  'node:book:title': 'node:book:title'
+  'node:book:body': 'node:book:body'
+  'node:builder_page:title': 'node:builder_page:title'
+  'node:builder_page:body': 'node:builder_page:body'
+  'node:news:title': 'node:news:title'
+  'node:news:body': 'node:news:body'
+  'node:news:n_news_image_cutline': 'node:news:n_news_image_cutline'
+  'node:person:title': 'node:person:title'
+  'node:person:n_additional': 'node:person:n_additional'
+  'node:person:n_education': 'node:person:n_education'
+  'node:person:n_person_address': 'node:person:n_person_address'
+  'node:person:n_person_bio': 'node:person:n_person_bio'
+  'node:person:n_person_position': 'node:person:n_person_position'
+  'node:webform:title': 'node:webform:title'
+  'node:webform:body': 'node:webform:body'

@@ -157,18 +157,26 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Tags'),
     ];
 
+    $current_tags = [];
+    foreach ($config->get('tag_ids') as $id) {
+      $current_tags[] = '<span class="unl-news-tag">'.$options[$id].'</span>';
+    }
+    $tag_text = 'None';
+    if (!empty($current_tags)) {
+      $tag_text = implode(', ', $current_tags);
+    }
+    $form['tags']['current_tags'] = [
+      '#markup' => '<p><strong>'.$this->t('Currently selected tags:').' </strong>'.$tag_text.'</p>',
+    ];
+
     $form['tags']['tag_ids'] = [
-      '#type' => 'select2',
-      '#title' => $this->t('Tags for Import'),
-      '#description' => $this->t('Nebraska Today tags to be imported by this site.'),
+      '#type' => 'select',
+      '#title' => $this->t('Available tags'),
+      '#description' => $this->t('Articles in Nebraska Today with the selected tags will be imported into this site.'),
       '#multiple' => TRUE,
       '#options' => $options,
       '#default_value' => $config->get('tag_ids'),
       '#disabled' => FALSE,
-      '#select2' => [
-        'allowClear' => FALSE,
-        'multiple' => TRUE,
-      ],
     ];
     if (isset($tag_ids_disabled) && $tag_ids_disabled) {
       $form['tags']['tag_ids']['#disabled'] = TRUE;
@@ -182,12 +190,12 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     $form['tags']['tags_refresh_description'] = [
-      '#markup' => $this->t('<p class="description">Download an updated tags list from Nebraska Today.</p>'),
+      '#markup' => $this->t('Download an updated tags list from Nebraska Today.'),
     ];
 
     $form['retrieve_articles'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Retrieve Articles'),
+      '#title' => $this->t('Retrieve articles'),
     ];
 
     $form['retrieve_articles']['markup'] = [
@@ -206,7 +214,7 @@ class SettingsForm extends ConfigFormBase {
 
     $form['queue'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Import Queue'),
+      '#title' => $this->t('Import queue'),
     ];
 
     /** @var \Drupal\Core\Queue\QueueInterface */
@@ -278,25 +286,10 @@ class SettingsForm extends ConfigFormBase {
   }
 
   /**
-   * Initiates batch processing with Batch API.
-   *
-   * Replace with service when/if
-   * https://www.drupal.org/project/queue_ui/issues/3214399
-   * is committed.
+   * Initiates batch processing with queue_ui.batch service.
    */
   public function manualBatch() {
-    $batch = [
-      'title' => $this->t('Processing queues'),
-      'operations' => [],
-      'finished' => ['\Drupal\queue_ui\QueueUIBatch', 'finish'],
-    ];
-
-    $batch['operations'][] = [
-      '\Drupal\queue_ui\QueueUIBatch::step',
-      [self::QUEUE_NAME],
-    ];
-
-    batch_set($batch);
+    \Drupal::service('queue_ui.batch')->batch([self::QUEUE_NAME]);
   }
 
   /**

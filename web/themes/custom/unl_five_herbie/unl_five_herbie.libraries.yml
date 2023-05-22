@@ -72,3 +72,9 @@ instagram:
   css:
     theme:
       css/theme/media_type/instagram.css: {}
+
+timeline:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/timeline.css: {}

@@ -88,6 +88,9 @@ else {
   $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
   $settings['cache']['bins']['page'] = 'cache.backend.null';
 
+  // Disable the features_readonly module's functionality.
+  $settings['features_readonly_disable'] = TRUE;
+
   // For local development, the temp directory should be set
   // in settings.local.php.
 }

@@ -1,0 +1,19 @@
+uuid: 72bd8ed5-4f77-451f-a1fe-b33ee67e2f35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_intro_video
+    - node.type.major
+id: node.major.n_major_intro_video
+field_name: n_major_intro_video
+entity_type: node
+bundle: major
+label: 'Intro Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

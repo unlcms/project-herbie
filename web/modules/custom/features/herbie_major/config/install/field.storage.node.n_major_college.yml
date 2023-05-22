@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.n_major_college
+field_name: n_major_college
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'College of Agricultural Sciences and Natural Resources'
+      label: 'College of Agricultural Sciences and Natural Resources'
+    -
+      value: 'College of Architecture'
+      label: 'College of Architecture'
+    -
+      value: 'College of Arts and Sciences'
+      label: 'College of Arts and Sciences'
+    -
+      value: 'College of Business'
+      label: 'College of Business'
+    -
+      value: 'College of Education and Human Sciences'
+      label: 'College of Education and Human Sciences'
+    -
+      value: 'College of Engineering'
+      label: 'College of Engineering'
+    -
+      value: 'Hixson Lied College of Fine and Performing Arts'
+      label: 'Hixson Lied College of Fine and Performing Arts'
+    -
+      value: 'College of Journalism and Mass Communications'
+      label: 'College of Journalism and Mass Communications'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

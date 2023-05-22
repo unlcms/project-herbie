@@ -41,6 +41,7 @@ dependencies:
     - path
     - rabbit_hole
     - redirect
+    - scanner
     - system
     - taxonomy
     - toolbar
@@ -94,6 +95,7 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer redirects'
+  - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
@@ -193,7 +195,7 @@ permissions:
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'load twig templates from file system'
-  - 'opt-in or out of google analytics tracking'
+  - 'perform search and replace'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'
@@ -213,7 +215,6 @@ permissions:
   - 'update any photo_hero block content'
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
-  - 'use PHP for google analytics tracking visibility'
   - 'use text format block_body'
   - 'use text format simple'
   - 'use text format standard'

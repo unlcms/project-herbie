@@ -16,9 +16,16 @@ class BlockComponentRenderArray implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    // Drupal\layout_builder\EventSubscriber\BlockComponentRenderArray has a
-    // priority of 100, and it needs to run first.
-    $events[LayoutBuilderEvents::SECTION_COMPONENT_BUILD_RENDER_ARRAY] = ['onBuildRender', 99];
+    $events = [];
+    if (class_exists('LayoutBuilderEvents')) {
+      // Drupal\layout_builder\EventSubscriber\BlockComponentRenderArray has a
+      // priority of 100, and it needs to run first.
+      $events[LayoutBuilderEvents::SECTION_COMPONENT_BUILD_RENDER_ARRAY] = [
+        'onBuildRender',
+        99,
+      ];
+    }
+
     return $events;
   }
 

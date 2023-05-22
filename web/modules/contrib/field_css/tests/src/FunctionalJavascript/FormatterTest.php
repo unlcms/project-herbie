@@ -218,9 +218,9 @@ class FormatterTest extends TestBase {
 
     // Verify <script> is rendered in <head> on node's view page.
     $assert_session->elementExists('xpath', '//head/style[contains(string(), "color: yellow;")]');
-    $element = $page->find('xpath', '//div[@class="grantne"]');
+    $element = $page->find('xpath', '//div[contains(@class, "grantne")]');
     $this->assertNotEmpty($element);
-    $this->assertContains('Testing Block', $element->getHtml());
+    $this->assertStringContainsString('Testing Block', $element->getHtml());
   }
 
   /**
@@ -250,9 +250,9 @@ class FormatterTest extends TestBase {
 
     // Verify default configuration in UI.
     $summary_markup = $this->getSummaryCell()->getHtml();
-    $this->assertContains('Location: HEAD', $summary_markup);
-    $this->assertContains('Selector Prefix: None', $summary_markup);
-    $this->assertNotContains('Fixed Prefix Value', $summary_markup);
+    $this->assertStringContainsString('Location: HEAD', $summary_markup);
+    $this->assertStringContainsString('Selector Prefix: None', $summary_markup);
+    $this->assertStringNotContainsString('Fixed Prefix Value', $summary_markup);
 
     // Verify default configuration in storage.
     $display_component = \Drupal::service('entity_display.repository')
@@ -284,9 +284,9 @@ class FormatterTest extends TestBase {
 
     // Verify summary.
     $summary_markup = $this->getSummaryCell()->getHtml();
-    $this->assertContains('Location: BODY', $summary_markup);
-    $this->assertContains('Selector Prefix: Fixed Value', $summary_markup);
-    $this->assertContains('Fixed Prefix Value: venango', $summary_markup);
+    $this->assertStringContainsString('Location: BODY', $summary_markup);
+    $this->assertStringContainsString('Selector Prefix: Fixed Value', $summary_markup);
+    $this->assertStringContainsString('Fixed Prefix Value: venango', $summary_markup);
 
     $page->pressButton('Save');
     $assert_session->pageTextContains('Your settings have been saved.');

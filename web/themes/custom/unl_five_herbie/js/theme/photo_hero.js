@@ -1,22 +1,33 @@
-window.addEventListener('inlineJSReady', function() {
+window.addEventListener('inlineJSReady', function () {
+  if (define.amd === undefined) {
+    define.amd = define.origAmd;
+    delete define.origAmd;
+  }
+  window.WDNPluginsExecuting++;
 
-  WDN.initializePlugin('scroll-animations');
+  WDN.initializePlugin(
+    'scroll-animations',
+    {},
+    photoHeroCallback,
+    'after'
+  );
 
-  require(['plugins/gsap/gsap', 'plugins/gsap/ScrollTrigger'], (gsapModule, ScrollTriggerModule) => {
+  function photoHeroCallback() {
+    require(['plugins/gsap/gsap', 'plugins/gsap/ScrollTrigger'], (gsapModule, ScrollTriggerModule) => {
       let animations = [];
       let motionQuery = matchMedia('(prefers-reduced-motion)');
       const gsap = gsapModule.gsap;
 
       const handleReduceMotion = () => {
-          if (motionQuery.matches) {
-              animations.forEach((singleAnimation) => {
-                  singleAnimation.progress(1).pause();
-              });
-          } else {
-              animations.forEach((singleAnimation) => {
-                  singleAnimation.play();
-              });
-          }
+        if (motionQuery.matches) {
+          animations.forEach((singleAnimation) => {
+            singleAnimation.progress(1).pause();
+          });
+        } else {
+          animations.forEach((singleAnimation) => {
+            singleAnimation.play();
+          });
+        }
       };
 
       motionQuery.addEventListener('change', handleReduceMotion);
@@ -30,6 +41,13 @@ window.addEventListener('inlineJSReady', function() {
       );
 
       handleReduceMotion();
-  })
 
-});
+      window.WDNPluginsExecuting--;
+      if (define.origAmd === undefined && window.WDNPluginsExecuting === 0) {
+        define.origAmd = define.amd;
+        delete define.amd;
+      }
+    });
+  }
+
+}, false);
