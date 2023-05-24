@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.wide
   module:
     - codemirror_editor
+    - dcf_ckeditor5
     - editor
     - linkit
     - media
@@ -104,3 +105,10 @@ filters:
       lineWrapping: false
       lineNumbers: true
       foldGutter: false
+  filter_dcfckeditor5:
+    id: filter_dcfckeditor5
+    provider: dcf_ckeditor5
+    status: true
+    weight: 0
+    settings:
+      dcftable: '1'

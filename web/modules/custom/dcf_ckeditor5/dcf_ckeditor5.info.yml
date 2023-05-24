@@ -1,0 +1,5 @@
+name: dcf_ckeditor5
+description: Custom filter to add or modify date editor's text area.
+type: module
+package: DCF Ckeditor5
+core_version_requirement: ^9 || ^10
