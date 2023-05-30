@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: slideshow_item
+label: 'Slideshow Item'
+icon_uuid: null
+icon_default: null
+description: 'Images that are added to slideshow.'
+behavior_plugins: {  }

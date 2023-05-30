@@ -125,6 +125,7 @@ third_party_settings:
               - logo_cloud
               - photo_hero
               - proofpoint
+              - slideshow
               - social_media_links
             Forms:
               - unl_webform_block
@@ -135,6 +136,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -185,6 +187,7 @@ third_party_settings:
               - logo_cloud
               - photo_hero
               - proofpoint
+              - slideshow
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -195,6 +198,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:slideshow'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:

@@ -1,0 +1,76 @@
+uuid: b2ae4773-2417-4306-ad7f-d0a66a668d1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slideshow
+    - field.storage.block_content.b_slideshow
+    - paragraphs.paragraphs_type.slideshow_item
+  module:
+    - entity_reference_revisions
+id: block_content.slideshow.b_slideshow
+field_name: b_slideshow
+entity_type: block_content
+bundle: slideshow
+label: Slideshow
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      slideshow_item: slideshow_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 17
+        enabled: false
+      contact_info_contact_point:
+        weight: 18
+        enabled: false
+      contact_info_email:
+        weight: 19
+        enabled: false
+      contact_info_fax:
+        weight: 20
+        enabled: false
+      contact_info_heading:
+        weight: 21
+        enabled: false
+      contact_info_margin:
+        weight: 22
+        enabled: false
+      contact_info_phone:
+        weight: 23
+        enabled: false
+      contact_info_physical_address:
+        weight: 24
+        enabled: false
+      contact_info_post_office_box_add:
+        weight: 25
+        enabled: false
+      logo_cloud_item:
+        weight: 26
+        enabled: false
+      p_n_major_contact:
+        weight: 27
+        enabled: false
+      p_n_major_featured_faculty:
+        weight: 28
+        enabled: false
+      p_n_major_notable_course:
+        weight: 29
+        enabled: false
+      p_n_major_outside_the_classroom:
+        weight: 30
+        enabled: false
+      p_n_major_points_of_pride:
+        weight: 31
+        enabled: false
+      slideshow_item:
+        weight: 32
+        enabled: true
+field_type: entity_reference_revisions
