@@ -32,6 +32,7 @@ dependencies:
     - node
     - paragraphs
     - rabbit_hole
+    - scanner
     - system
     - taxonomy
     - toolbar
@@ -121,6 +122,7 @@ permissions:
   - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'perform search only'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'

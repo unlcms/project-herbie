@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: timeline_item
+label: 'Timeline item'
+icon_uuid: null
+icon_default: null
+description: 'An individual header and body for use in Timeline block.'
+behavior_plugins: {  }

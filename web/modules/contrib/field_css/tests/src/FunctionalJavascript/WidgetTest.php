@@ -121,8 +121,8 @@ class WidgetTest extends TestBase {
 
     // Verify default settings in summary.
     $summary_markup = $this->getSummaryCell()->getHtml();
-    $this->assertContains('Load toolbar: Yes', $summary_markup);
-    $this->assertContains('Toolbar buttons: undo, redo, enlarge, shrink', $summary_markup);
+    $this->assertStringContainsString('Load toolbar: Yes', $summary_markup);
+    $this->assertStringContainsString('Toolbar buttons: undo, redo, enlarge, shrink', $summary_markup);
 
     $page->pressButton('Save');
     $assert_session->pageTextContains('Your settings have been saved.');
@@ -150,8 +150,8 @@ class WidgetTest extends TestBase {
 
     // Verify updated settings in summary.
     $summary_markup = $this->getSummaryCell()->getHtml();
-    $this->assertContains('Load toolbar: Yes', $summary_markup);
-    $this->assertContains('Toolbar buttons: enlarge, shrink', $summary_markup);
+    $this->assertStringContainsString('Load toolbar: Yes', $summary_markup);
+    $this->assertStringContainsString('Toolbar buttons: enlarge, shrink', $summary_markup);
 
     $page->pressButton('Save');
     $assert_session->pageTextContains('Your settings have been saved.');
@@ -180,8 +180,8 @@ class WidgetTest extends TestBase {
 
     // Verify updated settings in summary.
     $summary_markup = $this->getSummaryCell()->getHtml();
-    $this->assertContains('Load toolbar: No', $summary_markup);
-    $this->assertNotContains('Toolbar buttons:', $summary_markup);
+    $this->assertStringContainsString('Load toolbar: No', $summary_markup);
+    $this->assertStringNotContainsString('Toolbar buttons:', $summary_markup);
 
     $page->pressButton('Save');
     $assert_session->pageTextContains('Your settings have been saved.');

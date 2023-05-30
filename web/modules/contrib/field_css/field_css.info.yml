@@ -8,7 +8,7 @@ dependencies:
 test_dependencies:
   - codemirror_editor:codemirror_editor
 
-# Information added by Drupal.org packaging script on 2020-07-01
-version: '2.0.0-rc4'
+# Information added by Drupal.org packaging script on 2022-11-30
+version: '2.0.0-rc4+4-dev'
 project: 'field_css'
-datestamp: 1593630928
+datestamp: 1669849513

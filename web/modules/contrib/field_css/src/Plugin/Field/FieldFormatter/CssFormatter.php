@@ -95,7 +95,7 @@ class CssFormatter extends FormatterBase {
       '#description' => $this->t('What selector should prefix all css rules.'),
     ];
 
-    $field_name = $this->fieldDefinition->get('field_name');
+    $field_name = $this->fieldDefinition->getName();
     $form['fixed_prefix_value'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Fixed Prefix Value'),

@@ -1,0 +1,197 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.builder_page.body
+    - field.field.node.builder_page.layout_builder__layout
+    - field.field.node.builder_page.s_n_hero
+    - field.field.node.builder_page.s_n_page_options
+    - node.type.builder_page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction_by_region:
+      allowed_layouts:
+        - dcf_onecol_section
+        - dcf_twocol_section
+        - dcf_threecol_section
+        - dcf_fourcol_section
+      allowlisted_blocks:
+        dcf_fourcol_section:
+          all_regions:
+            'Aggregated Content': {  }
+            'Chaos Tools': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Curated Lists': {  }
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:cta'
+              - 'inline_block:card'
+              - 'inline_block:html_code'
+              - 'inline_block:proofpoint'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus:
+              - 'menu_block:main'
+            System: {  }
+            Webform:
+              - webform_block
+            core: {  }
+        dcf_onecol_section:
+          all_regions:
+            'Aggregated Content':
+              - unl_news_aggregation
+              - unl_upcoming_events
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Curated Lists':
+              - unl_person_list
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:cta'
+              - 'inline_block:photo_hero'
+              - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
+              - 'inline_block:node_include'
+              - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
+              - 'inline_block:content'
+              - 'inline_block:timeline'
+            'Lists (Views)': {  }
+            Menus: {  }
+            System: {  }
+            Webform:
+              - webform_block
+            core: {  }
+        dcf_threecol_section:
+          all_regions:
+            'Aggregated Content': {  }
+            'Chaos Tools': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Curated Lists': {  }
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:cta'
+              - 'inline_block:card'
+              - 'inline_block:photo_hero'
+              - 'inline_block:html_code'
+              - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus:
+              - 'menu_block:main'
+            System: {  }
+            Webform:
+              - webform_block
+            core: {  }
+        dcf_twocol_section:
+          all_regions:
+            'Aggregated Content': {  }
+            'Chaos Tools': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
+            'Curated Lists': {  }
+            Forms: {  }
+            'Inline blocks':
+              - 'inline_block:accordion'
+              - 'inline_block:cta'
+              - 'inline_block:card'
+              - 'inline_block:photo_hero'
+              - 'inline_block:html_code'
+              - 'inline_block:logo_cloud'
+              - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
+              - 'inline_block:content'
+            'Lists (Views)': {  }
+            Menus:
+              - 'menu_block:main'
+            System: {  }
+            Webform:
+              - webform_block
+            core: {  }
+      denylisted_blocks: {  }
+      restricted_categories:
+        dcf_twocol_section:
+          all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_onecol_section:
+          all_regions:
+            - 'Chaos Tools'
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_threecol_section:
+          all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_fourcol_section:
+          all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+    allowed_block_categories:
+      - 'Aggregated Content'
+      - 'Chaos Tools'
+      - 'Content fields'
+      - 'Curated Lists'
+      - 'Custom block types'
+      - 'Custom blocks'
+      - Forms
+      - 'Inline blocks'
+      - 'Lists (Views)'
+      - Menus
+      - System
+      - Webform
+      - core
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - dcf_onecol_section
+        - dcf_twocol_section
+        - dcf_threecol_section
+        - dcf_fourcol_section
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.builder_page.full
+targetEntityType: node
+bundle: builder_page
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  s_n_hero:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: first
+hidden:
+  layout_builder__layout: true
+  s_n_page_options: true

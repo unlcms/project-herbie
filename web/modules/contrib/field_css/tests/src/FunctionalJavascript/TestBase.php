@@ -33,8 +33,9 @@ abstract class TestBase extends WebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'field_css',
+    'field_ui',
     'node',
   ];
 

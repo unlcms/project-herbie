@@ -80,3 +80,9 @@ slideshow:
       css/theme/block/slideshow.css: {}
   js:
     js/theme/slideshow.js: {}
+
+timeline:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/timeline.css: {}

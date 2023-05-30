@@ -25,7 +25,7 @@ trait CssTrait {
    * @return array
    *   The prefixes to be added to the item.
    */
-  public static function itemPrefixes(ContentEntityInterface $entity, string $view_mode) {
+  public function itemPrefixes(ContentEntityInterface $entity, string $view_mode) {
     $return = [];
 
     $fields = $entity->getFieldDefinitions();
@@ -36,7 +36,7 @@ trait CssTrait {
             ->get('content')[$field->getName()]['settings'];
 
           if ($formatter_settings['prefix'] == 'entity-item') {
-            $return[] = CssTrait::generatePrefix($entity);
+            $return[] = self::generatePrefix($entity);
           }
           elseif ($formatter_settings['prefix'] == 'fixed-value') {
             $return[] = $formatter_settings['fixed_prefix_value'];
@@ -60,7 +60,7 @@ trait CssTrait {
    * @return string
    *   A scoped prefix.
    */
-  public static function generatePrefix(ContentEntityInterface $entity, $leading_period = FALSE) {
+  public function generatePrefix(ContentEntityInterface $entity, $leading_period = FALSE) {
     $prefix = Html::cleanCssIdentifier('scoped-css--' . $entity->getEntityTypeId() . '-' . $entity->id());
     return ($leading_period) ? '.' . $prefix : $prefix;
   }
@@ -76,7 +76,7 @@ trait CssTrait {
    * @return string
    *   The CSS code block with selectors prefixed.
    */
-  public static function addSelectorPrefix($css_code, $prefix) {
+  public function addSelectorPrefix($css_code, $prefix) {
     $parser = new Parser($css_code);
     $css_document = $parser->parse();
     foreach ($css_document->getAllDeclarationBlocks() as $block) {
@@ -93,7 +93,7 @@ trait CssTrait {
    * Formats CSS.
    *
    * This method should be used in instances where CSS code is not run
-   * through CssTrait::addSelectorPrefix().
+   * through CssTrait->addSelectorPrefix().
    *
    * @param string $css_code
    *   The CSS code block to be processed.
@@ -101,7 +101,7 @@ trait CssTrait {
    * @return string
    *   The formatted CSS code.
    */
-  public static function formatCss($css_code) {
+  public function formatCss($css_code) {
     $parser = new Parser($css_code);
     $css_document = $parser->parse();
     return $css_document->render(OutputFormat::createPretty());

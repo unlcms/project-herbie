@@ -87,26 +87,23 @@ third_party_settings:
           all_regions:
             'Aggregated Content': {  }
             'Chaos Tools': {  }
-            'Content fields': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - card
-              - content
-              - cta
-              - html_code
-              - proofpoint
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
+              - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
               - 'inline_block:content'
             'Lists (Views)': {  }
-            Menus: {  }
+            Menus:
+              - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_onecol_section:
           all_regions:
@@ -135,41 +132,41 @@ third_party_settings:
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
+              - 'inline_block:timeline'
             'Lists (Views)': {  }
             Menus: {  }
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_threecol_section:
           all_regions:
             'Aggregated Content': {  }
             'Chaos Tools': {  }
-            'Content fields': {  }
+            'Content fields':
+              - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - card
-              - content
-              - cta
-              - html_code
-              - photo_hero
-              - proofpoint
-            Forms:
-              - unl_webform_block
+            Forms: {  }
             'Inline blocks':
+              - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
-            Menus: {  }
+            Menus:
+              - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
         dcf_twocol_section:
           all_regions:
@@ -199,17 +196,33 @@ third_party_settings:
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
+              - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'
             System: {  }
-            Webform: {  }
+            Webform:
+              - webform_block
             core: {  }
       denylisted_blocks: {  }
       restricted_categories:
         dcf_twocol_section:
           all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_onecol_section:
+          all_regions:
+            - 'Chaos Tools'
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_threecol_section:
+          all_regions:
+            - 'Custom block types'
+            - 'Custom blocks'
+        dcf_fourcol_section:
+          all_regions:
+            - 'Custom block types'
             - 'Custom blocks'
     allowed_block_categories:
       - 'Aggregated Content'

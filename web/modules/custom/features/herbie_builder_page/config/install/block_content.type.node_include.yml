@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node_include
+label: 'Node include'
+revision: 0
+description: 'Reference another node on the site for embedding.'

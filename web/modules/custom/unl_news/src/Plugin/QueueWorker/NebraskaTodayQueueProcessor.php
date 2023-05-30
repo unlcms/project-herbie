@@ -13,8 +13,10 @@ use Drupal\Core\Utility\Token;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\taxonomy\Entity\Term;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -152,13 +154,12 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         $filename = explode('/', $remote_image_url);
         $filename = end($filename);
 
-        // Truncate alt text to 512 characters as is allowed by the
-        // n_news_image_alt field.
+        // Truncate alt text to 512 characters.
         $alt = Unicode::truncate($item->articleImage->alt, 512, TRUE, TRUE);
 
         // Get image upload path from field config.
         /** @var \Drupal\field\Entity\FieldConfig */
-        $img_field_config = FieldConfig::loadByName('node', 'news', 'n_news_image');
+        $img_field_config = FieldConfig::loadByName('media', 'image', 'field_media_image');
         $img_dir = $img_field_config->getSetting('file_directory');
         $img_dir = $this->token->replace($img_dir);
         $img_dir = 'public://' . $img_dir;
@@ -169,23 +170,60 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         // Download the file with GuzzleHTTP.
         $this->client->request('GET', $remote_image_url, ['sink' => $local_image_uri]);
 
+        // Create the File entity.
         $file = File::create([
           'uri' => $local_image_uri,
         ]);
         $file->setPermanent();
         $file->save();
 
+        // Get (or create) the 'Imported from Nebraska Today' tag to add to the media item.
+        $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+        $vid = 'media_tags';
+        $name = 'Imported from Nebraska Today';
+        $terms = $storage->loadByProperties([
+          'vid' => $vid,
+          'name' => $name,
+        ]);
+        if ($terms) {
+          // Only use the first term returned; (there should only be one anyway).
+          $term = reset($terms);
+        }
+        else {
+          $term = Term::create([
+            'vid' => $vid,
+            'name' => $name,
+          ]);
+          $term->save();
+        }
+        $tid = $term->id();
+
+        // Create the media image.
+        $media = Media::create([
+          'bundle' => 'image',
+          'field_media_image' => [
+            'target_id' => $file->id(),
+            'alt' => $alt,
+          ],
+          's_m_tags' => [
+            'target_id' => $tid,
+          ],
+        ]);
+        $media->setName($filename . ' (from Nebraska Today)')
+          ->setPublished(TRUE)
+          ->save();
+
+        // Populate the node's reference field.
         $node->set('n_news_image', [
-          'target_id' => $file->id(),
-          'alt' => $alt,
+          'target_id' => $media->id(),
         ]);
 
         // Generate images styles for the image.
-        // Get the responsive image style for the default display.
+        // Get the responsive image style for the large__widescreen display.
         $display_settings = $this->entityTypeManager
           ->getStorage('entity_view_display')
-          ->load('node.news.default')
-          ->getRenderer('n_news_image')
+          ->load('media.image.large__widescreen')
+          ->getRenderer('field_media_image')
           ->getSettings();
         $responsive_image_style = ResponsiveImageStyle::load($display_settings['responsive_image_style']);
 

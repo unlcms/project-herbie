@@ -1,0 +1,19 @@
+uuid: 2bc3bc0e-9635-4254-8b71-748807da9b43
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.timeline
+    - field.storage.block_content.b_timeline_timeline_heading
+id: block_content.timeline.b_timeline_timeline_heading
+field_name: b_timeline_timeline_heading
+entity_type: block_content
+bundle: timeline
+label: 'Timeline heading'
+description: 'H2 heading right before the timeline graph.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
