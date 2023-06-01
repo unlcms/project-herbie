@@ -31,6 +31,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dcf_ckeditor5: 0
   dcf_layouts: 0
   default_content: 0
   diff: 0
