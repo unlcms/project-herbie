@@ -1,0 +1,20 @@
+uuid: 2afa80ef-d723-47ef-9fdd-e26b49ef7249
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.p_b_slideshow_image
+field_name: p_b_slideshow_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
