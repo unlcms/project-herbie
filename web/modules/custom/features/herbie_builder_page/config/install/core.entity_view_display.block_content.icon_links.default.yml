@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.icon_links
+    - field.field.block_content.icon_links.b_icon_links_item
+  module:
+    - entity_reference_revisions
+id: block_content.icon_links.default
+targetEntityType: block_content
+bundle: icon_links
+mode: default
+content:
+  b_icon_links_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

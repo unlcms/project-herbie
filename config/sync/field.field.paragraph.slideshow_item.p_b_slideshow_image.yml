@@ -1,0 +1,29 @@
+uuid: 10f07bcc-f023-4f18-9dec-3eb8c7810656
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_slideshow_image
+    - media.type.image
+    - paragraphs.paragraphs_type.slideshow_item
+id: paragraph.slideshow_item.p_b_slideshow_image
+field_name: p_b_slideshow_image
+entity_type: paragraph
+bundle: slideshow_item
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

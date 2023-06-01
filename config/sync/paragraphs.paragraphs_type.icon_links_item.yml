@@ -1,0 +1,10 @@
+uuid: 63717261-8da5-4129-8e20-a34c5e59ef03
+langcode: en
+status: true
+dependencies: {  }
+id: icon_links_item
+label: 'Icon links item'
+icon_uuid: null
+icon_default: null
+description: 'An individual icon and link for use in a Icon links block.'
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+uuid: 0d518814-b23c-4757-9716-7ce26c985b2f
+langcode: en
+status: true
+dependencies: {  }
+id: icon_links
+label: 'Icon links'
+revision: 0
+description: 'A set of linked icons.'

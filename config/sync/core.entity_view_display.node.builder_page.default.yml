@@ -114,15 +114,28 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
-            Forms: {  }
+            'Custom block types':
+              - accordion
+              - content
+              - cta
+              - html_code
+              - logo_cloud
+              - photo_hero
+              - proofpoint
+              - slideshow
+              - social_media_links
+            Forms:
+              - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
+              - 'inline_block:icon_links'
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
               - 'inline_block:timeline'
@@ -163,7 +176,18 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            Forms: {  }
+            'Custom block types':
+              - accordion
+              - card
+              - content
+              - cta
+              - html_code
+              - logo_cloud
+              - photo_hero
+              - proofpoint
+              - slideshow
+            Forms:
+              - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
@@ -172,6 +196,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
