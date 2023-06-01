@@ -1,0 +1,19 @@
+uuid: 522e458e-982a-4a67-8879-4d8c015139fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_slideshow_caption
+    - paragraphs.paragraphs_type.slideshow_item
+id: paragraph.slideshow_item.p_b_slideshow_caption
+field_name: p_b_slideshow_caption
+entity_type: paragraph
+bundle: slideshow_item
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
