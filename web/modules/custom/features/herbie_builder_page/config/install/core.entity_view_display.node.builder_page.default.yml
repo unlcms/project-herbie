@@ -119,6 +119,7 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:photo_hero'
               - 'inline_block:html_code'
+              - 'inline_block:icon_links'
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'

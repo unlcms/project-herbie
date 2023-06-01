@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_links_item.p_b_icon_links_link
+    - field.field.paragraph.icon_links_item.s_p_unl_icon
+    - paragraphs.paragraphs_type.icon_links_item
+  module:
+    - link
+id: paragraph.icon_links_item.default
+targetEntityType: paragraph
+bundle: icon_links_item
+mode: default
+content:
+  p_b_icon_links_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  s_p_unl_icon:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

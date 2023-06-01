@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.s_p_unl_icon
+    - paragraphs.paragraphs_type.icon_links_item
+  module:
+    - options
+id: paragraph.icon_links_item.s_p_unl_icon
+field_name: s_p_unl_icon
+entity_type: paragraph
+bundle: icon_links_item
+label: Icon
+description: 'Browse the <a target="_blank" href="/admin/reports/unl_icon/showcase">Icon showcase</a> to see samples. <small>(Link opens in new window.)</small>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

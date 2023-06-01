@@ -139,6 +139,7 @@ module:
   unl_config: 0
   unl_contenthub: 0
   unl_events: 0
+  unl_icon: 0
   unl_layout_builder_custom: 0
   unl_media: 0
   unl_menu: 0

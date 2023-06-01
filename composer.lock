@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e09af838b6011afd7bda2274395e23f",
+    "content-hash": "b031fc0829c56ea7a9f10c6886619da6",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -6401,6 +6401,16 @@
                 }
             ],
             "time": "2023-02-21T02:32:48+00:00"
+        },
+        {
+            "name": "dxg/icon-library",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.unl.edu/dxg/icon-library.git",
+                "reference": "main"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "egulias/email-validator",
