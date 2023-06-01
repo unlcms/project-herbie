@@ -35,7 +35,7 @@ class FilterDcftable extends FilterBase {
       foreach ($xpath->query('//table') as $node) {
           $classes = $node->getAttribute('class');
           $classes = (strlen($classes) > 0) ? explode(' ', $classes) : [];
-          $classes[] = 'dcf-tables dcf-table-bordered';
+          $classes[] = 'dcf-table dcf-table-bordered';
           $node->setAttribute('class', implode(' ', $classes));
       }
       $result->setProcessedText(Html::serialize($dom));
