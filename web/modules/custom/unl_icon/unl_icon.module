@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function unl_icon_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 's_p_unl_icon') {
+    $library_path = \Drupal::service('library.libraries_directory_file_finder')->find('icon-library');
+
+    foreach ($variables['items'] as $key => $item) {
+      $markup = file_get_contents($library_path . '/svg/optimized/' . $item['content']['#markup']);
+      $variables['items'][$key]['svg'] = $markup;
+    }
+  }
+}
+
+/**
+ * Set dynamic allowed values for the field_media_unl_icon field.
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ * @see 'allowed_values_function' in field.storage.paragraph.unl_icon.yml
+ */
+function unl_icon_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable = TRUE) {
+  $library_path = \Drupal::service('library.libraries_directory_file_finder')->find('icon-library');
+  $optimized_path = $library_path . '/svg/optimized';
+  $files = scanAllDir($optimized_path);
+  $options = [];
+
+  foreach ($files as $path) {
+    $options[$path] = basename($path, '.svg');;
+  }
+  natcasesort($options);
+
+  return $options;
+}
+
+/**
+ * Returns an array of all files from a recursive scan of a directory.
+ * https://stackoverflow.com/a/46697247
+ *
+ * @param string $dir
+ *
+ * @return array
+ */
+function scanAllDir($dir) {
+  $result = [];
+  foreach(scandir($dir) as $filename) {
+    if ($filename[0] === '.') continue;
+    $filePath = $dir . '/' . $filename;
+    if (is_dir($filePath)) {
+      foreach (scanAllDir($filePath) as $childFilename) {
+        $result[] = $filename . '/' . $childFilename;
+      }
+    }
+    else {
+      $result[] = $filename;
+    }
+  }
+  return $result;
+}

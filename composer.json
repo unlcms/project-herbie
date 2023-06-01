@@ -36,6 +36,19 @@
         {
             "type": "package",
             "package": {
+                "name": "dxg/icon-library",
+                "version": "1.0",
+                "type": "drupal-library",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.unl.edu/dxg/icon-library.git",
+                    "reference": "main"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "atomiks/tippyjs",
                 "version": "5.2.1",
                 "dist": {
@@ -176,6 +189,7 @@
         "drupal/twig_ui": "^2.0",
         "drupal/webform": "^6.2@beta",
         "drush/drush": "^11.5",
+        "dxg/icon-library": "^1.0",
         "jackocnr/intl-tel-input": "16.1.0",
         "nigelotoole/progress-tracker": "^2.0",
         "npm-asset/select2": "^4.0",

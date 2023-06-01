@@ -1,0 +1,7 @@
+unl_icon.showcase:
+  path: '/admin/reports/unl_icon/showcase'
+  defaults:
+    _controller: '\Drupal\unl_icon\UnlIconController::showcase'
+    _title: 'Icon showcase'
+  requirements:
+    _permission: 'access administration pages'

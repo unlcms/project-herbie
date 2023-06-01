@@ -1,0 +1,8 @@
+uuid: fee04095-9268-4cac-8a65-aa7493a8e6fe
+langcode: en
+status: true
+dependencies: {  }
+id: slideshow
+label: Slideshow
+revision: 0
+description: 'Slideshow of images with captions and optional credits.'

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow_item.p_b_slideshow_caption
+    - field.field.paragraph.slideshow_item.p_b_slideshow_credit
+    - field.field.paragraph.slideshow_item.p_b_slideshow_image
+    - paragraphs.paragraphs_type.slideshow_item
+id: paragraph.slideshow_item.default
+targetEntityType: paragraph
+bundle: slideshow_item
+mode: default
+content:
+  p_b_slideshow_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_b_slideshow_credit:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  p_b_slideshow_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: medium__fullscreen
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

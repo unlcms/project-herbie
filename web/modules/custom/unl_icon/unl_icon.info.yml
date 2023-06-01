@@ -1,0 +1,11 @@
+name: 'UNL Icon'
+description: 'Provides icon media functionality'
+package: UNL
+
+type: module
+core_version_requirement: ^9 || ^10
+
+version: 1.x
+
+dependencies:
+  - drupal:unl_utility
