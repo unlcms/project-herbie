@@ -1,0 +1,5 @@
+dcf_ckeditor5:
+  version: 1.x
+  css:
+    theme:
+      dcf_ckeditor5.theme.css: {}
