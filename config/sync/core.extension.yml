@@ -81,8 +81,6 @@ module:
   infotext: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
-  jquery_ui: 0
-  jquery_ui_draggable: 0
   jsonapi: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
