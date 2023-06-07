@@ -1,0 +1,10 @@
+uuid: 94d9a609-6169-48d9-87aa-5f080ea62b71
+langcode: en
+status: true
+dependencies: {  }
+id: background_pattern
+label: 'Background Pattern'
+multiselect: single
+form_type: checkboxes
+required: false
+weight: 0

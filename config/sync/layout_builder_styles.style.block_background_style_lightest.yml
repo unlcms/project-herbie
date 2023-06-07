@@ -1,0 +1,14 @@
+uuid: af3cf73a-1f34-40d5-9433-76077ae4de3a
+langcode: en
+status: true
+dependencies: {  }
+id: block_background_style_lightest
+label: Lightest
+classes: unl-bg-lightest-gray
+type: component
+group: background
+block_restrictions:
+  - 'inline_block:cta'
+  - 'inline_block:card'
+layout_restrictions: {  }
+weight: 0
