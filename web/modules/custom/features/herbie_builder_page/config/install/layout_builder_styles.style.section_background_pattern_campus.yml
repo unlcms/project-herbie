@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_pattern_campus
+label: Campus
+classes: "unl-bg-soft-light\r\nunl-bg-campus"
+type: section
+group: background_pattern
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0
