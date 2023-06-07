@@ -106,6 +106,7 @@ third_party_settings:
               - 'inline_block:card'
               - 'inline_block:html_code'
               - 'inline_block:proofpoint'
+              - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
