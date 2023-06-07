@@ -72,17 +72,66 @@
     background: url(/core/misc/icons/bebebe/ex.svg) #fff 50%/16px 16px no-repeat!important;
 }
 
+/* Display options heading */
+#drupal-off-canvas .layout-builder-style-heading {
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* The .dcf-card class background-color isn't powerful enough by itself. */
+.layout-builder-block.dcf-card {
+  background-color: var(--bg-card);
+}
+
+/* Select2 used for the unl_person PersonBlock search needs a bump up. */
+.select2-container {
+  z-index: 1300;
+}
+
+
+/**
+ * Main layout builder action form at the top of the page.
+ */
+
+.layout-builder-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.layout-builder-form .dcf-form-group {
+  margin: 0;
+}
+
 /* Slim down the appearance of the edit actions at the top. */
 #edit-actions {
-    display: flex;
-    justify-content: center;
-    margin: 1em;
-    padding: 1em;
-    background: #ffd74e;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background: #ffd74e;
 }
 #edit-actions * {
-    margin-bottom: 0 !important;
-    margin-right: 1em;
+  margin-bottom: 0 !important;
+  margin-right: 1em;
+}
+
+/* Moderation options */
+#edit-moderation-state-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-lightest-gray);
+  font-size: .8em;
+}
+#edit-moderation-state-wrapper select {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Hide the "Rebuild layout" link. https://www.drupal.org/project/layout_builder_iframe_modal/issues/3344339 */
+.layout-builder-form #edit-rebuild-layout {
+  display: none;
 }
 
 /* Hide the Revert To Defaults checkbox. We don't want editors to wipe out the page. */
@@ -93,21 +142,4 @@
 /* Hide the revision checkbox. We always want a new revision to be made. */
 .layout-builder-form .vertical-tabs {
     display: none;
-}
-
-/* Display options heading */
-#drupal-off-canvas .layout-builder-style-heading {
-    border-bottom: 1px solid #999;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-/* The .dcf-card class background-color isn't powerful enough by itself. */
-.layout-builder-block.dcf-card {
-    background-color: var(--bg-card);
-}
-
-/* Select2 used for the unl_person PersonBlock search needs a bump up. */
-.select2-container {
-  z-index: 1300;
 }

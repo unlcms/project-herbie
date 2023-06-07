@@ -16,10 +16,12 @@ dependencies:
     - node.type.person
     - node.type.webform
     - taxonomy.vocabulary.media_tags
+    - workflows.workflow.editorial
   module:
     - administerusersbyrole
     - block_content_permissions
     - book
+    - content_moderation
     - contextual
     - entity_share_client
     - entity_usage
@@ -193,13 +195,17 @@ permissions:
   - 'update any photo_hero block content'
   - 'update any social_media_links block content'
   - 'update unl_directory_entry external entity'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
   - 'use text format block_body'
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'view any unpublished content'
   - 'view any webform submission'
   - 'view book revisions'
   - 'view builder_page revisions'
+  - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

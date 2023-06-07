@@ -8,6 +8,7 @@ dependencies:
   - 'block_content_permissions:block_content_permissions'
   - 'drupal:block'
   - 'drupal:book'
+  - 'drupal:content_moderation'
   - 'drupal:contextual'
   - 'drupal:field_ui'
   - 'drupal:file'
@@ -48,5 +49,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.1.15
+version: 1.2.0
 package: Herbie

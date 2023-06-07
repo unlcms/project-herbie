@@ -38,6 +38,15 @@ function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id)
     $form['#submit'][] = '_unl_system_system_site_information_settings_submit';
   }
 
+  // If Content Moderation is enabled, add every new content type to the
+  // editorial workflow. (The content_moderation modules takes care of
+  // removal upon deletion.)
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('content_moderation')) {
+    if ($form_id == 'node_type_add_form') {
+      $form['actions']['save_continue']['#submit'][] = '_unl_system_node_type_add_form_submit';
+    }
+  }
 }
 
 /**
@@ -81,6 +90,23 @@ function _unl_system_system_site_information_settings_submit(array $form, FormSt
 }
 
 /**
+ * Submits node_type_add_form form.
+ *
+ * @param array $form
+ *   A array describing the form.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function _unl_system_node_type_add_form_submit(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  $workflow = \Drupal::entityTypeManager()->getStorage('workflow')->loadByProperties(['id' => 'editorial'])['editorial'];
+  $config = $workflow->getTypePlugin()->getConfiguration();
+  $config['entity_types']['node'][] = $values['type'];
+  $workflow->getTypePlugin()->setConfiguration($config);
+  $workflow->save();
+}
+
+/**
  * Implements hook_preprocess_block().
  */
 function unl_system_preprocess_block(&$vars) {
@@ -97,12 +123,15 @@ function unl_system_preprocess_block(&$vars) {
  * Implements hook_local_tasks_alter().
  */
 function unl_system_menu_local_tasks_alter(&$data, $route_name) {
-  // Rearrange the local tasks tabs so that Delete is at the end.
+
   $logged_in = \Drupal::currentUser()->isAuthenticated();
   if ($logged_in) {
+    // Rearrange the local tasks tabs so that Delete is at the end.
     $data['tabs'][0]['entity.node.book_outline_form']['#weight'] = 100;
     $data['tabs'][0]['entity.node.delete_form']['#weight'] = 110;
     $data['tabs'][0]['entity.taxonomy_term.delete_form']['#weight'] = 110;
+    // Change the "Latest version" tab title provided by Content Moderation.
+    $data['tabs'][0]['content_moderation.workflows:node.latest_version_tab']['#link']['title'] = 'Latest draft';
   }
 }
 
