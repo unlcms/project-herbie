@@ -1,0 +1,12 @@
+uuid: 573db750-4265-497b-965f-b73344179392
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_pattern_majors
+label: Majors
+classes: "unl-bg-soft-light\r\nunl-bg-majors"
+type: section
+group: background_pattern
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

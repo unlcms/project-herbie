@@ -1,0 +1,12 @@
+uuid: 3d52bf53-3da2-4a4a-9646-d4b378bad678
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_pattern_grit
+label: Grit
+classes: unl-bg-grit
+type: section
+group: background_pattern
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

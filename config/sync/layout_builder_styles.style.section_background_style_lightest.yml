@@ -1,0 +1,12 @@
+uuid: ace360e0-8865-4093-a5a4-20d5b9d53caa
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_style_lightest
+label: Lightest
+classes: unl-bg-lightest-gray
+type: section
+group: background
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0
