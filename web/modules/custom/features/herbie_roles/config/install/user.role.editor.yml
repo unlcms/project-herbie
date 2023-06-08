@@ -143,6 +143,7 @@ permissions:
   - 'update unl_directory_entry external entity'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
+  - 'use editorial transition unpublish'
   - 'use text format block_body'
   - 'use text format simple'
   - 'use text format standard'
