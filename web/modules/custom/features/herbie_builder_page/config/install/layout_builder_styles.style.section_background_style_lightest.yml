@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies: {  }
 id: section_background_style_lightest
-label: Lightest
+label: 'Lightest gray'
 classes: unl-bg-lightest-gray
 type: section
 group: background
 block_restrictions: {  }
 layout_restrictions: {  }
-weight: 0
+weight: -2

@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: G80Wb8vAlektfnYHGSRlje48Xb7UkGmrqjOnC9k9ZX0
 id: block_background_style_dark
-label: 'Dark Gray'
+label: 'Dark gray'
 classes: "unl-bg-dark-gray\r\nunl-cream"
 type: component
 group: background
@@ -13,4 +13,4 @@ block_restrictions:
   - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
-weight: -9
+weight: -8
