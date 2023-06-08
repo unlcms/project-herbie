@@ -11854,23 +11854,22 @@
         },
         {
             "name": "unlcms/features_readonly",
-            "version": "1.0.x-dev",
+            "version": "1.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/features_readonly.git",
-                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a"
+                "reference": "6ee25bbe390cc77ceb85ce9e717914518e424cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/be5a124b448e47acf1f725af837a81b6b063d05a",
-                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a",
+                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/6ee25bbe390cc77ceb85ce9e717914518e424cc4",
+                "reference": "6ee25bbe390cc77ceb85ce9e717914518e424cc4",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
                 "drupal/features": "^5.0.0"
             },
-            "default-branch": true,
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -11883,9 +11882,9 @@
             "description": "Enables making configuration managed by Features read-only to prevent changes.",
             "support": {
                 "issues": "https://github.com/unlcms/features_readonly/issues",
-                "source": "https://github.com/unlcms/features_readonly/tree/1.0"
+                "source": "https://github.com/unlcms/features_readonly/tree/1.0-alpha2"
             },
-            "time": "2023-05-19T21:15:27+00:00"
+            "time": "2023-06-08T18:42:03+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
