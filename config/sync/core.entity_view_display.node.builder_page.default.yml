@@ -105,7 +105,7 @@ third_party_settings:
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
-              - 'inline_block:html_code'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
@@ -125,23 +125,12 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
-            'Custom block types':
-              - accordion
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
-              - slideshow
-              - social_media_links
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
               - 'inline_block:icon_links'
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
@@ -169,7 +158,7 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
@@ -187,16 +176,6 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - accordion
-              - card
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
-              - slideshow
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -204,7 +183,6 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
