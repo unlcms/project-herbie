@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "687ac49147b177f0df8e03e514065247",
+    "content-hash": "7e1daff18cbace42f354fbb35eee5f71",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -6246,7 +6246,7 @@
         },
         {
             "name": "dxg/icon-library",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.unl.edu/dxg/icon-library.git",
