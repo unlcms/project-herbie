@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38482ee1002cc4c5ca5d64ed400388cf",
+    "content-hash": "687ac49147b177f0df8e03e514065247",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -4562,6 +4562,51 @@
             "homepage": "https://www.drupal.org/project/layout_builder_styles",
             "support": {
                 "source": "https://git.drupalcode.org/project/layout_builder_styles"
+            }
+        },
+        {
+            "name": "drupal/lb_direct_add",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lb_direct_add.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lb_direct_add-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "fddaf8aedca184f0fd27b1c2411c99c38be16ce2"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1668112668",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sean Adams-Hiett",
+                    "homepage": "https://www.drupal.org/user/62893",
+                    "email": "pyrello@gmail.com"
+                }
+            ],
+            "description": "Converts the 'Add block' link in Layout Builder into a drop-button to directly add custom block types.",
+            "homepage": "https://www.drupal.org/project/lb_direct_add",
+            "support": {
+                "source": "https://git.drupalcode.org/project/lb_direct_add"
             }
         },
         {

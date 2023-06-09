@@ -89,6 +89,16 @@
   z-index: 1300;
 }
 
+/* Layout Builder Direct Add (lb_direct_add) overrides */
+.layout-builder__direct-add__list > .links {
+  padding: 0;
+}
+.js .layout-builder__add-block li, .js .layout-builder__add-block a {
+  display: inline-block;
+  margin: 0 3px 3px;
+  padding: 4px;
+}
+
 
 /**
  * Main layout builder action form at the top of the page.

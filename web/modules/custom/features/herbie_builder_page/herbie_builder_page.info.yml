@@ -57,6 +57,7 @@ dependencies:
   - 'layout_builder_component_attributes:layout_builder_component_attributes'
   - 'layout_builder_restrictions:layout_builder_restrictions'
   - 'layout_builder_styles:layout_builder_styles'
+  - 'lb_direct_add:lb_direct_add'
   - 'linkit:linkit'
   - 'markup:markup'
   - 'menu_block:menu_block'
@@ -70,5 +71,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.4.4
+version: 1.4.5
 package: Herbie

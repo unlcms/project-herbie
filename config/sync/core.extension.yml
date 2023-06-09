@@ -91,6 +91,7 @@ module:
   layout_builder_restrictions_by_region: 0
   layout_builder_styles: 0
   layout_discovery: 0
+  lb_direct_add: 0
   link: 0
   linkit: 0
   linkit_media_library: 0
