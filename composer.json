@@ -230,7 +230,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true
-        }
+        },
+        "process-timeout": 3000
     },
     "autoload": {
         "classmap": [
