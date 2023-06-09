@@ -4,11 +4,13 @@ status: true
 dependencies:
   module:
     - asset_injector
+    - feeds
     - field_ui
     - google_analytics
     - node
     - paragraphs
     - system
+    - taxonomy
     - twig_ui
     - views_ui
 _core:
@@ -18,10 +20,13 @@ label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access feed overview'
   - 'access site reports'
+  - 'access taxonomy overview'
   - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
+  - 'administer feeds'
   - 'administer js assets injector'
   - 'administer node display'
   - 'administer node fields'
@@ -29,6 +34,7 @@ permissions:
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
+  - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer views'
   - 'load twig templates from file system'
