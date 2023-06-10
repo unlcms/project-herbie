@@ -1,33 +1,39 @@
 {{ attach_library('unl_five_herbie/card') }}
 
 {% set attributes = attributes ?: create_attribute() %}
-{% set card_classes = ['dcf-card', 'dcf-card-as-link', 'dcf-d-flex', 'dcf-flex-col', 'unl-box-shadow'] %}
+{% set card_classes = ['dcf-card', 'dcf-d-flex', 'dcf-flex-col', 'unl-box-shadow'] %}
 
 {% set cardblock_wrapper_attributes = create_attribute() %}
 {% set cardblock_wrapper_attributes = cardblock_wrapper_attributes.addClass('dcf-card-block dcf-2nd') %}
 {% set image_wrapper_attributes = create_attribute() %}
 {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-ratio dcf-ratio-4x3') %}
 
-<div{{ attributes.addclass(card_classes) }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
-  {% block card_body %}
-    <div {{ cardblock_wrapper_attributes }}>
-      {{ content.b_card_overline }}
-      {{ content.b_card_headline }}
-      {{ content.b_card_subhead }}
+{% if content.b_card_cta[0]['#url']%}
+  <div{{ attributes.addclass(card_classes, 'dcf-card-as-link') }}>
+{% else %}
+  <div{{ attributes.addclass(card_classes) }}>
+{% endif %}
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {% block card_body %}
+      <div {{ cardblock_wrapper_attributes }}>
+        {{ content.b_card_overline }}
+        {{ content.b_card_headline }}
+        {{ content.b_card_subhead }}
 
-      {{ content.b_card_body }}
+        {{ content.b_card_body }}
 
-      {% if content.b_card_cta[0]['#url']%}
-        {{ content.b_card_cta }}
-      {% endif %}
-    </div>
-  {% endblock %}
+        {% if content.b_card_cta[0]['#url']%}
+          {{ content.b_card_cta }}
+        {% endif %}
+      </div>
+    {% endblock %}
 
-  {% block card_img %}
-    <div {{ image_wrapper_attributes }}>
-      {{ content.b_card_image }}
-    </div>
-  {% endblock %}
-</div>
+    {% if content.b_card_image.value %}
+      {% block card_img %}
+        <div {{ image_wrapper_attributes }}>
+          {{ content.b_card_image }}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
