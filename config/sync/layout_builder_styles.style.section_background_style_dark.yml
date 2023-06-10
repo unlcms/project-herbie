@@ -1,0 +1,12 @@
+uuid: d7e55d43-abbe-4c45-9c58-3d5e52d3064d
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_style_dark
+label: 'Dark gray'
+classes: "unl-bg-dark-gray\r\nunl-cream"
+type: section
+group: background
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -4

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_style_lighter
+label: 'Lighter gray'
+classes: unl-bg-lighter-gray
+type: section
+group: background
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -3

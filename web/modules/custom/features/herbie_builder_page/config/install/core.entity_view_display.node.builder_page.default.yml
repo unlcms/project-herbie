@@ -71,6 +71,16 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          59713e09-283c-4b74-a5a2-099f2925a7af:
+            uuid: 59713e09-283c-4b74-a5a2-099f2925a7af
+            region: first
+            configuration:
+              id: 'extra_field_block:node:builder_page:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
             weight: 0
             additional: {  }
         third_party_settings: {  }
@@ -94,7 +104,7 @@ third_party_settings:
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
-              - 'inline_block:html_code'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
@@ -114,23 +124,12 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
-            'Custom block types':
-              - accordion
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
-              - slideshow
-              - social_media_links
             Forms:
               - unl_webform_block
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
               - 'inline_block:icon_links'
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
@@ -158,7 +157,7 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
@@ -176,16 +175,6 @@ third_party_settings:
             'Content fields':
               - 'field_block:node:builder_page:body'
             'Curated Lists': {  }
-            'Custom block types':
-              - accordion
-              - card
-              - content
-              - cta
-              - html_code
-              - logo_cloud
-              - photo_hero
-              - proofpoint
-              - slideshow
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -193,7 +182,6 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
-              - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
@@ -260,6 +248,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: first
   links:
     settings: {  }
     third_party_settings: {  }

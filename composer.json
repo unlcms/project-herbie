@@ -37,7 +37,7 @@
             "type": "package",
             "package": {
                 "name": "dxg/icon-library",
-                "version": "1.0",
+                "version": "1.1",
                 "type": "drupal-library",
                 "source": {
                     "type": "git",
@@ -163,6 +163,7 @@
         "drupal/layout_builder_operation_link": "^2.0",
         "drupal/layout_builder_restrictions": "^2.0",
         "drupal/layout_builder_styles": "^2.0",
+        "drupal/lb_direct_add": "^2.0",
         "drupal/linkit": "^6.0@beta",
         "drupal/linkit_media_library": "^1.0@alpha",
         "drupal/markup": "^2.0@beta",
@@ -229,7 +230,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true
-        }
+        },
+        "process-timeout": 3000
     },
     "autoload": {
         "classmap": [
