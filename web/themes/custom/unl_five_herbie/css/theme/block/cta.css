@@ -1,0 +1,15 @@
+
+/* This file might not be needed consult with Ryan/Eric on Monday*/
+/* h2, p, */
+/* :nth-child() */
+
+/* This won't work because it applies it to every block, if the section background is scarlet */
+
+/* div.unl-bg-scarlet div.unl-bg-scarlet h2, div.unl-bg-scarlet  div.unl-bg-scarlet p{
+  color: rgb(0, 112, 211);
+} */
+
+/* div.unl-bg-scarlet div.unl-bg-scarlet h2, div.unl-bg-scarlet div.unl-bg-scarlet p{
+  color: rgb(5, 0, 255);
+} */
+
