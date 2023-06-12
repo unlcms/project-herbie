@@ -19,6 +19,6 @@ default:
       value: true
   body:
     -
-      value: '<p><a href="https://maps.unl.edu/NU">1400 R Street</a><br>Lincoln, NE 68588</p><p>402-472-7211</p>'
-      format: block_body
+      value: '<p><a href="https://maps.unl.edu/NU">1400 R Street</a><br>Lincoln, NE 68588</p><p>402-472-7211</p><p><a href="mailto:example@unl.edu">example@unl.edu</a></p>'
+      format: standard
       summary: ''
