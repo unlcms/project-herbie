@@ -26,8 +26,10 @@ dependencies:
   module:
     - dcf_lazyload
     - image_class
-    - responsive_image
+    - link
+    - svg_image_responsive
     - telephone
+    - text
     - user
 _core:
   default_config_hash: jgHsroqz9ON0a83fsKNMnTa5SIV3CKk8qb7vvKCdkP0
@@ -36,10 +38,29 @@ targetEntityType: node
 bundle: person
 mode: teaser
 content:
-  links:
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  n_additional:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  n_education:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   n_person_address:
     type: string
@@ -47,14 +68,21 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  n_person_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
     region: content
   n_person_email:
     type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   n_person_phone:
     type: telephone_link
@@ -62,7 +90,7 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   n_person_photo:
     type: responsive_image
@@ -70,12 +98,16 @@ content:
     settings:
       responsive_image_style: medium__square
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''
       dcf_lazyload:
         dcf_lazyload_enable: false
-    weight: 6
+    weight: 7
     region: content
   n_person_position:
     type: string
@@ -83,7 +115,63 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
+    region: content
+  n_person_social_fb:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  n_person_social_instagram:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  n_person_social_linkedin:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  n_person_social_pinterest:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  n_person_social_snapchat:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  n_person_social_twitter:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  n_person_social_youtube:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
     region: content
   n_person_unldirectoryreference:
     type: entity_reference_entity_view
@@ -92,17 +180,18 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
-hidden:
-  n_additional: true
-  n_education: true
-  n_person_bio: true
-  n_person_social_fb: true
-  n_person_social_instagram: true
-  n_person_social_linkedin: true
-  n_person_social_pinterest: true
-  n_person_social_snapchat: true
-  n_person_social_twitter: true
-  n_person_social_youtube: true
-  n_person_website: true
+  n_person_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 17
+    region: content
+hidden: {  }
