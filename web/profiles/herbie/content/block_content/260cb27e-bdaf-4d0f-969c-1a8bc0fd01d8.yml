@@ -10,7 +10,7 @@ default:
       value: true
   info:
     -
-      value: 'Contact info'
+      value: 'Related links'
   reusable:
     -
       value: true
@@ -19,6 +19,6 @@ default:
       value: true
   body:
     -
-      value: '<p><a href="https://maps.unl.edu/NU">1400 R Street</a><br>Lincoln, NE 68588</p><p>402-472-7211</p><p><a href="mailto:example@unl.edu">example@unl.edu</a></p>'
-      format: block_body
+      value: '<ul><li><a href="https://www.unl.edu/chancellor/">Office of the Chancellor</a></li><li><a href="https://ucomm.unl.edu/">University Communication</a></li></ul>'
+      format: standard
       summary: ''
