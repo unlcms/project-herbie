@@ -18,7 +18,8 @@ div.unl-bg-scarlet summary,
 div.unl-bg-scarlet span,
 div.unl-bg-scrarlet ol,
 div.unl-bg-scrarlet li
-/* div.unl-bg-scrarlet a not working?? */
+.unl-bg-scarlet a:link /* I don't think the a link CSS work. For example, this doesn't work in the wysiwyg editor of a card block*/
+.unl-bg-scarlet a:hover
 {
   /* text color -  unl cream */
   color: #fefdfa  !important ;
@@ -26,20 +27,6 @@ div.unl-bg-scrarlet li
 
 /* When the section background is scarlet and the block background is unl-bg-light-gray*/
 /* Fixed color issue in timeline */
-div.unl-bg-scarlet div.unl-bg-light-gray h2,
-div.unl-bg-scarlet div.unl-bg-light-gray h3,
-div.unl-bg-scarlet div.unl-bg-light-gray h4,
-div.unl-bg-scarlet div.unl-bg-light-gray h5,
-div.unl-bg-scarlet div.unl-bg-light-gray h6,
-div.unl-bg-scarlet div.unl-bg-light-gray p,
-div.unl-bg-scarlet div.div.unl-bg-light-gray ,
-div.unl-bg-scarlet div.unl-bg-light-gray summary,
-div.unl-bg-scarlet div.unl-bg-light-gray span,
-div.unl-bg-scarlet div.unl-bg-light-gray ol,
-div.unl-bg-scarlet div.unl-bg-light-gray li
-{
-  color: #424240 !important;
-}
 
 div.unl-bg-dark-gray h2,
 div.unl-bg-dark-gray h3,
@@ -57,7 +44,6 @@ div.unl-bg-dark-gray li
   color: #fefdfa  !important ;
 }
 
-/* For the three block backgrounds when section background is scarlet*/
 div.unl-bg-scarlet div.unl-bg-scarlet h2,
 div.unl-bg-scarlet div.unl-bg-scarlet h3,
 div.unl-bg-scarlet div.unl-bg-scarlet h4,
@@ -72,6 +58,23 @@ div.unl-bg-scarlet div.unl-bg-scarlet li
 {
   color: #fefdfa !important ;
 }
+
+div.unl-bg-dark-gray div.unl-bg-dark-gray h2,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h3,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h4,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h5,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h6,
+div.unl-bg-dark-gray div.unl-bg-dark-gray p,
+div.unl-bg-dark-gray div.unl-bg-dark-gray div,
+div.unl-bg-dark-gray div.unl-bg-dark-gray summary,
+div.unl-bg-dark-gray div.unl-bg-dark-gray span,
+div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
+div.unl-bg-dark-gray div.unl-bg-dark-gray li
+{
+  color: #fefdfa !important ;
+}
+
+/* For the five block backgrounds when section background is scarlet*/
 
 div.unl-bg-scarlet div.unl-bg-dark-gray h2,
 div.unl-bg-scarlet div.unl-bg-dark-gray h3,
@@ -103,8 +106,135 @@ div.unl-bg-scarlet div.unl-bg-cream li
   /* text color - body color */
   color: #424240 !important;
 }
+
+
+div.unl-bg-scarlet div.unl-bg-light-gray h2,
+div.unl-bg-scarlet div.unl-bg-light-gray h3,
+div.unl-bg-scarlet div.unl-bg-light-gray h4,
+div.unl-bg-scarlet div.unl-bg-light-gray h5,
+div.unl-bg-scarlet div.unl-bg-light-gray h6,
+div.unl-bg-scarlet div.unl-bg-light-gray p,
+div.unl-bg-scarlet div.unl-bg-light-gray div,
+div.unl-bg-scarlet div.unl-bg-light-gray summary,
+div.unl-bg-scarlet div.unl-bg-light-gray span,
+div.unl-bg-scarlet div.unl-bg-light-gray ol,
+div.unl-bg-scarlet div.unl-bg-light-gray li
+{
+  color: #424240 !important;
+}
+
+div.unl-bg-scarlet div.unl-bg-lighter-gray h2,
+div.unl-bg-scarlet div.unl-bg-lighter-gray h3,
+div.unl-bg-scarlet div.unl-bg-lighter-gray h4,
+div.unl-bg-scarlet div.unl-bg-lighter-gray h5,
+div.unl-bg-scarlet div.unl-bg-lighter-gray h6,
+div.unl-bg-scarlet div.unl-bg-lighter-gray p,
+div.unl-bg-scarlet div.unl-bg-lighter-gray div,
+div.unl-bg-scarlet div.unl-bg-lighter-gray summary,
+div.unl-bg-scarlet div.unl-bg-lighter-gray span,
+div.unl-bg-scarlet div.unl-bg-lighter-gray ol,
+div.unl-bg-scarlet div.unl-bg-lighter-gray li
+{
+  color: #424240 !important;
+}
+
+div.unl-bg-scarlet div.unl-bg-lightest-gray h2,
+div.unl-bg-scarlet div.unl-bg-lightest-gray h3,
+div.unl-bg-scarlet div.unl-bg-lightest-gray h4,
+div.unl-bg-scarlet div.unl-bg-lightest-gray h5,
+div.unl-bg-scarlet div.unl-bg-lightest-gray h6,
+div.unl-bg-scarlet div.unl-bg-lightest-gray p,
+div.unl-bg-scarlet div.unl-bg-lightest-gray div,
+div.unl-bg-scarlet div.unl-bg-lightest-gray summary,
+div.unl-bg-scarlet div.unl-bg-lightest-gray span,
+div.unl-bg-scarlet div.unl-bg-lightest-gray ol,
+div.unl-bg-scarlet div.unl-bg-lightest-gray li
+{
+  color: #424240 !important;
+}
 /* end */
 
+/* For the five block backgrounds when section background is dark gray*/
+
+
+div.unl-bg-dark-gray div.unl-bg-dark-gray h2,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h3,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h4,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h5,
+div.unl-bg-dark-gray div.unl-bg-dark-gray h6,
+div.unl-bg-dark-gray div.unl-bg-dark-gray p,
+div.unl-bg-dark-gray div.unl-bg-dark-gray div,
+div.unl-bg-dark-gray div.unl-bg-dark-gray summary,
+div.unl-bg-dark-gray div.unl-bg-dark-gray span,
+div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
+div.unl-bg-dark-gray div.unl-bg-dark-gray li
+{
+  color: #fefdfa !important ;
+}
+
+div.unl-bg-dark-gray div.unl-bg-cream h2,
+div.unl-bg-dark-gray div.unl-bg-cream h3,
+div.unl-bg-dark-gray div.unl-bg-cream h4,
+div.unl-bg-dark-gray div.unl-bg-cream h5,
+div.unl-bg-dark-gray div.unl-bg-cream h6,
+div.unl-bg-dark-gray div.unl-bg-cream p,
+div.unl-bg-dark-gray div.unl-bg-cream div,
+div.unl-bg-dark-gray div.unl-bg-cream summary,
+div.unl-bg-dark-gray div.unl-bg-cream span,
+div.unl-bg-dark-gray div.unl-bg-cream ol,
+div.unl-bg-dark-gray div.unl-bg-cream li
+{
+  /* text color - body color */
+  color: #424240 !important;
+}
+
+
+div.unl-bg-dark-gray div.unl-bg-light-gray h2,
+div.unl-bg-dark-gray div.unl-bg-light-gray h3,
+div.unl-bg-dark-gray div.unl-bg-light-gray h4,
+div.unl-bg-dark-gray div.unl-bg-light-gray h5,
+div.unl-bg-dark-gray div.unl-bg-light-gray h6,
+div.unl-bg-dark-gray div.unl-bg-light-gray p,
+div.unl-bg-dark-gray div.unl-bg-light-gray div,
+div.unl-bg-dark-gray div.unl-bg-light-gray summary,
+div.unl-bg-dark-gray div.unl-bg-light-gray span,
+div.unl-bg-dark-gray div.unl-bg-light-gray ol,
+div.unl-bg-dark-gray div.unl-bg-light-gray li
+{
+  color: #424240 !important;
+}
+
+div.unl-bg-dark-gray div.unl-bg-lighter-gray h2,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray h3,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray h4,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray h5,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray h6,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray p,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray div,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray summary,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray span,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray ol,
+div.unl-bg-dark-gray div.unl-bg-lighter-gray li
+{
+  color: #424240 !important;
+}
+
+div.unl-bg-dark-gray div.unl-bg-lightest-gray h2,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray h3,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray h4,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray h5,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray h6,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray p,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray div,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray summary,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray span,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray ol,
+div.unl-bg-dark-gray div.unl-bg-lightest-gray li
+{
+  color: #424240 !important;
+}
+
+/* end */
 
 /* For card */
 div.dcf-card
@@ -116,5 +246,22 @@ div.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
 }
 div.unl-bg-scarlet div.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
   /* text color - unl light gray */
+  color: #e3e3e2 !important;
+}
+
+
+/* For Person Teaser Icons and wysiwyg links*/
+.unl-bg-scarlet .node--type-person a:link {
+  color: #e3e3e2 !important;
+}
+
+.unl-bg-scarlet .node--type-person a:visited {
+  color: #e3e3e2 !important;
+}
+.unl-bg-dark-gray .node--type-person a:link {
+  color: #e3e3e2 !important;
+}
+
+.unl-bg-dark-gray  .node--type-person a:visited {
   color: #e3e3e2 !important;
 }
