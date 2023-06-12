@@ -29,7 +29,7 @@
       </div>
     {% endblock %}
 
-    {% if content.b_card_image.value %}
+    {% if content.b_card_image.0 %}
       {% block card_img %}
         <div {{ image_wrapper_attributes }}>
           {{ content.b_card_image }}
