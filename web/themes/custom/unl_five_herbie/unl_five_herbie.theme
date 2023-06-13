@@ -174,10 +174,16 @@ function unl_five_herbie_preprocess_field(&$variables) {
   $ctaFields = array('b_cta_link', 'b_cta_summary', 'b_cta_title');
 
   if (in_array($field_name, $ctaFields)) {
+    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
+          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
           $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary dcf-uppercase';
+          }
+          else {
+          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary dcf-uppercase';
+          }
         }
         break;
     }
