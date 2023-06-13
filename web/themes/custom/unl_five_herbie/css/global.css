@@ -22,7 +22,9 @@ div.unl-bg-scrarlet li
 .unl-bg-scarlet a:hover
 {
   /* text color -  unl cream */
-  color: #fefdfa  !important ;
+  /* color: #fefdfa  !important ; */
+  color: var(--bg-body) !important;
+
 }
 
 /* When the section background is scarlet and the block background is unl-bg-light-gray*/
@@ -41,7 +43,7 @@ div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray li
 {
   /* text color -  unl cream */
-  color: #fefdfa  !important ;
+  color: var(--bg-body) !important;
 }
 
 div.unl-bg-scarlet div.unl-bg-scarlet h2,
@@ -56,7 +58,7 @@ div.unl-bg-scarlet div.unl-bg-scarlet span,
 div.unl-bg-scarlet div.unl-bg-scarlet ol,
 div.unl-bg-scarlet div.unl-bg-scarlet li
 {
-  color: #fefdfa !important ;
+  color: var(--bg-body) !important;
 }
 
 div.unl-bg-dark-gray div.unl-bg-dark-gray h2,
@@ -71,7 +73,7 @@ div.unl-bg-dark-gray div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray div.unl-bg-dark-gray li
 {
-  color: #fefdfa !important ;
+  color: var(--bg-body) !important;
 }
 
 /* For the five block backgrounds when section background is scarlet*/
@@ -88,7 +90,7 @@ div.unl-bg-scarlet div.unl-bg-dark-gray span,
 div.unl-bg-scarlet div.unl-bg-dark-gray ol,
 div.unl-bg-scarlet div.unl-bg-dark-gray li
 {
-  color: #fefdfa !important ;
+  color: var(--bg-body) !important;
 }
 
 div.unl-bg-scarlet div.unl-bg-cream h2,
@@ -104,7 +106,7 @@ div.unl-bg-scarlet div.unl-bg-cream ol,
 div.unl-bg-scarlet div.unl-bg-cream li
 {
   /* text color - body color */
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 
@@ -120,7 +122,8 @@ div.unl-bg-scarlet div.unl-bg-light-gray span,
 div.unl-bg-scarlet div.unl-bg-light-gray ol,
 div.unl-bg-scarlet div.unl-bg-light-gray li
 {
-  color: #424240 !important;
+  /* color: #424240 !important; */
+  color: var(--darker-gray) !important;
 }
 
 div.unl-bg-scarlet div.unl-bg-lighter-gray h2,
@@ -135,7 +138,7 @@ div.unl-bg-scarlet div.unl-bg-lighter-gray span,
 div.unl-bg-scarlet div.unl-bg-lighter-gray ol,
 div.unl-bg-scarlet div.unl-bg-lighter-gray li
 {
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 div.unl-bg-scarlet div.unl-bg-lightest-gray h2,
@@ -150,7 +153,7 @@ div.unl-bg-scarlet div.unl-bg-lightest-gray span,
 div.unl-bg-scarlet div.unl-bg-lightest-gray ol,
 div.unl-bg-scarlet div.unl-bg-lightest-gray li
 {
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 /* end */
 
@@ -169,7 +172,7 @@ div.unl-bg-dark-gray div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray div.unl-bg-dark-gray li
 {
-  color: #fefdfa !important ;
+  color: var(--bg-body) !important;
 }
 
 div.unl-bg-dark-gray div.unl-bg-cream h2,
@@ -185,7 +188,7 @@ div.unl-bg-dark-gray div.unl-bg-cream ol,
 div.unl-bg-dark-gray div.unl-bg-cream li
 {
   /* text color - body color */
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 
@@ -201,7 +204,7 @@ div.unl-bg-dark-gray div.unl-bg-light-gray span,
 div.unl-bg-dark-gray div.unl-bg-light-gray ol,
 div.unl-bg-dark-gray div.unl-bg-light-gray li
 {
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 div.unl-bg-dark-gray div.unl-bg-lighter-gray h2,
@@ -216,7 +219,7 @@ div.unl-bg-dark-gray div.unl-bg-lighter-gray span,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray ol,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray li
 {
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 div.unl-bg-dark-gray div.unl-bg-lightest-gray h2,
@@ -231,7 +234,7 @@ div.unl-bg-dark-gray div.unl-bg-lightest-gray span,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray ol,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray li
 {
-  color: #424240 !important;
+  color: var(--darker-gray) !important;
 }
 
 /* end */
@@ -239,29 +242,30 @@ div.unl-bg-dark-gray div.unl-bg-lightest-gray li
 /* For card */
 div.dcf-card
 div.unl-bg-dark-gray.dcf-card .dcf-subhead {
-  color: #e3e3e2 !important ;
+  /* color: #e3e3e2 !important ; */
+  color: var(--bg-light-gray) !important;
 }
 div.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
-  color: #e3e3e2 !important ;
+  color: var(--bg-light-gray) !important;
 }
 div.unl-bg-scarlet div.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
   /* text color - unl light gray */
-  color: #e3e3e2 !important;
+  color: var(--bg-light-gray) !important;
 }
 
 
-/* For Person Teaser Icons and wysiwyg links*/
+/* For Person Teaser Icons */
 .unl-bg-scarlet .node--type-person a:link {
-  color: #e3e3e2 !important;
+  color: var(--bg-light-gray) !important;
 }
 
 .unl-bg-scarlet .node--type-person a:visited {
-  color: #e3e3e2 !important;
+  color: var(--bg-light-gray) !important;
 }
 .unl-bg-dark-gray .node--type-person a:link {
-  color: #e3e3e2 !important;
+  color: var(--bg-light-gray) !important;
 }
 
 .unl-bg-dark-gray  .node--type-person a:visited {
-  color: #e3e3e2 !important;
+  color: var(--bg-light-gray) !important;
 }
