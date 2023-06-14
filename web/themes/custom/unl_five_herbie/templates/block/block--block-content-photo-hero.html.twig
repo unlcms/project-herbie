@@ -1,14 +1,58 @@
 {{ attach_library('unl_five_herbie/photo_hero') }}
 
 <div{{ attributes.addClass('dcf-hero unlcms-hero-home') }}>
+
   {{ title_prefix }}
   {{ title_suffix }}
 
+  {% set photohero_inner_wrapper_attr = create_attribute() %}
+  {% set photohero_button_wrapper_attr = create_attribute() %}
+
+  {% if content.b_photohero_display_option[0]['#markup'] == 'left' %}
+
+  {% set photohero_inner_wrapper = ['dcf-z-1', 'unlcms-hero-text', 'unlcms-hero-text-c'] %}
+  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-l'] %}
+
+  {%  elseif content.b_photohero_display_option[0]['#markup'] == 'center' %}
+
+  {% set photohero_inner_wrapper = [ 'dcf-z-1', 'dcf-d-flex', 'dcf-flex-col', 'dcf-ai-center', 'dcf-txt-center', 'unlcms-hero-text', 'unlcms-hero-text-c' ] %}
+  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-c', 'dcf-jc-center'] %}
+
+  {%  elseif content.b_photohero_display_option[0]['#markup'] == 'right' %}
+
+  {% set photohero_inner_wrapper = ['dcf-z-1', 'unlcms-hero-text', 'unlcms-hero-text-r'] %}
+  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-r'] %}
+
+  {% endif %}
+
+  {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(photohero_inner_wrapper) %}
+  {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass(photohero_button_wrapper) %}
+
+
   {% block content %}
     <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
-      {{ content.b_photohero_title }}
+
+      <div {{photohero_inner_wrapper_attr}}>
+        <header class="unlcms-hero-header">
+          {% if content.b_photohero_subhead %}
+            {{ content.b_photohero_subhead }}
+          {% endif %}
+
+          {{ content.b_photohero_title }}
+        </header>
+
+        {% if content.b_photohero_body %}
+          {{content.b_photohero_body}}
+        {% endif %}
+
+      </div>
+
       {{ content.b_photohero_image }}
-      {{ content.b_photohero_links }}
+
+      <div {{photohero_button_wrapper_attr}} role="group">
+        {{ content.b_photohero_links }}
+      </div>
+
     </div>
   {% endblock %}
 </div>
