@@ -1,51 +1,64 @@
 {{ attach_library('unl_five_herbie/photo_hero') }}
 
-<div{{ attributes.addClass('dcf-hero unlcms-hero-home') }}>
+{% if content.b_photohero_image.0 or content.b_photohero_body.0 or content.b_photohero_title.0 or content.b_photohero_links.0 or content.b_photohero_subhead.0 %}
 
-  {{ title_prefix }}
-  {{ title_suffix }}
+  <div{{ attributes.addClass('dcf-hero unlcms-hero-home') }}>
 
-  {% set photohero_inner_wrapper_attr = create_attribute() %}
-  {% set photohero_button_wrapper_attr = create_attribute() %}
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-  {% if content.b_photohero_display_option[0]['#markup'] == 'left' %}
-    {% set textPositionClass = ['unlcms-hero-text-l'] %}
-    {% set buttonPositionClass = ['unlcms-hero-btn-group-l'] %}
-  {%  elseif content.b_photohero_display_option[0]['#markup'] == 'center' %}
-    {% set textPositionClass = ['unlcms-hero-text-c'] %}
-    {% set buttonPositionClass = ['unlcms-hero-btn-group-c'] %}
-  {%  elseif content.b_photohero_display_option[0]['#markup'] == 'right' %}
-    {% set textPositionClass = ['unlcms-hero-text-r'] %}
-    {% set buttonPositionClass = ['unlcms-hero-btn-group-r'] %}
-  {% endif %}
+    {% set photohero_inner_wrapper_attr = create_attribute() %}
+    {% set photohero_button_wrapper_attr = create_attribute() %}
 
-  {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-hero-text']).addClass(textPositionClass) %}
-  {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
+    {% if content.b_photohero_display_option[0]['#markup'] == 'left' %}
+      {% set textPositionClass = ['unlcms-hero-text-l'] %}
+      {% set buttonPositionClass = ['unlcms-hero-btn-group-l'] %}
+    {%  elseif content.b_photohero_display_option[0]['#markup'] == 'center' %}
+      {% set textPositionClass = ['unlcms-hero-text-c'] %}
+      {% set buttonPositionClass = ['unlcms-hero-btn-group-c'] %}
+    {%  elseif content.b_photohero_display_option[0]['#markup'] == 'right' %}
+      {% set textPositionClass = ['unlcms-hero-text-r'] %}
+      {% set buttonPositionClass = ['unlcms-hero-btn-group-r'] %}
+    {% endif %}
 
-  {% block content %}
-    <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
+    {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-hero-text']).addClass(textPositionClass) %}
+    {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
 
-      <div {{photohero_inner_wrapper_attr}}>
-        <header class="unlcms-hero-header">
-          {% if content.b_photohero_subhead %}
-            {{ content.b_photohero_subhead }}
-          {% endif %}
+    {% block content %}
+      <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
 
-          {{ content.b_photohero_title }}
-        </header>
+        {% if content.b_photohero_display_option[0]['#markup'] in ['left', 'center', 'right'] %}
+          <div {{photohero_inner_wrapper_attr}}>
+        {% endif %}
 
-        {% if content.b_photohero_body %}
-          {{content.b_photohero_body}}
+            {% if content.b_photohero_subhead.0 or content.b_photohero_title.0 %}
+              <header class="unlcms-hero-header">
+                {% if content.b_photohero_subhead.0 %}
+                  {{ content.b_photohero_subhead }}
+                {% endif %}
+                {{ content.b_photohero_title }}
+              </header>
+            {% endif %}
+
+            {% if content.b_photohero_body.0 %}
+              {{content.b_photohero_body}}
+            {% endif %}
+
+        {% if content.b_photohero_display_option[0]['#markup'] in ['left', 'center', 'right'] %}
+          </div>
+        {% endif %}
+
+        {% if content.b_photohero_image.0 %}
+          {{ content.b_photohero_image }}
+        {% endif %}
+
+        {% if content.b_photohero_links.0 %}
+          <div {{photohero_button_wrapper_attr}} role="group">
+            {{ content.b_photohero_links }}
+          </div>
         {% endif %}
 
       </div>
-
-      {{ content.b_photohero_image }}
-
-      <div {{photohero_button_wrapper_attr}} role="group">
-        {{ content.b_photohero_links }}
-      </div>
-
-    </div>
-  {% endblock %}
-</div>
+    {% endblock %}
+  </div>
+{% endif %}
