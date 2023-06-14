@@ -9,25 +9,18 @@
   {% set photohero_button_wrapper_attr = create_attribute() %}
 
   {% if content.b_photohero_display_option[0]['#markup'] == 'left' %}
-
-  {% set photohero_inner_wrapper = ['dcf-z-1', 'unlcms-hero-text', 'unlcms-hero-text-c'] %}
-  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-l'] %}
-
+    {% set textPositionClass = ['unlcms-hero-text-l'] %}
+    {% set buttonPositionClass = ['unlcms-hero-btn-group-l'] %}
   {%  elseif content.b_photohero_display_option[0]['#markup'] == 'center' %}
-
-  {% set photohero_inner_wrapper = [ 'dcf-z-1', 'dcf-d-flex', 'dcf-flex-col', 'dcf-ai-center', 'dcf-txt-center', 'unlcms-hero-text', 'unlcms-hero-text-c' ] %}
-  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-c', 'dcf-jc-center'] %}
-
+    {% set textPositionClass = ['unlcms-hero-text-c'] %}
+    {% set buttonPositionClass = ['unlcms-hero-btn-group-c'] %}
   {%  elseif content.b_photohero_display_option[0]['#markup'] == 'right' %}
-
-  {% set photohero_inner_wrapper = ['dcf-z-1', 'unlcms-hero-text', 'unlcms-hero-text-r'] %}
-  {% set photohero_button_wrapper = ['unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1', 'unlcms-hero-btn-group-r'] %}
-
+    {% set textPositionClass = ['unlcms-hero-text-r'] %}
+    {% set buttonPositionClass = ['unlcms-hero-btn-group-r'] %}
   {% endif %}
 
-  {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(photohero_inner_wrapper) %}
-  {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass(photohero_button_wrapper) %}
-
+  {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-hero-text']).addClass(textPositionClass) %}
+  {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
 
   {% block content %}
     <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">

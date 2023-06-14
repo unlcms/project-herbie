@@ -57,12 +57,11 @@
     }
 
     .unlcms-hero-text-c {
-      /* align-items: center;
+      align-items: center;
       display: flex;
       flex-direction: column;
       grid-area: 2 / 2 / 3 / -2;
-      text-align: center; */
-      grid-area: 2 / 2 / 3 / -2;
+      text-align: center;
     }
 
     .unlcms-hero-text-c .unlcms-hero-header,
@@ -84,7 +83,7 @@
 
     .unlcms-hero-btn-group-c {
       grid-area: 3 / 2 / 4 / -2;
-      /* justify-content: center; */
+      justify-content: center;
     }
 
     .unlcms-hero-btn-group-r {
