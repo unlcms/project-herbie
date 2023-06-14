@@ -37,7 +37,7 @@
             "type": "package",
             "package": {
                 "name": "dxg/icon-library",
-                "version": "1.1",
+                "version": "1.2",
                 "type": "drupal-library",
                 "source": {
                     "type": "git",
