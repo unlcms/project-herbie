@@ -10,6 +10,16 @@ function unl_layout_builder_custom_form_alter(&$form, FormStateInterface $form_s
   switch ($form_id) {
     case 'layout_builder_add_block':
     case 'layout_builder_update_block':
+      $block_type = $form['settings']['block_form']['#block']->bundle();
+
+      // Card.
+      if ($block_type == 'card') {
+        // Remove background settings - None - empty option.
+        unset($form['layout_builder_style_background']['#empty_option']);
+        // Set 'Cream' as the default.
+        $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
+      }
+
       // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
       break;
