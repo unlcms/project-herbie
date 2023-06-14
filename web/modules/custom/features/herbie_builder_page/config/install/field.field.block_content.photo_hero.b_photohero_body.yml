@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_hero
+    - field.storage.block_content.b_photohero_body
+id: block_content.photo_hero.b_photohero_body
+field_name: b_photohero_body
+entity_type: block_content
+bundle: photo_hero
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
