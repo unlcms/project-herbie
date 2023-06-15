@@ -12,18 +12,18 @@ dependencies:
   module:
     - link
     - options
+    - text
 id: block_content.photo_hero.default
 targetEntityType: block_content
 bundle: photo_hero
 mode: default
 content:
   b_photohero_body:
-    type: string
+    type: text_default
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   b_photohero_display_option:
     type: list_key

@@ -12,28 +12,31 @@ dependencies:
   module:
     - link
     - media_library
+    - text
 id: block_content.photo_hero.default
 targetEntityType: block_content
 bundle: photo_hero
 mode: default
 content:
   b_photohero_body:
-    type: string_textfield
-    weight: 2
+    type: text_textarea_with_summary
+    weight: 3
     region: content
     settings:
-      size: 60
+      rows: 9
+      summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   b_photohero_display_option:
     type: options_select
-    weight: 26
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   b_photohero_image:
     type: media_library_widget
-    weight: 3
+    weight: 2
     region: content
     settings:
       media_types: {  }

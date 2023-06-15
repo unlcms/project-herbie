@@ -1,18 +1,16 @@
-uuid: 30d9d042-9862-45a8-92c6-37b005316bf0
+uuid: ce6c9713-b6a6-4549-a03f-95b34cfaef87
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+    - text
 id: block_content.b_photohero_body
 field_name: b_photohero_body
 entity_type: block_content
-type: string
-settings:
-  max_length: 300
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: text_with_summary
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true
