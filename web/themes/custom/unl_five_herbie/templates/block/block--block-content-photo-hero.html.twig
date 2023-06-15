@@ -2,7 +2,7 @@
 
 {% if content.b_photohero_image.0 or content.b_photohero_body.0 or content.b_photohero_title.0 or content.b_photohero_links.0 or content.b_photohero_subhead.0 %}
 
-  <div{{ attributes.addClass('dcf-hero unlcms-hero-home') }}>
+  <div{{ attributes.addClass('dcf-hero unlcms-display-banner-home') }}>
 
     {{ title_prefix }}
     {{ title_suffix }}
@@ -11,18 +11,18 @@
     {% set photohero_button_wrapper_attr = create_attribute() %}
 
     {% if content.b_photohero_display_option[0]['#markup'] == 'left' %}
-      {% set textPositionClass = ['unlcms-hero-text-l'] %}
-      {% set buttonPositionClass = ['unlcms-hero-btn-group-l'] %}
+      {% set textPositionClass = ['unlcms-display-banner-text-l'] %}
+      {% set buttonPositionClass = ['unlcms-display-banner-btn-group-l'] %}
     {%  elseif content.b_photohero_display_option[0]['#markup'] == 'center' %}
-      {% set textPositionClass = ['unlcms-hero-text-c'] %}
-      {% set buttonPositionClass = ['unlcms-hero-btn-group-c'] %}
+      {% set textPositionClass = ['unlcms-display-banner-text-c'] %}
+      {% set buttonPositionClass = ['unlcms-display-banner-btn-group-c'] %}
     {%  elseif content.b_photohero_display_option[0]['#markup'] == 'right' %}
-      {% set textPositionClass = ['unlcms-hero-text-r'] %}
-      {% set buttonPositionClass = ['unlcms-hero-btn-group-r'] %}
+      {% set textPositionClass = ['unlcms-display-banner-text-r'] %}
+      {% set buttonPositionClass = ['unlcms-display-banner-btn-group-r'] %}
     {% endif %}
 
-    {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-hero-text']).addClass(textPositionClass) %}
-    {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-hero-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
+    {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-display-banner-text']).addClass(textPositionClass) %}
+    {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-display-banner-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
 
     {% block content %}
       <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
@@ -32,7 +32,7 @@
         {% endif %}
 
             {% if content.b_photohero_subhead.0 or content.b_photohero_title.0 %}
-              <header class="unlcms-hero-header">
+              <header class="unlcms-display-banner-header">
                 {% if content.b_photohero_subhead.0 %}
                   {{ content.b_photohero_subhead }}
                 {% endif %}

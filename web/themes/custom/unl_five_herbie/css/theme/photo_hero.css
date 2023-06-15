@@ -1,20 +1,24 @@
-.unlcms-hero-home .dcf-breadcrumbs-wrapper {
+.unlcms-display-banner-home .dcf-breadcrumbs-wrapper {
   display: none;
 }
 
-.unlcms-hero-heading,
-.unlcms-hero-body {
+.unlcms-display-banner-body p {
+  margin-bottom: 0;
+ }
+
+.unlcms-display-banner-heading,
+.unlcms-display-banner-body {
   box-shadow: .75rem 0 0 #242423, -.56rem 0 0 #242423;
   margin-left: .56rem !important;
 }
 
-.unlcms-hero-heading {
+.unlcms-display-banner-heading {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
 
-.unlcms-hero-subhead {
+.unlcms-display-banner-subhead {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   box-shadow: .75rem 0 0 #242423, -.75rem 0 0 #242423;
@@ -22,7 +26,7 @@
   padding-block: .18rem;
 }
 
-.unlcms-hero-img .media-entity-bundle--image {
+.unlcms-display-banner-img .media-entity-bundle--image {
   margin-bottom: 0;
   /* .dcf-ratio-child */
   bottom: 0 !important;
@@ -32,7 +36,7 @@
   top: 0 !important;
 }
 
-.unlcms-hero-img img {
+.unlcms-display-banner-img img {
   /* Animation */
   translate: none; rotate: none; scale: none; transform: scale(1, 1);
   /* .dcf-obj-fit-cover */
@@ -46,17 +50,17 @@
   /* sm 673 */
   @media (min-width: 42.09em) {
 
-    .unlcms-hero-group-2 {
+    .unlcms-display-banner-group-2 {
       grid-template-rows: 1fr auto auto .78rem;
       height: 63vh;
       max-height: 31.57em;
     }
 
-    .unlcms-hero-text-l {
+    .unlcms-display-banner-text-l {
       grid-area: 2 / 2 / 3 / 9;
     }
 
-    .unlcms-hero-text-c {
+    .unlcms-display-banner-text-c {
       align-items: center;
       display: flex;
       flex-direction: column;
@@ -64,29 +68,29 @@
       text-align: center;
     }
 
-    .unlcms-hero-text-c .unlcms-hero-header,
-    .unlcms-hero-text-c .unlcms-hero-body {
+    .unlcms-display-banner-text-c .unlcms-display-banner-header,
+    .unlcms-display-banner-text-c .unlcms-display-banner-body {
       max-width: 42.09em;
     }
 
-    .unlcms-hero-text-r {
+    .unlcms-display-banner-text-r {
       grid-area: 2 / 5 / 3 / -2;
     }
 
-    .unlcms-hero-img {
+    .unlcms-display-banner-img {
       grid-area: 1 / 1 / -1 / -1;
     }
 
-    .unlcms-hero-btn-group-l {
+    .unlcms-display-banner-btn-group-l {
       grid-area: 3 / 2 / 4 / -2;
     }
 
-    .unlcms-hero-btn-group-c {
+    .unlcms-display-banner-btn-group-c {
       grid-area: 3 / 2 / 4 / -2;
       justify-content: center;
     }
 
-    .unlcms-hero-btn-group-r {
+    .unlcms-display-banner-btn-group-r {
       grid-area: 3 / 5 / 4 / -2;
     }
 
@@ -95,8 +99,8 @@
   /* lg 1197 */
   @media (min-width: 74.83em) {
 
-    .unlcms-hero-text-r,
-    .unlcms-hero-btn-group-r {
+    .unlcms-display-banner-text-r,
+    .unlcms-display-banner-btn-group-r {
       grid-column-start: 9;
     }
 
