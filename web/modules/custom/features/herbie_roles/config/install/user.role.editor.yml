@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
     - filter.format.block_body
+    - filter.format.minimal
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
@@ -156,6 +157,7 @@ permissions:
   - 'use editorial transition publish'
   - 'use editorial transition unpublish'
   - 'use text format block_body'
+  - 'use text format minimal'
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
