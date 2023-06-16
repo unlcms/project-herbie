@@ -26,5 +26,6 @@ dependencies:
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
-version: 1.2.0
+  - 'svg_image:svg_image_responsive'
+version: 1.2.1
 package: Herbie
