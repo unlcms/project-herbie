@@ -106,8 +106,8 @@ function unl_five_herbie_preprocess_block(&$variables) {
     if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
       $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
     }
+  }
 
-}
 
 /**
  * Implements template_preprocess_node__TYPE().
@@ -124,6 +124,25 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
     $variables['source'] = 'local';
   }
 }
+
+
+/**
+ * Implements template_preprocess_node__TYPE().
+ * To make section style background avaialble in node/content type fields...
+ * I was trying to make section backgrounds available in node fields for the person content type to change the icons' color depending on section background.
+ */
+// function unl_five_herbie_preprocess_node__person(&$variables) {
+//   if (isset($variables['node']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
+//     $layout_builder_styles = $variables['elements']['#layout_builder_style'];
+//     // Replace numeric keys with the value.
+//     foreach($layout_builder_styles as $value) {
+//       $block_layout_builder_styles[$value] = $value;
+//     }
+//   }
+//   if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
+//     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
+//   }
+// }
 
 /**
  * Implements template_preprocess_field().
@@ -156,6 +175,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
   if (in_array($field_name, $ctaFields)) {
     $block_background = $variables['element']['#object']->__get('#block_lbs');
+    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
@@ -175,14 +195,36 @@ function unl_five_herbie_preprocess_field(&$variables) {
   $cardFields = array('b_card_image', 'b_card_cta', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
 
   if (in_array($field_name, $cardFields)) {
+    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_card_cta':
         foreach ($variables['items'] as $key => $item) {
-          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
+          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-inverse-primary';
+          }
+          else {
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
+          }
         }
         break;
     }
   }
+
+  /*
+   * Person Content Type - NOT WORKING AND NOT IN USE FOR NOW
+   */
+  // $personFields = array('n_person_social_fb');
+
+  // if (in_array($field_name, $personFields)) {
+  //   $section_background = $variables['element']['#object']->__get('#section_lbs');
+  //   switch ($field_name) {
+  //     case 'n_person_social_fb':
+  //       foreach ($variables['items'] as $key => $item) {
+  //         $variables['items'][$key]['background']['section_background'] = isset($section_background[0]['value']) ? strval($section_background[0]['value']) : '';
+  //       }
+  //       break;
+  //   }
+  // }
 
    /*
    * Timeline Block Fields

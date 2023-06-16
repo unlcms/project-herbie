@@ -21,3 +21,13 @@
   /* .dcf-d-block */
   display: block !important;
 }
+
+/* This should apply only on a card! */
+/* Gets overridden with code in global so I have moved this code to global.css/ This CSS block might not be necessary
+
+/* div.dcf-card-block .dcf-subhead  {
+  color: #6b6b68;
+  } */
+
+
+
