@@ -2,7 +2,7 @@
 
 {% if content.b_photohero_image.0 or content.b_photohero_body.0 or content.b_photohero_title.0 or content.b_photohero_links.0 or content.b_photohero_subhead.0 %}
 
-  <div{{ attributes.addClass('dcf-hero unlcms-display-banner-home') }}>
+  <div{{ attributes.addClass("dcf-bleed dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray unlcms-display-banner") }}>
 
     {{ title_prefix }}
     {{ title_suffix }}
@@ -25,7 +25,6 @@
     {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('unlcms-display-banner-btn-group', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-col-gap-3', 'dcf-row-gap-3', 'dcf-z-1').addClass(buttonPositionClass) %}
 
     {% block content %}
-      <div class="dcf-hero-group-2 unlcms-home-hero-group-2 dcf-d-grid unl-grid-cols dcf-row-gap-4 unl-bg-darkest-gray">
 
         {% if content.b_photohero_display_option[0]['#markup'] in ['left', 'center', 'right'] %}
           <div {{photohero_inner_wrapper_attr}}>
@@ -57,8 +56,6 @@
             {{ content.b_photohero_links }}
           </div>
         {% endif %}
-
-      </div>
     {% endblock %}
   </div>
 {% endif %}
