@@ -13,7 +13,7 @@ entity_type: block_content
 bundle: photo_hero
 label: 'Display option'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -
