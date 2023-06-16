@@ -92,6 +92,7 @@ filters:
         wide: wide
       allowed_media_types:
         image: image
+        instagram: instagram
         remote_video: remote_video
   codemirror_editor:
     id: codemirror_editor
