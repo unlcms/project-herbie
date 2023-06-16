@@ -1,0 +1,13 @@
+.unlcms-cta-link-width {
+  min-width: 75%;
+}
+
+/* dcf-mb-0 */
+.unlcms-cta-title h2 {
+  margin-bottom: 0 !important;
+}
+
+/* dcf-w-max-lg */
+.unlcms_cta_summary {
+  max-width: 42.0923889211rem !important;
+}

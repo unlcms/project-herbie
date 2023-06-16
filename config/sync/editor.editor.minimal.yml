@@ -1,0 +1,20 @@
+uuid: 9e1dbdcf-bef6-483e-bdd0-ba084b363575
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.minimal
+  module:
+    - ckeditor5
+format: minimal
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - specialCharacters
+      - subscript
+      - superscript
+  plugins: {  }
+image_upload: {  }

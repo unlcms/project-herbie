@@ -92,3 +92,9 @@ icon_links:
   css:
     theme:
       css/theme/block/icon_links.css: {}
+
+cta:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/cta.css: {}

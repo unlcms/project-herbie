@@ -1,3 +1,4 @@
+{{ attach_library('unl_five_herbie/cta') }}
 {% set attributes = attributes ?: create_attribute() %}
 {% set card_classes = ['dcf-col-100%', 'dcf-grid-thirds@md', 'dcf-col-gap-6', 'dcf-row-gap-3', 'dcf-p-6'] %}
 
@@ -5,14 +6,16 @@
   {{ title_prefix }}
   {{ title_suffix }}
   {% block cta_title %}
-    <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-uppercase">
+    <div class="unlcms-cta-title dcf-d-flex dcf-ai-center dcf-jc-center dcf-uppercase">
       {{ content.b_cta_title }}
     </div>
   {% endblock %}
 
   {% block cta_summary %}
     <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-txt-center">
-      {{ content.b_cta_summary }}
+      <div class='unlcms_cta_summary'>
+        {{ content.b_cta_summary }}
+      </div>
     </div>
   {% endblock %}
 

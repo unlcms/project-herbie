@@ -1,0 +1,26 @@
+uuid: aa54255d-21f8-4195-8e95-4442b499772a
+langcode: en
+status: true
+dependencies:
+  module:
+    - dcf_ckeditor5
+name: Minimal
+format: minimal
+weight: 0
+filters:
+  filter_dcfckeditor5:
+    id: filter_dcfckeditor5
+    provider: dcf_ckeditor5
+    status: false
+    weight: 0
+    settings:
+      dcftable: '0'
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <strong> <em> <sub> <sup>'
+      filter_html_help: true
+      filter_html_nofollow: false
