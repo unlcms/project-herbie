@@ -1,15 +1,13 @@
+.unlcms-cta-link-width {
+  min-width: 75%;
+}
 
-/* This file might not be needed consult with Ryan/Eric on Monday*/
-/* h2, p, */
-/* :nth-child() */
+/* dcf-mb-0 */
+.unlcms-cta-title h2 {
+  margin-bottom: 0 !important;
+}
 
-/* This won't work because it applies it to every block, if the section background is scarlet */
-
-/* div.unl-bg-scarlet div.unl-bg-scarlet h2, div.unl-bg-scarlet  div.unl-bg-scarlet p{
-  color: rgb(0, 112, 211);
-} */
-
-/* div.unl-bg-scarlet div.unl-bg-scarlet h2, div.unl-bg-scarlet div.unl-bg-scarlet p{
-  color: rgb(5, 0, 255);
-} */
-
+/* dcf-w-max-lg */
+.unlcms_cta_summary {
+  max-width: 42.0923889211rem !important;
+}
