@@ -4,6 +4,21 @@
 }
 
 
+/* UPDATED UNL CMS GRID */
+/* max sm 673 */
+@media (max-width: 42.09em) {
+  .unlcms-grid-cols {
+    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 5.62vw;
+  }
+}
+/* sm 673 */
+@media (min-width: 42.09em) {
+  .unlcms-grid-cols {
+    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 1rem 3.16rem 1.58vw 1.58vw 3.16rem 1rem 1fr 1fr 1rem 3.16rem 5.62vw;
+  }
+}
+
+
 /* When the section background is scarlet and the block background is unl-bg-light-gray*/
 /* Fixed color issue in timeline */
 

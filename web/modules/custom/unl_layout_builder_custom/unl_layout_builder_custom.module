@@ -10,7 +10,10 @@ function unl_layout_builder_custom_form_alter(&$form, FormStateInterface $form_s
   switch ($form_id) {
     case 'layout_builder_add_block':
     case 'layout_builder_update_block':
-      $block_type = $form['settings']['block_form']['#block']->bundle();
+      $block_type = '';
+      if (isset($form['settings']['block_form']['#block'])) {
+        $block_type = $form['settings']['block_form']['#block']->bundle();
+      }
 
       // Card.
       if ($block_type == 'card') {
