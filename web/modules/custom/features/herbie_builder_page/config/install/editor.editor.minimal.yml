@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.minimal
+  module:
+    - ckeditor5
+format: minimal
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - specialCharacters
+      - subscript
+      - superscript
+  plugins: {  }
+image_upload: {  }
