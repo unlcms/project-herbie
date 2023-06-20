@@ -12013,16 +12013,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "2.3",
+            "version": "2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "3affea3cc3373cde7271f4aece2aa2d9e24f534c"
+                "reference": "e3033f74264419f2b11050ccf265fb804c015885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/3affea3cc3373cde7271f4aece2aa2d9e24f534c",
-                "reference": "3affea3cc3373cde7271f4aece2aa2d9e24f534c",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/e3033f74264419f2b11050ccf265fb804c015885",
+                "reference": "e3033f74264419f2b11050ccf265fb804c015885",
                 "shasum": ""
             },
             "require": {
@@ -12042,9 +12042,9 @@
             "description": "UNL customizations for use with the CAS and UNL User modules.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/2.3"
+                "source": "https://github.com/unlcms/unl_cas/tree/2.4"
             },
-            "time": "2023-06-08T21:15:30+00:00"
+            "time": "2023-06-20T19:08:03+00:00"
         },
         {
             "name": "unlcms/unl_five",
