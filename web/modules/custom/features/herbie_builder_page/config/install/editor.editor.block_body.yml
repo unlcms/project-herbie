@@ -57,6 +57,15 @@ settings:
           label: Large
           element: '<p class="dcf-txt-lg">'
         -
+          label: 'Max Width - M'
+          element: '<p class="dcf-w-max-md">'
+        -
+          label: 'Max Width - L'
+          element: '<p class="dcf-w-max-lg">'
+        -
+          label: 'Max Width - XL'
+          element: '<p class="dcf-w-max-xl">'
+        -
           label: 'Inverse Primary Button'
           element: '<a class="dcf-btn dcf-btn-inverse-primary">'
         -
