@@ -19,14 +19,7 @@
 }
 
 
-/* When the section background is scarlet and the block background is unl-bg-light-gray*/
-/* Fixed color issue in timeline */
-
-/* Questions for monday - should I remove or include divs?
- Any other element in the list?
- Is there a better way to do this*/
-
-/* When the section background is scarlet*/
+/* #region For all divs having a scarlet section background*/
 div.unl-bg-scarlet h2,
 div.unl-bg-scarlet h3,
 div.unl-bg-scarlet h4,
@@ -38,11 +31,13 @@ div.unl-bg-scarlet summary,
 div.unl-bg-scarlet span,
 div.unl-bg-scrarlet ol,
 div.unl-bg-scrarlet li,
-.unl-bg-scarlet a:link:not(.dcf-btn),
-.unl-bg-scarlet a:hover:not(.dcf-btn),
-.unl-bg-scarlet a:visited:not(.dcf-btn),
-.unl-bg-scarlet a:active:not(.dcf-btn),
+.unl-bg-scarlet a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+/* #endregion */
 
+/* #region For all divs having a dark gray section background*/
 div.unl-bg-dark-gray h2,
 div.unl-bg-dark-gray h3,
 div.unl-bg-dark-gray h4,
@@ -54,11 +49,13 @@ div.unl-bg-dark-gray summary,
 div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray li,
-.unl-bg-dark-gray a:link:not(.dcf-btn),
-.unl-bg-dark-gray a:hover:not(.dcf-btn),
-.unl-bg-dark-gray a:visited:not(.dcf-btn),
-.unl-bg-dark-gray a:active:not(.dcf-btn),
+.unl-bg-dark-gray a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+/* #endregion */
 
+/* #region For all block components having a scarlet background contained in a section having scarlet background */
 div.unl-bg-scarlet div.unl-bg-scarlet h2,
 div.unl-bg-scarlet div.unl-bg-scarlet h3,
 div.unl-bg-scarlet div.unl-bg-scarlet h4,
@@ -70,11 +67,13 @@ div.unl-bg-scarlet div.unl-bg-scarlet summary,
 div.unl-bg-scarlet div.unl-bg-scarlet span,
 div.unl-bg-scarlet div.unl-bg-scarlet ol,
 div.unl-bg-scarlet div.unl-bg-scarlet li,
-.unl-bg-scarlet .unl-bg-scarlet a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-scarlet a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-scarlet a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-scarlet a:active:not(.dcf-btn),
+.unl-bg-scarlet .unl-bg-scarlet a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-scarlet a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-scarlet a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-scarlet a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+/* #endregion */
 
+/* #region For all block components having a dark gray background contained in a section having dark gray background*/
 div.unl-bg-dark-gray div.unl-bg-dark-gray h2,
 div.unl-bg-dark-gray div.unl-bg-dark-gray h3,
 div.unl-bg-dark-gray div.unl-bg-dark-gray h4,
@@ -86,18 +85,18 @@ div.unl-bg-dark-gray div.unl-bg-dark-gray summary,
 div.unl-bg-dark-gray div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray div.unl-bg-dark-gray li,
-.unl-bg-dark-gray .unl-bg-dark-gray a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray a:active:not(.dcf-btn)
+.unl-bg-dark-gray .unl-bg-dark-gray a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax)
 {
   /* text color -  unl cream */
   color: #fefdfa !important;
 }
+/* #endregion */
 
 
-
-/* For the five block backgrounds when section background is scarlet*/
+/* #region For the five block backgrounds when section background is scarlet */
 div.unl-bg-scarlet div.unl-bg-dark-gray h2,
 div.unl-bg-scarlet div.unl-bg-dark-gray h3,
 div.unl-bg-scarlet div.unl-bg-dark-gray h4,
@@ -109,10 +108,10 @@ div.unl-bg-scarlet div.unl-bg-dark-gray summary,
 div.unl-bg-scarlet div.unl-bg-dark-gray span,
 div.unl-bg-scarlet div.unl-bg-dark-gray ol,
 div.unl-bg-scarlet div.unl-bg-dark-gray li,
-.unl-bg-scarlet .unl-bg-dark-gray a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-dark-gray a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-dark-gray a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-dark-gray a:active:not(.dcf-btn)
+.unl-bg-scarlet .unl-bg-dark-gray a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-dark-gray a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-dark-gray a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-dark-gray a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax)
 {
   color: #fefdfa !important;
 }
@@ -128,10 +127,7 @@ div.unl-bg-scarlet div.unl-bg-cream summary,
 div.unl-bg-scarlet div.unl-bg-cream span,
 div.unl-bg-scarlet div.unl-bg-cream ol,
 div.unl-bg-scarlet div.unl-bg-cream li,
-.unl-bg-scarlet .unl-bg-cream  a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-cream  a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-cream  a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-cream  a:active:not(.dcf-btn),
+
 
 div.unl-bg-scarlet div.unl-bg-light-gray h2,
 div.unl-bg-scarlet div.unl-bg-light-gray h3,
@@ -144,10 +140,7 @@ div.unl-bg-scarlet div.unl-bg-light-gray summary,
 div.unl-bg-scarlet div.unl-bg-light-gray span,
 div.unl-bg-scarlet div.unl-bg-light-gray ol,
 div.unl-bg-scarlet div.unl-bg-light-gray li,
-.unl-bg-scarlet .unl-bg-light-gray  a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-light-gray  a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-light-gray  a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-light-gray  a:active:not(.dcf-btn),
+
 
 div.unl-bg-scarlet div.unl-bg-lighter-gray h2,
 div.unl-bg-scarlet div.unl-bg-lighter-gray h3,
@@ -160,10 +153,7 @@ div.unl-bg-scarlet div.unl-bg-lighter-gray summary,
 div.unl-bg-scarlet div.unl-bg-lighter-gray span,
 div.unl-bg-scarlet div.unl-bg-lighter-gray ol,
 div.unl-bg-scarlet div.unl-bg-lighter-gray li,
-.unl-bg-scarlet .unl-bg-lighter-gray  a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lighter-gray  a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lighter-gray  a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lighter-gray  a:active:not(.dcf-btn),
+
 
 div.unl-bg-scarlet div.unl-bg-lightest-gray h2,
 div.unl-bg-scarlet div.unl-bg-lightest-gray h3,
@@ -175,18 +165,40 @@ div.unl-bg-scarlet div.unl-bg-lightest-gray div,
 div.unl-bg-scarlet div.unl-bg-lightest-gray summary,
 div.unl-bg-scarlet div.unl-bg-lightest-gray span,
 div.unl-bg-scarlet div.unl-bg-lightest-gray ol,
-div.unl-bg-scarlet div.unl-bg-lightest-gray li,
-.unl-bg-scarlet .unl-bg-lightest-gray  a:link:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lightest-gray  a:hover:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lightest-gray  a:visited:not(.dcf-btn),
-.unl-bg-scarlet .unl-bg-lightest-gray  a:active:not(.dcf-btn)
+div.unl-bg-scarlet div.unl-bg-lightest-gray li
 {
     /* color: #424240 !important; */
   color: var(--darker-gray) !important;
 }
-/* ---------------- end----------- */
 
-/* For the five block backgrounds when section background is dark gray*/
+/*------ scarlet background - links------*/
+.unl-bg-scarlet .unl-bg-cream  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-cream  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-cream  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-cream  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-scarlet .unl-bg-light-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-light-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-light-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-light-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-scarlet .unl-bg-lighter-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lighter-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lighter-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lighter-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-scarlet .unl-bg-lightest-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lightest-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lightest-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet .unl-bg-lightest-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax)
+{
+  color: var(--link) !important;
+}
+/* ---------------- links end----------- */
+/* #endregion */
+
+
+/* #region For the five block backgrounds when section background is dark gray ------- */
 div.unl-bg-dark-gray div.unl-bg-dark-gray h2,
 div.unl-bg-dark-gray div.unl-bg-dark-gray h3,
 div.unl-bg-dark-gray div.unl-bg-dark-gray h4,
@@ -198,11 +210,10 @@ div.unl-bg-dark-gray div.unl-bg-dark-gray summary,
 div.unl-bg-dark-gray div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray div.unl-bg-dark-gray ol,
 div.unl-bg-dark-gray div.unl-bg-dark-gray li,
-.unl-bg-dark-gray .unl-bg-dark-gray  a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray  a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray  a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-dark-gray  a:active:not(.dcf-btn)
-
+.unl-bg-dark-gray .unl-bg-dark-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-dark-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax)
 {
   color: #fefdfa !important;
 }
@@ -218,10 +229,6 @@ div.unl-bg-dark-gray div.unl-bg-cream summary,
 div.unl-bg-dark-gray div.unl-bg-cream span,
 div.unl-bg-dark-gray div.unl-bg-cream ol,
 div.unl-bg-dark-gray div.unl-bg-cream li,
-.unl-bg-dark-gray .unl-bg-cream  a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-cream  a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-cream  a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-cream  a:active:not(.dcf-btn),
 
 div.unl-bg-dark-gray div.unl-bg-light-gray h2,
 div.unl-bg-dark-gray div.unl-bg-light-gray h3,
@@ -234,10 +241,6 @@ div.unl-bg-dark-gray div.unl-bg-light-gray summary,
 div.unl-bg-dark-gray div.unl-bg-light-gray span,
 div.unl-bg-dark-gray div.unl-bg-light-gray ol,
 div.unl-bg-dark-gray div.unl-bg-light-gray li,
-.unl-bg-dark-gray .unl-bg-light-gray   a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-light-gray   a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-light-gray   a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-light-gray   a:active:not(.dcf-btn),
 
 div.unl-bg-dark-gray div.unl-bg-lighter-gray h2,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray h3,
@@ -250,10 +253,6 @@ div.unl-bg-dark-gray div.unl-bg-lighter-gray summary,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray span,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray ol,
 div.unl-bg-dark-gray div.unl-bg-lighter-gray li,
-.unl-bg-dark-gray .unl-bg-lighter-gray   a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lighter-gray  a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lighter-gray   a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lighter-gray  a:active:not(.dcf-btn),
 
 div.unl-bg-dark-gray div.unl-bg-lightest-gray h2,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray h3,
@@ -265,27 +264,49 @@ div.unl-bg-dark-gray div.unl-bg-lightest-gray div,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray summary,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray span,
 div.unl-bg-dark-gray div.unl-bg-lightest-gray ol,
-div.unl-bg-dark-gray div.unl-bg-lightest-gray li,
-.unl-bg-dark-gray .unl-bg-lightest-gray  a:link:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lightest-gray  a:hover:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lightest-gray  a:visited:not(.dcf-btn),
-.unl-bg-dark-gray .unl-bg-lightest-gray  a:active:not(.dcf-btn)
+div.unl-bg-dark-gray div.unl-bg-lightest-gray li
 {
   color: var(--darker-gray) !important;
 }
-/* ------------- end --------------- */
 
 
-/* For card */
-div.dcf-card div.unl-bg-dark-gray.dcf-card .dcf-subhead,
-div.unl-bg-scarlet div.dcf-card-block .dcf-subhead,
-div.unl-bg-scarlet div.unl-bg-scarlet div.dcf-card-block .dcf-subhead  {
-  /* color: #e3e3e2 !important ; */
+/*------ dark gray background - links------*/
+.unl-bg-dark-gray .unl-bg-cream  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-cream  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-cream  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-cream  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-dark-gray .unl-bg-light-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-light-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-light-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-light-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-dark-gray .unl-bg-lighter-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lighter-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lighter-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lighter-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+
+.unl-bg-dark-gray .unl-bg-lightest-gray  a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lightest-gray  a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lightest-gray  a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray .unl-bg-lightest-gray  a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax)
+{
+  color: var(--link) !important;
+}
+/* ---------------- links end----------- */
+
+/* #endregion */
+
+
+/* #region Card Subhead*/
+div.dcf-card.unl-bg-dark-gray div.dcf-card-block .dcf-subhead,
+div.dcf-card.unl-bg-scarlet div.dcf-card-block .dcf-subhead
+{
   color: #e3e3e2 !important;
 }
+/* #endregion */
 
-
-/* For Person Teaser Icons */
+/* #region Person Teaser Icons */
 .unl-bg-scarlet .node--type-person a:link,
 .unl-bg-scarlet .node--type-person a:visited,
 .unl-bg-scarlet .node--type-person a:hover,
@@ -293,6 +314,26 @@ div.unl-bg-scarlet div.unl-bg-scarlet div.dcf-card-block .dcf-subhead  {
 .unl-bg-dark-gray .node--type-person a:link,
 .unl-bg-dark-gray .node--type-person a:visited,
 .unl-bg-dark-gray .node--type-person a:hover,
-.unl-bg-dark-gray .node--type-person a:active {
+.unl-bg-dark-gray .node--type-person a:active
+{
   color: #e3e3e2 !important;
 }
+/* #endregion */
+
+/* #region Button color changes for CTA components if a block background is set to "None" */
+div.layout.unl-bg-scarlet div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-dark-gray, .unl-bg-cream, .unl-bg-light-gray, .unl-bg-lighter-gray, .unl-bg-lightest-gray) a.dcf-btn,
+div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-dark-gray, .unl-bg-cream, .unl-bg-light-gray, .unl-bg-lighter-gray, .unl-bg-lightest-gray) a.dcf-btn
+{
+  background-color: #ebebea;
+  border-color: #ebebea;
+  color: #d00000;
+}
+
+div.layout.unl-bg-scarlet div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-dark-gray, .unl-bg-cream, .unl-bg-light-gray, .unl-bg-lighter-gray, .unl-bg-lightest-gray) a.dcf-btn:hover,
+div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-dark-gray, .unl-bg-cream, .unl-bg-light-gray, .unl-bg-lighter-gray, .unl-bg-lightest-gray) a.dcf-btn:hover,
+div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-dark-gray, .unl-bg-cream, .unl-bg-light-gray, .unl-bg-lighter-gray, .unl-bg-lightest-gray) a.dcf-btn:active
+{
+  background-color: #fff;
+  border-color: #fff;
+}
+/* #endregion */
