@@ -19,7 +19,7 @@
                     {{ content.n_person_photo }}
                   {% elseif node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value %}
                     {% set alt = 'Avatar for ' ~ node.label %}
-                    <img class="dcf-ratio-child dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}" alt="{{ alt }}"/>
+                    <img class="dcf-ratio-child dcf-obj-fit-cover" itemprop="image" src="{{node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value}}?s=original" alt="{{ alt }}"/>
                   {% else %}
                     <div class="dcf-ratio-child dcf-d-flex dcf-ai-center dcf-jc-center unl-gray">
                       <svg class="dcf-h-7 dcf-w-7 dcf-circle dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewbox="0 0 48 48">
