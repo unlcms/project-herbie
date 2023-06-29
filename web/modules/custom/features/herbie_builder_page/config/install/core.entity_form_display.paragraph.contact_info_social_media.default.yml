@@ -1,0 +1,85 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_facebook
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_instagram
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_linkedin
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_pinterest
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_snapchat
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_spotify
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_twitter
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_youtube
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.default
+targetEntityType: paragraph
+bundle: contact_info_social_media
+mode: default
+content:
+  p_b_cinfo_sm_facebook:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_instagram:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_linkedin:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_pinterest:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_snapchat:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_spotify:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_twitter:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_sm_youtube:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

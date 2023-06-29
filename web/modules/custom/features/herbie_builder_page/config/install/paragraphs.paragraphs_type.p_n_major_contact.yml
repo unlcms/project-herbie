@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: p_n_major_contact
+label: 'Major Contact'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
