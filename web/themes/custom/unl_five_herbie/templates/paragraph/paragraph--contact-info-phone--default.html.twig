@@ -38,6 +38,8 @@
  * @ingroup themeable
  */
 #}
+{% set counter = 0 %}
+
 {%
   set classes = [
     'paragraph',
@@ -50,43 +52,9 @@
 {% block paragraph %}
   <div{{ attributes }}>
     {% block content %}
-      <dt class="dcf-sr-only">Address</dt>
-      <dd class="dcf-d-flex dcf-flex-nowrap dcf-col-gap-1 dcf-mb-2">
-        <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
-          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
-            <path d="M12 0C7.589 0 4 3.589 4 8c0 4.245 7.273 15.307 7.583 15.775a.497.497 0 0 0 .834 0C12.727 23.307 20 12.245 20 8c0-4.411-3.589-8-8-8zm0 22.58C10.434 20.132 5 11.396 5 8c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.395-5.434 12.132-7 14.58z"/><path d="M12 4.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zm0 6c-1.378 0-2.5-1.122-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.122 2.5 2.5-1.122 2.5-2.5 2.5z"/><path fill="none" d="M0 0h24v24H0z"/>
-          </svg>
-        </div>
-
-        {% if content.p_b_cinfo_padd_maps_link.0  %}
-          <a href='{{content.p_b_cinfo_padd_maps_link.0}}' itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress" translate="no">
-        {% else %}
-          <div itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress" translate="no">
-        {% endif %}
-
-        <span itemprop="streetAddress">
-          {{content.p_b_cinfo_padd_st_address}}
-          {% if content.p_b_cinfo_padd_scnd_address.0  %}
-          {{content.p_b_cinfo_padd_scnd_address}}
-          {% endif %}
-        </span>
-
-        {% if content.p_b_cinfo_padd_pobox.0 %}
-          <span> P.O. Box <span itemprop="postOfficeBoxNumber">{{content.p_b_cinfo_padd_pobox.0}}</span> </span> <br>
-        {% endif %}
-
-        <span itemprop="addressLocality">{{content.p_b_cinfo_padd_city}}</span>
-        <abbr title="Nebraska" itemprop="addressRegion">{{content.p_b_cinfo_padd_state}}</abbr>
-        <span itemprop="postalCode">{{content.p_b_cinfo_padd_postal_code}}</span>
-        <abbr class="dcf-d-none" itemprop="addressCountry">US</abbr>
-
-        {% if content.p_b_cinfo_padd_maps_link.0  %}
-          </a>
-        {% else %}
-          </div>
-        {% endif %}
-
-     </dd>
-   {% endblock %}
+      {% if content.p_b_cinfo_phone_phone.0 %}
+        {{content.p_b_cinfo_phone_phone}}
+      {% endif %}
+    {% endblock %}
   </div>
 {% endblock paragraph %}

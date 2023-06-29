@@ -3,10 +3,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_maps_link
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_pobox
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_scnd_address
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
     - paragraphs.paragraphs_type.contact_info_physical_address
+  module:
+    - link
 id: paragraph.contact_info_physical_address.default
 targetEntityType: paragraph
 bundle: contact_info_physical_address
@@ -14,7 +19,23 @@ mode: default
 content:
   p_b_cinfo_padd_city:
     type: string_textfield
-    weight: 1
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_maps_link:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_pobox:
+    type: string_textfield
+    weight: 2
     region: content
     settings:
       size: 60
@@ -22,7 +43,15 @@ content:
     third_party_settings: {  }
   p_b_cinfo_padd_postal_code:
     type: string_textfield
-    weight: 3
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_padd_scnd_address:
+    type: string_textfield
+    weight: 1
     region: content
     settings:
       size: 60
@@ -38,7 +67,7 @@ content:
     third_party_settings: {  }
   p_b_cinfo_padd_state:
     type: options_select
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

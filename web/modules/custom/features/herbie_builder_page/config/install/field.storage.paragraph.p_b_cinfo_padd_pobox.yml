@@ -2,19 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - options
     - paragraphs
-id: paragraph.p_b_cinfo_poadd_state
-field_name: p_b_cinfo_poadd_state
+id: paragraph.p_b_cinfo_padd_pobox
+field_name: p_b_cinfo_padd_pobox
 entity_type: paragraph
-type: list_string
+type: string
 settings:
-  allowed_values:
-    -
-      value: NE
-      label: NE
-  allowed_values_function: ''
-module: options
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

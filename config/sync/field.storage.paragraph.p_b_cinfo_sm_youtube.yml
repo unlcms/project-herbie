@@ -1,13 +1,11 @@
-uuid: 2bd1925b-efde-4237-8153-860bd1af5861
+uuid: 19da7c22-4fa4-4378-a6c8-e4698646c270
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: QyOlaCUOeGHEnsFN_j5tybe8GET9FKklxyjCqHlELrY
-id: paragraph.p_b_cinfo_poadd_box_number
-field_name: p_b_cinfo_poadd_box_number
+id: paragraph.p_b_cinfo_sm_youtube
+field_name: p_b_cinfo_sm_youtube
 entity_type: paragraph
 type: string
 settings:

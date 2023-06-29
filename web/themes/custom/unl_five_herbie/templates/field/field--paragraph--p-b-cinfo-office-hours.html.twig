@@ -36,17 +36,17 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set classes = [
-    'dcf-mt-6',
-    'dcf-mb-3',
-    'dcf-txt-md',
-    'unl-cream',
-  ]
-%}
 
 <div{{ attributes }}>
-  <h3{{ items[0].attributes.addClass(classes).setAttribute('itemprop','name') }}>
-  {{ items[0].content }}
-  </h3>
+{% for item in items %}
+  <dt class="dcf-sr-only">Office Hours</dt>
+    <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-1 dcf-mb-2">
+      <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+          <path d="M12 24C5.383 24 0 18.617 0 12S5.383 0 12 0s12 5.383 12 12-5.383 12-12 12zm0-23C5.935 1 1 5.935 1 12c0 6.066 4.935 11 11 11s11-4.934 11-11c0-6.065-4.935-11-11-11z"/><path d="m17.162 17.869-6-5.5A.503.503 0 0 1 11 12V6.5a.5.5 0 0 1 1 0v5.28l5.838 5.351a.5.5 0 0 1-.676.738z"/><path fill="none" d="M0 0h24v24H0z"/>
+        </svg>
+      </div>
+      <span itemprop="openingHours" content="{{item.content}}">{{item.content}}</span>
+    </dd>
+{% endfor %}
 </div>

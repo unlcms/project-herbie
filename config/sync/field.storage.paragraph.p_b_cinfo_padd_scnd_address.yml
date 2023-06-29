@@ -1,13 +1,11 @@
-uuid: a18055d2-1105-4031-a963-6200210c2f98
+uuid: 4b31012a-317c-44c4-9a1c-85fbff2c2bab
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: G0v0ozxeDKpidC36tdNeIqsAVxceqWkVkkufXMipnAw
-id: paragraph.p_b_cinfo_phone_phone
-field_name: p_b_cinfo_phone_phone
+id: paragraph.p_b_cinfo_padd_scnd_address
+field_name: p_b_cinfo_padd_scnd_address
 entity_type: paragraph
 type: string
 settings:
@@ -16,7 +14,7 @@ settings:
   is_ascii: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

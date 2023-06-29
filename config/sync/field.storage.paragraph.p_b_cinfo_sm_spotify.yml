@@ -1,13 +1,11 @@
-uuid: 4fb297d6-dd9a-45a0-a47c-f10cb0f875f8
+uuid: e1b98705-b393-447e-a888-411d28a2c473
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: OWlHfLYwX2t3oGv443OaDXGr1jw3ZaCwQV4tFYqOfNU
-id: paragraph.p_b_cinfo_poadd_city
-field_name: p_b_cinfo_poadd_city
+id: paragraph.p_b_cinfo_sm_spotify
+field_name: p_b_cinfo_sm_spotify
 entity_type: paragraph
 type: string
 settings:
