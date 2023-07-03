@@ -1,0 +1,13 @@
+diff --git a/.htaccess b/.htaccess
+index 0e0618a54f..3d42d92d20 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -28,6 +28,8 @@ AddEncoding gzip svgz
+ # changed at runtime.
+ <IfModule mod_php.c>
+   php_value assert.active                   0
++  php_value post_max_size                   100M
++  php_value upload_max_filesize             100M
+ </IfModule>
+ 
+ # Requires mod_expires to be enabled.
