@@ -66,7 +66,7 @@ function unl_five_herbie_preprocess_region(&$variables) {
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
-  //Get site name and make it available in block templates
+  //Get site name and make it available in block templates.
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');
 
@@ -152,9 +152,6 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
  * Implements template_preprocess_field().
  */
 function unl_five_herbie_preprocess_field(&$variables) {
-
-    // Load the site name out of configuration.
-
 
   $field_name = $variables['field_name'];
 
