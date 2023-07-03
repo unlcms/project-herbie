@@ -138,6 +138,7 @@ permissions:
   - 'delete any book content'
   - 'delete any builder_page content'
   - 'delete any card block content'
+  - 'delete any contact_info block content'
   - 'delete any content block content'
   - 'delete any cta block content'
   - 'delete any file'
