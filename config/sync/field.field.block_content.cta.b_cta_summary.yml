@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - block_body
+      - minimal
 _core:
   default_config_hash: nbZQ0zuHR-G4d9u6zBOwktlVA9OjIrERCiF3V_mBQLc
 id: block_content.cta.b_cta_summary

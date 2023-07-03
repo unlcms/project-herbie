@@ -1,0 +1,28 @@
+uuid: cfda80e5-32dc-4c58-a1b5-c7f149bc152d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_hero
+    - field.storage.block_content.b_photohero_body
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - minimal
+id: block_content.photo_hero.b_photohero_body
+field_name: b_photohero_body
+entity_type: block_content
+bundle: photo_hero
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary
