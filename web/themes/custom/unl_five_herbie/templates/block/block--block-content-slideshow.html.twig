@@ -26,7 +26,11 @@
  */
 #}
 {{ attach_library('unl_five_herbie/slideshow') }}
+
 <div{{ attributes.addClass('dcf-slideshow') }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+
     <ul>
         {% block content %}
         {{ content.b_slideshow }}
