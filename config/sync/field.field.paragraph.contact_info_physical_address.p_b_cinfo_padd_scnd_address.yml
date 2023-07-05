@@ -1,0 +1,19 @@
+uuid: dcbd9490-2808-489c-920a-803b2a091c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_padd_scnd_address
+    - paragraphs.paragraphs_type.contact_info_physical_address
+id: paragraph.contact_info_physical_address.p_b_cinfo_padd_scnd_address
+field_name: p_b_cinfo_padd_scnd_address
+entity_type: paragraph
+bundle: contact_info_physical_address
+label: 'Unit, building, floor, etc'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

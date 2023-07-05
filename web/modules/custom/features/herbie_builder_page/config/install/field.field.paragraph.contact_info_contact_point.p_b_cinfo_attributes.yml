@@ -8,9 +8,10 @@ dependencies:
     - paragraphs.paragraphs_type.contact_info_fax
     - paragraphs.paragraphs_type.contact_info_heading
     - paragraphs.paragraphs_type.contact_info_margin
+    - paragraphs.paragraphs_type.contact_info_office_hours
     - paragraphs.paragraphs_type.contact_info_phone
     - paragraphs.paragraphs_type.contact_info_physical_address
-    - paragraphs.paragraphs_type.contact_info_post_office_box_add
+    - paragraphs.paragraphs_type.contact_info_social_media
   module:
     - entity_reference_revisions
 id: paragraph.contact_info_contact_point.p_b_cinfo_attributes
@@ -29,11 +30,12 @@ settings:
     target_bundles:
       contact_info_heading: contact_info_heading
       contact_info_physical_address: contact_info_physical_address
-      contact_info_post_office_box_add: contact_info_post_office_box_add
       contact_info_phone: contact_info_phone
       contact_info_fax: contact_info_fax
       contact_info_email: contact_info_email
       contact_info_margin: contact_info_margin
+      contact_info_office_hours: contact_info_office_hours
+      contact_info_social_media: contact_info_social_media
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -54,6 +56,9 @@ settings:
       contact_info_margin:
         weight: -11
         enabled: true
+      contact_info_office_hours:
+        weight: 26
+        enabled: true
       contact_info_phone:
         weight: -14
         enabled: true
@@ -63,4 +68,34 @@ settings:
       contact_info_post_office_box_add:
         weight: -15
         enabled: true
+      contact_info_social_media:
+        weight: 31
+        enabled: true
+      icon_links_item:
+        weight: 30
+        enabled: false
+      logo_cloud_item:
+        weight: 31
+        enabled: false
+      p_n_major_contact:
+        weight: 32
+        enabled: false
+      p_n_major_featured_faculty:
+        weight: 33
+        enabled: false
+      p_n_major_notable_course:
+        weight: 34
+        enabled: false
+      p_n_major_outside_the_classroom:
+        weight: 35
+        enabled: false
+      p_n_major_points_of_pride:
+        weight: 36
+        enabled: false
+      slideshow_item:
+        weight: 37
+        enabled: false
+      timeline_item:
+        weight: 38
+        enabled: false
 field_type: entity_reference_revisions

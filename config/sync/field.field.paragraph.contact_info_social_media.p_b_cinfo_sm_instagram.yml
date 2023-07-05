@@ -1,0 +1,19 @@
+uuid: 061d8dbc-d0fc-463d-be19-0595d65484d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_sm_instagram
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.p_b_cinfo_sm_instagram
+field_name: p_b_cinfo_sm_instagram
+entity_type: paragraph
+bundle: contact_info_social_media
+label: Instagram
+description: "Enter username without the '@' symbol."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

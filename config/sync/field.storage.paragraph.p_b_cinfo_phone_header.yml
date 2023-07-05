@@ -1,0 +1,21 @@
+uuid: 64228988-454f-4af3-8ff8-35d1420025f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.p_b_cinfo_phone_header
+field_name: p_b_cinfo_phone_header
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

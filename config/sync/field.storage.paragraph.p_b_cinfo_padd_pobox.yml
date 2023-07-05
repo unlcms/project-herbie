@@ -1,0 +1,21 @@
+uuid: ec6b41d4-aa2f-4344-9f9b-7fa320d50272
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.p_b_cinfo_padd_pobox
+field_name: p_b_cinfo_padd_pobox
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

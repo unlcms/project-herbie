@@ -38,12 +38,15 @@
 #}
 {%
   set classes = [
-    'dcf-txt-lg',
-    'dcf-strong',
-    'dcf-inverse',
-    'dcf-mb-0',
-    'dcf-mt-4',
+    'dcf-mt-6',
+    'dcf-mb-3',
+    'dcf-txt-md',
+    'unl-cream',
   ]
 %}
 
-<h3{{ items[0].attributes.addClass(classes).setAttribute('itemprop','name') }}>{{ items[0].content }}</h3>
+<div{{ attributes }}>
+  <h3{{ items[0].attributes.addClass(classes).setAttribute('itemprop','name') }}>
+  {{ items[0].content }}
+  </h3>
+</div>

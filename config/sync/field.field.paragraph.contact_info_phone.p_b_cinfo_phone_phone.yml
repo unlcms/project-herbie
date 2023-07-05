@@ -12,7 +12,7 @@ field_name: p_b_cinfo_phone_phone
 entity_type: paragraph
 bundle: contact_info_phone
 label: Phone
-description: ''
+description: "Please use this format when adding phone number ###-###-####\r\nIf you would like to add an extension number, please add a vertical bar and enter the extension number ###-###-### | ###  \r\n"
 required: true
 translatable: false
 default_value: {  }
