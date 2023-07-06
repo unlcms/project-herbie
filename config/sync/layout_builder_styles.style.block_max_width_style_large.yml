@@ -1,0 +1,13 @@
+uuid: 022ea5db-5ca3-4352-ad7e-5d6cc49234ea
+langcode: en
+status: true
+dependencies: {  }
+id: block_max_width_style_large
+label: 'Max Width - Large'
+classes: "dcf-w-max-lg\r\ndcf-txt-center"
+type: component
+group: max_width
+block_restrictions:
+  - 'inline_block:content'
+layout_restrictions: {  }
+weight: 0

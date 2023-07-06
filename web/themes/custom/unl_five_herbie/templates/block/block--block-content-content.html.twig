@@ -1,0 +1,23 @@
+
+{% set BlockObjects = content.body['#object'] %}
+{% set block_lbs = '#block_lbs' %}
+{% set blocklbsValue = attribute(BlockObjects, block_lbs) %}
+
+{% if blocklbsValue %}
+  <div class='dcf-d-flex dcf-jc-center'>
+{% endif %}
+
+    <div{{ attributes }}>
+
+      {{ title_prefix }}
+      {{ title_suffix }}
+
+      {% block content %}
+        {{ content.body }}
+      {% endblock %}
+
+    </div>
+
+{% if blocklbsValue %}
+  </div>
+{% endif %}
