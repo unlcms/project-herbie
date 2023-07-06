@@ -1,9 +1,9 @@
 
-{% set BlockObjects = content.body['#object'] %}
+{% set blockObjects = content.body['#object'] %}
 {% set block_lbs = '#block_lbs' %}
-{% set blocklbsValue = attribute(BlockObjects, block_lbs) %}
+{% set block_lbs_value = attribute(blockObjects, block_lbs) %}
 
-{% if blocklbsValue %}
+{% if block_lbs_value %}
   <div class='dcf-d-flex dcf-jc-center'>
 {% endif %}
 
@@ -18,6 +18,6 @@
 
     </div>
 
-{% if blocklbsValue %}
+{% if block_lbs_value %}
   </div>
 {% endif %}
