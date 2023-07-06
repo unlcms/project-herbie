@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_phone_header
+    - paragraphs.paragraphs_type.contact_info_phone
+id: paragraph.contact_info_phone.p_b_cinfo_phone_header
+field_name: p_b_cinfo_phone_header
+entity_type: paragraph
+bundle: contact_info_phone
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

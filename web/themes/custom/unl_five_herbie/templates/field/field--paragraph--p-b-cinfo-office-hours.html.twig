@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+<div{{ attributes }}>
+{% for item in items %}
+  <dt class="dcf-sr-only">Office Hours</dt>
+    <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-1 dcf-mb-2">
+      <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+          <path d="M12 24C5.383 24 0 18.617 0 12S5.383 0 12 0s12 5.383 12 12-5.383 12-12 12zm0-23C5.935 1 1 5.935 1 12c0 6.066 4.935 11 11 11s11-4.934 11-11c0-6.065-4.935-11-11-11z"/><path d="m17.162 17.869-6-5.5A.503.503 0 0 1 11 12V6.5a.5.5 0 0 1 1 0v5.28l5.838 5.351a.5.5 0 0 1-.676.738z"/><path fill="none" d="M0 0h24v24H0z"/>
+        </svg>
+      </div>
+      <span itemprop="openingHours" content="{{item.content}}">{{item.content}}</span>
+    </dd>
+{% endfor %}
+</div>

@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_city
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_maps_link
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_pobox
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_postal_code
+    - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_scnd_address
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
     - field.field.paragraph.contact_info_physical_address.p_b_cinfo_padd_state
     - paragraphs.paragraphs_type.contact_info_physical_address
   module:
+    - link
     - options
 _core:
   default_config_hash: fdyf027slb3vDEqB2qRjqpSEJa8hM2huShdRucgU7zY
@@ -25,6 +29,26 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  p_b_cinfo_padd_maps_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  p_b_cinfo_padd_pobox:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   p_b_cinfo_padd_postal_code:
     type: string
     label: hidden
@@ -32,6 +56,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  p_b_cinfo_padd_scnd_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   p_b_cinfo_padd_st_address:
     type: string
