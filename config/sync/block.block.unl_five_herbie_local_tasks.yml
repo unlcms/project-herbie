@@ -2,6 +2,8 @@ uuid: 7bcae009-2daf-45fe-856d-f3775daa1f90
 langcode: en
 status: true
 dependencies:
+  module:
+    - user
   theme:
     - unl_five_herbie
 _core:
@@ -19,4 +21,16 @@ settings:
   provider: core
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: true
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      viewer: viewer
+      editor: editor
+      site_admin: site_admin
+      coder: coder
+      administrator: administrator
+      super_administrator: super_administrator
