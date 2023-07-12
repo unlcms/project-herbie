@@ -39,7 +39,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<br> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg text-align-left text-align-center"> <h2 class="text-align-left text-align-center"> <h3 class="text-align-left text-align-center"> <h4 class="text-align-left text-align-center"> <h5 class="text-align-left text-align-center"> <h6 class="text-align-left text-align-center"> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <s> <sub> <sup> <blockquote> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
+      allowed_html: '<br> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg text-align-left text-align-center"> <h2 class="text-align-left text-align-center"> <h3 class="text-align-left text-align-center"> <h4 class="text-align-left text-align-center"> <h5 class="text-align-left text-align-center"> <h6 class="text-align-left text-align-center"> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <s> <sub> <sup> <blockquote> <ul> <ol start> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
