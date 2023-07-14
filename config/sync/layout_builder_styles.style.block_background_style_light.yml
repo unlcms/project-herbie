@@ -13,4 +13,4 @@ block_restrictions:
   - 'inline_block:cta'
   - 'inline_block:card'
 layout_restrictions: {  }
-weight: -10
+weight: -9

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: block_background_style_lighter
+label: 'Lighter gray'
+classes: unl-bg-lighter-gray
+type: component
+group: background
+block_restrictions:
+  - 'inline_block:cta'
+  - 'inline_block:card'
+layout_restrictions: {  }
+weight: -7

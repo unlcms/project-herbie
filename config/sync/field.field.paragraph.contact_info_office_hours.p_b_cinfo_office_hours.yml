@@ -1,0 +1,19 @@
+uuid: 46a3f484-4557-41b8-9345-b477e79fa8c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_office_hours
+    - paragraphs.paragraphs_type.contact_info_office_hours
+id: paragraph.contact_info_office_hours.p_b_cinfo_office_hours
+field_name: p_b_cinfo_office_hours
+entity_type: paragraph
+bundle: contact_info_office_hours
+label: 'Office Hours'
+description: 'For example, Mon - Fri, 8 a.m. – 5 p.m.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

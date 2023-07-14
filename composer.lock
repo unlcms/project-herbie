@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "095943c4add232e06580fc7aafb756cf",
+    "content-hash": "57aa0ae0c4f2edeeadb573c69cf62ea5",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3656,60 +3656,6 @@
             }
         },
         {
-            "name": "drupal/focal_point",
-            "version": "dev-2.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/focal_point.git",
-                "reference": "f7744d8f40998d687e3cc0c8ed1519811d41441c"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/crop": "^2.3",
-                "drupal/jquery_ui": "^1.6",
-                "drupal/jquery_ui_draggable": "^2.0"
-            },
-            "require-dev": {
-                "drupal/crop": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "2.0.0-alpha2+1-dev",
-                    "datestamp": "1675144985",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Ross (bleen)",
-                    "homepage": "https://www.drupal.org/u/bleen",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Rajeshreeputra",
-                    "homepage": "https://www.drupal.org/user/3418561"
-                }
-            ],
-            "description": "Focal Point allows content creators to mark the most important part of an image for easier cropping.",
-            "homepage": "https://drupal.org/project/focal_point",
-            "support": {
-                "source": "https://cgit.drupalcode.org/focal_point",
-                "issues": "https://drupal.org/project/issues/focal_point",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
             "name": "drupal/google_analytics",
             "version": "4.0.2",
             "source": {
@@ -4291,155 +4237,6 @@
             }
         },
         {
-            "name": "drupal/jquery_ui",
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/jquery_ui.git",
-                "reference": "8.x-1.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_ui-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "0ddccdcf35a066de1843e1d9670677ee1a2faac0"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1668521197",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "bnjmnm",
-                    "homepage": "https://www.drupal.org/user/2369194"
-                },
-                {
-                    "name": "jjeff",
-                    "homepage": "https://www.drupal.org/user/17190"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "litwol",
-                    "homepage": "https://www.drupal.org/user/78134"
-                },
-                {
-                    "name": "mfb",
-                    "homepage": "https://www.drupal.org/user/12302"
-                },
-                {
-                    "name": "mfer",
-                    "homepage": "https://www.drupal.org/user/25701"
-                },
-                {
-                    "name": "mikelutz",
-                    "homepage": "https://www.drupal.org/user/2972409"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
-                },
-                {
-                    "name": "RobLoach",
-                    "homepage": "https://www.drupal.org/user/61114"
-                },
-                {
-                    "name": "sun",
-                    "homepage": "https://www.drupal.org/user/54136"
-                },
-                {
-                    "name": "webchick",
-                    "homepage": "https://www.drupal.org/user/24967"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "zrpnr",
-                    "homepage": "https://www.drupal.org/user/1448368"
-                }
-            ],
-            "description": "Provides jQuery UI library.",
-            "homepage": "https://www.drupal.org/project/jquery_ui",
-            "support": {
-                "source": "https://git.drupalcode.org/project/jquery_ui"
-            }
-        },
-        {
-            "name": "drupal/jquery_ui_draggable",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/jquery_ui_draggable.git",
-                "reference": "2.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_ui_draggable-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "13a8f4bf037449cd176ddb967fc9cba9a466a705"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10",
-                "drupal/jquery_ui": "^1.6"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1670871516",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "bnjmnm",
-                    "homepage": "https://www.drupal.org/user/2369194"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "zrpnr",
-                    "homepage": "https://www.drupal.org/user/1448368"
-                }
-            ],
-            "description": "Provides jQuery UI Draggable library.",
-            "homepage": "https://www.drupal.org/project/jquery_ui_draggable",
-            "support": {
-                "source": "https://git.drupalcode.org/project/jquery_ui_draggable"
-            }
-        },
-        {
             "name": "drupal/layout_builder_component_attributes",
             "version": "2.1.1",
             "source": {
@@ -4818,6 +4615,51 @@
             "homepage": "https://www.drupal.org/project/layout_builder_styles",
             "support": {
                 "source": "https://git.drupalcode.org/project/layout_builder_styles"
+            }
+        },
+        {
+            "name": "drupal/lb_direct_add",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lb_direct_add.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lb_direct_add-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "fddaf8aedca184f0fd27b1c2411c99c38be16ce2"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1668112668",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sean Adams-Hiett",
+                    "homepage": "https://www.drupal.org/user/62893",
+                    "email": "pyrello@gmail.com"
+                }
+            ],
+            "description": "Converts the 'Add block' link in Layout Builder into a drop-button to directly add custom block types.",
+            "homepage": "https://www.drupal.org/project/lb_direct_add",
+            "support": {
+                "source": "https://git.drupalcode.org/project/lb_direct_add"
             }
         },
         {
@@ -6457,7 +6299,7 @@
         },
         {
             "name": "dxg/icon-library",
-            "version": "1.0",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.unl.edu/dxg/icon-library.git",
@@ -12110,23 +11952,22 @@
         },
         {
             "name": "unlcms/features_readonly",
-            "version": "1.0.x-dev",
+            "version": "1.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/features_readonly.git",
-                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a"
+                "reference": "6ee25bbe390cc77ceb85ce9e717914518e424cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/be5a124b448e47acf1f725af837a81b6b063d05a",
-                "reference": "be5a124b448e47acf1f725af837a81b6b063d05a",
+                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/6ee25bbe390cc77ceb85ce9e717914518e424cc4",
+                "reference": "6ee25bbe390cc77ceb85ce9e717914518e424cc4",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
                 "drupal/features": "^5.0.0"
             },
-            "default-branch": true,
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -12139,9 +11980,9 @@
             "description": "Enables making configuration managed by Features read-only to prevent changes.",
             "support": {
                 "issues": "https://github.com/unlcms/features_readonly/issues",
-                "source": "https://github.com/unlcms/features_readonly/tree/1.0"
+                "source": "https://github.com/unlcms/features_readonly/tree/1.0-alpha2"
             },
-            "time": "2023-05-19T21:15:27+00:00"
+            "time": "2023-06-08T18:42:03+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -12225,16 +12066,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "2.2",
+            "version": "2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "104baa6ba14d6eae4b2e836e3f92ea9e31637374"
+                "reference": "e3033f74264419f2b11050ccf265fb804c015885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/104baa6ba14d6eae4b2e836e3f92ea9e31637374",
-                "reference": "104baa6ba14d6eae4b2e836e3f92ea9e31637374",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/e3033f74264419f2b11050ccf265fb804c015885",
+                "reference": "e3033f74264419f2b11050ccf265fb804c015885",
                 "shasum": ""
             },
             "require": {
@@ -12254,22 +12095,22 @@
             "description": "UNL customizations for use with the CAS and UNL User modules.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/2.2"
+                "source": "https://github.com/unlcms/unl_cas/tree/2.4"
             },
-            "time": "2023-05-16T20:32:12+00:00"
+            "time": "2023-06-20T19:08:03+00:00"
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.12",
+            "version": "10.5.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "79f1cf99caf2d9ffa42682ac07429f3cd67e52e4"
+                "reference": "e6cfdca6986adff60d524d148b75c3744dac0e7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/79f1cf99caf2d9ffa42682ac07429f3cd67e52e4",
-                "reference": "79f1cf99caf2d9ffa42682ac07429f3cd67e52e4",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/e6cfdca6986adff60d524d148b75c3744dac0e7e",
+                "reference": "e6cfdca6986adff60d524d148b75c3744dac0e7e",
                 "shasum": ""
             },
             "require": {
@@ -12287,9 +12128,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.12"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.13"
             },
-            "time": "2023-05-16T20:29:31+00:00"
+            "time": "2023-06-30T18:13:11+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -16905,7 +16746,6 @@
         "drupal/features": 20,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
-        "drupal/focal_point": 20,
         "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,

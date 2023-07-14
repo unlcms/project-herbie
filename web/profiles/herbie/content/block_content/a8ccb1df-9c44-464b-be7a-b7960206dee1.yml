@@ -1,0 +1,123 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: a8ccb1df-9c44-464b-be7a-b7960206dee1
+  bundle: contact_info
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Contact us'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  b_cinfo_contact_point:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1c0ede58-2d87-4293-ac5c-deeb1fedbecb
+          bundle: contact_info_contact_point
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1686599345
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          p_b_cinfo_attributes:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: faa5d2d2-7cc3-4261-acb7-8dda26917498
+                  bundle: contact_info_physical_address
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1686599359
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  p_b_cinfo_padd_city:
+                    -
+                      value: Lincoln
+                  p_b_cinfo_padd_postal_code:
+                    -
+                      value: '68588'
+                  p_b_cinfo_padd_state:
+                    -
+                      value: NE
+                  p_b_cinfo_padd_st_address:
+                    -
+                      value: '1400 R St'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 0522f612-243a-41ed-b73b-9f12fd08434f
+                  bundle: contact_info_margin
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1686599574
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  p_b_cinfo_margin_markup:
+                    -
+                      markup: ''
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: e15a4c02-cebb-4528-b9b8-3dcb6d3dd1f7
+                  bundle: contact_info_phone
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1686599417
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  p_b_cinfo_phone_phone:
+                    -
+                      value: 402-472-7211

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_style_dark
+label: 'Dark gray'
+classes: "unl-bg-dark-gray\r\nunl-cream"
+type: section
+group: background
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: -4

@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - block_body
+      - standard
 _core:
   default_config_hash: lcYZOT30dhw6MKOwSAeXC2xc-x-D2JhqR7ewzjRrNMw
 id: block_content.content.body

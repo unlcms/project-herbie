@@ -25,21 +25,30 @@
  * @see template_preprocess_block()
  */
 #}
+
 <div{{ attributes }}>
+
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
+    <h2{{ title_attributes.setAttribute('id','dcf-footer-group-1-heading')}}>
+      {{ label }}
+    </h2>
   {% endif %}
   {{ title_suffix }}
+
   {% block content %}
   {# @todo check if flagship site. if so, then swap out department for organization and remove parent #}
-    <div itemprop='department' itemscope itemtype='http://schema.org/Organization'>
-      <span class="visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ label }}</span>
-      <span class="visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
-      <span class="visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
-        <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
-      </span>
-      {{ content }}
+    <div class="content">
+    <address itemprop='department' itemscope itemtype='http://schema.org/Organization'>
+        <span class="visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ site_name }}</span>
+        <span class="visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
+        <span class="visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
+          <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
+        </span>
+        <dl>
+        {{ content }}
+        </dl>
+      </address>
     </div>
   {% endblock %}
 </div>

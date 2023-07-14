@@ -1,0 +1,10 @@
+uuid: 0906802c-392f-4fe6-b38a-12b10a5d57ea
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_social_media
+label: 'Contact Info Social Media'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -11,6 +11,19 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\unl_utility\UNLUtilityTrait;
 
 /**
+ * Implements hook_entity_type_alter().
+ */
+function unl_blocks_entity_type_alter(array &$entity_types) {
+  // Change block_content entity labels to say "component" instead of "custom block".
+  $entity_types['block_content']->set('label', 'Component');
+  $entity_types['block_content']->set('label_collection', 'Components');
+  $entity_types['block_content']->set('label_singular', 'component');
+  $entity_types['block_content']->set('label_plural', 'components');
+  $entity_types['block_content']->set('label_count', ['singular' => '@count component', 'plural' => '@count components']);
+  $entity_types['block_content']->set('bundle_label', 'Component type');
+}
+
+/**
  * Implements hook_form_alter().
  */
 function unl_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id) {

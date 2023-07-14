@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: background_pattern
+label: 'Background pattern'
+multiselect: single
+form_type: checkboxes
+required: false
+weight: 0

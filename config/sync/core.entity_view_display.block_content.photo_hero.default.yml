@@ -4,11 +4,16 @@ status: true
 dependencies:
   config:
     - block_content.type.photo_hero
+    - field.field.block_content.photo_hero.b_photohero_body
+    - field.field.block_content.photo_hero.b_photohero_display_option
     - field.field.block_content.photo_hero.b_photohero_image
     - field.field.block_content.photo_hero.b_photohero_links
+    - field.field.block_content.photo_hero.b_photohero_subhead
     - field.field.block_content.photo_hero.b_photohero_title
   module:
     - link
+    - options
+    - text
 _core:
   default_config_hash: kOcB0UwCNvu1Ol-UWJSiVl_tbQL0Fdx-8G6eCknX830
 id: block_content.photo_hero.default
@@ -16,6 +21,20 @@ targetEntityType: block_content
 bundle: photo_hero
 mode: default
 content:
+  b_photohero_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  b_photohero_display_option:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   b_photohero_image:
     type: entity_reference_entity_view
     label: hidden
@@ -36,6 +55,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  b_photohero_subhead:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   b_photohero_title:
     type: string

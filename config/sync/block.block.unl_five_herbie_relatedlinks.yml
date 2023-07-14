@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
 settings:
   id: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
-  label: 'Related Links'
+  label: 'Related links'
   label_display: visible
   provider: block_content
   status: true

@@ -37,7 +37,7 @@
             "type": "package",
             "package": {
                 "name": "dxg/icon-library",
-                "version": "1.0",
+                "version": "1.2",
                 "type": "drupal-library",
                 "source": {
                     "type": "git",
@@ -150,7 +150,6 @@
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
-        "drupal/focal_point": "2.x-dev@dev",
         "drupal/google_analytics": "^4.0",
         "drupal/heading": "^1.7",
         "drupal/honeypot": "^2.1",
@@ -166,6 +165,7 @@
         "drupal/layout_builder_operation_link": "^2.0",
         "drupal/layout_builder_restrictions": "^2.0",
         "drupal/layout_builder_styles": "^2.0",
+        "drupal/lb_direct_add": "^2.0",
         "drupal/linkit": "^6.0@beta",
         "drupal/linkit_media_library": "^1.0@alpha",
         "drupal/markup": "^2.0@beta",
@@ -232,7 +232,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true
-        }
+        },
+        "process-timeout": 3000
     },
     "autoload": {
         "classmap": [
@@ -245,6 +246,7 @@
             "cd web && patch -p1 < ../patches/custom-index.php.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-maxsize.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"

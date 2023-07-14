@@ -8,6 +8,7 @@ dependencies:
     - node.type.news
     - node.type.person
   module:
+    - content_moderation
     - entity_usage
     - file
     - media
@@ -29,8 +30,10 @@ permissions:
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'view any unpublished content'
   - 'view book revisions'
   - 'view builder_page revisions'
+  - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

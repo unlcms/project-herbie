@@ -57,6 +57,7 @@ dependencies:
   - 'layout_builder_component_attributes:layout_builder_component_attributes'
   - 'layout_builder_restrictions:layout_builder_restrictions'
   - 'layout_builder_styles:layout_builder_styles'
+  - 'lb_direct_add:lb_direct_add'
   - 'linkit:linkit'
   - 'markup:markup'
   - 'menu_block:menu_block'
@@ -66,9 +67,10 @@ dependencies:
   - 'queue_ui:queue_ui'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.4.1
+version: 1.5.2
 package: Herbie

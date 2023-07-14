@@ -12,3 +12,12 @@
   height: 100% !important;
   width: 100% !important;
 }
+
+.unlcms-li-logo .contextual-region.media-entity.view-mode--default.media-entity-bundle--image {
+  aspect-ratio: 4 / 3;
+}
+
+.unlcms-li-logo .media-entity {
+  margin-bottom: unset;
+  display: unset;
+}

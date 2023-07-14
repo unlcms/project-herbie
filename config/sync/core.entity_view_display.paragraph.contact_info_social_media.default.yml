@@ -1,0 +1,84 @@
+uuid: 43d3195a-945f-4d6f-aaac-b0653232cd34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_facebook
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_instagram
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_linkedin
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_pinterest
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_snapchat
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_spotify
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_twitter
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_youtube
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.default
+targetEntityType: paragraph
+bundle: contact_info_social_media
+mode: default
+content:
+  p_b_cinfo_sm_facebook:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  p_b_cinfo_sm_instagram:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  p_b_cinfo_sm_linkedin:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  p_b_cinfo_sm_pinterest:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  p_b_cinfo_sm_snapchat:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  p_b_cinfo_sm_spotify:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  p_b_cinfo_sm_twitter:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_b_cinfo_sm_youtube:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden: {  }

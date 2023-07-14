@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
     - filter.format.block_body
+    - filter.format.minimal
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
@@ -17,15 +18,16 @@ dependencies:
     - node.type.person
     - node.type.webform
     - taxonomy.vocabulary.media_tags
+    - workflows.workflow.editorial
   module:
     - administerusersbyrole
     - block_content_permissions
     - book
+    - content_moderation
     - contextual
     - entity_share_client
     - entity_usage
     - external_entities
-    - feeds
     - file
     - file_delete
     - filter
@@ -61,13 +63,11 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
-  - 'access feed overview'
   - 'access files overview'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access site in maintenance mode'
   - 'access site reports'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'access users overview'
@@ -76,13 +76,11 @@ permissions:
   - 'access webform submission log'
   - 'add content to books'
   - 'administer book outlines'
-  - 'administer feeds'
   - 'administer google analytics'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
   - 'administer scanner settings'
-  - 'administer taxonomy'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
   - 'administer webform submission'
@@ -98,15 +96,20 @@ permissions:
   - 'create cta block content'
   - 'create file media'
   - 'create hero block content'
+  - 'create icon_links block content'
   - 'create image media'
   - 'create logo_cloud block content'
   - 'create new books'
   - 'create news content'
+  - 'create node_include block content'
   - 'create person content'
   - 'create photo_hero block content'
+  - 'create proofpoint block content'
   - 'create remote_video media'
+  - 'create slideshow block content'
   - 'create social_media_links block content'
   - 'create terms in media_tags'
+  - 'create timeline block content'
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
   - 'create users'
@@ -115,19 +118,23 @@ permissions:
   - 'delete any book content'
   - 'delete any builder_page content'
   - 'delete any card block content'
-  - 'delete any contact_info block content'
   - 'delete any content block content'
   - 'delete any cta block content'
   - 'delete any file'
   - 'delete any file media'
   - 'delete any hero block content'
+  - 'delete any icon_links block content'
   - 'delete any image media'
   - 'delete any logo_cloud block content'
   - 'delete any news content'
+  - 'delete any node_include block content'
   - 'delete any person content'
   - 'delete any photo_hero block content'
+  - 'delete any proofpoint block content'
   - 'delete any remote_video media'
+  - 'delete any slideshow block content'
   - 'delete any social_media_links block content'
+  - 'delete any timeline block content'
   - 'delete any webform'
   - 'delete any webform content'
   - 'delete any webform submission'
@@ -178,6 +185,7 @@ permissions:
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'perform search and replace'
+  - 'perform search only'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'
@@ -192,17 +200,28 @@ permissions:
   - 'update any content block content'
   - 'update any cta block content'
   - 'update any hero block content'
+  - 'update any icon_links block content'
   - 'update any logo_cloud block content'
+  - 'update any node_include block content'
   - 'update any photo_hero block content'
+  - 'update any proofpoint block content'
+  - 'update any slideshow block content'
   - 'update any social_media_links block content'
+  - 'update any timeline block content'
   - 'update unl_directory_entry external entity'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition unpublish'
   - 'use text format block_body'
+  - 'use text format minimal'
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'view any unpublished content'
   - 'view any webform submission'
   - 'view book revisions'
   - 'view builder_page revisions'
+  - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

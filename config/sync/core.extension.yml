@@ -25,6 +25,7 @@ module:
   config_ignore: 0
   config_split: 0
   config_update: 0
+  content_moderation: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -81,8 +82,6 @@ module:
   infotext: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
-  jquery_ui: 0
-  jquery_ui_draggable: 0
   jsonapi: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
@@ -92,6 +91,7 @@ module:
   layout_builder_restrictions_by_region: 0
   layout_builder_styles: 0
   layout_discovery: 0
+  lb_direct_add: 0
   link: 0
   linkit: 0
   linkit_media_library: 0
@@ -160,6 +160,7 @@ module:
   webform_node: 0
   webform_submission_log: 0
   webform_ui: 0
+  workflows: 0
   dcf_lazyload: 1
   menu_admin_per_menu: 1
   pathauto: 1
