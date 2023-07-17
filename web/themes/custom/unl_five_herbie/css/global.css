@@ -338,3 +338,12 @@ div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-da
   border-color: #fff;
 }
 /* #endregion */
+
+/* Fixes color contrast issue on book navigations */
+.block-menu-block.unl-frame-quad h2 a:link,
+.block-menu-block.unl-frame-quad h2 a:hover,
+.block-menu-block.unl-frame-quad h2 a:active,
+.block-menu-block.unl-frame-quad h2 a:visited
+{
+  color: #fefdfa !important;
+}
