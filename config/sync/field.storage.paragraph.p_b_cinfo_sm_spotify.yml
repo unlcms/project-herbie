@@ -1,0 +1,21 @@
+uuid: e1b98705-b393-447e-a888-411d28a2c473
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.p_b_cinfo_sm_spotify
+field_name: p_b_cinfo_sm_spotify
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: e35b1c1d-e2b2-4c4d-afef-6464c41884ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_sm_youtube
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.p_b_cinfo_sm_youtube
+field_name: p_b_cinfo_sm_youtube
+entity_type: paragraph
+bundle: contact_info_social_media
+label: YouTube
+description: "Enter username without the '@' symbol."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

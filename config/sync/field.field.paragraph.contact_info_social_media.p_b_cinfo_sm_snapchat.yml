@@ -1,0 +1,19 @@
+uuid: bedb25f7-e6b4-4d01-b206-505621489874
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_sm_snapchat
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.p_b_cinfo_sm_snapchat
+field_name: p_b_cinfo_sm_snapchat
+entity_type: paragraph
+bundle: contact_info_social_media
+label: Snapchat
+description: "Enter username without the '@' symbol."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

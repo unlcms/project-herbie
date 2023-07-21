@@ -1,0 +1,23 @@
+uuid: 188c9fb5-ffc2-40b0-b01b-23b7730c495d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_office_hours.p_b_cinfo_office_hours
+    - paragraphs.paragraphs_type.contact_info_office_hours
+id: paragraph.contact_info_office_hours.default
+targetEntityType: paragraph
+bundle: contact_info_office_hours
+mode: default
+content:
+  p_b_cinfo_office_hours:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

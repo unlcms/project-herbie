@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_social_media
+label: 'Contact Info Social Media'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: c69c5274-9b50-477f-960b-52807372914d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_cinfo_sm_facebook
+    - paragraphs.paragraphs_type.contact_info_social_media
+id: paragraph.contact_info_social_media.p_b_cinfo_sm_facebook
+field_name: p_b_cinfo_sm_facebook
+entity_type: paragraph
+bundle: contact_info_social_media
+label: Facebook
+description: "Enter username without the '@' symbol."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

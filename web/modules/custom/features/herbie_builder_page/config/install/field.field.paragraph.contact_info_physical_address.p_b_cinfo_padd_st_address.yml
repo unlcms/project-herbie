@@ -8,7 +8,7 @@ id: paragraph.contact_info_physical_address.p_b_cinfo_padd_st_address
 field_name: p_b_cinfo_padd_st_address
 entity_type: paragraph
 bundle: contact_info_physical_address
-label: 'Street Address'
+label: 'Street address'
 description: ''
 required: true
 translatable: false

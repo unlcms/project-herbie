@@ -186,6 +186,7 @@ permissions:
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'perform search and replace'
+  - 'perform search only'
   - 'rabbit hole bypass media'
   - 'revert book revisions'
   - 'revert builder_page revisions'

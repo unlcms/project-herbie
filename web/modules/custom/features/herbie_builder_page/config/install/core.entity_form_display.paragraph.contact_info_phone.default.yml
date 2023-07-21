@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.contact_info_phone.p_b_cinfo_phone_header
     - field.field.paragraph.contact_info_phone.p_b_cinfo_phone_phone
     - paragraphs.paragraphs_type.contact_info_phone
 id: paragraph.contact_info_phone.default
@@ -9,9 +10,17 @@ targetEntityType: paragraph
 bundle: contact_info_phone
 mode: default
 content:
-  p_b_cinfo_phone_phone:
+  p_b_cinfo_phone_header:
     type: string_textfield
     weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  p_b_cinfo_phone_phone:
+    type: string_textfield
+    weight: 1
     region: content
     settings:
       size: 60
