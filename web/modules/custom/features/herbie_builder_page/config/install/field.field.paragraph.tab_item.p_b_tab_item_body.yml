@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_tab_item_body
+    - paragraphs.paragraphs_type.tab_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - block_body
+id: paragraph.tab_item.p_b_tab_item_body
+field_name: p_b_tab_item_body
+entity_type: paragraph
+bundle: tab_item
+label: 'Tab Item Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
