@@ -148,7 +148,8 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
     }
   }
 
-  if($element_type == 'checkbox'){
+  // For the checkbox element, only allow the "after" title display option.
+  if ($element_type == 'checkbox') {
     $form['properties']['form']['display_container']['title_display']['#options']['after'] = $afterValue;
     $form['properties']['form']['display_container']['title_display']['#default_value'] = 'after';
     unset($form['properties']['form']['display_container']['title_display']['#options']['before']);
