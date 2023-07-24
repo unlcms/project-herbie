@@ -21,11 +21,11 @@
 }
 
 .unlcms-abbr-teaser-person-list {
-  grid-template-columns: repeat( auto-fit, minmax(13.32rem, 1fr) );
+  grid-template-columns: repeat( auto-fill, minmax(17.76rem, 1fr) );
 }
 
 .unlcms-teaser-person-list {
-  grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
+  grid-template-columns: repeat( auto-fill, minmax(23.68rem, 1fr) );
 }
 
 .unlcms-teaser-person-img,
@@ -148,4 +148,9 @@
     display: none;
   }
 
-
+  .dcf-url-wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+  }
