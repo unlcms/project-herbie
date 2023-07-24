@@ -5,11 +5,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.major.n_major_4year_link
     - field.field.node.major.n_major_academics_experiential
-    - field.field.node.major.n_major_areas_emphasis
+    - field.field.node.major.n_major_areas_focus
+    - field.field.node.major.n_major_areas_interest
     - field.field.node.major.n_major_career_prep
     - field.field.node.major.n_major_careers_list
     - field.field.node.major.n_major_careers_title
     - field.field.node.major.n_major_college
+    - field.field.node.major.n_major_college_external_url
     - field.field.node.major.n_major_community
     - field.field.node.major.n_major_contact
     - field.field.node.major.n_major_courses_image
@@ -47,11 +49,13 @@ content:
 hidden:
   n_major_4year_link: true
   n_major_academics_experiential: true
-  n_major_areas_emphasis: true
+  n_major_areas_focus: true
+  n_major_areas_interest: true
   n_major_career_prep: true
   n_major_careers_list: true
   n_major_careers_title: true
   n_major_college: true
+  n_major_college_external_url: true
   n_major_community: true
   n_major_contact: true
   n_major_courses_image: true

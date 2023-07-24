@@ -1,0 +1,59 @@
+uuid: 6f9e6734-4e6a-4b95-98d9-88cab8c59d1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: yaUv0Rv9Zq813pvUW0Xuv3D_67nY0qKq8FKC8h31QTE
+id: node.n_major_areas_interest
+field_name: n_major_areas_interest
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Agriculture, Animals & Plants'
+      label: 'Agriculture, Animals & Plants'
+    -
+      value: 'Architecture & Design'
+      label: 'Architecture & Design'
+    -
+      value: 'Arts & Performance'
+      label: 'Arts & Performance'
+    -
+      value: 'Business, Management & Entrepreneurship'
+      label: 'Business, Management & Entrepreneurship'
+    -
+      value: 'Communication, Journalism, & Media'
+      label: 'Communication, Journalism, & Media'
+    -
+      value: 'Engineering, Computing & Technology'
+      label: 'Engineering, Computing & Technology'
+    -
+      value: 'Environment, Energy, & Sustainability'
+      label: 'Environment, Energy, & Sustainability'
+    -
+      value: 'Health & Wellness'
+      label: 'Health & Wellness'
+    -
+      value: 'Life Sciences'
+      label: 'Life Sciences'
+    -
+      value: 'Math, Analytics, & Data Science'
+      label: 'Math, Analytics, & Data Science'
+    -
+      value: 'Politics, Global Perspectives & Cultures'
+      label: 'Politics, Global Perspectives & Cultures'
+    -
+      value: 'Teaching & Education'
+      label: 'Teaching & Education'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

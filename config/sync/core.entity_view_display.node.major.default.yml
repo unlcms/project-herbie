@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.major.n_major_4year_link
     - field.field.node.major.n_major_academics_experiential
-    - field.field.node.major.n_major_areas_emphasis
+    - field.field.node.major.n_major_areas_focus
+    - field.field.node.major.n_major_areas_interest
     - field.field.node.major.n_major_career_prep
     - field.field.node.major.n_major_careers_list
     - field.field.node.major.n_major_careers_title
     - field.field.node.major.n_major_college
+    - field.field.node.major.n_major_college_external_url
     - field.field.node.major.n_major_community
     - field.field.node.major.n_major_contact
     - field.field.node.major.n_major_courses_image
@@ -35,6 +37,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image_class
+    - link
     - options
     - svg_image
     - text
@@ -57,7 +60,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   n_major_academics_experiential:
     type: string
@@ -65,15 +68,19 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 4
     region: content
-  n_major_areas_emphasis:
-    type: string
+  n_major_areas_focus:
+    type: link
     label: hidden
     settings:
-      link_to_entity: false
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 28
     region: content
   n_major_career_prep:
     type: string
@@ -81,7 +88,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   n_major_careers_list:
     type: string
@@ -89,7 +96,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 28
+    weight: 20
     region: content
   n_major_careers_title:
     type: string
@@ -97,14 +104,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 27
+    weight: 19
     region: content
   n_major_college:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 31
+    weight: 23
     region: content
   n_major_community:
     type: string
@@ -112,7 +119,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   n_major_contact:
     type: entity_reference_revisions_entity_view
@@ -121,7 +128,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 20
+    weight: 12
     region: content
   n_major_courses_image:
     type: image
@@ -138,7 +145,7 @@ content:
     third_party_settings:
       image_class:
         class: 'dcf-ratio-child dcf-obj-fit-cover'
-    weight: 19
+    weight: 11
     region: content
   n_major_featured_faculty:
     type: entity_reference_revisions_entity_view
@@ -147,7 +154,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 18
+    weight: 10
     region: content
   n_major_grad_schools_list:
     type: string
@@ -155,7 +162,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 26
+    weight: 18
     region: content
   n_major_grad_schools_title:
     type: string
@@ -163,7 +170,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 25
+    weight: 17
     region: content
   n_major_hero_image:
     type: image
@@ -188,14 +195,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 29
+    weight: 21
     region: content
   n_major_huskers_do_intro:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 34
+    weight: 26
     region: content
   n_major_internships_list:
     type: string
@@ -203,7 +210,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 24
+    weight: 16
     region: content
   n_major_internships_title:
     type: string
@@ -211,7 +218,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 23
+    weight: 15
     region: content
   n_major_intro_video:
     type: string
@@ -219,7 +226,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 32
+    weight: 24
     region: content
   n_major_lead_copy:
     type: basic_string
@@ -234,7 +241,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 30
+    weight: 22
     region: content
   n_major_notable_courses:
     type: entity_reference_revisions_entity_view
@@ -243,21 +250,21 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   n_major_notable_courses_intro:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 33
+    weight: 25
     region: content
   n_major_otc_intro:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 35
+    weight: 27
     region: content
   n_major_outside_the_classroom:
     type: entity_reference_revisions_entity_view
@@ -266,7 +273,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 17
+    weight: 9
     region: content
   n_major_point_pride:
     type: entity_reference_revisions_entity_view
@@ -275,14 +282,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   n_major_program_features:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 21
+    weight: 13
     region: content
   n_major_program_features_image:
     type: image
@@ -299,6 +306,8 @@ content:
     third_party_settings:
       image_class:
         class: 'dcf-ratio-child dcf-obj-fit-cover'
-    weight: 22
+    weight: 14
     region: content
-hidden: {  }
+hidden:
+  n_major_areas_interest: true
+  n_major_college_external_url: true
