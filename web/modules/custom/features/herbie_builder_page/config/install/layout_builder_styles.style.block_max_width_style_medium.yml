@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: block_max_width_style_medium
+label: 'Max Width - Medium'
+classes: dcf-w-max-md
+type: component
+group: max_width
+block_restrictions:
+  - 'inline_block:content'
+layout_restrictions: {  }
+weight: 0

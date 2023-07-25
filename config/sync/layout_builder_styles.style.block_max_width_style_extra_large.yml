@@ -1,0 +1,13 @@
+uuid: 95f2f984-17cf-4d13-b587-daab98012a7a
+langcode: en
+status: true
+dependencies: {  }
+id: block_max_width_style_extra_large
+label: 'Max Width - Extra Large'
+classes: dcf-w-max-xl
+type: component
+group: max_width
+block_restrictions:
+  - 'inline_block:content'
+layout_restrictions: {  }
+weight: 0
