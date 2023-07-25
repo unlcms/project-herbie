@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: max_width
+label: 'Max Width '
+multiselect: single
+form_type: checkboxes
+required: false
+weight: 0
