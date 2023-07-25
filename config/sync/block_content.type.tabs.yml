@@ -1,0 +1,8 @@
+uuid: ba12dc8f-1387-4263-86c9-5ebdbfd5ae55
+langcode: en
+status: true
+dependencies: {  }
+id: tabs
+label: Tabs
+revision: 0
+description: 'A list of horizontal "tabbed" links that are used to open associated content on the same page.'

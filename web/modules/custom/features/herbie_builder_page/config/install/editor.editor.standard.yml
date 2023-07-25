@@ -30,6 +30,8 @@ settings:
       - subscript
       - specialCharacters
       - '|'
+      - horizontalLine
+      - '|'
       - style
   plugins:
     ckeditor5_alignment:

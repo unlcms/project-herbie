@@ -136,6 +136,7 @@ third_party_settings:
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
+              - 'inline_block:tabs'
               - 'inline_block:content'
               - 'inline_block:timeline'
             'Lists (Views)': {  }
@@ -186,6 +187,7 @@ third_party_settings:
               - 'inline_block:proofpoint'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
+              - 'inline_block:tabs'
               - 'inline_block:content'
             'Lists (Views)': {  }
             Menus:
