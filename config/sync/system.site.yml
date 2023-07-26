@@ -3,7 +3,7 @@ _core:
 langcode: en
 uuid: eecd1590-1638-42e1-af8a-98b82ca069b0
 name: CMS
-mail: noreply@unl.edu
+mail: acoleman@unl.edu
 slogan: ''
 page:
   403: ''

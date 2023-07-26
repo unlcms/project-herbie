@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.major.n_major_4year_link
     - field.field.node.major.n_major_academics_experiential
-    - field.field.node.major.n_major_areas_emphasis
+    - field.field.node.major.n_major_areas_focus
+    - field.field.node.major.n_major_areas_interest
     - field.field.node.major.n_major_career_prep
     - field.field.node.major.n_major_careers_list
     - field.field.node.major.n_major_careers_title
     - field.field.node.major.n_major_college
+    - field.field.node.major.n_major_college_external_url
     - field.field.node.major.n_major_community
     - field.field.node.major.n_major_contact
     - field.field.node.major.n_major_courses_image
@@ -23,7 +25,7 @@ dependencies:
     - field.field.node.major.n_major_internships_title
     - field.field.node.major.n_major_intro_video
     - field.field.node.major.n_major_lead_copy
-    - field.field.node.major.n_major_minors
+    - field.field.node.major.n_major_minor
     - field.field.node.major.n_major_notable_courses
     - field.field.node.major.n_major_notable_courses_intro
     - field.field.node.major.n_major_otc_intro
@@ -34,7 +36,9 @@ dependencies:
     - image.style.thumbnail
     - node.type.major
   module:
+    - content_moderation
     - field_group
+    - link
     - paragraphs
     - path
     - svg_image
@@ -113,8 +117,8 @@ third_party_settings:
         - n_major_lead_copy
         - n_major_college
         - n_major_hours_required
-        - n_major_minors
-        - n_major_areas_emphasis
+        - n_major_minor
+        - n_major_areas_focus
       label: Details
       region: content
       parent_name: ''
@@ -139,9 +143,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   n_major_4year_link:
     type: string_textfield
-    weight: 42
+    weight: 43
     region: content
     settings:
       size: 60
@@ -155,13 +165,19 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  n_major_areas_emphasis:
-    type: string_textfield
+  n_major_areas_focus:
+    type: link_default
     weight: 16
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  n_major_areas_interest:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
     third_party_settings: {  }
   n_major_career_prep:
     type: string_textfield
@@ -173,7 +189,7 @@ content:
     third_party_settings: {  }
   n_major_careers_list:
     type: string_textfield
-    weight: 20
+    weight: 21
     region: content
     settings:
       size: 60
@@ -181,7 +197,7 @@ content:
     third_party_settings: {  }
   n_major_careers_title:
     type: string_textfield
-    weight: 19
+    weight: 20
     region: content
     settings:
       size: 60
@@ -192,6 +208,14 @@ content:
     weight: 13
     region: content
     settings: {  }
+    third_party_settings: {  }
+  n_major_college_external_url:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   n_major_community:
     type: string_textfield
@@ -247,7 +271,7 @@ content:
     third_party_settings: {  }
   n_major_grad_schools_list:
     type: string_textfield
-    weight: 18
+    weight: 19
     region: content
     settings:
       size: 60
@@ -255,7 +279,7 @@ content:
     third_party_settings: {  }
   n_major_grad_schools_title:
     type: string_textfield
-    weight: 17
+    weight: 18
     region: content
     settings:
       size: 60
@@ -317,17 +341,20 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  n_major_minors:
-    type: string_textfield
+  n_major_minor:
+    type: text_textarea
     weight: 15
     region: content
     settings:
-      size: 60
+      rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
   n_major_notable_courses:
     type: paragraphs
-    weight: 41
+    weight: 42
     region: content
     settings:
       title: Paragraph
@@ -353,7 +380,7 @@ content:
     third_party_settings: {  }
   n_major_otc_intro:
     type: string_textarea
-    weight: 15
+    weight: 14
     region: content
     settings:
       rows: 5

@@ -1,11 +1,13 @@
-uuid: e6b67b1f-97c6-4c44-aefe-b4a1f770309e
+uuid: 7463eb63-85fb-4d9e-a9f8-20c77f527e3b
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.n_major_minors
-field_name: n_major_minors
+_core:
+  default_config_hash: S3fhXVPuWlII2eNg_5S6e01Y8tGAk-Bd6-CmpbXdkWE
+id: node.n_major_college_external_url
+field_name: n_major_college_external_url
 entity_type: node
 type: string
 settings:
