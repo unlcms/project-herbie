@@ -14,40 +14,40 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: 'Agriculture, Animals & Plants'
+      value: '1'
       label: 'Agriculture, Animals & Plants'
     -
-      value: 'Architecture & Design'
+      value: '2'
       label: 'Architecture & Design'
     -
-      value: 'Arts & Performance'
+      value: '3'
       label: 'Arts & Performance'
     -
-      value: 'Business, Management & Entrepreneurship'
+      value: '4'
       label: 'Business, Management & Entrepreneurship'
     -
-      value: 'Communication, Journalism, & Media'
+      value: '5'
       label: 'Communication, Journalism, & Media'
     -
-      value: 'Engineering, Computing & Technology'
+      value: '6'
       label: 'Engineering, Computing & Technology'
     -
-      value: 'Environment, Energy, & Sustainability'
+      value: '7'
       label: 'Environment, Energy, & Sustainability'
     -
-      value: 'Health & Wellness'
+      value: '8'
       label: 'Health & Wellness'
     -
-      value: 'Life Sciences'
+      value: '9'
       label: 'Life Sciences'
     -
-      value: 'Math, Analytics, & Data Science'
+      value: '10'
       label: 'Math, Analytics, & Data Science'
     -
-      value: 'Politics, Global Perspectives & Cultures'
+      value: '11'
       label: 'Politics, Global Perspectives & Cultures'
     -
-      value: 'Teaching & Education'
+      value: '12'
       label: 'Teaching & Education'
   allowed_values_function: ''
 module: options

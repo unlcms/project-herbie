@@ -25,7 +25,7 @@ dependencies:
     - field.field.node.major.n_major_internships_title
     - field.field.node.major.n_major_intro_video
     - field.field.node.major.n_major_lead_copy
-    - field.field.node.major.n_major_minors
+    - field.field.node.major.n_major_minor
     - field.field.node.major.n_major_notable_courses
     - field.field.node.major.n_major_notable_courses_intro
     - field.field.node.major.n_major_otc_intro
@@ -69,7 +69,7 @@ hidden:
   n_major_internships_title: true
   n_major_intro_video: true
   n_major_lead_copy: true
-  n_major_minors: true
+  n_major_minor: true
   n_major_notable_courses: true
   n_major_notable_courses_intro: true
   n_major_otc_intro: true

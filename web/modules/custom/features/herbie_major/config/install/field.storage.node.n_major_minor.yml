@@ -1,18 +1,15 @@
-uuid: e6b67b1f-97c6-4c44-aefe-b4a1f770309e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.n_major_minors
-field_name: n_major_minors
+    - text
+id: node.n_major_minor
+field_name: n_major_minor
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

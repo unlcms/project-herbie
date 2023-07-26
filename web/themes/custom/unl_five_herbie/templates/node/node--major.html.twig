@@ -62,14 +62,18 @@
 								<h2 class="dcf-txt-md dcf-mb-1">Hours Required</h2>
 								{{ (content.n_major_hours_required) }}
 							</li>
+              {% if content.n_major_minor['#items'] is not empty %}
 							<li>
 								<h2 class="dcf-txt-md dcf-mb-1">Minors Available</h2>
-								{{ (content.n_major_minors) }}
+								{{ (content.n_major_minor) }}
 							</li>
+              {% endif %}
+              {% if content.n_major_areas_focus['#items'] is not empty %}
 							<li>
 								<h2 class="dcf-txt-md dcf-mb-1">Areas of Focus</h2>
 								{{ (content.n_major_areas_focus) }}
 							</li>
+              {% endif %}
 						</ul>
             </div>
           </div>

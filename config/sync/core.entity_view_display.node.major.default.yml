@@ -25,7 +25,7 @@ dependencies:
     - field.field.node.major.n_major_internships_title
     - field.field.node.major.n_major_intro_video
     - field.field.node.major.n_major_lead_copy
-    - field.field.node.major.n_major_minors
+    - field.field.node.major.n_major_minor
     - field.field.node.major.n_major_notable_courses
     - field.field.node.major.n_major_notable_courses_intro
     - field.field.node.major.n_major_otc_intro
@@ -235,13 +235,12 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  n_major_minors:
-    type: string
+  n_major_minor:
+    type: text_default
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    weight: 22
+    weight: 29
     region: content
   n_major_notable_courses:
     type: entity_reference_revisions_entity_view
