@@ -2,16 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.n_major_areas_emphasis
-field_name: n_major_areas_emphasis
+id: node.n_major_areas_focus
+field_name: n_major_areas_focus
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: -1
 translatable: true

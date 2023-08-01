@@ -102,7 +102,8 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   unset($form['properties']['custom']);
   unset($form['properties']['display']['format_attributes']);
 
-  // Remove option to display title after element or to hide title.
+  // Save the value of the 'after' option and then remove the option to display title after an element or to hide title.
+  $afterValue = $form['properties']['form']['display_container']['title_display']['#options']['after'];
   unset($form['properties']['form']['display_container']['title_display']['#options']['after']);
   unset($form['properties']['form']['display_container']['title_display']['#options']['invisible']);
   // Default value may be set to 'invisible'.
@@ -145,6 +146,16 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
       unset($form['properties']['form']['display_container']['description_display']['#options']['after']);
       $form['properties']['form']['display_container']['description_display']['#default_value'] = 'before';
     }
+  }
+
+  // For the checkbox element, only allow the "after" title display option.
+  if ($element_type == 'checkbox') {
+    $form['properties']['form']['display_container']['title_display']['#options']['after'] = $afterValue;
+    $form['properties']['form']['display_container']['title_display']['#default_value'] = 'after';
+    unset($form['properties']['form']['display_container']['title_display']['#options']['before']);
+    unset($form['properties']['form']['display_container']['title_display']['#options']['inline']);
+    unset($form['properties']['form']['display_container']['title_display']['#options']['none']);
+    unset($form['properties']['form']['display_container']['title_display']['#empty_option']);
   }
 
   // Only allow field prefix and field suffix on textfield and number elements.

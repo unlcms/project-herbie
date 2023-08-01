@@ -19,4 +19,16 @@ settings:
   provider: core
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      viewer: viewer
+      editor: editor
+      site_admin: site_admin
+      coder: coder
+      administrator: administrator
+      super_administrator: super_administrator

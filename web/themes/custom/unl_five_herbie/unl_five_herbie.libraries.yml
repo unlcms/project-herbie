@@ -93,6 +93,11 @@ icon_links:
     theme:
       css/theme/block/icon_links.css: {}
 
+tabs:
+  version: VERSION
+  js:
+    js/theme/tabs.js: {}
+    
 cta:
   version: VERSION
   css:

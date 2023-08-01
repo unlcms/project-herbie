@@ -1,12 +1,12 @@
-uuid: e6b67b1f-97c6-4c44-aefe-b4a1f770309e
+uuid: 30794ebc-f150-4d8e-ad27-b63854073e45
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.n_major_minors
-field_name: n_major_minors
-entity_type: node
+    - paragraphs
+id: paragraph.p_b_tab_item_title
+field_name: p_b_tab_item_title
+entity_type: paragraph
 type: string
 settings:
   max_length: 255

@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tabs
+    - field.storage.block_content.b_tab_item
+    - paragraphs.paragraphs_type.tab_item
+  module:
+    - entity_reference_revisions
+id: block_content.tabs.b_tab_item
+field_name: b_tab_item
+entity_type: block_content
+bundle: tabs
+label: 'Tab Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tab_item: tab_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 20
+        enabled: false
+      contact_info_contact_point:
+        weight: 21
+        enabled: false
+      contact_info_email:
+        weight: 22
+        enabled: false
+      contact_info_fax:
+        weight: 23
+        enabled: false
+      contact_info_heading:
+        weight: 24
+        enabled: false
+      contact_info_margin:
+        weight: 25
+        enabled: false
+      contact_info_phone:
+        weight: 26
+        enabled: false
+      contact_info_physical_address:
+        weight: 27
+        enabled: false
+      contact_info_post_office_box_add:
+        weight: 28
+        enabled: false
+      icon_links_item:
+        weight: 29
+        enabled: false
+      logo_cloud_item:
+        weight: 30
+        enabled: false
+      p_n_major_contact:
+        weight: 31
+        enabled: false
+      p_n_major_featured_faculty:
+        weight: 32
+        enabled: false
+      p_n_major_notable_course:
+        weight: 33
+        enabled: false
+      p_n_major_outside_the_classroom:
+        weight: 34
+        enabled: false
+      p_n_major_points_of_pride:
+        weight: 35
+        enabled: false
+      slideshow_item:
+        weight: 36
+        enabled: false
+      tab_item:
+        weight: 37
+        enabled: true
+      timeline_item:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

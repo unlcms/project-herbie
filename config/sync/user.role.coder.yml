@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - asset_injector
+    - contextual
     - feeds
     - field_ui
     - google_analytics
@@ -20,6 +21,7 @@ label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access contextual links'
   - 'access feed overview'
   - 'access site reports'
   - 'access taxonomy overview'

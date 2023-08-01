@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.n_major_minors
-field_name: n_major_minors
-entity_type: node
+    - paragraphs
+id: paragraph.p_b_tab_item_title
+field_name: p_b_tab_item_title
+entity_type: paragraph
 type: string
 settings:
   max_length: 255

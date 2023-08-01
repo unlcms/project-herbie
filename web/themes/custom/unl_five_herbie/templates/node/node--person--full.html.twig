@@ -162,12 +162,12 @@
                         </div>
 
                         {% if node.n_person_email.value %}
-                          <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_email.value|lower }}" itemprop="email">
-                            <span class="dcf-txt-nowrap">{{ node.n_person_email.value|lower }}</span>
+                          <a class="dcf-txt-decor-hover dcf-url-wrap" href="mailto:{{ node.n_person_email.value|lower }}" itemprop="email">
+                            {{ node.n_person_email.value|lower }}
                           </a>
                         {% else %}
-                          <a class="dcf-txt-decor-hover" href="mailto:{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
-                            <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</span>
+                          <a class="dcf-txt-decor-hover dcf-url-wrap" href="mailto:{{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
+                            {{ node.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}
                           </a>
                         {% endif %}
                       </dd>
@@ -185,7 +185,7 @@
                               <path fill="none" d="M0 0h24v24H0z"/>
                             </svg>
                           </div>
-                          <a class="dcf-txt-decor-hover" href="{{ node.n_person_website.value[i].uri }}" itemprop="url">{{ node.n_person_website.value[i].title }}</a>
+                          <a class="dcf-txt-decor-hover dcf-url-wrap" href="{{ node.n_person_website.value[i].uri }}" itemprop="url">{{ node.n_person_website.value[i].title }}</a>
                         </dd>
                       {% endfor %}
                     {% endif %}
