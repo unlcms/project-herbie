@@ -144,7 +144,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-ratio-child dcf-obj-fit-cover'
+        class: 'dcf-ratio-child dcf-obj-fit-cover dcf-circle-at-md'
     weight: 11
     region: content
   n_major_featured_faculty:

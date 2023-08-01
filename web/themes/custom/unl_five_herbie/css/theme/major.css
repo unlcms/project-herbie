@@ -206,3 +206,6 @@
 	.unl-slope-t-b-downward {
 		clip-path: polygon(0px 0px, 100% 7.5em, 100% 100%, 0px calc(100% - 7.5em));
 	}
+
+/*Contact Area link overrides*/
+#contact .dcf-txt-sm a {color:#fefdfa}
