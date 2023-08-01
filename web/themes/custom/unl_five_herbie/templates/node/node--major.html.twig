@@ -136,8 +136,7 @@
           {{ (content.n_major_notable_courses) }}
           {% if content.n_major_4year_link['#items'] is not empty %}
           <div class="dcf-mt-6">
-            <a href="{{ (content.n_major_4year_link) }}"
-               class="dcf-btn dcf-btn-primary dcf-mb-4">Explore the {{ label }} 4-Year Plan</a>
+            {{ (content.n_major_4year_link) }}
           </div>
           {% endif %}
         </div>
