@@ -42,15 +42,15 @@
 	}
 
 /*HERO and hide default hero*/
-	.dcf-hero.dcf-hero-default {
+	.page-node-type-major .dcf-hero.dcf-hero-default {
 		margin-bottom: 0 !important;
 	}
 
-	.dcf-hero.dcf-hero-default .dcf-page-title {
+	.page-node-type-major .dcf-hero.dcf-hero-default .dcf-page-title {
 		display: none;
 	}
 
-	.dcf-main-content>.region-content {
+	.page-node-type-major .dcf-main-content>.region-content {
 		margin-bottom: 0 !important;
 	}
 
