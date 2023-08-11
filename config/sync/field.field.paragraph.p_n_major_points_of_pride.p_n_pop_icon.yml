@@ -6,13 +6,13 @@ dependencies:
     - field.storage.paragraph.p_n_pop_icon
     - paragraphs.paragraphs_type.p_n_major_points_of_pride
 _core:
-  default_config_hash: miNfXM460HbKt7-CgRAPrjlBYzXPZQ66VlXcMjQaFZg
+  default_config_hash: tDziP075JbCUu-pHa_erdwBfOZjQjL2-zBapznEYQI8
 id: paragraph.p_n_major_points_of_pride.p_n_pop_icon
 field_name: p_n_pop_icon
 entity_type: paragraph
 bundle: p_n_major_points_of_pride
 label: p_n_pop_icon
-description: "Text determines which icon shows up. All lowercase, no spaces before or after.<br>\r\n<b>money</b> - scholarships or financial aid related, lowest debt, etc<br>\r\n<b>award</b> - recognition given by outside entities, ratings, etc<br>\r\n<b>grad</b> - graduate employment levels, etc<br>\r\n<b>check</b> - generic positive to emphasize<br>\r\n<b>support</b> - faculty/student ratio, other support programs<br>\r\n<b>column</b> - generic program positive to emphasize<br>"
+description: "Text determines which icon shows up. All lowercase, no spaces before or after.<br>\r\n<b>money</b> - scholarships or financial aid related, lowest debt, etc<br>\r\n<b>award</b> - recognition given by outside entities, ratings, etc<br>\r\n<b>grad</b> - graduate employment levels, etc<br>\r\n<b>check</b> - generic positive to emphasize<br>\r\n<b>support</b> - faculty/student ratio, other support programs<br>\r\n<b>column</b> - generic program positive to emphasize<br>\r\n<b>globe</b> - international education or research opportunity<br>"
 required: false
 translatable: false
 default_value: {  }

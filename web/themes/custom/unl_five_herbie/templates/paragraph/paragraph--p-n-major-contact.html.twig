@@ -34,8 +34,10 @@
 								</svg>
 							</div>
 							<div class="dcf-pl-1">
+			  {% if content.p_n_contact_phone['#items'] is not empty %}			
               <a class="unl-cream" href="tel:+1{{ paragraph.p_n_contact_phone.value|replace({'-':''}) }}" aria-label="{{ paragraph.p_n_contact_phone.value|replace({'-': '.'})|split('')|join(' ') }}">{{ (content.p_n_contact_phone) }}</a>
-              </div>
+			  {% endif %}
+			  </div>
 						</dd>
             <dt class="dcf-sr-only">Email</dt>
 							<dd class="dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-txt-sm">
@@ -50,9 +52,10 @@
 								</svg>
 								</div>
 								<div class="dcf-pl-1">
-                  <a class="unl-cream" href="mailto:{{ (content.p_n_contact_email) }}">{{ (content.p_n_contact_email) }}</a>
+                  {{ (content.p_n_contact_email) }}
                 </div>
 							</dd>
+							</dl>
           </div>
         </div>
       </div>

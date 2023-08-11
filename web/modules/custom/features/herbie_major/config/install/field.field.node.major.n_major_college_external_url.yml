@@ -1,15 +1,14 @@
-uuid: 973c4941-31dc-4bf4-8cef-31f7292ea5e3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.n_major_minors
+    - field.storage.node.n_major_college_external_url
     - node.type.major
-id: node.major.n_major_minors
-field_name: n_major_minors
+id: node.major.n_major_college_external_url
+field_name: n_major_college_external_url
 entity_type: node
 bundle: major
-label: Minors
+label: 'College External URL'
 description: ''
 required: false
 translatable: false

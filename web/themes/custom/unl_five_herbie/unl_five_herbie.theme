@@ -363,3 +363,20 @@ function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables
   // Pass field name to Twig as data- attribute.
   $variables['responsive_image']['#attributes']['data-field-name'] = $variables['item']->getFieldDefinition()->get('field_name');
 }
+
+/**
+ * Implements hook_preprocess_image().
+ */
+function unl_five_herbie_preprocess_image(&$variables) {
+  // On Major nodes, output images with absolute file paths so that
+  // they load cross-domain on pages included in Drupal 7 with ?format=partial.
+  $node = \Drupal::request()->attributes->get('node');
+  if (isset($node)) {
+    $bundle = $node->bundle();
+  }
+  if (isset($bundle) && $bundle == 'major' && isset($variables['uri'])) {
+    /** @var \Drupal\Core\File\FileUrlGenerator $file_url_generator */
+    $file_url_generator = \Drupal::service('file_url_generator');
+    $variables['attributes']['src'] = $file_url_generator->generateAbsoluteString($variables['uri']);
+  }
+}
