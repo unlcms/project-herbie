@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_tandem_button_style
+    - paragraphs.paragraphs_type.tandem_buttons_item
+  module:
+    - options
+id: paragraph.tandem_buttons_item.p_b_tandem_button_style
+field_name: p_b_tandem_button_style
+entity_type: paragraph
+bundle: tandem_buttons_item
+label: 'Button Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: dcf-btn-primary
+default_value_callback: ''
+settings: {  }
+field_type: list_string

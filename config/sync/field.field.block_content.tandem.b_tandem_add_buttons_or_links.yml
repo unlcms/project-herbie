@@ -1,0 +1,21 @@
+uuid: b1881771-c2bf-4a63-ad9a-02494b34b13f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_add_buttons_or_links
+  module:
+    - options
+id: block_content.tandem.b_tandem_add_buttons_or_links
+field_name: b_tandem_add_buttons_or_links
+entity_type: block_content
+bundle: tandem
+label: 'Add Buttons or Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

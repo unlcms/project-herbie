@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_style
+  module:
+    - options
+id: block_content.tandem.b_tandem_style
+field_name: b_tandem_style
+entity_type: block_content
+bundle: tandem
+label: 'Tandem Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

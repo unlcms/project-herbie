@@ -1,0 +1,116 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.field.block_content.tandem.b_tandem_add_buttons_or_links
+    - field.field.block_content.tandem.b_tandem_body
+    - field.field.block_content.tandem.b_tandem_buttons
+    - field.field.block_content.tandem.b_tandem_fade
+    - field.field.block_content.tandem.b_tandem_heading
+    - field.field.block_content.tandem.b_tandem_image
+    - field.field.block_content.tandem.b_tandem_links
+    - field.field.block_content.tandem.b_tandem_overline
+    - field.field.block_content.tandem.b_tandem_stack
+    - field.field.block_content.tandem.b_tandem_style
+    - field.field.block_content.tandem.b_tandem_subhead
+  module:
+    - entity_reference_revisions
+    - heading
+    - link
+    - options
+    - text
+id: block_content.tandem.default
+targetEntityType: block_content
+bundle: tandem
+mode: default
+content:
+  b_tandem_add_buttons_or_links:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  b_tandem_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  b_tandem_buttons:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  b_tandem_fade:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  b_tandem_heading:
+    type: heading
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  b_tandem_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  b_tandem_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  b_tandem_overline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  b_tandem_stack:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  b_tandem_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  b_tandem_subhead:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }
