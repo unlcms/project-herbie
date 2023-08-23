@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tandem_buttons_item.p_b_tandem_button_link
+    - field.field.paragraph.tandem_buttons_item.p_b_tandem_button_style
+    - paragraphs.paragraphs_type.tandem_buttons_item
+  module:
+    - link
+id: paragraph.tandem_buttons_item.default
+targetEntityType: paragraph
+bundle: tandem_buttons_item
+mode: default
+content:
+  p_b_tandem_button_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  p_b_tandem_button_style:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

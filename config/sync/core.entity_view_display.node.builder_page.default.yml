@@ -138,6 +138,7 @@ third_party_settings:
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'
+              - 'inline_block:tandem'
               - 'inline_block:content'
               - 'inline_block:timeline'
             'Lists (Views)': {  }

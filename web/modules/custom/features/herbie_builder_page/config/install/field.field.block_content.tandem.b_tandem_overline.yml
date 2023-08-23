@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_overline
+id: block_content.tandem.b_tandem_overline
+field_name: b_tandem_overline
+entity_type: block_content
+bundle: tandem
+label: Overline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

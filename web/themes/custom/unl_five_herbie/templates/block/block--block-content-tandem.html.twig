@@ -1,0 +1,130 @@
+<div{{attributes.addClass('unl-bg-cream')}}>
+
+	{{ title_prefix }}
+	{{ title_suffix }}
+
+	{{ attach_library('unl_five_herbie/tandem') }}
+
+	{%
+  set stack_wrapper = [
+    'dcf-z-1',
+    'unlcms-tandem-text',
+    'unlcms-tandem-stack-text',
+  ]
+  %}
+
+	{% block content %}
+		{% set tandem_style_wrapper = create_attribute() %}
+		{% set stack_alignment = content.b_tandem_stack.0['#markup'] %}
+
+		{% if content.b_tandem_stack.0['#markup'] == 'center' %}
+			{% set stack_wrapper = stack_wrapper|merge(['unlcms-tandem-stack-text-c']) %}
+		{% elseif content.b_tandem_stack.0['#markup'] == 'left' %}
+			{% set stack_wrapper = stack_wrapper|merge(['unlcms-tandem-stack-text-l']) %}
+		{% elseif content.b_tandem_stack.0['#markup'] == 'right' %}
+			{% set stack_wrapper = stack_wrapper|merge(['unlcms-tandem-stack-text-r']) %}
+		{% endif %}
+
+		{% if content.b_tandem_style.0['#markup'] == '2' %}
+			<div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-stack">
+				<div {{tandem_style_wrapper.addClass(stack_wrapper)}}>
+					<div class="unlcms-tandem-stack-text-card">
+
+						{{content.b_tandem_overline}}
+						{{content.b_tandem_heading}}
+						{{content.b_tandem_subhead}}
+						{{content.b_tandem_body}}
+
+						{% set tandem_button_Objects = content.b_tandem_buttons['#object'] %}
+						{% set tandem_button = 'b_tandem_buttons' %}
+						{% set array_of_tandom_buttons = attribute(tandem_button_Objects, tandem_button) %}
+
+						{% if content.b_tandem_add_buttons_or_links.0['#markup'] == 'buttons' %}
+							{% set multiple_button_wrapper = ['dcf-d-flex', 'dcf-flex-wrap', 'dcf-gap-3'] %}
+							{% set button_wrapper_attribute = create_attribute() %}
+
+							{% if stack_alignment == 'center' %}
+								{% set multiple_button_wrapper = multiple_button_wrapper|merge(['dcf-txt-center', 'dcf-jc-center']) %}
+							{% endif %}
+
+							{% if array_of_tandom_buttons|length > 1 %}
+								<div {{button_wrapper_attribute.addClass(multiple_button_wrapper)}} role="group">
+									{{content.b_tandem_buttons}}
+								</div>
+							{% else %}
+								{% if stack_alignment == 'center' %}
+									<div class="dcf-txt-center dcf-jc-center">
+										{{content.b_tandem_buttons}}
+									</div>
+								{% else %}
+									{{content.b_tandem_buttons}}
+								{% endif %}
+							{% endif %}
+
+						{% elseif content.b_tandem_add_buttons_or_links.0['#markup'] == 'links' and content.b_tandem_links.0  %}
+							  {% if 'unlcms-tandem-stack-text-c' in stack_wrapper %}
+								<ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-text-right dcf-mt-5 tandem-stack-ul-selector">
+								{% else %}
+									<ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-mt-5">
+									{% endif %}
+									{{content.b_tandem_links}}
+								</ul>
+            {% endif %}
+					</div>
+				</div>
+					<div class="unlcms-tandem-stack-img dcf-ratio dcf-ratio-16x9">
+						{{content.b_tandem_image}}
+					</div>
+      </div>
+
+		{% elseif content.b_tandem_style.0['#markup'] == '1' %}
+				{% set fade_wrapper = [
+        'unlcms-tandem-text',
+        'unlcms-tandem-fade-text',
+         ] %}
+
+				{% if content.b_tandem_fade.0['#markup'] == 'left' %}
+					{% set fade_wrapper = fade_wrapper|merge(['unlcms-tandem-fade-text-l']) %}
+				{% elseif content.b_tandem_fade.0['#markup'] == 'right' %}
+					{% set fade_wrapper = fade_wrapper|merge(['unlcms-tandem-fade-text-r']) %}
+				{% endif %}
+
+				<div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade" style="--bg-color: var(--bg-lighter-gray);">
+					<div {{tandem_style_wrapper.addClass(fade_wrapper)}}>
+
+						{{content.b_tandem_overline}}
+						{{content.b_tandem_heading}}
+						{{content.b_tandem_subhead}}
+						{{content.b_tandem_body}}
+
+
+						{% if content.b_tandem_add_buttons_or_links.0['#markup'] == 'buttons' %}
+							{% set tandem_button_Objects = content.b_tandem_buttons['#object'] %}
+							{% set tandem_button = 'b_tandem_buttons' %}
+							{% set array_of_tandom_buttons = attribute(tandem_button_Objects, tandem_button) %}
+
+							{% if array_of_tandom_buttons|length > 1 %}
+								<div class="dcf-d-flex dcf-flex-wrap dcf-gap-3" role="group">
+								{% endif %}
+								{{content.b_tandem_buttons}}
+								{% if array_of_tandom_buttons|length > 1 %}
+								</div>
+							{% endif %}
+
+						{% elseif content.b_tandem_add_buttons_or_links.0['#markup'] == 'links' and content.b_tandem_links.0%}
+							{% if 'unlcms-tandem-stack-text-c' in stack_wrapper %}
+								<ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-text-right dcf-mt-5 tandem-stack-ul-selector">
+							{% else %}
+								<ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-mt-5">
+							{% endif %}
+								{{content.b_tandem_links}}
+								</ul>
+						{% endif %}
+					</div>
+							<div class="unlcms-tandem-fade-img dcf-ratio dcf-ratio-16x9">
+								{{content.b_tandem_image}}
+							</div>
+				</div>
+		  {% endif %}
+	{% endblock %}
+</div>

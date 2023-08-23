@@ -1,0 +1,36 @@
+uuid: 59d7e1c1-995b-422f-bd70-adcc2e57a43f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tandem_buttons_item.p_b_tandem_button_link
+    - field.field.paragraph.tandem_buttons_item.p_b_tandem_button_style
+    - paragraphs.paragraphs_type.tandem_buttons_item
+  module:
+    - link
+    - options
+id: paragraph.tandem_buttons_item.default
+targetEntityType: paragraph
+bundle: tandem_buttons_item
+mode: default
+content:
+  p_b_tandem_button_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  p_b_tandem_button_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

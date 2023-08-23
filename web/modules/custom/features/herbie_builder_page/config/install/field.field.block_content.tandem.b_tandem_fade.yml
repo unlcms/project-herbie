@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_fade
+  module:
+    - options
+id: block_content.tandem.b_tandem_fade
+field_name: b_tandem_fade
+entity_type: block_content
+bundle: tandem
+label: Fade
+description: 'Fade to the left or fade to the right'
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string
