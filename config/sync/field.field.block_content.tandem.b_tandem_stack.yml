@@ -1,0 +1,23 @@
+uuid: 477f8dc0-159d-458c-805f-ca9d11c276c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_stack
+  module:
+    - options
+id: block_content.tandem.b_tandem_stack
+field_name: b_tandem_stack
+entity_type: block_content
+bundle: tandem
+label: Stack
+description: 'Stack alignment '
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

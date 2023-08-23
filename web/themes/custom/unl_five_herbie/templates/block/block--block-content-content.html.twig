@@ -7,7 +7,6 @@
 {% endif %}
 
     <div{{ attributes }}>
-
       {{ title_prefix }}
       {% if label %}
         <h2{{ title_attributes }}>{{ label }}</h2>
@@ -17,7 +16,6 @@
       {% block content %}
         {{ content.body }}
       {% endblock %}
-
     </div>
 
 {% if 'block_max_width_style_extra_large' in block_lbs_value|keys or 'block_max_width_style_large' in block_lbs_value|keys or 'block_max_width_style_medium' in block_lbs_value|keys  %}

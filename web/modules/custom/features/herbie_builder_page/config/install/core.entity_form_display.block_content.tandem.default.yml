@@ -1,0 +1,119 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.field.block_content.tandem.b_tandem_add_buttons_or_links
+    - field.field.block_content.tandem.b_tandem_body
+    - field.field.block_content.tandem.b_tandem_buttons
+    - field.field.block_content.tandem.b_tandem_fade
+    - field.field.block_content.tandem.b_tandem_heading
+    - field.field.block_content.tandem.b_tandem_image
+    - field.field.block_content.tandem.b_tandem_links
+    - field.field.block_content.tandem.b_tandem_overline
+    - field.field.block_content.tandem.b_tandem_stack
+    - field.field.block_content.tandem.b_tandem_style
+    - field.field.block_content.tandem.b_tandem_subhead
+  module:
+    - heading
+    - link
+    - media_library
+    - paragraphs
+    - text
+id: block_content.tandem.default
+targetEntityType: block_content
+bundle: tandem
+mode: default
+content:
+  b_tandem_add_buttons_or_links:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  b_tandem_body:
+    type: text_textarea_with_summary
+    weight: 7
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  b_tandem_buttons:
+    type: paragraphs
+    weight: 9
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: tandem_buttons_item
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+  b_tandem_fade:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  b_tandem_heading:
+    type: heading
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  b_tandem_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  b_tandem_links:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  b_tandem_overline:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  b_tandem_stack:
+    type: options_buttons
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  b_tandem_style:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  b_tandem_subhead:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  info: true
