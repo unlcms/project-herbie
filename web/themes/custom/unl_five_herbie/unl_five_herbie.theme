@@ -289,6 +289,9 @@ function unl_five_herbie_preprocess_field(&$variables) {
     }
   }
 
+  /*
+   * Tandem links Block Fields
+   */
   $fields = array('b_tandem_buttons','b_tandem_style','b_tandem_stack','b_tandem_overline','b_tandem_links','p_b_tandem_button_link');
 
   if (in_array($field_name, $fields)) {
