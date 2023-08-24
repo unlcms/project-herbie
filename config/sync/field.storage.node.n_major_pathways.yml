@@ -1,17 +1,16 @@
+uuid: 6ea7bbe1-cebe-4059-9cca-e06bc09d3e91
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.n_major_4year_link
-field_name: n_major_4year_link
+    - text
+id: node.n_major_pathways
+field_name: n_major_pathways
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: -1
 translatable: true

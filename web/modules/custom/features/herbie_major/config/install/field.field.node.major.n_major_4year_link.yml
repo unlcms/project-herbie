@@ -9,7 +9,7 @@ field_name: n_major_4year_link
 entity_type: node
 bundle: major
 label: '4 Year Plan Link'
-description: ''
+description: 'Add links in alphabetical order of colleges (if a major with more than one college), as labels will be applied automatically.'
 required: false
 translatable: false
 default_value: {  }
