@@ -109,6 +109,9 @@
         <h2 class="unl-section-headline dcf-mb-1">
 		      {% if node.n_major_pathways|length == 2 %}Two{% elseif node.n_major_pathways|length == 3 %}Three{% elseif node.n_major_pathways|length == 4 %}Four{% endif %} Pathways For {{ label }}
 	      </h2>
+        <div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_pathways_intro) }}
+				</div>
           <div class="dcf-grid-{% if node.n_major_pathways|length == 2 %}halves{% elseif node.n_major_pathways|length == 3 %}thirds{% elseif node.n_major_pathways|length == 4 %}halves{% endif %}@md dcf-col-gap-vw dcf-row-gap-6">
             {% for key,college in content.n_major_college %}
              {% if key matches '/^\\d+$/' %}
