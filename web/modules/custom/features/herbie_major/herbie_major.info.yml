@@ -1,5 +1,5 @@
 name: Major
-description: 'Add conditionals and remove duplicate ID'
+description: 'A program of study content type.'
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
@@ -20,9 +20,10 @@ dependencies:
   - 'field_group:field_group'
   - 'herbie_media_types:herbie_media_types'
   - 'image_class:image_class'
+  - 'jsonapi_image_styles:jsonapi_image_styles'
   - 'paragraphs:paragraphs'
   - 'pathauto:pathauto'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
-version: 1.3.5
+version: 1.3.6
 package: Herbie

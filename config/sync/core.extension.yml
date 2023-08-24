@@ -83,6 +83,7 @@ module:
   inline_block_title_automatic: 0
   inline_entity_form: 0
   jsonapi: 0
+  jsonapi_image_styles: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
   layout_builder_iframe_modal: 0
