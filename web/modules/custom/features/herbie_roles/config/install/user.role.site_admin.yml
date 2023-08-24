@@ -105,6 +105,7 @@ permissions:
   - 'create remote_video media'
   - 'create slideshow block content'
   - 'create social_media_links block content'
+  - 'create tandem block content'
   - 'create terms in media_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
