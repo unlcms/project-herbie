@@ -32,6 +32,7 @@ dependencies:
     - field.field.node.major.n_major_notable_courses_intro
     - field.field.node.major.n_major_otc_intro
     - field.field.node.major.n_major_outside_the_classroom
+    - field.field.node.major.n_major_pathways
     - field.field.node.major.n_major_point_pride
     - field.field.node.major.n_major_program_features
     - field.field.node.major.n_major_program_features_image
@@ -79,6 +80,7 @@ hidden:
   n_major_notable_courses_intro: true
   n_major_otc_intro: true
   n_major_outside_the_classroom: true
+  n_major_pathways: true
   n_major_point_pride: true
   n_major_program_features: true
   n_major_program_features_image: true

@@ -1,23 +1,23 @@
+<ul class="dcf-list-bare">
    {% for item in items %}
     {% if items.0.content['#markup'] == 'College of Agricultural Sciences and Natural Resources' %}
-     <a href="http://casnr.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://casnr.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Architecture' %}
-        <a href="http://architecture.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://architecture.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Arts and Sciences' %}
-        <a href="http://cas.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://cas.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Business' %}
-        <a href="http://business.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://business.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Education and Human Sciences' %}
-        <a href="http://cehs.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://cehs.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Engineering' %}
-        <a href="http://engineering.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://engineering.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'Hixson Lied College of Fine and Performing Arts' %}
-        <a href="http://arts.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://arts.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'College of Journalism and Mass Communications' %}
-        <a href="http://journalism.unl.edu/">{{ item.content }}</a>
+    <li><a href="http://journalism.unl.edu/">{{ item.content }}</a></li>
     {% elseif items.0.content['#markup'] == 'Exploratory and Pre-Professional Advising Center' %}
-        <a href="http://explorecenter.unl.edu/">{{ item.content }}</a>
-    
+    <li><a href="http://explorecenter.unl.edu/">{{ item.content }}</a></li>
 {% endif %}
 {% endfor %}
-
+ </ul>   
