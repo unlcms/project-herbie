@@ -95,6 +95,9 @@ icon_links:
 
 tabs:
   version: VERSION
+  css:
+    theme:
+      css/theme/block/tabs.css: {}
   js:
     js/theme/tabs.js: {}
 
