@@ -158,7 +158,8 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       $build['#attributes']['class'] = [];
     }
     $build['#attributes']['class'][] = 'layout';
-    $build['#attributes']['class'][] = 'layout--container';
+    $build['#attributes']['class'][] = 'dcf-pt-8';
+    $build['#attributes']['class'][] = 'dcf-pb-8';
     $build['#attributes']['class'][] = $this->getPluginDefinition()->getTemplate();
 
     return $build;
