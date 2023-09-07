@@ -12,42 +12,61 @@
 #}
 {% set grid_wrapper_attributes = settings.grid_wrapper_attributes %}
 {% set title_attributes = settings.title_attributes.addClass('dcf-wrapper') %}
+{% set section_padding_classes = ['dcf-pt-8', 'dcf-pb-8'] %}
 
 {% if settings.title and attributes.hasClass('unl-cream') %}
   {% set title_attributes = title_attributes.addClass('unl-cream') %}
 {% endif %}
 
 {% if content %}
-  <div{{ attributes }}>
 
-    {% if settings.title %}
-      {% if attributes.hasClass('dcf-wrapper') %}
-        {% set title_attributes = title_attributes.removeClass('dcf-wrapper') %}
+ {% if attributes.hasClass('dcf-pt-0') and attributes.hasClass('dcf-pb-0')  %}
+    <div{{ attributes.removeClass(section_padding_classes) }}>
+
+  {% elseif attributes.hasClass('dcf-pb-0') and attributes.hasClass('dcf-pt-10') %}
+    <div{{ attributes.removeClass(section_padding_classes)}}>
+
+  {% elseif attributes.hasClass('dcf-pt-0') and attributes.hasClass('dcf-pb-10') %}
+    <div{{ attributes.removeClass(section_padding_classes)}}>
+
+  {% elseif attributes.hasClass('dcf-pb-0') %}
+    <div{{ attributes.removeClass('dcf-pb-8') }}>
+
+  {% elseif attributes.hasClass('dcf-pt-0') %}
+    <div{{ attributes.removeClass('dcf-pt-8') }}>
+
+  {% else %}
+    <div{{ attributes }}>
+  {% endif %}
+
+      {% if settings.title %}
+        {% if attributes.hasClass('dcf-wrapper') %}
+          {% set title_attributes = title_attributes.removeClass('dcf-wrapper') %}
+        {% endif %}
+        <h2{{ title_attributes }}>{{ settings.title }}</h2>
       {% endif %}
-      <h2{{ title_attributes }}>{{ settings.title }}</h2>
-    {% endif %}
 
-    <div{{ grid_wrapper_attributes }}>
+      <div{{ grid_wrapper_attributes }}>
 
-      {% if content.first %}
-        <div {{ region_attributes.first.addClass('dcf-col', 'layout__region', 'layout__region--first') }}>
-          {{ content.first }}
-        </div>
-      {% endif %}
+        {% if content.first %}
+          <div {{ region_attributes.first.addClass('dcf-col', 'layout__region', 'layout__region--first') }}>
+            {{ content.first }}
+          </div>
+        {% endif %}
 
-      {% if content.second %}
-        <div {{ region_attributes.second.addClass('dcf-col', 'layout__region', 'layout__region--second') }}>
-          {{ content.second }}
-        </div>
-      {% endif %}
+        {% if content.second %}
+          <div {{ region_attributes.second.addClass('dcf-col', 'layout__region', 'layout__region--second') }}>
+            {{ content.second }}
+          </div>
+        {% endif %}
 
-      {% if content.third %}
-        <div {{ region_attributes.third.addClass('dcf-col', 'layout__region', 'layout__region--third') }}>
-          {{ content.third }}
-        </div>
-      {% endif %}
+        {% if content.third %}
+          <div {{ region_attributes.third.addClass('dcf-col', 'layout__region', 'layout__region--third') }}>
+            {{ content.third }}
+          </div>
+        {% endif %}
+
+      </div>
 
     </div>
-
-  </div>
 {% endif %}
