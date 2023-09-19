@@ -4,13 +4,13 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'dcf-w-auto',
-    'dcf-w-max-md'
+    'dcf-w-100%',
+    'dcf-w-max-sm'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   <div class="content dcf-d-inline-flex dcf-jc-center dcf-ai-center dcf-col-gap-5 dcf-row-gap-5 dcf-mr-auto dcf-ml-auto">
-  	<div class="dcf-ratio dcf-ratio-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden">
+  	<div class="dcf-ratio dcf-ratio-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden" style="min-width: 7.49em;">
       {{ (content.p_n_contact_image) }}
     </div>
     <div class="dcf-d-flex dcf-flex-col dcf-as-center dcf-txt-left">
