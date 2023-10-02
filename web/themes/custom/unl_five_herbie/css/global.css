@@ -337,3 +337,8 @@ div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-da
   margin-bottom: 0em;
 }
 /* #endregion */
+
+/* Fixes some Drupal contexual links(for example, menu links when editing a section) from having a cream color */
+.contextual-region .contextual .contextual-links a {
+  color: #333 !important;
+}
