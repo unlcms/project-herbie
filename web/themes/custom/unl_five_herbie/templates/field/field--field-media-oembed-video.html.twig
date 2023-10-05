@@ -39,7 +39,12 @@
 {% for item in items %}
   {% set width = item.content['#attributes'].width %}
   {% set height = item.content['#attributes'].height %}
-  {% set aspect_ratio = (width / height)|round(2, 'common' ) %}
+  {% set aspect_ratio = (400 / 400)|round(2, 'common' ) %}
+
+      <pre>
+  {{ dump(aspect_ratio) }}
+
+</pre>
 
   {# If 9/16 aspect ratio #}
   {% if aspect_ratio == 0.56 %}
@@ -50,8 +55,8 @@
   {# If 3/4 aspect ratio #}
   {% elseif aspect_ratio == 0.75 %}
     {% set wrapper = ['dcf-ratio-3x4'] %}
-  {# If 1x1 aspect ratio #}
-  {% elseif aspect_ratio == 1 %}
+  {# If 1/1 aspect ratio #}
+  {% elseif aspect_ratio == 1.0 %}
     {% set wrapper = ['dcf-ratio-1x1'] %}
   {% else %}
     {% set wrapper = ['dcf-ratio-16x9'] %}
