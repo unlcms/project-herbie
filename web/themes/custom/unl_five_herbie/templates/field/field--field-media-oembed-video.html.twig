@@ -41,11 +41,6 @@
   {% set height = item.content['#attributes'].height %}
   {% set aspect_ratio = (400 / 400)|round(2, 'common' ) %}
 
-      <pre>
-  {{ dump(aspect_ratio) }}
-
-</pre>
-
   {# If 9/16 aspect ratio #}
   {% if aspect_ratio == 0.56 %}
     {% set wrapper = ['dcf-ratio-9x16'] %}
