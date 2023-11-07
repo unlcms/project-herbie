@@ -9,6 +9,7 @@ dependencies:
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
+    - field.field.block_content.hero.b_hero_vert_obj_pos
   module:
     - options
 _core:
@@ -33,14 +34,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   b_hero_size:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   b_hero_subhead:
     type: string
@@ -48,7 +49,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   b_hero_title:
     type: string
@@ -56,6 +57,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  b_hero_vert_obj_pos:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

@@ -1,0 +1,39 @@
+uuid: 73a491ad-fabf-468f-b54c-ef23361cfc51
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_hero_vert_obj_pos
+field_name: b_hero_vert_obj_pos
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hero_vert_obj_pos_0_pct
+      label: 0%
+    -
+      value: hero_vert_obj_pos_20_pct
+      label: 20%
+    -
+      value: hero_vert_obj_pos_40_pct
+      label: 40%
+    -
+      value: hero_vert_obj_pos_60_pct
+      label: 60%
+    -
+      value: hero_vert_obj_pos_80_pct
+      label: 80%
+    -
+      value: hero_vert_obj_pos_100_pct
+      label: 100%
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

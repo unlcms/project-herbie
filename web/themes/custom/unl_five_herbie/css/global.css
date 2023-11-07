@@ -337,3 +337,34 @@ div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-da
   margin-bottom: 0em;
 }
 /* #endregion */
+
+/* vertical object-position for hero images */
+.unlcms-hero-vert-obj-pos-0-pct {
+  object-position: 50% 0%;
+}
+
+.unlcms-hero-vert-obj-pos-20-pct {
+  object-position: 50% 20%;
+}
+
+.unlcms-hero-vert-obj-pos-40-pct {
+  object-position: 50% 40%;
+}
+
+.unlcms-hero-vert-obj-pos-60-pct {
+  object-position: 50% 60%;
+}
+
+.unlcms-hero-vert-obj-pos-80-pct {
+  object-position: 50% 80%;
+}
+
+.unlcms-hero-vert-obj-pos-100-pct {
+  object-position: 50% 100%;
+}
+
+/*
+This maybe needed later
+.unlcms-hero-obj-position-50-percent {
+  object-position: 50% 50%;
+} */
