@@ -39,7 +39,7 @@
 {% for item in items %}
   {% set width = item.content['#attributes'].width %}
   {% set height = item.content['#attributes'].height %}
-  {% set aspect_ratio = (400 / 400)|round(2, 'common' ) %}
+  {% set aspect_ratio = (width / height)|round(2, 'common' ) %}
 
   {# If 9/16 aspect ratio #}
   {% if aspect_ratio == 0.56 %}
