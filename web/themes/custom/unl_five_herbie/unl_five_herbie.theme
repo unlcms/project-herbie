@@ -249,6 +249,47 @@ function unl_five_herbie_preprocess_field(&$variables) {
   }
 
   /*
+   * Majors Content Type Fields
+   */
+  $fields = array('n_major_hero_image');
+
+  if (in_array($field_name, $fields)) {
+    $majors_gero_image_position = $variables['element']['#object']->get('n_major_heroimage_v_position')->getValue()[0]['value'];
+
+    switch ($field_name) {
+      case 'n_major_hero_image':
+        foreach ($variables['items'] as $key => $item) {
+          switch ($majors_gero_image_position) {
+            case 'zero_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-0-percent';
+              break;
+            case 'twenty_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-20-percent';
+              break;
+            case 'forty_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-40-percent';
+              break;
+            case 'fifty_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-50-percent';
+              break;
+            case 'sixty_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-60-percent';
+              break;
+            case 'eighty_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-80-percent';
+              break;
+            case 'hundred_percent':
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-100-percent';
+              break;
+            default:
+              $variables['items'][$key]['content']['#item_attributes']['class'][] = 'hero-obj-position-50-percent';
+              break;
+          }
+        }
+    }
+  }
+
+  /*
    * Tandem links Block Fields
    */
   $fields = array('b_tandem_buttons','b_tandem_style','b_tandem_stack','b_tandem_overline','b_tandem_links','p_b_tandem_button_link');
