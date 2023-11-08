@@ -62,27 +62,6 @@ function unl_five_herbie_preprocess_region(&$variables) {
   }
 }
 
-function unl_five_herbie_preprocess_media(&$variables) {
-
-  $media = $variables['media'];
-  $referring_item = $media->_referringItem;
-
-  if ($referring_item) {
-    $parent_block = $referring_item->getEntity();
-    $bundle = $parent_block->bundle();
-
-    if ($bundle == 'hero') {
-      $referring_field = $referring_item->getParent();
-      $field_name = $referring_field->getName();
-
-      if ($field_name == "b_hero_image") {
-        $variables['attributes']['class'][] = "dcf-ratio dcf-ratio-16x9";
-      }
-    }
-  }
-}
-
-
 /*
  * Implements template_preprocess_block().
  */
@@ -377,6 +356,36 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
   }
 }
 
+function unl_five_herbie_preprocess_media(&$variables) {
+
+  $media = $variables['media'];
+  $referring_item = $media->_referringItem;
+
+  if ($referring_item) {
+    $parent_block = $referring_item->getEntity();
+    $bundle = $parent_block->bundle();
+
+    if ($bundle == 'hero') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_hero_image") {
+        $variables['attributes']['class'][] = "dcf-ratio dcf-ratio-16x9";
+      }
+    }
+
+    if ($bundle == 'photo_hero') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_photohero_image") {
+        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-ratio dcf-ratio-16x9 dcf-mb-0";
+      }
+    }
+
+  }
+}
+
 /**
  * Implements template_preprocess_responsive_image_formatter().
  */
@@ -391,34 +400,63 @@ function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables
     $parent_block = $referring_item->getEntity();
     $bundle = $parent_block->bundle();
 
-    if ($bundle == 'hero') {
+    if ($bundle == 'hero' || $bundle == 'photo_hero') {
       $referring_field = $referring_item->getParent();
       $field_name = $referring_field->getName();
 
-      if ($field_name == "b_hero_image") {
+      if ($field_name == "b_hero_image" || $field_name == "b_photohero_image") {
         $hero_image_classes = ['dcf-ratio-child', 'dcf-obj-fit-cover'];
 
-        if ($vertical_position_value = $parent_block->__get('b_hero_vert_obj_pos')->getValue()) {
-          $vertical_position_value = $parent_block->__get('b_hero_vert_obj_pos')->getValue()[0]['value'];
+        if ($field_name == 'b_hero_image') {
+          $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
+        } else if ($field_name == 'b_photohero_image') {
+          array_push($hero_image_classes, "unlcms-slow-zoom-in");
+          $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
+        }
 
-          switch ($vertical_position_value) {
-            case 'hero_vert_obj_pos_0_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-0-pct");
+        if ($object_position_field) {
+          if ($field_name == 'b_hero_image') {
+            $object_position_field_value = $parent_block->__get('b_hero_img_obj_pos')->getValue()[0]['value'];
+          } else if ($field_name == 'b_photohero_image') {
+            $object_position_field_value = $parent_block->__get('b_photohero_img_obj_pos')->getValue()[0]['value'];
+          }
+
+          switch ($object_position_field_value) {
+            case 'unlcms_hero_obj_pos_50_0':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-0");
               break;
-            case 'hero_vert_obj_pos_20_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-20-pct");
+            case 'unlcms_hero_obj_pos_50_20':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-20");
               break;
-            case 'hero_vert_obj_pos_40_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-40-pct");
+            case 'unlcms_hero_obj_pos_50_40':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-40");
               break;
-            case 'hero_vert_obj_pos_60_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-60-pct");
+            case 'unlcms_hero_obj_pos_50_60':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-60");
               break;
-            case 'hero_vert_obj_pos_80_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-80-pct");
+            case 'unlcms_hero_obj_pos_50_80':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-80");
               break;
-            case 'hero_vert_obj_pos_100_pct':
-              array_push($hero_image_classes, "unlcms-hero-vert-obj-pos-100-pct");
+            case 'unlcms_hero_obj_pos_50_100':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-100");
+              break;
+            case 'unlcms_hero_obj_pos_0_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-0-50");
+              break;
+            case 'unlcms_hero_obj_pos_20_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-20-50");
+              break;
+            case 'unlcms_hero_obj_pos_40_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-40-50");
+              break;
+            case 'unlcms_hero_obj_pos_60_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-60-50");
+              break;
+            case 'unlcms_hero_obj_pos_80_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-80-50");
+              break;
+            case 'unlcms_hero_obj_pos_100_50':
+              array_push($hero_image_classes, "unlcms_hero_obj_pos_100_50");
               break;
           }
         }

@@ -6,6 +6,7 @@ dependencies:
     - field.field.block_content.photo_hero.b_photohero_body
     - field.field.block_content.photo_hero.b_photohero_display_option
     - field.field.block_content.photo_hero.b_photohero_image
+    - field.field.block_content.photo_hero.b_photohero_img_obj_pos
     - field.field.block_content.photo_hero.b_photohero_links
     - field.field.block_content.photo_hero.b_photohero_subhead
     - field.field.block_content.photo_hero.b_photohero_title
@@ -41,6 +42,13 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  b_photohero_img_obj_pos:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   b_photohero_links:
     type: link
     label: hidden
@@ -59,7 +67,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   b_photohero_title:
     type: string

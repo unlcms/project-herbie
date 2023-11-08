@@ -4,11 +4,11 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
+    - field.field.block_content.hero.b_hero_img_obj_pos
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
     - field.field.block_content.hero.b_hero_title
-    - field.field.block_content.hero.b_hero_vert_obj_pos
   module:
     - options
 id: block_content.hero.default
@@ -24,6 +24,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  b_hero_img_obj_pos:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   b_hero_overline:
     type: string
@@ -55,12 +62,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 4
-    region: content
-  b_hero_vert_obj_pos:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden: {  }
