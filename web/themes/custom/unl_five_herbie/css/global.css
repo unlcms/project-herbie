@@ -393,3 +393,34 @@ This maybe needed later
 .unlcms-hero-obj-position-50-percent {
   object-position: 50% 50%;
 } */
+
+
+
+/* For Majors only - vertical object-position for hero images */
+.hero-obj-position-0-percent {
+  object-position: 50% 0%;
+}
+
+.hero-obj-position-20-percent {
+  object-position: 50% 20%;
+}
+
+.hero-obj-position-40-percent {
+  object-position: 50% 40%;
+}
+
+.hero-obj-position-60-percent {
+  object-position: 50% 60%;
+}
+
+.hero-obj-position-80-percent {
+  object-position: 50% 80%;
+}
+
+.hero-obj-position-100-percent {
+  object-position: 50% 100%;
+}
+
+.hero-obj-position-50-percent {
+  object-position: 50% 50%;
+}
