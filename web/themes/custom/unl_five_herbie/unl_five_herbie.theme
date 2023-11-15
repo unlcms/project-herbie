@@ -8,6 +8,7 @@
 use Drupal\block\Entity\Block;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
+use Drupal\link\Plugin\Field\FieldType\LinkItem;
 
 /**
  * Implements hook_preprocess_html().
@@ -201,15 +202,30 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
   if (in_array($field_name, $cardFields)) {
     $block_background = $variables['element']['#object']->__get('#block_lbs');
+
+    if($variables['element']['#object']->get('b_card_headline_link')) {
+      $card_headline_link = $variables['element']['#object']->get('b_card_headline_link');
+
+      if($card_headline_link->first()) {
+        $card_headline_link_item = $card_headline_link->first();
+        $card_headline_link_url = $card_headline_link_item->getUrl()->toString();
+      }
+    }
+
     switch ($field_name) {
       case 'b_card_cta':
         foreach ($variables['items'] as $key => $item) {
           if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-inverse-primary';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
           }
           else {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
           }
+        }
+        break;
+      case 'b_card_headline':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['card_data']['card_headline_link'] = $card_headline_link_url;
         }
         break;
     }
