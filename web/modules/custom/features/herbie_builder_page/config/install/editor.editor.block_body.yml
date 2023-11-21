@@ -15,7 +15,6 @@ settings:
       - strikethrough
       - '|'
       - link
-      - anchor
       - '|'
       - bulletedList
       - numberedList
@@ -67,7 +66,8 @@ settings:
           label: 'Inverse Tertiary Button'
           element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
     linkit_extension:
-      linkit_enabled: false
+      linkit_enabled: true
+      linkit_profile: standard
     media_media:
       allow_view_mode_override: true
 image_upload:

@@ -16,7 +16,6 @@ settings:
       - alignment
       - '|'
       - link
-      - anchor
       - '|'
       - bulletedList
       - numberedList
