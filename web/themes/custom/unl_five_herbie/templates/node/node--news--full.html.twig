@@ -125,7 +125,7 @@
                             <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_phone.value }}">On-campus
                               {{ personOneTestDetails.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
                           {% endif %}
-                        {% else %}
+                      {% else %}
                           <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
                             <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
 
@@ -134,9 +134,10 @@
                                 {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
                             {% endif %}
                           </a>
-                        {% endif %}
+                      {% endif %}
                       </dd>
                     </dd>
+
                     <dt class="dcf-sr-only">Email</dt>
                     <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
                       <div class="dcf-h-4 dcf-w-4 unl-gray">
@@ -159,7 +160,7 @@
 
                     {% if personOneTestDetails.n_person_website.value %}
                       {% for i, value in personOneTestDetails.n_person_website %}
-
+                        <dt class="dcf-sr-only">Website</dt>
                         <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
                           <div class="dcf-h-4 dcf-w-4 unl-gray">
                             <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
