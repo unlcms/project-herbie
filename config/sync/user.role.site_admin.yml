@@ -41,6 +41,7 @@ dependencies:
     - path
     - rabbit_hole
     - redirect
+    - replicate_ui
     - scanner
     - system
     - taxonomy
@@ -187,6 +188,7 @@ permissions:
   - 'perform search and replace'
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'replicate entities'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'

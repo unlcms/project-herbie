@@ -41,6 +41,7 @@ dependencies:
   - 'paragraphs:paragraphs'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'replicate_ui:replicate_ui'
   - 'scanner:scanner'
   - 'twig_ui:twig_ui'
   - 'unl_breadcrumbs:unl_breadcrumbs'
@@ -49,5 +50,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.2.6
+version: 1.2.7
 package: Herbie

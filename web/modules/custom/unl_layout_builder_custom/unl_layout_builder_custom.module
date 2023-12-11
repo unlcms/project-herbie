@@ -2,6 +2,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use \Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use \Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_alter().
@@ -82,3 +85,31 @@ function _unl_layout_builder_custom_add_lbs_heading(&$form) {
   }
 }
 
+/**
+ * Implements menu_local_tasks_alter.
+ */
+function unl_layout_builder_custom_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $bundle = $node->bundle();
+    //Only allow the replicate menu item if content type is a builder_page
+    if ($bundle !== 'builder_page') {
+      if($data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate'])
+      $data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements entity_operation_alter.
+ */
+function unl_layout_builder_custom_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if (isset($operations['replicate']) && $entity instanceof NodeInterface) {
+    $node_type = $entity->getType();
+    //remove the replicate option under operations in admin/content if content type is not a builder_page
+    if ($node_type !== 'builder_page') {
+      unset($operations['replicate']);
+    }
+  }
+}

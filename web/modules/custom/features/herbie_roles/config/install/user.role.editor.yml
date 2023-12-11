@@ -35,6 +35,7 @@ dependencies:
     - node
     - paragraphs
     - rabbit_hole
+    - replicate_ui
     - scanner
     - system
     - taxonomy
@@ -134,6 +135,7 @@ permissions:
   - entity_share_client_pull_content
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'replicate entities'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'

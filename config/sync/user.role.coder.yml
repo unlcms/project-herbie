@@ -10,6 +10,7 @@ dependencies:
     - google_analytics
     - node
     - paragraphs
+    - replicate_ui
     - system
     - taxonomy
     - twig_ui
@@ -40,4 +41,5 @@ permissions:
   - 'administer twig templates'
   - 'administer views'
   - 'load twig templates from file system'
+  - 'replicate entities'
   - 'view the administration theme'
