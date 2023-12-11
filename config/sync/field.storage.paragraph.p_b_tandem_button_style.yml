@@ -1,0 +1,30 @@
+uuid: f5dd52a1-f572-4e58-bddb-7204b4917964
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.p_b_tandem_button_style
+field_name: p_b_tandem_button_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dcf-btn-primary
+      label: 'Primary Button'
+    -
+      value: dcf-btn-secondary
+      label: 'Secondary Button'
+    -
+      value: dcf-btn-tertiary
+      label: 'Tertiary Button'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

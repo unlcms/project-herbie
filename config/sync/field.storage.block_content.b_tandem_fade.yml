@@ -1,0 +1,27 @@
+uuid: 9f7d292f-af7a-4e6d-b04e-6d05973e7fbf
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_tandem_fade
+field_name: b_tandem_fade
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left
+      label: Left
+    -
+      value: right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

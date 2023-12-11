@@ -95,13 +95,19 @@ icon_links:
 
 tabs:
   version: VERSION
+  css:
+    theme:
+      css/theme/block/tabs.css: {}
   js:
     js/theme/tabs.js: {}
-    
+
 cta:
   version: VERSION
   css:
     theme:
       css/theme/block/cta.css: {}
-
-
+tandem:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/tandem.css: {}

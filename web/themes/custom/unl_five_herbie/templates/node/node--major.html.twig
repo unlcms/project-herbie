@@ -28,7 +28,7 @@
             </header>
             <div class="dcf-hero-majors-actions dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-gap-4">
               <!-- InstanceBeginEditable name="herogroup1" -->
-              <a href="https://admissions.unl.edu/apply" class="dcf-btn dcf-btn-inverse-primary dcf-txt-xs">Apply Now</a>
+              <a href="https://admissions.unl.edu/apply/" class="dcf-btn dcf-btn-inverse-primary dcf-txt-xs">Apply Now</a>
               <a href="https://admissions.unl.edu/visit/" class="dcf-btn dcf-btn-inverse-secondary dcf-txt-xs">Visit Campus</a>
               <!-- InstanceEndEditable -->
             </div>
@@ -54,7 +54,11 @@
             <div class="unl-bg-lightest-gray dcf-p-5 dcf-pb-3 dcf-rounded">
             <ul class="dcf-list-bare dcf-mb-0 dcf-txt-sm">
 							<li>
-								<h2 class="dcf-txt-md dcf-mb-1">College</h2>
+                {% if node.n_major_college|length > 1 %}
+								<h2 class="dcf-txt-md dcf-mb-1">Colleges</h2>
+                {% else %}
+                <h2 class="dcf-txt-md dcf-mb-1">College</h2>
+                {% endif %}
 								{{ (content.n_major_college) }}
 							</li>
               {% if content.n_major_hours_required['#items'] is not empty %}
@@ -99,6 +103,30 @@
       {% endif %}
     </div>
 
+    <!--Optional Pathways-->
+     {% if node.n_major_pathways|length > 1 %}
+      <div id="pathways" class="dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-8 dcf-pb-8">
+        <h2 class="unl-section-headline dcf-mb-1">
+		      {% if node.n_major_pathways|length == 2 %}Two{% elseif node.n_major_pathways|length == 3 %}Three{% elseif node.n_major_pathways|length == 4 %}Four{% endif %} Pathways For {{ label }}
+	      </h2>
+        <div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_pathways_intro) }}
+				</div>
+          <div class="dcf-grid-{% if node.n_major_pathways|length == 2 %}halves{% elseif node.n_major_pathways|length == 3 %}thirds{% elseif node.n_major_pathways|length == 4 %}halves{% endif %}@md dcf-col-gap-vw dcf-row-gap-6">
+            {% for key,college in content.n_major_college %}
+             {% if key matches '/^\\d+$/' %}
+            <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow dcf-card-as-link">
+			        <h3 class="dcf-txt-h6">{{college['#markup']}}</h3>
+                <div class="dcf-txt-sm">
+				          <p>{{ content.n_major_pathways[key]['#text']|raw }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+      </div>
+      {% endif %}
+
     <!--Feature Callout-->
 		<div id="features" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
       <div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-ai-center">
@@ -124,7 +152,7 @@
 					<div class="dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md dcf-overflow-visible">
 						{{ (content.n_major_courses_image) }}
 						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt">
-							<div class="dcf-ratio-child unl-bg-dots-gray dcf-circle-at-md"></div>
+							<div class="dcf-ratio-child unl-bg-dots-gray"></div>
 						</div>
 					</div>
 				</div>
@@ -134,10 +162,24 @@
 						{{ (content.n_major_notable_courses_intro) }}
 					</div>
           {{ (content.n_major_notable_courses) }}
-          {% if content.n_major_4year_link['#items'] is not empty %}
+          {% if node.n_major_4year_link|length == 1 %}
           <div class="dcf-mt-6">
             {{ (content.n_major_4year_link) }}
           </div>
+          {% else %}
+          <div class="dcf-mt-6 dcf-mb-4">
+							<h3 class="dcf-txt-h4">Explore the 4-Year Plans</h3>
+							<div class="dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-start dcf-ai-start dcf-gap-6">
+                {% for key,college in content.n_major_college %}
+                  {% if key matches '/^\\d+$/' %}
+                  <a href="{{ content.n_major_4year_link[key]['#context']['value'] }}" class="dcf-btn dcf-btn-primary">
+									{{college['#markup']}}
+								</a>
+                {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+          
           {% endif %}
         </div>
       </div>
@@ -279,18 +321,23 @@
     {% endif %}
 
     <!--CONTACT-->
-    <div id="contact" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center unl-bg-darkest-gray unl-bg-grit unl-cream dcf-pt-8 dcf-pb-8">
-      <div class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-txt-center">
-        <h2 class="dcf-txt-h3 dcf-mb-1 unl-cream">Have Questions? <span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span></h2>
-        <p class="dcf-w-100% dcf-w-max-md dcf-mb-6 dcf-txt-sm">If you have questions about the {{ label.0['#context'].value}} major, the {{ content.n_major_college.0['#markup'] }}, or navigating the application process, contact us.</p>
+<div id="contact" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center unl-bg-darkest-gray unl-bg-grit unl-cream dcf-pt-8 dcf-pb-8">
+	<div class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-txt-center">
+		<h2 class="dcf-txt-h3 dcf-mb-1 unl-cream">Have Questions? <span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span>
+		</h2>
+        <p class="dcf-w-100% dcf-w-max-md dcf-mb-6 dcf-txt-sm">If you have questions about the {{ label.0['#context'].value}} major or navigating the application process, contact us.</p>
       </div>
-      {{ (content.n_major_contact) }}
+      <div class="dcf-w-100%">
+		   <div class="dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-center dcf-ai-start dcf-col-gap-8 dcf-row-gap-7">
+       {{ (content.n_major_contact) }}
+      </div>
     </div>
+  </div>
 
     <!--CTA-->
     <div class="dcf-bleed dcf-wrapper unl-bg-scarlet unl-bg-grit dcf-pt-6 dcf-pb-6 dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-center dcf-gap-6"
 			role="group">
-			<a href="https://admissions.unl.edu/apply" class="dcf-btn dcf-btn-inverse-primary">Apply Now</a>
+			<a href="https://admissions.unl.edu/apply/" class="dcf-btn dcf-btn-inverse-primary">Apply Now</a>
 			<a href="https://admissions.unl.edu/visit/" class="dcf-btn dcf-btn-inverse-primary">Visit Campus</a>
 			<a href="https://admissions.unl.edu/nebraska/info-request/" class="dcf-btn dcf-btn-inverse-secondary">Join Our Mailing List</a>
     </div>

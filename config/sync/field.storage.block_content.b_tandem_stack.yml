@@ -1,0 +1,30 @@
+uuid: 289b358b-830c-4b42-ae01-32c4f8ed65db
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_tandem_stack
+field_name: b_tandem_stack
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: center
+      label: Center
+    -
+      value: left
+      label: Left
+    -
+      value: right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

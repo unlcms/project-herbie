@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_subhead
+id: block_content.tandem.b_tandem_subhead
+field_name: b_tandem_subhead
+entity_type: block_content
+bundle: tandem
+label: Subhead
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

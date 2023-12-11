@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_tandem_add_buttons_or_links
+field_name: b_tandem_add_buttons_or_links
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: buttons
+      label: Buttons
+    -
+      value: links
+      label: Links
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 5e898571-6c09-4c7e-a924-bbb943157a4b
+langcode: en
+status: true
+dependencies: {  }
+id: tandem
+label: Tandem
+revision: 0
+description: 'A block that displays a photo and text side by side or a background photo with text stacked on top. '
