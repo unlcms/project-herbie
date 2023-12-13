@@ -1,0 +1,22 @@
+uuid: ace9c573-0ca5-44fe-87e2-d3b2cbb43302
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: major_option
+label: 'Major option'
+type: 'canonical_entities:node'
+pattern: 'major/[node:n_major_option_parent_major:entity:title]/option/[node:title]'
+selection_criteria:
+  9a636fd3-7b46-45c5-b859-410d1c23cb4c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9a636fd3-7b46-45c5-b859-410d1c23cb4c
+    context_mapping:
+      node: node
+    bundles:
+      major_option: major_option
+selection_logic: and
+weight: -5
+relationships: {  }

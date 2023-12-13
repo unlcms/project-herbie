@@ -1,0 +1,21 @@
+uuid: ae32d1c3-d49b-4da9-8fea-509049ebce6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_option_careers_title
+field_name: n_major_option_careers_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
