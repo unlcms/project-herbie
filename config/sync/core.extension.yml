@@ -67,6 +67,7 @@ module:
   heading: 0
   herbie_book: 0
   herbie_builder_page: 0
+  herbie_config: 0
   herbie_entity_share: 0
   herbie_major: 0
   herbie_media_types: 0
