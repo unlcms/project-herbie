@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_heroimage_v_position
+    - node.type.major
+  module:
+    - options
+id: node.major.n_major_heroimage_v_position
+field_name: n_major_heroimage_v_position
+entity_type: node
+bundle: major
+label: 'Hero Image Position - Vertical'
+description: 'This value will add a vertical object-position value to the hero image. The default is 50%'
+required: true
+translatable: false
+default_value:
+  -
+    value: fifty_percent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

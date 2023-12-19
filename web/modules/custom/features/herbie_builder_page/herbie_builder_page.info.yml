@@ -18,6 +18,7 @@ dependencies:
   - 'drupal:book'
   - 'drupal:ckeditor5'
   - 'drupal:config'
+  - 'drupal:content_moderation'
   - 'drupal:contextual'
   - 'drupal:editor'
   - 'drupal:field'
@@ -72,5 +73,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.5.4
+version: 1.5.5
 package: Herbie

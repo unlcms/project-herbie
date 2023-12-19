@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.major.n_major_grad_schools_list
     - field.field.node.major.n_major_grad_schools_title
     - field.field.node.major.n_major_hero_image
+    - field.field.node.major.n_major_heroimage_v_position
     - field.field.node.major.n_major_hours_required
     - field.field.node.major.n_major_huskers_do_intro
     - field.field.node.major.n_major_internships_list
@@ -65,6 +66,7 @@ hidden:
   n_major_grad_schools_list: true
   n_major_grad_schools_title: true
   n_major_hero_image: true
+  n_major_heroimage_v_position: true
   n_major_hours_required: true
   n_major_huskers_do_intro: true
   n_major_internships_list: true
