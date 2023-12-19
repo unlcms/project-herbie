@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.major.n_major_grad_schools_list
     - field.field.node.major.n_major_grad_schools_title
     - field.field.node.major.n_major_hero_image
+    - field.field.node.major.n_major_heroimage_v_position
     - field.field.node.major.n_major_hours_required
     - field.field.node.major.n_major_huskers_do_intro
     - field.field.node.major.n_major_internships_list
@@ -62,7 +63,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   n_major_academics_experiential:
     type: string
@@ -70,7 +71,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   n_major_areas_focus:
     type: link
@@ -90,7 +91,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   n_major_careers_list:
     type: string
@@ -98,7 +99,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 20
+    weight: 21
     region: content
   n_major_careers_title:
     type: string
@@ -106,7 +107,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 19
+    weight: 20
     region: content
   n_major_college:
     type: list_default
@@ -121,7 +122,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   n_major_contact:
     type: entity_reference_revisions_entity_view
@@ -130,7 +131,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   n_major_courses_image:
     type: image
@@ -156,7 +157,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   n_major_grad_schools_list:
     type: string
@@ -164,7 +165,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
   n_major_grad_schools_title:
     type: string
@@ -172,7 +173,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   n_major_hero_image:
     type: image
@@ -191,13 +192,20 @@ content:
         class: 'dcf-ratio-child dcf-obj-fit-cover'
     weight: 1
     region: content
+  n_major_heroimage_v_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   n_major_hours_required:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 21
+    weight: 22
     region: content
   n_major_huskers_do_intro:
     type: basic_string
@@ -212,7 +220,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   n_major_internships_title:
     type: string
@@ -220,7 +228,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   n_major_intro_video:
     type: string
@@ -235,7 +243,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   n_major_minor:
     type: text_default
@@ -251,7 +259,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   n_major_notable_courses_intro:
     type: basic_string
@@ -274,7 +282,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   n_major_pathways:
     type: text_default
@@ -297,14 +305,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   n_major_program_features:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   n_major_program_features_image:
     type: image
@@ -321,7 +329,7 @@ content:
     third_party_settings:
       image_class:
         class: 'dcf-ratio-child dcf-obj-fit-cover'
-    weight: 14
+    weight: 15
     region: content
 hidden:
   n_major_areas_interest: true
