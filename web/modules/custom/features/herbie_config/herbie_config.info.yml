@@ -2,5 +2,7 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^9.4 || ^10'
-version: 1.0.1
+version: 1.0.2
 package: Herbie
+dependencies:
+  - 'metatag:metatag'
