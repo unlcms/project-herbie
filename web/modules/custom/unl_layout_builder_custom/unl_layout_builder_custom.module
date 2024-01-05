@@ -11,22 +11,26 @@ use \Drupal\Core\Form\FormHelper;
 function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
 
+  $block_type = '';
+  if (isset($form['settings']['block_form']['#block'])) {
+    $block_type = $form['settings']['block_form']['#block']->bundle();
+  }
+
+  if ($block_type == 'card') {
+    // Remove background settings - None - empty option.
+    unset($form['layout_builder_style_background']['#empty_option']);
+  }
+
   switch ($form_id) {
     case 'layout_builder_add_block':
-    case 'layout_builder_update_block':
-    case 'layout_builder_edit_block':
-
-      $block_type = '';
-      if (isset($form['settings']['block_form']['#block'])) {
-        $block_type = $form['settings']['block_form']['#block']->bundle();
-      }
-      // Card.
       if ($block_type == 'card') {
-        // Remove background settings - None - empty option.
-        unset($form['layout_builder_style_background']['#empty_option']);
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
       }
+     break;
+    case 'layout_builder_update_block':
+    case 'layout_builder_edit_block':
+
       if ($block_type == 'tandem') {
         //Create a callback function to '#process' so we can be able to alter form elements
         $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
