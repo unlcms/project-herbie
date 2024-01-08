@@ -5536,6 +5536,131 @@
             }
         },
         {
+            "name": "drupal/replicate",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/replicate.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/replicate-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "614dcc5c8f1f963f2c0e335c784ee14ed59d5b15"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1680029152",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "jgalletta",
+                    "homepage": "https://www.drupal.org/user/1187850"
+                },
+                {
+                    "name": "vbouchet",
+                    "homepage": "https://www.drupal.org/user/1671428"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Replicate provide an API to replicate (duplicate) entities. This modules also provide hooks to control exactly how parts of an entity are duplicated.",
+            "homepage": "https://www.drupal.org/project/replicate",
+            "support": {
+                "source": "https://git.drupalcode.org/project/replicate"
+            }
+        },
+        {
+            "name": "drupal/replicate_ui",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/replicate_ui.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/replicate_ui-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "fade816b12a76df62621c363264e18ae17ee99e2"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/replicate": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1679704077",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "btopro",
+                    "homepage": "https://www.drupal.org/user/24286"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "dhruveshdtripathi",
+                    "homepage": "https://www.drupal.org/user/3083735"
+                },
+                {
+                    "name": "kbrinner",
+                    "homepage": "https://www.drupal.org/user/565800"
+                }
+            ],
+            "description": "Provides a UI for Replicate (local tasks, entity operations with a form)",
+            "homepage": "https://www.drupal.org/project/replicate_ui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/replicate_ui"
+            }
+        },
+        {
             "name": "drupal/scanner",
             "version": "dev-1.x",
             "source": {
@@ -16786,5 +16911,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

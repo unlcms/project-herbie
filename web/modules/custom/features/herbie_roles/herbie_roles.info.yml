@@ -41,6 +41,7 @@ dependencies:
   - 'paragraphs:paragraphs'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'replicate_ui:replicate_ui'
   - 'scanner:scanner'
   - 'twig_ui:twig_ui'
   - 'unl_breadcrumbs:unl_breadcrumbs'

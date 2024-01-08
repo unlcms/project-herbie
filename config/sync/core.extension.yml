@@ -119,6 +119,8 @@ module:
   queue_ui: 0
   rabbit_hole: 0
   redirect: 0
+  replicate: 0
+  replicate_ui: 0
   responsive_image: 0
   rh_media: 0
   scanner: 0
