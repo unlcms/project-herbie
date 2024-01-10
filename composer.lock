@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71cf16cc3e8b3f10a98ffcd21f14c934",
+    "content-hash": "5573852d8f2490dcaf4df2b0d01d6322",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3421,6 +3421,70 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/feeds_ex",
                 "issues": "http://drupal.org/project/issues/feeds_ex"
+            }
+        },
+        {
+            "name": "drupal/field_css",
+            "version": "2.0.0-rc6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_css.git",
+                "reference": "2.0.0-rc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_css-2.0.0-rc6.zip",
+                "reference": "2.0.0-rc6",
+                "shasum": "7cc4a687f55368e1f01aecc8ce2be7c26a0d2dcb"
+            },
+            "require": {
+                "drupal/core": "^8.8.4 || ^9 || ^10",
+                "sabberworm/php-css-parser": "^8.0"
+            },
+            "require-dev": {
+                "drupal/codemirror_editor": "^1.0"
+            },
+            "suggest": {
+                "drupal/codemirror_editor": "Allows for CSS fields to be rendered with the CodeMirror editor"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-rc6",
+                    "datestamp": "1703868865",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Burge",
+                    "homepage": "https://www.drupal.org/user/1826152"
+                },
+                {
+                    "name": "e2thex",
+                    "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "mikemiles86",
+                    "homepage": "https://www.drupal.org/user/471470"
+                }
+            ],
+            "description": "A simple module that provides CSS field type.",
+            "homepage": "https://www.drupal.org/project/field_css",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_css",
+                "issues": "https://www.drupal.org/project/issues/field_css"
             }
         },
         {
@@ -9148,6 +9212,59 @@
                 "url": "https://github.com/RobinHerbots/Inputmask/archive/refs/tags/5.0.5.zip"
             },
             "type": "library"
+        },
+        {
+            "name": "sabberworm/php-css-parser",
+            "version": "8.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": ">=5.6.20"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "suggest": {
+                "ext-mbstring": "for parsing UTF-8 CSS"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sabberworm\\CSS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
+                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
+            },
+            "time": "2021-12-11T13:40:54+00:00"
         },
         {
             "name": "softcreatr/jsonpath",
@@ -16896,6 +17013,7 @@
         "drupal/features": 20,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
+        "drupal/field_css": 5,
         "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
@@ -16911,5 +17029,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
