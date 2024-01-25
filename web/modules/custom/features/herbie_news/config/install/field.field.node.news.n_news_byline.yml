@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_byline
+    - node.type.news
+id: node.news.n_news_byline
+field_name: n_news_byline
+entity_type: node
+bundle: news
+label: Byline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
