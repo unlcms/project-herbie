@@ -1,0 +1,25 @@
+uuid: dd513723-770c-43b3-ab44-7656002c5ee9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_minor
+    - node.type.major
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: node.major.n_major_minor
+field_name: n_major_minor
+entity_type: node
+bundle: major
+label: Minor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

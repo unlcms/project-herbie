@@ -1,0 +1,23 @@
+{% set blockObjects = content.body['#object'] %}
+{% set block_lbs = '#block_lbs' %}
+{% set block_lbs_value = attribute(blockObjects, block_lbs) %}
+
+{% if 'block_max_width_style_extra_large' in block_lbs_value|keys or 'block_max_width_style_large' in block_lbs_value|keys or 'block_max_width_style_medium' in block_lbs_value|keys  %}
+  <div class="dcf-d-flex dcf-jc-center">
+{% endif %}
+
+    <div{{ attributes }}>
+      {{ title_prefix }}
+      {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      {% endif %}
+      {{ title_suffix }}
+
+      {% block content %}
+        {{ content.body }}
+      {% endblock %}
+    </div>
+
+{% if 'block_max_width_style_extra_large' in block_lbs_value|keys or 'block_max_width_style_large' in block_lbs_value|keys or 'block_max_width_style_medium' in block_lbs_value|keys  %}
+  </div>
+{% endif %}

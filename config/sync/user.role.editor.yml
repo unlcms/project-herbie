@@ -36,6 +36,7 @@ dependencies:
     - node
     - paragraphs
     - rabbit_hole
+    - replicate_ui
     - scanner
     - system
     - taxonomy
@@ -85,6 +86,8 @@ permissions:
   - 'create remote_video media'
   - 'create slideshow block content'
   - 'create social_media_links block content'
+  - 'create tabs block content'
+  - 'create tandem block content'
   - 'create terms in media_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
@@ -102,6 +105,8 @@ permissions:
   - 'delete any remote_video media'
   - 'delete any slideshow block content'
   - 'delete any social_media_links block content'
+  - 'delete any tabs block content'
+  - 'delete any tandem block content'
   - 'delete any timeline block content'
   - 'delete book revisions'
   - 'delete builder_page revisions'
@@ -137,6 +142,7 @@ permissions:
   - entity_share_client_pull_content
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'replicate entities'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
@@ -154,6 +160,8 @@ permissions:
   - 'update any proofpoint block content'
   - 'update any slideshow block content'
   - 'update any social_media_links block content'
+  - 'update any tabs block content'
+  - 'update any tandem block content'
   - 'update any timeline block content'
   - 'update unl_directory_entry external entity'
   - 'use editorial transition create_new_draft'

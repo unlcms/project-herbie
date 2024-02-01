@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.major.n_major_4year_link
     - field.field.node.major.n_major_academics_experiential
-    - field.field.node.major.n_major_areas_emphasis
+    - field.field.node.major.n_major_areas_focus
+    - field.field.node.major.n_major_areas_interest
     - field.field.node.major.n_major_career_prep
     - field.field.node.major.n_major_careers_list
     - field.field.node.major.n_major_careers_title
     - field.field.node.major.n_major_college
+    - field.field.node.major.n_major_college_external_url
     - field.field.node.major.n_major_community
     - field.field.node.major.n_major_contact
     - field.field.node.major.n_major_courses_image
@@ -17,24 +19,29 @@ dependencies:
     - field.field.node.major.n_major_grad_schools_list
     - field.field.node.major.n_major_grad_schools_title
     - field.field.node.major.n_major_hero_image
+    - field.field.node.major.n_major_heroimage_v_position
     - field.field.node.major.n_major_hours_required
     - field.field.node.major.n_major_huskers_do_intro
     - field.field.node.major.n_major_internships_list
     - field.field.node.major.n_major_internships_title
     - field.field.node.major.n_major_intro_video
     - field.field.node.major.n_major_lead_copy
-    - field.field.node.major.n_major_minors
+    - field.field.node.major.n_major_minor
     - field.field.node.major.n_major_notable_courses
     - field.field.node.major.n_major_notable_courses_intro
     - field.field.node.major.n_major_otc_intro
     - field.field.node.major.n_major_outside_the_classroom
+    - field.field.node.major.n_major_pathways
+    - field.field.node.major.n_major_pathways_intro
     - field.field.node.major.n_major_point_pride
     - field.field.node.major.n_major_program_features
     - field.field.node.major.n_major_program_features_image
     - image.style.thumbnail
     - node.type.major
   module:
+    - content_moderation
     - field_group
+    - link
     - paragraphs
     - path
     - svg_image
@@ -44,6 +51,7 @@ third_party_settings:
     group_major_hero:
       children:
         - n_major_hero_image
+        - n_major_heroimage_v_position
       label: Hero
       region: content
       parent_name: ''
@@ -64,7 +72,7 @@ third_party_settings:
       label: Courses
       region: content
       parent_name: ''
-      weight: 12
+      weight: 14
       format_type: fieldset
       format_settings:
         classes: ''
@@ -84,7 +92,7 @@ third_party_settings:
       label: 'Huskers Do Big Things'
       region: content
       parent_name: ''
-      weight: 13
+      weight: 15
       format_type: fieldset
       format_settings:
         classes: ''
@@ -99,7 +107,7 @@ third_party_settings:
       label: 'Program Features'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 13
       format_type: fieldset
       format_settings:
         classes: ''
@@ -113,8 +121,8 @@ third_party_settings:
         - n_major_lead_copy
         - n_major_college
         - n_major_hours_required
-        - n_major_minors
-        - n_major_areas_emphasis
+        - n_major_minor
+        - n_major_areas_focus
       label: Details
       region: content
       parent_name: ''
@@ -124,6 +132,22 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        description: ''
+        required_fields: true
+    group_pathways:
+      children:
+        - n_major_pathways_intro
+        - n_major_pathways
+      label: Pathways
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
         description: ''
         required_fields: true
 _core:
@@ -139,9 +163,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   n_major_4year_link:
     type: string_textfield
-    weight: 42
+    weight: 46
     region: content
     settings:
       size: 60
@@ -149,23 +179,29 @@ content:
     third_party_settings: {  }
   n_major_academics_experiential:
     type: string_textfield
-    weight: 18
+    weight: 19
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  n_major_areas_emphasis:
-    type: string_textfield
-    weight: 16
+  n_major_areas_focus:
+    type: link_default
+    weight: 17
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  n_major_areas_interest:
+    type: options_select
+    weight: 24
+    region: content
+    settings: {  }
     third_party_settings: {  }
   n_major_career_prep:
     type: string_textfield
-    weight: 19
+    weight: 20
     region: content
     settings:
       size: 60
@@ -173,7 +209,7 @@ content:
     third_party_settings: {  }
   n_major_careers_list:
     type: string_textfield
-    weight: 20
+    weight: 26
     region: content
     settings:
       size: 60
@@ -181,7 +217,7 @@ content:
     third_party_settings: {  }
   n_major_careers_title:
     type: string_textfield
-    weight: 19
+    weight: 25
     region: content
     settings:
       size: 60
@@ -189,13 +225,21 @@ content:
     third_party_settings: {  }
   n_major_college:
     type: options_select
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
+  n_major_college_external_url:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   n_major_community:
     type: string_textfield
-    weight: 20
+    weight: 21
     region: content
     settings:
       size: 60
@@ -203,7 +247,7 @@ content:
     third_party_settings: {  }
   n_major_contact:
     type: paragraphs
-    weight: 21
+    weight: 22
     region: content
     settings:
       title: Paragraph
@@ -221,7 +265,7 @@ content:
     third_party_settings: {  }
   n_major_courses_image:
     type: image_image
-    weight: 39
+    weight: 43
     region: content
     settings:
       progress_indicator: throbber
@@ -229,7 +273,7 @@ content:
     third_party_settings: {  }
   n_major_featured_faculty:
     type: paragraphs
-    weight: 17
+    weight: 18
     region: content
     settings:
       title: Paragraph
@@ -247,7 +291,7 @@ content:
     third_party_settings: {  }
   n_major_grad_schools_list:
     type: string_textfield
-    weight: 18
+    weight: 24
     region: content
     settings:
       size: 60
@@ -255,7 +299,7 @@ content:
     third_party_settings: {  }
   n_major_grad_schools_title:
     type: string_textfield
-    weight: 17
+    weight: 23
     region: content
     settings:
       size: 60
@@ -269,9 +313,15 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  n_major_heroimage_v_position:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   n_major_hours_required:
     type: string_textfield
-    weight: 14
+    weight: 15
     region: content
     settings:
       size: 60
@@ -279,7 +329,7 @@ content:
     third_party_settings: {  }
   n_major_huskers_do_intro:
     type: string_textarea
-    weight: 14
+    weight: 20
     region: content
     settings:
       rows: 5
@@ -287,7 +337,7 @@ content:
     third_party_settings: {  }
   n_major_internships_list:
     type: string_textfield
-    weight: 16
+    weight: 22
     region: content
     settings:
       size: 60
@@ -295,7 +345,7 @@ content:
     third_party_settings: {  }
   n_major_internships_title:
     type: string_textfield
-    weight: 15
+    weight: 21
     region: content
     settings:
       size: 60
@@ -311,23 +361,26 @@ content:
     third_party_settings: {  }
   n_major_lead_copy:
     type: string_textarea
-    weight: 12
+    weight: 13
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  n_major_minors:
-    type: string_textfield
-    weight: 15
+  n_major_minor:
+    type: text_textarea
+    weight: 16
     region: content
     settings:
-      size: 60
+      rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
   n_major_notable_courses:
     type: paragraphs
-    weight: 41
+    weight: 45
     region: content
     settings:
       title: Paragraph
@@ -345,7 +398,7 @@ content:
     third_party_settings: {  }
   n_major_notable_courses_intro:
     type: string_textarea
-    weight: 40
+    weight: 44
     region: content
     settings:
       rows: 5
@@ -353,7 +406,7 @@ content:
     third_party_settings: {  }
   n_major_otc_intro:
     type: string_textarea
-    weight: 15
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -361,7 +414,7 @@ content:
     third_party_settings: {  }
   n_major_outside_the_classroom:
     type: paragraphs
-    weight: 16
+    weight: 17
     region: content
     settings:
       title: Paragraph
@@ -377,6 +430,22 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  n_major_pathways:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  n_major_pathways_intro:
+    type: string_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   n_major_point_pride:
     type: paragraphs
@@ -406,7 +475,7 @@ content:
     third_party_settings: {  }
   n_major_program_features_image:
     type: image_image
-    weight: 22
+    weight: 21
     region: content
     settings:
       progress_indicator: throbber

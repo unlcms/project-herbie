@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.n_major_areas_interest
+field_name: n_major_areas_interest
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Agriculture, Animals & Plants'
+    -
+      value: '2'
+      label: 'Architecture & Design'
+    -
+      value: '3'
+      label: 'Arts & Performance'
+    -
+      value: '4'
+      label: 'Business, Management & Entrepreneurship'
+    -
+      value: '5'
+      label: 'Communication, Journalism, & Media'
+    -
+      value: '6'
+      label: 'Engineering, Computing & Technology'
+    -
+      value: '7'
+      label: 'Environment, Energy, & Sustainability'
+    -
+      value: '8'
+      label: 'Health & Wellness'
+    -
+      value: '9'
+      label: 'Life Sciences'
+    -
+      value: '10'
+      label: 'Math, Analytics, & Data Science'
+    -
+      value: '11'
+      label: 'Politics, Global Perspectives & Cultures'
+    -
+      value: '12'
+      label: 'Teaching & Education'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

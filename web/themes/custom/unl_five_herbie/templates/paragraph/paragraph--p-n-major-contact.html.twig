@@ -4,39 +4,39 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'dcf-d-flex',
-    'dcf-jc-center'
+    'dcf-w-100%',
+    'dcf-w-max-sm'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  <div class="dcf-d-flex dcf-jc-center">
-		<div class="dcf-w-max-lg dcf-w-100% dcf-txt-center">
-      <div class="content dcf-d-inline-flex dcf-jc-center dcf-ai-center dcf-col-gap-5 dcf-row-gap-5 dcf-mr-auto dcf-ml-auto">
-        <div class="dcf-ratio dcf-ratio-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden">
-          {{ (content.p_n_contact_image) }}
-        </div>
-        <div class="dcf-d-flex dcf-flex-col dcf-as-center dcf-txt-left">
-          <div class="dcf-media-body">
-						<dl class="dcf-mb-0">
-						<dt class="dcf-sr-only">Contact Name</dt>
-						<dd class="dcf-bold dcf-mb-0">{{ (content.p_n_contact_name) }}</dd>
-            <dt class="dcf-sr-only">Contact Title</dt>
-						<dd class="dcf-italic dcf-txt-sm">{{ (content.p_n_contact_title) }}</dd>
-						<dt class="dcf-sr-only">Phone</dt>
-						<dd class="dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-txt-sm">
-						  <div class="dcf-w-4 dcf-d-flex dcf-ai-center dcf-jc-center unl-cream">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="dcf-w-100% dcf-h-auto">
-									<title>Phone</title>
-										<g>
-										<path fill="currentColor" d="M11.33 0H4.67a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6.66a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM12 12.67a.33.33 0 0 1-.33.33H4.33a.33.33 0 0 1-.33-.33V2.33A.33.33 0 0 1 4.33 2h7.34a.33.33 0 0 1 .33.33Z"></path>
-										<path style="fill:none" d="M0 0h16v16H0z"></path>
-										</g>
-								</svg>
-							</div>
-							<div class="dcf-pl-1">
+  <div class="content dcf-d-inline-flex dcf-jc-center dcf-ai-center dcf-col-gap-5 dcf-row-gap-5 dcf-mr-auto dcf-ml-auto">
+  	<div class="dcf-ratio dcf-ratio-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden" style="min-width: 7.49em;">
+      {{ (content.p_n_contact_image) }}
+    </div>
+    <div class="dcf-d-flex dcf-flex-col dcf-as-center dcf-txt-left">
+      <div class="dcf-media-body">
+				<dl class="dcf-mb-0">
+				<dt class="dcf-sr-only">Contact Name</dt>
+				<dd class="dcf-bold dcf-mb-0">{{ (content.p_n_contact_name) }}</dd>
+        <dt class="dcf-sr-only">Contact Title</dt>
+				<dd class="dcf-italic dcf-txt-sm">{{ (content.p_n_contact_title) }}</dd>
+				<dt class="dcf-sr-only">Phone</dt>
+				<dd class="dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-txt-sm">
+				<div class="dcf-w-4 dcf-d-flex dcf-ai-center dcf-jc-center unl-cream">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="dcf-w-100% dcf-h-auto">
+					<title>Phone</title>
+					<g>
+					<path fill="currentColor" d="M11.33 0H4.67a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6.66a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM12 12.67a.33.33 0 0 1-.33.33H4.33a.33.33 0 0 1-.33-.33V2.33A.33.33 0 0 1 4.33 2h7.34a.33.33 0 0 1 .33.33Z"></path>
+					<path style="fill:none" d="M0 0h16v16H0z"></path>
+					</g>
+					</svg>
+				</div>
+				<div class="dcf-pl-1">
+			  {% if content.p_n_contact_phone['#items'] is not empty %}			
               <a class="unl-cream" href="tel:+1{{ paragraph.p_n_contact_phone.value|replace({'-':''}) }}" aria-label="{{ paragraph.p_n_contact_phone.value|replace({'-': '.'})|split('')|join(' ') }}">{{ (content.p_n_contact_phone) }}</a>
-              </div>
-						</dd>
+			  {% endif %}
+			  </div>
+				</dd>
             <dt class="dcf-sr-only">Email</dt>
 							<dd class="dcf-d-flex dcf-flex-row dcf-flex-nowrap dcf-txt-sm">
 								<div class="dcf-w-4 dcf-d-flex dcf-ai-center dcf-jc-center unl-cream">
@@ -50,12 +50,11 @@
 								</svg>
 								</div>
 								<div class="dcf-pl-1">
-                  <a class="unl-cream" href="mailto:{{ (content.p_n_contact_email) }}">{{ (content.p_n_contact_email) }}</a>
+                  {{ (content.p_n_contact_email) }}
                 </div>
 							</dd>
+							</dl>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

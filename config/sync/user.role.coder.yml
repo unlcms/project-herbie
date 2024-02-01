@@ -4,11 +4,13 @@ status: true
 dependencies:
   module:
     - asset_injector
+    - contextual
     - feeds
     - field_ui
     - google_analytics
     - node
     - paragraphs
+    - replicate_ui
     - system
     - taxonomy
     - twig_ui
@@ -20,6 +22,7 @@ label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access contextual links'
   - 'access feed overview'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -38,4 +41,5 @@ permissions:
   - 'administer twig templates'
   - 'administer views'
   - 'load twig templates from file system'
+  - 'replicate entities'
   - 'view the administration theme'

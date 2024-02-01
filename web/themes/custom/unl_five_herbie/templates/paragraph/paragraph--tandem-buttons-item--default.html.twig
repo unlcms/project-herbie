@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-mt-5',
+  ]
+%}
+
+{% if content.p_b_tandem_button_link.0 %}
+	{% block paragraph %}
+		{% block content %}
+			<div {{attributes.addClass(classes)}}>
+				{{content.p_b_tandem_button_link}}
+			</div>
+		{% endblock %}
+	{% endblock paragraph %}
+{% endif %}

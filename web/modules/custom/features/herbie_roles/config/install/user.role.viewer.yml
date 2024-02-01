@@ -8,6 +8,7 @@ dependencies:
     - node.type.person
   module:
     - content_moderation
+    - contextual
     - entity_usage
     - file
     - media
@@ -22,6 +23,7 @@ weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'

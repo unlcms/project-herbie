@@ -27,3 +27,26 @@ function herbie_update_8101(&$sandbox) {
   $srvc->remove('chosen_field');
   $srvc->remove('chosen_lib');
 }
+
+/**
+ * Delete n_major_areas_emphasis field.
+ */
+function herbie_update_8102(&$sandbox) {
+  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'major', 'n_major_areas_emphasis');
+  if (!empty($field)) {
+    $field->delete();
+  }
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'n_major_areas_emphasis');
+  if (!empty($field_storage)) {
+    $field_storage->delete();
+  }
+  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'major', 'n_major_minors');
+  if (!empty($field)) {
+    $field->delete();
+  }
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'n_major_minors');
+  if (!empty($field_storage)) {
+    $field_storage->delete();
+  }
+}
+

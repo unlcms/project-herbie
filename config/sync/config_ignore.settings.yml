@@ -41,7 +41,6 @@ ignored_config_entities:
   - entity_share_client.remote.content_hub_development
   - 'entity_share_cron.settings:remotes.content_hub_development'
   - 'system.site:name'
-  - 'system.site:mail'
   - 'system.site:slogan'
   - 'system.site:page.front'
   - unl_breadcrumbs.settings

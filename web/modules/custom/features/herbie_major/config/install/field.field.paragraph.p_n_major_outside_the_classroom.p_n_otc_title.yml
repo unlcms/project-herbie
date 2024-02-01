@@ -8,7 +8,7 @@ id: paragraph.p_n_major_outside_the_classroom.p_n_otc_title
 field_name: p_n_otc_title
 entity_type: paragraph
 bundle: p_n_major_outside_the_classroom
-label: 'OTC Title'
+label: 'OTC Description'
 description: ''
 required: false
 translatable: false

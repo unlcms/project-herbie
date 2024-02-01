@@ -8,13 +8,15 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
+  {% if content.p_n_otc_image['#items'] is not empty %}
   <div class="dcf-1st dcf-ratio dcf-ratio-16x9">
-    {{ (content.p_n_otc_image) }}
+    {{ content.p_n_otc_image }}
   </div>
+  {% endif %}
   <div class="dcf-2nd dcf-p-5 dcf-pt-3 dcf-pb-0">
-    <h3 class="dcf-lh-3 dcf-txt-h6 dcf-mb-0"><a href="{{ paragraph.p_n_otc_link.uri }}">{{ (content.p_n_otc_title) }}</a></h3>
+    <h3 class="dcf-lh-3 dcf-txt-h6 dcf-mb-0">{{ content.p_n_otc_link }}</h3>
   </div>
-  <div class="dcf-3rd dcf-grow-1 dcf-txt-decor-none dcf-txt-sm dcf-p-5 dcf-d-block">
-    {{ paragraph.p_n_otc_link.title }}
+  <div class="dcf-3rd dcf-grow-1 dcf-txt-decor-none dcf-p-5 dcf-d-block dcf-ls-4">
+    <p class="dcf-txt-sm">{{ content.p_n_otc_title }}</p>
   </div>
 </div>

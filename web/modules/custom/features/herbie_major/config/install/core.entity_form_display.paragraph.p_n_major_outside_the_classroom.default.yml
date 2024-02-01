@@ -8,8 +8,8 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.p_n_major_outside_the_classroom
   module:
-    - image
     - link
+    - svg_image
 id: paragraph.p_n_major_outside_the_classroom.default
 targetEntityType: paragraph
 bundle: p_n_major_outside_the_classroom
@@ -17,7 +17,7 @@ mode: default
 content:
   p_n_otc_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
@@ -25,7 +25,7 @@ content:
     third_party_settings: {  }
   p_n_otc_link:
     type: link_default
-    weight: 2
+    weight: 1
     region: content
     settings:
       placeholder_url: ''
@@ -33,7 +33,7 @@ content:
     third_party_settings: {  }
   p_n_otc_title:
     type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: tandem_buttons_item
+label: 'Tandem Button Item'
+icon_uuid: null
+icon_default: null
+description: 'An individual button and button style for use in Tandem block.'
+behavior_plugins: {  }

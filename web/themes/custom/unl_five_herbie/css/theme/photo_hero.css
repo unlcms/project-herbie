@@ -46,25 +46,9 @@
 
 }
 
-.unlcms-display-banner-img .media-entity-bundle--image {
-  margin-bottom: 0;
-  /* .dcf-ratio-child */
-  bottom: 0 !important;
-  left: 0 !important;
-  position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-}
-
-.unlcms-display-banner-img img {
-  /* Animation */
-  translate: none; rotate: none; scale: none; transform: scale(1, 1);
-  /* .dcf-obj-fit-cover */
-  object-fit: cover !important;
-  height: 100% !important;
-  width: 100% !important;
-  /* .dcf-d-block */
-  display: block !important;
+.unlcms-slow-zoom-in {
+ /* Animation */
+ translate: none; rotate: none; scale: none; transform: scale(1, 1);
 }
 
  /* sm 673 */

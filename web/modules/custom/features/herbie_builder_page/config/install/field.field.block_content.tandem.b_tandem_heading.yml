@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_heading
+  module:
+    - heading
+id: block_content.tandem.b_tandem_heading
+field_name: b_tandem_heading
+entity_type: block_content
+bundle: tandem
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    text: ''
+    size: h2
+default_value_callback: ''
+settings:
+  label: Heading
+  allowed_sizes:
+    h2: h2
+    h1: '0'
+    h3: '0'
+    h4: '0'
+    h5: '0'
+    h6: '0'
+field_type: heading
