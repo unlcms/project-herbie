@@ -380,6 +380,50 @@ function unl_five_herbie_preprocess_layout(&$variables) {
       }
     }
   }
+
+  $background_patterns = array(
+    "section_background_pattern_campus" => array(
+      "unl-bg-scarlet" => "unlcms-bg-campus-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-campus-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-campus-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-campus-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-campus-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-campus-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-campus-lightest-gray"
+    ),
+    "section_background_pattern_landmarks" => array(
+      "unl-bg-scarlet" => "unlcms-bg-landmarks-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-landmarks-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-landmarks-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-landmarks-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-landmarks-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-landmarks-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-landmarks-lightest-gray"
+    ),
+    "section_background_pattern_majors" => array(
+      "unl-bg-scarlet" => "unlcms-bg-majors-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-majors-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-majors-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-majors-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-majors-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-majors-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-majors-lightest-gray"
+    )
+  );
+
+  foreach ($variables["settings"]["layout_builder_styles_style"] as $layout_builder_styles_style_value) {
+    foreach ($background_patterns as $background_patterns_label => $background_patterns_background_color) {
+      //Check if the background pattern label is the same as the background pattern chosen by the user
+      if ($background_patterns_label == $layout_builder_styles_style_value) {
+        foreach ($background_patterns_background_color as $background_color_label => $background_color_css_value) {
+          //Add the CSS value based on the section background color chosen
+          if (in_array($background_color_label, $variables["attributes"]["class"])) {
+            $variables["attributes"]["class"][] =  $background_color_css_value;
+          }
+        }
+      }
+    }
+  }
 }
 
 /**

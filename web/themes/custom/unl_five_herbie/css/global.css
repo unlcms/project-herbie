@@ -424,3 +424,53 @@ This maybe needed later
 .hero-obj-position-50-percent {
   object-position: 50% 50%;
 }
+
+/* svg */
+[class*='unlcms-bg-campus-'],
+[class*='unlcms-bg-majors-'] {
+  background-size: 20em;
+}
+
+[class*='unlcms-bg-landmarks-'] {
+  background-size: 40em;
+}
+
+.unlcms-bg-campus-scarlet { background-image: url(../images/campus-d00000.svg); }
+.unlcms-bg-campus-darkest-gray { background-image: url(../images/campus-242423.svg); }
+.unlcms-bg-campus-darker-gray { background-image: url(../images/campus-424240.svg); }
+.unlcms-bg-campus-dark-gray { background-image: url(../images/campus-6b6b68.svg); }
+.unlcms-bg-campus-light-gray { background-image: url(../images/campus-e3e3e2.svg); }
+.unlcms-bg-campus-lighter-gray { background-image: url(../images/campus-ebebea.svg); }
+.unlcms-bg-campus-lightest-gray { background-image: url(../images/campus-f6f6f5.svg); }
+
+.unlcms-bg-landmarks-scarlet { background-image: url(../images/landmarks-d00000.svg); }
+.unlcms-bg-landmarks-darkest-gray { background-image: url(../images/landmarks-242423.svg); }
+.unlcms-bg-landmarks-darker-gray { background-image: url(../images/landmarks-424240.svg); }
+.unlcms-bg-landmarks-dark-gray { background-image: url(../images/landmarks-6b6b68.svg); }
+.unlcms-bg-landmarks-light-gray { background-image: url(../images/landmarks-e3e3e2.svg); }
+.unlcms-bg-landmarks-lighter-gray { background-image: url(../images/landmarks-ebebea.svg); }
+.unlcms-bg-landmarks-lightest-gray { background-image: url(../images/landmarks-f6f6f5.svg); }
+
+.unlcms-bg-majors-scarlet { background-image: url(../images/majors-d00000.svg); }
+.unlcms-bg-majors-darkest-gray { background-image: url(../images/majors-242423.svg); }
+.unlcms-bg-majors-darker-gray { background-image: url(../images/majors-424240.svg); }
+.unlcms-bg-majors-dark-gray { background-image: url(../images/majors-6b6b68.svg); }
+.unlcms-bg-majors-light-gray { background-image: url(../images/majors-e3e3e2.svg); }
+.unlcms-bg-majors-lighter-gray { background-image: url(../images/majors-ebebea.svg); }
+.unlcms-bg-majors-lightest-gray { background-image: url(../images/majors-f6f6f5.svg); }
+
+@media (prefers-color-scheme: dark) {
+
+  .unlcms-bg-campus-light-gray { background-image: url(../images/campus-333332.svg); }
+  .unlcms-bg-campus-lighter-gray { background-image: url(../images/campus-2e2e2d.svg); }
+  .unlcms-bg-campus-lightest-gray { background-image: url(../images/campus-292928.svg); }
+
+  .unlcms-bg-landmarks-light-gray { background-image: url(../images/landmarks-333332.svg); }
+  .unlcms-bg-landmarks-lighter-gray { background-image: url(../images/landmarks-2e2e2d.svg); }
+  .unlcms-bg-landmarks-lightest-gray { background-image: url(../images/landmarks-292928.svg); }
+
+  .unlcms-bg-majors-light-gray { background-image: url(../images/majors-333332.svg); }
+  .unlcms-bg-majors-lighter-gray { background-image: url(../images/majors-2e2e2d.svg); }
+  .unlcms-bg-majors-lightest-gray { background-image: url(../images/majors-292928.svg); }
+
+}
