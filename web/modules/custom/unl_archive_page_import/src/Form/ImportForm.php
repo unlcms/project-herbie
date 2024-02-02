@@ -91,6 +91,8 @@ class ImportForm extends FormBase {
    * Deletes an entity
    */
   public static function importPage($url, $alias, $base_url, &$context) {
+    $media_added = [];
+
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
     if (!$body) {
@@ -178,7 +180,7 @@ class ImportForm extends FormBase {
         $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
         $found_terms = $storage->loadByProperties([
           'name' => 'archive_import',
-          'vid' => 'tags',
+          'vid' => 'media_tags',
         ]);
         $term = reset($found_terms);
         if (!$term) {
@@ -210,7 +212,7 @@ class ImportForm extends FormBase {
 
       // Replace the imported link href with the path to the new media item.
       $a->setAttribute('href', $media_src);
-
+      $media_added[] = $media;
     }
 
     /**
@@ -258,15 +260,12 @@ class ImportForm extends FormBase {
 
         $alt = $imageNode->getAttribute('alt');
         $alt = substr($alt, 0, 500);
-        if (empty($alt)) {
-          $alt = ' ';
-        }
 
         // Get the ID of the "archive_import" media tag (or create it) that all imported files will be assigned.
         $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
         $found_terms = $storage->loadByProperties([
           'name' => 'archive_import',
-          'vid' => 'tags',
+          'vid' => 'media_tags',
         ]);
         $term = reset($found_terms);
         if (!$term) {
@@ -299,6 +298,7 @@ class ImportForm extends FormBase {
 
       // Replace the imported img tag src with the path to the new media item.
       $imageNode->setAttribute('src', $media_src);
+      $media_added[] = $media;
     }
 
     // Create the Body html source code.
@@ -318,8 +318,12 @@ class ImportForm extends FormBase {
     );
     $entity->save();
 
+    foreach ($media_added as $media) {
+      \Drupal::service('entity_usage.usage')->registerUsage($media->id(), $media->getEntityTypeId(), $entity->id(), $entity->getEntityTypeId(), 'en', 1, 'entity_reference', 'archive_page_body');
+    }
+
     $context['results'][] = $url;
-    $context['message'] = t('Created @title', array('@title' => $url));
+    $context['message'] = t('Imported @title', array('@title' => $url));
   }
 
 }

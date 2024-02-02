@@ -116,6 +116,7 @@ permissions:
   - 'create url aliases'
   - 'create users'
   - 'create webform'
+  - 'create webform content'
   - 'delete any accordion block content'
   - 'delete any archive_page content'
   - 'delete any book content'

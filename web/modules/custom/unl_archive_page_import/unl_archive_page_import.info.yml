@@ -3,4 +3,7 @@ package: UNL
 type: module
 description: Import pages from a Drupal 7 site into Archive Page type.
 core_version_requirement: ^9 || ^10
-
+dependencies:
+  - drupal:media
+  - drupal:node
+  - entity_usage:entity_usage
