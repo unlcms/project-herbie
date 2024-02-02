@@ -1,0 +1,29 @@
+uuid: e5e73cae-dc5a-4171-acf8-0f903e9c54b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.archive_page.archive_page_body
+    - node.type.archive_page
+  module:
+    - user
+_core:
+  default_config_hash: S_sCBgKJAl8bDgE50INwDL1Okm_miD6pJzXshZsfFY4
+id: node.archive_page.teaser
+targetEntityType: node
+bundle: archive_page
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  archive_page_body: true

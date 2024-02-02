@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
@@ -33,6 +34,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'view any unpublished content'
+  - 'view archive_page revisions'
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view latest version'

@@ -1,0 +1,33 @@
+uuid: 904f7f35-6b3f-41d8-9e2a-ec46ae01881a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.archive
+  module:
+    - ckeditor5
+_core:
+  default_config_hash: PPY3SMEn5dYuSb_zlVwx9afatduehtBPlwlZcREFS6I
+format: archive
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - drupalMedia
+      - sourceEditing
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    media_media:
+      allow_view_mode_override: false
+image_upload: {  }

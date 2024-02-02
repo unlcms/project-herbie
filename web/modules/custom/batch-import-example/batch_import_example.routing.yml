@@ -1,8 +1,0 @@
-batch_import_example.examplebatch:
-  path: '/admin/batch-import-example'
-  defaults:
-    _title: 'Import animals'
-    _form: '\Drupal\batch_import_example\Form\ImportForm'
-  requirements:
-    _permission: 'access content'
-

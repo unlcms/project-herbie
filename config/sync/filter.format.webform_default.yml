@@ -1,3 +1,4 @@
+uuid: 0cbc2dfc-b41a-4860-aad6-54bf4d9090b4
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,4 @@ dependencies:
 name: 'Webform (Default) - DO NOT EDIT'
 format: webform_default
 weight: 100
-roles:
-  - authenticated
 filters: {  }

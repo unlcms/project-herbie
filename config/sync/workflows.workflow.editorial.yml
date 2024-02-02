@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
@@ -57,4 +58,5 @@ type_settings:
       - builder_page
       - news
       - person
+      - archive_page
   default_moderation_state: published

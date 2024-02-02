@@ -1,5 +1,0 @@
-name: Batch import example
-type: module
-description: Shows how to batch import with interaction
-core_version_requirement: ^9 || ^10
-package: STEFVANLOOVEREN.ME

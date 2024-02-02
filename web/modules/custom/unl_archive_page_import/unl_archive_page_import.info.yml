@@ -1,0 +1,6 @@
+name: Archive page importer tool
+package: UNL
+type: module
+description: Import pages from a Drupal 7 site into Archive Page type.
+core_version_requirement: ^9 || ^10
+

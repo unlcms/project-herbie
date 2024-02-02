@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.narrow
+    - core.entity_view_mode.media.wide
+  module:
+    - dcf_ckeditor5
+    - media
+name: Archive
+format: archive
+weight: 0
+filters:
+  filter_dcfckeditor5:
+    id: filter_dcfckeditor5
+    provider: dcf_ckeditor5
+    status: false
+    weight: 0
+    settings:
+      dcftable: '0'
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: true
+      filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        default: default
+        narrow: narrow
+        wide: wide
+      allowed_media_types:
+        image: image
+        remote_video: remote_video

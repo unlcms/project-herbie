@@ -1,19 +1,17 @@
 <?php
 
-namespace Drupal\batch_import_example\Form;
+namespace Drupal\unl_archive_page_import\Form;
 
 use DOMDocument;
 use DOMXPath;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\pathauto\PathautoState;
+use Drupal\taxonomy\Entity\Term;
 
-/**
- * Provides a form for deleting a batch_import_example entity.
- *
- * @ingroup batch_import_example
- */
 class ImportForm extends FormBase {
 
   /**
@@ -112,14 +110,88 @@ class ImportForm extends FormBase {
     if (!$maincontentNode = $nodes->item(0)) {
       return false;
     }
-    $body = implode(array_map([$maincontentNode->ownerDocument,"saveHTML"],
-      iterator_to_array($maincontentNode->childNodes)));
 
     // Process images.
     $imageNodes = $maincontentNode->getElementsByTagName('img');
     foreach ($imageNodes as $imageNode) {
       $src = $imageNode->getAttribute('src');
+      $file_name = explode("/", $src);
+      $file_name = end($file_name);
+      $file_name = explode("?", $file_name);
+      $file_name = $file_name[0];
+
+      // Check if image already exists.
+      $file = \Drupal::entityTypeManager()
+        ->getStorage('file')
+        ->loadByProperties(['filename' => $file_name]);
+
+      if ($file) {
+        // Get existing Media entity.
+        $fileId = array_shift($file)->id();
+        $media = \Drupal::entityTypeManager()
+          ->getStorage('media')
+          ->loadByProperties(['field_media_image' => $fileId]);
+        $media = reset($media);
+      }
+      else {
+        // Download the file and create a new Media entity.
+        if (strpos($src, 'http://') === false && strpos($src, 'https://') === false) {
+          $src = 'https://unlcms.unl.edu/' . $src;
+        }
+
+        $file_data = file_get_contents($src);
+        $file = \Drupal::service('file.repository')
+          ->writeData($file_data, 'public://media/image/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+
+        $alt = $imageNode->getAttribute('alt');
+        $alt = substr($alt, 0, 500);
+        if (empty($alt)) {
+          $alt = ' ';
+        }
+
+        // Get the ID of the "archive_import" media tag.
+        $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+        $found_terms = $storage->loadByProperties([
+          'name' => 'archive_import',
+          'vid' => 'tags',
+        ]);
+        $term = reset($found_terms);
+        if (!$term) {
+          $term = Term::create([
+            'name' => 'archive_import',
+            'vid' => 'media_tags',
+          ]);
+          $term->save();
+        }
+
+        $media = Media::create([
+          'bundle' => 'image',
+          'uid' => \Drupal::currentUser()->id(),
+          'field_media_image' => [
+            'target_id' => $file->id(),
+            'alt' => $alt,
+          ],
+          's_m_tags' => [
+            'target_id' => $term->id(),
+          ],
+        ]);
+        $media->setName($file_name)
+          ->setPublished(TRUE)
+          ->save();
+      }
+
+      // Create a new drupal-media DOM element.
+      $drupal_media = $dom->createElement('drupal-media');
+      $drupal_media->setAttribute('data-entity-type', 'media');
+      $drupal_media->setAttribute('data-entity-uuid', $media->uuid());
+
+      // Replace the imported img tag with the new drupal-media element.
+      $imageNode->parentNode->replaceChild($drupal_media, $imageNode);
     }
+
+    // Create the Body html source code.
+    $body = implode(array_map([$maincontentNode->ownerDocument,"saveHTML"],
+      iterator_to_array($maincontentNode->childNodes)));
 
     // Create a node.
     $entity = Node::create([

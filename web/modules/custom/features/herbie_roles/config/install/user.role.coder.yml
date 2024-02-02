@@ -2,13 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.html_code
+    - filter.format.archive
   module:
     - asset_injector
-    - block_content_permissions
     - contextual
     - feeds
-    - field_css
     - field_ui
     - filter
     - google_analytics
@@ -25,7 +23,6 @@ weight: -5
 is_admin: null
 permissions:
   - 'access contextual links'
-  - 'access css fields'
   - 'access feed overview'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -43,10 +40,7 @@ permissions:
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer views'
-  - 'create html_code block content'
-  - 'delete any html_code block content'
   - 'load twig templates from file system'
   - 'replicate entities'
-  - 'update any html_code block content'
-  - 'use text format html_code'
+  - 'use text format archive'
   - 'view the administration theme'

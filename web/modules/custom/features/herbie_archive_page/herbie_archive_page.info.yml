@@ -1,0 +1,20 @@
+name: 'Archive page'
+type: module
+core_version_requirement: '^9.4 || ^10'
+dependencies:
+  - allowed_formats
+  - ckeditor5
+  - content_moderation
+  - dcf_ckeditor5
+  - editor
+  - field
+  - filter
+  - herbie_media_types
+  - media
+  - menu_ui
+  - node
+  - path
+  - text
+  - user
+version: 1.0.0
+package: Herbie
