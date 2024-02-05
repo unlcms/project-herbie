@@ -313,7 +313,8 @@
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"
             },
             "drupal/group": {
-                "group-context-2815971 - menu not visible on group nodes": "patches/group-context-2815971-52.patch"            },
+                "group-context-2815971 - menu not visible on group nodes": "patches/group-context-2815971-52.patch",
+                "2774827-90 - add gnode tokens": "patches/group-2774827-90-gnode-tokens.patch"           },
             "drush/drush": {
                 "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }
