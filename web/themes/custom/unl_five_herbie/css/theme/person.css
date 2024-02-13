@@ -25,7 +25,7 @@
 }
 
 .unlcms-teaser-person-list {
-  grid-template-columns: repeat( auto-fill, minmax(23.68rem, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(17.76rem, 1fr) );
 }
 
 .unlcms-teaser-person-img,
