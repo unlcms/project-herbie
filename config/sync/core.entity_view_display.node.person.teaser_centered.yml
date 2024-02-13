@@ -1,7 +1,9 @@
+uuid: cbf31673-af56-403c-867e-ebdca0555863
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser_centered
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
@@ -24,15 +26,22 @@ dependencies:
   module:
     - dcf_lazyload
     - image_class
+    - layout_builder
     - link
     - svg_image_responsive
     - telephone
     - text
     - user
-id: node.person.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ZRi1CJ9WIE5TDOih3P7co6ViLpC0KGlNQNYyOv2vG0Y
+id: node.person.teaser_centered
 targetEntityType: node
 bundle: person
-mode: default
+mode: teaser_centered
 content:
   content_moderation_control:
     settings: {  }
@@ -94,10 +103,6 @@ content:
     settings:
       responsive_image_style: large__square
       image_link: ''
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''
