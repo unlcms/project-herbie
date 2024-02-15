@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_display.node.builder_page.default
     - filter.format.archive
     - filter.format.block_body
+    - filter.format.html_code
     - filter.format.minimal
     - filter.format.simple
     - filter.format.standard
@@ -31,6 +32,7 @@ dependencies:
     - entity_usage
     - external_entities
     - feeds
+    - field_css
     - field_ui
     - file
     - file_delete
@@ -67,6 +69,7 @@ permissions:
   - 'access any webform configuration'
   - 'access content overview'
   - 'access contextual links'
+  - 'access css fields'
   - 'access entity usage statistics'
   - 'access feed overview'
   - 'access files overview'
@@ -117,6 +120,7 @@ permissions:
   - 'create cta block content'
   - 'create file media'
   - 'create hero block content'
+  - 'create html_code block content'
   - 'create icon_links block content'
   - 'create image media'
   - 'create logo_cloud block content'
@@ -148,6 +152,7 @@ permissions:
   - 'delete any file'
   - 'delete any file media'
   - 'delete any hero block content'
+  - 'delete any html_code block content'
   - 'delete any icon_links block content'
   - 'delete any image media'
   - 'delete any logo_cloud block content'
@@ -236,6 +241,7 @@ permissions:
   - 'update any content block content'
   - 'update any cta block content'
   - 'update any hero block content'
+  - 'update any html_code block content'
   - 'update any icon_links block content'
   - 'update any logo_cloud block content'
   - 'update any node_include block content'
@@ -252,6 +258,7 @@ permissions:
   - 'use editorial transition unpublish'
   - 'use text format archive'
   - 'use text format block_body'
+  - 'use text format html_code'
   - 'use text format minimal'
   - 'use text format simple'
   - 'use text format standard'

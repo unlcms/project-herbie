@@ -157,7 +157,6 @@
         "drupal/image_class": "^2.0",
         "drupal/image_effects": "^3.3",
         "drupal/imagemagick": "^3.3",
-        "drupal/imce": "^3.0",
         "drupal/inline_block_title_automatic": "^1.1",
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi_image_styles": "^3.0",

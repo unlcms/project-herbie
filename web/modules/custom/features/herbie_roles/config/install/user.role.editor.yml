@@ -90,7 +90,6 @@ permissions:
   - 'create terms in media_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
-  - 'create webform content'
   - 'delete any accordion block content'
   - 'delete any card block content'
   - 'delete any content block content'

@@ -7,6 +7,7 @@ dependencies:
     - node.type.builder_page
     - node.type.news
     - node.type.person
+    - node.type.webform
   module:
     - content_moderation
     - contextual
@@ -41,5 +42,6 @@ permissions:
   - 'view person revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view webform revisions'
   - 'view webform submissions any node'
   - 'view webform submissions own node'

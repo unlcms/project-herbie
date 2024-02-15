@@ -13,6 +13,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
@@ -109,9 +110,11 @@ permissions:
   - 'delete any tabs block content'
   - 'delete any tandem block content'
   - 'delete any timeline block content'
+  - 'delete archive_page revisions'
   - 'delete book revisions'
   - 'delete builder_page revisions'
   - 'delete news revisions'
+  - 'delete own archive_page content'
   - 'delete own book content'
   - 'delete own builder_page content'
   - 'delete own file media'
@@ -123,6 +126,7 @@ permissions:
   - 'delete person revisions'
   - 'delete unl_directory_entry external entity'
   - 'delete webform revisions'
+  - 'edit any archive_page content'
   - 'edit any book content'
   - 'edit any builder_page content'
   - 'edit any file media'
@@ -131,6 +135,7 @@ permissions:
   - 'edit any person content'
   - 'edit any remote_video media'
   - 'edit any webform content'
+  - 'edit own archive_page content'
   - 'edit own book content'
   - 'edit own builder_page content'
   - 'edit own file media'
@@ -144,6 +149,7 @@ permissions:
   - 'perform search only'
   - 'rabbit hole bypass media'
   - 'replicate entities'
+  - 'revert archive_page revisions'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
@@ -176,6 +182,7 @@ permissions:
   - 'use text format webform'
   - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view archive_page revisions'
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view latest version'
