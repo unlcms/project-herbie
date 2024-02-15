@@ -1,11 +1,10 @@
-uuid: e8c9d617-4687-402b-b539-5188f3978fa0
+uuid: ccc9b485-012f-40f2-bd6f-4a901f3dd772
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.archive_page.archive_page_body
     - node.type.archive_page
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - path

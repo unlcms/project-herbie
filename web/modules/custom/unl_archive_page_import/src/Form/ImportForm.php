@@ -25,20 +25,24 @@ class ImportForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['#prefix'] = '<p>This example form will import 3 pages from the docs/animals.json example</p>';
+    $form['#prefix'] = '<p>This tool imports pages from a sunsetting Drupal 7 site into this site. <a target="_blank" href="https://cms-docs.unl.edu/developers/transition-pages/">Instructions available at cms-docs.unl.edu</a>.</p>';
     $form['base_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Base URL of the site being imported from.'),
-      '#default_value' => 'https://unlcms.unl.edu/',
       '#required' => TRUE,
-      '#description' => $this->t('Put description here.'),
+      '#description' => $this->t('Example: https://example.unl.edu/'),
+    ];
+    $form['sitemap'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Option #1: Path to XML sitemap of pages to import.'),
+      '#required' => FALSE,
+      '#description' => $this->t('Example: https://example.unl.edu/sitemap.xml'),
     ];
     $form['url'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Path to XML sitemap of pages to import.'),
-      '#default_value' => 'https://unlcms.unl.edu/sitemap.xml',
-      '#required' => TRUE,
-      '#description' => $this->t('Put description here.'),
+      '#title' => $this->t('Option #2: Single URL of a page to import.'),
+      '#required' => FALSE,
+      '#description' => $this->t('Example: https://example.unl.edu/sample-page'),
     ];
     $form['actions'] = array(
       '#type' => 'actions',
@@ -59,11 +63,6 @@ class ImportForm extends FormBase {
     $base_url = trim($base_url, '/') . '/';
     $base_url = str_replace('http://', 'https://', $base_url);
 
-    $sitemap = $form_state->getValue('url');
-    $request = \Drupal::httpClient()->get($sitemap);
-    $body = $request->getBody();
-    $site_map = simplexml_load_string($body);
-
     $batch = [
       'title' => t('Importing pages'),
       'operations' => [],
@@ -72,16 +71,35 @@ class ImportForm extends FormBase {
       'error_message' => t('The process has encountered an error.'),
     ];
 
-    foreach ($site_map->url as $item) {
-      $url = (string)$item->loc;
-      $alias = substr($url, strlen($base_url)-1);
+    $sitemap = $form_state->getValue('sitemap');
+    if ($sitemap) {
+      $request = \Drupal::httpClient()->get($sitemap);
+      $body = $request->getBody();
+      $site_map = simplexml_load_string($body);
+
+      foreach ($site_map->url as $item) {
+        $url = (string) $item->loc;
+        $alias = substr($url, strlen($base_url) - 1);
+        $batch['operations'][] = [
+          ['\Drupal\unl_archive_page_import\Form\ImportForm', 'importPage'],
+          [$url, $alias, $base_url]
+        ];
+      }
+    }
+    elseif ($url = $form_state->getValue('url')) {
+      $alias = substr($url, strlen($base_url) - 1);
       $batch['operations'][] = [
-        ['\Drupal\unl_archive_page_import\Form\ImportForm', 'importPage'], [$url, $alias, $base_url]
+        ['\Drupal\unl_archive_page_import\Form\ImportForm', 'importPage'],
+        [$url, $alias, $base_url]
       ];
+    }
+    else {
+      // @TODO Display a message to the user that they need to enter something.
+      return;
     }
 
     batch_set($batch);
-    \Drupal::messenger()->addMessage('Imported ' . count($site_map) . ' pages!');
+    \Drupal::messenger()->addMessage('Success!');
 
     $form_state->setRebuild(TRUE);
   }
@@ -126,94 +144,8 @@ class ImportForm extends FormBase {
       return false;
     }
 
-    /**
-     * Process links.
-     */
-    $linkNodes = $maincontentNode->getElementsByTagName('a');
-    foreach ($linkNodes as $a) {
-      $href = $a->getAttribute('href');
-      $file_name = explode("/", $href);
-      $file_name = end($file_name);
-      $file_name = explode("?", $file_name);
-      $file_name = $file_name[0];
 
-      // Check if link is local or external and skip if the later.
-      $base_url_http = str_replace('https://', 'http://', $base_url);
-      if (strpos($href, 'http://') === false && strpos($href, 'https://') === false) {
-        // Local link.
-        $href = $base_url . $href;
-      }
-      elseif (strpos($href, $base_url) === false && strpos($href, $base_url_http) === false) {
-        // This is a URL to an external site so skip touching it.
-        continue;
-      }
 
-      $response = \Drupal::httpClient()->head($href, ['http_errors' => false]);
-      $content_type = $response->getHeader('Content-Type');
-      if (strpos($content_type[0], 'html') !== false) {
-        // Link to an HTML page, skip it.
-        continue;
-      }
-
-      // Check if file already exists.
-      $file = \Drupal::entityTypeManager()
-        ->getStorage('file')
-        ->loadByProperties(['filename' => $file_name]);
-
-      if ($file) {
-        // Get existing Media entity.
-        $fileId = array_shift($file)->id();
-        $media = \Drupal::entityTypeManager()
-          ->getStorage('media')
-          ->loadByProperties(['field_media_file' => $fileId]);
-        $media = reset($media);
-      }
-      else {
-        // Download the file and create a new Media entity.
-        $file_data = file_get_contents($href);
-        $destination = 'public://media/file';
-        \Drupal::service('file_system')->prepareDirectory($destination, FileSystemInterface::CREATE_DIRECTORY);
-        $file = \Drupal::service('file.repository')
-          ->writeData($file_data, 'public://media/file/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
-
-        // Get the ID of the "archive_import" media tag (or create it) that all imported files will be assigned.
-        $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
-        $found_terms = $storage->loadByProperties([
-          'name' => 'archive_import',
-          'vid' => 'media_tags',
-        ]);
-        $term = reset($found_terms);
-        if (!$term) {
-          $term = Term::create([
-            'name' => 'archive_import',
-            'vid' => 'media_tags',
-          ]);
-          $term->save();
-        }
-
-        $media = Media::create([
-          'bundle' => 'file',
-          'uid' => \Drupal::currentUser()->id(),
-          'field_media_file' => [
-            'target_id' => $file->id(),
-          ],
-          's_m_tags' => [
-            'target_id' => $term->id(),
-          ],
-        ]);
-        $media->setName($file_name)
-          ->setPublished(TRUE)
-          ->save();
-      }
-
-      // Get the URL of the media item.
-      $media_src = $media->field_media_file->entity->getFileUri();
-      $media_src = \Drupal::service('file_url_generator')->generateString($media_src);
-
-      // Replace the imported link href with the path to the new media item.
-      $a->setAttribute('href', $media_src);
-      $media_added[] = $media;
-    }
 
     /**
      * Process images.
@@ -248,6 +180,11 @@ class ImportForm extends FormBase {
         $media = \Drupal::entityTypeManager()
           ->getStorage('media')
           ->loadByProperties(['field_media_image' => $fileId]);
+        if (!$media) {
+          $media = \Drupal::entityTypeManager()
+            ->getStorage('media')
+            ->loadByProperties(['field_media_file' => $fileId]);
+        }
         $media = reset($media);
       }
       else {
@@ -293,13 +230,124 @@ class ImportForm extends FormBase {
       }
 
       // Get the URL of the media item.
-      $media_src = $media->field_media_image->entity->getFileUri();
+      if ($media->field_media_image) {
+        $media_src = $media->field_media_image->entity->getFileUri();
+      }
+      else {
+        $media_src = $media->field_media_file->entity->getFileUri();
+      }
       $media_src = \Drupal::service('file_url_generator')->generateString($media_src);
 
       // Replace the imported img tag src with the path to the new media item.
       $imageNode->setAttribute('src', $media_src);
       $media_added[] = $media;
     }
+
+
+
+
+    /**
+     * Process links to files.
+     */
+    $linkNodes = $maincontentNode->getElementsByTagName('a');
+    foreach ($linkNodes as $a) {
+      $href = $a->getAttribute('href');
+      $file_name = explode("/", $href);
+      $file_name = end($file_name);
+      $file_name = explode("?", $file_name);
+      $file_name = $file_name[0];
+
+      // Check if link is local or external and skip if the later.
+      $base_url_http = str_replace('https://', 'http://', $base_url);
+      if (strpos($href, 'http://') === false && strpos($href, 'https://') === false) {
+        // Local link.
+        $href = $base_url . $href;
+      }
+      elseif (strpos($href, $base_url) === false && strpos($href, $base_url_http) === false) {
+        // This is a URL to an external site so skip touching it.
+        continue;
+      }
+
+      $response = \Drupal::httpClient()->head($href, ['http_errors' => false]);
+      $content_type = $response->getHeader('Content-Type');
+      if (strpos($content_type[0], 'html') !== false) {
+        // Link to an HTML page, skip it.
+        continue;
+      }
+
+      // Check if file already exists.
+      $file = \Drupal::entityTypeManager()
+        ->getStorage('file')
+        ->loadByProperties(['filename' => $file_name]);
+
+      if ($file) {
+        // Get existing Media entity.
+        $fileId = array_shift($file)->id();
+        $media = \Drupal::entityTypeManager()
+          ->getStorage('media')
+          ->loadByProperties(['field_media_file' => $fileId]);
+        if (!$media) {
+          $media = \Drupal::entityTypeManager()
+            ->getStorage('media')
+            ->loadByProperties(['field_media_image' => $fileId]);
+        }
+        $media = reset($media);
+      }
+      else {
+        // Download the file and create a new Media entity.
+        $file_data = file_get_contents($href);
+        $destination = 'public://media/file';
+        \Drupal::service('file_system')->prepareDirectory($destination, FileSystemInterface::CREATE_DIRECTORY);
+        $file = \Drupal::service('file.repository')
+          ->writeData($file_data, 'public://media/file/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+
+        // Get the ID of the "archive_import" media tag (or create it) that all imported files will be assigned.
+        $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+        $found_terms = $storage->loadByProperties([
+          'name' => 'archive_import',
+          'vid' => 'media_tags',
+        ]);
+        $term = reset($found_terms);
+        if (!$term) {
+          $term = Term::create([
+            'name' => 'archive_import',
+            'vid' => 'media_tags',
+          ]);
+          $term->save();
+        }
+
+        $media = Media::create([
+          'bundle' => 'file',
+          'uid' => \Drupal::currentUser()->id(),
+          'field_media_file' => [
+            'target_id' => $file->id(),
+          ],
+          's_m_tags' => [
+            'target_id' => $term->id(),
+          ],
+        ]);
+        $media->setName($file_name)
+          ->setPublished(TRUE)
+          ->save();
+      }
+
+      // Get the URL of the media item.
+      if ($media->field_media_file) {
+        $media_src = $media->field_media_file->entity->getFileUri();
+      }
+      else {
+        $media_src = $media->field_media_image->entity->getFileUri();
+      }
+      $media_src = \Drupal::service('file_url_generator')->generateString($media_src);
+
+      // Replace the imported link href with the path to the new media item.
+      $a->setAttribute('href', $media_src);
+      $media_added[] = $media;
+    }
+
+
+
+
 
     // Create the Body html source code.
     $body = implode(array_map([$maincontentNode->ownerDocument,"saveHTML"],

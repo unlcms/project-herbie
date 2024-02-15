@@ -150,6 +150,7 @@ module:
   unl_layout_builder_custom: 0
   unl_media: 0
   unl_menu: 0
+  unl_multisite: 0
   unl_news: 0
   unl_pathauto: 0
   unl_person: 0

@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.field.node.archive_page.archive_page_body
     - node.type.archive_page
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - path

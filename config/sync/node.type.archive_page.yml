@@ -1,4 +1,4 @@
-uuid: d8b2bb1c-4f2d-4dd0-b873-8f189f53b36e
+uuid: d360fdfc-729f-43c8-8b9f-228c1d9f9eb3
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,9 @@ third_party_settings:
     parent: 'main:'
 _core:
   default_config_hash: 0ebIm8b55UCcLLBAIXBkfSIjJ9UnzpXYzdpSVw-lzf0
-name: 'Archive page'
+name: 'Temporary transition page'
 type: archive_page
-description: ''
+description: 'A page of HTML markup that has been imported from a Drupal 7 site.'
 help: ''
 new_revision: true
 preview_mode: 1
