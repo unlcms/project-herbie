@@ -9,6 +9,7 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
+    - filter.format.webform_email
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -225,6 +226,7 @@ permissions:
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'use text format webform_email'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view book revisions'

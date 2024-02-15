@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.webform_email
     - filter.format.html_code
   module:
     - asset_injector
@@ -49,4 +50,5 @@ permissions:
   - 'replicate entities'
   - 'update any html_code block content'
   - 'use text format html_code'
+  - 'use text format webform_email'
   - 'view the administration theme'

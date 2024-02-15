@@ -2,11 +2,14 @@ uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.webform_email
   module:
     - asset_injector
     - contextual
     - feeds
     - field_ui
+    - filter
     - google_analytics
     - node
     - paragraphs
@@ -42,4 +45,5 @@ permissions:
   - 'administer views'
   - 'load twig templates from file system'
   - 'replicate entities'
+  - 'use text format webform_email'
   - 'view the administration theme'

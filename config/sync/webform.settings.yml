@@ -209,7 +209,7 @@ element:
 html_editor:
   disabled: false
   element_format: webform
-  mail_format: webform_default
+  mail_format: webform_email
   tidy: false
   make_unused_managed_files_temporary: true
 file:
