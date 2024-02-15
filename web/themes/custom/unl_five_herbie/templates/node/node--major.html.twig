@@ -10,7 +10,8 @@
   ]
 %}
 {{ attach_library('unl_five_herbie/major') }}
-<article{{ attributes.addClass(classes) }}>
+{# ID added for ASEM Google Tag Manager Tracking #}
+<article {{ attributes.addClass(classes).setAttribute('id', 'mdt-gtag-961f4fe6-3722-4497-927f-326db51dc287') }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
@@ -335,7 +336,7 @@
   </div>
 
     <!--CTA-->
-    <div class="dcf-bleed dcf-wrapper unl-bg-scarlet unl-bg-grit dcf-pt-6 dcf-pb-6 dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-center dcf-gap-6"
+    <div id="footer-cta" class="dcf-bleed dcf-wrapper unl-bg-scarlet unl-bg-grit dcf-pt-6 dcf-pb-6 dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-center dcf-gap-6"
 			role="group">
 			<a href="https://admissions.unl.edu/apply/" class="dcf-btn dcf-btn-inverse-primary">Apply Now</a>
 			<a href="https://admissions.unl.edu/visit/" class="dcf-btn dcf-btn-inverse-primary">Visit Campus</a>

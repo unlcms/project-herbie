@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5573852d8f2490dcaf4df2b0d01d6322",
+    "content-hash": "3175b05c6352203f593748269f7b3407",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -17026,7 +17026,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1"
+        "php": ">=8.1",
+        "ext-dom": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
