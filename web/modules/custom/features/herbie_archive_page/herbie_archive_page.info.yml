@@ -20,3 +20,4 @@ dependencies:
   - 'linkit:linkit'
 version: 1.0.0
 package: Herbie
+description: 'Provides Temporary transition page (Archive page) content type and related configuration. '
