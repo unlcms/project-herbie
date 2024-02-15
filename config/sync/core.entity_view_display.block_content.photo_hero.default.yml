@@ -16,7 +16,7 @@ dependencies:
     - options
     - text
 _core:
-  default_config_hash: kOcB0UwCNvu1Ol-UWJSiVl_tbQL0Fdx-8G6eCknX830
+  default_config_hash: xXRvIhC6oeKtkTe4UXEi7HcNMQvZz2WrENldpaU8nw4
 id: block_content.photo_hero.default
 targetEntityType: block_content
 bundle: photo_hero

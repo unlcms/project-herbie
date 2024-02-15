@@ -1,0 +1,8 @@
+unl_archive_page_import.batchimport:
+  path: '/admin/config/unl/archive-import'
+  defaults:
+    _title: 'Transition page import tool'
+    _form: '\Drupal\unl_archive_page_import\Form\ImportForm'
+  requirements:
+    _permission: 'create builder page content'
+
