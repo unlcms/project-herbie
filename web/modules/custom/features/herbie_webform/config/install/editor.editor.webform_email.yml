@@ -23,7 +23,6 @@ settings:
       - bulletedList
       - numberedList
       - '|'
-      - drupalMedia
       - blockQuote
       - insertTable
       - '|'
@@ -32,10 +31,6 @@ settings:
       - superscript
       - subscript
       - specialCharacters
-      - '|'
-      - horizontalLine
-      - '|'
-      - sourceEditing
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -51,8 +46,6 @@ settings:
     ckeditor5_list:
       reversed: true
       startIndex: true
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
     linkit_extension:
       linkit_enabled: true
       linkit_profile: standard

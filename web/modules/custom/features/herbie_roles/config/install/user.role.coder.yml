@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.webform_email
     - filter.format.html_code
+    - filter.format.webform_email
   module:
     - asset_injector
     - block_content_permissions

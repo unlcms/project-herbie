@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.webform_email
     - filter.format.html_code
+    - filter.format.webform_email
   module:
     - asset_injector
     - block_content_permissions
@@ -51,7 +51,7 @@ permissions:
   - 'delete any html_code block content'
   - 'load twig templates from file system'
   - 'replicate entities'
-  - 'use text format webform_email'
   - 'update any html_code block content'
   - 'use text format html_code'
+  - 'use text format webform_email'
   - 'view the administration theme'
