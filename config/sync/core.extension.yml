@@ -71,6 +71,7 @@ module:
   group_content_menu: 0
   group_support_revisions: 0
   heading: 0
+  herbie_archive_page: 0
   herbie_book: 0
   herbie_builder_page: 0
   herbie_config: 0
@@ -144,6 +145,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   twig_ui: 0
+  unl_archive_page_import: 0
   unl_blocks: 0
   unl_breadcrumbs: 0
   unl_cas: 0

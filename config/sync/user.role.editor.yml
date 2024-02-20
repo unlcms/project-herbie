@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
+    - filter.format.archive
     - filter.format.block_body
     - filter.format.minimal
     - filter.format.simple
@@ -12,6 +13,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
@@ -45,7 +47,7 @@ dependencies:
     - webform
     - webform_node
 _core:
-  default_config_hash: V5wvbRBDf_qpE6ZtYmzxyrgjxAnbcL_YB2HL-HulvmI
+  default_config_hash: fcuTxoPomW4e0Okydp0pxd85B93DHRfyNYVk9D0kdsM
 id: editor
 label: Editor
 weight: -7
@@ -110,9 +112,11 @@ permissions:
   - 'delete any tabs block content'
   - 'delete any tandem block content'
   - 'delete any timeline block content'
+  - 'delete archive_page revisions'
   - 'delete book revisions'
   - 'delete builder_page revisions'
   - 'delete news revisions'
+  - 'delete own archive_page content'
   - 'delete own book content'
   - 'delete own builder_page content'
   - 'delete own file media'
@@ -124,6 +128,7 @@ permissions:
   - 'delete person revisions'
   - 'delete unl_directory_entry external entity'
   - 'delete webform revisions'
+  - 'edit any archive_page content'
   - 'edit any book content'
   - 'edit any builder_page content'
   - 'edit any file media'
@@ -132,6 +137,7 @@ permissions:
   - 'edit any person content'
   - 'edit any remote_video media'
   - 'edit any webform content'
+  - 'edit own archive_page content'
   - 'edit own book content'
   - 'edit own builder_page content'
   - 'edit own file media'
@@ -145,6 +151,7 @@ permissions:
   - 'perform search only'
   - 'rabbit hole bypass media'
   - 'replicate entities'
+  - 'revert archive_page revisions'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
@@ -169,6 +176,7 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition unpublish'
+  - 'use text format archive'
   - 'use text format block_body'
   - 'use text format minimal'
   - 'use text format simple'
@@ -176,6 +184,7 @@ permissions:
   - 'use text format webform'
   - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view archive_page revisions'
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view latest version'

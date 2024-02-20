@@ -1,0 +1,30 @@
+uuid: 9f8d2626-1324-41b8-8c43-6be226ed7640
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.archive_page_body
+    - node.type.archive_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - archive
+_core:
+  default_config_hash: DqzPHr0eUyjJNYN5Bpmd4B70RxzuSHmlasIi_P69G8w
+id: node.archive_page.archive_page_body
+field_name: archive_page_body
+entity_type: node
+bundle: archive_page
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

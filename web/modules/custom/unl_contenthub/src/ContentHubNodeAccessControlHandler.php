@@ -46,7 +46,8 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
       // at the Content Hub site.
       return AccessResult::forbidden();
     }
-    elseif ($account->hasPermission('create builder_page content')) {
+    elseif ($entity_bundle !== 'archive_page' &&
+      $account->hasPermission('create builder_page content')) {
       // Using 'create builder_page content' as the base permission for any
       // custom content type that may get created. Because all permissions are
       // being managed with the herbie_roles feature, if a site creates a content

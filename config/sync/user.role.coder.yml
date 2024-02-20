@@ -2,11 +2,16 @@ uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.html_code
   module:
     - asset_injector
+    - block_content_permissions
     - contextual
     - feeds
+    - field_css
     - field_ui
+    - filter
     - google_analytics
     - group
     - group_content_menu
@@ -18,13 +23,14 @@ dependencies:
     - twig_ui
     - views_ui
 _core:
-  default_config_hash: e_wgK3u6DJXex7VJ7NgqcpN53OnF52HfNNaK18TNPwA
+  default_config_hash: pjZngoP_kq80I1xBCMa6k4sk--mrzHRIpBC2HjNgftE
 id: coder
 label: Developer
 weight: -5
 is_admin: null
 permissions:
   - 'access contextual links'
+  - 'access css fields'
   - 'access feed overview'
   - 'access group overview'
   - 'access site reports'
@@ -49,6 +55,10 @@ permissions:
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer views'
+  - 'create html_code block content'
+  - 'delete any html_code block content'
   - 'load twig templates from file system'
   - 'replicate entities'
+  - 'update any html_code block content'
+  - 'use text format html_code'
   - 'view the administration theme'

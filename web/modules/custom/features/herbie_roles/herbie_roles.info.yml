@@ -33,6 +33,7 @@ dependencies:
   - 'google_analytics:google_analytics'
   - 'group:group'
   - 'group_content_menu:group_content_menu'
+  - 'herbie_archive_page:herbie_archive_page'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
@@ -53,5 +54,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.3.0
+version: 1.3.2
 package: Herbie
