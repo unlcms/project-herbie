@@ -9,8 +9,10 @@ dependencies:
   - 'drupal:filter'
   - 'drupal:node'
   - 'drupal:text'
+  - 'group:gnode'
+  - 'group:group'
   - 'herbie_roles:herbie_roles'
   - 'pathauto:pathauto'
   - 'webform:webform'
-version: 1.2.0
+version: 1.2.1
 package: Herbie

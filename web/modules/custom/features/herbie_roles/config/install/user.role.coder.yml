@@ -12,6 +12,8 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - group
+    - group_content_menu
     - node
     - paragraphs
     - replicate_ui
@@ -27,12 +29,19 @@ permissions:
   - 'access contextual links'
   - 'access css fields'
   - 'access feed overview'
+  - 'access group overview'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
+  - 'administer group display'
+  - 'administer group form display'
+  - 'administer group_content_menu display'
+  - 'administer group_content_menu form display'
+  - 'administer group_relationship display'
+  - 'administer group_relationship form display'
   - 'administer js assets injector'
   - 'administer node display'
   - 'administer node fields'

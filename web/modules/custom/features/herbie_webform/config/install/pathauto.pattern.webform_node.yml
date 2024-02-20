@@ -6,12 +6,12 @@ dependencies:
 id: webform_node
 label: 'Webform node'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:menu-link:title]'
+pattern: '[node:group:url:path]/[node:menu-link:parents:join-path]/[node:menu-link:title]'
 selection_criteria:
-  f1d9a318-ae19-4c77-88c2-7e73fd7f85a8:
+  7532295d-f189-40be-8efa-e2f5283eb4ec:
     id: 'entity_bundle:node'
     negate: false
-    uuid: f1d9a318-ae19-4c77-88c2-7e73fd7f85a8
+    uuid: 7532295d-f189-40be-8efa-e2f5283eb4ec
     context_mapping:
       node: node
     bundles:

@@ -1,0 +1,20 @@
+name: Group
+description: 'Provides Group and Group Content Menu configurations.'
+type: module
+core_version_requirement: '^9.4 || ^10'
+dependencies:
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:user'
+  - 'group:gnode'
+  - 'group:group'
+  - 'group_content_menu:group_content_menu'
+  - 'herbie_builder_page:herbie_builder_page'
+  - 'herbie_major:herbie_major'
+  - 'herbie_news:herbie_news'
+  - 'herbie_person:herbie_person'
+  - 'herbie_roles:herbie_roles'
+version: 1.0.1
+package: Herbie

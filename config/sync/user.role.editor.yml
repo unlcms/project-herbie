@@ -30,6 +30,7 @@ dependencies:
     - external_entities
     - file
     - filter
+    - group
     - layout_builder
     - media
     - menu_admin_per_menu
@@ -55,6 +56,7 @@ permissions:
   - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'

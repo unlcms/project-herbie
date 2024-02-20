@@ -32,6 +32,7 @@ dependencies:
     - file_delete
     - filter
     - google_analytics
+    - group
     - layout_builder
     - media
     - media_file_delete
@@ -65,6 +66,7 @@ permissions:
   - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access site in maintenance mode'

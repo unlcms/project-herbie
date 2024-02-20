@@ -35,6 +35,8 @@ dependencies:
     - file_delete
     - filter
     - google_analytics
+    - group
+    - group_content_menu
     - layout_builder
     - media
     - media_file_delete
@@ -71,6 +73,7 @@ permissions:
   - 'access entity usage statistics'
   - 'access feed overview'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access site in maintenance mode'
@@ -89,6 +92,14 @@ permissions:
   - 'administer css assets injector'
   - 'administer feeds'
   - 'administer google analytics'
+  - 'administer group'
+  - 'administer group content menu types'
+  - 'administer group display'
+  - 'administer group form display'
+  - 'administer group_content_menu display'
+  - 'administer group_content_menu form display'
+  - 'administer group_relationship display'
+  - 'administer group_relationship form display'
   - 'administer js assets injector'
   - 'administer main menu items'
   - 'administer node display'
@@ -117,6 +128,7 @@ permissions:
   - 'create content block content'
   - 'create cta block content'
   - 'create file media'
+  - 'create gt_subsites group'
   - 'create hero block content'
   - 'create icon_links block content'
   - 'create image media'

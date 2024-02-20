@@ -38,6 +38,7 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   entity_reference_revisions: 0
   entity_share: 0
   entity_share_client: 0
@@ -63,7 +64,12 @@ module:
   file_mdm_exif: 0
   file_mdm_font: 0
   filter: 0
+  flexible_permissions: 0
+  gnode: 0
   google_analytics: 0
+  group: 0
+  group_content_menu: 0
+  group_support_revisions: 0
   heading: 0
   herbie_book: 0
   herbie_builder_page: 0
@@ -159,6 +165,7 @@ module:
   unl_views: 0
   unl_webform: 0
   user: 0
+  variationcache: 0
   views_ui: 0
   webform: 0
   webform_node: 0

@@ -1,0 +1,23 @@
+uuid: 0757458c-40cc-45b2-b643-d1f2e23b44db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.gt_subsites-group_membership.group_roles
+    - group.relationship_type.gt_subsites-group_membership
+id: group_relationship.gt_subsites-group_membership.default
+targetEntityType: group_relationship
+bundle: gt_subsites-group_membership
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

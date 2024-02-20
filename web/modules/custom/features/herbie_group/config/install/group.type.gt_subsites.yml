@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: gt_subsites
+label: Subsite
+description: 'Subsite is a group type that can be used to create groups.'
+new_revision: true
+creator_membership: true
+creator_wizard: false
+creator_roles: {  }
