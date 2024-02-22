@@ -9,12 +9,12 @@ _core:
 id: n_book
 label: 'Book node'
 type: 'canonical_entities:node'
-pattern: '[node:book:parents:join-path]/[node:title]'
+pattern: '[node:group:url:path]/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  8a2d12b0-c87e-439d-95ca-147d1f476e07:
+  de00d347-6dda-4f21-a8ac-c990a5cecaff:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 8a2d12b0-c87e-439d-95ca-147d1f476e07
+    uuid: de00d347-6dda-4f21-a8ac-c990a5cecaff
     context_mapping:
       node: node
     bundles:

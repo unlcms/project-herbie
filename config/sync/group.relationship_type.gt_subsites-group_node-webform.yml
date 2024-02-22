@@ -1,0 +1,17 @@
+uuid: 4cfe9062-eeba-4a1a-a7d7-4376914541cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.gt_subsites
+    - node.type.webform
+  module:
+    - gnode
+    - node
+id: gt_subsites-group_node-webform
+group_type: gt_subsites
+content_plugin: 'group_node:webform'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

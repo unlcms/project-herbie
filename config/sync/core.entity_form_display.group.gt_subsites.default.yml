@@ -1,0 +1,47 @@
+uuid: 2bd04920-fcce-4b65-af90-a054eb44700e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.gt_subsites.gt_subsite_node_reference
+    - group.type.gt_subsites
+  module:
+    - path
+id: group.gt_subsites.default
+targetEntityType: group
+bundle: gt_subsites
+mode: default
+content:
+  gt_subsite_node_reference:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  uid: true

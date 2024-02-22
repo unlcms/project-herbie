@@ -1,0 +1,38 @@
+uuid: 592faab7-f510-46f3-9122-4be4d8f68b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.gt_subsites-group_membership.group_roles
+    - group.relationship_type.gt_subsites-group_membership
+  module:
+    - path
+id: group_relationship.gt_subsites-group_membership.default
+targetEntityType: group_relationship
+bundle: gt_subsites-group_membership
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group_roles:
+    type: options_buttons
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

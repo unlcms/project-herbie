@@ -1,0 +1,15 @@
+uuid: 21516b62-418d-41bf-9cb8-6bade34a1387
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.gt_subsites
+    - user.role.super_administrator
+id: gt_subsites-admin_out
+label: Administrator
+weight: 101
+admin: true
+scope: outsider
+global_role: super_administrator
+group_type: gt_subsites
+permissions: {  }

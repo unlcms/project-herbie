@@ -1,0 +1,54 @@
+uuid: b4d731d4-8655-4a53-ae63-6ec45fd75b06
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.gt_subsites
+id: gt_subsites-group_member
+label: 'Group member'
+weight: 104
+admin: false
+scope: individual
+global_role: null
+group_type: gt_subsites
+permissions:
+  - 'access group content menu overview'
+  - 'access group_node overview'
+  - 'create group_node:book entity'
+  - 'create group_node:book relationship'
+  - 'create group_node:builder_page entity'
+  - 'create group_node:builder_page relationship'
+  - 'create group_node:major entity'
+  - 'create group_node:major relationship'
+  - 'create group_node:news entity'
+  - 'create group_node:news relationship'
+  - 'create group_node:person entity'
+  - 'create group_node:person relationship'
+  - 'create group_node:webform entity'
+  - 'create group_node:webform relationship'
+  - 'manage group_content_menu menu items'
+  - 'update any group_node:book entity'
+  - 'update any group_node:builder_page entity'
+  - 'update any group_node:major entity'
+  - 'update any group_node:news entity'
+  - 'update any group_node:person entity'
+  - 'update any group_node:webform entity'
+  - 'update own group_node:book entity'
+  - 'update own group_node:builder_page entity'
+  - 'update own group_node:major entity'
+  - 'update own group_node:news entity'
+  - 'update own group_node:person entity'
+  - 'update own group_node:webform entity'
+  - 'view group'
+  - 'view group_membership relationship'
+  - 'view group_node:book entity'
+  - 'view group_node:builder_page entity'
+  - 'view group_node:major entity'
+  - 'view group_node:news entity'
+  - 'view group_node:person entity'
+  - 'view group_node:webform entity'
+  - 'view own unpublished group_node:book entity'
+  - 'view own unpublished group_node:major entity'
+  - 'view own unpublished group_node:news entity'
+  - 'view own unpublished group_node:person entity'
+  - 'view own unpublished group_node:webform entity'

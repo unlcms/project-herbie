@@ -22,10 +22,12 @@ dependencies:
   - 'drupal:user'
   - 'external_entities:external_entities'
   - 'field_group:field_group'
+  - 'group:gnode'
+  - 'group:group'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
   - 'svg_image:svg_image_responsive'
-version: 1.2.1
+version: 1.2.2
 package: Herbie

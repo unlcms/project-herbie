@@ -1,0 +1,15 @@
+uuid: f1cd489b-8f79-439b-a7bc-cf4f5f6ad6b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.gt_subsites
+  module:
+    - user
+id: gt_subsites-group_membership
+group_type: gt_subsites
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

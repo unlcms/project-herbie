@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group_content_menu.group_content_menu_type.gmt_subsite_menu
+  module:
+    - group
+    - group_content_menu
+  theme:
+    - unl_five_herbie
+id: subsitemenu
+theme: unl_five_herbie
+region: navlinks
+weight: 0
+provider: null
+plugin: 'group_content_menu:gmt_subsite_menu'
+settings:
+  id: 'group_content_menu:gmt_subsite_menu'
+  label: 'Subsite menu'
+  label_display: '0'
+  provider: group_content_menu
+  context_mapping:
+    group: '@group.group_route_context:group'
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      gt_subsites: gt_subsites
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

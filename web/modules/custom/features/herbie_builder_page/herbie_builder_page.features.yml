@@ -23,4 +23,5 @@ excluded:
   - field.field.paragraph.p_n_major_contact.p_n_contact_title
   - field.storage.node.n_major_contact
   - paragraphs.paragraphs_type.p_n_major_contact
+  - group.relationship_type.gt_subsites-8e58d9c4803f1e627b18
 required: true

@@ -9,12 +9,12 @@ _core:
 id: news
 label: News
 type: 'canonical_entities:node'
-pattern: 'news/[node:title]'
+pattern: '[node:group:url:path]/news/[node:title]'
 selection_criteria:
-  80ad37f3-e73c-4042-a295-cb1b9f79b939:
+  373f59e5-2fe0-4e92-9a31-2e7778100baa:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 80ad37f3-e73c-4042-a295-cb1b9f79b939
+    uuid: 373f59e5-2fe0-4e92-9a31-2e7778100baa
     context_mapping:
       node: node
     bundles:

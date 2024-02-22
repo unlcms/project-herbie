@@ -1,0 +1,209 @@
+diff --git a/group.services.yml b/group.services.yml
+index 45ac1ef..1f0f77b 100644
+--- a/group.services.yml
++++ b/group.services.yml
+@@ -1,6 +1,7 @@
+ services:
+   access_check.group.permission:
+     class: 'Drupal\group\Access\GroupPermissionAccessCheck'
++    arguments: ['@group.group_route_context']
+     tags:
+       - { name: 'access_check', applies_to: '_group_permission' }
+   access_check.group.member:
+diff --git a/src/Access/GroupPermissionAccessCheck.php b/src/Access/GroupPermissionAccessCheck.php
+index 709bb23..05ef1e7 100644
+--- a/src/Access/GroupPermissionAccessCheck.php
++++ b/src/Access/GroupPermissionAccessCheck.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\group\Access;
+
++use Drupal\group\Context\GroupRouteContext;
+ use Drupal\group\Entity\GroupInterface;
+ use Drupal\Core\Access\AccessResult;
+ use Drupal\Core\Routing\Access\AccessInterface;
+@@ -15,6 +16,21 @@ use Symfony\Component\Routing\Route;
+  */
+ class GroupPermissionAccessCheck implements AccessInterface {
+
++  /**
++   * @var \Drupal\group\Context\GroupRouteContext
++   */
++ protected $groupRouteContext;
++
++  /**
++   * Constructs a new GroupPermissionAccessCheck.
++   *
++   * @param \Drupal\group\Context\GroupRouteContext $group_route_context
++   *   Group context provider.
++   */
++  public function __construct(GroupRouteContext $group_route_context) {
++    $this->groupRouteContext = $group_route_context;
++  }
++
+   /**
+    * Checks access.
+    *
+@@ -31,20 +47,9 @@ class GroupPermissionAccessCheck implements AccessInterface {
+   public function access(Route $route, RouteMatchInterface $route_match, AccountInterface $account) {
+     $permission = $route->getRequirement('_group_permission');
+
+-    // Don't interfere if no permission was specified.
+-    if ($permission === NULL) {
+-      return AccessResult::neutral();
+-    }
+-
+-    // Don't interfere if no group was specified.
+-    $parameters = $route_match->getParameters();
+-    if (!$parameters->has('group')) {
+-      return AccessResult::neutral();
+-    }
+-
+-    // Don't interfere if the group isn't a real group.
+-    $group = $parameters->get('group');
+-    if (!$group instanceof GroupInterface) {
++    // Don't interfere if no group available.
++    $group = $this->groupRouteContext->getBestCandidate();
++    if (!$group) {
+       return AccessResult::neutral();
+     }
+
+diff --git a/src/Cache/Context/RouteGroupCacheContext.php b/src/Cache/Context/RouteGroupCacheContext.php
+index aca3ba1..8e0eb0a 100644
+--- a/src/Cache/Context/RouteGroupCacheContext.php
++++ b/src/Cache/Context/RouteGroupCacheContext.php
+@@ -46,7 +46,7 @@ class RouteGroupCacheContext implements CacheContextInterface {
+    * {@inheritdoc}
+    */
+   public function getContext() {
+-    if ($group = $this->getGroupFromRoute()) {
++    if ($group = $this->getBestCandidate()) {
+       // If a group was found on the route, we return its ID as the context.
+       if ($gid = $group->id()) {
+         return $gid;
+diff --git a/src/Context/GroupRouteContext.php b/src/Context/GroupRouteContext.php
+index 4fd4b1f..1586716 100644
+--- a/src/Context/GroupRouteContext.php
++++ b/src/Context/GroupRouteContext.php
+@@ -49,7 +49,7 @@ class GroupRouteContext implements ContextProviderInterface {
+     $cacheability->setCacheContexts(['route.group']);
+
+     // Create a context from the definition and retrieved or created group.
+-    $context = new Context($context_definition, $this->getGroupFromRoute());
++    $context = new Context($context_definition, $this->getBestCandidate());
+     $context->addCacheableDependency($cacheability);
+
+     return ['group' => $context];
+diff --git a/src/Context/GroupRouteContextTrait.php b/src/Context/GroupRouteContextTrait.php
+index 99e9a41..806c019 100644
+--- a/src/Context/GroupRouteContextTrait.php
++++ b/src/Context/GroupRouteContextTrait.php
+@@ -2,6 +2,9 @@
+
+ namespace Drupal\group\Context;
+
++use Drupal\Core\Entity\ContentEntityInterface;
++use Drupal\group\Entity\GroupRelationship;
++use Drupal\node\NodeInterface;
+ use Drupal\group\Entity\GroupInterface;
+
+ /**
+@@ -81,4 +84,36 @@ trait GroupRouteContextTrait {
+     return NULL;
+   }
+
++  /**
++   * Retrieves the group entity from the current route.
++   *
++   * Expands $this->getGroupFromRoute() to also return a Group based if
++   * interacting with Group Content such as nodes assigned to a Group.
++   *
++   * @return \Drupal\group\Entity\GroupInterface|null
++   *   A group entity if one could be found or created, NULL otherwise.
++   */
++  public function getBestCandidate() {
++    if ($group = $this->getGroupFromRoute()) {
++      return $group;
++    }
++
++    if (empty($this->getCurrentRouteMatch()->getParameters())) {
++      return NULL;
++    }
++    $entities = array_filter(iterator_to_array($this->getCurrentRouteMatch()->getParameters()), static function ($parameter) {
++      return $parameter instanceof NodeInterface;
++    });
++    if (empty($entities)) {
++      return NULL;
++    }
++    foreach ($entities as $entity) {
++      foreach ($this->getEntityTypeManager()->getStorage('group_relationship')->loadByEntity($entity) as $group_relationship) {
++        return $group_relationship->getGroup();
++      }
++    }
++
++    return NULL;
++  }
++
+ }
+diff --git a/tests/src/Unit/RouteGroupCacheContextTest.php b/tests/src/Unit/RouteGroupCacheContextTest.php
+index bf8ae00..db390a6 100644
+--- a/tests/src/Unit/RouteGroupCacheContextTest.php
++++ b/tests/src/Unit/RouteGroupCacheContextTest.php
+@@ -7,9 +7,13 @@ use Drupal\Core\Entity\ContentEntityStorageInterface;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Routing\RouteMatchInterface;
+ use Drupal\group\Cache\Context\RouteGroupCacheContext;
++use Drupal\group\Entity\GroupRelationship;
+ use Drupal\group\Entity\GroupInterface;
+ use Drupal\group\Entity\GroupTypeInterface;
++use Drupal\group\Entity\Storage\GroupRelationshipStorageInterface;
+ use Drupal\Tests\UnitTestCase;
++use Drupal\user\Entity\User;
++use Symfony\Component\HttpFoundation\ParameterBag;
+
+ /**
+  * Tests the route.group cache context.
+@@ -49,6 +53,7 @@ class RouteGroupCacheContextTest extends UnitTestCase {
+    */
+   public function testGetContextNoGroup() {
+     $this->currentRouteMatch->getParameter('group')->willReturn(NULL);
++    $this->currentRouteMatch->getParameters()->willReturn(new ParameterBag());
+     $this->currentRouteMatch->getRouteName()->willReturn('foo');
+
+     $cache_context = new RouteGroupCacheContext($this->currentRouteMatch->reveal(), $this->entityTypeManager->reveal());
+@@ -70,6 +75,35 @@ class RouteGroupCacheContextTest extends UnitTestCase {
+     $this->assertSame(1, $cache_context->getContext());
+   }
+
++  /**
++   * Tests getting the context value when there is a group_relationship on the route.
++   *
++   * @covers ::getContext
++   */
++  public function testGetContextWithGroupRelationship() {
++    $this->currentRouteMatch->getParameter('group')->willReturn(NULL);
++    $this->currentRouteMatch->getRouteName()->willReturn('foo');
++
++    $group = $this->prophesize(GroupInterface::class);
++    $group->id()->willReturn(1);
++
++    $user = $this->prophesize(User::class)->reveal();
++
++    $group_relationship = $this->prophesize(GroupRelationship::class);
++    $group_relationship->getGroup()->willReturn($group->reveal());
++    $group_relationship->getEntity()->willReturn($user);
++
++    $storage = $this->prophesize(GroupRelationshipStorageInterface::class);
++    $storage->loadByEntity($user)->willReturn([$group_relationship->reveal()]);
++    $this->entityTypeManager->getStorage('group_relationship')->willReturn($storage->reveal());
++
++    $parameters = new ParameterBag(['user' => $user]);
++    $this->currentRouteMatch->getParameters()->willReturn($parameters);
++
++    $cache_context = new RouteGroupCacheContext($this->currentRouteMatch->reveal(), $this->entityTypeManager->reveal());
++    $this->assertSame(1, $cache_context->getContext());
++  }
++
+   /**
+    * Tests getting the context value when on the group add form route.
+    *
