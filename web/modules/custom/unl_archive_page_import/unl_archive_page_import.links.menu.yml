@@ -1,0 +1,6 @@
+unl_archive_page_import.batchimport:
+  title: 'UNL Transition page import'
+  parent: system.admin_config_development
+  description: 'Import pages from a Drupal 7 UNLcms website.'
+  route_name: unl_archive_page_import.batchimport
+  weight: 30

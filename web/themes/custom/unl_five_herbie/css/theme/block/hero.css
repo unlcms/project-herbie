@@ -5,15 +5,6 @@
   width: 100% !important;
 }
 
-.dcf-hero img {
-  /* .dcf-obj-fit-cover */
-  object-fit: cover !important;
-  height: 100% !important;
-  width: 100% !important;
-  /* .dcf-d-block */
-  display: block !important;
-}
-
 .unl.page-node-type-builder-page .dcf-hero {
   margin-bottom: 0;
 }

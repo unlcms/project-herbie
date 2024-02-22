@@ -10,4 +10,17 @@ excluded:
   - image.style.1_1_3840x3840
   - image.style.1_1_480x480
   - image.style.1_1_960x960
+  - core.entity_form_display.node.major.default
+  - core.entity_form_display.paragraph.p_n_major_contact.default
+  - core.entity_view_display.node.major.default
+  - core.entity_view_display.node.major.teaser
+  - core.entity_view_display.paragraph.p_n_major_contact.default
+  - field.field.node.major.n_major_contact
+  - field.field.paragraph.p_n_major_contact.p_n_contact_email
+  - field.field.paragraph.p_n_major_contact.p_n_contact_image
+  - field.field.paragraph.p_n_major_contact.p_n_contact_name
+  - field.field.paragraph.p_n_major_contact.p_n_contact_phone
+  - field.field.paragraph.p_n_major_contact.p_n_contact_title
+  - field.storage.node.n_major_contact
+  - paragraphs.paragraphs_type.p_n_major_contact
 required: true
