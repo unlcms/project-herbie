@@ -48,6 +48,7 @@ dependencies:
     - rabbit_hole
     - redirect
     - replicate_ui
+    - rest
     - scanner
     - system
     - taxonomy
@@ -101,6 +102,7 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer redirects'
+  - 'administer rest resources'
   - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer twig templates'
