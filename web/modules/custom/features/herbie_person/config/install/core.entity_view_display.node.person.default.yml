@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
+    - field.field.node.person.n_person_affiliation
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -25,7 +26,7 @@ dependencies:
     - dcf_lazyload
     - image_class
     - link
-    - responsive_image
+    - svg_image_responsive
     - telephone
     - text
     - user
@@ -34,6 +35,11 @@ targetEntityType: node
 bundle: person
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -60,6 +66,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 7
+    region: content
+  n_person_affiliation:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
     region: content
   n_person_bio:
     type: text_default
@@ -89,6 +103,10 @@ content:
     settings:
       responsive_image_style: large__square
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''

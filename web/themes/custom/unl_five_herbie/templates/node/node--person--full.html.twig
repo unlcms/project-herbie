@@ -49,10 +49,15 @@
                     {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
                   {% endif %}
 
-                  {% if node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value %}
+                  {% if node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value or node.n_person_affiliation.value %}
                     <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
                       <span class="organization-unit dcf-d-block dcf-txt-sm">
-                        <span itemprop="name">{{ node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value }}</span>
+                        {% if node.n_person_affiliation.value	%}
+                          {% set affiliation = node.n_person_affiliation.value %}
+                        {% else %}
+                          {% set affiliation = node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value %}
+                        {% endif %}
+                        <span itemprop="name">{{affiliation}}</span>
                       </span>
                       <span class="organization-name dcf-d-none" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
                         <span itemprop="name">University of Nebraska-Lincoln</span>

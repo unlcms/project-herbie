@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
+    - field.field.node.person.n_person_affiliation
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -21,11 +22,13 @@ dependencies:
     - field.field.node.person.n_person_website
     - image.style.1_1_480x480
     - node.type.person
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - field_group
-    - image
     - link
     - path
+    - svg_image
     - telephone
     - text
 third_party_settings:
@@ -33,6 +36,7 @@ third_party_settings:
     group_unl_directory_overrides:
       children:
         - n_person_position
+        - n_person_affiliation
         - n_person_photo
         - n_person_phone
         - n_person_email
@@ -78,13 +82,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   n_additional:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 9
@@ -94,7 +104,7 @@ content:
     third_party_settings: {  }
   n_education:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -110,9 +120,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  n_person_affiliation:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   n_person_bio:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -169,7 +187,7 @@ content:
     third_party_settings: {  }
   n_person_social_linkedin:
     type: string_textfield
-    weight: 10
+    weight: 11
     region: content
     settings:
       size: 60
@@ -177,7 +195,7 @@ content:
     third_party_settings: {  }
   n_person_social_pinterest:
     type: string_textfield
-    weight: 11
+    weight: 12
     region: content
     settings:
       size: 60
@@ -185,7 +203,7 @@ content:
     third_party_settings: {  }
   n_person_social_snapchat:
     type: string_textfield
-    weight: 12
+    weight: 13
     region: content
     settings:
       size: 60
@@ -227,27 +245,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -262,7 +280,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -271,7 +289,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
