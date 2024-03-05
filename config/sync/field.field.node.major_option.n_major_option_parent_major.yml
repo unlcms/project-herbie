@@ -1,0 +1,29 @@
+uuid: cdc20825-f312-44f0-a142-61f36a2ad016
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_option_parent_major
+    - node.type.major
+    - node.type.major_option
+id: node.major_option.n_major_option_parent_major
+field_name: n_major_option_parent_major
+entity_type: node
+bundle: major_option
+label: 'Parent Major'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      major: major
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
