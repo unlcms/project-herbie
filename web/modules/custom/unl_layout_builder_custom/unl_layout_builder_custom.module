@@ -7,7 +7,6 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Form\FormHelper;
-
 /**
  * Implements hook_form_alter().
  */
@@ -23,12 +22,21 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
     unset($form['layout_builder_style_background']['#empty_option']);
   }
 
+  if ($block_type == 'embed') {
+    $form['settings']['block_form']['#process'][] = '_unl_layout_builder_custom_embed_block_process';
+  }
+
   switch ($form_id) {
     case 'layout_builder_add_block':
       if ($block_type == 'card') {
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
       }
+
+      if ($block_type == 'tandem') {
+        //Create a callback function to '#process' so we can be able to alter form elements
+        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
+      };
      break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':
@@ -64,6 +72,23 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       $form['#attached']['library'][] = 'unl_layout_builder_custom/unl_layout_builder_custom.overrides';
       break;
   }
+}
+
+function _unl_layout_builder_custom_embed_block_process(array $element, FormStateInterface $form_state, &$form) {
+  $element['b_embed_link']['widget']['#element_validate'][] = '_unl_layout_builder_custom_validate_embed_block';
+    return $element;
+}
+
+function _unl_layout_builder_custom_validate_embed_block(array $element, FormStateInterface &$form_state, &$form) {
+  $values = $form_state->getValues();
+  $uri = $values['settings']['block_form']['b_embed_link'][0]['uri'];
+  $host = parse_url($uri)['host'];
+  $pattern = "/(unl.edu$)|(nebraska.edu$)/i";
+
+  if (!preg_match($pattern, $host)) {
+    $form_state->setErrorByName('b_embed_link', t('Embedding links are restricted to domains ending with unl.edu or nebraska.edu.'));
+    $form_state->setError($element);
+ }
 }
 
 /**
