@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: embed
+label: Embed
+revision: 0
+description: 'A block enabling embedding via an iframe tag. Supported domains currently include unl.edu and nebraska.edu.'
