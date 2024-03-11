@@ -17,6 +17,12 @@ settings:
       value: dcf-ratio-9x16
       label: 9x16
     -
+      value: dcf-ratio-4x3
+      label: 4x3
+    -
+      value: dcf-ratio-3x4
+      label: 3x4
+    -
       value: dcf-ratio-1x1
       label: 1x1
   allowed_values_function: ''
