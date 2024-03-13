@@ -1,8 +1,4 @@
   /* TANDEM */
-  .unlcms-tandem-text :last-child {
-    margin-bottom: 0;
-  }
-
   .unlcms-tandem-text p:last-child,
   .unlcms-tandem-text ol:last-child,
   .unlcms-tandem-text ul:last-child {
