@@ -41,12 +41,13 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     if (!$this->siteIsContentHub() && isset($entity_bundle)
-      && $entity_bundle == 'major') {
-      // Content belonging to this bundle needs to be created
+      && in_array($entity_bundle, ['major', 'major_option'])) {
+      // Content belonging to these bundles needs to be created
       // at the Content Hub site.
       return AccessResult::forbidden();
     }
-    elseif ($account->hasPermission('create builder_page content')) {
+    elseif ($entity_bundle !== 'archive_page' &&
+      $account->hasPermission('create builder_page content')) {
       // Using 'create builder_page content' as the base permission for any
       // custom content type that may get created. Because all permissions are
       // being managed with the herbie_roles feature, if a site creates a content

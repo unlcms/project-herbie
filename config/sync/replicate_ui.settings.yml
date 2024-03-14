@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: 5XLrcRJwJXP7isux6rFxcWcJ7Rc_z3ltCO3wWadIVpw
+entity_types:
+  - node
+check_edit_access: true

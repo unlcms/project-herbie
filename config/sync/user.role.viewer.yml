@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
     - node.type.person
+    - node.type.webform
   module:
     - content_moderation
     - contextual
@@ -33,6 +35,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'view any unpublished content'
+  - 'view archive_page revisions'
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view latest version'
@@ -42,5 +45,6 @@ permissions:
   - 'view person revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view webform revisions'
   - 'view webform submissions any node'
   - 'view webform submissions own node'

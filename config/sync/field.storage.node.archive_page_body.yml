@@ -1,0 +1,21 @@
+uuid: a1a80849-09dd-4808-bebb-171169ab9e4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: 3P3Co5OwtdyrsMSmcoVPPvPSXTn9ae77bu1ZGGQvmjw
+id: node.archive_page_body
+field_name: archive_page_body
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

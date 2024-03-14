@@ -2,31 +2,37 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
-use \Drupal\field\Entity\FieldConfig;
-use \Drupal\Core\Form\FormHelper;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Form\FormHelper;
 
 /**
  * Implements hook_form_alter().
  */
-function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
-{
+function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $block_type = '';
+  if (isset($form['settings']['block_form']['#block'])) {
+    $block_type = $form['settings']['block_form']['#block']->bundle();
+  }
+
+  if ($block_type == 'card') {
+    // Remove background settings - None - empty option.
+    unset($form['layout_builder_style_background']['#empty_option']);
+  }
 
   switch ($form_id) {
     case 'layout_builder_add_block':
-    case 'layout_builder_update_block':
-    case 'layout_builder_edit_block':
-
-      $block_type = '';
-      if (isset($form['settings']['block_form']['#block'])) {
-        $block_type = $form['settings']['block_form']['#block']->bundle();
-      }
-      // Card.
       if ($block_type == 'card') {
-        // Remove background settings - None - empty option.
-        unset($form['layout_builder_style_background']['#empty_option']);
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
       }
+     break;
+    case 'layout_builder_update_block':
+    case 'layout_builder_edit_block':
+
       if ($block_type == 'tandem') {
         //Create a callback function to '#process' so we can be able to alter form elements
         $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
@@ -114,3 +120,30 @@ function _unl_layout_builder_custom_add_lbs_heading(&$form) {
   }
 }
 
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function unl_layout_builder_custom_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  // Only allow the replicate menu item if content type is a builder_page.
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $bundle = $node->bundle();
+    if ($bundle !== 'builder_page' && isset($data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate'])) {
+      $data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function unl_layout_builder_custom_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  // Remove the replicate option under operations in admin/content if content type is not a builder_page.
+  if (isset($operations['replicate']) && $entity instanceof NodeInterface) {
+    $node_type = $entity->getType();
+    if ($node_type !== 'builder_page') {
+      unset($operations['replicate']);
+    }
+  }
+}
