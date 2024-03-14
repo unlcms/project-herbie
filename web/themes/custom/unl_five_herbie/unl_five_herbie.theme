@@ -131,22 +131,16 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 
 
 /**
- * Implements template_preprocess_node__TYPE().
- * To make section style background avaialble in node/content type fields...
- * I was trying to make section backgrounds available in node fields for the person content type to change the icons' color depending on section background.
+ * Implements template_preprocess_node__TYPE() for the Person content type
  */
-// function unl_five_herbie_preprocess_node__person(&$variables) {
-//   if (isset($variables['node']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
-//     $layout_builder_styles = $variables['elements']['#layout_builder_style'];
-//     // Replace numeric keys with the value.
-//     foreach($layout_builder_styles as $value) {
-//       $block_layout_builder_styles[$value] = $value;
-//     }
-//   }
-//   if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
-//     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
-//   }
-// }
+function unl_five_herbie_preprocess_node__person(&$variables) {
+  $node = $variables["node"];
+
+  //Adds alt text for uploaded images
+  if (!$node->get('n_person_photo')->isEmpty() ) {
+  $node->n_person_photo->alt = "Avatar for " . $node->getTitle();
+  }
+}
 
 /**
  * Implements template_preprocess_field().
@@ -172,6 +166,28 @@ function unl_five_herbie_preprocess_field(&$variables) {
         break;
     }
   }
+
+   /*
+   * Person Node Fields
+   */
+  // $person_node_fields = array('n_person_photo');
+
+  // if (in_array($field_name, $person_node_fields)) {
+
+
+  //   $person_element_object = $variables['element']['#object'];
+  //   $person_name = $person_element_object->label();
+
+  //   switch ($field_name) {
+
+  //     case 'n_person_photo':
+  //         foreach ($variables['items'] as $key => $item) {
+  //           $variables['items'][$key]['content']['#item']['attributes']['class'][] = 'test';
+  //         }
+  //         break;
+
+  //   }
+  // }
 
   /*
    * Call to action Block Fields
