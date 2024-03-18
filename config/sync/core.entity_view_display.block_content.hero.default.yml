@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
+    - field.field.block_content.hero.b_hero_img_obj_pos
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
@@ -12,7 +13,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: L7BvHdUygi_6iGD7fBH0oUIrY428nU3apsmHDftoXuU
+  default_config_hash: ohc_5Ak4jZ5mZAF-n-zBjp6PW9XMOIugeVx7aY2IHHE
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero
@@ -27,20 +28,27 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  b_hero_img_obj_pos:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   b_hero_overline:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   b_hero_size:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   b_hero_subhead:
     type: string
@@ -48,7 +56,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   b_hero_title:
     type: string
@@ -56,6 +64,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden: {  }

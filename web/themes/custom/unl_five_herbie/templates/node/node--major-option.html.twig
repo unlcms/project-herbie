@@ -1,0 +1,137 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('unl_five_herbie/major') }}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+<!--Intro-->
+<div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-ai-start dcf-pt-4">
+	<div id="intro" class="dcf-col-100% dcf-col-67%-start@lg dcf-txt-lg dcf-w-max-xl">
+		<div class="dcf-txt-lg">{{ (content.n_major_option_lead_copy) }}</div>
+	</div>
+<!--Option Meta Data-->
+	<div class="dcf-col-100% dcf-col-33%-end@lg">
+		<div class="unl-bg-lightest-gray dcf-p-5 dcf-pb-3 dcf-rounded">
+			<ul class="dcf-list-bare dcf-mb-0 dcf-txt-sm">
+				<li>
+          {% if node.n_major_college|length > 1 %}
+						<h2 class="dcf-txt-md dcf-mb-1">Colleges</h2>
+          {% else %}
+            <h2 class="dcf-txt-md dcf-mb-1">College</h2>
+          {% endif %}
+						{{ node.n_major_option_parent_major.entity.n_major_college|view }}
+				</li>
+				<li>
+					<h2 class="dcf-txt-md dcf-mb-1">Major</h2>
+					<a href="{{ (node.n_major_option_parent_major.entity.n_major_college_external_url.value) }}">{{ (node.n_major_option_parent_major.entity.title.value) }}</a>
+				</li>
+				<li>
+					<h2 class="dcf-txt-md dcf-mb-1">Hours Required</h2>
+					{{ (node.n_major_option_parent_major.entity.n_major_hours_required.value) }}
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-8 dcf-ai-start dcf-pt-8 dcf-pb-6">
+<!--Feature Image-->	
+	<div class="dcf-col-100% dcf-col-33%-end@lg dcf-2nd@lg">
+		<div class="dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg dcf-overflow-visible">
+			{{ (content.n_major_option_features_image) }}
+      <div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
+				<div class="dcf-ratio-child unl-bg-dots-gray"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="dcf-col-100% dcf-col-67%-start@lg dcf-1st@lg dcf-w-max-xl">
+<!--Feature Callout-->
+		<div id="features" class="dcf-pb-8">
+			<h2 class="dcf-txt-xl dcf-mb-1">
+				Program Features
+			</h2>
+			<div>
+				{{ (content.n_major_option_program_features) }}
+      </div>
+		</div>
+
+<!--Notable Courses-->		
+		<div id="notable-courses">
+			<h2 class="dcf-txt-xl dcf-mb-1">
+				Notable Courses
+			</h2>
+          <div class="dcf-w-max-lg dcf-mb-6">
+						{{ (content.n_major_notable_courses_intro) }}
+					</div>
+			 {{ (content.n_major_notable_courses) }}
+		</div>
+	</div>
+</div>
+
+<!--RECENT PLACEMENTS-->
+<div id="learning-outcomes" class="dcf-w-100% dcf-w-max-3xl dcf-pt-8 dcf-pb-8">
+	<h2 class="dcf-txt-xl dcf-mb-1">
+		Huskers Do <span class="dcf-txt-nowrap">Big Things</span>
+	</h2>
+	<div class="dcf-w-max-lg dcf-mb-6">
+		<p>
+			{{ (content.n_major_option_huskers_do_intro) }}</p>
+	</div>
+	<div class="dcf-grid-halves@md dcf-grid-thirds@lg dcf-col-gap-vw dcf-row-gap-6">
+		<div
+			class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
+			<h3 class="dcf-txt-h4 dcf-bold">
+				{{ (content.n_major_option_internships_title) }}
+			</h3>
+			  {{ (content.n_major_option_internships_list) }}
+		</div>
+
+		<div
+			class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
+			<h3 class="dcf-txt-h4 dcf-bold">
+				{{ (content.n_major_option_careers_title) }}
+			</h3>
+			{{ (content.n_major_option_careers_list) }}
+		</div>
+
+		<div
+			class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
+			<h3 class="dcf-txt-h4 dcf-bold">
+				{{ (content.n_major_option_grad_school_title) }}
+			</h3>
+			 {{ (content.n_major_option_grad_schools_list) }}
+		</div>
+	</div>
+</div>
+
+<!--CONTACT-->
+<div id="contact" class="dcf-mt-6 dcf-mb-6 dcf-bl-3 dcf-bl-solid unl-bl-scarlet dcf-pl-6">
+	<h2 class="dcf-mb-1">
+		Have Questions? <span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span>
+	</h2>
+	<div class="dcf-w-max-lg dcf-mb-6">
+		<p>
+			If you have questions about the {{ label.0['#context'].value}}, contact us.
+		</p>
+	</div>
+
+	<div class="dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-start dcf-ai-start dcf-col-gap-8 dcf-row-gap-7">
+    {{ node.n_major_option_parent_major.entity.n_major_contact|view }}
+	</div>
+</div>
+
+<!--CTA-->
+<div class="dcf-pt-6 dcf-pb-4 dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-start dcf-gap-6">
+	<a class="dcf-btn dcf-btn-primary" href="{{ (node.n_major_option_parent_major.entity.n_major_college_external_url.value) }}">{{ (node.n_major_option_parent_major.entity.title.value) }}</a>				      
+</div>
