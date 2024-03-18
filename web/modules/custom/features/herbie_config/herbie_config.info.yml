@@ -5,4 +5,5 @@ core_version_requirement: '^9.4 || ^10'
 version: 1.0.2
 package: Herbie
 dependencies:
+  - 'metatag:metatag'
   - 'replicate_ui:replicate_ui'
