@@ -217,19 +217,10 @@ function unl_five_herbie_preprocess_field(&$variables) {
   $cardFields = array('b_card_image', 'b_card_cta', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
 
   if (in_array($field_name, $cardFields)) {
-    $block_background = $variables['element']['#object']->__get('#block_lbs');
-
-    if($variables['element']['#object']->get('b_card_headline_link')) {
-      $card_headline_link = $variables['element']['#object']->get('b_card_headline_link');
-
-      if($card_headline_link->first()) {
-        $card_headline_link_item = $card_headline_link->first();
-        $card_headline_link_url = $card_headline_link_item->getUrl()->toString();
-      }
-    }
-
     switch ($field_name) {
       case 'b_card_cta':
+        $block_background = $variables['element']['#object']->__get('#block_lbs');
+
         foreach ($variables['items'] as $key => $item) {
           if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
@@ -240,6 +231,15 @@ function unl_five_herbie_preprocess_field(&$variables) {
         }
         break;
       case 'b_card_headline':
+        $card_headline_link_url = '';
+        if ($variables['element']['#object']->get('b_card_headline_link')) {
+          $card_headline_link = $variables['element']['#object']->get('b_card_headline_link');
+
+          if ($card_headline_link->first()) {
+            $card_headline_link_item = $card_headline_link->first();
+            $card_headline_link_url = $card_headline_link_item->getUrl()->toString();
+          }
+        }
         foreach ($variables['items'] as $key => $item) {
           $variables['items'][$key]['card_data']['card_headline_link'] = $card_headline_link_url;
         }
