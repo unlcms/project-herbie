@@ -4,6 +4,7 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
+    - field.field.block_content.hero.b_hero_img_obj_pos
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
@@ -22,9 +23,15 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  b_hero_img_obj_pos:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   b_hero_overline:
     type: string_textfield
-    weight: 2
+    weight: 3
     region: content
     settings:
       size: 40
@@ -32,13 +39,13 @@ content:
     third_party_settings: {  }
   b_hero_size:
     type: options_select
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   b_hero_subhead:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 40
@@ -46,7 +53,7 @@ content:
     third_party_settings: {  }
   b_hero_title:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60

@@ -99,19 +99,19 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['data']['host'] = \Drupal::request()->getHost();
   }
 
-    // Make section Layout Builder Block Styles array available to each block in the layout.
-    // Values can be accessed in a Twig template with data.block_lbs, see unl_five_herbie_preprocess_block().
-    if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
-      $layout_builder_styles = $variables['elements']['#layout_builder_style'];
-      // Replace numeric keys with the value.
-      foreach($layout_builder_styles as $value) {
-        $block_layout_builder_styles[$value] = $value;
-      }
-    }
-    if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
-      $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
+  // Make section Layout Builder Block Styles array available to each block in the layout.
+  // Values can be accessed in a Twig template with data.block_lbs, see unl_five_herbie_preprocess_block().
+  if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
+    $layout_builder_styles = $variables['elements']['#layout_builder_style'];
+    // Replace numeric keys with the value.
+    foreach($layout_builder_styles as $value) {
+      $block_layout_builder_styles[$value] = $value;
     }
   }
+  if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
+    $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
+  }
+}
 
 
 /**
@@ -132,22 +132,16 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 
 
 /**
- * Implements template_preprocess_node__TYPE().
- * To make section style background avaialble in node/content type fields...
- * I was trying to make section backgrounds available in node fields for the person content type to change the icons' color depending on section background.
+ * Implements template_preprocess_node__TYPE() for the Person content type
  */
-// function unl_five_herbie_preprocess_node__person(&$variables) {
-//   if (isset($variables['node']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
-//     $layout_builder_styles = $variables['elements']['#layout_builder_style'];
-//     // Replace numeric keys with the value.
-//     foreach($layout_builder_styles as $value) {
-//       $block_layout_builder_styles[$value] = $value;
-//     }
-//   }
-//   if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
-//     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
-//   }
-// }
+function unl_five_herbie_preprocess_node__person(&$variables) {
+  $node = $variables["node"];
+
+  //Adds alt text for uploaded images
+  if (!$node->get('n_person_photo')->isEmpty() ) {
+  $node->n_person_photo->alt = "Avatar for " . $node->getTitle();
+  }
+}
 
 /**
  * Implements template_preprocess_field().
@@ -166,13 +160,35 @@ function unl_five_herbie_preprocess_field(&$variables) {
     switch ($field_name) {
 
       case 'b_photohero_links':
-          // Add needed classes to the <a> tag inside a Hero block.
-          foreach ($variables['items'] as $key => $item) {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
-          }
-          break;
+        // Add needed classes to the <a> tag inside a Hero block.
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
+        }
+        break;
     }
   }
+
+   /*
+   * Person Node Fields
+   */
+  // $person_node_fields = array('n_person_photo');
+
+  // if (in_array($field_name, $person_node_fields)) {
+
+
+  //   $person_element_object = $variables['element']['#object'];
+  //   $person_name = $person_element_object->label();
+
+  //   switch ($field_name) {
+
+  //     case 'n_person_photo':
+  //         foreach ($variables['items'] as $key => $item) {
+  //           $variables['items'][$key]['content']['#item']['attributes']['class'][] = 'test';
+  //         }
+  //         break;
+
+  //   }
+  // }
 
   /*
    * Call to action Block Fields
@@ -231,20 +247,20 @@ function unl_five_herbie_preprocess_field(&$variables) {
     }
   }
 
-   /*
+  /*
    * Timeline Block Fields
    */
   $timelineFields = array('b_timeline_style', 'b_timeline_item', );
 
   if (in_array($field_name, $timelineFields)) {
 
-  $timelineStyle = $variables['element']['#object']->get('b_timeline_style')->getValue();
+    $timelineStyle = $variables['element']['#object']->get('b_timeline_style')->getValue();
 
     switch ($field_name) {
       case 'b_timeline_item':
         foreach ($variables['items'] as $key => $item) {
           $variables['items'][$key]['timelineData']['timelineStyle'] = isset($timelineStyle[0]['value']) ? strval($timelineStyle[0]['value']) : '';
-                }
+        }
         break;
     }
   }
@@ -323,7 +339,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
           $button_style = $variables['element']['#object']->get('p_b_tandem_button_style')->getValue()[0]['value'];
 
           if ($button_style == 'dcf-btn-primary') {
-          $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
           }
           else if ($button_style == 'dcf-btn-secondary') {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-secondary';
@@ -413,12 +429,117 @@ function unl_five_herbie_preprocess_views_view_fields(&$variables) {
   }
 }
 
+function unl_five_herbie_preprocess_media(&$variables) {
+
+  $media = $variables['media'];
+  $referring_item = $media->_referringItem;
+
+  if ($referring_item) {
+    $parent_block = $referring_item->getEntity();
+    $bundle = $parent_block->bundle();
+
+    if ($bundle == 'hero') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_hero_image") {
+        $variables['attributes']['class'][] = "dcf-ratio dcf-ratio-16x9";
+      }
+    }
+
+    if ($bundle == 'photo_hero') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_photohero_image") {
+        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-ratio dcf-ratio-16x9 dcf-mb-0";
+      }
+    }
+
+  }
+}
+
 /**
  * Implements template_preprocess_responsive_image_formatter().
  */
 function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables) {
   // Pass field name to Twig as data- attribute.
   $variables['responsive_image']['#attributes']['data-field-name'] = $variables['item']->getFieldDefinition()->get('field_name');
+
+  $parent_entity = $variables['item']->getEntity();
+  $referring_item = $parent_entity->_referringItem;
+
+  if ($referring_item) {
+    $parent_block = $referring_item->getEntity();
+    $bundle = $parent_block->bundle();
+
+    if ($bundle == 'hero' || $bundle == 'photo_hero') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_hero_image" || $field_name == "b_photohero_image") {
+        $hero_image_classes = ['dcf-ratio-child', 'dcf-obj-fit-cover'];
+
+        if ($field_name == 'b_hero_image') {
+          $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
+        } else if ($field_name == 'b_photohero_image') {
+          array_push($hero_image_classes, "unlcms-slow-zoom-in");
+          $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
+        }
+
+        if ($object_position_field) {
+          if ($field_name == 'b_hero_image') {
+            $object_position_field_value = $parent_block->__get('b_hero_img_obj_pos')->getValue()[0]['value'];
+          } else if ($field_name == 'b_photohero_image') {
+            $object_position_field_value = $parent_block->__get('b_photohero_img_obj_pos')->getValue()[0]['value'];
+          }
+
+          switch ($object_position_field_value) {
+            case 'unlcms_hero_obj_pos_50_0':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-0");
+              break;
+            case 'unlcms_hero_obj_pos_50_20':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-20");
+              break;
+            case 'unlcms_hero_obj_pos_50_40':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-40");
+              break;
+            case 'unlcms_hero_obj_pos_50_60':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-60");
+              break;
+            case 'unlcms_hero_obj_pos_50_80':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-80");
+              break;
+            case 'unlcms_hero_obj_pos_50_100':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-50-100");
+              break;
+            case 'unlcms_hero_obj_pos_0_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-0-50");
+              break;
+            case 'unlcms_hero_obj_pos_20_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-20-50");
+              break;
+            case 'unlcms_hero_obj_pos_40_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-40-50");
+              break;
+            case 'unlcms_hero_obj_pos_60_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-60-50");
+              break;
+            case 'unlcms_hero_obj_pos_80_50':
+              array_push($hero_image_classes, "unlcms-hero-obj-pos-80-50");
+              break;
+            case 'unlcms_hero_obj_pos_100_50':
+              array_push($hero_image_classes, "unlcms_hero_obj_pos_100_50");
+              break;
+          }
+        }
+
+        foreach ($hero_image_classes as $class) {
+          $variables['responsive_image']['#attributes']['class'][] = $class;
+        }
+      }
+    }
+  }
 }
 
 /**
