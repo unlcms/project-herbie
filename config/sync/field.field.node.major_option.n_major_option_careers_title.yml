@@ -1,0 +1,19 @@
+uuid: 2269cfcb-67a9-4e5d-ada0-657d4162ac5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_option_careers_title
+    - node.type.major_option
+id: node.major_option.n_major_option_careers_title
+field_name: n_major_option_careers_title
+entity_type: node
+bundle: major_option
+label: 'Careers Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,4 +4,4 @@ unl_icon.showcase:
     _controller: '\Drupal\unl_icon\UnlIconController::showcase'
     _title: 'Icon showcase'
   requirements:
-    _permission: 'access administration pages'
+    _role: 'authenticated'

@@ -3,7 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
+    - filter.format.archive
     - filter.format.block_body
+    - filter.format.html_code
     - filter.format.minimal
     - filter.format.simple
     - filter.format.standard
@@ -11,6 +13,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.news
@@ -29,6 +32,7 @@ dependencies:
     - entity_usage
     - external_entities
     - feeds
+    - field_css
     - field_ui
     - file
     - file_delete
@@ -43,6 +47,7 @@ dependencies:
     - path
     - rabbit_hole
     - redirect
+    - replicate_ui
     - scanner
     - system
     - taxonomy
@@ -64,6 +69,7 @@ permissions:
   - 'access any webform configuration'
   - 'access content overview'
   - 'access contextual links'
+  - 'access css fields'
   - 'access entity usage statistics'
   - 'access feed overview'
   - 'access files overview'
@@ -114,6 +120,7 @@ permissions:
   - 'create cta block content'
   - 'create file media'
   - 'create hero block content'
+  - 'create html_code block content'
   - 'create icon_links block content'
   - 'create image media'
   - 'create logo_cloud block content'
@@ -134,7 +141,9 @@ permissions:
   - 'create url aliases'
   - 'create users'
   - 'create webform'
+  - 'create webform content'
   - 'delete any accordion block content'
+  - 'delete any archive_page content'
   - 'delete any book content'
   - 'delete any builder_page content'
   - 'delete any card block content'
@@ -143,6 +152,7 @@ permissions:
   - 'delete any file'
   - 'delete any file media'
   - 'delete any hero block content'
+  - 'delete any html_code block content'
   - 'delete any icon_links block content'
   - 'delete any image media'
   - 'delete any logo_cloud block content'
@@ -160,10 +170,12 @@ permissions:
   - 'delete any webform'
   - 'delete any webform content'
   - 'delete any webform submission'
+  - 'delete archive_page revisions'
   - 'delete book revisions'
   - 'delete builder_page revisions'
   - 'delete files'
   - 'delete news revisions'
+  - 'delete own archive_page content'
   - 'delete own book content'
   - 'delete own builder_page content'
   - 'delete own file media'
@@ -180,6 +192,7 @@ permissions:
   - 'delete webform revisions'
   - 'delete webform submissions any node'
   - 'delete webform submissions own node'
+  - 'edit any archive_page content'
   - 'edit any book content'
   - 'edit any builder_page content'
   - 'edit any file media'
@@ -190,6 +203,7 @@ permissions:
   - 'edit any webform'
   - 'edit any webform content'
   - 'edit any webform submission'
+  - 'edit own archive_page content'
   - 'edit own book content'
   - 'edit own builder_page content'
   - 'edit own file media'
@@ -211,6 +225,8 @@ permissions:
   - 'perform search and replace'
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'replicate entities'
+  - 'revert archive_page revisions'
   - 'revert book revisions'
   - 'revert builder_page revisions'
   - 'revert news revisions'
@@ -225,6 +241,7 @@ permissions:
   - 'update any content block content'
   - 'update any cta block content'
   - 'update any hero block content'
+  - 'update any html_code block content'
   - 'update any icon_links block content'
   - 'update any logo_cloud block content'
   - 'update any node_include block content'
@@ -239,13 +256,16 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition unpublish'
+  - 'use text format archive'
   - 'use text format block_body'
+  - 'use text format html_code'
   - 'use text format minimal'
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
   - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view archive_page revisions'
   - 'view book revisions'
   - 'view builder_page revisions'
   - 'view latest version'

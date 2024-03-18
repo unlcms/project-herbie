@@ -66,8 +66,10 @@ module:
   filter: 0
   google_analytics: 0
   heading: 0
+  herbie_archive_page: 0
   herbie_book: 0
   herbie_builder_page: 0
+  herbie_config: 0
   herbie_entity_share: 0
   herbie_major: 0
   herbie_media_types: 0
@@ -119,6 +121,8 @@ module:
   queue_ui: 0
   rabbit_hole: 0
   redirect: 0
+  replicate: 0
+  replicate_ui: 0
   responsive_image: 0
   rh_media: 0
   scanner: 0
@@ -136,6 +140,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   twig_ui: 0
+  unl_archive_page_import: 0
   unl_blocks: 0
   unl_breadcrumbs: 0
   unl_cas: 0
