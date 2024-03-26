@@ -4,21 +4,18 @@ dependencies:
   module:
     - block_content
     - options
-id: block_content.b_tandem_style
-field_name: b_tandem_style
+id: block_content.b_tandem_image_position
+field_name: b_tandem_image_position
 entity_type: block_content
 type: list_string
 settings:
   allowed_values:
     -
-      value: '1'
-      label: Fade
+      value: left
+      label: Left
     -
-      value: '2'
-      label: Stack
-    -
-      value: '3'
-      label: Basic
+      value: right
+      label: Right
   allowed_values_function: ''
 module: options
 locked: false

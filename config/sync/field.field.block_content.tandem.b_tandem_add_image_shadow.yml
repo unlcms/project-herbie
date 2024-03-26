@@ -1,0 +1,23 @@
+uuid: a89b50be-ac20-4a5b-8339-598855945b04
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_add_image_shadow
+  module:
+    - options
+id: block_content.tandem.b_tandem_add_image_shadow
+field_name: b_tandem_add_image_shadow
+entity_type: block_content
+bundle: tandem
+label: 'Add Image Shadow?'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'yes'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -17,6 +17,9 @@ settings:
     -
       value: '2'
       label: Stack
+    -
+      value: '3'
+      label: Basic
   allowed_values_function: ''
 module: options
 locked: false
