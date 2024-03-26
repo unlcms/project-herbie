@@ -5,13 +5,17 @@ dependencies:
   config:
     - block_content.type.tandem
     - field.field.block_content.tandem.b_tandem_add_buttons_or_links
+    - field.field.block_content.tandem.b_tandem_add_image_shadow
     - field.field.block_content.tandem.b_tandem_body
     - field.field.block_content.tandem.b_tandem_buttons
     - field.field.block_content.tandem.b_tandem_fade
     - field.field.block_content.tandem.b_tandem_heading
     - field.field.block_content.tandem.b_tandem_image
+    - field.field.block_content.tandem.b_tandem_image_position
     - field.field.block_content.tandem.b_tandem_links
     - field.field.block_content.tandem.b_tandem_overline
+    - field.field.block_content.tandem.b_tandem_shadow_position
+    - field.field.block_content.tandem.b_tandem_shadow_style
     - field.field.block_content.tandem.b_tandem_stack
     - field.field.block_content.tandem.b_tandem_style
     - field.field.block_content.tandem.b_tandem_subhead
@@ -31,14 +35,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 9
+    region: content
+  b_tandem_add_image_shadow:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
     region: content
   b_tandem_body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   b_tandem_buttons:
     type: entity_reference_revisions_entity_view
@@ -47,21 +58,21 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   b_tandem_fade:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   b_tandem_heading:
     type: heading
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   b_tandem_image:
     type: entity_reference_entity_view
@@ -70,7 +81,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 10
+    region: content
+  b_tandem_image_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
     region: content
   b_tandem_links:
     type: link
@@ -82,7 +100,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   b_tandem_overline:
     type: string
@@ -92,12 +110,26 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  b_tandem_shadow_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  b_tandem_shadow_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
   b_tandem_stack:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   b_tandem_style:
     type: list_key
@@ -112,6 +144,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
 hidden: {  }
