@@ -1,0 +1,21 @@
+uuid: 5c49a0ab-5ffb-4b88-8835-2a06648c8d40
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_option_grad_schools_list
+field_name: n_major_option_grad_schools_list
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

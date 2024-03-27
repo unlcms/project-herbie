@@ -1,2 +1,4 @@
 bundle: herbie
-required: true
+required:
+  - unl_five.settings
+  - unl_five_herbie.settings

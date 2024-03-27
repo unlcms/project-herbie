@@ -1,11 +1,7 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - webform
+dependencies: {  }
 name: 'Webform (Default) - DO NOT EDIT'
 format: webform_default
 weight: 100
-roles:
-  - authenticated
 filters: {  }

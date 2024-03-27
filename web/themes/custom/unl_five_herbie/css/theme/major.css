@@ -208,4 +208,6 @@
 	}
 
 /*Contact Area link overrides*/
-#contact .dcf-txt-sm a {color:#fefdfa}
+.unl-cream, a.unl-cream, a.unl-cream:active, a.unl-cream:hover, a.unl-cream:link, a.unl-cream:visited {
+	color: #FEFDFA !important;
+}

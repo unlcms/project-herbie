@@ -39,15 +39,13 @@
   {% block content %}
   {# @todo check if flagship site. if so, then swap out department for organization and remove parent #}
     <div class="content">
-    <address itemprop='department' itemscope itemtype='http://schema.org/Organization'>
-        <span class="visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ site_name }}</span>
-        <span class="visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
-        <span class="visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
-          <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
-        </span>
-        <dl>
-        {{ content }}
-        </dl>
+      <address itemscope itemtype='http://schema.org/Organization'>
+          <span class="visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ site_name }}</span>
+          <span class="visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
+          <span class="visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
+            <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
+          </span>
+          {{ content }}
       </address>
     </div>
   {% endblock %}

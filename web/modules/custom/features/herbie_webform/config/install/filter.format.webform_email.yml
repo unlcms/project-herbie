@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.narrow
+    - core.entity_view_mode.media.wide
+  module:
+    - dcf_ckeditor5
+    - linkit
+    - media
+name: 'Webform Email'
+format: webform_email
+weight: 0
+filters:
+  filter_dcfckeditor5:
+    id: filter_dcfckeditor5
+    provider: dcf_ckeditor5
+    status: true
+    weight: 0
+    settings:
+      dcftable: '1'
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p class="text-align-left text-align-center"> <h2 class="text-align-left text-align-center"> <h3 class="text-align-left text-align-center"> <h4 class="text-align-left text-align-center"> <h5 class="text-align-left text-align-center"> <h6 class="text-align-left text-align-center"> <strong> <em> <s> <sub> <sup> <blockquote> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        default: default
+        narrow: narrow
+        wide: wide
+      allowed_media_types:
+        file: file
+        image: image
+        remote_video: remote_video
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }

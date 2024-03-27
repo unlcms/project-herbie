@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - filter.format.html_code
+    - filter.format.webform_email
   module:
     - asset_injector
     - block_content_permissions
@@ -49,4 +50,5 @@ permissions:
   - 'replicate entities'
   - 'update any html_code block content'
   - 'use text format html_code'
+  - 'use text format webform_email'
   - 'view the administration theme'
