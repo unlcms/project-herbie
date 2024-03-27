@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.hero
+    - field.field.media.image.field_media_image
+    - field.field.media.image.s_m_file_size
+    - field.field.media.image.s_m_height
+    - field.field.media.image.s_m_mime_type
+    - field.field.media.image.s_m_tags
+    - field.field.media.image.s_m_width
+    - media.type.image
+    - responsive_image.styles.hero_ris
+  module:
+    - dcf_lazyload
+    - image_class
+    - layout_builder
+    - svg_image_responsive
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.hero
+targetEntityType: media
+bundle: image
+mode: hero
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: hero_ris
+      image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: ''
+      dcf_lazyload:
+        dcf_lazyload_enable: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  s_m_file_size: true
+  s_m_height: true
+  s_m_mime_type: true
+  s_m_tags: true
+  s_m_width: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,19 @@
+uuid: 92dbd633-5e04-4044-b9ca-4c0baae957c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.n_major_option_program_features
+field_name: n_major_option_program_features
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -42,8 +42,9 @@ dependencies:
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
   - 'svg_image:svg_image'
+  - 'svg_image:svg_image_responsive'
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.1.0
+version: 2.1.1
 package: Herbie

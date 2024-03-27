@@ -36,5 +36,6 @@
  * @see template_preprocess_field()
  */
 #}
-
-<span {{ items[0].attributes }} itemprop="addressLocality">{{ items[0].content }}</span>, 
+{% for item in items %}
+  <span itemprop="addressLocality">{{ item.content }}</span>,
+{% endfor %}

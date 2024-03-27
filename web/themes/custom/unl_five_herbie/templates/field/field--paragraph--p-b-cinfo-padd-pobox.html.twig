@@ -37,4 +37,6 @@
  */
 #}
 
-<div {{ items[0].attributes }}>PO Box <span itemprop="postOfficeBoxNumber">{{ items[0].content }}</span></div>
+{% for item in items %}
+  <span itemprop="postOfficeBoxNumber"> {{ item.content }} </span>
+{% endfor %}
