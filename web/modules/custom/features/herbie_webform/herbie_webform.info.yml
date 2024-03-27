@@ -3,14 +3,18 @@ description: 'Config related to the webform module.'
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
+  - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'drupal:ckeditor5'
   - 'drupal:editor'
   - 'drupal:field'
   - 'drupal:filter'
+  - 'drupal:media'
   - 'drupal:node'
   - 'drupal:text'
+  - 'herbie_media_types:herbie_media_types'
   - 'herbie_roles:herbie_roles'
+  - 'linkit:linkit'
   - 'pathauto:pathauto'
   - 'webform:webform'
-version: 1.2.0
+version: 1.2.2
 package: Herbie
