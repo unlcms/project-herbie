@@ -37,18 +37,30 @@
  */
 #}
 
-<div{{ attributes }}>
-{% for item in items %}
-  <dt class="dcf-sr-only">Email</dt>
-    <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-2 dcf-mb-2">
-      <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
-        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
-          <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 0 1 .062-.309l9.625 7.7a.504.504 0 0 0 .625 0l9.625-7.7c.033.099.063.2.063.309v11z"/><path fill="none" d="M0 0h24v24H0z"/>
-        </svg>
-      </div>
-      <a {{ items[0].attributes }} href="mailto:{{ items[0].content }}" itemprop="email">
-        <span class="dcf-txt-nowrap">{{item.content}}</span>
-      </a>
-    </dd>
-{% endfor %}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% for item in items %}
+    <dl>
+      <dt class="dcf-sr-only">Email</dt>
+      <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-2 dcf-mb-2">
+        <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+            <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 0 1 .062-.309l9.625 7.7a.504.504 0 0 0 .625 0l9.625-7.7c.033.099.063.2.063.309v11z"/><path fill="none" d="M0 0h24v24H0z"/>
+          </svg>
+        </div>
+        <a {{ items[0].attributes }} href="mailto:{{ items[0].content }}" itemprop="email">
+          <span class="dcf-txt-nowrap">{{item.content}}</span>
+        </a>
+      </dd>
+    </dl>
+  {% endfor %}
 </div>

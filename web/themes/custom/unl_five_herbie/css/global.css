@@ -338,6 +338,11 @@ div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-da
 }
 /* #endregion */
 
+/* Fixes some Drupal contexual links(for example, menu links when editing a section) from having a cream color */
+.contextual-region .contextual .contextual-links a {
+  color: #333 !important;
+}
+
 /* vertical object-position for hero images */
 .unlcms-hero-obj-pos-50-0 {
   object-position: 50% 0%;
