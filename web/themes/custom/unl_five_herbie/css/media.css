@@ -66,6 +66,20 @@
 }
 
 /* If media element is wrapper in figure, then move margin-bottom to figure */
+.figure--embedded-media div.media-entity.view-mode--narrow {
+  width: 100%;
+}
+
+.unl .figure--embedded-media.align-left {
+  margin-right: 1em;
+  margin-bottom: unset;
+}
+
+.unl .figure--embedded-media.align-right {
+  margin-left: 1em;
+  margin-bottom: unset;
+}
+
 .figure--embedded-media {
   margin-bottom: 1em;
 }

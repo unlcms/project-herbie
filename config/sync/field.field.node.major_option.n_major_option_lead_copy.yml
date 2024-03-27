@@ -1,0 +1,19 @@
+uuid: c398a8ba-a230-4c43-95d3-cb2dc4e855d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_major_option_lead_copy
+    - node.type.major_option
+id: node.major_option.n_major_option_lead_copy
+field_name: n_major_option_lead_copy
+entity_type: node
+bundle: major_option
+label: 'Lead Copy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

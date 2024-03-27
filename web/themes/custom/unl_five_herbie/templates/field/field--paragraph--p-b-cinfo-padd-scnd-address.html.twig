@@ -37,4 +37,6 @@
  */
 #}
 
-<span {{ items[0].attributes }} itemprop="addressLocality">{{ items[0].content }}</span>, 
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}

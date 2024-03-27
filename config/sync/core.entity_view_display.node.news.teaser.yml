@@ -5,11 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.n_news_byline
     - field.field.node.news.n_news_canonical_url
     - field.field.node.news.n_news_foreign_key
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
+    - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
     - node.type.news
   module:
@@ -21,6 +23,11 @@ targetEntityType: node
 bundle: news
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -37,8 +44,10 @@ content:
     region: content
 hidden:
   body: true
+  n_news_byline: true
   n_news_canonical_url: true
   n_news_foreign_key: true
   n_news_image_credit: true
   n_news_image_cutline: true
+  n_news_related_links: true
   n_person_reference: true

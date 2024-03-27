@@ -1,0 +1,15 @@
+uuid: 3e809fbc-71e8-458b-bdc4-fcf23a0992b2
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_898x505
+label: '16:9 (898x505)'
+effects:
+  c964897a-9302-4abc-9547-43fd06b2aac8:
+    uuid: c964897a-9302-4abc-9547-43fd06b2aac8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 898
+      height: 505
+      anchor: center-center

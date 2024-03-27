@@ -36,5 +36,7 @@
  * @see template_preprocess_field()
  */
 #}
+{% for item in items %}
+  <span itemprop="postalCode">{{ item.content }}</span>
+{% endfor %}
 
-<span {{ items[0].attributes }} itemprop="postalCode">{{ items[0].content }}</span>

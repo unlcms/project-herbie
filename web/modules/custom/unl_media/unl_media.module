@@ -95,6 +95,8 @@ function unl_media_preprocess_filter_caption(&$variables) {
   //   thus the class added will be 'view-mode--'.
   //
   // Convert the markup to a DOM element.
+  //would need to allow the data type and other attributes
+  // in ckeditor5 tags to be able to get view mode
   $element_string = $variables['node']->__toString();
   $dom = new DOMDocument();
   @$dom->loadHTML($element_string);

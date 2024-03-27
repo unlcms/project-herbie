@@ -1,0 +1,53 @@
+uuid: 75e3ccd7-373f-44c1-9f94-65b41ba9773c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.major_option.n_major_notable_courses
+    - field.field.node.major_option.n_major_option_careers_list
+    - field.field.node.major_option.n_major_option_careers_title
+    - field.field.node.major_option.n_major_option_courses_intro
+    - field.field.node.major_option.n_major_option_features_image
+    - field.field.node.major_option.n_major_option_grad_school_title
+    - field.field.node.major_option.n_major_option_grad_schools_list
+    - field.field.node.major_option.n_major_option_huskers_do_intro
+    - field.field.node.major_option.n_major_option_internships_list
+    - field.field.node.major_option.n_major_option_internships_title
+    - field.field.node.major_option.n_major_option_lead_copy
+    - field.field.node.major_option.n_major_option_parent_major
+    - field.field.node.major_option.n_major_option_program_features
+    - field.field.node.major_option.s_n_hero
+    - node.type.major_option
+  module:
+    - user
+id: node.major_option.teaser
+targetEntityType: node
+bundle: major_option
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  n_major_notable_courses: true
+  n_major_option_careers_list: true
+  n_major_option_careers_title: true
+  n_major_option_courses_intro: true
+  n_major_option_features_image: true
+  n_major_option_grad_school_title: true
+  n_major_option_grad_schools_list: true
+  n_major_option_huskers_do_intro: true
+  n_major_option_internships_list: true
+  n_major_option_internships_title: true
+  n_major_option_lead_copy: true
+  n_major_option_parent_major: true
+  n_major_option_program_features: true
+  s_n_hero: true

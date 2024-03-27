@@ -37,14 +37,28 @@
  */
 #}
 
-<div{{ attributes }}>
-  <dt class="dcf-sr-only">Fax</dt>
-    <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-1 dcf-mb-2">
-      <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
-        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
-          <path d="M13 2h4.5v1H13zM13 4h7v1h-7z"/><path d="M22.5 6H22V2.5a.5.5 0 0 0-.188-.391l-2.5-2A.502.502 0 0 0 19 0h-7.5a.5.5 0 0 0-.5.5V6h-1v-.5C10 4.121 8.878 3 7.5 3H5V.5a.5.5 0 0 0-1 0v2.551C2.86 3.283 2 4.292 2 5.5V6h-.5C.673 6 0 6.673 0 7.5v13c0 .827.673 1.5 1.5 1.5h.551c.232 1.14 1.242 2 2.449 2h3c1.207 0 2.217-.86 2.449-2H22.5c.827 0 1.5-.673 1.5-1.5v-13c0-.827-.673-1.5-1.5-1.5zM1 20.5v-13a.5.5 0 0 1 .5-.5H2v14h-.5a.5.5 0 0 1-.5-.5zm8 1c0 .827-.673 1.5-1.5 1.5h-3c-.827 0-1.5-.673-1.5-1.5v-16C3 4.673 3.673 4 4.5 4h3C8.327 4 9 4.673 9 5.5v16zM12 1h6.825L21 2.74V6h-9V1zm11 19.5a.5.5 0 0 1-.5.5H10V7h12.5a.5.5 0 0 1 .5.5v13z"/><path d="M19.5 8h-6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5zm-.5 2h-5V9h5v1zM13 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM19 15h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1z"/><path fill="none" d="M0 0h24v24H0z"/>
-        </svg>
-      </div>
-      <span class="dcf-txt-nowrap" itemprop="faxNumber">{{ items[0].content }}</span>
-   </dd>
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% for item in items %}
+    <dl>
+      <dt class="dcf-sr-only">Fax</dt>
+      <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-1 dcf-mb-2">
+        <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+            <path d="M13 2h4.5v1H13zM13 4h7v1h-7z"/><path d="M22.5 6H22V2.5a.5.5 0 0 0-.188-.391l-2.5-2A.502.502 0 0 0 19 0h-7.5a.5.5 0 0 0-.5.5V6h-1v-.5C10 4.121 8.878 3 7.5 3H5V.5a.5.5 0 0 0-1 0v2.551C2.86 3.283 2 4.292 2 5.5V6h-.5C.673 6 0 6.673 0 7.5v13c0 .827.673 1.5 1.5 1.5h.551c.232 1.14 1.242 2 2.449 2h3c1.207 0 2.217-.86 2.449-2H22.5c.827 0 1.5-.673 1.5-1.5v-13c0-.827-.673-1.5-1.5-1.5zM1 20.5v-13a.5.5 0 0 1 .5-.5H2v14h-.5a.5.5 0 0 1-.5-.5zm8 1c0 .827-.673 1.5-1.5 1.5h-3c-.827 0-1.5-.673-1.5-1.5v-16C3 4.673 3.673 4 4.5 4h3C8.327 4 9 4.673 9 5.5v16zM12 1h6.825L21 2.74V6h-9V1zm11 19.5a.5.5 0 0 1-.5.5H10V7h12.5a.5.5 0 0 1 .5.5v13z"/><path d="M19.5 8h-6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5zm-.5 2h-5V9h5v1zM13 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM19 15h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1z"/><path fill="none" d="M0 0h24v24H0z"/>
+          </svg>
+        </div>
+        <span class="dcf-txt-nowrap" itemprop="faxNumber">{{ item.content }}</span>
+     </dd>
+    </dl>
+  {% endfor %}
 </div>
