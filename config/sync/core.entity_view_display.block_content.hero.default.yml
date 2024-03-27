@@ -13,7 +13,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: L7BvHdUygi_6iGD7fBH0oUIrY428nU3apsmHDftoXuU
+  default_config_hash: ohc_5Ak4jZ5mZAF-n-zBjp6PW9XMOIugeVx7aY2IHHE
 id: block_content.hero.default
 targetEntityType: block_content
 bundle: hero
@@ -23,7 +23,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: full__widescreen
+      view_mode: hero
       link: false
     third_party_settings: {  }
     weight: 0

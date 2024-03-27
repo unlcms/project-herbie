@@ -1,0 +1,35 @@
+uuid: 21f9b652-578f-4912-98ea-a0c04010548c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.archive_page.archive_page_body
+    - node.type.archive_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: Uimh9DMs_BGaasHnExxbwtru0EEM2S29aqv4fRwKCaE
+id: node.archive_page.default
+targetEntityType: node
+bundle: archive_page
+mode: default
+content:
+  archive_page_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

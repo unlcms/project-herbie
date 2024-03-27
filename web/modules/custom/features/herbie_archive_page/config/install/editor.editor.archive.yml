@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.archive
+  module:
+    - ckeditor5
+format: archive
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - sourceEditing
+      - '|'
+      - bold
+      - italic
+      - strikethrough
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - blockQuote
+      - insertTable
+      - '|'
+      - heading
+      - '|'
+      - superscript
+      - subscript
+      - specialCharacters
+      - '|'
+      - horizontalLine
+      - '|'
+      - style
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - left
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Extra small'
+          element: '<p class="dcf-txt-xs">'
+        -
+          label: Small
+          element: '<p class="dcf-txt-sm">'
+        -
+          label: Large
+          element: '<p class="dcf-txt-lg">'
+        -
+          label: 'Primary Button'
+          element: '<a class="dcf-btn dcf-btn-primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-secondary">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-tertiary">'
+        -
+          label: 'Inverse Primary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-primary">'
+        -
+          label: 'Inverse Secondary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-secondary">'
+        -
+          label: 'Inverse Tertiary Button'
+          element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: standard
+    media_media:
+      allow_view_mode_override: true
+image_upload: {  }
