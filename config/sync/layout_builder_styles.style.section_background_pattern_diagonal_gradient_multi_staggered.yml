@@ -1,0 +1,14 @@
+uuid: 6d0cf94c-dfb9-4791-9bbb-cb788dce22bd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Tjk4vVFBO64NYQAj8Prg-tVQ5AeQhm4uQ1lHzfODEhU
+id: section_background_pattern_diagonal_gradient_multi_staggered
+label: 'Diagonal Gradient – Multi Staggered'
+classes: "unl-bg-diagonal-gradients\r\nunl-bg-soft-light"
+type: section
+group: background_pattern
+weight: 0
+block_restrictions: {  }
+layout_restrictions: {  }

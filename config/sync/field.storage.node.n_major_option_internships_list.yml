@@ -1,0 +1,21 @@
+uuid: 0eb6ee60-fcf5-4035-b744-089dd82a0740
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_option_internships_list
+field_name: n_major_option_internships_list
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -2,35 +2,48 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
-use \Drupal\field\Entity\FieldConfig;
-use \Drupal\Core\Form\FormHelper;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Form\FormHelper;
 
 /**
  * Implements hook_form_alter().
  */
-function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
-{
+function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $block_type = '';
+  if (isset($form['settings']['block_form']['#block'])) {
+    $block_type = $form['settings']['block_form']['#block']->bundle();
+  }
+
+  if ($block_type == 'card') {
+    // Remove background settings - None - empty option.
+    unset($form['layout_builder_style_background']['#empty_option']);
+  }
 
   switch ($form_id) {
     case 'layout_builder_add_block':
-    case 'layout_builder_update_block':
-    case 'layout_builder_edit_block':
-
-      $block_type = '';
-      if (isset($form['settings']['block_form']['#block'])) {
-        $block_type = $form['settings']['block_form']['#block']->bundle();
-      }
-      // Card.
       if ($block_type == 'card') {
-        // Remove background settings - None - empty option.
-        unset($form['layout_builder_style_background']['#empty_option']);
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
+
+        // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
       }
+      break;
+    case 'layout_builder_update_block':
+    case 'layout_builder_edit_block':
+      if ($block_type == 'card') {
+        // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
+      }
+
       if ($block_type == 'tandem') {
-        //Create a callback function to '#process' so we can be able to alter form elements
-        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
-      };
+        // Assign a callback to alter form elements.
+        $form['settings']['block_form']['#process'][] = '_edit_tandem_block_form_elements';
+      }
 
        // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
@@ -51,7 +64,6 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
       break;
-
     case 'fragment_region_item_layout_builder_form':
     case 'fragment_region_item_after_content_layout_builder_form':
     case 'node_page_layout_builder_form':
@@ -61,9 +73,9 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
 }
 
 /**
- * edit_tandem_block_form_elements process callback function.
+ * Callback function.
  */
-function edit_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
+function _edit_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
   if (isset($element['b_tandem_stack'])) {
     $element['b_tandem_stack']['widget']['#states'] =  array('visible' => array(
       'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2')
@@ -84,7 +96,15 @@ function edit_tandem_block_form_elements(array $element, FormStateInterface $for
   return $element;
 }
 
-
+/**
+ * Callback function.
+ */
+function _edit_card_block_form_elements(array $element, FormStateInterface $form_state) {
+  $element['b_card_cta']['widget']['#states'] =  array('visible' => array(
+    'input[id="edit-settings-block-form-b-card-headline-link-0-uri"]' => array('value' => '')
+  ));
+  return $element;
+}
 
 /**
  * Add an element to delineate the layout builder styles form section.
@@ -114,3 +134,30 @@ function _unl_layout_builder_custom_add_lbs_heading(&$form) {
   }
 }
 
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function unl_layout_builder_custom_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  // Only allow the replicate menu item if content type is a builder_page.
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $bundle = $node->bundle();
+    if ($bundle !== 'builder_page' && isset($data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate'])) {
+      $data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function unl_layout_builder_custom_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  // Remove the replicate option under operations in admin/content if content type is not a builder_page.
+  if (isset($operations['replicate']) && $entity instanceof NodeInterface) {
+    $node_type = $entity->getType();
+    if ($node_type !== 'builder_page') {
+      unset($operations['replicate']);
+    }
+  }
+}

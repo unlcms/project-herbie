@@ -4,6 +4,7 @@ dependencies:
   config:
     - block_content.type.hero
     - field.field.block_content.hero.b_hero_image
+    - field.field.block_content.hero.b_hero_img_obj_pos
     - field.field.block_content.hero.b_hero_overline
     - field.field.block_content.hero.b_hero_size
     - field.field.block_content.hero.b_hero_subhead
@@ -19,10 +20,17 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: full__widescreen
+      view_mode: hero
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  b_hero_img_obj_pos:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   b_hero_overline:
     type: string
@@ -30,14 +38,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   b_hero_size:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   b_hero_subhead:
     type: string
@@ -45,7 +53,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   b_hero_title:
     type: string
@@ -53,6 +61,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden: {  }
