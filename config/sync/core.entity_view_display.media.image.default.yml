@@ -11,7 +11,7 @@ dependencies:
     - field.field.media.image.s_m_width
     - media.type.image
   module:
-    - image
+    - svg_image
 _core:
   default_config_hash: K_3BWtYOHRwzf56LnqcZgduecDmBjet77Iq6J5x8lw4
 id: media.image.default
@@ -27,6 +27,10 @@ content:
       image_style: ''
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 0
     region: content
