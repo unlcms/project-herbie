@@ -204,6 +204,7 @@
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
+        "drupal/views_data_export": "^1.4",
         "drupal/webform": "^6.2@beta",
         "drush/drush": "^11.6",
         "dxg/icon-library": "^1.0",
