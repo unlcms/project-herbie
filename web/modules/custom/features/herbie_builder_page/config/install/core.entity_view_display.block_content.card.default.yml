@@ -6,6 +6,7 @@ dependencies:
     - field.field.block_content.card.b_card_body
     - field.field.block_content.card.b_card_cta
     - field.field.block_content.card.b_card_headline
+    - field.field.block_content.card.b_card_headline_link
     - field.field.block_content.card.b_card_image
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
@@ -22,7 +23,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   b_card_cta:
     type: link
@@ -34,13 +35,25 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   b_card_headline:
     type: string
     label: hidden
     settings:
       link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  b_card_headline_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 1
     region: content
@@ -51,7 +64,7 @@ content:
       view_mode: medium__fullscreen
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   b_card_overline:
     type: string
@@ -59,7 +72,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   b_card_subhead:
     type: string
@@ -67,6 +80,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
 hidden: {  }

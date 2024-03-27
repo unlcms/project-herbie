@@ -337,3 +337,95 @@ div.layout.unl-bg-dark-gray div.unlcms-cta-block:not(.unl-bg-scarlet, .unl-bg-da
   margin-bottom: 0em;
 }
 /* #endregion */
+
+/* Fixes some Drupal contexual links(for example, menu links when editing a section) from having a cream color */
+.contextual-region .contextual .contextual-links a {
+  color: #333 !important;
+}
+
+/* vertical object-position for hero images */
+.unlcms-hero-obj-pos-50-0 {
+  object-position: 50% 0%;
+}
+
+.unlcms-hero-obj-pos-50-20 {
+  object-position: 50% 20%;
+}
+
+.unlcms-hero-obj-pos-50-40 {
+  object-position: 50% 40%;
+}
+
+.unlcms-hero-obj-pos-50-60 {
+  object-position: 50% 60%;
+}
+
+.unlcms-hero-obj-pos-50-80 {
+  object-position: 50% 80%;
+}
+
+.unlcms-hero-obj-pos-50-100 {
+  object-position: 50% 100%;
+}
+
+/* horizontal object-position for hero images */
+.unlcms-hero-obj-pos-0-50 {
+  object-position: 0% 50%;
+}
+
+.unlcms-hero-obj-pos-20-50 {
+  object-position: 20% 50%;
+}
+
+.unlcms-hero-obj-pos-40-50 {
+  object-position: 40% 50%;
+}
+
+.unlcms-hero-obj-pos-60-50 {
+  object-position: 60% 50%;
+}
+
+.unlcms-hero-obj-pos-80-50 {
+  object-position: 80% 50%;
+}
+
+.unlcms-hero-obj-pos-100-50 {
+  object-position: 100% 50%;
+}
+
+/*
+This maybe needed later
+.unlcms-hero-obj-position-50-percent {
+  object-position: 50% 50%;
+} */
+
+
+
+/* For Majors only - vertical object-position for hero images */
+.hero-obj-position-0-percent {
+  object-position: 50% 0%;
+}
+
+.hero-obj-position-20-percent {
+  object-position: 50% 20%;
+}
+
+.hero-obj-position-40-percent {
+  object-position: 50% 40%;
+}
+
+.hero-obj-position-60-percent {
+  object-position: 50% 60%;
+}
+
+.hero-obj-position-80-percent {
+  object-position: 50% 80%;
+}
+
+.hero-obj-position-100-percent {
+  object-position: 50% 100%;
+}
+
+.hero-obj-position-50-percent {
+  object-position: 50% 50%;
+}

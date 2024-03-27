@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_background_pattern_diagonal_gradient_multi_staggered
+label: 'Diagonal Gradient – Multi Staggered'
+classes: "unl-bg-diagonal-gradients\r\nunl-bg-soft-light"
+type: section
+group: background_pattern
+weight: 0
+block_restrictions: {  }
+layout_restrictions: {  }
