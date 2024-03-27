@@ -1,0 +1,19 @@
+uuid: f3664026-5a2c-4d32-9b49-114d0d8d11c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.n_news_byline
+    - node.type.news
+id: node.news.n_news_byline
+field_name: n_news_byline
+entity_type: node
+bundle: news
+label: Byline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

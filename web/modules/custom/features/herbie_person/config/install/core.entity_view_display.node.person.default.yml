@@ -25,7 +25,7 @@ dependencies:
     - dcf_lazyload
     - image_class
     - link
-    - responsive_image
+    - svg_image_responsive
     - telephone
     - text
     - user
@@ -34,6 +34,11 @@ targetEntityType: node
 bundle: person
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -89,6 +94,10 @@ content:
     settings:
       responsive_image_style: large__square
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''

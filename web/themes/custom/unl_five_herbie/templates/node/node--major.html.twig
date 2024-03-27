@@ -163,6 +163,7 @@
 						{{ (content.n_major_notable_courses_intro) }}
 					</div>
           {{ (content.n_major_notable_courses) }}
+          {% if node.n_major_4year_link|length > 0 %}
           {% if node.n_major_4year_link|length == 1 %}
           <div class="dcf-mt-6">
             {{ (content.n_major_4year_link) }}
@@ -180,7 +181,7 @@
                 {% endfor %}
               </div>
           </div>
-          
+          {% endif %}
           {% endif %}
         </div>
       </div>

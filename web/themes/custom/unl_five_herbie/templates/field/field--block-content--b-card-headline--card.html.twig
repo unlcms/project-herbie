@@ -36,16 +36,18 @@
  * @see template_preprocess_field()
  */
 #}
+{{ attach_library('unl_five_herbie/card') }}
 
 {% set headline_attributes = create_attribute() %}
 {% set headline_attributes = headline_attributes.addClass('dcf-txt-h4') %}
 
 {% for item in items %}
-  {% set card_style = item.data.card_style %}
+  {% set headline_link = item.card_data.card_headline_link %}
 
-  {% if card_style == 'scarlet' %}
-    {% set headline_attributes = headline_attributes.addClass('unl-cream') %}
+  {% if headline_link %}
+    <h3 {{ headline_attributes }}> <a class="dcf-txt-decor-hover dcf-card-link" href="{{headline_link}}"> {{ item.content }} </a> </h3>
+  {% else %}
+    <h3 {{ headline_attributes }}> {{ item.content }} </h3>
   {% endif %}
 
-  <h3 {{ headline_attributes }}>{{ item.content }}</h3>
 {% endfor %}

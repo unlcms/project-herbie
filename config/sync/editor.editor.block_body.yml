@@ -18,6 +18,7 @@ settings:
       - strikethrough
       - '|'
       - link
+      - anchor
       - '|'
       - bulletedList
       - numberedList

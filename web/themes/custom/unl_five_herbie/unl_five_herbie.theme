@@ -8,6 +8,7 @@
 use Drupal\block\Entity\Block;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
+use Drupal\link\Plugin\Field\FieldType\LinkItem;
 
 /**
  * Implements hook_preprocess_html().
@@ -131,22 +132,16 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
 
 
 /**
- * Implements template_preprocess_node__TYPE().
- * To make section style background avaialble in node/content type fields...
- * I was trying to make section backgrounds available in node fields for the person content type to change the icons' color depending on section background.
+ * Implements template_preprocess_node__TYPE() for the Person content type
  */
-// function unl_five_herbie_preprocess_node__person(&$variables) {
-//   if (isset($variables['node']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
-//     $layout_builder_styles = $variables['elements']['#layout_builder_style'];
-//     // Replace numeric keys with the value.
-//     foreach($layout_builder_styles as $value) {
-//       $block_layout_builder_styles[$value] = $value;
-//     }
-//   }
-//   if (isset($block_layout_builder_styles) && !empty($block_layout_builder_styles)) {
-//     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
-//   }
-// }
+function unl_five_herbie_preprocess_node__person(&$variables) {
+  $node = $variables["node"];
+
+  //Adds alt text for uploaded images
+  if (!$node->get('n_person_photo')->isEmpty() ) {
+  $node->n_person_photo->alt = "Avatar for " . $node->getTitle();
+  }
+}
 
 /**
  * Implements template_preprocess_field().
@@ -172,6 +167,28 @@ function unl_five_herbie_preprocess_field(&$variables) {
         break;
     }
   }
+
+   /*
+   * Person Node Fields
+   */
+  // $person_node_fields = array('n_person_photo');
+
+  // if (in_array($field_name, $person_node_fields)) {
+
+
+  //   $person_element_object = $variables['element']['#object'];
+  //   $person_name = $person_element_object->label();
+
+  //   switch ($field_name) {
+
+  //     case 'n_person_photo':
+  //         foreach ($variables['items'] as $key => $item) {
+  //           $variables['items'][$key]['content']['#item']['attributes']['class'][] = 'test';
+  //         }
+  //         break;
+
+  //   }
+  // }
 
   /*
    * Call to action Block Fields
@@ -200,16 +217,31 @@ function unl_five_herbie_preprocess_field(&$variables) {
   $cardFields = array('b_card_image', 'b_card_cta', 'b_card_overline', 'b_card_subhead', 'b_card_headline');
 
   if (in_array($field_name, $cardFields)) {
-    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_card_cta':
+        $block_background = $variables['element']['#object']->__get('#block_lbs');
+
         foreach ($variables['items'] as $key => $item) {
           if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-inverse-primary';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
           }
           else {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-card-link dcf-btn dcf-btn-primary';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
           }
+        }
+        break;
+      case 'b_card_headline':
+        $card_headline_link_url = '';
+        if ($variables['element']['#object']->get('b_card_headline_link')) {
+          $card_headline_link = $variables['element']['#object']->get('b_card_headline_link');
+
+          if ($card_headline_link->first()) {
+            $card_headline_link_item = $card_headline_link->first();
+            $card_headline_link_url = $card_headline_link_item->getUrl()->toString();
+          }
+        }
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['card_data']['card_headline_link'] = $card_headline_link_url;
         }
         break;
     }
@@ -243,6 +275,23 @@ function unl_five_herbie_preprocess_field(&$variables) {
       case 'b_social_media_links_title':
         foreach ($variables['items'] as $key => $item) {
           $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-txt-h5 dcf-txt-center unl-cream dcf-mb-0';
+        }
+        break;
+    }
+  }
+
+  /*
+   * Oembed Block Fields
+   */
+  $fields = array('field_media_oembed_video');
+
+  if (in_array($field_name, $fields)) {
+    switch ($field_name) {
+      case 'field_media_oembed_video':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#attributes']['frameborder'] = null;
+          $variables['items'][$key]['content']['#attributes']['allowtransparency'] = null;
+
         }
         break;
     }
@@ -375,6 +424,50 @@ function unl_five_herbie_preprocess_layout(&$variables) {
             elseif (isset($variables['content'][$region_id][$block_id]['content']['#object'])) {
               $variables['content'][$region_id][$block_id]['content']['#object']->__set('#section_lbs', $section_layout_builder_styles);
             }
+          }
+        }
+      }
+    }
+  }
+
+  $background_patterns = array(
+    "section_background_pattern_campus" => array(
+      "unl-bg-scarlet" => "unlcms-bg-campus-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-campus-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-campus-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-campus-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-campus-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-campus-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-campus-lightest-gray"
+    ),
+    "section_background_pattern_landmarks" => array(
+      "unl-bg-scarlet" => "unlcms-bg-landmarks-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-landmarks-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-landmarks-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-landmarks-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-landmarks-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-landmarks-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-landmarks-lightest-gray"
+    ),
+    "section_background_pattern_majors" => array(
+      "unl-bg-scarlet" => "unlcms-bg-majors-scarlet",
+      "unl-bg-dark-gray" => "unlcms-bg-majors-dark-gray",
+      "unl-bg-darker-gray" => "unlcms-bg-majors-darker-gray",
+      "unl-bg-darkest-gray" => "unlcms-bg-majors-darkest-gray",
+      "unl-bg-light-gray" => "unlcms-bg-majors-light-gray",
+      "unl-bg-lighter-gray" => "unlcms-bg-majors-lighter-gray",
+      "unl-bg-lightest-gray" => "unlcms-bg-majors-lightest-gray"
+    )
+  );
+
+  foreach ($variables["settings"]["layout_builder_styles_style"] as $layout_builder_styles_style_value) {
+    foreach ($background_patterns as $background_patterns_label => $background_patterns_background_color) {
+      //Check if the background pattern label is the same as the background pattern chosen by the user
+      if ($background_patterns_label == $layout_builder_styles_style_value) {
+        foreach ($background_patterns_background_color as $background_color_label => $background_color_css_value) {
+          //Add the CSS value based on the section background color chosen
+          if (in_array($background_color_label, $variables["attributes"]["class"])) {
+            $variables["attributes"]["class"][] =  $background_color_css_value;
           }
         }
       }
