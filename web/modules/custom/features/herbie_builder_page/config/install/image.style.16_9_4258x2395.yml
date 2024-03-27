@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_4258x2395
+label: '16:9 (4258x2395)'
+effects:
+  441451aa-2c09-4654-bdc4-328a52e4ab7a:
+    uuid: 441451aa-2c09-4654-bdc4-328a52e4ab7a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 4258
+      height: 2395
+      anchor: center-center
