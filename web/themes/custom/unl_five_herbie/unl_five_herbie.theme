@@ -281,6 +281,23 @@ function unl_five_herbie_preprocess_field(&$variables) {
   }
 
   /*
+   * Oembed Block Fields
+   */
+  $fields = array('field_media_oembed_video');
+
+  if (in_array($field_name, $fields)) {
+    switch ($field_name) {
+      case 'field_media_oembed_video':
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['content']['#attributes']['frameborder'] = null;
+          $variables['items'][$key]['content']['#attributes']['allowtransparency'] = null;
+
+        }
+        break;
+    }
+  }
+
+  /*
    * Majors Content Type Fields
    */
   $fields = array('n_major_hero_image');
