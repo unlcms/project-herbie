@@ -1,11 +1,11 @@
-{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix'] %}
+{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix', 'dcf-mb-0', 'dcf-card-as-link', 'unlcms-img-zoom-hover'] %}
 
 {{ attach_library('unl_five_herbie/person') }}
 
 {% set orderedListAttribute = create_attribute() %}
 {% set orderedListAttribute = orderedListAttribute.addClass('dcf-list-bare dcf-d-grid unlcms-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-9') %}
 
-    <li class="dcf-mb-0 dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/Person">
+    <li {{content_attributes.addClass(classes)}} itemscope itemtype="https://schema.org/Person">
       <div class="dcf-grid dcf-col-gap-5 dcf-row-gap-2 unlcms-teaser-person" data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
         <!-- Image -->
         <div class="unlcms-teaser-person-img">
