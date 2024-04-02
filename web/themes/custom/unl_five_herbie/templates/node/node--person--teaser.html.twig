@@ -5,9 +5,6 @@
 {% set orderedListAttribute = create_attribute() %}
 {% set orderedListAttribute = orderedListAttribute.addClass('dcf-list-bare dcf-d-grid unlcms-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-9') %}
 
-{# Why in an article tag? #}
-<article {{ attributes.addClass(classes) }}>
-  <div {{ content_attributes }}>
     <li class="dcf-mb-0 dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/Person">
       <div class="dcf-grid dcf-col-gap-5 dcf-row-gap-2 unlcms-teaser-person" data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
         <!-- Image -->
@@ -271,5 +268,3 @@
         </div>
       </div>
     </li>
-  </div>
-</article>
