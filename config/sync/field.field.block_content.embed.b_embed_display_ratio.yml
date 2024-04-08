@@ -1,0 +1,23 @@
+uuid: 20359f7b-0455-4c58-897a-37af2949cd39
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.embed
+    - field.storage.block_content.b_embed_display_ratio
+  module:
+    - options
+id: block_content.embed.b_embed_display_ratio
+field_name: b_embed_display_ratio
+entity_type: block_content
+bundle: embed
+label: 'Display Ratio'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: dcf-ratio-16x9
+default_value_callback: ''
+settings: {  }
+field_type: list_string
