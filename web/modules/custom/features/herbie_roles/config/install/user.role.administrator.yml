@@ -10,6 +10,7 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
+    - filter.format.webform_email
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -48,6 +49,7 @@ dependencies:
     - rabbit_hole
     - redirect
     - replicate_ui
+    - rest
     - scanner
     - system
     - taxonomy
@@ -100,7 +102,9 @@ permissions:
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
+  - 'administer paragraphs types'
   - 'administer redirects'
+  - 'administer rest resources'
   - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer twig templates'
@@ -263,6 +267,7 @@ permissions:
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'use text format webform_email'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view archive_page revisions'

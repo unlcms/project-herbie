@@ -1,0 +1,162 @@
+uuid: c47c2a00-6400-4601-8cc4-70cf51ce6b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.major_option.n_major_notable_courses
+    - field.field.node.major_option.n_major_option_careers_list
+    - field.field.node.major_option.n_major_option_careers_title
+    - field.field.node.major_option.n_major_option_courses_intro
+    - field.field.node.major_option.n_major_option_features_image
+    - field.field.node.major_option.n_major_option_grad_school_title
+    - field.field.node.major_option.n_major_option_grad_schools_list
+    - field.field.node.major_option.n_major_option_huskers_do_intro
+    - field.field.node.major_option.n_major_option_internships_list
+    - field.field.node.major_option.n_major_option_internships_title
+    - field.field.node.major_option.n_major_option_lead_copy
+    - field.field.node.major_option.n_major_option_parent_major
+    - field.field.node.major_option.n_major_option_program_features
+    - field.field.node.major_option.s_n_hero
+    - node.type.major_option
+  module:
+    - entity_reference_revisions
+    - image_class
+    - svg_image
+    - text
+    - user
+id: node.major_option.default
+targetEntityType: node
+bundle: major_option
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  n_major_notable_courses:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  n_major_option_careers_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  n_major_option_careers_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  n_major_option_courses_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  n_major_option_features_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'dcf-ratio-child dcf-obj-fit-cover'
+    weight: 5
+    region: content
+  n_major_option_grad_school_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  n_major_option_grad_schools_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  n_major_option_huskers_do_intro:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  n_major_option_internships_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  n_major_option_internships_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  n_major_option_lead_copy:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  n_major_option_parent_major:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  n_major_option_program_features:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  s_n_hero:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

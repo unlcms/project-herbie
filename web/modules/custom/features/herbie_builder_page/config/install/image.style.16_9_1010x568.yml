@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_1010x568
+label: '16:9 (1010x568)'
+effects:
+  0fdc0bcc-b733-4221-b80a-f267977c4345:
+    uuid: 0fdc0bcc-b733-4221-b80a-f267977c4345
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1010
+      height: 568
+      anchor: center-center

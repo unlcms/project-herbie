@@ -1,0 +1,149 @@
+uuid: fa7a72bb-12d6-4d95-a431-303fef305472
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16_9_1010x568
+    - image.style.16_9_1197x673
+    - image.style.16_9_1346x757
+    - image.style.16_9_1596x898
+    - image.style.16_9_1796x1010
+    - image.style.16_9_2129x1198
+    - image.style.16_9_2394x1347
+    - image.style.16_9_2838x1596
+    - image.style.16_9_3192x1796
+    - image.style.16_9_3783x2128
+    - image.style.16_9_4258x2395
+    - image.style.16_9_505x284
+    - image.style.16_9_5676x3193
+    - image.style.16_9_673x379
+    - image.style.16_9_7566x4256
+    - image.style.16_9_758x426
+    - image.style.16_9_898x505
+  theme:
+    - unl_five_herbie
+id: hero_ris
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_5676x3193
+    breakpoint_id: unl_five_herbie.3xl
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_3783x2128
+    breakpoint_id: unl_five_herbie.3xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_7566x4256
+    breakpoint_id: unl_five_herbie.3xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_4258x2395
+    breakpoint_id: unl_five_herbie.2xl
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_2838x1596
+    breakpoint_id: unl_five_herbie.2xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_5676x3193
+    breakpoint_id: unl_five_herbie.2xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_3192x1796
+    breakpoint_id: unl_five_herbie.xl
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_2129x1198
+    breakpoint_id: unl_five_herbie.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_4258x2395
+    breakpoint_id: unl_five_herbie.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_2394x1347
+    breakpoint_id: unl_five_herbie.lg
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1596x898
+    breakpoint_id: unl_five_herbie.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_3192x1796
+    breakpoint_id: unl_five_herbie.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1796x1010
+    breakpoint_id: unl_five_herbie.md
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1197x673
+    breakpoint_id: unl_five_herbie.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_2394x1347
+    breakpoint_id: unl_five_herbie.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1346x757
+    breakpoint_id: unl_five_herbie.sm
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_898x505
+    breakpoint_id: unl_five_herbie.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1796x1010
+    breakpoint_id: unl_five_herbie.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1010x568
+    breakpoint_id: unl_five_herbie.xs
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_673x379
+    breakpoint_id: unl_five_herbie.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1346x757
+    breakpoint_id: unl_five_herbie.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_758x426
+    breakpoint_id: unl_five_herbie.2xs
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_505x284
+    breakpoint_id: unl_five_herbie.2xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_1010x568
+    breakpoint_id: unl_five_herbie.2xs
+    multiplier: 2x
+breakpoint_group: unl_five_herbie
+fallback_image_style: '_original image_'

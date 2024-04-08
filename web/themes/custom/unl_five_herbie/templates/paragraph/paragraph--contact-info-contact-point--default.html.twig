@@ -47,7 +47,7 @@
   ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes).setAttribute('itemprop', 'contactPoint').setAttribute('itemscope', '').setAttribute('itemtype', 'http://schema.org/ContactPoint') }}>
+  <div{{ attributes.addClass(classes)}}>
     {% block content %}
       {{ content }}
     {% endblock %}
