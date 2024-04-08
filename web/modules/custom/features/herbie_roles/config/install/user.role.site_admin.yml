@@ -80,6 +80,7 @@ permissions:
   - 'administer google analytics'
   - 'administer main menu items'
   - 'administer nodes'
+  - 'administer paragraphs types'
   - 'administer redirects'
   - 'administer scanner settings'
   - 'administer unl breadcrumbs'

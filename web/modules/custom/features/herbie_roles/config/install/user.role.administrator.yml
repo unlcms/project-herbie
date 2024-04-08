@@ -102,6 +102,7 @@ permissions:
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
+  - 'administer paragraphs types'
   - 'administer redirects'
   - 'administer rest resources'
   - 'administer scanner settings'
