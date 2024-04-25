@@ -10,8 +10,8 @@ field_name: b_embed_title
 entity_type: block_content
 bundle: embed
 label: Title
-description: 'This title will be used in the iframe.'
-required: false
+description: 'This title will be used in the iframe tag for the title attribute.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
