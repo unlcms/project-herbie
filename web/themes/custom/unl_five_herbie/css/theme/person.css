@@ -148,13 +148,6 @@
     display: none;
   }
 
-  .dcf-url-wrap {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: break-all;
-    word-break: break-word;
-  }
-
   .unlcms-centered-teaser-person-list > li {
     flex-basis: 31.57rem;
   }
