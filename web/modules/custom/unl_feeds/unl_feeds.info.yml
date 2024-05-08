@@ -1,0 +1,9 @@
+name: UNL Feeds
+description: 'Provides the capability to integrate custom plugins with the Feeds and Feeds Tamper modules.'
+package: UNL
+
+type: module
+core_version_requirement: ^9 || ^10
+
+version: 1.x
+
