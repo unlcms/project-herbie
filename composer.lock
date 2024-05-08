@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "caec96f444cc3d13d34b715c2095cc9b",
+    "content-hash": "654bd8845300ce0693a0247f3fe1632f",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3536,6 +3536,77 @@
             }
         },
         {
+            "name": "drupal/feeds_tamper",
+            "version": "2.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds_tamper.git",
+                "reference": "8.x-2.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/feeds_tamper-8.x-2.0-beta3.zip",
+                "reference": "8.x-2.0-beta3",
+                "shasum": "5e70d15af38b41d913eb4d8ffea99db29024cbc9"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/feeds": "^3.0",
+                "drupal/tamper": "^1.0-alpha3"
+            },
+            "require-dev": {
+                "drupal/feeds": "3.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta3",
+                    "datestamp": "1670507596",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "franz",
+                    "homepage": "https://www.drupal.org/user/581844"
+                },
+                {
+                    "name": "Honza Pobořil",
+                    "homepage": "https://www.drupal.org/user/123612"
+                },
+                {
+                    "name": "mausolos",
+                    "homepage": "https://www.drupal.org/user/642118"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Modify feeds data before it gets saved.",
+            "homepage": "http://drupal.org/project/feeds_tamper",
+            "keywords": [
+                "Drupal",
+                "feeds",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/feeds_tamper",
+                "issues": "http://drupal.org/project/issues/feeds_tamper"
+            }
+        },
+        {
             "name": "drupal/field_css",
             "version": "2.0.0-rc6",
             "source": {
@@ -6173,6 +6244,67 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/svg_image",
                 "issues": "http://drupal.org/project/svg_image"
+            }
+        },
+        {
+            "name": "drupal/tamper",
+            "version": "1.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tamper.git",
+                "reference": "8.x-1.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tamper-8.x-1.0-alpha4.zip",
+                "reference": "8.x-1.0-alpha4",
+                "shasum": "ab591ab64adb923a9901390119bbe0beabc23859"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha4",
+                    "datestamp": "1684984837",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ericgsmith",
+                    "homepage": "https://www.drupal.org/user/1649952"
+                },
+                {
+                    "name": "jamesdixon",
+                    "homepage": "https://www.drupal.org/user/762570"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Generic plugin to modify data.",
+            "homepage": "https://www.drupal.org/project/tamper",
+            "keywords": [
+                "Drupal",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/tamper",
+                "issues": "http://drupal.org/project/issues/tamper"
             }
         },
         {
@@ -17296,6 +17428,7 @@
         "drupal/features": 20,
         "drupal/feeds": 10,
         "drupal/feeds_ex": 10,
+        "drupal/feeds_tamper": 10,
         "drupal/field_css": 5,
         "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
@@ -17313,5 +17446,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -161,6 +161,7 @@
         "drupal/features": "5.0.x-dev@dev",
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
+        "drupal/feeds_tamper": "^2.0@beta",
         "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
