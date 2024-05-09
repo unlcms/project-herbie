@@ -10,7 +10,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - block_body
+      - standard
 id: paragraph.tab_item.p_b_tab_item_body
 field_name: p_b_tab_item_body
 entity_type: paragraph
