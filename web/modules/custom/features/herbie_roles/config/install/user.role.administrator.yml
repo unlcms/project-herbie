@@ -43,6 +43,7 @@ dependencies:
     - media
     - media_file_delete
     - menu_admin_per_menu
+    - metatag
     - node
     - paragraphs
     - path
@@ -95,6 +96,7 @@ permissions:
   - 'administer google analytics'
   - 'administer js assets injector'
   - 'administer main menu items'
+  - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'

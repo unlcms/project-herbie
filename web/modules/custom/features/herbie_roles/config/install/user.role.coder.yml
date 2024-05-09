@@ -13,6 +13,7 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - metatag
     - node
     - paragraphs
     - replicate_ui
@@ -35,6 +36,7 @@ permissions:
   - 'administer css assets injector'
   - 'administer feeds'
   - 'administer js assets injector'
+  - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'

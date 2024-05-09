@@ -40,6 +40,7 @@ dependencies:
   - 'honeypot:honeypot'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
+  - 'metatag:metatag'
   - 'paragraphs:paragraphs'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
@@ -52,5 +53,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.3.6
+version: 1.4.0
 package: Herbie
