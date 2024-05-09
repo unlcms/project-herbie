@@ -42,6 +42,7 @@ dependencies:
   - 'menu_admin_per_menu:menu_admin_per_menu'
   - 'metatag:metatag'
   - 'paragraphs:paragraphs'
+  - 'protected_pages:protected_pages'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
   - 'replicate_ui:replicate_ui'
@@ -53,5 +54,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.4.0
+version: 1.4.1
 package: Herbie

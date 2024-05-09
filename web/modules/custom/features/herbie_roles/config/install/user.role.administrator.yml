@@ -47,6 +47,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - protected_pages
     - rabbit_hole
     - redirect
     - replicate_ui
@@ -78,6 +79,7 @@ permissions:
   - 'access files overview'
   - 'access media overview'
   - 'access own webform configuration'
+  - 'access protected page password screen'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -105,6 +107,7 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer paragraphs types'
+  - 'administer protected pages configuration'
   - 'administer redirects'
   - 'administer rest resources'
   - 'administer scanner settings'
@@ -115,6 +118,7 @@ permissions:
   - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'
+  - 'bypass pages password protection'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'

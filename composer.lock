@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5bdc7a80f5422da74a889f0fb26c4b2",
+    "content-hash": "5619c0a9e7462218c0e05374495b4f25",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5503,6 +5503,55 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/protected_pages",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/protected_pages.git",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/protected_pages-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "d55172cec155ee08618c2817c9b3d3e1ce8f9f63"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1681317610",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "markdorison",
+                    "homepage": "https://www.drupal.org/user/346106"
+                },
+                {
+                    "name": "oksana-c",
+                    "homepage": "https://www.drupal.org/user/2916547"
+                }
+            ],
+            "description": "Protected Pages modules allows the administrator to secure any page or private file in your website by password.",
+            "homepage": "https://www.drupal.org/project/protected_pages",
+            "support": {
+                "source": "https://git.drupalcode.org/project/protected_pages",
+                "issues": "https://www.drupal.org/project/issues/protected_pages"
             }
         },
         {

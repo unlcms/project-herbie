@@ -14,8 +14,10 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - metatag
     - node
     - paragraphs
+    - protected_pages
     - replicate_ui
     - system
     - taxonomy
@@ -31,6 +33,7 @@ permissions:
   - 'access contextual links'
   - 'access css fields'
   - 'access feed overview'
+  - 'access protected page password screen'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'add JS snippets for google analytics'
@@ -38,15 +41,18 @@ permissions:
   - 'administer css assets injector'
   - 'administer feeds'
   - 'administer js assets injector'
+  - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
+  - 'administer protected pages configuration'
   - 'administer taxonomy'
   - 'administer twig templates'
   - 'administer views'
+  - 'bypass pages password protection'
   - 'create html_code block content'
   - 'delete any html_code block content'
   - 'load twig templates from file system'
