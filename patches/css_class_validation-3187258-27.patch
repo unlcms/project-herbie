@@ -1,0 +1,97 @@
+diff --git a/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php b/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
+index 338c5fe7..56b122d8 100644
+--- a/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
++++ b/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
+@@ -1886,8 +1886,8 @@ public function validateOptionsForm(&$form, FormStateInterface $form_state) {
+
+       case 'css_class':
+         $css_class = $form_state->getValue('css_class');
+-        if (preg_match('/[^a-zA-Z0-9-_ ]/', $css_class)) {
+-          $form_state->setError($form['css_class'], $this->t('CSS classes must be alphanumeric or dashes only.'));
++        if (preg_match('/[^\x{0020}\x{002D}\x{002E}\x{002F}\x{003A}\x{0030}-\x{005A}\x{005F}\x{0061}-\x{007A}\x{00A1}-\x{FFFF}]/u', $css_class)) {
++          $form_state->setError($form['css_class'], $this->t('This value contains characters that are not valid in CSS classes.'));
+         }
+         break;
+
+diff --git a/core/modules/views/tests/src/Functional/Plugin/DisplayTest.php b/core/modules/views/tests/src/Functional/Plugin/DisplayTest.php
+index fa4637ab..335f82c2 100644
+--- a/core/modules/views/tests/src/Functional/Plugin/DisplayTest.php
++++ b/core/modules/views/tests/src/Functional/Plugin/DisplayTest.php
+@@ -429,6 +434,34 @@ public function testTranslationSetting() {
+     $this->checkTranslationSetting(TRUE);
+   }
+
++  /**
++   * Test css widget type under display.
++   */
++  public function testCss() {
++    // Test Invalid Css.
++    $this->drupalGet('admin/structure/views/nojs/display/content/default/css_class');
++    $this->assertSession()->statusCodeEquals(200);
++    $this->drupalGet('admin/structure/views/nojs/display/content/default/css_class');
++    // cSpell:disable-next-line
++    $this->submitForm(['css_class' => 'abc:test-auto hello-pp abddf%$log-val'], 'Apply');
++    $errors = $this->xpath('//div[contains(@role, "alert")]');
++    $this->assertNotEmpty($errors, 'Css contain Invalid Character');
++
++    // Test Valid Css.
++    $this->drupalGet('admin/structure/views/nojs/display/content/default/css_class');
++    $this->assertSession()->statusCodeEquals(200);
++    $this->drupalGet('admin/structure/views/nojs/display/content/default/css_class');
++    // cSpell:disable-next-line
++    $this->submitForm(['css_class' => 'abc:test-auto hello-pp abddf:log-val'], 'Apply');
++    $this->drupalGet('admin/structure/views/nojs/display/content/default/css_class');
++    $this->assertSession()->statusCodeEquals(200);
++
++    $this->drupalGet('admin/structure/views/view/content');
++    $this->submitForm([], 'Save');
++    $this->getSession()->getPage()->pressButton('Update preview');
++    $this->assertSession()->responseMatches('/<div class="abc:test-auto hello-pp/');
++  }
++
+   /**
+    * Asserts a node and a file based view for the translation setting.
+    *
+diff --git a/core/modules/views/views.theme.inc b/core/modules/views/views.theme.inc
+index 499d860e..c68bf5d4 100644
+--- a/core/modules/views/views.theme.inc
++++ b/core/modules/views/views.theme.inc
+@@ -23,7 +23,8 @@
+ function template_preprocess_views_view(&$variables) {
+   $view = $variables['view'];
+   $id = $view->storage->id();
+-
++  $bc_classes = [];
++  $sanitized_classes = [];
+   $variables['css_name'] = Html::cleanCssIdentifier($id);
+   $variables['id'] = $id;
+   $variables['display_id'] = $view->current_display;
+@@ -39,9 +40,25 @@ function template_preprocess_views_view(&$variables) {
+     // backwards compatibility.
+     // @todo https://www.drupal.org/project/drupal/issues/2977950 Decide what to
+     //   do with the backwards compatibility layer.
+-    $bc_classes = explode(' ', preg_replace('/[^a-zA-Z0-9- ]/', '-', $css_class));
+-    // Sanitize the classes using the classes using the proper API.
+-    $sanitized_classes = array_map('\Drupal\Component\Utility\Html::cleanCssIdentifier', explode(' ', $css_class));
++
++    // Modifying the bc_classes array to accumulate ":" within classes.
++    if (preg_match('/[:]/', $css_class)) {
++      $bc_classes = explode(' ', $css_class);
++      foreach ($bc_classes as $key => $value) {
++        if (preg_match('/[:]/', $value)) {
++          $bc_classes[$key] = $value;
++        }
++        else {
++          $bc_classes[$key] = preg_replace('/[^a-zA-Z0-9- ]/', '-', $value);
++          $sanitized_classes = array_map('\Drupal\Component\Utility\Html::cleanCssIdentifier', explode(' ', $value));
++        }
++      }
++    }
++    else {
++      $bc_classes = explode(' ', preg_replace('/[^a-zA-Z0-9- ]/', '-', $css_class));
++      // Sanitize the classes using the classes using the proper API.
++      $sanitized_classes = array_map('\Drupal\Component\Utility\Html::cleanCssIdentifier', explode(' ', $css_class));
++    }
+     $view_classes = array_unique(array_merge($bc_classes, $sanitized_classes));
+     // Merge the view display classes into any existing classes if they exist.
+     $variables['attributes']['class'] = !empty($variables['attributes']['class']) ? array_merge($variables['attributes']['class'], $view_classes) : $view_classes;
