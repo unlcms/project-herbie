@@ -65,3 +65,19 @@ function herbie_update_8103(&$sandbox) {
     $paragraph->save();
   }
 }
+
+/**
+ * Update wysiwyg format on p_b_tab_item_body.
+ */
+function herbie_update_8104(&$sandbox) {
+  $paragraphs = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadByProperties([
+      'type' => 'tab_item',
+    ]);
+
+  foreach ($paragraphs as $paragraph) {
+    $paragraph->p_b_tab_item_body->format = 'standard';
+    $paragraph->save();
+  }
+}
