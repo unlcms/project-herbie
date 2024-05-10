@@ -50,3 +50,18 @@ function herbie_update_8102(&$sandbox) {
   }
 }
 
+/**
+ * Update wysiwyg format on p_b_accrd_item_body.
+ */
+function herbie_update_8103(&$sandbox) {
+  $paragraphs = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadByProperties([
+      'type' => 'accordion_item',
+    ]);
+
+  foreach ($paragraphs as $paragraph) {
+    $paragraph->p_b_accrd_item_body->format = 'standard';
+    $paragraph->save();
+  }
+}
