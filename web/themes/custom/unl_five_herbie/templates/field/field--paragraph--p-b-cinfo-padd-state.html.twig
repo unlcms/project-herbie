@@ -37,4 +37,6 @@
  */
 #}
 
-<span {{ items[0].attributes }} itemprop="addressRegion">{{ items[0].content }}</span>
+{% for item in items %}
+  <abbr title="Nebraska" itemprop="addressRegion">{{ item.content }}</abbr>
+{% endfor %}

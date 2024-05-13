@@ -7,7 +7,6 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Form\FormHelper;
-
 /**
  * Implements hook_form_alter().
  */
@@ -23,20 +22,31 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
     unset($form['layout_builder_style_background']['#empty_option']);
   }
 
+  if ($block_type == 'embed') {
+    $form['settings']['block_form']['#process'][] = '_unl_layout_builder_custom_embed_block_process';
+  }
+
   switch ($form_id) {
     case 'layout_builder_add_block':
       if ($block_type == 'card') {
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
+
+        // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
       }
-     break;
+      break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':
+      if ($block_type == 'card') {
+        // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
+      }
 
       if ($block_type == 'tandem') {
-        //Create a callback function to '#process' so we can be able to alter form elements
-        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
-      };
+        // Assign a callback to alter form elements.
+        $form['settings']['block_form']['#process'][] = '_edit_tandem_block_form_elements';
+      }
 
        // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
@@ -57,7 +67,6 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
       break;
-
     case 'fragment_region_item_layout_builder_form':
     case 'fragment_region_item_after_content_layout_builder_form':
     case 'node_page_layout_builder_form':
@@ -66,10 +75,27 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
   }
 }
 
+function _unl_layout_builder_custom_embed_block_process(array $element, FormStateInterface $form_state, &$form) {
+  $element['b_embed_link']['widget']['#element_validate'][] = '_unl_layout_builder_custom_validate_embed_block';
+    return $element;
+}
+
+function _unl_layout_builder_custom_validate_embed_block(array $element, FormStateInterface &$form_state, &$form) {
+  $values = $form_state->getValues();
+  $uri = $values['settings']['block_form']['b_embed_link'][0]['uri'];
+  $host = parse_url($uri)['host'];
+  $pattern = "/(unl.edu$)|(nebraska.edu$)/i";
+
+  if (!preg_match($pattern, $host)) {
+    $form_state->setErrorByName('b_embed_link', t('Embedding links are restricted to domains ending with unl.edu or nebraska.edu.'));
+    $form_state->setError($element);
+ }
+}
+
 /**
- * edit_tandem_block_form_elements process callback function.
+ * Callback function.
  */
-function edit_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
+function _edit_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
   if (isset($element['b_tandem_stack'])) {
     $element['b_tandem_stack']['widget']['#states'] =  array('visible' => array(
       'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2')
@@ -90,7 +116,15 @@ function edit_tandem_block_form_elements(array $element, FormStateInterface $for
   return $element;
 }
 
-
+/**
+ * Callback function.
+ */
+function _edit_card_block_form_elements(array $element, FormStateInterface $form_state) {
+  $element['b_card_cta']['widget']['#states'] =  array('visible' => array(
+    'input[id="edit-settings-block-form-b-card-headline-link-0-uri"]' => array('value' => '')
+  ));
+  return $element;
+}
 
 /**
  * Add an element to delineate the layout builder styles form section.

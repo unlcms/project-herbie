@@ -25,6 +25,9 @@ class UnlTwigExtension extends AbstractExtension {
       new TwigFunction('intersect', 'array_intersect'),
       new TwigFunction('intersect_key', 'array_intersect_key'),
       new TwigFunction('array_flip', 'array_flip'),
+      new TwigFunction('parse_url', 'parse_url'),
+      new TwigFunction('string_search', 'strpos'),
+      new TwigFunction('string_lowercase', 'strtolower'),
     ];
   }
 

@@ -1,0 +1,17 @@
+uuid: a8eeaf27-6f4b-4118-9862-227ac9d89cb9
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub_major_option
+label: 'Content Hub Major Option'
+channel_entity_type: node
+channel_bundle: major_option
+channel_langcode: und
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+channel_maxsize: 20
+access_by_permission: true
+authorized_roles: {  }
+authorized_users: {  }

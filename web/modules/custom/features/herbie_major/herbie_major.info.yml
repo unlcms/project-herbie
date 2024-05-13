@@ -20,12 +20,14 @@ dependencies:
   - 'field_group:field_group'
   - 'group:gnode'
   - 'group:group'
+  - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_media_types:herbie_media_types'
   - 'image_class:image_class'
+  - 'inline_entity_form:inline_entity_form'
   - 'jsonapi_image_styles:jsonapi_image_styles'
   - 'paragraphs:paragraphs'
   - 'pathauto:pathauto'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
-version: 1.3.7
+version: '1.4.1'
 package: Herbie

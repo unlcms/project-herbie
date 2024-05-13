@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: section_background_pattern_landmarks
 label: Landmarks
-classes: "unl-bg-soft-light\r\nunl-bg-landmarks"
+classes: unl-bg-repeat
 type: section
 group: background_pattern
 block_restrictions: {  }

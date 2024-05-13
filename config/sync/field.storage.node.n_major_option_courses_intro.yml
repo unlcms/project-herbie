@@ -1,0 +1,19 @@
+uuid: c6c609b3-0b19-4f80-8e06-399747b2d596
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.n_major_option_courses_intro
+field_name: n_major_option_courses_intro
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

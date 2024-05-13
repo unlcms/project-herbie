@@ -9,6 +9,7 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
+    - filter.format.webform_email
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -81,6 +82,7 @@ permissions:
   - 'administer google analytics'
   - 'administer main menu items'
   - 'administer nodes'
+  - 'administer paragraphs types'
   - 'administer redirects'
   - 'administer scanner settings'
   - 'administer unl breadcrumbs'
@@ -234,6 +236,7 @@ permissions:
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'use text format webform_email'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view archive_page revisions'
