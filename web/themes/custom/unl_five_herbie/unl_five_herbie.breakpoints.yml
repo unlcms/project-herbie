@@ -40,7 +40,7 @@ unl_five_herbie.lg:
     - 2x
 unl_five_herbie.xl:
   label: 'xl'
-  mediaQuery: 'all and (min-width: 99.78)'
+  mediaQuery: 'all and (min-width: 99.78em)'
   weight: 5
   multipliers:
     - 1x

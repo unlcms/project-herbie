@@ -295,9 +295,14 @@ div.unl-bg-dark-gray div.unl-bg-lightest-gray li
 
 /* #region Card Subhead*/
 div.dcf-card.unl-bg-dark-gray div.dcf-card-block .dcf-subhead,
-div.dcf-card.unl-bg-scarlet div.dcf-card-block .dcf-subhead
+div.dcf-card.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
+  color:  #fefdfa !important;
+}
+
+div.dcf-card.unl-bg-lightest-gray div.dcf-card-block .dcf-subhead,
+div.dcf-card.unl-bg-lighter-gray div.dcf-card-block .dcf-subhead
 {
-  color: #e3e3e2 !important;
+  color:  #424240 !important;
 }
 /* #endregion */
 
