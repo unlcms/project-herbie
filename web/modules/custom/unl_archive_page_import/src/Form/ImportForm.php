@@ -139,12 +139,25 @@ class ImportForm extends FormBase {
     }
 
     // Get the Main Content html for the Body field.
-    $nodes = $xpath->query("//div[contains(@class, 'dcf-main-content')]");
-    if (!$maincontentNode = $nodes->item(0)) {
-      return false;
+    $set_title_hidden = false;
+    $nodes = $xpath->query("//div[contains(@class, 'dcf-hero-default')]");
+    $x = $nodes->item(0);
+    if ($nodes->item(0)) {
+      // Default hero is present, so only get content area.
+      $nodes = $xpath->query("//div[contains(@class, 'dcf-main-content')]");
+      if (!$maincontentNode = $nodes->item(0)) {
+        return FALSE;
+      }
     }
-
-
+    else {
+      // Hero photo is present, so get entire .dcf-main.
+      $nodes = $xpath->query("//main[@id='dcf-main']");
+      if (!$maincontentNode = $nodes->item(0)) {
+        return FALSE;
+      }
+      // Set the checkbox field to hide the default page title.
+      $set_title_hidden = true;
+    }
 
 
     /**
@@ -364,6 +377,9 @@ class ImportForm extends FormBase {
         ],
       ]
     );
+    if ($set_title_hidden) {
+      $entity->set('s_n_page_options', [['value' => 'title_hidden']]);
+    }
     $entity->save();
 
     foreach ($media_added as $media) {

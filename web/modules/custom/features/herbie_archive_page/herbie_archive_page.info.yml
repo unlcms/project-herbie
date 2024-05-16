@@ -2,6 +2,7 @@ name: 'Archive page'
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
+  - ':herbie_builder_page'
   - 'allowed_formats:allowed_formats'
   - 'codemirror_editor:codemirror_editor'
   - 'dcf_ckeditor5:dcf_ckeditor5'
@@ -13,11 +14,13 @@ dependencies:
   - 'drupal:media'
   - 'drupal:menu_ui'
   - 'drupal:node'
+  - 'drupal:options'
   - 'drupal:path'
   - 'drupal:text'
   - 'drupal:user'
+  - 'field_group:field_group'
   - 'herbie_media_types:herbie_media_types'
   - 'linkit:linkit'
-version: 1.0.0
+version: '1.1'
 package: Herbie
 description: 'Provides Temporary transition page (Archive page) content type and related configuration. '
