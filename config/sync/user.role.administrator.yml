@@ -54,6 +54,7 @@ dependencies:
     - replicate_ui
     - rest
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -114,6 +115,7 @@ permissions:
   - 'administer redirects'
   - 'administer rest resources'
   - 'administer scanner settings'
+  - 'administer scheduler'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
   - 'administer taxonomy_term fields'
@@ -250,6 +252,9 @@ permissions:
   - 'revert webform revisions'
   - 'role-assign users by role'
   - 'role-assign users with role administrator'
+  - 'schedule publishing of media'
+  - 'schedule publishing of nodes'
+  - 'schedule publishing of taxonomy_term'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
@@ -291,6 +296,9 @@ permissions:
   - 'view own unpublished media'
   - 'view own webform submission'
   - 'view person revisions'
+  - 'view scheduled content'
+  - 'view scheduled media'
+  - 'view scheduled taxonomy_term'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'

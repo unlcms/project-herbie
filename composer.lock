@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5619c0a9e7462218c0e05374495b4f25",
+    "content-hash": "dc5b38a7aab08ee6402c6d231df4f67a",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5959,6 +5959,142 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/scanner",
                 "issues": "https://drupal.org/project/issues/scanner"
+            }
+        },
+        {
+            "name": "drupal/scheduler",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scheduler.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "1ef7a92afcb8e138cf697dc35f15cbc2353801b4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/commerce": "^2.0",
+                "drupal/devel_generate": ">=4",
+                "drupal/rules": "^3",
+                "drupal/workbench_moderation": "*",
+                "drupal/workbench_moderation_actions": "*",
+                "drush/drush": ">=9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.3",
+                    "datestamp": "1714312557",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Schaefer (Eric Schaefer)",
+                    "homepage": "https://www.drupal.org/u/eric-schaefer",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jonathan Smith (jonathan1055)",
+                    "homepage": "https://www.drupal.org/u/jonathan1055",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Pieter Frenssen (pfrenssen)",
+                    "homepage": "https://www.drupal.org/u/pfrenssen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Rick Manelius (rickmanelius)",
+                    "homepage": "https://www.drupal.org/u/rickmanelius",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Automatically publish and unpublish content at specified dates and times.",
+            "homepage": "https://drupal.org/project/scheduler",
+            "support": {
+                "source": "https://git.drupalcode.org/project/scheduler",
+                "issues": "https://www.drupal.org/project/issues/scheduler"
+            }
+        },
+        {
+            "name": "drupal/scheduler_content_moderation_integration",
+            "version": "2.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scheduler_content_moderation_integration.git",
+                "reference": "2.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduler_content_moderation_integration-2.0.0-beta2.zip",
+                "reference": "2.0.0-beta2",
+                "shasum": "669c62fa4f82b84f38bcf416286c753abb8b1f3e"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9 || ^10",
+                "drupal/scheduler": "^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1695918977",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "chr.fritsch",
+                    "homepage": "https://www.drupal.org/user/2103716"
+                },
+                {
+                    "name": "daniel.bosen",
+                    "homepage": "https://www.drupal.org/user/404865"
+                },
+                {
+                    "name": "jonathan1055",
+                    "homepage": "https://www.drupal.org/user/92645"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
+                },
+                {
+                    "name": "volkerk",
+                    "homepage": "https://www.drupal.org/user/57527"
+                }
+            ],
+            "description": "Scheduler sub-module providing content moderation functionality for publishing/unpublishing",
+            "homepage": "https://www.drupal.org/project/scheduler_content_moderation_integration",
+            "support": {
+                "source": "https://git.drupalcode.org/project/scheduler_content_moderation_integration",
+                "error": "Invalid dependency: \"scheduler\", Could not parse version constraint ~: Invalid version string \"~\""
             }
         },
         {
@@ -17279,6 +17415,7 @@
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,
         "drupal/scanner": 20,
+        "drupal/scheduler_content_moderation_integration": 10,
         "drupal/seven": 15,
         "drupal/webform": 10,
         "unlcms/features_readonly": 20
@@ -17290,5 +17427,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

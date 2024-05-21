@@ -7,10 +7,14 @@ dependencies:
     - field.field.node.builder_page.s_n_hero
     - field.field.node.builder_page.s_n_page_options
     - node.type.builder_page
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - field_group
     - inline_entity_form
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
     - text
 third_party_settings:
   field_group:
@@ -51,6 +55,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 6
@@ -63,6 +73,18 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 53
+    region: content
+    settings: {  }
     third_party_settings: {  }
   s_n_hero:
     type: inline_entity_form_complex
@@ -85,6 +107,11 @@ content:
   s_n_page_options:
     type: options_buttons
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -119,6 +146,18 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 55
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 9

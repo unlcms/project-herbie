@@ -198,6 +198,8 @@
         "drupal/replicate": "^1.2",
         "drupal/replicate_ui": "^1.1",
         "drupal/scanner": "1.x-dev@dev",
+        "drupal/scheduler": "^2.0",
+        "drupal/scheduler_content_moderation_integration": "^2.0@beta",
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",

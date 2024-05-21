@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.major_option.s_n_hero
     - image.style.thumbnail
     - node.type.major_option
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - inline_entity_form
@@ -228,4 +227,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

@@ -16,6 +16,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - scheduler
     - system
     - toolbar
     - webform_node
@@ -40,6 +41,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view webform revisions'
