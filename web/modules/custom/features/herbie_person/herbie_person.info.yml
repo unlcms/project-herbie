@@ -6,6 +6,7 @@ dependencies:
   - 'allowed_formats:allowed_formats'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:ckeditor5'
+  - 'drupal:content_moderation'
   - 'drupal:editor'
   - 'drupal:field'
   - 'drupal:file'
@@ -26,6 +27,7 @@ dependencies:
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
+  - 'svg_image:svg_image'
   - 'svg_image:svg_image_responsive'
-version: 1.2.2
+version: 1.2.3
 package: Herbie

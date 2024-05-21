@@ -2,3 +2,7 @@ bundle: herbie
 required:
   - unl_five.settings
   - unl_five_herbie.settings
+  - scheduler.settings
+  - views.view.scheduler_scheduled_content
+  - views.view.scheduler_scheduled_media
+  - views.view.scheduler_scheduled_taxonomy_term

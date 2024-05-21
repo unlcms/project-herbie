@@ -45,6 +45,7 @@ dependencies:
     - redirect
     - replicate_ui
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -207,6 +208,7 @@ permissions:
   - 'revert person revisions'
   - 'revert webform revisions'
   - 'role-assign users by role'
+  - 'schedule publishing of nodes'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
@@ -246,6 +248,7 @@ permissions:
   - 'view own unpublished media'
   - 'view own webform submission'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'

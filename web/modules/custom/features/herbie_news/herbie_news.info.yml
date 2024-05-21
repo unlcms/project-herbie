@@ -25,5 +25,7 @@ dependencies:
   - 'herbie_webform:herbie_webform'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
-version: 1.3.1
+  - 'scheduler:scheduler'
+  - 'scheduler_content_moderation_integration:scheduler_content_moderation_integration'
+version: 1.3.2
 package: Herbie

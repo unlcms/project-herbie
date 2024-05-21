@@ -27,5 +27,5 @@ dependencies:
   - 'pathauto:pathauto'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
-version: '1.4'
+version: '1.5'
 package: Herbie

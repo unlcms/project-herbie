@@ -13,7 +13,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.instagram
   module:
-    - image
+    - svg_image
 id: media.instagram.media_library
 targetEntityType: media
 bundle: instagram
@@ -53,6 +53,10 @@ hidden:
   m_instagram_width: true
   name: true
   path: true
+  publish_on: true
+  publish_state: true
   replace_file: true
   status: true
   uid: true
+  unpublish_on: true
+  unpublish_state: true

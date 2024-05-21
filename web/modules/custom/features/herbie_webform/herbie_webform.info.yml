@@ -16,5 +16,5 @@ dependencies:
   - 'linkit:linkit'
   - 'pathauto:pathauto'
   - 'webform:webform'
-version: 1.2.2
+version: 1.2.3
 package: Herbie

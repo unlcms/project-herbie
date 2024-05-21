@@ -129,6 +129,8 @@ module:
   rest: 0
   rh_media: 0
   scanner: 0
+  scheduler: 0
+  scheduler_content_moderation_integration: 0
   select2: 0
   serialization: 0
   sophron: 0

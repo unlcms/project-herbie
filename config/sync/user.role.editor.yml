@@ -40,6 +40,7 @@ dependencies:
     - rabbit_hole
     - replicate_ui
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -191,6 +192,7 @@ permissions:
   - 'view own unpublished media'
   - 'view own webform submission'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'

@@ -44,8 +44,12 @@ hidden:
   created: true
   name: true
   path: true
+  publish_on: true
+  publish_state: true
   replace_file: true
   s_m_file_size: true
   s_m_mime_type: true
   status: true
   uid: true
+  unpublish_on: true
+  unpublish_state: true

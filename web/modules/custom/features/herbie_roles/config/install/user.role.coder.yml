@@ -18,6 +18,7 @@ dependencies:
     - paragraphs
     - protected_pages
     - replicate_ui
+    - scheduler
     - system
     - taxonomy
     - twig_ui
@@ -57,7 +58,9 @@ permissions:
   - 'delete any html_code block content'
   - 'load twig templates from file system'
   - 'replicate entities'
+  - 'schedule publishing of nodes'
   - 'update any html_code block content'
   - 'use text format html_code'
   - 'use text format webform_email'
+  - 'view scheduled content'
   - 'view the administration theme'
