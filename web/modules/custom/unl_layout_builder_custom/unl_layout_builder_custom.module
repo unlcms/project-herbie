@@ -31,16 +31,15 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       if ($block_type == 'card') {
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
-
         // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
-        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
-      }
-
-      if ($block_type == 'tandem') {
-        //Create a callback function to '#process' so we can be able to alter form elements
-        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements'; 
       };
 
+      if ($block_type == 'tandem') {
+        // Create a callback function to '#process' so we can be able to alter form elements when adding a block.
+        $form['settings']['block_form']['#process'][] = '_add_tandem_block_form_elements';
+      };
+ 
       break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':
@@ -50,9 +49,9 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       }
 
       if ($block_type == 'tandem') {
-        // Assign a callback to alter form elements.
-        $form['settings']['block_form']['#process'][] = '_edit_tandem_block_form_elements';
-      }
+        //Create a callback function to '#process' so we can be able to alter form elements when editing/updating a block
+        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
+      };
 
        // Add our LBS heading before style options.
       _unl_layout_builder_custom_add_lbs_heading($form);
@@ -101,8 +100,80 @@ function _unl_layout_builder_custom_validate_embed_block(array $element, FormSta
 /**
  * Callback function.
  */
+function _add_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
+
+  $element['b_tandem_add_image_shadow']['#states'] = [
+    'visible' => [
+      'select[id="edit-settings-block-form-b-tandem-style"]' => [
+        'value' => '3',
+      ],
+    ],
+  ];
+
+  $element['b_tandem_shadow_position']['widget']['#states'] = array('invisible' => array(
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2'),),
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1'),),
+    array ('select[id="edit-settings-block-form-b-tandem-add-image-shadow"]' => array('value' => 'no'),),),);
+
+  $element['b_tandem_shadow_style']['widget']['#states'] = array('invisible' => array(
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2'),),
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1'),),
+    array ('select[id="edit-settings-block-form-b-tandem-add-image-shadow"]' => array('value' => 'no'),),),);
+
+  $element['b_tandem_image_position']['widget']['#states'] =  array('visible' => array(
+    'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '3')
+  ));
+
+  $element['b_tandem_stack']['widget']['#states'] =  array('visible' => array(
+    'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2')
+  ));
+
+  $element['b_tandem_fade']['widget']['#states'] =  array('visible' => array(
+    'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1')
+  ));
+
+  if (isset($element['b_tandem_buttons'])) {
+  $element['b_tandem_buttons']['widget']['#states'] =  array('visible' => array(
+      'select[id="edit-settings-block-form-b-tandem-add-buttons-or-links"]' => array('value' => 'buttons')
+    ));
+  }
+
+  if (isset($element['b_tandem_links'])) {
+    $element['b_tandem_links']['widget']['#states'] =  array('visible' => array(
+      'select[id="edit-settings-block-form-b-tandem-add-buttons-or-links"]' => array('value' => 'links')
+    ));
+  }
+
+  return $element;
+}
+
+/**
+ * Callback function.
+ */
 function _edit_tandem_block_form_elements(array $element, FormStateInterface $form_state) {
-  if (isset($element['b_tandem_stack'])) {
+
+  $element['b_tandem_shadow_position']['widget']['#states'] = array('invisible' => array(
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2'),),
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1'),),
+    array ('select[id="edit-settings-block-form-b-tandem-add-image-shadow"]' => array('value' => 'no'),),),);
+
+  $element['b_tandem_shadow_style']['widget']['#states'] = array('invisible' => array(
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2'),),
+    array ('select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1'),),
+    array ('select[id="edit-settings-block-form-b-tandem-add-image-shadow"]' => array('value' => 'no'),),),);
+
+  $element['b_tandem_add_image_shadow']['#states'] = [
+      'visible' => [
+        'select[id="edit-settings-block-form-b-tandem-style"]' => [
+          'value' => '3',
+        ],
+      ],
+    ];
+
+  $element['b_tandem_image_position']['widget']['#states'] =  array('visible' => array(
+    'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '3')
+    ));
+
     $element['b_tandem_stack']['widget']['#states'] =  array('visible' => array(
       'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '2')
     ));
@@ -111,14 +182,18 @@ function _edit_tandem_block_form_elements(array $element, FormStateInterface $fo
       'select[id="edit-settings-block-form-b-tandem-style"]' => array('value' => '1')
     ));
 
+  if (isset($element['b_tandem_buttons'])) {
     $element['b_tandem_buttons']['widget']['#states'] =  array('visible' => array(
       'select[id="edit-settings-block-form-b-tandem-add-buttons-or-links"]' => array('value' => 'buttons')
     ));
+  }
 
+  if (isset($element['b_tandem_links'])) {
     $element['b_tandem_links']['widget']['#states'] =  array('visible' => array(
       'select[id="edit-settings-block-form-b-tandem-add-buttons-or-links"]' => array('value' => 'links')
     ));
   }
+
   return $element;
 }
 

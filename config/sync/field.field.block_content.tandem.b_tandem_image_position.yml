@@ -1,0 +1,23 @@
+uuid: 22a98a32-f1fa-47b5-90f5-72c980316bf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_image_position
+  module:
+    - options
+id: block_content.tandem.b_tandem_image_position
+field_name: b_tandem_image_position
+entity_type: block_content
+bundle: tandem
+label: 'Image Position'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string
