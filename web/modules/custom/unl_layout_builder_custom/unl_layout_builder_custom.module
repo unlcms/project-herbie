@@ -35,6 +35,12 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
         // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
         $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
       }
+
+      if ($block_type == 'tandem') {
+        //Create a callback function to '#process' so we can be able to alter form elements
+        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
+      };
+
       break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':

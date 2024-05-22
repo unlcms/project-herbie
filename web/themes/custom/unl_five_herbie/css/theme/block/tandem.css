@@ -1,5 +1,7 @@
   /* TANDEM */
-  .unlcms-tandem-text :last-child {
+  .unlcms-tandem-text p:last-child,
+  .unlcms-tandem-text ol:last-child,
+  .unlcms-tandem-text ul:last-child {
     margin-bottom: 0;
   }
 
@@ -16,15 +18,13 @@
 
   }
 
-  /* max sm 673 */
-  @media (max-width: 42.09em) {
+  /************ Tandem Stack Styles **********/
 
-    .unlcms-tandem-stack {
-      grid-template-rows: auto auto;
-    }
+  /* max sm 673 */
+  @media only screen and (max-width: 42.09em) {
 
     .unlcms-tandem-stack-text {
-      grid-area: 2 / 2 / 3 / 6;
+      grid-area: 3 / 2 / 4 / -2;
     }
 
     .unlcms-tandem-stack-img {
@@ -34,14 +34,32 @@
   }
 
   /* sm 673 */
-  @media (min-width: 42.09em) {
+  @media only screen and (min-width: 42.09em) and (max-width: 56.12em) {
+
+    .unlcms-tandem-stack-text {
+      grid-area: 3 / 4 / 4 / -4;
+    }
+
+    .unlcms-tandem-stack-img {
+      grid-area: 1 / 4 / 2 / -4;
+    }
+
+  }
+
+  /* max md 898 */
+  @media only screen and (max-width: 56.12em) {
+
+    .unlcms-tandem-stack {
+      grid-template-rows: auto 1.33em auto 3.16em;
+    }
+
+  }
+
+  /* sm 673 */
+  @media only screen and (min-width: 56.12em) {
 
     .unlcms-tandem-stack {
       grid-template-rows: minmax(4.21em, 1fr) auto minmax(4.21em, 1fr);
-    }
-
-    .unlcms-tandem-stack-text-l {
-      grid-area: 2 / 2 / -2 / 11;
     }
 
     .unlcms-tandem-stack-text-c {
@@ -56,43 +74,68 @@
       max-width: 42.09em;
     }
 
-    .unlcms-tandem-stack-text-r {
-      grid-area: 2 / 5 / 3 / -2;
-    }
-
-    .unlcms-tandem-stack-text :last-child {
-      margin-bottom: 0;
-    }
-
     .unlcms-tandem-stack-text-card {
       background-color: var(--bg-card);
       -webkit-clip-path: polygon(0 0,0 100%,2px 100%,2px 2px,calc(100% - 2px) 2px,calc(100% - 2px) calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 5px,5px 5px,5px calc(100% - 5px),2px calc(100% - 5px),2px 100%,100% 100%,100% 0);
       clip-path: polygon(0 0,0 100%,2px 100%,2px 2px,calc(100% - 2px) 2px,calc(100% - 2px) calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 5px,5px 5px,5px calc(100% - 5px),2px calc(100% - 5px),2px 100%,100% 100%,100% 0);
-      padding: 2.37em 2.67em;
+      padding: 3.16em 2.37em;
     }
 
     .unlcms-tandem-stack-img {
       grid-area: 1 / 1 / -1 / -1;
     }
+
+  }
+
+  @media only screen and (min-width: 56.12em) {
+
+    .unlcms-tandem-stack-text-l {
+      grid-area: 2 / 2 / -2 / 10;
+    }
+
+    .unlcms-tandem-stack-text-r {
+      grid-area: 2 / 6 / 3 / -2;
+    }
+
+  }
+
+  /* md 898 */
+  @media only screen and (min-width: 56.12em) and (max-width: 74.83em) {
+
+    .unlcms-tandem-stack-text-l {
+      grid-column-end: 13;
+    }
+
+    .unlcms-tandem-stack-text-r {
+      grid-column-start: 9;
+    }
+
   }
 
   /* lg 1197 */
-  @media (min-width: 74.83em) {
+  @media only screen and (min-width: 74.83em) {
+
+    .unlcms-tandem-stack-text-l {
+      grid-column-end: 10;
+    }
 
     .unlcms-tandem-stack-text-r {
-      grid-column-start: 7;
+      grid-column-start: 12;
     }
 
   }
 
   /* xl 1596 */
-  @media (min-width: 99.78em) {
+  @media only screen and (min-width: 99.78em) {
 
     .unlcms-tandem-stack {
       max-height: 42.09em;
       overflow-y: hidden;
     }
+
   }
+
+  /*********************** Tandem Fade Styles **********************/
 
   .unlcms-tandem-fade {
     background-color: var(--bg-color);
@@ -100,14 +143,10 @@
 
 
   /* max sm 673 */
-  @media (max-width: 42.09em) {
-
-    .unlcms-tandem-fade {
-      grid-template-rows: auto auto;
-    }
+  @media only screen and (max-width: 42.09em) {
 
     .unlcms-tandem-fade-text {
-      grid-area: 2 / 2 / 3 / 6;
+      grid-area: 3 / 2 / 4 / -2;
     }
 
     .unlcms-tandem-fade-img {
@@ -117,31 +156,35 @@
   }
 
   /* sm 673 */
-  @media (min-width: 42.09em) {
+  @media only screen and (min-width: 42.09em) and (max-width: 56.12em) {
+
+    .unlcms-tandem-fade-text {
+      grid-area: 3 / 4 / 4 / -4;
+    }
+
+    .unlcms-tandem-fade-img {
+      grid-area: 1 / 4 / 2 / -4;
+    }
+
+  }
+
+  /* max md 898 */
+  @media only screen and (max-width: 56.12em) {
+
+    .unlcms-tandem-fade {
+      grid-template-rows: auto 1.33em auto  3.16em;
+    }
+
+  }
+
+  /* md 898 */
+  @media only screen and (min-width: 56.12em) {
 
     .unlcms-tandem-fade {
       grid-template-rows: minmax(4.21em, 1fr) auto minmax(4.21em, 1fr);
     }
 
-    .unlcms-tandem-fade-text-l {
-      grid-area: 2 / 2 / 3 / 8;
-    }
-
-    .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img {
-      grid-area: 1 / 10 / -1 / -1;
-    }
-
-    .unlcms-tandem-fade-text-r {
-      grid-area: 2 / 10 / 3 / -2;
-    }
-
-    .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img {
-      grid-area: 1 / 1 / -1 / 8;
-    }
-
     .unlcms-tandem-fade-img::after {
-      /* --bg-color-mix: color-mix(in srgb, var(--bg-color), transparent 50%); */
-      /* background-image: linear-gradient(var(--direction), var(--bg-color) 2.37em, var(--bg-color-mix, --bg-color) 50%, transparent); */
       background-image: linear-gradient(var(--direction), var(--bg-color), transparent);
       content: '';
       height: 100%;
@@ -151,28 +194,50 @@
       z-index: 1;
     }
 
+    .unlcms-tandem-fade-text-l {
+      grid-area: 2 / 2 / 3 / 8;
+    }
+
     .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img::after {
       --direction: 90deg;
+    }
+
+    .unlcms-tandem-fade-text-r {
+      grid-area: 2 / 12 / 3 / -2;
     }
 
     .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img::after {
       --direction: 270deg;
       right: 0;
     }
+
+    .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img {
+      grid-area: 1 / 10 / -1 / -1;
+    }
+
+    .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img {
+      grid-area: 1 / 1 / -1 / 8;
+    }
+
   }
 
   /* lg 1197 */
-  @media (min-width: 74.83em) {
+  @media only screen and (min-width: 74.83em) {
 
     .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img {
       grid-column-start: 11;
     }
 
     .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img {
-      grid-column-end: 7;
+      grid-column-end: 8;
     }
+
   }
 
+
+
+
+/**************** Other changes ******************************/
   .unlcms-tandem-stack-img .media-entity-bundle--image {
     margin-bottom: 0;
     /* .dcf-ratio-child */
@@ -218,17 +283,8 @@
     margin-top: 0 !important;
   }
 
-  .unlcms-tandem-text h2 {
-      /* .dcf-txt-h3 */
-      font-size: 1.5em !important;
-      /* dcf-mt-0 */
-      margin-top: 0 !important;
-  }
-
-  .b-tandem-body-p-selector p {
-    font-size: 0.8437500004em !important;
-  }
-
-  .tandem-stack-ul-selector {
+  /* This CSS is needed when a user selects 'Center' as the stack alignment.
+  Otherwise, there is a gap between the list bullet point and the text. */
+  .tandem-stack-c-ul-list-style {
     list-style-position: inside;
   }
