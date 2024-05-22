@@ -6,6 +6,7 @@ module:
   admin_toolbar_tools: 0
   administerusersbyrole: 0
   allowed_formats: 0
+  anchor_link: 0
   asset_injector: 0
   auto_entitylabel: 0
   automated_cron: 0
@@ -28,6 +29,7 @@ module:
   content_moderation: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -117,12 +119,14 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  protected_pages: 0
   queue_ui: 0
   rabbit_hole: 0
   redirect: 0
   replicate: 0
   replicate_ui: 0
   responsive_image: 0
+  rest: 0
   rh_media: 0
   scanner: 0
   select2: 0
@@ -161,6 +165,7 @@ module:
   unl_views: 0
   unl_webform: 0
   user: 0
+  views_data_export: 0
   views_ui: 0
   webform: 0
   webform_node: 0

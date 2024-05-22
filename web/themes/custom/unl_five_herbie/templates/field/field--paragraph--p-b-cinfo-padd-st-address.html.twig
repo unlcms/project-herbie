@@ -37,4 +37,6 @@
  */
 #}
 
-<div {{ items[0].attributes }} itemprop="streetAddress">{{ items[0].content }}</div>
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}

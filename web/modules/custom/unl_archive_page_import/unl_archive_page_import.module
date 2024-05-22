@@ -1,1 +1,13 @@
 <?php
+
+function unl_archive_page_import_preprocess_node(&$vars) {
+  // Add .dcf-bleed to the node wrapper if the Archive Page body contains a hero.
+  if ($vars['node']->getType() == 'archive_page') {
+    $body = $vars['node']->get('archive_page_body')->value;
+
+    if (str_contains($body, 'dcf-hero')) {
+      $vars['attributes']['class'][] = 'dcf-bleed';
+      $vars['#attached']['library'][] = 'unl_archive_page_import/unl_archive_page_import.overrides';
+    }
+  }
+}

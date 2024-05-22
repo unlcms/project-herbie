@@ -7,9 +7,9 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
-    'dcf-main-content',
-    'dcf-wrapper'
   ]
+
+
 %}
 {% set credit = content.n_news_image_credit|render %}
 {% set cutline = content.n_news_image_cutline|render %}
@@ -22,38 +22,52 @@
   {{ title_prefix }}
   {{ title_suffix }}
 
-  <p class="dcf-subhead">{{ createdDate }}</p>
+  {% if content.n_news_byline.0 %}
+    {{content.n_news_byline}}
+  {% endif %}
+
+  <p class="dcf-txt-xs">{{ createdDate }}</p>
+
   <div{{ content_attributes }}>
-    {% if credit is empty and cutline is empty %}
+    {% if credit is empty and cutline is empty and content.n_news_image.0 %}
       <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
         <div class="dcf-col-100% dcf-col-67%-start@md">
           {{ content.n_news_image }}
         </div>
       </div>
     {% else %}
-      <div class="dcf-d-grid dcf-col-gap-vw dcf-row-gap-2 dcf-mb-6 unlcms-grid-article">
-        <div class="dcf-ratio dcf-ratio-16x9 unl-frame-quad unlcms-article-lead-img">
-          {{ content.n_news_image }}
-        </div>
-        <figcaption class="dcf-figcaption unlcms-article-lead-figcaption">
-          {% if cutline is not empty %}
-            {{ content.n_news_image_cutline }}
-          {% endif %}
-          {% if credit is not empty %}
-            <small class="dcf-d-inline-block dcf-txt-xs dcf-italic">
-              {{ content.n_news_image_credit }}
-            </small>
-          {% endif %}
-        </figcaption>
-      </div>
+      {% if content.n_news_image.0 or cutline or credit %}
+        <figure class="dcf-d-grid dcf-col-gap-vw dcf-row-gap-2 dcf-mb-6 unlcms-grid-article">
+           {% if content.n_news_image %}
+            <div class="dcf-ratio dcf-ratio-16x9 unl-frame-quad unlcms-article-lead-img">
+              {{ content.n_news_image }}
+            </div>
+            {% endif %}
+
+            {% if cutline or credit %}
+              <figcaption class="dcf-figcaption unlcms-article-lead-figcaption">
+                {% if cutline is not empty %}
+                  {{ content.n_news_image_cutline }}
+                {% endif %}
+                {% if credit is not empty %}
+                  <small class="dcf-d-inline-block dcf-txt-xs dcf-italic">
+                    {{ content.n_news_image_credit }}
+                  </small>
+                {% endif %}
+              </figcaption>
+           {% endif %}
+        </figure>
+      {% endif %}
     {% endif %}
 
     <div class="dcf-d-grid dcf-col-gap-vw dcf-row-gap-7 unlcms-grid-article">
-      <div class="unlcms-article-body dcf-d-flex dcf-jc-center">
-        <div class="dcf-w-max-lg">
-          {{ content.body }}
+      {% if content.body.0 %}
+        <div class="unlcms-article-body dcf-d-flex dcf-jc-center">
+          <div class="dcf-w-max-lg">
+            {{ content.body }}
+          </div>
         </div>
-      </div>
+      {% endif %}
 
       <div class="unlcms-article-share dcf-bt-1 dcf-bt-solid unl-bt-light-gray">
         <aside class="dcf-sticky dcf-top-0 dcf-pt-3">
@@ -69,7 +83,7 @@
               </a>
             </li>
             <li class="dcf-mb-0">
-              <a class="dcf-d-block dcf-h-6 dcf-w-6" href="http://twitter.com/share?text={{ node.label }} &url={{ fullUrl }}" aria-label="Share this article on Twitter">
+              <a class="dcf-d-block dcf-h-6 dcf-w-6" href="http://twitter.com/share?text={{ node.label }}&url={{ fullUrl }}" aria-label="Share this article on X/Twitter">
                 <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 48 48">
                   <path d="M28.5 20.3 46 0h-4.1L26.6 17.6 14.5 0H.5l18.3 26.7L.5 48h4.1l16-18.6L33.5 48h14l-19-27.7zm-5.7 6.6-1.9-2.7L6.2 3.1h6.4l11.9 17.1 1.9 2.7L41.8 45h-6.4L22.8 26.9z"></path>
                 </svg>
@@ -86,111 +100,125 @@
         </aside>
       </div>
 
-      {% if content.n_person_reference.0 %}
-        <aside class="unlcms-article-sidebar dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3 dcf-mb-7">
-          <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Contacts</h2>
-          <ul class="dcf-list-bare dcf-mb-0">
-            {% set persons = node.n_person_reference %}
+      {% if content.n_person_reference.0 or content.n_news_related_links.0 %}
+        <aside class="unlcms-article-sidebar dcf-grid-halves@sm dcf-grid-full@md dcf-col-gap-vw dcf-row-gap-7">
+          {% if content.n_person_reference.0 %}
+            <div class="dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
+              <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Contacts</h2>
+              <ul class="dcf-list-bare dcf-mb-0">
+                {% set persons = node.n_person_reference %}
 
-            {% for i, value in persons %}
-              {% set personOneTestDetails = node.n_person_reference[i].entity %}
+                {% for i, value in persons %}
+                  {% set personOneTestDetails = node.n_person_reference[i].entity %}
 
-              <li class="dcf-mt-5" itemscope="" itemtype="https://schema.org/Person">
-                <h3 class="dcf-txt-md dcf-mb-0" itemprop="name">
-                  {{ value.entity.title.value }}
-                </h3>
-                <div class="dcf-mt-1 dcf-txt-xs dcf-lh-3 dcf-italic" itemprop="jobTitle">
-                  {% if personOneTestDetails.n_person_position.value %}
-                    {{ personOneTestDetails.n_person_position.value }}
-                  {% else %}
-                    {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
-                  {% endif %}
-                </div>
-                <address class="dcf-mt-2">
-                  <dl class="dcf-txt-xs dcf-mb-0">
-                    <dt class="dcf-sr-only">Phone</dt>
-                    <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                      <div class="dcf-h-4 dcf-w-4 unl-gray">
-                        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
-                          <path d="M5.001 5h14v14h-14zM5.001 20v1.5A2.501 2.501 0 0 0 7.5 24h9c1.378 0 2.5-1.121 2.5-2.5V20H5.001zM12 22.5a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zM19 4V2.5C19 1.121 17.878 0 16.5 0h-9a2.501 2.501 0 0 0-2.499 2.5V4H19zM9.5 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"></path>
-                          <path fill="none" d="M0 0h24v24H0z"></path>
-                        </svg>
-                      </div>
-
-                      {% if personOneTestDetails.n_person_phone.value %}
-                        <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
-                          <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_phone.value }}</span>
-
-                          {% if (personOneTestDetails.n_person_phone.value|slice(0, 7)) == '402-472' %}
-                            <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_phone.value }}">On-campus
-                              {{ personOneTestDetails.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
-                          {% endif %}
-                        {% else %}
-                          <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
-                            <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
-
-                            {% if (personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
-                              <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
-                                {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
-                            {% endif %}
-                          </a>
-                        {% endif %}
-                      </dd>
-                    </dd>
-                    <dt class="dcf-sr-only">Email</dt>
-                    <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                      <div class="dcf-h-4 dcf-w-4 unl-gray">
-                        <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
-                          <path d="m12.002 12.36 10.095-8.03A1.99 1.99 0 0 0 21.001 4h-18c-.387 0-.746.115-1.053.307l10.054 8.053z"/><path d="m22.764 5.076-10.468 8.315a.488.488 0 0 1-.594-.001L1.26 5.036c-.16.287-.259.612-.26.964v11c.001 1.103.898 2 2.001 2h17.998c1.103 0 2-.897 2.001-2V6c0-.335-.09-.647-.236-.924z"/><path fill="none" d="M0 0h24v24H0z"/>
-                        </svg>
-                      </div>
-
-                      {% if personOneTestDetails.n_person_email.value %}
-                        <a class="dcf-txt-decor-hover" href="mailto:{{ personOneTestDetails.n_person_email.value|lower }}" itemprop="email">
-                          <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_email.value|lower }}</span>
-                        </a>
+                  <li class="dcf-mt-4 dcf-mb-0" itemscope="" itemtype="https://schema.org/Person">
+                    <h3 class="dcf-txt-md dcf-mb-0" itemprop="name">
+                      {{ value.entity.title.value }}
+                    </h3>
+                    <div class="dcf-mt-1 dcf-txt-xs dcf-lh-3 dcf-italic" itemprop="jobTitle">
+                      {% if personOneTestDetails.n_person_position.value %}
+                        {{ personOneTestDetails.n_person_position.value }}
                       {% else %}
-                        <a class="dcf-txt-decor-hover" href="mailto:{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
-                          <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</span>
-                        </a>
+                        {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
                       {% endif %}
-                    </dd>
-
-
-                    {% if personOneTestDetails.n_person_website.value %}
-                      {% for i, value in personOneTestDetails.n_person_website %}
-
+                    </div>
+                    <address class="dcf-mt-2">
+                      <dl class="dcf-txt-xs dcf-mb-0">
+                        <dt class="dcf-sr-only">Phone</dt>
                         <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
                           <div class="dcf-h-4 dcf-w-4 unl-gray">
                             <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
-                              <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"/>
-                              <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"/>
-                              <path fill="none" d="M0 0h24v24H0z"/>
+                              <path d="M5.001 5h14v14h-14zM5.001 20v1.5A2.501 2.501 0 0 0 7.5 24h9c1.378 0 2.5-1.121 2.5-2.5V20H5.001zM12 22.5a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zM19 4V2.5C19 1.121 17.878 0 16.5 0h-9a2.501 2.501 0 0 0-2.499 2.5V4H19zM9.5 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"></path>
+                              <path fill="none" d="M0 0h24v24H0z"></path>
                             </svg>
                           </div>
-                          <a class="dcf-txt-decor-hover" href="{{ personOneTestDetails.n_person_website.value[i].uri }}" itemprop="url">{{ personOneTestDetails.n_person_website.value[i].title }}</a>
+
+                          {% if personOneTestDetails.n_person_phone.value %}
+                            <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
+                              <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_phone.value }}</span>
+
+                              {% if (personOneTestDetails.n_person_phone.value|slice(0, 7)) == '402-472' %}
+                                <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_phone.value }}">On-campus
+                                  {{ personOneTestDetails.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
+                              {% endif %}
+                          {% else %}
+                            <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
+                              <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
+
+                              {% if (personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
+                                <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
+                                  {{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}</small>
+                              {% endif %}
+                          {% endif %}
+                          </a>
                         </dd>
-                      {% endfor %}
-                    {% endif %}
+                        <dt class="dcf-sr-only">Email</dt>
+                        <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                          <div class="dcf-h-4 dcf-w-4 unl-gray">
+                            <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
+                              <path d="m12.002 12.36 10.095-8.03A1.99 1.99 0 0 0 21.001 4h-18c-.387 0-.746.115-1.053.307l10.054 8.053z"/><path d="m22.764 5.076-10.468 8.315a.488.488 0 0 1-.594-.001L1.26 5.036c-.16.287-.259.612-.26.964v11c.001 1.103.898 2 2.001 2h17.998c1.103 0 2-.897 2.001-2V6c0-.335-.09-.647-.236-.924z"/><path fill="none" d="M0 0h24v24H0z"/>
+                            </svg>
+                          </div>
 
-                  </dl>
-                </address>
-              </li>
-            {% endfor %}
-          </ul>
-        </aside>
-        {#
-                  tag
-                  <aside class="dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
-                          <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Tags</h2>
-                          <ol class="dcf-list-bare dcf-mb-0 dcf-d-flex dcf-flex-wrap dcf-col-gap-3 dcf-row-gap-1 dcf-txt-xs">
-                            <li class="dcf-mb-0"><a class="dcf-txt-decor-hover" href="#">College of Business</a></li>
-                            <li class="dcf-mb-0"><a class="dcf-txt-decor-hover" href="#">Entrepreneurship</a></li>
-                            <li class="dcf-mb-0"><a class="dcf-txt-decor-hover" href="#">Undergraduate</a></li>
-                          </ol>
-                        </aside> #}
+                          {% if personOneTestDetails.n_person_email.value %}
+                            <a class="dcf-txt-decor-hover" href="mailto:{{ personOneTestDetails.n_person_email.value|lower }}" itemprop="email">
+                              <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_email.value|lower }}</span>
+                            </a>
+                          {% else %}
+                            <a class="dcf-txt-decor-hover" href="mailto:{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}" itemprop="email">
+                              <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_unldirectoryreference.entity.ee_unldir_mail.value|lower }}</span>
+                            </a>
+                        {% endif %}
+                        </dd>
+
+                        {% if personOneTestDetails.n_person_website.value %}
+                          {% for i, value in personOneTestDetails.n_person_website %}
+
+                            <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                              <div class="dcf-h-4 dcf-w-4 unl-gray">
+                                <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
+                                  <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"/>
+                                  <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"/>
+                                  <path fill="none" d="M0 0h24v24H0z"/>
+                                </svg>
+                              </div>
+                              <a class="dcf-txt-decor-hover" href="{{ personOneTestDetails.n_person_website.value[i].uri }}" itemprop="url">{{ personOneTestDetails.n_person_website.value[i].title }}</a>
+                            </dd>
+                          {% endfor %}
+                        {% endif %}
+
+                      </dl>
+                    </address>
+                  </li>
+                {% endfor %}
+              </ul>
+           </div>
+          {% endif %}
+
+          {% if content.n_news_related_links.0 %}
+            <div class="dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
+              <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray ">Related Links</h2>
+              <ul class="dcf-list-bare dcf-mb-0 dcf-txt-xs ">
+                {% set related_links = node.n_news_related_links %}
+                <li class="unl-dark-gray" itemscope="" itemtype="https://schema.org/Person">
+                  {% for i, value in related_links %}
+                      <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                        <div class="dcf-h-4 dcf-w-4 unl-gray">
+                          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"></path>
+                            <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"></path>
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                          </svg>
+                        </div>
+                        {{ content.n_news_related_links[i]}}
+                      </dd>
+                  {% endfor %}
+                </li>
+              </ul>
+           </div>
+         {% endif %}
+       </aside>
       {% endif %}
-
     </div>
   </div>
 </article>
