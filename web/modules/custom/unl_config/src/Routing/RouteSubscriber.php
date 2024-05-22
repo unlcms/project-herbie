@@ -22,6 +22,15 @@ class RouteSubscriber extends RouteSubscriberBase {
       $permission = $route->getRequirement('_permission') . '+unl administer site configuration';
       $route->setRequirement('_permission', $permission);
     }
+
+    // Form: admin_toolbar_tools.flush.
+    // Route: admin_toolbar_tools.flush.
+    // Path: /admin/flush.
+    if ($route = $collection->get('admin_toolbar_tools.flush')) {
+      // Add custom permission for route.
+      $permission = $route->getRequirement('_permission') . '+unl administer site configuration';
+      $route->setRequirement('_permission', $permission);
+    }
   }
 
 }

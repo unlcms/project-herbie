@@ -23,15 +23,25 @@
       {% set stack_wrapper = stack_wrapper|merge(['unlcms-tandem-stack-text-r']) %}
     {% endif %}
 
-    {# Stack #}
+{############### Tandem Stack ###############}
     {% if content.b_tandem_style.0['#markup'] == '2' %}
       <div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-stack">
         <div {{tandem_style_wrapper.addClass(stack_wrapper)}}>
           <div class="unlcms-tandem-stack-text-card">
+            {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
+              <header>
+              	{{content.b_tandem_overline}}
+                {% if content.b_tandem_overline.0  and not content.b_tandem_subhead.0  %}
+                  <h2 class="dcf-mt-0 dcf-mb-2">{{content.b_tandem_heading.0["#text"]}}</h2>
+                {% else %}
+                  <h2 class="dcf-mt-0">{{content.b_tandem_heading.0["#text"]}}</h2>
+                {% endif %}
+                {{content.b_tandem_subhead}}
+              </header>
+            {% else %}
+              <h2 class="dcf-mt-0">{{content.b_tandem_heading.0["#text"]}}</h2>
+            {% endif %}
 
-            {{content.b_tandem_overline}}
-            {{content.b_tandem_heading}}
-            {{content.b_tandem_subhead}}
             {{content.b_tandem_body}}
 
             {% set tandem_button_Objects = content.b_tandem_buttons['#object'] %}
@@ -39,7 +49,7 @@
             {% set array_of_tandom_buttons = attribute(tandem_button_Objects, tandem_button) %}
 
             {% if content.b_tandem_add_buttons_or_links.0['#markup'] == 'buttons' %}
-              {% set multiple_button_wrapper = ['dcf-d-flex', 'dcf-flex-wrap', 'dcf-gap-3'] %}
+              {% set multiple_button_wrapper = ['dcf-d-flex', 'dcf-flex-wrap', 'dcf-gap-3', 'dcf-mt-5'] %}
               {% set button_wrapper_attribute = create_attribute() %}
 
               {% if stack_alignment == 'center' %}
@@ -62,10 +72,9 @@
 
             {% elseif content.b_tandem_add_buttons_or_links.0['#markup'] == 'links' and content.b_tandem_links.0 %}
               {% if 'unlcms-tandem-stack-text-c' in stack_wrapper %}
-                <ul
-                class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-text-right dcf-mt-5 tandem-stack-ul-selector">
+                <ul class="dcf-mb-0 dcf-columns-2 dcf-mt-5 dcf-columns-1@md dcf-columns-2@lg tandem-stack-c-ul-list-style">
                   {% else %}
-                  <ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-mt-5">
+                  <ul class="dcf-mb-0 dcf-columns-2 dcf-mt-5 dcf-columns-1@md dcf-columns-2@lg">
                   {% endif %}
                   {{content.b_tandem_links}}
                 </ul>
@@ -76,7 +85,7 @@
             {{content.b_tandem_image}}
           </div>
         </div>
-        {# Fade #}
+{############### Tandem Fade ###############}
       {% elseif content.b_tandem_style.0['#markup'] == '1' %}
         {% set fade_wrapper = [
         'unlcms-tandem-text',
@@ -92,9 +101,20 @@
         <div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade" style="--bg-color: var(--bg-lighter-gray);">
           <div {{ tandem_style_wrapper.addClass(fade_wrapper) }}>
 
-            {{content.b_tandem_overline}}
-            {{content.b_tandem_heading}}
-            {{content.b_tandem_subhead}}
+            {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead and content.b_tandem_overline.0) %}
+              <header>
+              	{{content.b_tandem_overline}}
+                {% if content.b_tandem_overline.0  and not content.b_tandem_subhead.0  %}
+                  <h2 class="dcf-mt-0 dcf-mb-2">{{content.b_tandem_heading.0["#text"]}}</h2>
+                {% else %}
+                  <h2 class="dcf-mt-0">{{content.b_tandem_heading.0["#text"]}}</h2>
+                {% endif %}
+                {{content.b_tandem_subhead}}
+              </header>
+            {% else %}
+              <h2 class="dcf-mt-0">{{content.b_tandem_heading.0["#text"]}}</h2>
+            {% endif %}
+
             {{content.b_tandem_body}}
 
             {% if content.b_tandem_add_buttons_or_links.0['#markup'] == 'buttons' %}
@@ -103,29 +123,21 @@
               {% set array_of_tandom_buttons = attribute(tandem_button_Objects, tandem_button) %}
 
               {% if array_of_tandom_buttons|length > 1 %}
-                <div class="dcf-d-flex dcf-flex-wrap dcf-gap-3" role="group">
-                {% endif %}
+                <div class="dcf-d-flex dcf-flex-wrap dcf-gap-3 dcf-mt-5" role="group">
                 {{content.b_tandem_buttons}}
-                {% if array_of_tandom_buttons|length > 1 %}
                 </div>
+              {% else %}
+              	{{content.b_tandem_buttons}}
               {% endif %}
 
             {% elseif content.b_tandem_add_buttons_or_links.0['#markup'] == 'links' and content.b_tandem_links.0 %}
-              {% if 'unlcms-tandem-stack-text-c' in stack_wrapper %}
-                <ul
-                class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-text-right dcf-mt-5 tandem-stack-ul-selector">
-                  {% else %}
-                  <ul class="dcf-mb-0 dcf-columns-2 dcf-txt-sm dcf-mt-5">
-                  {% endif %}
-                  {{ content.b_tandem_links }}
-                </ul>
-              {% endif %}
+              <ul class="dcf-mb-0 dcf-columns-2 dcf-mt-5 dcf-columns-1@md dcf-columns-2@lg">
             </div>
-            <div class="unlcms-tandem-fade-img dcf-ratio dcf-ratio-16x9">
+            <div class="unlcms-tandem-fade-img dcf-ratio dcf-ratio-16x9 dcf-ratio-4x3@lg dcf-ratio-16x9@xl">
               {{content.b_tandem_image}}
             </div>
           </div>
-        {# Basic #}
+{############### Tandem Basic ###############}
       {% elseif content.b_tandem_style.0['#markup'] == '3' %}
 
           {% set tandem_text_wrapper = create_attribute() %}

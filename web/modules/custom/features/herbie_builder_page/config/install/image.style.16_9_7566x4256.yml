@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_7566x4256
+label: '16:9 (7566x4256)'
+effects:
+  f75a959c-572d-4a81-9b45-59cf7483fb67:
+    uuid: f75a959c-572d-4a81-9b45-59cf7483fb67
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 7566
+      height: 4256
+      anchor: center-center

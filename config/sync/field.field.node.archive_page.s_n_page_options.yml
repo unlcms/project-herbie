@@ -1,0 +1,21 @@
+uuid: 021de635-ec71-40e0-8ca8-cdb33e775135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.s_n_page_options
+    - node.type.archive_page
+  module:
+    - options
+id: node.archive_page.s_n_page_options
+field_name: s_n_page_options
+entity_type: node
+bundle: archive_page
+label: 'Page options'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

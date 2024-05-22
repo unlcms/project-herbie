@@ -39,7 +39,8 @@
 
 <div{{ attributes }}>
 {% for item in items %}
-  <dt class="dcf-sr-only">Office Hours</dt>
+  <dl>
+    <dt class="dcf-sr-only">Office Hours</dt>
     <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-1 dcf-mb-2">
       <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
         <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
@@ -48,5 +49,6 @@
       </div>
       <span itemprop="openingHours" content="{{item.content}}">{{item.content}}</span>
     </dd>
+  </dl>
 {% endfor %}
 </div>

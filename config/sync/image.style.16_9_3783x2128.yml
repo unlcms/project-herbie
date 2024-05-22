@@ -1,0 +1,15 @@
+uuid: 0da4bcf1-4158-49fb-b3b5-1a974f16b0e0
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_3783x2128
+label: '16:9 (3783x2128)'
+effects:
+  2b9e6d4b-abbf-4e3b-9579-de1f374219a1:
+    uuid: 2b9e6d4b-abbf-4e3b-9579-de1f374219a1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3783
+      height: 2128
+      anchor: center-center
