@@ -49,8 +49,8 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       }
 
       if ($block_type == 'tandem') {
-        //Create a callback function to '#process' so we can be able to alter form elements when editing/updating a block
-        $form['settings']['block_form']['#process'][] = 'edit_tandem_block_form_elements';
+        // Create a callback function to '#process' so we can be able to alter form elements when editing/updating a block.
+        $form['settings']['block_form']['#process'][] = '_edit_tandem_block_form_elements';
       };
 
        // Add our LBS heading before style options.
