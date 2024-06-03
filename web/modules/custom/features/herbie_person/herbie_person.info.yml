@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'allowed_formats:allowed_formats'
+  - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:ckeditor5'
   - 'drupal:editor'
@@ -27,5 +28,5 @@ dependencies:
   - 'image_class:image_class'
   - 'pathauto:pathauto'
   - 'svg_image:svg_image_responsive'
-version: 1.2.2
+version: 1.2.3
 package: Herbie
