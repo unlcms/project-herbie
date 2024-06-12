@@ -39,6 +39,7 @@ dependencies:
     - file_delete
     - filter
     - google_analytics
+    - group
     - layout_builder
     - media
     - media_file_delete
@@ -77,6 +78,7 @@ permissions:
   - 'access entity usage statistics'
   - 'access feed overview'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access protected page password screen'
@@ -132,6 +134,7 @@ permissions:
   - 'create content block content'
   - 'create cta block content'
   - 'create file media'
+  - 'create group_subsite group'
   - 'create hero block content'
   - 'create html_code block content'
   - 'create icon_links block content'

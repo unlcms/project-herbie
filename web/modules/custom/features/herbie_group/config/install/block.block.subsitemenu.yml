@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group_content_menu.group_content_menu_type.gcm_subsite_menu
+  module:
+    - group_content_menu
+  theme:
+    - unl_five_herbie
+id: subsitemenu
+theme: unl_five_herbie
+region: navlinks
+weight: -4
+provider: null
+plugin: 'group_content_menu:gcm_subsite_menu'
+settings:
+  id: 'group_content_menu:gcm_subsite_menu'
+  label: 'Subsite menu'
+  label_display: '0'
+  provider: group_content_menu
+  context_mapping:
+    group: '@group.group_route_context:group'
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

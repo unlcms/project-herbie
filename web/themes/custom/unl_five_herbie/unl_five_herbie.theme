@@ -67,9 +67,9 @@ function unl_five_herbie_preprocess_region(&$variables) {
  * Implements template_preprocess_block().
  */
 function unl_five_herbie_preprocess_block(&$variables) {
-  //Get site name and make it available in block templates.
+  // Get site name and make it available in block templates.
   $config = \Drupal::config('system.site');
-  $variables['site_name'] = $config->get('name');
+  $variables['name_of_site'] = $config->get('name');
 
   // Set $bundle var for custom block entities.
   $bundle = NULL;

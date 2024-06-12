@@ -1,0 +1,49 @@
+uuid: 3947a290-4ce9-4438-9101-3244d38a4801
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.group_subsite.group_subsite_node_reference
+    - group.type.group_subsite
+  module:
+    - path
+_core:
+  default_config_hash: UQQvqGuooqrzRxw3aLY_Gubd2GfbXnK9B38Cb_6xyl0
+id: group.group_subsite.default
+targetEntityType: group
+bundle: group_subsite
+mode: default
+content:
+  group_subsite_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  uid: true

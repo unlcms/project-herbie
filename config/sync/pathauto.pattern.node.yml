@@ -7,8 +7,8 @@ dependencies:
 id: node
 label: Node
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:menu-link:title]'
+pattern: '[node:group:url:path]/[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria: {  }
 selection_logic: and
-weight: 0
+weight: -2
 relationships: {  }

@@ -1,0 +1,5 @@
+services:
+  unl_group.route_subscriber:
+    class: Drupal\unl_group\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

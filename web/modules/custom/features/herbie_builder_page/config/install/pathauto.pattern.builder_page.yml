@@ -6,16 +6,16 @@ dependencies:
 id: builder_page
 label: 'Builder Page'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:menu-link:title]'
+pattern: '[node:group:url:path]/[node:menu-link:parents:join-path]/[node:menu-link:title]'
 selection_criteria:
-  4c5a8d87-c394-482e-9720-4dbb7af5d8e5:
+  d6219c80-d3d7-4b42-8185-cd5e13c0bab5:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 4c5a8d87-c394-482e-9720-4dbb7af5d8e5
+    uuid: d6219c80-d3d7-4b42-8185-cd5e13c0bab5
     context_mapping:
       node: node
     bundles:
       builder_page: builder_page
 selection_logic: and
-weight: -5
+weight: -8
 relationships: {  }

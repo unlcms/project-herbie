@@ -9,16 +9,16 @@ _core:
 id: webform_node
 label: 'Webform node'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join-path]/[node:menu-link:title]'
+pattern: '[node:group:url:path]/[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  f1d9a318-ae19-4c77-88c2-7e73fd7f85a8:
+  c8db6360-cc82-4e1a-bfec-5cb25d8a04fb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: f1d9a318-ae19-4c77-88c2-7e73fd7f85a8
+    uuid: c8db6360-cc82-4e1a-bfec-5cb25d8a04fb
     context_mapping:
       node: node
     bundles:
       webform: webform
 selection_logic: and
-weight: -5
+weight: -3
 relationships: {  }

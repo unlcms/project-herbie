@@ -1,0 +1,35 @@
+uuid: 1c1d4b0c-5a47-4154-ba26-485fc616338b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.group_subsite.group_subsite_node_reference
+    - group.type.group_subsite
+_core:
+  default_config_hash: 43JTXYCv0LTqy0CbMDuAPvI7VEbhmtV6yP0n8qCTCrs
+id: group.group_subsite.default
+targetEntityType: group
+bundle: group_subsite
+mode: default
+content:
+  group_subsite_node_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  uid: true
