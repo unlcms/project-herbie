@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: group_subsite
+label: Subsite
+description: 'A section of the site with its own site title, menu, content, and editors.'
+new_revision: true
+creator_membership: true
+creator_wizard: false
+creator_roles:
+  - group_subsite-admin

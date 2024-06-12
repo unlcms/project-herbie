@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+id: group.group_subsite.label
+field_name: label
+entity_type: group
+bundle: group_subsite
+label: 'Subsite name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

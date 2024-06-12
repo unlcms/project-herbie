@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.major
+  module:
+    - gnode
+    - node
+id: group_subsite-group_node-major
+group_type: group_subsite
+content_plugin: 'group_node:major'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false
