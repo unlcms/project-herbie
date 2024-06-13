@@ -26,5 +26,5 @@ dependencies:
   - 'herbie_webform:herbie_webform'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
-version: '1.4'
+version: 1.4.1
 package: Herbie

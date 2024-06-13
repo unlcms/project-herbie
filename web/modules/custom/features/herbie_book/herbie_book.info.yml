@@ -6,5 +6,5 @@ dependencies:
   - 'drupal:node'
   - 'herbie_webform:herbie_webform'
   - 'pathauto:pathauto'
-version: '1.2'
+version: 1.2.1
 package: Herbie

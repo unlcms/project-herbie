@@ -83,7 +83,7 @@ content:
     region: content
     settings:
       help_text: ''
-      label: 'Group name'
+      label: Subsite
       multiple: false
       required: false
     third_party_settings: {  }
