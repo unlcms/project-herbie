@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'drupal:node'
+  - 'herbie_webform:herbie_webform'
   - 'pathauto:pathauto'
-version: 1.1.0
+version: 1.2.1
 package: Herbie

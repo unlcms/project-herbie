@@ -1,0 +1,21 @@
+uuid: 57eb5829-5859-40b6-a959-9b550d129548
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - group_content_menu.group_content_menu_type.gcm_subsite_menu
+  module:
+    - group_content_menu
+_core:
+  default_config_hash: EWfOCxHSxMvYOaP4ink6I68BMVOyJvd191_57PdnRC4
+id: group_subsite-c2dd4163d526684825
+group_type: group_subsite
+content_plugin: 'group_content_menu:gcm_subsite_menu'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false
+  auto_create_group_menu: true
+  auto_create_home_link: true
+  auto_create_home_link_title: Home

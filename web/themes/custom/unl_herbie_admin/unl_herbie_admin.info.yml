@@ -4,6 +4,9 @@ base theme: claro
 description: 'Subtheme for Claro.'
 core_version_requirement: ^8 || ^9 || ^10
 
+libraries:
+  - unl_herbie_admin/global-styling
+
 regions:
   header: 'Header'
   pre_content: 'Pre-content'

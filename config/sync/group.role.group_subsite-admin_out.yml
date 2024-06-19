@@ -1,0 +1,17 @@
+uuid: f5fc3dc9-52c6-4f66-975f-d5fbf55fa599
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.administrator
+_core:
+  default_config_hash: mxze7frdrROgjiKw4rWmVAjVZzcbWsq6exd9M6_WsHo
+id: group_subsite-admin_out
+label: Administrator
+weight: -4
+admin: true
+scope: outsider
+global_role: administrator
+group_type: group_subsite
+permissions: {  }

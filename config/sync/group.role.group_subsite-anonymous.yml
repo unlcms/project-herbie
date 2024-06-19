@@ -1,0 +1,17 @@
+uuid: 28875a34-1385-4a69-b8f7-8063c9a8b343
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.anonymous
+_core:
+  default_config_hash: fu5B0KPTqPpn26Jk-cwMCEoLlnruVMh3FhWyT5VzkJU
+id: group_subsite-anonymous
+label: Anonymous
+weight: -10
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: group_subsite
+permissions: {  }

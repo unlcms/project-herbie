@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.coder
+id: group_subsite-developer_out
+label: Developer
+weight: -6
+admin: true
+scope: outsider
+global_role: coder
+group_type: group_subsite
+permissions: {  }

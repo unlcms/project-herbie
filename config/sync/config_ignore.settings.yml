@@ -7,6 +7,7 @@ ignored_config_entities:
   - ~block.block.breadcrumbs
   - ~block.block.mainnavigation
   - ~block.block.mainpagecontent
+  - ~block.block.subsitemenu
   - ~block.block.claro_breadcrumbs
   - ~block.block.claro_content
   - ~block.block.claro_messages

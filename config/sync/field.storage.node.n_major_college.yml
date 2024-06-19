@@ -5,6 +5,8 @@ dependencies:
   module:
     - node
     - options
+_core:
+  default_config_hash: yPKA3Gp75Empbp1Q75_beUdFftAKQ5Zj8eRz2gLBtVA
 id: node.n_major_college
 field_name: n_major_college
 entity_type: node

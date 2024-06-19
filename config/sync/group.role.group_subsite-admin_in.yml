@@ -1,0 +1,17 @@
+uuid: 62180b2c-cd0f-4bdc-930a-ccdb6d69fb63
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.administrator
+_core:
+  default_config_hash: U4w_OdRuvlwPkP7IN3ESbSjZ2fStHCd29V12TOrcQts
+id: group_subsite-admin_in
+label: Administrator
+weight: -3
+admin: true
+scope: insider
+global_role: administrator
+group_type: group_subsite
+permissions: {  }
