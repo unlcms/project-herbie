@@ -32,14 +32,19 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
         // Assign a callback to alter form elements: Hide the Buttons if a Headline Link is provided.
-        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements'; 
+        $form['settings']['block_form']['#process'][] = '_edit_card_block_form_elements';
       };
 
       if ($block_type == 'tandem') {
         // Create a callback function to '#process' so we can be able to alter form elements when adding a block.
         $form['settings']['block_form']['#process'][] = '_add_tandem_block_form_elements';
       };
- 
+
+      if ($block_type == 'simple_media') {
+        // Create a callback function to '#process' so we can be able to alter form elements when adding a block.
+        $form['settings']['block_form']['#process'][] = '_add_edit_simple_media_block_form_elements';
+      };
+
       break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':
@@ -51,6 +56,11 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
       if ($block_type == 'tandem') {
         // Create a callback function to '#process' so we can be able to alter form elements when editing/updating a block.
         $form['settings']['block_form']['#process'][] = '_edit_tandem_block_form_elements';
+      };
+
+      if ($block_type == 'simple_media') {
+        // Create a callback function to '#process' so we can be able to alter form elements when adding a block.
+        $form['settings']['block_form']['#process'][] = '_add_edit_simple_media_block_form_elements';
       };
 
        // Add our LBS heading before style options.
@@ -196,6 +206,20 @@ function _edit_tandem_block_form_elements(array $element, FormStateInterface $fo
 
   return $element;
 }
+
+/**
+ * Callback function.
+ */
+function _add_edit_simple_media_block_form_elements(array $element, FormStateInterface $form_state) {
+  $element['b_simple_media_shadow_position']['widget']['#states'] = array('visible' => array(
+    array ('select[id="edit-settings-block-form-b-simple-media-border-or-shadow"]' => array('value' => 'shadow'))));
+
+  $element['b_simple_media_shadow_style']['widget']['#states'] = array('visible' => array(
+    array ('select[id="edit-settings-block-form-b-simple-media-border-or-shadow"]' => array('value' => 'shadow'))));
+
+  return $element;
+}
+
 
 /**
  * Callback function.

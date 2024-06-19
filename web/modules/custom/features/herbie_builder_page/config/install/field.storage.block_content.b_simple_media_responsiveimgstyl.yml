@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_simple_media_responsiveimgstyl
+field_name: b_simple_media_responsiveimgstyl
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 16x9_ris
+      label: Widescreen(16x9)
+    -
+      value: 1x1_ris
+      label: Square(1x1)
+    -
+      value: 4x3_ris
+      label: 4x3
+    -
+      value: full__no_crop
+      label: 'Not cropped'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

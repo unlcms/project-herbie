@@ -1,0 +1,21 @@
+uuid: 3902d5dc-03f7-417a-8385-aa92bfda790c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_media
+    - field.storage.block_content.b_simple_media_border_or_shadow
+  module:
+    - options
+id: block_content.simple_media.b_simple_media_border_or_shadow
+field_name: b_simple_media_border_or_shadow
+entity_type: block_content
+bundle: simple_media
+label: 'Add Border or Shadow'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

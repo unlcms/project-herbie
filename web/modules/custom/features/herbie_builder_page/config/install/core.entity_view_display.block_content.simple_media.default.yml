@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_media
+    - field.field.block_content.simple_media.b_simple_media_animation
+    - field.field.block_content.simple_media.b_simple_media_border_or_shadow
+    - field.field.block_content.simple_media.b_simple_media_media
+    - field.field.block_content.simple_media.b_simple_media_responsiveimgstyl
+    - field.field.block_content.simple_media.b_simple_media_shadow_position
+    - field.field.block_content.simple_media.b_simple_media_shadow_style
+  module:
+    - options
+id: block_content.simple_media.default
+targetEntityType: block_content
+bundle: simple_media
+mode: default
+content:
+  b_simple_media_animation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  b_simple_media_border_or_shadow:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  b_simple_media_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 16x9
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  b_simple_media_responsiveimgstyl:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  b_simple_media_shadow_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  b_simple_media_shadow_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden: {  }

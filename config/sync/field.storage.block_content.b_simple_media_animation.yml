@@ -1,0 +1,33 @@
+uuid: 0e540b81-0219-4f17-99af-ce6563a427e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_simple_media_animation
+field_name: b_simple_media_animation
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: unl-scroll-fx-fade-in
+      label: 'Fade-in (On scroll)'
+    -
+      value: unl-scroll-fx-move-left
+      label: 'Move left (On scroll)'
+    -
+      value: unl-scroll-fx-move-right
+      label: 'Move right (On scroll)'
+    -
+      value: unl-scroll-fx-move-up
+      label: 'Move up (On scroll)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
