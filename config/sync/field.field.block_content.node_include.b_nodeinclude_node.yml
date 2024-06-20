@@ -16,7 +16,7 @@ entity_type: block_content
 bundle: node_include
 label: Node
 description: "<p>Choose the piece of content to embed.</p>\r\n<p><i>Note that there is no check made to prevent a circular include loop. Causing such a loop will prevent the page from loading and it will have to be deleted from /admin/content and recreated.</i></p>"
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
