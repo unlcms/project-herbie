@@ -9,16 +9,16 @@ _core:
 id: major
 label: Major
 type: 'canonical_entities:node'
-pattern: 'major/[node:title]'
+pattern: '[node:group:url:path]/major/[node:title]'
 selection_criteria:
-  c326c991-c933-430a-ac56-5d01cac08d9e:
+  43578d2a-92a5-4ad4-ac96-b198655e2e54:
     id: 'entity_bundle:node'
     negate: false
-    uuid: c326c991-c933-430a-ac56-5d01cac08d9e
+    uuid: 43578d2a-92a5-4ad4-ac96-b198655e2e54
     context_mapping:
       node: node
     bundles:
       major: major
 selection_logic: and
-weight: -5
+weight: -7
 relationships: {  }

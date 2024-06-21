@@ -1,0 +1,17 @@
+uuid: 9b88ced0-27d6-4dee-abd3-2c890fe64112
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.authenticated
+_core:
+  default_config_hash: bEuqC4QZkNitSW2CYLNGQa2GfXDhExiZQwL6IgHDBOI
+id: group_subsite-outsider
+label: Outsider
+weight: -9
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: group_subsite
+permissions: {  }

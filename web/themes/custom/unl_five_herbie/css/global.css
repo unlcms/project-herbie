@@ -1,16 +1,26 @@
 
-/* UPDATED UNL CMS GRID */
-/* max sm 673 */
-@media (max-width: 42.09em) {
+@media only screen and (max-width: 42.09em) {
+
   .unlcms-grid-cols {
-    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 5.62vw;
+    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 1.58vw 1.58vw 1fr 1fr 1rem 3.16rem 5.62vw;
   }
+
 }
-/* sm 673 */
-@media (min-width: 42.09em) {
+
+@media only screen and (min-width: 42.09em) and (max-width: 56.12em) {
+
   .unlcms-grid-cols {
-    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 1rem 3.16rem 1.58vw 1.58vw 3.16rem 1rem 1fr 1fr 1rem 3.16rem 5.62vw;
+    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 1fr 1.58vw 1.58vw 1fr 1fr 1fr 1rem 3.16rem 5.62vw;
   }
+
+}
+
+@media only screen and (min-width: 56.12em) {
+
+  .unlcms-grid-cols {
+    grid-template-columns: 5.62vw 3.16rem 1rem 1fr 1fr 1fr 1fr 1rem 3.16rem 1.58vw 1.58vw 3.16rem 1rem 1fr 1fr 1fr 1fr 1rem 3.16rem 5.62vw;
+  }
+
 }
 
 
@@ -295,9 +305,14 @@ div.unl-bg-dark-gray div.unl-bg-lightest-gray li
 
 /* #region Card Subhead*/
 div.dcf-card.unl-bg-dark-gray div.dcf-card-block .dcf-subhead,
-div.dcf-card.unl-bg-scarlet div.dcf-card-block .dcf-subhead
+div.dcf-card.unl-bg-scarlet div.dcf-card-block .dcf-subhead {
+  color:  #fefdfa !important;
+}
+
+div.dcf-card.unl-bg-lightest-gray div.dcf-card-block .dcf-subhead,
+div.dcf-card.unl-bg-lighter-gray div.dcf-card-block .dcf-subhead
 {
-  color: #e3e3e2 !important;
+  color:  #424240 !important;
 }
 /* #endregion */
 

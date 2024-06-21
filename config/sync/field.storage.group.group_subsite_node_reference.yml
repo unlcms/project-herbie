@@ -1,0 +1,22 @@
+uuid: fcc4f312-9c24-4a28-ad9c-27fb782743e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - node
+_core:
+  default_config_hash: 7FVSJ8d836pWSrvUZ7LyBH3Q8knii_DSv4CLk52Cuz4
+id: group.group_subsite_node_reference
+field_name: group_subsite_node_reference
+entity_type: group
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

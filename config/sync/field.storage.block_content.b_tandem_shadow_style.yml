@@ -1,0 +1,33 @@
+uuid: a9923cd9-5aaf-499a-bf2f-94bed52e7b23
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.b_tandem_shadow_style
+field_name: b_tandem_shadow_style
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: scarlet
+      label: Scarlet
+    -
+      value: gray
+      label: Gray
+    -
+      value: scarlet-dots
+      label: Scarlet-dots
+    -
+      value: gray-dots
+      label: Gray-dots
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -37,6 +37,9 @@ settings:
     -
       value: '9'
       label: 'Hixson Lied College of Fine and Performing Arts'
+    -
+      value: '10'
+      label: 'College of Public Affairs and Community Service'
   allowed_values_function: ''
 module: options
 locked: false

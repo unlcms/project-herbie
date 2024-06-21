@@ -1,0 +1,23 @@
+uuid: 9388aafc-ee12-4847-b4b4-bf4a5f9c50ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tandem
+    - field.storage.block_content.b_tandem_shadow_position
+  module:
+    - options
+id: block_content.tandem.b_tandem_shadow_position
+field_name: b_tandem_shadow_position
+entity_type: block_content
+bundle: tandem
+label: 'Shadow Position'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: top-right
+default_value_callback: ''
+settings: {  }
+field_type: list_string
