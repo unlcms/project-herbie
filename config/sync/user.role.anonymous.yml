@@ -6,6 +6,7 @@ dependencies:
     - entity_share_server
     - external_entities
     - media
+    - protected_pages
     - system
 _core:
   default_config_hash: 68rVss6EhJ70dZP3kK2ULmGVWGpw2_UrSNFAUiVDxu8
@@ -15,6 +16,7 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - 'access protected page password screen'
   - entity_share_server_access_channels
   - 'view media'
   - 'view unl_directory_entry external entity'

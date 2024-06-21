@@ -1,0 +1,10 @@
+uuid: 0baeb756-062e-4971-8f45-2ba528a66a49
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_centered
+label: 'Teaser Centered'
+targetEntityType: node
+cache: true

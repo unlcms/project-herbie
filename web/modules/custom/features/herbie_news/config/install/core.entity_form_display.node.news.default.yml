@@ -3,14 +3,19 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.n_news_byline
     - field.field.node.news.n_news_canonical_url
     - field.field.node.news.n_news_foreign_key
     - field.field.node.news.n_news_image
     - field.field.node.news.n_news_image_credit
     - field.field.node.news.n_news_image_cutline
+    - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
     - node.type.news
+    - workflows.workflow.editorial
   module:
+    - content_moderation
+    - entitygroupfield
     - field_group
     - link
     - media_library
@@ -42,7 +47,7 @@ third_party_settings:
       label: 'Nebraska Today'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 11
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -58,7 +63,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 9
     region: content
     settings:
       rows: 9
@@ -68,9 +73,33 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  entitygroupfield:
+    type: entitygroupfield_select_widget
+    weight: 15
+    region: content
+    settings:
+      help_text: ''
+      label: Subsite
+      multiple: false
+      required: false
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  n_news_byline:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   n_news_canonical_url:
     type: link_default
@@ -110,9 +139,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  n_news_related_links:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   n_person_reference:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -122,27 +159,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -157,7 +194,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -166,7 +203,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

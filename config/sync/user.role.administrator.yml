@@ -11,6 +11,7 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
+    - filter.format.webform_email
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -39,16 +40,20 @@ dependencies:
     - file_delete
     - filter
     - google_analytics
+    - group
     - layout_builder
     - media
     - media_file_delete
     - menu_admin_per_menu
+    - metatag
     - node
     - paragraphs
     - path
+    - protected_pages
     - rabbit_hole
     - redirect
     - replicate_ui
+    - rest
     - scanner
     - system
     - taxonomy
@@ -76,8 +81,10 @@ permissions:
   - 'access entity usage statistics'
   - 'access feed overview'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access own webform configuration'
+  - 'access protected page password screen'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -96,6 +103,7 @@ permissions:
   - 'administer google analytics'
   - 'administer js assets injector'
   - 'administer main menu items'
+  - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'
@@ -103,15 +111,22 @@ permissions:
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
+  - 'administer paragraphs types'
+  - 'administer protected pages configuration'
   - 'administer redirects'
+  - 'administer rest resources'
   - 'administer scanner settings'
   - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
   - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'
+  - 'bypass pages password protection'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'
@@ -122,6 +137,7 @@ permissions:
   - 'create content block content'
   - 'create cta block content'
   - 'create file media'
+  - 'create group_subsite group'
   - 'create hero block content'
   - 'create html_code block content'
   - 'create icon_links block content'
@@ -266,6 +282,7 @@ permissions:
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'use text format webform_email'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view archive_page revisions'

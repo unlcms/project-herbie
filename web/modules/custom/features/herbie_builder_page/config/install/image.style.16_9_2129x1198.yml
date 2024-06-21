@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_2129x1198
+label: '16:9 (2129x1198)'
+effects:
+  4a0cd37e-7677-4f58-9e7e-1a0b3c4cbd6a:
+    uuid: 4a0cd37e-7677-4f58-9e7e-1a0b3c4cbd6a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2129
+      height: 1198
+      anchor: center-center

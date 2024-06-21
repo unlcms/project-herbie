@@ -1,0 +1,19 @@
+uuid: d2da5183-210e-4576-a739-a8936c0ee666
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.person
+  module:
+    - gnode
+    - node
+_core:
+  default_config_hash: 0OQskrYXjV1S-vMOl1jqnQfcLtcl8q4W1C62xLz7x50
+id: group_subsite-group_node-person
+group_type: group_subsite
+content_plugin: 'group_node:person'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

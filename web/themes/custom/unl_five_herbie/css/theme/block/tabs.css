@@ -9,10 +9,10 @@ div.unl-bg-scarlet section.dcf-tabs-panel summary,
 div.unl-bg-scarlet section.dcf-tabs-panel span,
 div.unl-bg-scarlet section.dcf-tabs-panel ol,
 div.unl-bg-scarlet section.dcf-tabs-panel li,
-.unl-bg-scarlet a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-scarlet a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-scarlet a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-scarlet a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
+.unl-bg-scarlet section.dcf-tabs-panel a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
 color: var(--darker-gray) !important;
 }
 
@@ -27,10 +27,10 @@ div.unl-bg-dark-gray section.dcf-tabs-panel summary,
 div.unl-bg-dark-gray section.dcf-tabs-panel span,
 div.unl-bg-dark-gray section.dcf-tabs-panel ol,
 div.unl-bg-dark-gray section.dcf-tabs-panel li,
-.unl-bg-dark-gray a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-dark-gray a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-dark-gray a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
-.unl-bg-dark-gray a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
+.unl-bg-dark-gray section.dcf-tabs-panel a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
   color: var(--darker-gray) !important;
 }
 

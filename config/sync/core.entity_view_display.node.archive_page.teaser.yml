@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.archive_page.archive_page_body
+    - field.field.node.archive_page.s_n_page_options
     - node.type.archive_page
   module:
     - user
@@ -27,3 +28,4 @@ content:
     region: content
 hidden:
   archive_page_body: true
+  s_n_page_options: true

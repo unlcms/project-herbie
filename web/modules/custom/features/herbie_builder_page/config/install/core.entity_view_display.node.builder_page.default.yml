@@ -98,12 +98,14 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
+              - 'inline_block:embed'
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
@@ -131,6 +133,7 @@ third_party_settings:
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:photo_hero'
+              - 'inline_block:embed'
               - 'inline_block:html_code'
               - 'inline_block:icon_links'
               - 'inline_block:logo_cloud'
@@ -154,13 +157,15 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
+              - 'inline_block:embed'
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
@@ -179,7 +184,8 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -187,6 +193,7 @@ third_party_settings:
               - 'inline_block:cta'
               - 'inline_block:card'
               - 'inline_block:photo_hero'
+              - 'inline_block:embed'
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'

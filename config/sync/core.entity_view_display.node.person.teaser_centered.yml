@@ -1,0 +1,198 @@
+uuid: cbf31673-af56-403c-867e-ebdca0555863
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_centered
+    - field.field.node.person.n_additional
+    - field.field.node.person.n_education
+    - field.field.node.person.n_person_address
+    - field.field.node.person.n_person_bio
+    - field.field.node.person.n_person_email
+    - field.field.node.person.n_person_phone
+    - field.field.node.person.n_person_photo
+    - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_social_fb
+    - field.field.node.person.n_person_social_instagram
+    - field.field.node.person.n_person_social_linkedin
+    - field.field.node.person.n_person_social_pinterest
+    - field.field.node.person.n_person_social_snapchat
+    - field.field.node.person.n_person_social_twitter
+    - field.field.node.person.n_person_social_youtube
+    - field.field.node.person.n_person_unldirectoryreference
+    - field.field.node.person.n_person_website
+    - node.type.person
+    - responsive_image.styles.large__square
+  module:
+    - dcf_lazyload
+    - image_class
+    - layout_builder
+    - link
+    - svg_image_responsive
+    - telephone
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ZRi1CJ9WIE5TDOih3P7co6ViLpC0KGlNQNYyOv2vG0Y
+id: node.person.teaser_centered
+targetEntityType: node
+bundle: person
+mode: teaser_centered
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  n_additional:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  n_education:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  n_person_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  n_person_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  n_person_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  n_person_phone:
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  n_person_photo:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: large__square
+      image_link: ''
+    third_party_settings:
+      image_class:
+        class: ''
+      dcf_lazyload:
+        dcf_lazyload_enable: false
+    weight: 17
+    region: content
+  n_person_position:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  n_person_social_fb:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  n_person_social_instagram:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  n_person_social_linkedin:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  n_person_social_pinterest:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  n_person_social_snapchat:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  n_person_social_twitter:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  n_person_social_youtube:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  n_person_unldirectoryreference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  n_person_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

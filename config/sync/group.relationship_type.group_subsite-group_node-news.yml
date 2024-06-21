@@ -1,0 +1,19 @@
+uuid: 5ac684aa-0600-418b-8979-9c8f5933e82c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.news
+  module:
+    - gnode
+    - node
+_core:
+  default_config_hash: TZDJSJ4BIGNA9Ruq6-jyw8uJ4WSDUkkWZTqLyXlyKPY
+id: group_subsite-group_node-news
+group_type: group_subsite
+content_plugin: 'group_node:news'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

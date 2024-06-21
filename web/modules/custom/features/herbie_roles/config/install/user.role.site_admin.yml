@@ -9,6 +9,7 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
+    - filter.format.webform_email
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -33,6 +34,7 @@ dependencies:
     - file_delete
     - filter
     - google_analytics
+    - group
     - layout_builder
     - media
     - media_file_delete
@@ -64,6 +66,7 @@ permissions:
   - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access site in maintenance mode'
@@ -79,6 +82,7 @@ permissions:
   - 'administer google analytics'
   - 'administer main menu items'
   - 'administer nodes'
+  - 'administer paragraphs types'
   - 'administer redirects'
   - 'administer scanner settings'
   - 'administer unl breadcrumbs'
@@ -232,6 +236,7 @@ permissions:
   - 'use text format simple'
   - 'use text format standard'
   - 'use text format webform'
+  - 'use text format webform_email'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view archive_page revisions'

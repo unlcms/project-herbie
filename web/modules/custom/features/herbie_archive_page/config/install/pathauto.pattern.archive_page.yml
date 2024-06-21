@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: archive_page
+label: 'Archive page'
+type: 'canonical_entities:node'
+pattern: '[node:group:url:path]/[node:book:parents:join-path]/[node:title]'
+selection_criteria:
+  4d3ea3ce-681e-4270-99ea-4f773ac327e3:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4d3ea3ce-681e-4270-99ea-4f773ac327e3
+    context_mapping:
+      node: node
+    bundles:
+      archive_page: archive_page
+selection_logic: and
+weight: -10
+relationships: {  }

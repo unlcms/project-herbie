@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_1596x898
+label: '16:9 (1596x898)'
+effects:
+  c3e964ef-41fd-4a05-bb01-153b02c7b655:
+    uuid: c3e964ef-41fd-4a05-bb01-153b02c7b655
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 898
+      anchor: center-center

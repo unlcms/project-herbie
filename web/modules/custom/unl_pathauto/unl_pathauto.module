@@ -16,8 +16,8 @@ function unl_pathauto_pathauto_pattern_alter(PathautoPatternInterface $pattern, 
   // token instead of menu-based tokens.
   if ($context['module'] == 'node' && $context['bundle'] == 'builder_page') {
     $menu = $context['data']['node']->__get('menu');
-    if ($menu['enabled'] === 0) {
-      $pattern->setPattern('[node:title]');
+    if (!is_array($menu) || $menu['enabled'] === 0) {
+      $pattern->setPattern('[node:group:url:path]/[node:title]');
     }
   }
 }
@@ -33,12 +33,12 @@ function unl_pathauto_form_pathauto_pattern_form_alter(&$form, FormStateInterfac
   // Loop through selection criteria to find if this form is being used for the
   // builder_page node bundle. If so, then add markup to top of page.
   foreach ($selection_criteria as $criterion) {
-    if ($criterion['id'] == 'node_type'
+    if ($criterion['id'] == 'entity_bundle:node'
       && in_array('builder_page', $criterion['bundles'])
       ) {
       $form['unl_pathauto_notice'] = [
         '#weight' => -10,
-        '#markup' => t('<p><strong>In the event a Builder Page node does not have a menu title, then [node:title] is used instead as the pattern. This behavior is controlled by the UNL Pathauto module.</strong></p>'),
+        '#markup' => t('<p><strong>In the event a Builder Page node does not have a menu title, then [node:group:url:path]/[node:title] is used instead as the pattern. This behavior is controlled by the UNL Pathauto module.</strong></p>'),
       ];
       break;
     }

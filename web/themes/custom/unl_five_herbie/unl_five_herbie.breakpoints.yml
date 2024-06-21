@@ -1,0 +1,64 @@
+unl_five_herbie.2xs:
+  label: '2xs'
+  mediaQuery: 'all and (min-width: 0em)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.xs:
+  label: 'xs'
+  mediaQuery: 'all and (min-width: 31.57em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.sm:
+  label: 'sm'
+  mediaQuery: 'all and (min-width: 42.09em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.md:
+  label: 'md'
+  mediaQuery: 'all and (min-width: 56.12em)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.lg:
+  label: 'lg'
+  mediaQuery: 'all and (min-width: 74.83em)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.xl:
+  label: 'xl'
+  mediaQuery: 'all and (min-width: 99.78em)'
+  weight: 5
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.2xl:
+  label: '2xl'
+  mediaQuery: 'all and (min-width: 133.03em)'
+  weight: 6
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+unl_five_herbie.3xl:
+  label: '3xl'
+  mediaQuery: 'all and (min-width: 177.38em)'
+  weight: 7
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x

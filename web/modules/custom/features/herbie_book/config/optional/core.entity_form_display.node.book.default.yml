@@ -4,7 +4,10 @@ dependencies:
   config:
     - field.field.node.book.body
     - node.type.book
+    - workflows.workflow.editorial
   module:
+    - content_moderation
+    - entitygroupfield
     - path
     - text
 id: node.book.default
@@ -14,7 +17,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 26
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -24,40 +27,56 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  entitygroupfield:
+    type: entitygroupfield_select_widget
     weight: 10
+    region: content
+    settings:
+      help_text: ''
+      label: Subsite
+      multiple: false
+      required: false
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -65,7 +84,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
@@ -74,7 +93,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
