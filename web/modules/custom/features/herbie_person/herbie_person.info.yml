@@ -7,6 +7,7 @@ dependencies:
   - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:ckeditor5'
+  - 'drupal:content_moderation'
   - 'drupal:editor'
   - 'drupal:field'
   - 'drupal:file'
@@ -21,12 +22,14 @@ dependencies:
   - 'drupal:telephone'
   - 'drupal:text'
   - 'drupal:user'
+  - 'entitygroupfield:entitygroupfield'
   - 'external_entities:external_entities'
   - 'field_group:field_group'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
+  - 'svg_image:svg_image'
   - 'svg_image:svg_image_responsive'
-version: 1.2.3
+version: 1.3.3
 package: Herbie

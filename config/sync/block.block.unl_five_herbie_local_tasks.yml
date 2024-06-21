@@ -2,6 +2,8 @@ uuid: 7bcae009-2daf-45fe-856d-f3775daa1f90
 langcode: en
 status: true
 dependencies:
+  module:
+    - user
   theme:
     - unl_five_herbie
 _core:
@@ -9,7 +11,7 @@ _core:
 id: unl_five_herbie_local_tasks
 theme: unl_five_herbie
 region: navlinks
-weight: -4
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

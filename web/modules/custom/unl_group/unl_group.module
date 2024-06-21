@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * This module extends Group functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_complete_form_alter().
+ */
+function unl_group_field_widget_complete_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  // Hide the Group selector field on the node edit page if no groups exist.
+  if ($context['widget']->getPluginId() == 'entitygroupfield_select_widget') {
+    $groups = \Drupal::entityTypeManager()->getStorage('group')->loadMultiple();
+    if (!$groups) {
+      $field_widget_complete_form['widget']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ */
+function unl_group_field_widget_single_element_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  // Hide the alias/path field for the Group Relationship. This principally is on
+  // the node edit form. We're not concerned with the relationship entity at all.
+  if ($context['widget']->getPluginId() == 'entitygroupfield_select_widget') {
+    $field_widget_complete_form['subform']['#access'] = FALSE;
+  }
+}

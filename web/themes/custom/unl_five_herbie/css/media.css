@@ -45,14 +45,13 @@
   margin-bottom: unset;
 }
 
-.unl .align-center .media-entity.view-mode--narrow {
-  width: unset;
-}
-
 .align-center.media-entity.view-mode--narrow {
   margin: auto;
   width: 50%;
   margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .media-entity.view-mode--wide,

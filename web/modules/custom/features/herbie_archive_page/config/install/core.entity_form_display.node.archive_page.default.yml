@@ -7,6 +7,7 @@ dependencies:
     - node.type.archive_page
   module:
     - content_moderation
+    - entitygroupfield
     - field_group
     - path
     - text
@@ -48,6 +49,16 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  entitygroupfield:
+    type: entitygroupfield_select_widget
+    weight: 11
+    region: content
+    settings:
+      help_text: ''
+      label: Subsite
+      multiple: false
+      required: false
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default

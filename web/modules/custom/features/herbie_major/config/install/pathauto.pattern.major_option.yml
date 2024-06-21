@@ -6,16 +6,16 @@ dependencies:
 id: major_option
 label: 'Major option'
 type: 'canonical_entities:node'
-pattern: 'major/[node:n_major_option_parent_major:entity:title]/option/[node:title]'
+pattern: '[node:group:url:path]/major/[node:n_major_option_parent_major:entity:title]/option/[node:title]'
 selection_criteria:
-  9a636fd3-7b46-45c5-b859-410d1c23cb4c:
+  ae03cbfe-eaa2-4280-9fbd-0e85321617e4:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 9a636fd3-7b46-45c5-b859-410d1c23cb4c
+    uuid: ae03cbfe-eaa2-4280-9fbd-0e85321617e4
     context_mapping:
       node: node
     bundles:
       major_option: major_option
 selection_logic: and
-weight: -5
+weight: -6
 relationships: {  }

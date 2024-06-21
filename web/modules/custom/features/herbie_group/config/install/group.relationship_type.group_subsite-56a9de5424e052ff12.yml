@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.major_option
+  module:
+    - gnode
+    - node
+id: group_subsite-56a9de5424e052ff12
+group_type: group_subsite
+content_plugin: 'group_node:major_option'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false
