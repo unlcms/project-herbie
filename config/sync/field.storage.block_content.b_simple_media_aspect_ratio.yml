@@ -1,11 +1,12 @@
+uuid: cee6dd29-5e81-47c1-a1e4-5b48e8c7bdc3
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - options
-id: block_content.b_simple_media_responsiveimgstyl
-field_name: b_simple_media_responsiveimgstyl
+id: block_content.b_simple_media_aspect_ratio
+field_name: b_simple_media_aspect_ratio
 entity_type: block_content
 type: list_string
 settings:

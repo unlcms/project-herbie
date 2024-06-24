@@ -1,4 +1,4 @@
-uuid: 0e540b81-0219-4f17-99af-ce6563a427e6
+uuid: 011473a0-7c01-44e2-a603-d753bde125b9
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: block_content
 type: list_string
 settings:
   allowed_values:
-    -
-      value: unl-scroll-fx-fade-in
-      label: 'Fade-in (On scroll)'
     -
       value: unl-scroll-fx-move-left
       label: 'Move left (On scroll)'

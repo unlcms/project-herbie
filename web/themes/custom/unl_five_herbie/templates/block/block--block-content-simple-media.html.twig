@@ -1,3 +1,6 @@
+{{ attach_library('unl_five_herbie/tandem') }}
+{{ attach_library('unl_five_herbie/simple_media') }}
+
 <div{{ attributes }}>
   {{ title_prefix }}
   {% if label %}
@@ -6,11 +9,8 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-  {{ attach_library('unl_five_herbie/tandem') }}
-  {{ attach_library('unl_five_herbie/simple_media') }}
-
   {% block content %}
-    {% if content.b_simple_media_border_or_shadow.0['#markup'] == 'shadow' %}
+    {% if content.b_simple_media_frame_or_shadow.0['#markup'] == 'shadow' %}
       {% set tandem_image_wrapper = create_attribute() %}
       {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
 
@@ -71,19 +71,13 @@
         </div>
 
       {% else %}
-        {% if content.b_simple_media_animation.0['#markup'] == 'unl-scroll-fx-fade-in' %}
-          <div class="unl-scroll-fx-fade-in">
-            {{ content.b_simple_media_media }}
-          </div>
-        {% else %}
           {{ content.b_simple_media_media }}
-        {% endif %}
-
       {% endif %}
 
-      {% if content.b_simple_media_border_or_shadow.0['#markup'] == 'shadow' %}
+      {% if content.b_simple_media_frame_or_shadow.0['#markup'] == 'shadow' %}
         <div {{ shadow_background_wrapper_attribute.addClass(shadow_background_wrapper) }}></div>
+      </div>
       {% endif %}
-    </div>
+
   {% endblock %}
 </div>

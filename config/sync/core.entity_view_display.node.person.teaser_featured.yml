@@ -41,6 +41,11 @@ targetEntityType: node
 bundle: person
 mode: teaser_featured
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -175,5 +180,6 @@ content:
     weight: 5
     region: content
 hidden:
+  entitygroupfield: true
   n_additional: true
   n_education: true

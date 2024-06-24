@@ -212,10 +212,10 @@ function _edit_tandem_block_form_elements(array $element, FormStateInterface $fo
  */
 function _add_edit_simple_media_block_form_elements(array $element, FormStateInterface $form_state) {
   $element['b_simple_media_shadow_position']['widget']['#states'] = array('visible' => array(
-    array ('select[id="edit-settings-block-form-b-simple-media-border-or-shadow"]' => array('value' => 'shadow'))));
+    array ('select[id="edit-settings-block-form-b-simple-media-frame-or-shadow"]' => array('value' => 'shadow'))));
 
   $element['b_simple_media_shadow_style']['widget']['#states'] = array('visible' => array(
-    array ('select[id="edit-settings-block-form-b-simple-media-border-or-shadow"]' => array('value' => 'shadow'))));
+    array ('select[id="edit-settings-block-form-b-simple-media-frame-or-shadow"]' => array('value' => 'shadow'))));
 
   return $element;
 }

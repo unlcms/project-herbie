@@ -11,9 +11,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: unl-scroll-fx-fade-in
-      label: 'Fade-in (On scroll)'
-    -
       value: unl-scroll-fx-move-left
       label: 'Move left (On scroll)'
     -

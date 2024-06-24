@@ -332,5 +332,6 @@ content:
     weight: 15
     region: content
 hidden:
+  entitygroupfield: true
   n_major_areas_interest: true
   n_major_college_external_url: true

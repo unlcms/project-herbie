@@ -528,7 +528,7 @@ function unl_five_herbie_preprocess_media(&$variables) {
 
       if ($field_name == "b_simple_media_media") {
 
-        $responsive_image_style = $parent_block->__get('b_simple_media_responsiveimgstyl')->getValue()[0]['value'];
+        $responsive_image_style = $parent_block->__get('b_simple_media_aspect_ratio')->getValue()[0]['value'];
 
         $variables['elements']['field_media_image']['#view_mode'] = $responsive_image_style;
         $variables['elements']['#view_mode'] = $responsive_image_style;
@@ -645,9 +645,9 @@ function unl_five_herbie_preprocess_responsive_image_formatter(array &$variables
       );
 
       $image_animation = $parent_block->__get('b_simple_media_animation')->getValue();
-      $border_or_shadow = $parent_block->__get('b_simple_media_border_or_shadow')->getValue()[0]['value'];
+      $border_or_shadow = $parent_block->__get('b_simple_media_frame_or_shadow')->getValue()[0]['value'];
 
-      if ($border_or_shadow == 'border') {
+      if ($border_or_shadow == 'frame') {
         $variables['responsive_image']['#attributes']['class'][] = 'unl-frame-quad';
       }
 

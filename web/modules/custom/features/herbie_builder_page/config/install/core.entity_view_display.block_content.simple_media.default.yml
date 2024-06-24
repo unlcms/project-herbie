@@ -4,9 +4,9 @@ dependencies:
   config:
     - block_content.type.simple_media
     - field.field.block_content.simple_media.b_simple_media_animation
-    - field.field.block_content.simple_media.b_simple_media_border_or_shadow
+    - field.field.block_content.simple_media.b_simple_media_aspect_ratio
+    - field.field.block_content.simple_media.b_simple_media_frame_or_shadow
     - field.field.block_content.simple_media.b_simple_media_media
-    - field.field.block_content.simple_media.b_simple_media_responsiveimgstyl
     - field.field.block_content.simple_media.b_simple_media_shadow_position
     - field.field.block_content.simple_media.b_simple_media_shadow_style
   module:
@@ -21,14 +21,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 11
     region: content
-  b_simple_media_border_or_shadow:
+  b_simple_media_aspect_ratio:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 12
+    region: content
+  b_simple_media_frame_or_shadow:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   b_simple_media_media:
     type: entity_reference_entity_view
@@ -38,13 +45,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
-    region: content
-  b_simple_media_responsiveimgstyl:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
     region: content
   b_simple_media_shadow_position:
     type: list_key
