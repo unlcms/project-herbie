@@ -197,3 +197,4 @@ content:
     region: content
 hidden:
   entitygroupfield: true
+  n_person_affiliation: true
