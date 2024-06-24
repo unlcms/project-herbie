@@ -50,6 +50,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entitygroupfield: true
   n_major_4year_link: true
   n_major_academics_experiential: true
   n_major_areas_focus: true

@@ -304,4 +304,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  n_person_affiliation: true
