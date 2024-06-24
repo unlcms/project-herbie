@@ -1,0 +1,39 @@
+uuid: d19865a7-c3d2-4a50-95b7-bf356535b8b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1_1_1197x1197
+    - image.style.1_1_1596x1596
+    - image.style.1_1_2128x2128
+    - image.style.1_1_2838x2838
+    - image.style.1_1_284x284
+    - image.style.1_1_3784x3784
+    - image.style.1_1_379x379
+    - image.style.1_1_5045x5045
+    - image.style.1_1_505x505
+    - image.style.1_1_673x673
+    - image.style.1_1_898x898
+id: 1x1_ris
+label: 1x1
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 1_1_1197x1197
+        - 1_1_1596x1596
+        - 1_1_2128x2128
+        - 1_1_2838x2838
+        - 1_1_284x284
+        - 1_1_3784x3784
+        - 1_1_379x379
+        - 1_1_5045x5045
+        - 1_1_505x505
+        - 1_1_673x673
+        - 1_1_898x898
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 1_1_284x284

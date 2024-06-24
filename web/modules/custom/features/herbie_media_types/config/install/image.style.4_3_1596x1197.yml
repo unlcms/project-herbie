@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_1596x1197
+label: '4:3 (1596x1197)'
+effects:
+  839b3be0-6898-480c-a111-7e6b67f9036c:
+    uuid: 839b3be0-6898-480c-a111-7e6b67f9036c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 1197
+      anchor: center-center

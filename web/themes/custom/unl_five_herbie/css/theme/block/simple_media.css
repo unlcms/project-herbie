@@ -1,0 +1,7 @@
+div.simple-media-media-entity.media-entity {
+  display: block;
+ }
+
+ div.simple-media-media-entity.media-entity img {
+   width: 100%;
+ }

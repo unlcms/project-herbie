@@ -1,0 +1,15 @@
+uuid: 44e29a23-c126-4026-8927-d7d774a38b48
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_673x505
+label: '4:3 (673x505)'
+effects:
+  5ae9275c-3857-4f12-b273-1c250f40f4f1:
+    uuid: 5ae9275c-3857-4f12-b273-1c250f40f4f1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 673
+      height: 505
+      anchor: center-center

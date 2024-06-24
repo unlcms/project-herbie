@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 16_9_5045x2838
+label: '16:9 (5045x2838)'
+effects:
+  95c758cd-c079-4bed-a6cf-956e2b1a996e:
+    uuid: 95c758cd-c079-4bed-a6cf-956e2b1a996e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 5045
+      height: 2838
+      anchor: center-center

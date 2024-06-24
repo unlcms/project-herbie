@@ -1,0 +1,15 @@
+uuid: aea33d9a-81f9-4c75-8abc-d7e03a2788ba
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_505x379
+label: '4:3 (505x379)'
+effects:
+  28a72e40-4279-49b6-a05a-e9ebde56036b:
+    uuid: 28a72e40-4279-49b6-a05a-e9ebde56036b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 505
+      height: 379
+      anchor: center-center

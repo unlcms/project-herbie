@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_media
+    - field.storage.block_content.b_simple_media_shadow_style
+  module:
+    - options
+id: block_content.simple_media.b_simple_media_shadow_style
+field_name: b_simple_media_shadow_style
+entity_type: block_content
+bundle: simple_media
+label: 'Shadow Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: scarlet
+default_value_callback: ''
+settings: {  }
+field_type: list_string

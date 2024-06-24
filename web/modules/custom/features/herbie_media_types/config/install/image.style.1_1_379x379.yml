@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_379x379
+label: '1:1 (379x379)'
+effects:
+  6c577cc0-8f9b-45f6-b468-333e0ef01d26:
+    uuid: 6c577cc0-8f9b-45f6-b468-333e0ef01d26
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 379
+      height: 379
+      anchor: center-center

@@ -1,0 +1,15 @@
+uuid: 0c5bec38-1f7a-486a-bbec-50aad8dfd85d
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_2128x1596
+label: '4:3 (2128x1596)'
+effects:
+  3cd22766-7def-4707-a357-3484d75fedde:
+    uuid: 3cd22766-7def-4707-a357-3484d75fedde
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2128
+      height: 1596
+      anchor: center-center

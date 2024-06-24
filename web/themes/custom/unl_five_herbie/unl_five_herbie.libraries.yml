@@ -5,6 +5,8 @@ global-styling:
       css/global.css: {}
       css/media.css: {}
       css/wdn-overrides.css: {}
+  js:
+    js/theme/scroll-animations.js: {}
 
 layout-builder:
   css:
@@ -106,8 +108,15 @@ cta:
   css:
     theme:
       css/theme/block/cta.css: {}
+
 tandem:
   version: VERSION
   css:
     theme:
       css/theme/block/tandem.css: {}
+
+simple_media:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/simple_media.css: {}

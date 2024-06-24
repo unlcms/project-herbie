@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16_9_1197x673
+    - image.style.16_9_1596x898
+    - image.style.16_9_2129x1198
+    - image.style.16_9_2838x1596
+    - image.style.16_9_3783x2128
+    - image.style.16_9_5045x2838
+    - image.style.16_9_505x284
+    - image.style.16_9_673x379
+    - image.style.16_9_898x505
+id: 16x9_ris
+label: 16x9
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 16_9_1197x673
+        - 16_9_1596x898
+        - 16_9_2129x1198
+        - 16_9_2838x1596
+        - 16_9_3783x2128
+        - 16_9_5045x2838
+        - 16_9_505x284
+        - 16_9_673x379
+        - 16_9_898x505
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 16_9_505x284

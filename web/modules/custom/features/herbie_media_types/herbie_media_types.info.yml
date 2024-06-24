@@ -7,6 +7,7 @@ dependencies:
   - 'block_content_permissions:block_content_permissions'
   - 'crop:crop'
   - 'dcf_lazyload:dcf_lazyload'
+  - 'drupal:block_content'
   - 'drupal:book'
   - 'drupal:contextual'
   - 'drupal:field'
@@ -17,6 +18,7 @@ dependencies:
   - 'drupal:media'
   - 'drupal:media_library'
   - 'drupal:node'
+  - 'drupal:options'
   - 'drupal:path'
   - 'drupal:responsive_image'
   - 'drupal:system'
@@ -46,5 +48,5 @@ dependencies:
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.1.1
+version: 2.1.2
 package: Herbie

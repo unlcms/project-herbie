@@ -1,0 +1,23 @@
+uuid: 2553334e-3644-4481-a306-1e000e0dfc0b
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_1596x1596
+label: '1:1 (1596x1596)'
+effects:
+  62e367d6-c037-4197-9e82-b98c950269a4:
+    uuid: 62e367d6-c037-4197-9e82-b98c950269a4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 1596
+      anchor: center-center
+  7f17152b-da8c-4d90-8e79-1a12ea9c7f42:
+    uuid: 7f17152b-da8c-4d90-8e79-1a12ea9c7f42
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1596
+      height: 1596
+      anchor: center-center

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_3784x2838
+label: '4:3 (3784x2838)'
+effects:
+  7a75c02a-87c5-435c-96f6-6423d2b0e00d:
+    uuid: 7a75c02a-87c5-435c-96f6-6423d2b0e00d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3784
+      height: 2838
+      anchor: center-center

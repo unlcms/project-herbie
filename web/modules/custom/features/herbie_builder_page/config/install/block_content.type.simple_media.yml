@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: simple_media
+label: 'Simple media '
+revision: 1
+description: 'A block that allows the addition of images, remote videos, and more.'
