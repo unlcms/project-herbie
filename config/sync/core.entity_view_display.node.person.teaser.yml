@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
+    - field.field.node.person.n_person_affiliation
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -196,3 +197,4 @@ content:
     region: content
 hidden:
   entitygroupfield: true
+  n_person_affiliation: true

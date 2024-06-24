@@ -39,6 +39,7 @@ settings:
       enabled_alignments:
         - center
         - left
+        - right
     ckeditor5_heading:
       enabled_headings:
         - heading2
