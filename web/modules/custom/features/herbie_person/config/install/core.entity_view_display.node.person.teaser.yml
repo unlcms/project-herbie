@@ -193,4 +193,5 @@ content:
     weight: 17
     region: content
 hidden:
+  entitygroupfield: true
   n_person_affiliation: true
