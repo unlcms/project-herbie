@@ -36,6 +36,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entitygroupfield: true
   n_major_notable_courses: true
   n_major_option_careers_list: true
   n_major_option_careers_title: true
