@@ -352,11 +352,11 @@ function unl_five_herbie_preprocess_field(&$variables) {
         $primary_button = 'dcf-btn dcf-btn-primary';
         $secondary_button = 'dcf-btn dcf-btn-secondary';
         $tertiary_button = 'dcf-btn dcf-btn-tertiary';
-        $tandem_block_entity = $variables['element']['#object']->getParentEntity();
-        $tandem_buttons = $tandem_block_entity->get('b_tandem_buttons');
-        $tandem_buttons_references = $tandem_buttons->referencedEntities();
 
-        if(count($tandem_buttons_references) == 1) {
+        $tandem_block = $variables['element']['#object']->_referringItem->getEntity();
+        $tandem_buttons = $tandem_block->toArray()['b_tandem_buttons'];
+
+        if(count($tandem_buttons) == 1) {
           $primary_button = 'dcf-btn dcf-btn-primary dcf-mt-5';
           $secondary_button = 'dcf-btn dcf-btn-secondary dcf-mt-5';
           $tertiary_button = 'dcf-btn dcf-btn-tertiary dcf-mt-5';
