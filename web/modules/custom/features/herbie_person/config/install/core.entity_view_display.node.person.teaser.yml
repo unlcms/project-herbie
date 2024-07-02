@@ -191,4 +191,5 @@ content:
     third_party_settings: {  }
     weight: 17
     region: content
-hidden: {  }
+hidden:
+  entitygroupfield: true
