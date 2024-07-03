@@ -44,6 +44,7 @@ content:
     region: content
 hidden:
   body: true
+  entitygroupfield: true
   n_news_byline: true
   n_news_canonical_url: true
   n_news_foreign_key: true
