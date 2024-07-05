@@ -11,7 +11,7 @@ entity_type: block_content
 bundle: hero
 label: 'Hero image'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

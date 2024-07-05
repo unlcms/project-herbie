@@ -25,4 +25,5 @@ content:
     region: content
 hidden:
   archive_page_body: true
+  entitygroupfield: true
   s_n_page_options: true

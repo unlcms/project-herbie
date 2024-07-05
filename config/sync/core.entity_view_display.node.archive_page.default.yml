@@ -34,4 +34,5 @@ content:
     weight: 0
     region: content
 hidden:
+  entitygroupfield: true
   s_n_page_options: true
