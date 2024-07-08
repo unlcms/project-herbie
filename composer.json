@@ -326,6 +326,9 @@
                 "2815971 - More contexts needed": "patches/group-context-2815971-52.patch",
                 "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"
             },
+            "drupal/google_analytics": {
+                "3275926 - GA account number argument is null": "patches/3275926-typeerror-argument-1.patch"
+            },
             "drupal/heading": {
                 "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
             },
