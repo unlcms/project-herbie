@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_284x284
+label: '1:1 (284x284)'
+effects:
+  d692549f-9ed5-476d-a7fe-b916ffe8651a:
+    uuid: d692549f-9ed5-476d-a7fe-b916ffe8651a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 284
+      height: 284
+      anchor: center-center

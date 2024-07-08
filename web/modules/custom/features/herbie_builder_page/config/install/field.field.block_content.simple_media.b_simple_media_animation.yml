@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_media
+    - field.storage.block_content.b_simple_media_animation
+  module:
+    - options
+id: block_content.simple_media.b_simple_media_animation
+field_name: b_simple_media_animation
+entity_type: block_content
+bundle: simple_media
+label: Animation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
