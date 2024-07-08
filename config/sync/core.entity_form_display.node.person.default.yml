@@ -100,6 +100,12 @@ content:
       multiple: false
       required: false
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   n_additional:
     type: text_textarea_with_summary
     weight: 7
