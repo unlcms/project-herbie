@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.person.n_additional
     - field.field.node.person.n_education
     - field.field.node.person.n_person_address
+    - field.field.node.person.n_person_affiliation
     - field.field.node.person.n_person_bio
     - field.field.node.person.n_person_email
     - field.field.node.person.n_person_phone
@@ -27,7 +28,7 @@ dependencies:
     - image_class
     - layout_builder
     - link
-    - responsive_image
+    - svg_image_responsive
     - telephone
     - text
     - user
@@ -40,6 +41,11 @@ targetEntityType: node
 bundle: person
 mode: teaser_featured
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -176,3 +182,4 @@ content:
 hidden:
   n_additional: true
   n_education: true
+  n_person_affiliation: true

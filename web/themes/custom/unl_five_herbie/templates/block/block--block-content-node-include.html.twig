@@ -1,6 +1,13 @@
 {% set nid = content.b_nodeinclude_node.0["#node"].id %}
+
 <div{{ attributes.addClass('cms-node-include-'~nid) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {{ drupal_entity('node', nid, 'full') }}
+  {% if nid is not empty %}
+    {{ drupal_entity('node', nid, 'full') }}
+  {% else %}
+    <div{{ attributes.addClass('cms-node-include-'~nid) }}>
+    Error: The node referenced for the Node Include component no longer exists.
+    </div>
+  {% endif %}
 </div>

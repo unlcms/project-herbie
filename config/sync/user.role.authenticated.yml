@@ -19,4 +19,5 @@ permissions:
   - 'access protected page password screen'
   - 'bypass honeypot protection'
   - 'view media'
+  - 'view the administration theme'
   - 'view unl_directory_entry external entity'

@@ -1,0 +1,19 @@
+uuid: 48bd2044-6753-4d02-9280-90ffca5b22b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.major
+  module:
+    - gnode
+    - node
+_core:
+  default_config_hash: qZMpKeJ9Q-XYxwMCcUIQxK46TASSl7m3lGDNZgngWQE
+id: group_subsite-group_node-major
+group_type: group_subsite
+content_plugin: 'group_node:major'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

@@ -31,6 +31,7 @@ dependencies:
   - 'field_css:field_css'
   - 'file_delete:file_delete'
   - 'google_analytics:google_analytics'
+  - 'group:group'
   - 'herbie_archive_page:herbie_archive_page'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_media_types:herbie_media_types'
@@ -54,5 +55,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.4.3
+version: '1.5.1'
 package: Herbie

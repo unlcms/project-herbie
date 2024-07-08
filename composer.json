@@ -157,6 +157,7 @@
         "drupal/entity_share": "^3.0@RC",
         "drupal/entity_share_cron": "^3.0",
         "drupal/entity_usage": "^2.0",
+        "drupal/entitygroupfield": "^2.0@alpha",
         "drupal/external_entities": "2.x-dev@dev",
         "drupal/features": "5.0.x-dev@dev",
         "drupal/feeds": "^3.0@beta",
@@ -165,6 +166,8 @@
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
         "drupal/google_analytics": "^4.0",
+        "drupal/group": "^3.2",
+        "drupal/group_content_menu": "^3.0",
         "drupal/heading": "^1.7",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^2.0",
@@ -318,6 +321,13 @@
             },
             "drupal/feeds": {
                 "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
+            },
+            "drupal/group": {
+                "2815971 - More contexts needed": "patches/group-context-2815971-52.patch",
+                "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"
+            },
+            "drupal/google_analytics": {
+                "3275926 - GA account number argument is null": "patches/3275926-typeerror-argument-1.patch"
             },
             "drupal/heading": {
                 "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
