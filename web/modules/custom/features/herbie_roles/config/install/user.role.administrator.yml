@@ -120,6 +120,7 @@ permissions:
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
+  - 'administer url aliases'
   - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'
