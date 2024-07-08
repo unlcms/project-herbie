@@ -90,6 +90,7 @@ permissions:
   - 'administer scanner settings'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
+  - 'administer url aliases'
   - 'administer webform submission'
   - 'allow empty user mail'
   - 'configure editable builder_page node layout overrides'

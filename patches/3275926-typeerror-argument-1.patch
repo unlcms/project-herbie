@@ -1,0 +1,53 @@
+From 26e73944bfde86eddcce4c44e0bde587a450fbed Mon Sep 17 00:00:00 2001
+From: sapnainnoraft <sapna.khatri@innoraft.com>
+Date: Thu, 15 Feb 2024 12:43:34 +0530
+Subject: [PATCH] Issue 3275926: Google_analytics TypeError issue resolved.
+
+---
+ src/Helpers/GoogleAnalyticsAccounts.php | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+
+diff --git a/src/Helpers/GoogleAnalyticsAccounts.php b/src/Helpers/GoogleAnalyticsAccounts.php
+index 530dbcc..078eb62 100644
+--- a/src/Helpers/GoogleAnalyticsAccounts.php
++++ b/src/Helpers/GoogleAnalyticsAccounts.php
+@@ -45,13 +45,15 @@ class GoogleAnalyticsAccounts {
+
+     $accounts = $this->config->get('account');
+     // Create the accounts array from either a single gtag id or multiple ones.
+-    if (strpos($accounts, ',') === FALSE) {
+-      $this->accounts[] = new GaAccount($accounts);
+-    }
+-    else {
+-      $accounts_array = explode(',', $accounts);
+-      foreach($accounts_array as $account) {
+-        $this->accounts[] = new GaAccount($account);
++    if (!is_null($accounts)){
++      if (strpos($accounts, ',') === FALSE) {
++        $this->accounts[] = new GaAccount($accounts);
++      }
++      else {
++        $accounts_array = explode(',', $accounts);
++        foreach($accounts_array as $account) {
++          $this->accounts[] = new GaAccount($account);
++        }
+       }
+     }
+
+@@ -82,9 +84,11 @@ class GoogleAnalyticsAccounts {
+    */
+   public function getDefaultMeasurementId() {
+     // The top UA- or G- Account is the default measurement ID.
+-    foreach ($this->accounts as $account) {
+-      if (preg_match(GoogleAnalyticsPatterns::GOOGLE_ANALYTICS_TRACKING_MATCH, $account)) {
+-        return $account;
++    if (!is_null($this->accounts)){
++      foreach ($this->accounts as $account) {
++        if (preg_match(GoogleAnalyticsPatterns::GOOGLE_ANALYTICS_TRACKING_MATCH, $account)) {
++          return $account;
++        }
+       }
+     }
+     return FALSE;
+--
+GitLab
