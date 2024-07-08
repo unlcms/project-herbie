@@ -1,0 +1,12 @@
+name: 'UNL Group'
+description: 'Extends Group functionality'
+package: UNL
+
+type: module
+core_version_requirement: ^10
+
+dependencies:
+- group:group
+- entitygroupfield:entitygroupfield
+
+version: 1.x

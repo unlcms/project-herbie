@@ -1,0 +1,8 @@
+uuid: cd1f29eb-b2c6-41f7-8818-3eb0b7238b84
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fuqKkMCuqGjVEthv_iN77Tl2lJ0KAS87wvDjrFFARDA
+id: gcm_subsite_menu
+label: 'Subsite menu'

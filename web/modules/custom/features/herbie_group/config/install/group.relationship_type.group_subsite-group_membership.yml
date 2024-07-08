@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+  module:
+    - user
+id: group_subsite-group_membership
+group_type: group_subsite
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

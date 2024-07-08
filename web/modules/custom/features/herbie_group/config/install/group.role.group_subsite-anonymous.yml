@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.anonymous
+id: group_subsite-anonymous
+label: Anonymous
+weight: -10
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: group_subsite
+permissions: {  }

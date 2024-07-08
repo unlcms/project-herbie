@@ -16,15 +16,15 @@
       <div class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-gap-1 dcf-lh-1 unl-ls-h unl-darkest-gray">
         <!-- if prefix exists -->
         {% if content.b_proofpoint_prefix %}
-        <span class="dcf-txt-h1 dcf-bold">{{ content.b_proofpoint_prefix }}</span>
+          <span class="dcf-txt-h1 dcf-bold">{{content.b_proofpoint_prefix.0['#context'].value}}</span>
         {% endif %}
 
         <!-- stat number/value -->
-        <span class="dcf-txt-2xl dcf-bold">{{ content.b_proofpoint_figure }}</span>
+        <span class="dcf-txt-2xl dcf-bold">{{content.b_proofpoint_figure.0['#context'].value}}</span>
 
         <!-- if suffix exists -->
         {% if content.b_proofpoint_suffix %}
-        <span class="dcf-txt-h1 dcf-bold">{{ content.b_proofpoint_suffix }}</span>
+          <span class="dcf-txt-h1 dcf-bold">{{content.b_proofpoint_suffix.0['#context'].value}}</span>
         {% endif %}
       </div>
 

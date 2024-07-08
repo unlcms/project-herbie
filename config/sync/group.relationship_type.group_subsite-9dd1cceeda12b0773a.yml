@@ -1,0 +1,19 @@
+uuid: afd5fedd-b3ad-4a83-b143-e0e687beb7dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - node.type.archive_page
+  module:
+    - gnode
+    - node
+_core:
+  default_config_hash: 4VdJoPKL65fDUpijD5Q8hysfGbwYhK5l-d0WMr_xvlU
+id: group_subsite-9dd1cceeda12b0773a
+group_type: group_subsite
+content_plugin: 'group_node:archive_page'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

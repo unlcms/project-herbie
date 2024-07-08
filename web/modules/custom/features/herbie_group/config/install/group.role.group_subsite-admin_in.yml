@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.administrator
+id: group_subsite-admin_in
+label: Administrator
+weight: -3
+admin: true
+scope: insider
+global_role: administrator
+group_type: group_subsite
+permissions: {  }

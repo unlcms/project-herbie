@@ -13,6 +13,7 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - group
     - metatag
     - node
     - paragraphs
@@ -30,6 +31,7 @@ permissions:
   - 'access contextual links'
   - 'access css fields'
   - 'access feed overview'
+  - 'access group overview'
   - 'access protected page password screen'
   - 'access site reports'
   - 'access taxonomy overview'
@@ -53,6 +55,7 @@ permissions:
   - 'administer twig templates'
   - 'administer views'
   - 'bypass pages password protection'
+  - 'create group_subsite group'
   - 'create html_code block content'
   - 'delete any html_code block content'
   - 'load twig templates from file system'

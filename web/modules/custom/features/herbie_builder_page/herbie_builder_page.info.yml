@@ -43,6 +43,7 @@ dependencies:
   - 'drupal:views_ui'
   - 'entity_reference_revisions:entity_reference_revisions'
   - 'entity_usage:entity_usage'
+  - 'entitygroupfield:entitygroupfield'
   - 'external_entities:external_entities'
   - 'field_css:field_css'
   - 'field_group:field_group'
@@ -73,5 +74,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.7.4
+version: 1.8.2
 package: Herbie

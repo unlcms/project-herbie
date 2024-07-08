@@ -1,0 +1,6 @@
+#entitygroupfield-add-more-wrapper,
+[id^="entitygroupfield-add-more-wrapper-"] {
+  background-color: var(--color-gray-050-o-40);
+  border-top: 1px solid var(--color-divider);
+  padding: var(--space-l) var(--details-desktop-wrapper-padding-start);
+}
