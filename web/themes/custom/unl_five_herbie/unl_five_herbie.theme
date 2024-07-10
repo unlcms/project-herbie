@@ -526,8 +526,7 @@ function unl_five_herbie_preprocess_media(&$variables) {
       $referring_field = $referring_item->getParent();
       $field_name = $referring_field->getName();
 
-      if ($field_name == "b_simple_media_media") {
-
+      if ($field_name == "b_simple_media_media" && $variables['media']->hasField('field_media_image')) {
         $responsive_image_style = $parent_block->__get('b_simple_media_aspect_ratio')->getValue()[0]['value'];
 
         $variables['elements']['field_media_image']['#view_mode'] = $responsive_image_style;
