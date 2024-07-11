@@ -10,6 +10,23 @@ excluded:
   - image.style.1_1_3840x3840
   - image.style.1_1_480x480
   - image.style.1_1_960x960
+  - image.style.16_9_1010x568
+  - image.style.16_9_1197x673
+  - image.style.16_9_1346x757
+  - image.style.16_9_1596x898
+  - image.style.16_9_1796x1010
+  - image.style.16_9_2129x1198
+  - image.style.16_9_2394x1347
+  - image.style.16_9_2838x1596
+  - image.style.16_9_3192x1796
+  - image.style.16_9_3783x2128
+  - image.style.16_9_4258x2395
+  - image.style.16_9_505x284
+  - image.style.16_9_5676x3193
+  - image.style.16_9_673x379
+  - image.style.16_9_7566x4256
+  - image.style.16_9_758x426
+  - image.style.16_9_898x505
   - core.entity_form_display.node.major.default
   - core.entity_form_display.paragraph.p_n_major_contact.default
   - core.entity_view_display.node.major.default
@@ -23,4 +40,6 @@ excluded:
   - field.field.paragraph.p_n_major_contact.p_n_contact_title
   - field.storage.node.n_major_contact
   - paragraphs.paragraphs_type.p_n_major_contact
+  - responsive_image.styles.hero_ris
+  - core.entity_view_mode.media.hero
 required: true

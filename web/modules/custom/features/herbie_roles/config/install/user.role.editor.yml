@@ -31,6 +31,7 @@ dependencies:
     - external_entities
     - file
     - filter
+    - group
     - layout_builder
     - media
     - menu_admin_per_menu
@@ -54,6 +55,7 @@ permissions:
   - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'
@@ -83,6 +85,7 @@ permissions:
   - 'create photo_hero block content'
   - 'create proofpoint block content'
   - 'create remote_video media'
+  - 'create simple_media block content'
   - 'create slideshow block content'
   - 'create social_media_links block content'
   - 'create tabs block content'
@@ -102,6 +105,7 @@ permissions:
   - 'delete any photo_hero block content'
   - 'delete any proofpoint block content'
   - 'delete any remote_video media'
+  - 'delete any simple_media block content'
   - 'delete any slideshow block content'
   - 'delete any social_media_links block content'
   - 'delete any tabs block content'
@@ -162,6 +166,7 @@ permissions:
   - 'update any logo_cloud block content'
   - 'update any photo_hero block content'
   - 'update any proofpoint block content'
+  - 'update any simple_media block content'
   - 'update any slideshow block content'
   - 'update any social_media_links block content'
   - 'update any tabs block content'

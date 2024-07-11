@@ -5,6 +5,7 @@ dependencies:
     - entity_share_server
     - external_entities
     - media
+    - protected_pages
     - system
 id: anonymous
 label: 'Anonymous user'
@@ -12,6 +13,7 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - 'access protected page password screen'
   - entity_share_server_access_channels
   - 'view media'
   - 'view unl_directory_entry external entity'

@@ -40,6 +40,7 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   entity_reference_revisions: 0
   entity_share: 0
   entity_share_client: 0
@@ -47,6 +48,7 @@ module:
   entity_share_lock: 0
   entity_share_server: 0
   entity_usage: 0
+  entitygroupfield: 0
   external_entities: 0
   external_entities_pathauto: 0
   external_entities_unldirectory: 0
@@ -66,13 +68,19 @@ module:
   file_mdm_exif: 0
   file_mdm_font: 0
   filter: 0
+  flexible_permissions: 0
+  gnode: 0
   google_analytics: 0
+  group: 0
+  group_content_menu: 0
+  group_support_revisions: 0
   heading: 0
   herbie_archive_page: 0
   herbie_book: 0
   herbie_builder_page: 0
   herbie_config: 0
   herbie_entity_share: 0
+  herbie_group: 0
   herbie_major: 0
   herbie_media_types: 0
   herbie_news: 0
@@ -120,6 +128,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  protected_pages: 0
   queue_ui: 0
   rabbit_hole: 0
   redirect: 0
@@ -152,6 +161,7 @@ module:
   unl_contenthub: 0
   unl_events: 0
   unl_feeds: 0
+  unl_group: 0
   unl_icon: 0
   unl_layout_builder_custom: 0
   unl_media: 0
@@ -167,6 +177,7 @@ module:
   unl_views: 0
   unl_webform: 0
   user: 0
+  variationcache: 0
   views_data_export: 0
   views_ui: 0
   webform: 0

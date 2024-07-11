@@ -1,0 +1,15 @@
+uuid: 293c6b1f-40d9-4e9e-b3cd-ac94100270c6
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_898x898
+label: '1:1 (898x898)'
+effects:
+  fe284f18-60fc-4156-aee7-3d897972d5b5:
+    uuid: fe284f18-60fc-4156-aee7-3d897972d5b5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 898
+      height: 898
+      anchor: center-center

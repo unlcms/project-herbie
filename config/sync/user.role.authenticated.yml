@@ -6,6 +6,7 @@ dependencies:
     - external_entities
     - honeypot
     - media
+    - protected_pages
     - system
 _core:
   default_config_hash: ui2e3Eb7FufQhVaAjwcyBNb2prP1llg1ZKLSlq2AFf8
@@ -15,6 +16,8 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access protected page password screen'
   - 'bypass honeypot protection'
   - 'view media'
+  - 'view the administration theme'
   - 'view unl_directory_entry external entity'

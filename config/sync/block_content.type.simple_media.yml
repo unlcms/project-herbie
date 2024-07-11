@@ -1,0 +1,8 @@
+uuid: e92dfd42-bda9-467d-b7c6-86f9a7d7af5d
+langcode: en
+status: true
+dependencies: {  }
+id: simple_media
+label: 'Simple media '
+revision: 1
+description: 'A block that allows the addition of images, remote videos, and more.'

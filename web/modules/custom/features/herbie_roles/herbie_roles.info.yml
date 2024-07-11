@@ -31,6 +31,7 @@ dependencies:
   - 'field_css:field_css'
   - 'file_delete:file_delete'
   - 'google_analytics:google_analytics'
+  - 'group:group'
   - 'herbie_archive_page:herbie_archive_page'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_media_types:herbie_media_types'
@@ -40,7 +41,9 @@ dependencies:
   - 'honeypot:honeypot'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
+  - 'metatag:metatag'
   - 'paragraphs:paragraphs'
+  - 'protected_pages:protected_pages'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
   - 'replicate_ui:replicate_ui'
@@ -52,5 +55,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.3.6
+version: 1.5.2
 package: Herbie

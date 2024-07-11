@@ -4,4 +4,19 @@ excluded:
   - user.role.site_admin
   - user.role.coder
   - views.view.user_admin_people
+  - block_content.type.simple_media
+  - core.entity_form_display.block_content.simple_media.default
+  - core.entity_view_display.block_content.simple_media.default
+  - field.field.block_content.simple_media.b_simple_media_animation
+  - field.field.block_content.simple_media.b_simple_media_border_or_shadow
+  - field.field.block_content.simple_media.b_simple_media_media
+  - field.field.block_content.simple_media.b_simple_media_responsiveimgstyl
+  - field.field.block_content.simple_media.b_simple_media_shadow_position
+  - field.field.block_content.simple_media.b_simple_media_shadow_style
+  - field.storage.block_content.b_simple_media_animation
+  - field.storage.block_content.b_simple_media_border_or_shadow
+  - field.storage.block_content.b_simple_media_media
+  - field.storage.block_content.b_simple_media_responsiveimgstyl
+  - field.storage.block_content.b_simple_media_shadow_position
+  - field.storage.block_content.b_simple_media_shadow_style
 required: true

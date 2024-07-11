@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_1197x1197
+label: '1:1 (1197x1197)'
+effects:
+  77f270c6-1d88-43f9-be66-6993d94c22d6:
+    uuid: 77f270c6-1d88-43f9-be66-6993d94c22d6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1197
+      height: 1197
+      anchor: center-center

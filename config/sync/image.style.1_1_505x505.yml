@@ -1,0 +1,15 @@
+uuid: ae097d19-b2f1-43ca-9caa-e03bdfee1ffa
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_505x505
+label: '1:1 (505x505)'
+effects:
+  96c0b2fb-8be4-41a4-8a3b-469051869a3e:
+    uuid: 96c0b2fb-8be4-41a4-8a3b-469051869a3e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 505
+      height: 505
+      anchor: center-center

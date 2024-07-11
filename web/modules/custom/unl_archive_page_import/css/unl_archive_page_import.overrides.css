@@ -1,0 +1,6 @@
+/* The ckeditor Source plugin inserts a <p> tag around the hero image. */
+.dcf-hero-group-2 p:first-child:not(.dcf-hero-photo-credit) {
+  object-fit: cover !important;
+  height: 100%;
+  width: 100%;
+}

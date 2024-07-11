@@ -1,0 +1,20 @@
+uuid: 380e63b8-8c24-459b-a175-d54396e07b7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+_core:
+  default_config_hash: mUacsIEy7KcxhlxphUEg5wGzuC6Ra8v6yVJ7yMC9tKg
+id: group.group_subsite.label
+field_name: label
+entity_type: group
+bundle: group_subsite
+label: 'Subsite name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

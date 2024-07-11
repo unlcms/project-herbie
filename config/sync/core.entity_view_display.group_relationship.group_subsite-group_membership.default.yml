@@ -1,0 +1,25 @@
+uuid: 2a6c3a0e-9211-4ccf-89ad-ca4b7fc82242
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.group_subsite-group_membership.group_roles
+    - group.relationship_type.group_subsite-group_membership
+_core:
+  default_config_hash: A7LPfM6rtFeoY8R40ZgHw0JQNMUEpNXN2CPUBRVn91Q
+id: group_relationship.group_subsite-group_membership.default
+targetEntityType: group_relationship
+bundle: group_subsite-group_membership
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

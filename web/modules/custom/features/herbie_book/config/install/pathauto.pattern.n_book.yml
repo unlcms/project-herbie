@@ -6,16 +6,16 @@ dependencies:
 id: n_book
 label: 'Book node'
 type: 'canonical_entities:node'
-pattern: '[node:book:parents:join-path]/[node:title]'
+pattern: '[node:group:url:path]/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  8a2d12b0-c87e-439d-95ca-147d1f476e07:
+  669cc965-e8cc-49f5-92b8-ebe3b2002408:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 8a2d12b0-c87e-439d-95ca-147d1f476e07
+    uuid: 669cc965-e8cc-49f5-92b8-ebe3b2002408
     context_mapping:
       node: node
     bundles:
       book: book
 selection_logic: and
-weight: -5
+weight: -9
 relationships: {  }

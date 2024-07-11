@@ -1,0 +1,15 @@
+uuid: 5d18f562-8957-4f62-b77a-0a0d91b7dd23
+langcode: en
+status: true
+dependencies: {  }
+name: 4x3_379x284
+label: '4x3 (379x284)'
+effects:
+  6ae662df-1aaa-4c2f-a639-954a229a9e33:
+    uuid: 6ae662df-1aaa-4c2f-a639-954a229a9e33
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 379
+      height: 284
+      anchor: center-center

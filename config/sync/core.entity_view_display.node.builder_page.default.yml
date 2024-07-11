@@ -99,7 +99,8 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
@@ -109,6 +110,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -139,6 +141,7 @@ third_party_settings:
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'
@@ -157,7 +160,8 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
@@ -168,6 +172,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -183,7 +188,8 @@ third_party_settings:
             'Chaos Tools': {  }
             'Content fields':
               - 'field_block:node:builder_page:body'
-            'Curated Lists': {  }
+            'Curated Lists':
+              - unl_person_list
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -195,6 +201,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'
@@ -282,5 +289,6 @@ content:
     weight: 102
     region: first
 hidden:
+  entitygroupfield: true
   layout_builder__layout: true
   s_n_page_options: true
