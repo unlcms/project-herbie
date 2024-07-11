@@ -57,6 +57,7 @@ module:
   features_ui: 0
   feeds: 0
   feeds_ex: 0
+  feeds_tamper: 0
   field: 0
   field_css: 0
   field_group: 0
@@ -144,6 +145,7 @@ module:
   svg_image_responsive: 0
   syslog: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   telephone: 0
   text: 0
@@ -158,6 +160,7 @@ module:
   unl_config: 0
   unl_contenthub: 0
   unl_events: 0
+  unl_feeds: 0
   unl_group: 0
   unl_icon: 0
   unl_layout_builder_custom: 0
