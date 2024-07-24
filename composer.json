@@ -156,7 +156,7 @@
         "drupal/entity_reference_revisions": "^1.0",
         "drupal/entity_share": "^3.0@RC",
         "drupal/entity_share_cron": "^3.0",
-        "drupal/entity_usage": "^2.0",
+        "drupal/entity_usage": "^2.0@beta",
         "drupal/entitygroupfield": "^2.0@alpha",
         "drupal/external_entities": "2.x-dev@dev",
         "drupal/features": "5.0.x-dev@dev",

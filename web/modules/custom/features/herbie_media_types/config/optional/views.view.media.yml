@@ -6,8 +6,8 @@ dependencies:
     - taxonomy.vocabulary.media_tags
   module:
     - entity_usage
-    - image
     - media
+    - svg_image
     - taxonomy
     - user
 id: media
@@ -203,7 +203,7 @@ display:
             image_style: thumbnail
             image_loading:
               attribute: lazy
-          group_column: ''
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -462,14 +462,14 @@ display:
           table: entity_usage
           field: count
           relationship: media_to_usage_entity
-          group_type: group
+          group_type: sum
           admin_label: ''
           plugin_id: numeric
-          label: 'Used in'
+          label: 'Referenced in Content '
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Yes'
             make_link: true
             path: 'media/{{ mid }}/usage'
             absolute: false
@@ -502,16 +502,16 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No (Clear cache to double-check new changes)'
           hide_empty: false
-          empty_zero: false
+          empty_zero: true
           hide_alter_empty: true
           set_precision: false
           precision: 0
           decimal: .
           separator: ','
-          format_plural: true
-          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
+          format_plural: false
+          format_plural_string: !!binary VHJ1ZQNUcnVl
           prefix: ''
           suffix: ''
         operations:
@@ -883,6 +883,7 @@ display:
           entity_type: media
           plugin_id: standard
           required: false
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
