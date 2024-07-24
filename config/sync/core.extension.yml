@@ -159,6 +159,7 @@ module:
   unl_cas: 0
   unl_config: 0
   unl_contenthub: 0
+  unl_entity_usage: 0
   unl_events: 0
   unl_feeds: 0
   unl_group: 0
