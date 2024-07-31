@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - link
+id: group.group_subsite_group_affiliation
+field_name: group_subsite_group_affiliation
+entity_type: group
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

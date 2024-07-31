@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.group_subsite_group_affiliation
+    - group.type.group_subsite
+  module:
+    - link
+id: group.group_subsite.group_subsite_group_affiliation
+field_name: group_subsite_group_affiliation
+entity_type: group
+bundle: group_subsite
+label: 'Group Affiliation'
+description: 'Enter the Group Affiliation name in the "Link text" field and provide the URL to the Affiliation page in the "URL" field.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link
