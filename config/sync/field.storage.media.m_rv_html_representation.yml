@@ -11,7 +11,7 @@ field_name: m_rv_html_representation
 entity_type: media
 type: string
 settings:
-  max_length: 255
+  max_length: 1000
   case_sensitive: false
   is_ascii: false
 module: core
