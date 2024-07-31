@@ -62,6 +62,7 @@ dependencies:
     - unl_breadcrumbs
     - unl_config
     - unl_news
+    - unl_webform
     - views_ui
     - webform
     - webform_node
@@ -123,6 +124,7 @@ permissions:
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
+  - 'administer unl webform download settings'
   - 'administer url aliases'
   - 'administer views'
   - 'administer webform submission'

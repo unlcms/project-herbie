@@ -1,0 +1,6 @@
+unl_webform.settings:
+  title: 'UNL Webform'
+  description: 'Configure the UNL Webform module.'
+  parent: system.admin_config_services
+  route_name: unl_webform.settings
+  weight: 1
