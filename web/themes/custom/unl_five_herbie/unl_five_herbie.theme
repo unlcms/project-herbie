@@ -60,6 +60,11 @@ function unl_five_herbie_preprocess_region(&$variables) {
         $variables['hero_size_class'] = $variables['s_n_hero']['b_hero_size'][0]['#markup'];
       }
     }
+    // Check if page is a group homepage
+    $group_homepage = $current_route->getParameter('group');
+    if ($group_homepage) {
+        $variables['group_homepage'] = true;
+    }
   }
 }
 

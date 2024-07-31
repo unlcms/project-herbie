@@ -17,7 +17,7 @@
   %}
 {% else %}
   {% set classes = classes|merge(['dcf-hero-default']) %}
-  {% if title_hidden %}{% set classes = classes|merge(['dcf-sr-only']) %}{% endif %}
+  {% if title_hidden or group_homepage %}{% set classes = classes|merge(['dcf-sr-only']) %}{% endif %}
 {% endif %}
 
 {{ attach_library('unl_five_herbie/hero') }}
@@ -27,7 +27,7 @@
   <!-- InstanceEndEditable -->
   <div class="dcf-hero-group-1">
     {{ elements.unl_five_herbie_breadcrumbs }}
-    <header class="dcf-page-title {% if title_hidden %}dcf-sr-only{% endif %}" id="dcf-page-title">
+    <header class="dcf-page-title {% if title_hidden or group_homepage %}dcf-sr-only{% endif %}" id="dcf-page-title">
       <!-- InstanceBeginEditable name="pagetitle" -->
       {{ s_n_hero.b_hero_overline }}
       {% if s_n_hero.b_hero_title.0 %}
