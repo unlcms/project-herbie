@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.group_subsite.group_subsite_group_affiliation
     - field.field.group.group_subsite.group_subsite_node_reference
     - group.type.group_subsite
   module:
+    - link
     - path
 _core:
   default_config_hash: UQQvqGuooqrzRxw3aLY_Gubd2GfbXnK9B38Cb_6xyl0
@@ -14,6 +16,14 @@ targetEntityType: group
 bundle: group_subsite
 mode: default
 content:
+  group_subsite_group_affiliation:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   group_subsite_node_reference:
     type: entity_reference_autocomplete
     weight: 1
@@ -34,13 +44,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
