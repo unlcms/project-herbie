@@ -37,7 +37,7 @@
           <div class="dcf-lh-3 dcf-txt-sm dcf-italic">
             <span itemprop="jobTitle">
               {% if node.n_person_position.value %}
-                {{ content.n_person_position }}
+                {{node.n_person_position.value}}
               {% else %}
                 {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
               {% endif %}
