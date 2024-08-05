@@ -27,7 +27,7 @@
       {{ title_suffix }}
       <div class="dcf-lh-3 dcf-txt-sm dcf-italic" itemprop="jobTitle">
         {% if node.n_person_position.value %}
-          {{ content.n_person_position }}
+          {{node.n_person_position.value}}
         {% else %}
           {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
         {% endif %}
@@ -35,13 +35,11 @@
 
       {% if node.n_person_bio.value is not empty or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable %}
         <div class="dcf-mt-4">
-          <p>
             {% if node.n_person_bio.value is not empty %}
               {{ content.n_person_bio }}
             {% else %}
               {{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value }}
             {% endif %}
-          </p>
         </div>
       {% endif %}
     </div>
