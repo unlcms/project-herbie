@@ -10,6 +10,7 @@ dependencies:
     - block_content_permissions
     - contextual
     - feeds
+    - feeds_tamper
     - field_css
     - field_ui
     - filter
@@ -42,6 +43,7 @@ permissions:
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
+  - 'administer feeds_tamper'
   - 'administer js assets injector'
   - 'administer meta tags'
   - 'administer node display'

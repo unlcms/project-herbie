@@ -33,6 +33,7 @@ dependencies:
     - entity_usage
     - external_entities
     - feeds
+    - feeds_tamper
     - field_css
     - field_ui
     - file
@@ -98,6 +99,7 @@ permissions:
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
+  - 'administer feeds_tamper'
   - 'administer google analytics'
   - 'administer js assets injector'
   - 'administer main menu items'
