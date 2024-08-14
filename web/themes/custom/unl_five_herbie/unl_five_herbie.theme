@@ -82,6 +82,12 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $bundle = $variables['content']['#block_content']->bundle();
   }
 
+  if($variables['plugin_id'] == 'menu_block:main') {
+    // Generate a unique ID for the block.
+    $unique_id = uniqid('menu-block-main-', FALSE);
+    $variables['attributes']['id'] = $unique_id;
+  }
+
   if (isset($variables['content']['#block_content'])) {
     $section_layout_builder_styles = $variables['content']['#block_content']->__get('#section_lbs');
     $variables['data']['section_lbs'] = $section_layout_builder_styles;

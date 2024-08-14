@@ -37,7 +37,7 @@
           <div class="dcf-lh-3 dcf-txt-sm dcf-italic">
             <span itemprop="jobTitle">
               {% if node.n_person_position.value %}
-                {{ content.n_person_position }}
+                {{node.n_person_position.value}}
               {% else %}
                 {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
               {% endif %}
@@ -62,11 +62,10 @@
 
           {# Address #}
           <address class="dcf-mt-4">
+           <span class="type dcf-d-none">Work</span>
            <dl class="dcf-txt-sm dcf-mb-0">
               {% if node.n_person_address[0].value or node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress[0].value %}
-                <span class="type dcf-d-none">Work</span>
                 <dt class="dcf-sr-only">Address</dt>
-
                 <dd class="dcf-d-flex dcf-col-gap-2">
                   <div class="dcf-h-4 dcf-w-4 unl-gray dcf-mt-1">
                     <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 24 24" aria-hidden="true">
