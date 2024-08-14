@@ -8,6 +8,11 @@ dependencies:
     - group.type.group_subsite
   module:
     - inline_entity_form
+    - field.field.group.group_subsite.group_subsite_group_affiliation
+    - field.field.group.group_subsite.group_subsite_node_reference
+    - group.type.group_subsite
+  module:
+    - link
     - path
 _core:
   default_config_hash: UQQvqGuooqrzRxw3aLY_Gubd2GfbXnK9B38Cb_6xyl0
@@ -28,6 +33,13 @@ content:
       collapsible: false
       collapsed: false
       revision: false
+  group_subsite_group_affiliation:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   group_subsite_node_reference:
     type: entity_reference_autocomplete
@@ -49,13 +61,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true

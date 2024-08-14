@@ -126,9 +126,11 @@ function unl_system_menu_local_tasks_alter(&$data, $route_name) {
 
   $logged_in = \Drupal::currentUser()->isAuthenticated();
   if ($logged_in) {
+    //Remove Delete menu item from the menu local task
+    unset($data['tabs'][0]['entity.node.delete_form']);
     // Rearrange the local tasks tabs so that Delete is at the end.
     $data['tabs'][0]['entity.node.book_outline_form']['#weight'] = 100;
-    $data['tabs'][0]['entity.node.delete_form']['#weight'] = 110;
+    // $data['tabs'][0]['entity.node.delete_form']['#weight'] = 110;
     $data['tabs'][0]['entity.taxonomy_term.delete_form']['#weight'] = 110;
     // Change the "Latest version" tab title provided by Content Moderation.
     $data['tabs'][0]['content_moderation.workflows:node.latest_version_tab']['#link']['title'] = 'Latest draft';

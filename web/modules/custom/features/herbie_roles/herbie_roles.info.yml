@@ -28,6 +28,7 @@ dependencies:
   - 'entity_usage:entity_usage'
   - 'external_entities:external_entities'
   - 'feeds:feeds'
+  - 'feeds_tamper:feeds_tamper'
   - 'field_css:field_css'
   - 'file_delete:file_delete'
   - 'google_analytics:google_analytics'
@@ -56,5 +57,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.5.3
+version: 1.5.4
 package: Herbie

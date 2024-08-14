@@ -60,6 +60,11 @@ function unl_five_herbie_preprocess_region(&$variables) {
         $variables['hero_size_class'] = $variables['s_n_hero']['b_hero_size'][0]['#markup'];
       }
     }
+    // Check if page is a group homepage
+    $group_homepage = $current_route->getParameter('group');
+    if ($group_homepage) {
+        $variables['group_homepage'] = true;
+    }
   }
 
   // $group = _unl_five_get_current_group();
@@ -83,6 +88,12 @@ function unl_five_herbie_preprocess_block(&$variables) {
   $bundle = NULL;
   if (isset($variables['content']['#block_content'])) {
     $bundle = $variables['content']['#block_content']->bundle();
+  }
+
+  if($variables['plugin_id'] == 'menu_block:main') {
+    // Generate a unique ID for the block.
+    $unique_id = uniqid('menu-block-main-', FALSE);
+    $variables['attributes']['id'] = $unique_id;
   }
 
   if (isset($variables['content']['#block_content'])) {

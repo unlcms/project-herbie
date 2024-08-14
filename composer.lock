@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "654bd8845300ce0693a0247f3fe1632f",
+    "content-hash": "fd6cae94c80b6dc1f19c964bef6ad32d",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -3151,17 +3151,17 @@
         },
         {
             "name": "drupal/entity_usage",
-            "version": "2.0.0-beta11",
+            "version": "2.0.0-beta12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_usage.git",
-                "reference": "8.x-2.0-beta11"
+                "reference": "8.x-2.0-beta12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta11.zip",
-                "reference": "8.x-2.0-beta11",
-                "shasum": "31b7248887c917a5aa85bb0c8251467b96d53110"
+                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta12.zip",
+                "reference": "8.x-2.0-beta12",
+                "shasum": "cdd31e6c413cad6fbdb1bd0aac9ad8a0331eb429"
             },
             "require": {
                 "drupal/core": "^9.1 || ^10"
@@ -3181,8 +3181,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta11",
-                    "datestamp": "1676966168",
+                    "version": "8.x-2.0-beta12",
+                    "datestamp": "1684309054",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3199,6 +3199,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Lullabot",
+                    "homepage": "https://www.drupal.org/user/3815489"
+                },
                 {
                     "name": "marcoscano",
                     "homepage": "https://www.drupal.org/user/1288796"
@@ -13076,16 +13080,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.20",
+            "version": "10.5.3.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "064cf201f8db5ee3289eacdd7f6342841ecaf5b9"
+                "reference": "6ece679bc7e290c2adece48636f8823732783de0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/064cf201f8db5ee3289eacdd7f6342841ecaf5b9",
-                "reference": "064cf201f8db5ee3289eacdd7f6342841ecaf5b9",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/6ece679bc7e290c2adece48636f8823732783de0",
+                "reference": "6ece679bc7e290c2adece48636f8823732783de0",
                 "shasum": ""
             },
             "require": {
@@ -13103,9 +13107,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.20"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.22"
             },
-            "time": "2024-06-07T18:40:55+00:00"
+            "time": "2024-08-14T17:09:35+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -17741,6 +17745,7 @@
         "drupal/config_update": 15,
         "drupal/default_content": 15,
         "drupal/entity_share": 5,
+        "drupal/entity_usage": 10,
         "drupal/entitygroupfield": 15,
         "drupal/external_entities": 20,
         "drupal/features": 20,
@@ -17764,5 +17769,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

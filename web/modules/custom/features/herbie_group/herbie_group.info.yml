@@ -6,6 +6,7 @@ dependencies:
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:field'
+  - 'drupal:link'
   - 'drupal:node'
   - 'drupal:path'
   - 'drupal:user'
@@ -21,5 +22,5 @@ dependencies:
   - 'herbie_person:herbie_person'
   - 'herbie_roles:herbie_roles'
   - 'inline_entity_form:inline_entity_form'
-version: 1.0.2
+version: 1.0.3
 package: Herbie
