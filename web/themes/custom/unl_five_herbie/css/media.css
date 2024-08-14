@@ -45,7 +45,7 @@
   margin-bottom: unset;
 }
 
-.align-center.media-entity.view-mode--narrow {
+.align-center.media-entity.view-mode--narrow.media-entity-bundle--image {
   margin: auto;
   width: 50%;
   margin-bottom: 1em;
@@ -122,3 +122,9 @@ div.align-center.media-entity.view-mode--default.media-entity-bundle--image {
   align-items: center;
   justify-content: center;
 }
+
+div.align-center.media-entity.view-mode--narrow.media-entity-bundle--remote_video {
+  /* margin-left and margin-right are set to auto by align.module.css, so there is no need to set them here. */
+  width: 50%;
+}
+
