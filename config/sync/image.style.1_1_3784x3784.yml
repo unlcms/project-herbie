@@ -1,0 +1,15 @@
+uuid: 9096f644-34a6-434e-90ee-23e827b5ee7b
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_3784x3784
+label: '1:1 (3784x3784)'
+effects:
+  d4d733d5-2ac8-431a-999c-e3631621153a:
+    uuid: d4d733d5-2ac8-431a-999c-e3631621153a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3784
+      height: 3784
+      anchor: center-center

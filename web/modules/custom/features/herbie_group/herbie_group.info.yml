@@ -17,5 +17,5 @@ dependencies:
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
   - 'herbie_roles:herbie_roles'
-version: '1.0'
+version: 1.0.1
 package: Herbie

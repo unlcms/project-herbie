@@ -1,0 +1,37 @@
+uuid: 66c5fec3-9bf7-409e-ad70-5de5e5a02265
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.4_3_1197x898
+    - image.style.4_3_1596x1197
+    - image.style.4_3_2128x1596
+    - image.style.4_3_2838x2128
+    - image.style.4_3_3784x2838
+    - image.style.4_3_5045x3784
+    - image.style.4_3_505x379
+    - image.style.4_3_673x505
+    - image.style.4_3_898x673
+    - image.style.4x3_379x284
+id: 4x3_ris
+label: 4x3
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 4_3_1197x898
+        - 4_3_1596x1197
+        - 4_3_2128x1596
+        - 4_3_2838x2128
+        - 4_3_3784x2838
+        - 4_3_5045x3784
+        - 4_3_505x379
+        - 4_3_673x505
+        - 4_3_898x673
+        - 4x3_379x284
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 4x3_379x284

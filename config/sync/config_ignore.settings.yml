@@ -47,5 +47,6 @@ ignored_config_entities:
   - unl_breadcrumbs.settings
   - unl_news.settings
   - unl_system.settings
+  - unl_webform.settings
   - 'webform.webform.*'
 enable_export_filtering: true

@@ -1,0 +1,10 @@
+uuid: 4c65847c-2cc2-4087-8fe8-bc832fa4a8a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.4x3
+label: 4x3
+targetEntityType: media
+cache: true

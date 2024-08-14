@@ -110,6 +110,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -140,6 +141,7 @@ third_party_settings:
               - 'inline_block:logo_cloud'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'
@@ -170,6 +172,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:node_include'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
             'Lists (Views)': {  }
@@ -198,6 +201,7 @@ third_party_settings:
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
               - 'inline_block:proofpoint'
+              - 'inline_block:simple_media'
               - 'inline_block:slideshow'
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'

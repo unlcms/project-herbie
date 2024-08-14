@@ -1,0 +1,20 @@
+unl_webform.submissions.download:
+  path: '/admin/structure/webform/manage/{webform}/results/download/unl'
+  defaults:
+    _controller: '\Drupal\unl_webform\SubmissionsDownloadController::download'
+  options:
+    parameters:
+      webform:
+        type: 'entity:webform'
+  requirements:
+    _permission: 'access content'
+
+unl_webform.settings:
+  path: '/admin/config/services/unl_webform'
+  defaults:
+    _form: '\Drupal\unl_webform\Form\SettingsForm'
+    _title: 'Configure the UNL Webform module'
+  requirements:
+    _permission: 'administer unl webform download settings'
+  options:
+    _admin_route: TRUE

@@ -52,8 +52,9 @@ dependencies:
   - 'unl_breadcrumbs:unl_breadcrumbs'
   - 'unl_config:unl_config'
   - 'unl_news:unl_news'
+  - 'unl_webform:unl_webform'
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: '1.5'
+version: 1.5.3
 package: Herbie

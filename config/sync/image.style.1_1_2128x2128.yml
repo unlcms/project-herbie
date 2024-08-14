@@ -1,0 +1,15 @@
+uuid: 5b0f2a34-15da-465c-b335-8c4c0b791b68
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_2128x2128
+label: '1:1 (2128x2128)'
+effects:
+  9ab9ae7a-62f0-465c-ae7c-57b5f4efb979:
+    uuid: 9ab9ae7a-62f0-465c-ae7c-57b5f4efb979
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2128
+      height: 2128
+      anchor: center-center
