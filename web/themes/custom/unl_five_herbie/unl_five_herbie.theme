@@ -61,6 +61,14 @@ function unl_five_herbie_preprocess_region(&$variables) {
       }
     }
   }
+
+  // $group = _unl_five_get_current_group();
+
+  // if ($group) {
+  //   if($variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
+  //     $variables['hide_block'] = TRUE;
+  //   }
+  // }
 }
 
 /*
@@ -97,6 +105,13 @@ function unl_five_herbie_preprocess_block(&$variables) {
   // Make host available to contact_info custom block.
   if ($bundle == 'contact_info') {
     $variables['data']['host'] = \Drupal::request()->getHost();
+    $group = _unl_five_get_current_group();
+
+   if ($group) {
+     if($variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
+      $variables['hide_block'] = TRUE;
+     }
+   }
   }
 
   // Make section Layout Builder Block Styles array available to each block in the layout.
@@ -677,3 +692,35 @@ function unl_five_herbie_preprocess_image(&$variables) {
     $variables['attributes']['src'] = $file_url_generator->generateAbsoluteString($variables['uri']);
   }
 }
+
+/**
+ * Get the current Group.
+ *
+ * @return Drupal\group\Entity\Group
+ */
+// function _unl_five_get_current_group() {
+//   $moduleHandler = \Drupal::service('module_handler');
+//   if (!$moduleHandler->moduleExists('group')) {
+//     return NULL;
+//   }
+
+//   // If we're on a Group entity page.
+//   $group_route_context = \Drupal::service('group.group_route_context');
+//   $contexts = $group_route_context->getRuntimeContexts(['group']);
+//   $group = $contexts['group']->getContextValue();
+
+//   // If we're on a Node entity page.
+//   $node = \Drupal::request()->attributes->get('node');
+//   if ($node) {
+//     if (is_numeric($node)) {
+//       $node = Node::load($node);
+//     }
+//     $group_content_array = GroupRelationship::loadByEntity($node);
+//     foreach ($group_content_array as $group_content) {
+//       $group = $group_content->getGroup();
+//     }
+//   }
+
+//   return $group;
+// }
+

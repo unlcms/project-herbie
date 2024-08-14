@@ -1,0 +1,29 @@
+uuid: c4372e6a-f6f3-4be0-a052-2acc1df058ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.storage.group.group_subsite_contact_info_block
+    - group.type.group_subsite
+id: group.group_subsite.group_subsite_contact_info_block
+field_name: group_subsite_contact_info_block
+entity_type: group
+bundle: group_subsite
+label: 'Subsite contact info block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      contact_info: contact_info
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -2,15 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.group_subsite.group_subsite_contact_info_block
     - field.field.group.group_subsite.group_subsite_node_reference
     - group.type.group_subsite
   module:
+    - inline_entity_form
     - path
 id: group.group_subsite.default
 targetEntityType: group
 bundle: group_subsite
 mode: default
 content:
+  group_subsite_contact_info_block:
+    type: inline_entity_form_simple
+    weight: 26
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
   group_subsite_node_reference:
     type: entity_reference_autocomplete
     weight: 1

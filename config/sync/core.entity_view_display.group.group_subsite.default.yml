@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.group_subsite.group_subsite_contact_info_block
     - field.field.group.group_subsite.group_subsite_node_reference
     - group.type.group_subsite
 _core:
@@ -12,6 +13,15 @@ targetEntityType: group
 bundle: group_subsite
 mode: default
 content:
+  group_subsite_contact_info_block:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: -3
+    region: content
   group_subsite_node_reference:
     type: entity_reference_entity_view
     label: hidden
