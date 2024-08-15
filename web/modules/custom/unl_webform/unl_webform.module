@@ -30,12 +30,27 @@ function unl_webform_entity_create(EntityInterface $entity) {
  */
 function unl_webform_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
   switch ($form_id) {
+    case 'webform_settings_access_form':
+      // Disable changes to much of the 'Access' subtab.
+      $form['access']['update_any']['#disabled'] = TRUE;
+      $form['access']['delete_any']['#disabled'] = TRUE;
+      $form['access']['purge_any']['#disabled'] = TRUE;
+      $form['access']['view_own']['#disabled'] = TRUE;
+      $form['access']['update_own']['#disabled'] = TRUE;
+      $form['access']['delete_own']['#disabled'] = TRUE;
+      $form['access']['administer']['#disabled'] = TRUE;
+      $form['access']['test']['#disabled'] = TRUE;
+      $form['access']['configuration']['#disabled'] = TRUE;
+      break;
     case 'webform_settings_form':
       // Disable "Allow users to post submissions from a dedicated URL" field.
       $form['page_settings']['page']['#disabled'] = TRUE;
       break;
     case 'webform_settings_confirmation_form':
-      $form['confirmation_type']['confirmation_type']['#disabled'] = TRUE;
+      $uid = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      if (!$uid->hasRole('administrator') && !$uid->hasRole('coder')) {
+        $form['confirmation_type']['confirmation_type']['#disabled'] = TRUE;
+      }
       break;
   }
 }
