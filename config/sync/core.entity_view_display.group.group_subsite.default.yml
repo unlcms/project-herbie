@@ -14,15 +14,6 @@ targetEntityType: group
 bundle: group_subsite
 mode: default
 content:
-  group_subsite_contact_info_block:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: -3
-    region: content
   group_subsite_node_reference:
     type: entity_reference_entity_view
     label: hidden
@@ -43,5 +34,6 @@ content:
 hidden:
   changed: true
   created: true
+  group_subsite_contact_info_block: true
   group_subsite_group_affiliation: true
   uid: true
