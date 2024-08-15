@@ -21,6 +21,10 @@ function unl_webform_entity_create(EntityInterface $entity) {
     $settings['page'] = FALSE;
     // Set "Confirmation Type" to "inline".
     $settings['confirmation_type'] = 'inline';
+    // Set "Form access denied settings" to prompt a login on Webform Nodes.
+    $settings['form_access_denied'] = 'login';
+    $settings['form_access_denied_message'] = '<a href="/cas?destination=[current-page:url:path]">Please login</a> to view the form.';
+
     $settings = $entity->setSettings($settings);
   }
 }
