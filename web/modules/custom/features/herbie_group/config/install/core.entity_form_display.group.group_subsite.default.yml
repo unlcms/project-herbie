@@ -8,6 +8,7 @@ dependencies:
     - group.type.group_subsite
   module:
     - inline_entity_form
+    - link
     - path
 id: group.group_subsite.default
 targetEntityType: group
@@ -16,7 +17,7 @@ mode: default
 content:
   group_subsite_contact_info_block:
     type: inline_entity_form_simple
-    weight: 26
+    weight: 3
     region: content
     settings:
       form_mode: default
@@ -26,6 +27,14 @@ content:
       collapsible: false
       collapsed: false
       revision: false
+    third_party_settings: {  }
+  group_subsite_group_affiliation:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   group_subsite_node_reference:
     type: entity_reference_autocomplete
@@ -47,17 +56,16 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
 hidden:
-  group_subsite_group_affiliation: true
   uid: true
