@@ -7,10 +7,6 @@ dependencies:
     - group.type.group_subsite
   module:
     - inline_entity_form
-    - field.field.group.group_subsite.group_subsite_group_affiliation
-    - field.field.group.group_subsite.group_subsite_node_reference
-    - group.type.group_subsite
-  module:
     - link
     - path
 id: group.group_subsite.default
