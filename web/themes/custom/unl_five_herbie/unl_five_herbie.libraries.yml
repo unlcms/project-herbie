@@ -5,8 +5,6 @@ global-styling:
       css/global.css: {}
       css/media.css: {}
       css/wdn-overrides.css: {}
-  js:
-    js/theme/scroll-animations.js: {}
 
 layout-builder:
   css:
@@ -36,8 +34,8 @@ photo_hero:
   css:
     theme:
       css/theme/photo_hero.css: {}
-  js:
-    js/theme/photo_hero.js: {}
+  # js:
+  #   js/theme/photo_hero.js: {}
 
 card:
   version: VERSION
@@ -52,8 +50,8 @@ news_teaser:
   css:
     theme:
       css/theme/news_teaser.css: {}
-  js:
-    js/theme/news_teaser.js: {}
+  # js:
+  #   js/theme/news_teaser.js: {}
 
 news_article:
   version: VERSION
