@@ -1,0 +1,5 @@
+services:
+  unl_system.event_subscriber:
+    class: Drupal\unl_system\EventSubscriber\PrimaryBaseUrlSubscriber
+    tags:
+      - {name: event_subscriber}

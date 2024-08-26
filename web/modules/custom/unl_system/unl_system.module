@@ -5,7 +5,9 @@
  * The module file for UNL System.
  */
 
+use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormStateInterface;
+use DrupalFinder\DrupalFinder;
 
 /**
  * Implements hook_form_alter().
@@ -17,6 +19,59 @@ function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id)
     $config = $config_factory->get('unl_system.settings');
 
     $form['site_information']['#weight'] = -10;
+
+    if (\Drupal::getContainer()->getParameter('site.path') != 'sites/default') {
+      // Set up a connection to the default site's database to query the
+      // unl_multisite unl_sites and unl_sites_aliases tables.
+      $drupalFinder = new DrupalFinder();
+      $drupalFinder->locateRoot(getcwd());
+      $drupalRoot = $drupalFinder->getDrupalRoot();
+      @require($drupalRoot . '/sites/default/settings.php');
+      $default_database_name = $databases['default']['default']['database'];
+
+      $connection = Database::getConnection('default');
+      $connection_options = $connection->getConnectionOptions();
+      $site_id = str_replace('project-herbie-', '', $connection_options['database']);
+
+      $default_database = [
+        'database' => $default_database_name,
+        'username' => $connection_options['username'],
+        'password' => $connection_options['password'],
+        'driver' => $connection_options['driver'],
+        'host' => $connection_options['host'],
+      ];
+      Database::addConnectionInfo($default_database_name, 'default', $default_database);
+      $default_connection = Database::getConnection('default', $default_database_name);
+      $rows = $default_connection->query(
+        "SELECT s.uri, a.base_uri, a.path "
+        . "FROM unl_sites AS s "
+        . "LEFT JOIN unl_sites_aliases AS a "
+        . "ON s.site_id = a.site_id "
+        . "WHERE s.site_id = :site_id",
+        array(':site_id' => $site_id)
+      )->fetchAll();
+      Database::setActiveConnection('default');
+
+      $alternate_uris = [];
+      foreach ($rows as $row) {
+        if ($row->base_uri . $row->path) {
+          $alternate_uris[] = $row->base_uri . $row->path;
+        }
+      }
+
+      $base_urls = ['_null' => '--Select One--'];
+      foreach ($alternate_uris as $alternate_uri) {
+        $base_urls[$alternate_uri] = $alternate_uri;
+      }
+      $form['site_information']['primary_base_url'] = [
+        '#title' => 'Primary Base URL',
+        '#type' => 'select',
+        '#options' => $base_urls,
+        '#default_value' => $config->get('primary_base_url'),
+        '#disabled' => !\Drupal\user\Entity\User::load(\Drupal::currentUser()
+          ->id())->hasRole('administrator'),
+      ];
+    }
 
     $form['unl_affiliation'] = [
       '#type' => 'details',
@@ -104,7 +159,6 @@ function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id)
       '#default_value' => $config->get('unl_visit_apply_give_nav.give_nav.give_nav_link_text'),
       '#parents' => ['unl_visit_apply_give_nav', 'give_nav', 'give_nav_link_text'],
     ];
-
     $form['unl_visit_apply_give_nav']['give_nav']['give_nav_url'] = [
       '#type' => 'linkit',
       '#description' => 'You can search for and select internal content, or enter an external URL, such as http://example.com.',
@@ -180,6 +234,14 @@ function _unl_system_system_site_information_settings_submit(array $form, FormSt
 
   /** @var \Drupal\Core\Config\Config */
   $config = $config_factory->getEditable('unl_system.settings');
+
+  if (array_key_exists('primary_base_url', $values) && $values['primary_base_url'] != '_null') {
+    $config->set('primary_base_url', $values['primary_base_url']);
+  }
+  else {
+    $config->delete('primary_base_url');
+  }
+
   $config->set('affiliation_name', $values['affiliation_name']);
   $config->set('affiliation_url', $values['affiliation_url']);
 
