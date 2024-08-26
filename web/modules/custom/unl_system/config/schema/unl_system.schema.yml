@@ -8,3 +8,6 @@ unl_system.settings:
     affiliation_url:
       type: string
       label: 'Affiliation URL'
+    primary_base_url:
+      type: string
+      label: 'Primary Base URL'
