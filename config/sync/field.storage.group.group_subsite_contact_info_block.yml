@@ -1,0 +1,20 @@
+uuid: 05750b1d-ad81-470a-b5ee-f9ad9c2dae91
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - group
+id: group.group_subsite_contact_info_block
+field_name: group_subsite_contact_info_block
+entity_type: group
+type: entity_reference
+settings:
+  target_type: block_content
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
