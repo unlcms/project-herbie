@@ -4,8 +4,10 @@ dependencies:
   config:
     - field.field.group.group_subsite.group_subsite_group_affiliation
     - field.field.group.group_subsite.group_subsite_node_reference
+    - field.field.group.group_subsite.group_subsite_relatedlinks_block
     - group.type.group_subsite
   module:
+    - inline_entity_form
     - link
     - path
 id: group.group_subsite.default
@@ -31,6 +33,19 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  group_subsite_relatedlinks_block:
+    type: inline_entity_form_simple
+    weight: 3
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
   label:
     type: string_textfield
     weight: 0
@@ -41,13 +56,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true

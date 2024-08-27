@@ -4,11 +4,13 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'drupal:block'
+  - 'drupal:block_content'
   - 'drupal:field'
   - 'drupal:link'
   - 'drupal:node'
   - 'drupal:path'
   - 'drupal:user'
+  - 'drupal:views'
   - 'group:gnode'
   - 'group:group'
   - 'group_content_menu:group_content_menu'
@@ -18,5 +20,6 @@ dependencies:
   - 'herbie_news:herbie_news'
   - 'herbie_person:herbie_person'
   - 'herbie_roles:herbie_roles'
-version: 1.0.2
+  - 'inline_entity_form:inline_entity_form'
+version: 1.0.3
 package: Herbie

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content
+    - field.storage.group.group_subsite_relatedlinks_block
+    - group.type.group_subsite
+id: group.group_subsite.group_subsite_relatedlinks_block
+field_name: group_subsite_relatedlinks_block
+entity_type: group
+bundle: group_subsite
+label: 'Group related links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      content: content
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
