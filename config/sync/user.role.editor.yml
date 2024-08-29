@@ -20,6 +20,7 @@ dependencies:
     - node.type.person
     - node.type.webform
     - taxonomy.vocabulary.media_tags
+    - taxonomy.vocabulary.site_organization_tags
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
@@ -94,6 +95,7 @@ permissions:
   - 'create tabs block content'
   - 'create tandem block content'
   - 'create terms in media_tags'
+  - 'create terms in site_organization_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
   - 'delete any accordion block content'
