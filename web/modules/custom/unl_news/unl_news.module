@@ -123,11 +123,27 @@ function unl_news_link_alter(&$variables) {
  */
 function unl_news_node_access(NodeInterface $node, $op, AccountInterface $account) {
   // Deny access to update & delete operations for news nodes.
-  if ($node->bundle() == 'news' && !$node->isNew() && in_array($op, ['update', 'delete'])) {
+  if ($node->bundle() == 'news' && !$node->isNew() && in_array($op, ['delete'])) {
     if ($node->get('n_news_foreign_key')->getString()) {
       return AccessResult::forbidden()
         ->cachePerUser()
         ->addCacheableDependency($node);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function unl_news_preprocess_views_view_field(&$variables) {
+  if ($variables['view']->id() == 'content' && $variables['field']->field == 'operations') {
+    // Get the node object
+    $node = $variables['row']->_entity;
+    // Hide edit operations button if news item is imported from UNL_News
+    if ($node->bundle() == 'news') {
+      if ($node->get('n_news_foreign_key')->getString()) {
+        unset($variables['output']);
+      }
     }
   }
 }
