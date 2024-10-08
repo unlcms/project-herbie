@@ -48,6 +48,7 @@ dependencies:
   - 'field_css:field_css'
   - 'field_group:field_group'
   - 'heading:heading'
+  - 'herbie_archive_page:herbie_archive_page'
   - 'herbie_major:herbie_major'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
@@ -74,5 +75,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.8.3
+version: 1.8.4
 package: Herbie

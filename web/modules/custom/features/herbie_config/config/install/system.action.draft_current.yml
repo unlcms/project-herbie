@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - moderated_content_bulk_publish
+id: draft_current
+label: 'Draft current revision'
+type: node
+plugin: draft_current_revision_action
+configuration: {  }

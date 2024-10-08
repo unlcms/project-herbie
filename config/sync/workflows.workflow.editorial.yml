@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
+    - node.type.major
+    - node.type.major_option
     - node.type.news
     - node.type.person
+    - node.type.webform
   module:
     - content_moderation
 id: editorial
@@ -53,8 +57,12 @@ type_settings:
       weight: 2
   entity_types:
     node:
+      - archive_page
       - book
       - builder_page
+      - major
+      - major_option
       - news
       - person
+      - webform
   default_moderation_state: published

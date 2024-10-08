@@ -1,0 +1,8 @@
+disable_toolbar_language_switcher: 0
+enable_dialog_node_edit_form: 0
+enable_dialog_admin_content: 1
+current_translation_only: 0
+workflow: editorial
+workflow_state_draft: draft
+workflow_state_unpublished: unpublished
+workflow_state_published: published
