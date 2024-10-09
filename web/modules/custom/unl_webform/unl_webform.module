@@ -9,6 +9,8 @@ use Drupal\Component\Utility\Bytes;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_entity_create().
@@ -373,4 +375,51 @@ function unl_webform_upload_file_extension_whitelist(string $element_type, array
   }
 
   return $return;
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function unl_webform_entity_access(EntityInterface $entity, $operation, AccountInterface $account)
+{
+  $restricted_webform_options = array(
+    "days",
+    "months",
+    "time_zones",
+    "titles",
+    "yes_no",
+    "country_codes",
+    "country_names",
+    "state_province_codes",
+    "state_province_names",
+    "state_codes",
+    "state_names",
+    "languages",
+    "likert_agreement",
+    "likert_comparison",
+    "likert_importance",
+    "likert_quality",
+    "likert_satisfaction",
+    "likert_ten_scale",
+    "likert_would_you"
+  );
+  // Allow addition and deletion operations for webform options, restricted to user-created predefined webform options lists.
+  if ($entity->getEntityTypeId() === 'webform_options' && !in_array($entity->id(), $restricted_webform_options)) {
+    return AccessResult::allowedIfHasPermission($account, 'access webform options');
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_create_access().
+ */
+function unl_webform_entity_create_access(AccountInterface $account, array $context, $entity_bundle)
+{
+  // Only check for 'webform_options' entity type.
+  if ($context['entity_type_id'] === 'webform_options') {
+    // Allow entity creation if the user has the custom 'access webform options'.
+    return AccessResult::allowedIfHasPermission($account, 'access webform options');
+  }
+  // For other entities, return neutral.
+  return AccessResult::neutral();
 }
