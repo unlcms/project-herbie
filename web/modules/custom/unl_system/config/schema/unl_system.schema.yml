@@ -42,3 +42,6 @@ unl_system.settings:
             give_nav_url:
               type: url
               description: "URL and text for the 'Give' on hover menu nav. "
+    primary_base_url:
+      type: string
+      label: 'Primary Base URL'
