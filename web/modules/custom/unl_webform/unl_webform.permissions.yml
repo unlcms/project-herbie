@@ -2,6 +2,6 @@ administer unl webform download settings:
   title: 'Administer UNL Webform download settings'
   description: 'Allows a user to configure UNL Webform download key settings.'
 
-access webform options:
+access unl webform options:
   title: 'Access UNL Webform Options'
   description: 'Access Webform Options. Restricted to users with the Developer role only.'

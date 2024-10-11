@@ -380,8 +380,7 @@ function unl_webform_upload_file_extension_whitelist(string $element_type, array
 /**
  * Implements hook_entity_access().
  */
-function unl_webform_entity_access(EntityInterface $entity, $operation, AccountInterface $account)
-{
+function unl_webform_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
   $restricted_webform_options = array(
     "days",
     "months",
@@ -403,9 +402,9 @@ function unl_webform_entity_access(EntityInterface $entity, $operation, AccountI
     "likert_ten_scale",
     "likert_would_you"
   );
-  // Allow addition and deletion operations for webform options, restricted to user-created predefined webform options lists.
+  // Allow addition and deletion operations for access unl webform options, restricted to user-created predefined webform options lists.
   if ($entity->getEntityTypeId() === 'webform_options' && !in_array($entity->id(), $restricted_webform_options)) {
-    return AccessResult::allowedIfHasPermission($account, 'access webform options');
+    return AccessResult::allowedIfHasPermission($account, 'access unl webform options');
   }
   return AccessResult::neutral();
 }
@@ -413,12 +412,11 @@ function unl_webform_entity_access(EntityInterface $entity, $operation, AccountI
 /**
  * Implements hook_entity_create_access().
  */
-function unl_webform_entity_create_access(AccountInterface $account, array $context, $entity_bundle)
-{
+function unl_webform_entity_create_access(AccountInterface $account, array $context, $entity_bundle) {
   // Only check for 'webform_options' entity type.
   if ($context['entity_type_id'] === 'webform_options') {
     // Allow entity creation if the user has the custom 'access webform options'.
-    return AccessResult::allowedIfHasPermission($account, 'access webform options');
+    return AccessResult::allowedIfHasPermission($account, 'access unl webform options');
   }
   // For other entities, return neutral.
   return AccessResult::neutral();
