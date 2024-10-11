@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd6cae94c80b6dc1f19c964bef6ad32d",
+    "content-hash": "da131f7e9b4d72d3f9e0afec5e0b8cca",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -6248,11 +6248,17 @@
         },
         {
             "name": "drupal/scanner",
-            "version": "dev-1.x",
+            "version": "1.0.0-rc7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scanner.git",
-                "reference": "0beb366c01cfc759ebc9d247b5edffb30f1dc333"
+                "reference": "8.x-1.0-rc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scanner-8.x-1.0-rc7.zip",
+                "reference": "8.x-1.0-rc7",
+                "shasum": "ba1f808f99728c068328c676fed4c45e9dbd2eb9"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -6262,15 +6268,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0-rc6+15-dev",
-                    "datestamp": "1675541923",
+                    "version": "8.x-1.0-rc7",
+                    "datestamp": "1684337145",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -17757,7 +17760,7 @@
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,
-        "drupal/scanner": 20,
+        "drupal/scanner": 5,
         "drupal/seven": 15,
         "drupal/webform": 10,
         "unlcms/features_readonly": 20

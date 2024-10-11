@@ -201,7 +201,7 @@
         "drupal/redirect": "^1.5",
         "drupal/replicate": "^1.2",
         "drupal/replicate_ui": "^1.1",
-        "drupal/scanner": "1.x-dev@dev",
+        "drupal/scanner": "^1.0@RC",
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",
