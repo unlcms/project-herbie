@@ -90,7 +90,35 @@ function unl_webform_form_alter(&$form, FormStateInterface &$form_state, $form_i
  *
  * Alters the Webform UI element type select form.
  */
+function unl_webform_form_webform_ui_element_type_select_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Loop through $form array.
+  foreach ($form as $key => $value) {
+    // Groups are identifiable by keys that are integers.
+    if (is_int($key)) {
+      // Find the 'Other elements' group.
+      $title = $form[$key]['#title']->render();
+      if ($title == 'Other elements') {
+        // Remove the 'webform_element' option (aka 'Generic Element').
+        // This isn't possible via the UI due to
+        // https://www.drupal.org/project/webform/issues/3003641.
+        unset($form[$key]['elements']['webform_element']);
 
+        // Loop through the elements array to determine if there
+        // are any other elements. If not, then remove the group.
+        $remove_group = TRUE;
+        foreach ($form[$key]['elements'] as $element_key => $element) {
+          // Element key strings do not begin with '#'.
+          if (substr($element_key, 0, 1) !== "#") {
+            $remove_group = FALSE;
+          }
+        }
+        if ($remove_group) {
+          unset($form[$key]);
+        }
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -104,12 +132,8 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   $element_type = $element['#type'];
   // Add element type to $form array to make it available to
   // validate function(s).
-  if ($element_type == 'managed_file'
-    || $element_type == 'webform_document_file'
-    || $element_type == 'webform_image_file'
-    ) {
   $form['element_type'] = $element_type;
-    }
+
   // Get Webform settings.
   $config = \Drupal::service('config.factory')->get('webform.settings');
 
