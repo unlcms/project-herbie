@@ -3,4 +3,5 @@ required:
   - unl_five.settings
   - unl_five_herbie.settings
   - entity_usage.settings
+  - google_tag.settings
   - linkit.linkit_profile.content_linkit_profile

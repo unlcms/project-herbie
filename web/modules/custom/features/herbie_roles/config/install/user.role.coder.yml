@@ -14,6 +14,7 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - google_tag
     - group
     - metatag
     - node
@@ -41,6 +42,7 @@ permissions:
   - 'administer css assets injector'
   - 'administer feeds'
   - 'administer feeds_tamper'
+  - 'administer google_tag_container'
   - 'administer js assets injector'
   - 'administer meta tags'
   - 'administer node display'

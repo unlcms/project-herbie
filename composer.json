@@ -167,6 +167,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
         "drupal/google_analytics": "^4.0",
+        "drupal/google_tag": "^2.0",
         "drupal/group": "^3.2",
         "drupal/group_content_menu": "^3.0",
         "drupal/heading": "^1.7",
