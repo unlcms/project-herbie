@@ -42,6 +42,7 @@ dependencies:
     - filter
     - google_analytics
     - group
+    - key
     - layout_builder
     - media
     - media_file_delete
@@ -107,6 +108,8 @@ permissions:
   - 'administer feeds_tamper'
   - 'administer google analytics'
   - 'administer js assets injector'
+  - 'administer key configuration overrides'
+  - 'administer keys'
   - 'administer main menu items'
   - 'administer meta tags'
   - 'administer node display'

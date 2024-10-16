@@ -16,6 +16,7 @@ dependencies:
     - filter
     - google_analytics
     - group
+    - key
     - metatag
     - node
     - paragraphs
@@ -47,6 +48,8 @@ permissions:
   - 'administer feeds'
   - 'administer feeds_tamper'
   - 'administer js assets injector'
+  - 'administer key configuration overrides'
+  - 'administer keys'
   - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
