@@ -22,6 +22,8 @@ person:
   css:
     theme:
       css/theme/person.css: {}
+  js:
+    js/theme/person.js: {}
 
 hero:
   version: VERSION
