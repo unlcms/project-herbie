@@ -8,6 +8,40 @@ unl_system.settings:
     affiliation_url:
       type: string
       label: 'Affiliation URL'
+    unl_visit_apply_give_nav:
+      type: config_object
+      label: 'UNL Visit, Apply, and Give Navigation Settings'
+      mapping:
+        visit_nav:
+          type: config_object
+          label: 'Visit Navigation Link'
+          mapping:
+            visit_nav_link_text:
+              type: string
+              description: "URL and text for the 'Visit' on hover menu nav."
+            visit_nav_url:
+              type: url
+              description: "URL and text for the 'Visit' on hover menu nav."
+        apply_nav:
+          type: config_object
+          label: 'Apply Navigation Link'
+          mapping:
+            apply_nav_link_text:
+              type: string
+              description: "URL and text for the 'Apply' on hover menu nav."
+            apply_nav_url:
+              type: url
+              description: "URL and text for the 'Apply' on hover menu nav."
+        give_nav:
+          type: config_object
+          label: 'Give Navigation Link'
+          mapping:
+            give_nav_link_text:
+              type: string
+              description: "URL and text for the 'Give' on hover menu nav. "
+            give_nav_url:
+              type: url
+              description: "URL and text for the 'Give' on hover menu nav. "
     primary_base_url:
       type: string
       label: 'Primary Base URL'
