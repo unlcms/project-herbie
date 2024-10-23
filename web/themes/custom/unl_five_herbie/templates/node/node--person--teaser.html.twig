@@ -1,6 +1,6 @@
-{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix', 'dcf-mb-0', 'dcf-card-as-link', 'unlcms-img-zoom-hover'] %}
-
 {{ attach_library('unl_five_herbie/person') }}
+
+{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix', 'dcf-mb-0', 'dcf-card-as-link', 'unlcms-img-zoom-hover'] %}
 
 {% set orderedListAttribute = create_attribute() %}
 {% set orderedListAttribute = orderedListAttribute.addClass('dcf-list-bare dcf-d-grid unlcms-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-9') %}

@@ -1,0 +1,13 @@
+uuid: 58e5ba71-5303-47ea-a866-a95a888a47f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - moderated_content_bulk_publish
+_core:
+  default_config_hash: aZ3hz6mxP86N42FazeoXsG7Qd3CqFqHViFdPINIc3do
+id: unpin
+label: 'Unpin current revision (sticky)'
+type: node
+plugin: unpin_content_action
+configuration: {  }
