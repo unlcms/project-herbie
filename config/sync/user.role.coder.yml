@@ -79,3 +79,4 @@ permissions:
   - 'use text format webform_email'
   - 'view salesforce mapping'
   - 'view the administration theme'
+  - 'access unl webform options'

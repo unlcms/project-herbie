@@ -9,6 +9,8 @@ use Drupal\Component\Utility\Bytes;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_entity_create().
@@ -409,24 +411,50 @@ function unl_webform_upload_file_extension_whitelist(string $element_type, array
  * Controls access to webform entities.
  */
 function unl_webform_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  $restricted_webform_options = array(
+    "days",
+    "months",
+    "time_zones",
+    "titles",
+    "yes_no",
+    "country_codes",
+    "country_names",
+    "state_province_codes",
+    "state_province_names",
+    "state_codes",
+    "state_names",
+    "languages",
+    "likert_agreement",
+    "likert_comparison",
+    "likert_importance",
+    "likert_quality",
+    "likert_satisfaction",
+    "likert_ten_scale",
+    "likert_would_you"
+  );
+  // Allow addition and deletion operations for access unl webform options, restricted to user-created predefined webform options lists.
+  if ($entity->getEntityTypeId() === 'webform_options' && !in_array($entity->id(), $restricted_webform_options)) {
+    return AccessResult::allowedIfHasPermission($account, 'access unl webform options');
+  }
+
+
 
   // Check if the entity is a webform submission.
   if ($entity->getEntityTypeId() == 'webform_submission') {
-
     $owner_id = $entity->getOwnerId();
     $account_id = $account->id();
 
     if (($operation == 'view' && !$account->hasPermission('view any webform submission')) ||
       ($owner_id != $account_id && !$account->hasPermission('view own webform submission'))
     ) {
-      return \Drupal\Core\Access\AccessResult::forbidden();
+      return AccessResult::forbidden();
     }
 
     if (($operation == 'delete')) {
       if ((!$account->hasPermission('delete any webform submission')) ||
         ($owner_id != $account_id && !$account->hasPermission('delete own webform submission'))
       ) {
-        return \Drupal\Core\Access\AccessResult::forbidden();
+        return AccessResult::forbidden();
       }
     }
 
@@ -434,7 +462,7 @@ function unl_webform_entity_access(\Drupal\Core\Entity\EntityInterface $entity, 
       if ((!$account->hasPermission('edit any webform submission')) ||
         ($owner_id != $account_id && !$account->hasPermission('edit own webform submission'))
       ) {
-        return \Drupal\Core\Access\AccessResult::forbidden();
+        return AccessResult::forbidden();
       }
     }
 
@@ -442,11 +470,24 @@ function unl_webform_entity_access(\Drupal\Core\Entity\EntityInterface $entity, 
       if ((!$account->hasPermission('edit any webform submission')) ||
         ($owner_id != $account_id && !$account->hasPermission('edit own webform submission'))
       ) {
-        return \Drupal\Core\Access\AccessResult::forbidden();
+        return AccessResult::forbidden();
       }
     }
-
-    // Grant access (delegate access decisions to the webform module or other modules) if none of the conditions restrict it.
-    return \Drupal\Core\Access\AccessResult::neutral();
   }
+  
+  // Grant access (delegate access decisions to the webform module or other modules) if none of the conditions restrict it.
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_create_access().
+ */
+function unl_webform_entity_create_access(AccountInterface $account, array $context, $entity_bundle) {
+  // Only check for 'webform_options' entity type.
+  if ($context['entity_type_id'] === 'webform_options') {
+    // Allow entity creation if the user has the custom 'access webform options'.
+    return AccessResult::allowedIfHasPermission($account, 'access unl webform options');
+  }
+  // For other entities, return neutral.
+  return AccessResult::neutral();
 }
