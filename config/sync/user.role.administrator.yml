@@ -42,6 +42,7 @@ dependencies:
     - filter
     - google_analytics
     - group
+    - key
     - layout_builder
     - media
     - media_file_delete
@@ -56,6 +57,8 @@ dependencies:
     - redirect
     - replicate_ui
     - rest
+    - salesforce
+    - salesforce_mapping
     - scanner
     - system
     - taxonomy
@@ -106,6 +109,8 @@ permissions:
   - 'administer feeds_tamper'
   - 'administer google analytics'
   - 'administer js assets injector'
+  - 'administer key configuration overrides'
+  - 'administer keys'
   - 'administer main menu items'
   - 'administer meta tags'
   - 'administer node display'
@@ -119,6 +124,9 @@ permissions:
   - 'administer protected pages configuration'
   - 'administer redirects'
   - 'administer rest resources'
+  - 'administer salesforce'
+  - 'administer salesforce mapped objects'
+  - 'administer salesforce mapping'
   - 'administer scanner settings'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
@@ -132,6 +140,7 @@ permissions:
   - 'administer views'
   - 'administer webform submission'
   - 'allow empty user mail'
+  - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
@@ -309,6 +318,7 @@ permissions:
   - 'view own unpublished media'
   - 'view own webform submission'
   - 'view person revisions'
+  - 'view salesforce mapping'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'

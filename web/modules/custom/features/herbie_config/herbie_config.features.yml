@@ -10,3 +10,4 @@ required:
   - system.action.publish_latest
   - system.action.unpin
   - system.action.unpublish_current
+  - linkit.linkit_profile.content_linkit_profile

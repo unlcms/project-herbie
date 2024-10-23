@@ -6,8 +6,8 @@ index 0e0618a54f..3d42d92d20 100644
  # changed at runtime.
  <IfModule mod_php.c>
    php_value assert.active                   0
-+  php_value post_max_size                   100M
-+  php_value upload_max_filesize             100M
++  php_value post_max_size                   256M
++  php_value upload_max_filesize             256M
  </IfModule>
  
  # Requires mod_expires to be enabled.
