@@ -72,6 +72,7 @@ module:
   flexible_permissions: 0
   gnode: 0
   google_analytics: 0
+  google_tag: 0
   group: 0
   group_content_menu: 0
   group_support_revisions: 0
