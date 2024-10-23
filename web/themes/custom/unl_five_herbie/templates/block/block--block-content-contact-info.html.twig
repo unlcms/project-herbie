@@ -26,6 +26,8 @@
  */
 #}
 
+{% if not hide_block %}
+
 <div{{ attributes }}>
 
   {{ title_prefix }}
@@ -50,3 +52,4 @@
     </div>
   {% endblock %}
 </div>
+{% endif %}

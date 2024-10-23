@@ -11,6 +11,7 @@ dependencies:
   - 'drupal:path'
   - 'drupal:user'
   - 'drupal:views'
+  - 'entity_usage:entity_usage'
   - 'group:gnode'
   - 'group:group'
   - 'group_content_menu:group_content_menu'

@@ -1,0 +1,25 @@
+uuid: 010c785d-d809-481a-8f16-800ea1c9a7c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_contact_info_block
+  module:
+    - views
+  theme:
+    - unl_five_herbie
+id: views_block__group_contact_info_block
+theme: unl_five_herbie
+region: contactinfo
+weight: 0
+provider: null
+plugin: 'views_block:group_contact_info_block-block_1'
+settings:
+  id: 'views_block:group_contact_info_block-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

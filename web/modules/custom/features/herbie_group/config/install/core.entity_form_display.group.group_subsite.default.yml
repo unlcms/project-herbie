@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.group_subsite.group_subsite_contact_info_block
     - field.field.group.group_subsite.group_subsite_group_affiliation
     - field.field.group.group_subsite.group_subsite_node_reference
     - field.field.group.group_subsite.group_subsite_relatedlinks_block
@@ -15,6 +16,19 @@ targetEntityType: group
 bundle: group_subsite
 mode: default
 content:
+  group_subsite_contact_info_block:
+    type: inline_entity_form_simple
+    weight: 3
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
   group_subsite_group_affiliation:
     type: link_default
     weight: 2
