@@ -14,10 +14,14 @@ use Drupal\pathauto\PathautoPatternInterface;
 function unl_pathauto_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
   // For Builder Pages, if no menu item exists, then use the [node:title]
   // token instead of menu-based tokens.
+  $current_route = \Drupal::routeMatch()->getRouteName();
   if ($context['module'] == 'node' && $context['bundle'] == 'builder_page') {
     $menu = $context['data']['node']->__get('menu');
-    if (!is_array($menu) || $menu['enabled'] === 0) {
-      $pattern->setPattern('[node:group:url:path]/[node:title]');
+    if (!is_array(value: $menu) || $menu['enabled'] === 0)  {
+      // Check if the page is not a Layout Builder Page edit form
+      if($current_route !== "layout_builder.overrides.node.view") {
+        $pattern->setPattern('[node:group:url:path]/[node:title]');
+      }
     }
   }
 }
