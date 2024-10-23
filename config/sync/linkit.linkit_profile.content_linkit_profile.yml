@@ -1,0 +1,29 @@
+uuid: 13d1c8fd-aa39-48c7-8a9b-4afe11d7ded7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+label: Content
+id: content_linkit_profile
+description: ''
+matchers:
+  7c974b73-6652-41e6-ba8b-5cbbd28d6e84:
+    id: 'entity:node'
+    uuid: 7c974b73-6652-41e6-ba8b-5cbbd28d6e84
+    settings:
+      metadata: ''
+      bundles:
+        archive_page: archive_page
+        book: book
+        builder_page: builder_page
+        major: major
+        major_option: major_option
+        news: news
+        person: person
+        webform: webform
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0

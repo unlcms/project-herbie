@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.group.group_subsite.group_subsite_group_affiliation
     - field.field.group.group_subsite.group_subsite_node_reference
+    - field.field.group.group_subsite.group_subsite_relatedlinks_block
     - group.type.group_subsite
 id: group.group_subsite.default
 targetEntityType: group
@@ -31,4 +32,5 @@ hidden:
   changed: true
   created: true
   group_subsite_group_affiliation: true
+  group_subsite_relatedlinks_block: true
   uid: true
