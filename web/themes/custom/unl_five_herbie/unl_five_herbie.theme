@@ -124,7 +124,13 @@ function unl_five_herbie_preprocess_block(&$variables) {
      }
    }
   }
-
+  // If it's a group page, hide main site's Related Links block.
+  if($variables['elements']['#id'] == "unl_five_herbie_relatedlinks") {
+   $group = _unl_five_get_current_group();
+    if ($group) {
+     $variables['hide_related_links_block'] = TRUE;
+    }
+   }
   // Make section Layout Builder Block Styles array available to each block in the layout.
   // Values can be accessed in a Twig template with data.block_lbs, see unl_five_herbie_preprocess_block().
   if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {

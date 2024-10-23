@@ -23,7 +23,7 @@ third_party_settings:
       label: Style
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -36,15 +36,9 @@ targetEntityType: block_content
 bundle: simple_media
 mode: default
 content:
-  b_simple_media_animation:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   b_simple_media_aspect_ratio:
     type: options_select
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -81,4 +75,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  b_simple_media_animation: true

@@ -38,6 +38,7 @@ module:
   dcf_layouts: 0
   default_content: 0
   diff: 0
+  dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
@@ -71,6 +72,7 @@ module:
   flexible_permissions: 0
   gnode: 0
   google_analytics: 0
+  google_tag: 0
   group: 0
   group_content_menu: 0
   group_support_revisions: 0
@@ -97,6 +99,7 @@ module:
   inline_entity_form: 0
   jsonapi: 0
   jsonapi_image_styles: 0
+  key: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
   layout_builder_iframe_modal: 0
@@ -121,6 +124,8 @@ module:
   metatag: 0
   metatag_open_graph: 0
   metatag_twitter_cards: 0
+  moderated_content_bulk_publish: 0
+  metatag_verification: 0
   mysql: 0
   node: 0
   oembed_providers: 0
@@ -137,6 +142,12 @@ module:
   responsive_image: 0
   rest: 0
   rh_media: 0
+  salesforce: 0
+  salesforce_jwt: 0
+  salesforce_logger: 0
+  salesforce_mapping: 0
+  salesforce_mapping_ui: 0
+  salesforce_pull: 0
   scanner: 0
   select2: 0
   serialization: 0
@@ -153,6 +164,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   twig_ui: 0
+  typed_data: 0
   unl_archive_page_import: 0
   unl_blocks: 0
   unl_breadcrumbs: 0
@@ -178,6 +190,7 @@ module:
   unl_webform: 0
   user: 0
   variationcache: 0
+  views_bulk_operations: 0
   views_data_export: 0
   views_ui: 0
   webform: 0

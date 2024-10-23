@@ -40,6 +40,7 @@ ignored_config_entities:
   - ~block.block.unl_five_messages
   - ~block.block.unl_five_page_title
   - ~block.block.views_block__group_contact_info_block
+  - ~block.block.views_block__group_related_links_block
   - entity_share_client.remote.content_hub_development
   - 'entity_share_cron.settings:remotes.content_hub_development'
   - 'system.site:name'

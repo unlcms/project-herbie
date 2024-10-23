@@ -6,6 +6,7 @@ dependencies:
     - field.field.group.group_subsite.group_subsite_contact_info_block
     - field.field.group.group_subsite.group_subsite_group_affiliation
     - field.field.group.group_subsite.group_subsite_node_reference
+    - field.field.group.group_subsite.group_subsite_relatedlinks_block
     - group.type.group_subsite
 _core:
   default_config_hash: 43JTXYCv0LTqy0CbMDuAPvI7VEbhmtV6yP0n8qCTCrs
@@ -36,4 +37,5 @@ hidden:
   created: true
   group_subsite_contact_info_block: true
   group_subsite_group_affiliation: true
+  group_subsite_relatedlinks_block: true
   uid: true

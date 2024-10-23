@@ -35,6 +35,7 @@ dependencies:
     - layout_builder
     - media
     - menu_admin_per_menu
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - rabbit_hole
@@ -61,6 +62,7 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access users overview'
+  - 'access webform overview'
   - 'add content to books'
   - 'administer book outlines'
   - 'administer main menu items'
@@ -93,6 +95,8 @@ permissions:
   - 'create terms in media_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
+  - 'create webform'
+  - 'create webform content'
   - 'delete any accordion block content'
   - 'delete any card block content'
   - 'delete any content block content'
@@ -135,6 +139,7 @@ permissions:
   - 'edit any news content'
   - 'edit any person content'
   - 'edit any remote_video media'
+  - 'edit any webform'
   - 'edit any webform content'
   - 'edit own archive_page content'
   - 'edit own book content'
@@ -144,9 +149,16 @@ permissions:
   - 'edit own news content'
   - 'edit own person content'
   - 'edit own remote_video media'
+  - 'edit own webform'
   - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'moderated content bulk draft'
+  - 'moderated content bulk pin'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk save content'
+  - 'moderated content bulk unpin'
+  - 'moderated content bulk unpublish'
   - 'perform search only'
   - 'rabbit hole bypass media'
   - 'replicate entities'

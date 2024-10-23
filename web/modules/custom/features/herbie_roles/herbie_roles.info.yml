@@ -32,6 +32,7 @@ dependencies:
   - 'field_css:field_css'
   - 'file_delete:file_delete'
   - 'google_analytics:google_analytics'
+  - 'google_tag:google_tag'
   - 'group:group'
   - 'herbie_archive_page:herbie_archive_page'
   - 'herbie_builder_page:herbie_builder_page'
@@ -40,14 +41,18 @@ dependencies:
   - 'herbie_person:herbie_person'
   - 'herbie_webform:herbie_webform'
   - 'honeypot:honeypot'
+  - 'key:key'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
   - 'metatag:metatag'
+  - 'moderated_content_bulk_publish:moderated_content_bulk_publish'
   - 'paragraphs:paragraphs'
   - 'protected_pages:protected_pages'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
   - 'replicate_ui:replicate_ui'
+  - 'salesforce:salesforce'
+  - 'salesforce:salesforce_mapping'
   - 'scanner:scanner'
   - 'twig_ui:twig_ui'
   - 'unl_breadcrumbs:unl_breadcrumbs'
@@ -57,5 +62,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.5.4
+version: 1.6.5
 package: Herbie
