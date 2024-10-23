@@ -6066,6 +6066,56 @@
             }
         },
         {
+            "name": "drupal/moderated_content_bulk_publish",
+            "version": "3.0.0-beta12",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/moderated_content_bulk_publish.git",
+                "reference": "3.0.0-beta12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/moderated_content_bulk_publish-3.0.0-beta12.zip",
+                "reference": "3.0.0-beta12",
+                "shasum": "ad55c988c522e87e5696352d0c949be4f2012e05"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9 || ^10",
+                "drupal/views_bulk_operations": "^4.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0-beta12",
+                    "datestamp": "1719499482",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "See all contributors",
+                    "homepage": "https://www.drupal.org/node/3070758/committers"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                }
+            ],
+            "description": "The Moderated Content Bulk Publish module does what it says from the /admin/content view.",
+            "homepage": "https://www.drupal.org/project/moderated_content_bulk_publish",
+            "support": {
+                "source": "git://git.drupal.org/project/moderated_content_bulk_publish.git",
+                "issues": "https://www.drupal.org/project/issues/moderated_content_bulk_publish"
+            }
+        },
+        {
             "name": "drupal/oembed_providers",
             "version": "2.1.0",
             "source": {
@@ -7664,6 +7714,72 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/variationcache",
                 "issues": "https://drupal.org/project/issues/variationcache"
+            }
+        },
+        {
+            "name": "drupal/views_bulk_operations",
+            "version": "4.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
+                "reference": "4.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.7.zip",
+                "reference": "4.2.7",
+                "shasum": "25c9fa531ac49664a361fdd2202eec0a6e53bc61"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10 || ^11",
+                "php": ">=7.4.0"
+            },
+            "require-dev": {
+                "drush/drush": "^12"
+            },
+            "suggest": {
+                "drush/drush": "^11 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.2.7",
+                    "datestamp": "1717665214",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber"
+                },
+                {
+                    "name": "Graber",
+                    "homepage": "https://www.drupal.org/user/1599440"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                }
+            ],
+            "description": "Adds an ability to perform bulk operations on selected entities from view results. Provides an API to create such operations.",
+            "homepage": "https://www.drupal.org/project/views_bulk_operations",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_bulk_operations/-/tree/8.x-3.x",
+                "issues": "https://www.drupal.org/project/issues/views_bulk_operations?version=8.x",
+                "docs": "https://www.drupal.org/docs/8/modules/views-bulk-operations-vbo"
             }
         },
         {
@@ -18683,5 +18799,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

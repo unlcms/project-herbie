@@ -17,6 +17,7 @@ dependencies:
     - group
     - key
     - metatag
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - protected_pages
@@ -70,6 +71,12 @@ permissions:
   - 'create html_code block content'
   - 'delete any html_code block content'
   - 'load twig templates from file system'
+  - 'moderated content bulk draft'
+  - 'moderated content bulk pin'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk save content'
+  - 'moderated content bulk unpin'
+  - 'moderated content bulk unpublish'
   - 'replicate entities'
   - 'update any html_code block content'
   - 'use text format html_code'

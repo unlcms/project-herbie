@@ -48,6 +48,7 @@ dependencies:
     - media_file_delete
     - menu_admin_per_menu
     - metatag
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - path
@@ -257,6 +258,12 @@ permissions:
   - entity_share_client_display_errors
   - entity_share_client_pull_content
   - 'load twig templates from file system'
+  - 'moderated content bulk draft'
+  - 'moderated content bulk pin'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk save content'
+  - 'moderated content bulk unpin'
+  - 'moderated content bulk unpublish'
   - 'perform search and replace'
   - 'perform search only'
   - 'rabbit hole bypass media'

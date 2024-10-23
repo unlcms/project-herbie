@@ -35,6 +35,7 @@ dependencies:
     - layout_builder
     - media
     - menu_admin_per_menu
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - rabbit_hole
@@ -152,6 +153,12 @@ permissions:
   - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'moderated content bulk draft'
+  - 'moderated content bulk pin'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk save content'
+  - 'moderated content bulk unpin'
+  - 'moderated content bulk unpublish'
   - 'perform search only'
   - 'rabbit hole bypass media'
   - 'replicate entities'

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - moderated_content_bulk_publish
+id: pin
+label: 'Pin current revision (sticky)'
+type: node
+plugin: pin_content_action
+configuration: {  }

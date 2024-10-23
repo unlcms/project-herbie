@@ -3,4 +3,11 @@ required:
   - unl_five.settings
   - unl_five_herbie.settings
   - entity_usage.settings
+  - moderated_content_bulk_publish.settings
+  - views.view.content
+  - system.action.draft_current
+  - system.action.pin
+  - system.action.publish_latest
+  - system.action.unpin
+  - system.action.unpublish_current
   - linkit.linkit_profile.content_linkit_profile

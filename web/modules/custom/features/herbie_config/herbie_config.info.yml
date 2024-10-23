@@ -7,5 +7,6 @@ package: Herbie
 dependencies:
   - 'drupal:node'
   - 'entity_usage:entity_usage'
+  - 'moderated_content_bulk_publish:moderated_content_bulk_publish'
   - 'linkit:linkit'
   - 'replicate_ui:replicate_ui'
