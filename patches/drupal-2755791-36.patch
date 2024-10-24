@@ -1,0 +1,12 @@
+diff --git a/core/core.libraries.yml b/core/core.libraries.yml
+index 8f9f90944c..6e8c510c9a 100644
+--- a/core/core.libraries.yml
++++ b/core/core.libraries.yml
+@@ -404,6 +404,7 @@ drupal.ajax:
+     ajaxTrustedUrl: {}
+   dependencies:
+     - core/jquery
++    - core/internal.jquery.form
+     - core/drupal
+     - core/drupalSettings
+     - core/drupal.progress
