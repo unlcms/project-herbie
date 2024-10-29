@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61a39bd31d2a7a3895df40a9215aea05",
+    "content-hash": "dcd1ea060b12d3630a8dc49220ce8c6f",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -14229,16 +14229,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.25",
+            "version": "10.5.3.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "a914fee43ddffaef8d194c6a5b44eeff2f16bee9"
+                "reference": "be9ca8269232ffbd48ec1a2c45bb8c4337700c35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/a914fee43ddffaef8d194c6a5b44eeff2f16bee9",
-                "reference": "a914fee43ddffaef8d194c6a5b44eeff2f16bee9",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/be9ca8269232ffbd48ec1a2c45bb8c4337700c35",
+                "reference": "be9ca8269232ffbd48ec1a2c45bb8c4337700c35",
                 "shasum": ""
             },
             "require": {
@@ -14256,9 +14256,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.25"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.26"
             },
-            "time": "2024-10-09T17:52:32+00:00"
+            "time": "2024-10-29T20:55:01+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -18871,5 +18871,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
