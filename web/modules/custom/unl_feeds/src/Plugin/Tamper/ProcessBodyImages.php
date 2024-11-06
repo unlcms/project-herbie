@@ -9,7 +9,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
 use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
-use Drupal\Component\Utility\Html;
 
 /**
  * Plugin implementation for processing HTML and replacing img tags with Media items.
@@ -121,10 +120,20 @@ class ProcessBodyImages extends TamperBase {
           ->save();
       }
 
+      // Get the figcaption if available to use as Media caption.
+      $figcaption = '';
+      $figcaption_nodes = $xpath->query("figcaption//text()", $img->parentNode);
+      if ($figcaption_nodes->length) {
+        $figcaption = trim($dom->saveHTML($figcaption_nodes->item(0)));
+        // Remove the figcaption entirely since it will get added to the Media element.
+        $figcaption_nodes->item(0)->parentNode->removeChild($figcaption_nodes->item(0));
+      }
+
       // Create a new drupal-media DOM element.
       $drupal_media = $dom->createElement('drupal-media');
       $drupal_media->setAttribute('data-entity-type', 'media');
       $drupal_media->setAttribute('data-entity-uuid', $media->uuid());
+      $drupal_media->setAttribute('data-caption', $figcaption);
 
       // Replace the <img> with the new <drupal-media> element.
       $img->parentNode->replaceChild($drupal_media, $img);
