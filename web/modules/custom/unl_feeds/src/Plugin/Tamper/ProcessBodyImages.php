@@ -93,7 +93,8 @@ class ProcessBodyImages extends TamperBase {
           ->loadByProperties(['field_media_image' => $fileId]);
         $media = reset($media);
       }
-      else {
+
+      if (!$file || !$media) {
         // Download the file and create a new Media entity.
 
         // Alt text.
