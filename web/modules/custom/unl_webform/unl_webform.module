@@ -61,30 +61,32 @@ function unl_webform_form_alter(&$form, FormStateInterface &$form_state, $form_i
   }
 
   $fieldset_elements = [
-      'checkboxes',
-      'details',
-      'fieldset',
-      'radios',
-      'telephone_advanced',
-      'webform_address',
-      'webform_buttons',
-      'webform_buttons_other',
-      'webform_checkboxes_other',
-      'webform_name',
-      'webform_radios_other',
-      'webform_select_other',
-      'webform_telephone',
-    ];
-    // Add required text on fieldset webform elements
-    if($form['#entity_type'] == 'webform_submission' || $form['#theme'][0] == 'webform_submission_form') {
-      foreach($form['elements'] as $key => $element) {
-        if(in_array($element['#type'], $fieldset_elements)) {
-          if($element['#required'] ==  true) {
+    'checkboxes',
+    'details',
+    'fieldset',
+    'radios',
+    'telephone_advanced',
+    'webform_address',
+    'webform_buttons',
+    'webform_buttons_other',
+    'webform_checkboxes_other',
+    'webform_name',
+    'webform_radios_other',
+    'webform_select_other',
+    'webform_telephone',
+  ];
+  // Add required text on fieldset webform elements
+  if (isset($form['#entity_type'])) {
+    if ($form['#entity_type'] == 'webform_submission' || $form['#theme'][0] == 'webform_submission_form') {
+      foreach ($form['elements'] as $key => $element) {
+        if (in_array($element['#type'], $fieldset_elements)) {
+          if ($element['#required'] ==  true) {
             $form['elements'][$key]['#title'] = $element['#title'] . ' <small class="dcf-required dcf-regular">Required</small>';
+          }
         }
-       }
       }
     }
+  }
 }
 
 /**
@@ -474,7 +476,7 @@ function unl_webform_entity_access(\Drupal\Core\Entity\EntityInterface $entity, 
       }
     }
   }
-  
+
   // Grant access (delegate access decisions to the webform module or other modules) if none of the conditions restrict it.
   return AccessResult::neutral();
 }

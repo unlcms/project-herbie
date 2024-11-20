@@ -1,0 +1,29 @@
+diff --git a/core/lib/Drupal/Core/Layout/LayoutPluginManager.php b/core/lib/Drupal/Core/Layout/LayoutPluginManager.php
+index 2265194bf3..b069572bc9 100644
+--- a/core/lib/Drupal/Core/Layout/LayoutPluginManager.php
++++ b/core/lib/Drupal/Core/Layout/LayoutPluginManager.php
+@@ -201,9 +201,9 @@ public function getSortedDefinitions(array $definitions = NULL, $label_key = 'la
+     $definitions = $definitions ?? $this->getDefinitions();
+     uasort($definitions, function (LayoutDefinition $a, LayoutDefinition $b) {
+       if ($a->getCategory() != $b->getCategory()) {
+-        return strnatcasecmp($a->getCategory(), $b->getCategory());
++        return strnatcasecmp($a->getCategory() ?? '', $b->getCategory() ?? '');
+       }
+-      return strnatcasecmp($a->getLabel(), $b->getLabel());
++      return strnatcasecmp($a->getLabel() ?? '', $b->getLabel() ?? '');
+     });
+     return $definitions;
+   }
+diff --git a/core/lib/Drupal/Core/Plugin/CategorizingPluginManagerTrait.php b/core/lib/Drupal/Core/Plugin/CategorizingPluginManagerTrait.php
+index 1ce1446802..3e3f1eeb1c 100644
+--- a/core/lib/Drupal/Core/Plugin/CategorizingPluginManagerTrait.php
++++ b/core/lib/Drupal/Core/Plugin/CategorizingPluginManagerTrait.php
+@@ -89,6 +89,8 @@ public function getSortedDefinitions(array $definitions = NULL, $label_key = 'la
+     // Sort the plugins first by category, then by label.
+     $definitions = $definitions ?? $this->getDefinitions();
+     uasort($definitions, function ($a, $b) use ($label_key) {
++      $a['category'] = $a['category'] ?? '';
++      $b['category'] = $b['category'] ?? '';
+       if ((string) $a['category'] != (string) $b['category']) {
+         return strnatcasecmp($a['category'], $b['category']);
+       }
