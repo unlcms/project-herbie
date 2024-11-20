@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Implements hook_update_1001().
+ * Some group pages have created "Contact Info" blocks without descriptions because the description
+ * field was disabled during their creation.
+ * This update ensures a description is added to prevent a
+ * PHP deprecated function warning: Deprecated function: strnatcasecmp().
+ */
+function unl_group_update_1001() {
+  if (\Drupal::service('module_handler')->moduleExists('group')) {
+    $group_storage = \Drupal::entityTypeManager()->getStorage('group');
+
+    if ($group_storage) {
+      $group_ids = $group_storage->getQuery()
+        ->condition('type', 'group_subsite')
+        ->accessCheck(TRUE)
+        ->execute();
+
+      if ($group_ids) {
+        // Load the block storage service.
+        $custom_blocks = \Drupal::entityTypeManager()->getStorage('block_content');
+        // Load all custom block entities.
+        $blocks = $custom_blocks->loadMultiple();
+
+        // Loop through all blocks.
+        foreach ($blocks as $block) {
+          $block_id = $block->id();
+          $block_type = $block->bundle();
+
+          if (!empty($block_id) && $block_type == 'contact_info') {
+            // If contact info block's description is empty set the description
+            if (!$block->get('info')->getValue()) {
+              $contact_info_block_description = 'Contact us';
+              $block->set('info', $contact_info_block_description);
+              $block->save();
+              \Drupal::logger('unl_group')->notice('Updated description for block ID: @id', ['@id' => $block_id]);
+            }
+          }
+        }
+      }
+
+      // Return a status message.
+      return t('Contact Info block descriptions have been updated.');
+    }
+  }
+}
