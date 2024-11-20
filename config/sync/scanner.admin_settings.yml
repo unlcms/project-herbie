@@ -34,3 +34,4 @@ fields_of_selected_content_type:
   'node:person:n_person_position': 'node:person:n_person_position'
   'node:webform:title': 'node:webform:title'
   'node:webform:body': 'node:webform:body'
+word_boundaries: auto

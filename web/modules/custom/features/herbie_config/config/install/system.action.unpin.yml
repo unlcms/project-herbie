@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - moderated_content_bulk_publish
+id: unpin
+label: 'Unpin current revision (sticky)'
+type: node
+plugin: unpin_content_action
+configuration: {  }

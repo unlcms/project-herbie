@@ -14,12 +14,17 @@ dependencies:
     - field_ui
     - filter
     - google_analytics
+    - google_tag
     - group
+    - key
     - metatag
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - protected_pages
     - replicate_ui
+    - salesforce
+    - salesforce_mapping
     - system
     - taxonomy
     - twig_ui
@@ -41,7 +46,10 @@ permissions:
   - 'administer css assets injector'
   - 'administer feeds'
   - 'administer feeds_tamper'
+  - 'administer google_tag_container'
   - 'administer js assets injector'
+  - 'administer key configuration overrides'
+  - 'administer keys'
   - 'administer meta tags'
   - 'administer node display'
   - 'administer node fields'
@@ -50,19 +58,31 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraph form display'
   - 'administer protected pages configuration'
+  - 'administer salesforce'
+  - 'administer salesforce mapped objects'
+  - 'administer salesforce mapping'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
   - 'administer taxonomy_term fields'
   - 'administer taxonomy_term form display'
   - 'administer twig templates'
   - 'administer views'
+  - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'
   - 'create html_code block content'
   - 'delete any html_code block content'
   - 'load twig templates from file system'
+  - 'moderated content bulk draft'
+  - 'moderated content bulk pin'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk save content'
+  - 'moderated content bulk unpin'
+  - 'moderated content bulk unpublish'
   - 'replicate entities'
   - 'update any html_code block content'
   - 'use text format html_code'
   - 'use text format webform_email'
+  - 'view salesforce mapping'
   - 'view the administration theme'
+  - 'access unl webform options'

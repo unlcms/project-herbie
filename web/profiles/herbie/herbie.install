@@ -81,3 +81,27 @@ function herbie_update_8104(&$sandbox) {
     $paragraph->save();
   }
 }
+
+/**
+ * Update max_length of m_rv_html_representation field to 1000 characters.
+ */
+function herbie_update_8105(&$sandbox) {
+  // Resize the Columns.
+  $database = \Drupal::database();
+  $database->query("ALTER TABLE media__m_rv_html_representation MODIFY m_rv_html_representation_value VARCHAR(1000)");
+  $database->query("ALTER TABLE media_revision__m_rv_html_representation MODIFY m_rv_html_representation_value 	VARCHAR(1000)");
+
+  // Update Storage Schema.
+  $storage_key = 'media.field_schema_data.m_rv_html_representation';
+  $storage_schema = \Drupal::keyValue('entity.storage_schema.sql');
+  $field_schema = $storage_schema->get($storage_key);
+  $field_schema['media__m_rv_html_representation']['fields']['m_rv_html_representation']['length'] = 1000;
+  $field_schema['media_revision__m_rv_html_representation']['fields']['m_rv_html_representation']['length'] = 1000;
+  $storage_schema->set($storage_key, $field_schema);
+
+  // Update field configuration.
+  $config = \Drupal::configFactory()
+    ->getEditable('field.storage.media.m_rv_html_representation');
+  $config->set('settings.max_length', 1000);
+  $config->save(TRUE);
+}

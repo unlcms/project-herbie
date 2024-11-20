@@ -1,0 +1,23 @@
+diff --git a/.htaccess b/.htaccess
+index 0e0618a54f..f18c21a0ea 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -71,6 +71,18 @@ AddEncoding gzip svgz
+   # even when running as CGI or FastCGI.
+   RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
++  # START unl site specific SECTION
++  # physics professor sites that start with a ~
++  RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
++  RewriteRule ^~agruverman(.*)$ https://gruverman.unl.edu$1 [R=301,L]
++  RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
++  RewriteRule ^~kirillb(.*)$ https://belashchenko.unl.edu$1 [R=301,L]
++  RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
++  RewriteRule ^~tsymbal(.*)$ https://tsymbal.unl.edu$1 [R=301,L]
++  RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
++  RewriteRule ^~(.*)$ https://www.physics.unl.edu/~$1 [R=301,L]
++  # END unl site specific SECTION
++
+   # Block access to "hidden" directories whose names begin with a period. This
+   # includes directories used by version control systems such as Subversion or
+   # Git to store control files. Files whose names begin with a period, as well
