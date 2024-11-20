@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd6cae94c80b6dc1f19c964bef6ad32d",
+    "content-hash": "518a4e7d48980f530f062239f35a229e",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5213,20 +5213,23 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "6.0.0-beta4",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "6.0.0-beta4"
+                "reference": "6.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.0-beta4.zip",
-                "reference": "6.0.0-beta4",
-                "shasum": "94274f0af2315ca91d9be8fc4e5103c9566860f0"
+                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.2.zip",
+                "reference": "6.0.2",
+                "shasum": "b7d965d122403c0d1cd8b891db3ea56004026804"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^9.4 || ^10.0.0"
+            },
+            "conflict": {
+                "drupal/core": ">=10.1"
             },
             "require-dev": {
                 "drupal/ckeditor": "*",
@@ -5235,11 +5238,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.0-beta4",
-                    "datestamp": "1678030708",
+                    "version": "6.0.2",
+                    "datestamp": "1696865395",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -17753,7 +17756,6 @@
         "drupal/feeds_ex": 10,
         "drupal/feeds_tamper": 10,
         "drupal/field_css": 5,
-        "drupal/linkit": 10,
         "drupal/linkit_media_library": 15,
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,
@@ -17769,5 +17771,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
