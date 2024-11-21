@@ -116,6 +116,8 @@ function unl_five_herbie_preprocess_block(&$variables) {
      }
 
   }
+}
+
   // If it's a group page, hide main site's Related Links block.
   if(isset($variables['elements']['#id'])) {
     if($variables['elements']['#id'] == "unl_five_herbie_relatedlinks") {
@@ -138,7 +140,7 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
   }
 }
-}
+
 /**
  * Implements template_preprocess_node__TYPE().
  */
