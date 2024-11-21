@@ -110,21 +110,19 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['data']['host'] = \Drupal::request()->getHost();
     $group = _unl_five_get_current_group();
 
-   if ($group) {
-     if($variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
+    if ($group && $variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
       $variables['hide_block'] = TRUE;
-     }
+    }
+  }
 
-  }
   // If it's a group page, hide main site's Related Links block.
-  if(isset($variables['elements']['#id'])) {
-    if($variables['elements']['#id'] == "unl_five_herbie_relatedlinks") {
-      $group = _unl_five_get_current_group();
-       if ($group) {
-        $variables['hide_related_links_block'] = TRUE;
-       }
-      }
+  if (isset($variables['elements']['#id']) && $variables['elements']['#id'] == 'unl_five_herbie_relatedlinks') {
+    $group = _unl_five_get_current_group();
+    if ($group) {
+      $variables['hide_related_links_block'] = TRUE;
+    }
   }
+
   // Make section Layout Builder Block Styles array available to each block in the layout.
   // Values can be accessed in a Twig template with data.block_lbs, see unl_five_herbie_preprocess_block().
   if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
@@ -138,7 +136,7 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
   }
 }
-}
+
 /**
  * Implements template_preprocess_node__TYPE().
  */
