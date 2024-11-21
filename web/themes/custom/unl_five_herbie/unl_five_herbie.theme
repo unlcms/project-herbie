@@ -220,13 +220,13 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
   if (in_array($field_name, $ctaFields)) {
     $block_background = $variables['element']['#object']->__get('#block_lbs');
-    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
-          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
+          if (is_array($block_background) && (in_array('block_background_style_brand', $block_background) || in_array('block_background_style_dark', $block_background))) {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary dcf-uppercase dcf-d-block unlcms-cta-link-width';
-          } else {
+          }
+          else {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary dcf-uppercase dcf-d-block unlcms-cta-link-width';
           }
         }
@@ -245,7 +245,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
         $block_background = $variables['element']['#object']->__get('#block_lbs');
 
         foreach ($variables['items'] as $key => $item) {
-          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
+          if (is_array($block_background) && (in_array('block_background_style_brand', $block_background) || in_array('block_background_style_dark', $block_background))) {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
           }
           else {
