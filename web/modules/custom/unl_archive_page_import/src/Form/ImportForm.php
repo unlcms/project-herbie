@@ -109,6 +109,7 @@ class ImportForm extends FormBase {
    * Deletes an entity
    */
   public static function importPage($url, $alias, $base_url, &$context) {
+    \Drupal::logger('unl_archive_page_import')->info('Starting import of ' . $url);
     $media_added = [];
 
     $request = \Drupal::httpClient()->get($url);
@@ -388,6 +389,7 @@ class ImportForm extends FormBase {
 
     $context['results'][] = $url;
     $context['message'] = t('Imported @title', array('@title' => $url));
+    \Drupal::logger('unl_archive_page_import')->info('Finished import of ' . $url);
   }
 
 }

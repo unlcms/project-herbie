@@ -14,44 +14,51 @@ use Drupal\Core\Cache\Cache;
 function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
 
   if ($entity->getEntityTypeId() === 'node' && $entity->bundle() == 'builder_page') {
-  // Check if node is being updated/edited
-  if (!$entity->isNew()) {
+    // Check if node is being updated/edited
+    if (!$entity->isNew()) {
 
-    // Get original state of the node entity prior to the update
-    $original_entity = \Drupal::entityTypeManager()
-      ->getStorage('node')
-      ->loadUnchanged($entity->id());
+      // Get original state of the node entity prior to the update
+      $original_entity = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->loadUnchanged($entity->id());
 
-    $updated_hero_block = $entity->get('s_n_hero');
-    $original_hero_block = $original_entity->get('s_n_hero');
+      $updated_hero_block = $entity->get('s_n_hero');
+      $original_hero_block = $original_entity->get('s_n_hero');
 
-    if ($updated_hero_block && $original_hero_block) {
+      if ($updated_hero_block && $original_hero_block) {
+        if ($updated_hero_block->referencedEntities()) {
+          $updated_hero_block_values = $updated_hero_block->referencedEntities()[0];
+        }
+        if ($original_hero_block->referencedEntities()) {
+          $original_hero_block_values = $original_hero_block->referencedEntities()[0];
+        }
 
-      $updated_hero_block_values = $updated_hero_block->referencedEntities()[0];
-      $original_hero_block_values = $original_hero_block->referencedEntities()[0];
+        if (isset($updated_hero_block_values)) {
+          if ($updated_object_position_field_value = $updated_hero_block_values->get('b_hero_img_obj_pos')->getValue()) {
+            $updated_object_position_field_value = $updated_hero_block_values->get('b_hero_img_obj_pos')->getValue()[0]['value'];
+          }
+          $hero_block_hero_iamge = $updated_hero_block_values->get('b_hero_image');
+        }
 
-      if ($updated_hero_block_values) {
-        $updated_object_position_field_value = $updated_hero_block_values->get('b_hero_img_obj_pos')->getValue()[0]['value'];
-        $hero_block_hero_iamge = $updated_hero_block_values->get('b_hero_image');
-      }
+        if (isset($original_hero_block_values)) {
+          if ($original_object_position_field_value = $original_hero_block_values->get('b_hero_img_obj_pos')->getValue()) {
+            $original_object_position_field_value = $original_hero_block_values->get('b_hero_img_obj_pos')->getValue()[0]['value'];
+          }
+        }
 
-      if ($original_hero_block_values) {
-        $original_object_position_field_value = $original_hero_block_values->get('b_hero_img_obj_pos')->getValue()[0]['value'];
-      }
-
-      // Check if object position field value has changed
-      if ($updated_object_position_field_value !== $original_object_position_field_value) {
-        if ($hero_block_hero_iamge) {
-          $hero_image_field = $updated_hero_block_values->get('b_hero_image');
-          $hero_media_entity = $hero_image_field->referencedEntities()[0];
-          $cacheTags = $hero_media_entity->getCacheTagsToInvalidate()[0];
-          // Clear the cache entry of the media item associated only with the hero block.
-          \Drupal::service('cache_tags.invalidator')->invalidateTags([$cacheTags]);
+        // Check if object position field value has changed
+        if (isset($updated_object_position_field_value) && isset($original_object_position_field_value) && ($updated_object_position_field_value !== $original_object_position_field_value)) {
+          if ($hero_block_hero_iamge) {
+            $hero_image_field = $updated_hero_block_values->get('b_hero_image');
+            $hero_media_entity = $hero_image_field->referencedEntities()[0];
+            $cacheTags = $hero_media_entity->getCacheTagsToInvalidate()[0];
+            // Clear the cache entry of the media item associated only with the hero block.
+            \Drupal::service('cache_tags.invalidator')->invalidateTags([$cacheTags]);
+          }
         }
       }
     }
   }
- }
 }
 
 /**
@@ -149,7 +156,7 @@ function unl_media_preprocess_filter_caption(&$variables) {
   @$dom->loadHTML($element_string);
   // Only proceed if element is <drupal-media>.
   $element = $dom->getElementsByTagName("drupal-media");
-  if (method_exists($element,'count') && $element->count() != 0) {
+  if (method_exists($element, 'count') && $element->count() != 0) {
     $element = $element->item(0);
     $data_view_mode = $element->getAttribute('data-view-mode');
 

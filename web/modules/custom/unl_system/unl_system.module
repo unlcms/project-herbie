@@ -90,6 +90,86 @@ function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id)
       '#default_value' => $config->get('affiliation_url'),
     ];
 
+    $form['unl_visit_apply_give_nav'] = [
+      '#type' => 'details',
+      '#title' => 'UNL Visit, Apply, and Give Navigation Links',
+      '#open' => TRUE,
+      '#weight' => 1,
+    ];
+
+    // Visit Navigation Link Field
+    $form['unl_visit_apply_give_nav']['visit_nav'] = [
+      '#type' => 'details',
+      '#title' => 'Visit Link',
+      '#open' => false,
+      '#weight' => -9,
+    ];
+    $form['unl_visit_apply_give_nav']['visit_nav']['visit_nav_link_text'] = [
+      '#type' => 'textfield',
+      '#title' => 'Link text',
+      '#default_value' => $config->get('unl_visit_apply_give_nav.visit_nav.visit_nav_link_text'),
+      '#parents' => ['unl_visit_apply_give_nav', 'visit_nav', 'visit_nav_link_text'],
+    ];
+    $form['unl_visit_apply_give_nav']['visit_nav']['visit_nav_url'] = [
+      '#type' => 'linkit',
+      '#description' => 'You can search for and select internal content, or enter an external URL, such as http://example.com.',
+      '#title' => 'Visit URL',
+      '#default_value' => $config->get('unl_visit_apply_give_nav.visit_nav.visit_nav_url'),
+      '#autocomplete_route_name' => 'linkit.autocomplete',
+      '#autocomplete_route_parameters' => [
+        'linkit_profile_id' => 'content_linkit_profile',
+      ],
+      '#parents' => ['unl_visit_apply_give_nav', 'visit_nav', 'visit_nav_url'],
+    ];
+    // Apply Navigation Link Field
+    $form['unl_visit_apply_give_nav']['apply_nav'] = [
+      '#type' => 'details',
+      '#title' => 'Apply Link',
+      '#open' => false,
+      '#weight' => -8,
+    ];
+    $form['unl_visit_apply_give_nav']['apply_nav']['apply_nav_link_text'] = [
+      '#type' => 'textfield',
+      '#title' => t('Link text'),
+      '#default_value' => $config->get('unl_visit_apply_give_nav.apply_nav.apply_nav_link_text'),
+      '#parents' => ['unl_visit_apply_give_nav', 'apply_nav', 'apply_nav_link_text'],
+    ];
+    $form['unl_visit_apply_give_nav']['apply_nav']['apply_nav_url'] = [
+      '#type' => 'linkit',
+      '#description' => 'You can search for and select internal content, or enter an external URL, such as http://example.com.',
+      '#title' => 'Visit URL',
+      '#default_value' => $config->get('unl_visit_apply_give_nav.apply_nav.apply_nav_url'),
+      '#autocomplete_route_name' => 'linkit.autocomplete',
+      '#autocomplete_route_parameters' => [
+        'linkit_profile_id' => 'content_linkit_profile',
+      ],
+      '#parents' => ['unl_visit_apply_give_nav', 'apply_nav', 'apply_nav_url'],
+    ];
+    // Give Navigation Link Field
+    $form['unl_visit_apply_give_nav']['give_nav'] = [
+      '#type' => 'details',
+      '#title' => 'Give Link',
+      '#open' => false,
+      '#weight' => -7,
+    ];
+
+    $form['unl_visit_apply_give_nav']['give_nav']['give_nav_link_text'] = [
+      '#type' => 'textfield',
+      '#title' => 'Link text',
+      '#default_value' => $config->get('unl_visit_apply_give_nav.give_nav.give_nav_link_text'),
+      '#parents' => ['unl_visit_apply_give_nav', 'give_nav', 'give_nav_link_text'],
+    ];
+    $form['unl_visit_apply_give_nav']['give_nav']['give_nav_url'] = [
+      '#type' => 'linkit',
+      '#description' => 'You can search for and select internal content, or enter an external URL, such as http://example.com.',
+           '#title' => 'Visit URL',
+            '#default_value' => $config->get('unl_visit_apply_give_nav.give_nav.give_nav_url'),
+            '#autocomplete_route_name' => 'linkit.autocomplete',
+            '#autocomplete_route_parameters' => [
+              'linkit_profile_id' => 'content_linkit_profile',
+            ],
+            '#parents' => ['unl_visit_apply_give_nav', 'give_nav', 'give_nav_url'],
+    ];
     $form['#validate'][] = '_unl_system_system_site_information_settings_validate';
     $form['#submit'][] = '_unl_system_system_site_information_settings_submit';
   }
@@ -115,6 +195,21 @@ function unl_system_form_alter(&$form, FormStateInterface $form_state, $form_id)
  */
 function _unl_system_system_site_information_settings_validate(array $form, FormStateInterface $form_state) {
   $values = $form_state->getValues();
+  $unl_visit_apply_give_nav = $values['unl_visit_apply_give_nav'];
+    // Loop through each link and validate.
+    foreach ($unl_visit_apply_give_nav as $key => $value) {
+      $title = $value["{$key}_link_text"];
+      $url = $value["{$key}_url"];
+      // Ensure either both link text and link url are empty or both are filled.
+      if (empty($title) xor empty($url)) {
+        if (empty($title)) {
+          $form_state->setErrorByName("{$key}_link_text", t('A link text is required if you enter a URL for @link.', ['@link' => $key]));
+        }
+        if (empty($url)) {
+          $form_state->setErrorByName("{$key}_url", t('A URL is required if you enter a link text for @link.', ['@link' => $key]));
+        }
+      }
+    }
 
   if ($values['affiliation_name'] && empty($values['affiliation_url'])) {
     $form_state->setErrorByName('affiliation_url', 'Affiliation URL is required if Affiliation Name is defined.');
@@ -134,7 +229,6 @@ function _unl_system_system_site_information_settings_validate(array $form, Form
  */
 function _unl_system_system_site_information_settings_submit(array $form, FormStateInterface $form_state) {
   $values = $form_state->getValues();
-
   /** @var \Drupal\Core\Config\ConfigFactoryInterface */
   $config_factory = \Drupal::service('config.factory');
 
@@ -150,6 +244,16 @@ function _unl_system_system_site_information_settings_submit(array $form, FormSt
 
   $config->set('affiliation_name', $values['affiliation_name']);
   $config->set('affiliation_url', $values['affiliation_url']);
+
+  $config->set('unl_visit_apply_give_nav.visit_nav.visit_nav_link_text', $values['unl_visit_apply_give_nav']['visit_nav']['visit_nav_link_text']);
+  $config->set('unl_visit_apply_give_nav.visit_nav.visit_nav_url', $values['unl_visit_apply_give_nav']['visit_nav']['visit_nav_url']);
+
+  $config->set('unl_visit_apply_give_nav.apply_nav.apply_nav_link_text', $values['unl_visit_apply_give_nav']['apply_nav']['apply_nav_link_text']);
+  $config->set('unl_visit_apply_give_nav.apply_nav.apply_nav_url', $values['unl_visit_apply_give_nav']['apply_nav']['apply_nav_url']);
+
+  $config->set('unl_visit_apply_give_nav.give_nav.give_nav_link_text', $values['unl_visit_apply_give_nav']['give_nav']['give_nav_link_text']);
+  $config->set('unl_visit_apply_give_nav.give_nav.give_nav_url', $values['unl_visit_apply_give_nav']['give_nav']['give_nav_url']);
+
   $config->save();
 }
 
@@ -181,6 +285,14 @@ function unl_system_preprocess_block(&$vars) {
     $vars['affiliation_name'] = $config->get('affiliation_name');
     $vars['affiliation_url'] = $config->get('affiliation_url');
   }
+}
+
+function unl_system_preprocess_region(&$variables) {
+  $config_factory = \Drupal::service('config.factory');
+  $config = $config_factory->get('unl_system.settings');
+
+  // Pass visit_apply_give_nav_data to region--header.html.twig
+  $variables['visit_apply_give_nav_data'] = $config->get('unl_visit_apply_give_nav');
 }
 
 /**
