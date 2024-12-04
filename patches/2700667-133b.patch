@@ -1,0 +1,65 @@
+diff --git a/core/lib/Drupal/Core/Form/FormHelper.php b/core/lib/Drupal/Core/Form/FormHelper.php
+index 68066ba..dfa76e2 100644
+--- a/core/lib/Drupal/Core/Form/FormHelper.php
++++ b/core/lib/Drupal/Core/Form/FormHelper.php
+@@ -196,6 +196,11 @@ protected static function processStatesArray(array &$conditions, $search, $repla
+    *   ],
+    * @endcode
+    *
++   * Drupal form elements are not required to support states. For states to
++   * work, the element has to print #attributes. Item elements work using
++   * #wrapper_attributes instead. States are not supported by render arrays
++   * where #type is markup.
++   *
+    * @param array $elements
+    *   A render array element having a #states property as described above.
+    *
+@@ -208,7 +213,10 @@ public static function processStates(array &$elements) {
+     // still want to be able to show/hide them. Since there's no actual HTML
+     // input element available, setting #attributes does not make sense, but a
+     // wrapper is available, so setting #wrapper_attributes makes it work.
+-    $key = ($elements['#type'] == 'item') ? '#wrapper_attributes' : '#attributes';
++    // @todo We should not check for #type being set here. That's masking deeper
++    // problems in other places that would trigger a warning here. See
++    // https://www.drupal.org/node/todo
++    $key = isset($elements['#type']) && $elements['#type'] === 'item' ? '#wrapper_attributes' : '#attributes';
+     $elements[$key]['data-drupal-states'] = Json::encode($elements['#states']);
+   }
+
+diff --git a/core/tests/Drupal/KernelTests/Core/Common/DrupalProcessStatesTest.php b/core/tests/Drupal/KernelTests/Core/Common/DrupalProcessStatesTest.php
+new file mode 100644
+index 0000000..71c2bbd
+--- /dev/null
++++ b/core/tests/Drupal/KernelTests/Core/Common/DrupalProcessStatesTest.php
+@@ -0,0 +1,31 @@
++<?php
++
++namespace Drupal\KernelTests\Core\Common;
++
++use Drupal\Core\Form\FormHelper;
++use Drupal\KernelTests\KernelTestBase;
++
++/**
++ * @covers \Drupal\Core\Form\FormHelper::processStates
++ * @group Common
++ */
++class DrupalProcessStatesTest extends KernelTestBase {
++
++  /**
++   * Tests that FormHelper::processStates() doesn't cause any notices.
++   */
++  public function testProcessStates() {
++    // Create a form element without specifying a '#type'.
++    $form_element = [
++      '#markup' => 'Custom markup',
++      '#states' => [
++        'visible' => [
++          ':select[name="method"]' => ['value' => 'email'],
++        ],
++      ],
++    ];
++    FormHelper::processStates($form_element);
++    $this->assertArrayHasKey('#attributes', $form_element);
++  }
++
++}
