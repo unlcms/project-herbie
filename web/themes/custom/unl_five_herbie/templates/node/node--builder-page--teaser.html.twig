@@ -1,12 +1,35 @@
-<div class="dcf-grid dcf-col-gap-vw dcf-row-gap-8 dcf-pb-4 dcf-pt-5 dcf-bb-dotted dcf-bb-1 unl-bb-lighter-gray">
-  <div class="dcf-col-100% dcf-col-25%-start@md">
-    <div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
-      <img class="dcf-ratio-child" src="https://cms.unl.edu/onboard/sites/unl.edu.onboard/files/styles/16_9_960x540/public/media/image/law-jag-hero.jpg" alt="student photo">
+{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'dcf-grid dcf-col-gap-vw dcf-row-gap-8 dcf-pb-4 dcf-pt-5 dcf-bb-dotted dcf-bb-1 unl-bb-lighter-gray',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  {% if node.s_n_hero.entity.b_hero_image.value %}
+    <div class="dcf-col-100% dcf-col-25%-start@md">
+      <div class="dcf-mb-2 unl-bg-light-gray unl-frame-quad">
+        {{ node.s_n_hero.entity.b_hero_image|view }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="dcf-col-100%{% if node.s_n_hero.entity.b_hero_image.value %} dcf-col-75%-end@md{% endif %}">
+    <div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">{{ createdDate }}</div>
+    {{ title_prefix }}
+    <h3 class="dcf-txt-h6" itemprop="headline">
+      <a href="{{ url }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark" tabindex="-1">
+        {{ label }}
+      </a>
+    </h3>
+    {{ title_suffix }}
+    <div{{ content_attributes }}>
+      {{ content.body }}
     </div>
   </div>
-  <div class="dcf-col-100% dcf-col-75%-end@md">
-    <div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">May 7, 2024</div>
-    <h3 class="dcf-txt-h6" itemprop="headline"><a href="/onboard/news/news-item-june-4/" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark" tabindex="-1"><span>Builder Page Link 3</span></a></h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
-</div>
+</article>
