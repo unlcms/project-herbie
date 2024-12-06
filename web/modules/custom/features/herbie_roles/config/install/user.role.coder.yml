@@ -41,6 +41,7 @@ permissions:
   - 'access protected page password screen'
   - 'access site reports'
   - 'access taxonomy overview'
+  - 'access unl webform options'
   - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
@@ -85,4 +86,3 @@ permissions:
   - 'use text format webform_email'
   - 'view salesforce mapping'
   - 'view the administration theme'
-  - 'access unl webform options'
