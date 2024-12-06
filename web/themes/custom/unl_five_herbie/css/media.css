@@ -10,7 +10,8 @@
 /* Since images are always inside a container element, they're always 100% wide. */
 .media-entity.view-mode--default img
 .media-entity.view-mode--narrow img,
-.media-entity.view-mode--wide img {
+.media-entity.view-mode--wide img
+{
   width: 100%;
 }
 
@@ -32,6 +33,7 @@
 .unl div.align-left.media-entity.view-mode--default.media-entity-bundle--image,
 .unl div.align-right.media-entity.view-mode--default.media-entity-bundle--image
 {
+  /* width: 50%; */
   width: unset;
 }
 
@@ -67,6 +69,7 @@
 /* If media element is wrapper in figure, then move margin-bottom to figure */
 .figure--embedded-media div.media-entity.view-mode--narrow {
   width: 100%;
+  /* text-align: center; */
 }
 
 .unl .figure--embedded-media.align-left {

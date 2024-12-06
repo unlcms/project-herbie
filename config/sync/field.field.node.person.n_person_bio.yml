@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - simple
+      - standard
 _core:
   default_config_hash: uRaocPSwr-i4ZNF5KYqqyErw94e0lrJn9V5glqwEVMI
 id: node.person.n_person_bio
