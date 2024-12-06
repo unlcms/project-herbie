@@ -10,7 +10,7 @@ field_name: s_n_site_organization_tags
 entity_type: node
 bundle: builder_page
 label: 'Site organization tags'
-description: ''
+description: 'Any tags added here will add this item to an aggregate page located at /tag/EXAMPLE-TAG-NAME.'
 required: false
 translatable: false
 default_value: {  }
