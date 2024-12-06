@@ -59,7 +59,7 @@ function unl_blocks_block_type_form_alter(array &$form, FormStateInterface &$for
         ]
       ],
     ];
-    $form['b_card_cta_style']['widget']['#states'] = [
+    $form['b_card_cta_style']['#states'] = [
       'required' => [
         [
           'input[name="b_card_cta[0][uri]"' => ['filled' => TRUE],
