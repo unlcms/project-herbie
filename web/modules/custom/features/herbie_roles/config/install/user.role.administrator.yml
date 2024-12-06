@@ -21,6 +21,7 @@ dependencies:
     - node.type.person
     - node.type.webform
     - taxonomy.vocabulary.media_tags
+    - taxonomy.vocabulary.site_organization_tags
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
@@ -170,6 +171,7 @@ permissions:
   - 'create tabs block content'
   - 'create tandem block content'
   - 'create terms in media_tags'
+  - 'create terms in site_organization_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
@@ -223,6 +225,7 @@ permissions:
   - 'delete own webform submission'
   - 'delete person revisions'
   - 'delete terms in media_tags'
+  - 'delete terms in site_organization_tags'
   - 'delete unl_directory_entry external entity'
   - 'delete webform revisions'
   - 'delete webform submissions any node'
@@ -250,6 +253,7 @@ permissions:
   - 'edit own webform content'
   - 'edit own webform submission'
   - 'edit terms in media_tags'
+  - 'edit terms in site_organization_tags'
   - 'edit users by role'
   - 'edit users with role administrator'
   - 'edit webform submissions any node'

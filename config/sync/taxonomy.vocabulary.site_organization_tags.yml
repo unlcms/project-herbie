@@ -1,0 +1,8 @@
+uuid: 02480ad1-bff1-4982-98f2-c2817c2edb80
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site organization tags'
+vid: site_organization_tags
+description: ''
+weight: 0
