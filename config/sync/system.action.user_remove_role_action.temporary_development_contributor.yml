@@ -1,0 +1,14 @@
+uuid: d3faa6a8-7813-4253-b587-49f9a15b4cee
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.temporary_development_contributor
+  module:
+    - user
+id: user_remove_role_action.temporary_development_contributor
+label: 'Remove the Temporary development contributor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: temporary_development_contributor
