@@ -1,7 +1,7 @@
 features:
   logo: false
   slogan: true
-  favicon: 1
+  favicon: 0
   node_user_picture: false
   comment_user_picture: true
   comment_user_verification: true

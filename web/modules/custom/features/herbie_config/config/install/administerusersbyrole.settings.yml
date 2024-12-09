@@ -1,5 +1,3 @@
-_core:
-  default_config_hash: UiTY9bhUKWJOIWDlOKM3akeeyHuJJRspXETsv3SY6jw
 roles:
   viewer: safe
   editor: safe

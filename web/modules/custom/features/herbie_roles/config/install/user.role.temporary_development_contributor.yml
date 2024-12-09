@@ -1,4 +1,3 @@
-uuid: 6ec7535b-c456-4d90-a964-4b4e9f74b019
 langcode: en
 status: true
 dependencies:
@@ -31,18 +30,15 @@ dependencies:
     - twig_ui
     - unl_webform
     - views_ui
-_core:
-  default_config_hash: pjZngoP_kq80I1xBCMa6k4sk--mrzHRIpBC2HjNgftE
-id: coder
-label: Developer
-weight: -5
+id: temporary_development_contributor
+label: 'Temporary development contributor'
+weight: -2
 is_admin: null
 permissions:
   - 'access contextual links'
   - 'access css fields'
   - 'access feed overview'
   - 'access group overview'
-  - 'access protected page password screen'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
@@ -89,4 +85,3 @@ permissions:
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'
-  - 'view the administration theme'
