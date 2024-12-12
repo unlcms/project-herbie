@@ -54,8 +54,10 @@ class SharedCodeController extends ControllerBase {
     $host = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
     $html = str_replace('href="/', 'href="'.$host, $html);
     // Dirty hack to remove the block <div> wrapper so its a plain <ul>.
-    $html = str_replace('<div id="block-unl-five-herbie-mainnavigation">', '', $html);
-    $html = str_replace('</div>', '', $html);
+    if ($region == 'navlinks') {
+      $html = str_replace('<div id="block-unl-five-herbie-mainnavigation">', '', $html);
+      $html = str_replace('</div>', '', $html);
+    }
 
     $content = Markup::create($html);
     $response = new Response();
