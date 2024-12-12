@@ -42,9 +42,9 @@
   {# @todo check if flagship site. if so, then swap out department for organization and remove parent #}
     <div class="content">
       <address itemscope itemtype='http://schema.org/Organization'>
-          <span class="dcf-invisible visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ name_of_site }}</span>
-          <span class="dcf-invisible visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
-          <span class="dcf-invisible visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
+          <span class="dcf-d-none visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ name_of_site }}</span>
+          <span class="dcf-d-none visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
+          <span class="dcf-d-none visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
             <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
           </span>
           {{ content }}
