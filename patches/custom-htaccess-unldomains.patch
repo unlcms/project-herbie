@@ -2,7 +2,7 @@ diff --git a/.htaccess b/.htaccess
 index 0e0618a54f..f18c21a0ea 100644
 --- a/.htaccess
 +++ b/.htaccess
-@@ -71,6 +71,22 @@ AddEncoding gzip svgz
+@@ -71,6 +71,18 @@ AddEncoding gzip svgz
    # even when running as CGI or FastCGI.
    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
@@ -16,10 +16,6 @@ index 0e0618a54f..f18c21a0ea 100644
 +  RewriteRule ^~tsymbal(.*)$ https://tsymbal.unl.edu$1 [R=301,L]
 +  RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
 +  RewriteRule ^~(.*)$ https://www.physics.unl.edu/~$1 [R=301,L]
-+
-+  # art.unl.edu/news links coming from main college site
-+  RewriteCond %{HTTP_HOST} ^art\.unl\.edu$
-+  RewriteRule ^news/(.*)$ https://art.unl.edu/saahd/news/$1 [R=301,L]
 +  # END unl site specific SECTION
 +
    # Block access to "hidden" directories whose names begin with a period. This
