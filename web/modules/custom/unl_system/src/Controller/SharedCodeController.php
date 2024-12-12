@@ -53,8 +53,11 @@ class SharedCodeController extends ControllerBase {
     // Convert /path links to full absolute URLs.
     $host = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
     $html = str_replace('href="/', 'href="'.$host, $html);
-    $content = Markup::create($html);
+    // Dirty hack to remove the block <div> wrapper so its a plain <ul>.
+    $html = str_replace('<div id="block-unl-five-herbie-mainnavigation">', '', $html);
+    $html = str_replace('</div>', '', $html);
 
+    $content = Markup::create($html);
     $response = new Response();
     $response->headers->set('Content-Type', 'text/html; charset=utf-8');
     $response->headers->set('Content-Language', 'en');
