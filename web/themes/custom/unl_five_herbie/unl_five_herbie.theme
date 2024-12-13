@@ -429,7 +429,9 @@ function unl_five_herbie_preprocess_layout(&$variables) {
         $variables['region_attributes']['first']->removeClass('dcf-col-50%-start@md');
         $variables['region_attributes']['first']->removeClass('dcf-col-67%-start@md');
         $variables['region_attributes']['first']->removeClass('dcf-col-75%-start@md');
-        $variables['region_attributes']['second']->addClass('dcf-d-none');
+        if (isset($variables['region_attributes']['second'])) {
+          $variables['region_attributes']['second']->addClass('dcf-d-none');
+        }
       }
     }
   }
