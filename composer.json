@@ -281,7 +281,6 @@
             "cd web && patch -p1 < ../patches/custom-htaccess-maxsize.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
-            "cd web && patch -p1 < ../patches/custom-htaccess-unldomains.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
@@ -357,6 +356,9 @@
         },
         "drupal-scaffold": {
             "file-mapping": {
+                "[web-root]/.htaccess": {
+                  "append": "patches/custom-htaccess.append.txt"
+                },
                 "[web-root]/sites/default/default.settings.php": {
                   "append": "patches/default.settings.php.append.php"
                 }
