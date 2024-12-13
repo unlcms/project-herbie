@@ -13,7 +13,6 @@ dependencies:
     - field_css
     - field_ui
     - filter
-    - google_analytics
     - google_tag
     - group
     - key
@@ -28,6 +27,7 @@ dependencies:
     - system
     - taxonomy
     - twig_ui
+    - unl_webform
     - views_ui
 id: coder
 label: Developer
@@ -42,7 +42,6 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
-  - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
