@@ -5,6 +5,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # huskertech (old paths from when it was part of the ITS site)
+  RewriteCond %{HTTP_HOST} its\.unl\.edu$
+  RewriteRule ^huskertech(.*)$ https://huskertech.unl.edu/ [R=301,L]
+
   # physics professor sites that start with a ~
   RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
   RewriteRule ^~agruverman(.*)$ https://gruverman.unl.edu$1 [R=301,L]
@@ -14,5 +18,426 @@
   RewriteRule ^~tsymbal(.*)$ https://tsymbal.unl.edu$1 [R=301,L]
   RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
   RewriteRule ^~(.*)$ https://www.physics.unl.edu/~$1 [R=301,L]
+
+  # sheldon
+  RewriteCond %{HTTP_HOST} sheldonartmuseum\.org
+  RewriteRule ^collection(.*)$ https://emp-web-95.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&module=exhibition&viewType=detailList [R=301,L]
+
+  # ***********************************************************
+  # engineering.unl.edu
+
+  # bse
+  RewriteCond %{HTTP_HOST} ^engineering\.unl\.edu$
+  RewriteRule ^bse/(.*)$ https://bse.unl.edu/$1 [R=301,L]
+
+  # ***********************************************************
+  # HLFPA arts.unl.edu
+
+  RewriteCond %{HTTP_HOST} ^music\.unl\.edu$
+  RewriteRule ^(.*)$ http://arts.unl.edu/music%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} carsonschool\.unl\.edu$
+  RewriteRule ^(.*)$ http://arts.unl.edu/theatre-and-film%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^dance\.unl\.edu$
+  RewriteRule ^(.*)$ http://arts.unl.edu/music/dance%{REQUEST_URI} [R=301,L]
+
+  # ***********************************************************
+  # Sites that were previously at www.unl.edu/*
+
+  # chancellor
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^chancellor/(.*)$ https://chancellor.unl.edu/$1 [R=301,L]
+
+  # classics
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^classics/(.*)$ https://classics.unl.edu/$1 [R=301,L]
+
+  # criminal-justice
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^criminal-justice/(.*)$ https://criminaljustice.unl.edu/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^criminaljustice/(.*)$ https://criminaljustice.unl.edu/$1 [R=301,L]
+
+  # english
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^english/(.*)$ https://engl.unl.edu/$1 [R=301,L]
+
+  # equity
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^equity/(.*)$ https://equity.unl.edu/$1 [R=301,L]
+
+  # facultysenate
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^facultysenate/(.*)$ https://facultysenate.unl.edu/$1 [R=301,L]
+
+  # gradstudies
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^gradstudies/(.*)$ https://graduate.unl.edu/$1 [R=301,L]
+
+  # hillel
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^hillel/(.*)$ https://hillel.unl.edu/$1 [R=301,L]
+
+  # hmed
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^hmed/(.*)$ https://hmed.unl.edu/$1 [R=301,L]
+
+  # medren
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^medren/(.*)$ https://medren.unl.edu/$1 [R=301,L]
+
+  # newp
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^newp/(.*)$ https://newp.unl.edu/$1 [R=301,L]
+
+  # philosophy
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^philosophy/(.*)$ https://philosophy.unl.edu/$1 [R=301,L]
+
+  # physics
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^physics/introlabs/(.*)$ https://physics.unl.edu/introductory-physics-labs/ [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^physics/(.*)$ https://physics.unl.edu/$1 [R=301,L]
+
+  # plains
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^plains/(.*)$ https://plains.unl.edu/$1 [R=301,L]
+
+  # psi
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^psi/(.*)$ https://psi.unl.edu/$1 [R=301,L]
+
+  # ssd
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^ssd/(.*)$ https://ssd.unl.edu/$1 [R=301,L]
+
+  # virologycenter
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^virologycenter/(.*)$ https://virology.unl.edu/$1 [R=301,L]
+
+  # wgs
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^wgs/(.*)$ https://wgs.unl.edu/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^womenssp/(.*)$ https://wgs.unl.edu/$1 [R=301,L]
+
+  # 19thcentury
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^19thcentury/(.*)$ https://19thcentury.unl.edu/$1 [R=301,L]
+
+  # ***********************************************************
+  # Moved away from the CMS
+
+  # cocreate
+  RewriteCond %{HTTP_HOST} ^cocreate\.unl\.edu$
+  RewriteRule ^(.*)$ https://admissions.unl.edu/ [R=301,L]
+
+  # ITS services
+  RewriteCond %{HTTP_HOST} its\.unl\.edu$
+  RewriteRule ^services(.*)$ https://services.unl.edu/ [R=301,L]
+
+  # resnet
+  RewriteCond %{HTTP_HOST} ^resnet\.unl\.edu$
+  RewriteRule ^(.*)$ https://services.unl.edu/service/resnet [R=301,L]
+
+  # telecom
+  RewriteCond %{HTTP_HOST} telecom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} www\.telecom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} telcom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} www\.telcom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} telecomapps\.unl\.edu$
+  RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceCatalog?CategoryID=23 [R=301,L]
+
+  # ***********************************************************
+  # extension
+
+  # offices that moved to their own sites
+  RewriteCond %{HTTP_HOST} ^extension\.unl\.edu$
+  RewriteRule ^statewide/enreec(.*)$ https://enreec.unl.edu/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^extension\.unl\.edu$
+  RewriteRule ^statewide/douglas-sarpy(.*)$ https://douglas-sarpy.unl.edu/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^extension\.unl\.edu$
+  RewriteRule ^statewide/westcentral(.*)$ https://westcentral.unl.edu/$1 [R=301,L]
+
+  # county domains go to their group
+  RewriteCond %{HTTP_HOST} ^adams\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.adams\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/adams%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^antelope\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.antelope\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/antelope%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^bkr\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.bkr\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/bkr%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^boone-nance\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.boone-nance\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^boone\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.boone\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^nance\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.nance\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/boone-nance%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^boxbutte\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.boxbutte\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/boxbutte%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^buffalo\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.buffalo\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/buffalo%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^burt\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.burt\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/burt%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^butler\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.butler\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/butler%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^cass\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.cass\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/cass%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^cedar\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.cedar\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/cedar%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^central4\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.central4\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^greeley\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.greeley\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^howard\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.howard\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^sherman\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sherman\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^valley\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.valley\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/central4%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^centralsandhills\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.centralsandhills\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/centralsandhills%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^cherry\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.cherry\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/cherry%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^cheyenne\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.cheyenne\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/cheyenne%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^ckb\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.ckb\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^kimball-banner\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.kimball-banner\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^kimballbanner\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/kimball-banner%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^clay\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.clay\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/clay%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^colfax\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.colfax\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/colfax%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^cuming\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.cuming\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/cuming%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^custer\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.custer\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/custer%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^dakota\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dakota\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/dakota%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^dawson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dawson\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/dawson%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^deuel-garden\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.deuel-garden\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^deuel\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.deuel\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/deuel%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^gardencounty\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/garden%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^dixon\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dixon\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/dixon%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^dodge\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dodge\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/dodge%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^fillmore\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.fillmore\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/fillmore%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^franklin\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.franklin\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/franklin%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^frontier\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.frontier\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/frontier%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^furnas\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.furnas\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/furnas%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^gage\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.gage\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/gage%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^glw\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.glw\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/glw%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^hall\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.hall\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/hall%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^hamilton\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.hamilton\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/hamilton%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^harlan\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.harlan\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/harlan%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^holt-boyd\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.holt-boyd\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^holt\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.holt\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^boyd\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.boyd\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/holt-boyd%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^jefferson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.jefferson\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/jefferson%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^johnson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.johnson\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/johnson%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^kap\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.kap\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/kap%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^kearney\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.kearney\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/kearney%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^kimmel\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.kimmel\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/kimmel%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^knox\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.knox\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/knox%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^lincolnmcpherson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.lincolnmcpherson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^lincoln\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.lincoln\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^mcpherson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.mcpherson\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/lincolnmcpherson%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^madison\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.madison\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/madison%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^metro\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/metro1%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^merrick\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.merrick\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/merrick%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^nemaha\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.nemaha\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/nemaha%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^northernpanhandle\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/northernpanhandle%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^otoe\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.otoe\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/otoe%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^panhandle\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.panhandle\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/panhandle%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^pawnee\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.pawnee\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/pawnee%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^perkins-chase\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.perkins-chase\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^chase\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.chase\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/perkins-chase%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^phelps-gosper\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.phelps-gosper\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^phelps\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.phelps\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^gosper\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.gosper\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/phelps-gosper%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^pierce\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.pierce\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/pierce%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^platte\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.platte\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/platte%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^polk\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.polk\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/polk%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^redwillow\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.redwillow\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/redwillow%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^richardson\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.richardson\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/richardson%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^saline\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.saline\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/saline%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^saunders\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.saunders\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/saunders%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^scottsbluff-morrill\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.scottsbluff-morrill\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^scottsbluff\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.scottsbluff\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/scottsbluff-morrill%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^morrill\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.morrill\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/morrill%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^seward\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.seward\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/seward%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^dawes\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dawes\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^sheridan\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sheridan\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^sioux\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sioux\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/northernpanhandle%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^extension\.unl\.edu$
+  RewriteRule statewide/dawes(.*) http://extension.unl.edu/statewide/northernpanhandle [R=301,L]
+  RewriteRule statewide/sheridan(.*) http://extension.unl.edu/statewide/northernpanhandle [R=301,L]
+  RewriteRule statewide/sioux(.*) http://extension.unl.edu/statewide/northernpanhandle [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^southeast\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.southeast\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/southeast%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^southernplains\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.southernplains\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^nuckolls\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.nuckolls\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^thayer\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.thayer\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/southernplains%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^stanton\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.stanton\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/stanton%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^sw3\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sw3\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^sw4\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sw4\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^dundy\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dundy\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^hayes\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.hayes\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^hitchcock\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.hitchcock\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/sw3%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^thurston\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.thurston\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/thurston%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^washington\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.washington\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/washington%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^wayne\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.wayne\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/wayne%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^webster\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.webster\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/webster%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^york\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.york\.unl\.edu$
+  RewriteRule ^(.*)$ http://extension.unl.edu/statewide/york%{REQUEST_URI} [R=301,L]
 
 </IfModule>
