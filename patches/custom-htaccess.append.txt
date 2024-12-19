@@ -6,21 +6,21 @@
   RewriteEngine on
 
   # dlc
-  RewriteCond %{HTTP_HOST} dlc\.unl\.edu$ [OR]
-  RewriteCond %{HTTP_HOST} examservices\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^dlc\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^examservices\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/dlc [R=301,L]
 
   # huskertech (old paths from when it was part of the ITS site)
-  RewriteCond %{HTTP_HOST} its\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^its\.unl\.edu$
   RewriteRule ^huskertech(.*)$ https://huskertech.unl.edu/ [R=301,L]
 
   # my
-  RewriteCond %{HTTP_HOST} my\.unl\.edu$ [OR]
-  RewriteCond %{HTTP_HOST} myplan\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^my\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^myplan\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/service-portal/myunl/ [R=301,L]
 
   # phishing
-  RewriteCond %{HTTP_HOST} phishing\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^phishing\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/departments/securityunl/phishingunl/ [R=301,L]
 
   # physics professor sites that start with a ~
@@ -51,13 +51,13 @@
   RewriteCond %{HTTP_HOST} ^www\.art\.unl\.edu$
   RewriteRule ^(.*)$ https://arts.unl.edu/art/ [R=301,L]
 
-  RewriteCond %{HTTP_HOST} carsoncenter\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^carsoncenter\.unl\.edu$
   RewriteRule ^(.*)$ https://arts.unl.edu/carson-center/ [R=301,L]
 
-  RewriteCond %{HTTP_HOST} carsonschool\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^carsonschool\.unl\.edu$
   RewriteRule ^(.*)$ https://arts.unl.edu/theatre-and-film/ [R=301,L]
 
-  RewriteCond %{HTTP_HOST} clayclub\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^clayclub\.unl\.edu$
   RewriteRule ^(.*)$ https://art.unl.edu/saahd/student-organizations/ [R=301,L]
 
   RewriteCond %{HTTP_HOST} ^dance\.unl\.edu$
@@ -178,7 +178,7 @@
   RewriteRule ^(.*)$ https://admissions.unl.edu/ [R=301,L]
 
   # ITS services
-  RewriteCond %{HTTP_HOST} its\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^its\.unl\.edu$
   RewriteRule ^services(.*)$ https://services.unl.edu/ [R=301,L]
 
   # resnet
@@ -186,11 +186,11 @@
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceDet?ID=114 [R=301,L]
 
   # telecom
-  RewriteCond %{HTTP_HOST} telecom\.unl\.edu$ [or]
-  RewriteCond %{HTTP_HOST} www\.telecom\.unl\.edu$ [or]
-  RewriteCond %{HTTP_HOST} telcom\.unl\.edu$ [or]
-  RewriteCond %{HTTP_HOST} www\.telcom\.unl\.edu$ [or]
-  RewriteCond %{HTTP_HOST} telecomapps\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^telecom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} ^www\.telecom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} ^telcom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} ^www\.telcom\.unl\.edu$ [or]
+  RewriteCond %{HTTP_HOST} ^telecomapps\.unl\.edu$
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceCatalog?CategoryID=23 [R=301,L]
 
   # wifi
