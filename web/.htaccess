@@ -212,9 +212,23 @@ AddEncoding gzip svgz
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # dlc
+  RewriteCond %{HTTP_HOST} dlc\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} examservices\.unl\.edu$
+  RewriteRule ^(.*)$ https://its.unl.edu/dlc [R=301,L]
+
   # huskertech (old paths from when it was part of the ITS site)
   RewriteCond %{HTTP_HOST} its\.unl\.edu$
   RewriteRule ^huskertech(.*)$ https://huskertech.unl.edu/ [R=301,L]
+
+  # my
+  RewriteCond %{HTTP_HOST} my\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} myplan\.unl\.edu$
+  RewriteRule ^(.*)$ https://its.unl.edu/service-portal/myunl/ [R=301,L]
+
+  # phishing
+  RewriteCond %{HTTP_HOST} phishing\.unl\.edu$
+  RewriteRule ^(.*)$ https://its.unl.edu/departments/securityunl/phishingunl/ [R=301,L]
 
   # physics professor sites that start with a ~
   RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
@@ -359,6 +373,13 @@ AddEncoding gzip svgz
   # ***********************************************************
   # Moved away from the CMS
 
+  # antivirus
+  RewriteCond %{HTTP_HOST} ^antivirus\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^anti-virus\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.antivirus\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.anti-virus\.unl\.edu$
+  RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceDet?ID=52 [R=301,L]
+
   # cocreate
   RewriteCond %{HTTP_HOST} ^cocreate\.unl\.edu$
   RewriteRule ^(.*)$ https://admissions.unl.edu/ [R=301,L]
@@ -369,7 +390,7 @@ AddEncoding gzip svgz
 
   # resnet
   RewriteCond %{HTTP_HOST} ^resnet\.unl\.edu$
-  RewriteRule ^(.*)$ https://services.unl.edu/service/resnet [R=301,L]
+  RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceDet?ID=114 [R=301,L]
 
   # telecom
   RewriteCond %{HTTP_HOST} telecom\.unl\.edu$ [or]
@@ -378,6 +399,13 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} www\.telcom\.unl\.edu$ [or]
   RewriteCond %{HTTP_HOST} telecomapps\.unl\.edu$
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceCatalog?CategoryID=23 [R=301,L]
+
+  # wifi
+  RewriteCond %{HTTP_HOST} ^wifi\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^wireless\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^wireless-reg\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^eduroam\.unl\.edu$
+  RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceDet?ID=105 [R=301,L]
 
   # ***********************************************************
   # extension
