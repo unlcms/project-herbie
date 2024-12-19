@@ -33,14 +33,36 @@
   # ***********************************************************
   # HLFPA arts.unl.edu
 
-  RewriteCond %{HTTP_HOST} ^music\.unl\.edu$
-  RewriteRule ^(.*)$ https://arts.unl.edu/music%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^art\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.art\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/art/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} carsoncenter\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/carson-center/ [R=301,L]
 
   RewriteCond %{HTTP_HOST} carsonschool\.unl\.edu$
-  RewriteRule ^(.*)$ https://arts.unl.edu/theatre-and-film%{REQUEST_URI} [R=301,L]
+  RewriteRule ^(.*)$ https://arts.unl.edu/theatre-and-film/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} clayclub\.unl\.edu$
+  RewriteRule ^(.*)$ https://art.unl.edu/saahd/student-organizations/ [R=301,L]
 
   RewriteCond %{HTTP_HOST} ^dance\.unl\.edu$
-  RewriteRule ^(.*)$ https://arts.unl.edu/music/dance%{REQUEST_URI} [R=301,L]
+  RewriteRule ^(.*)$ https://arts.unl.edu/major/dance/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^design\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/major/graphic-design/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^film\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/theatre-and-film/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^music\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/music/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^theatre\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/theatre-and-film/ [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^vislit\.unl\.edu$
+  RewriteRule ^(.*)$ https://arts.unl.edu/art/ [R=301,L]
 
   # ***********************************************************
   # Sites that were previously at www.unl.edu/*
