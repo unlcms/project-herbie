@@ -1,0 +1,24 @@
+<div class="exhibitions-teasers">
+  <div class="grid-set interior-intro">
+    <div class ="bp752-grid-col-one-half">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="bp752-grid-col-one-half">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="bp752-grid-set-halves forward-listings">
+    {% for row in rows %}
+      {%
+        set row_classes = [
+          default_row_class ? 'views-row',
+          'grid-col',
+        ]
+      %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+  </div>
+</div>

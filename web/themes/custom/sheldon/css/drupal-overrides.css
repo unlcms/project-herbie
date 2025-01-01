@@ -1,0 +1,33 @@
+#sheldon_search .element-invisible {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+}
+
+@media (max-width: 591px) {
+  #sheldon_search .element-invisible {
+    position: static !important;
+  }
+}
+
+.toolbar-fixed .header {
+  position: static;
+}
+
+.toolbar-fixed .sheldon-nav {
+  position: static;
+}
+
+.toolbar-fixed #sheldon_search {
+  position: static;
+}
+
+.toolbar-fixed #search_form {
+  position: absolute;
+  top: 1.8em;
+}
+
+/* Hide the menu block included in the Builder Page's DCF two col layout builder implementation. */
+.content .layout__region--second {
+  display: none !important;
+}

@@ -1,0 +1,328 @@
+<div class="page" aria-hidden="false">
+
+  <!-- !Skip Navigation -->
+  <nav class="skipnav" aria-labelledby="skipnav_desc">
+    <a href="#main_content" id="skipnav_desc" class="skip">Skip navigation</a>
+  </nav>
+
+  {{ page.header }}
+
+  <!-- !Navigation -->
+  {% if main_menu %}
+    <nav id="sheldon_menu" class="sheldon-nav" role="navigation" aria-labelledby="sitenav-desc">
+      <div class="page-padding">
+        <div class="wrapper">
+          <h2 id="sitenav-desc" class="text-hidden">Site navigation</h2>
+          {{ page.navlinks }}
+        </div>
+      </div>
+    </nav>
+  {% endif %}
+
+  <!-- !Header -->
+  <header class="header page-padding" role="banner">
+    <div class="wrapper">
+      <a href="{{ front_page }}" class="icon-sheldon-logo">
+        <span class="text-hidden">Link to home page</span>
+      </a>
+      <a href="#sheldon_menu" id="menu_toggle" class="menu-toggle icon-menu"><span>Menu</span></a>
+      <a href="#sheldon_search" id="search_toggle" class="search-toggle icon-search"><span>Search</span></a>
+    </div>
+  </header>
+
+  <!-- !Main Content -->
+  <main id="main_content" aria-labelledby="main_desc">
+    <h1 id="main_desc" class="text-hidden">Main Page Content</h1>
+
+    {{ page.content_top }}
+
+    {% if not is_front %}
+    <section class="interior-content inline-background-image cover" style="background-image: url('{{ background_image }}');">
+      <div class="page-padding">
+        <div class="card full">
+          {{ messages }}
+          <div class="tabs">{{ drupal_block('local_tasks_block') }}</div>
+          {{ page.help }}
+          {# if action_links #}<ul class="action-links">{{ action_links }}</ul>{# endif #}
+    {% endif %}
+
+      {{ page.content }}
+
+    {% if not is_front %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {{ page.content_bottom }}
+
+  </main>
+
+  <!-- !Footer -->
+  <footer class="footer page-padding" aria-labelledby="footer-desc">
+    <h2 id="footer-desc" class="text-hidden">Footer</h2>
+
+    <div class="grid-set">
+      <div class="bp956-grid-col-two-thirds">
+        <div class="grid-set">
+          <div class="bp956-grid-col-five-sixths">
+            <div class="footer-module">
+              <p class="footer-about-sheldon">Through our collections, exhibitions, and programs, Sheldon Museum of Art inspires inquiry and discovery, serving the University of Nebraska, the state, and beyond.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-set">
+          <div class="bp465-grid-col-one-half">
+            <div class="footer-module become-member">
+              <span role=“heading” class="secondary-menu-heading">Become a Member</span>
+              <ul class="membership-links">
+                <li><a href="join" class="button">Join or Renew Now</a></li>
+                <li><a href="#modal_email_signup" id="signup_open" class="button" aria-controls="modal_email_signup">Sign Up for Our Email List</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bp465-grid-col-one-half">
+            <div class="footer-module">
+              <span role="heading" class="secondary-menu-heading">About</span>
+              {{ page.contactinfo }}
+            </div>
+          </div>
+        </div>
+      </div><!-- end bp956-col-two-thirds -->
+      <div class="bp956-grid-col-one-third pull-right">
+        <div class="grid-set">
+          <div class="grid-col-full">
+            <div class="footer-module museum-location">
+              <span role="heading" class="secondary-menu-heading">Location</span>
+              <p>
+                Sheldon is located at 12th &amp; R Streets in Lincoln, NE.<br>
+                <a target="_blank" href="https://www.google.com/maps/place/Sheldon+Museum+of+Art/@40.817173,-96.704314,17z/data=!3m1!4b1!4m2!3m1!1s0x8796bee2fe4ba671:0x62b2b223757f5137" class="icon-location" style="text-decoration: underline;border-bottom: none;">Google&nbsp;Map</a>
+                &nbsp;|&nbsp; <a href="parking" style="text-decoration: underline;border-bottom: none;">Directions&nbsp&amp;&nbspParking information</a>
+              </p>
+            </div>
+            <div class="footer-module museum-contact">
+              <span role="heading" class="secondary-menu-heading">Phone</span>
+              <p>402-472-2461</p>
+            </div>
+          </div>
+          <div class="bp465-grid-col-one-half bp956-grid-col-full">
+            <div class="footer-module museum-hours">
+              <span role="heading" class="secondary-menu-heading">Museum Hours</span>
+              <dl>
+                <dt style="width: 50%;">Tuesday<span class="endash">&ndash;</span>Wednesday</dt>
+                <dd style="width: 50%;">10 am<span class="endash">&ndash;</span>5 pm</dd>
+                <dt style="width: 50%;">Thursday</dt>
+                <dd style="width: 50%;">10 am<span class="endash">&ndash;</span>7 pm</dd>
+                <dt style="width: 50%;">Friday<span class="endash">&ndash;</span>Saturday</dt>
+                <dd style="width: 50%;">10 am<span class="endash">&ndash;</span>5 pm</dd>
+                <dt style="width: 50%;">Sunday</dt>
+                <dd style="width: 50%;">Noon<span class="endash">&ndash;</span>5 pm</dd>
+
+                <dt style="width: 50%;">Monday</dt>
+                <dd style="width: 50%;">Closed</dd>
+              </dl>
+              <p class="medium">Admission is free.</p>
+              <!--<p class="small">The museum is closed major US holidays and the days of home football games.</p>
+-->				<!--<p class="small">Museum offices are open 8 am<span class="endash">&ndash;</span>5 pm.</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-set">
+      <div class="bp591-grid-col-one-half bp956-grid-col-two-thirds">
+        <a target="_blank" href="https://www.unl.edu/" class="icon-unl-logo">
+          <h6 class="text-hidden">University of Nebraska&ndash;Lincoln</h6>
+        </a>
+      </div>
+      <div class="bp591-grid-col-one-half bp956-grid-col-one-third pull-right">
+        <p class="copyright small">&copy; <?php echo date("Y"); ?> <?php print $site_name; ?></p>
+      </div>
+    </div>
+    <!-- Fixed Hours Bar -->
+    <style>
+      body {
+        letter-spacing: .03em;
+      }
+      .fixed-info-bar,
+      .fixed-info-bar-hours,
+      .fixed-info-bar-social {
+        display: flex;
+        align-items: center;
+        line-height: 1.272;
+      }
+      .fixed-info-bar-hours,
+      .fixed-info-bar-social {
+        column-gap: 1.272em;
+        row-gap: 0.236em;
+      }
+      .fixed-info-bar {
+        background-color: #60626a;
+        bottom: 0;
+        color: #fff;
+        column-gap: 1.618em;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        left: 0;
+        padding-block: 1em;
+        position: fixed;
+        row-gap: .618em;
+        width: 100%;
+        z-index: 999;
+      }
+      .fixed-info-bar-hours {
+        flex-wrap: wrap;
+        font-size: 0.9285714rem;
+      }
+      .fixed-info-bar-social {
+        flex-shrink: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .fixed-info-bar-social a {
+        display: block;
+        height: 1.618em;
+        width: 1.618em;
+      }
+      .fixed-info-bar-social svg {
+        fill: currentColor;
+        height: 100%;
+        width: 100%;
+      }
+      .fixed-info-bar a:link,
+      .fixed-info-bar a:visited,
+      .fixed-info-bar a:hover,
+      .fixed-info-bar a:active {
+        border-bottom: 0;
+        color: #fff;
+      }
+      a.fixed-info-bar-link:link,
+      a.fixed-info-bar-link:visited,
+      a.fixed-info-bar-link:hover,
+      a.fixed-info-bar-link:active {
+        text-decoration: underline;
+      }
+      .footer {
+        padding-bottom: 11.089em;
+      }
+      @media (min-width: 956px) {
+        .footer {
+          padding-bottom: 6.854em;
+        }
+      }
+    </style>
+    <div class="fixed-info-bar page-padding">
+      <div class="fixed-info-bar-hours">
+        <span id="open-status">Currently Closed</span> <!--
+                    <span>Museum Hours: Tuesday – Saturday, 10 am – 4 pm</span> -->
+        <a class="fixed-info-bar-link" href="admission-hours-accessibility">Museum Hours and Accessibility</a>
+        <span>Admission is Free</span>
+      </div>
+      <ul class="fixed-info-bar-social">
+        <li>
+          <a href="https://www.facebook.com/sheldonmuseum" aria-label="Sheldon Museum of Art on Facebook">
+            <svg focusable="false" height="16" width="16" viewBox="0 0 48 48">
+              <path d="M48 24.1c0-13.3-10.7-24-24-24S0 10.9 0 24.1c0 12 8.8 21.9 20.2 23.7V31.1h-6.1v-6.9h6.1v-5.3c0-6 3.6-9.3 9.1-9.3 2.6 0 5.4.5 5.4.5V16h-3c-3 0-3.9 1.9-3.9 3.7v4.5h6.7l-1.1 6.9h-5.6v16.8C39.2 46.1 48 36.1 48 24.1z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/sheldonmuseum/" aria-label="Sheldon Museum of Art on Instagram">
+            <svg focusable="false" height="16" width="16" viewBox="0 0 48 48">
+              <path d="M24 4.33c6.41 0 7.17 0 9.7.14a13.28 13.28 0 0 1 4.46.83 7.44 7.44 0 0 1 2.76 1.79 7.44 7.44 0 0 1 1.79 2.76 13.28 13.28 0 0 1 .83 4.46c.12 2.53.14 3.29.14 9.7s0 7.17-.14 9.7a13.28 13.28 0 0 1-.83 4.46 8 8 0 0 1-4.55 4.55 13.28 13.28 0 0 1-4.46.83c-2.53.12-3.29.14-9.7.14s-7.17 0-9.7-.14a13.28 13.28 0 0 1-4.46-.83 7.44 7.44 0 0 1-2.76-1.79 7.44 7.44 0 0 1-1.79-2.76 13.28 13.28 0 0 1-.83-4.46c-.12-2.53-.14-3.29-.14-9.7s0-7.17.14-9.7a13.28 13.28 0 0 1 .83-4.46 7.44 7.44 0 0 1 1.8-2.77 7.44 7.44 0 0 1 2.76-1.79 13.28 13.28 0 0 1 4.46-.83c2.53-.12 3.29-.14 9.7-.14M24 0c-6.52 0-7.34 0-9.9.14a17.61 17.61 0 0 0-5.82 1.12A11.76 11.76 0 0 0 4 4a11.76 11.76 0 0 0-2.74 4.28 17.6 17.6 0 0 0-1.12 5.83C0 16.66 0 17.48 0 24s0 7.34.14 9.9a17.6 17.6 0 0 0 1.11 5.82A11.76 11.76 0 0 0 4 44a11.76 11.76 0 0 0 4.25 2.77 17.59 17.59 0 0 0 5.83 1.12c2.55.12 3.38.14 9.9.14s7.34 0 9.9-.14a17.56 17.56 0 0 0 5.82-1.12 12.27 12.27 0 0 0 7-7 17.59 17.59 0 0 0 1.12-5.83c.18-2.6.18-3.42.18-9.94s0-7.34-.14-9.9a17.56 17.56 0 0 0-1.12-5.82A11.76 11.76 0 0 0 44 4a11.76 11.76 0 0 0-4.25-2.77A17.6 17.6 0 0 0 33.9.15C31.34 0 30.52 0 24 0zm0 11.68A12.32 12.32 0 1 0 36.32 24 12.32 12.32 0 0 0 24 11.67zM24 32a8 8 0 1 1 8-8 8 8 0 0 1-8 8zM36.81 8.31a2.88 2.88 0 1 0 2.88 2.88 2.88 2.88 0 0 0-2.88-2.88z"></path>
+            </svg>
+          </a>
+        </li>
+        <!-- <li>
+             <a href="https://www.youtube.com/playlist?list=PLh0k4GzppsqEFCnjFe8RwsuefbKSnI4X0" aria-label="Sheldon Museum of Art on YouTube">
+                 <svg focusable="false" height="16" width="16" viewBox="0 0 48 48">
+                     <path d="M47 12.37a6 6 0 0 0-4.25-4.27C39 7.09 24 7.09 24 7.09s-15 0-18.75 1A6 6 0 0 0 1 12.37C0 16.14 0 24 0 24s0 7.86 1 11.63a6 6 0 0 0 4.25 4.27c3.74 1 18.75 1 18.75 1s15 0 18.75-1A6 6 0 0 0 47 35.63C48 31.86 48 24 48 24s0-7.86-1-11.63zM19.09 31.14V16.86L31.64 24z"></path>
+                 </svg>
+             </a>
+         </li> -->
+      </ul>
+    </div>
+    <script>
+        function setStatus() {
+            var d = new Date(new Date().toLocaleString('en', {timeZone: 'America/Chicago'}));
+            var hours = d.getHours();
+            var mins = d.getMinutes();
+            var day = d.getDay();
+            var dayofmonth = d.getDate();
+            var month = d.getMonth();
+
+            // Football Saturdays (month is zero-indexed)
+            /*  if (
+                (month == 4 && dayofmonth == 27) ||
+                (month == 8 && dayofmonth == 31) ||
+                (month == 9 && (dayofmonth == 7 || dayofmonth == 14 || dayofmonth == 21)) ||
+                (month == 10 && dayofmonth == 5) ||
+                (month == 11 && (dayofmonth == 2 || dayofmonth == 23))
+                ) {
+                return false;
+              }*/
+
+            if (day == 0 && (hours >= 12 && hours < 17)) {
+                document.getElementById('open-status').innerHTML = 'Open Now';
+                return false;
+            } else if (day == 1) {
+                return false;
+            } else if (day == 4 && (hours >= 10 && hours < 19)) {
+                document.getElementById('open-status').innerHTML = 'Open Now';
+                return false;
+            } else if (hours >= 10 && hours < 17) {
+                document.getElementById('open-status').innerHTML = 'Open Now';
+                return false;
+            } else {
+                return false;
+            }
+        }
+        setStatus();
+    </script>
+  </footer>
+
+</div><!-- end page -->
+
+<!-- !Modal Email Signup -->
+<section id="modal_email_signup" class="modal-overlay modal-overlay-email-signup" role="dialog" aria-expanded="false" aria-labelledby="modal_email_signup_title">
+  <div class="modal-content modal-email-signup">
+    <div class="bp956-grid-set-halves">
+      <div class="grid-col">
+        <div class="grid-set">
+          <div class="bp956-grid-col-five-sixths">
+            <h2 id="modal_email_signup_title" class="icon-sheldon-logo"><span class="text-hidden">Email List Signup Form</span></h2>
+            <p class="modal-email-signup-description">Thank you for your interest in the Sheldon Museum of Art. Please complete this form to be included in our weekly email&nbsp;list.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col">
+        <form action="https://sheldonartmuseum.us1.list-manage.com/subscribe/post" method="post" id="form_email_list_signup" class="form-email-list-signup">
+          <input name="u" value="d090b826cf54f47185f85c394" type="hidden">
+          <input name="id" value="6bb71e8031" type="hidden">
+          <label for="first_name">First Name</label>
+          <input type="text" name="MERGE1" id="first_name" />
+          <label for="last_name">Last Name</label>
+          <input type="text" name="MERGE2" id="last_name" />
+          <label for="email">Email <span class="form-required">*</span></label>
+          <input type="email" name="MERGE0" id="email" required />
+          <fieldset>
+            <legend>Preferred Format</legend>
+            <input type="radio" name="EMAILTYPE" id="prefer_html" value="html" checked="checked" />
+            <label for="prefer_html">HTML</label>
+            <input type="radio" name="EMAILTYPE" id="prefer_text" value="text" />
+            <label for="prefer_text">Text</label>
+          </fieldset>
+          <div class="no-display" style="display:none">
+            <label for="honeypot">Leave this field empty</label>
+            <input type="text" name="b_d090b826cf54f47185f85c394_6bb71e8031" id="honeypot" />
+          </div>
+          <button type="submit" class="icon-email">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <button id="signup_close" class="close-modal icon-close" type="button" aria-label="close"><span>Close</span></button>
+  </div>
+</section>
+
+{{ drupal_view('collection_artwork', 'block_modal') }}

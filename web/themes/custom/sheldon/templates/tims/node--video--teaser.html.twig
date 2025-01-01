@@ -1,0 +1,73 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('exhibition-listing featured-exhibition') }}>
+  <div class="grid-set">
+    <div class="bp465-grid-col-one-third bp752-grid-col-full">
+      <div class="mh-video-thumb wdn-center">
+        <a href="{{ url }}">
+          <div class="mh-thumbnail-clip">
+            <img src="{{ content.mediahub_video_link['#items'][0]['value']|replace({'media/':'uploads/thumbnails/'}) }}/original.jpg" alt="preview image of the video {{ title }}" />
+          </div>
+          <div class="mh-play-button"></div>
+        </a>
+      </div>
+    </div>
+    <div class="bp465-grid-col-two-thirds bp752-grid-col-full">
+      {{ title_prefix }}
+      <h3{{ title_attributes.addClass('exhibition-heading') }}>
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+      {{ title_suffix }}
+      <span class="subhead">{{ content.course }}</span>
+      {{ content.body }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .mh-video-thumb {
+    overflow: hidden;
+    height: 0;
+    margin-bottom: .75em;
+    position: relative;
+    padding: 0 0 52% 0;
+  }
+  .mh-thumbnail-clip {
+    overflow: hidden;
+    margin-bottom: .75em;
+    position: relative;
+  }
+  .mh-video-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .mh-video-thumb img {
+    left: 0;
+  }
+  .mh-video-thumb:hover .mh-play-button::after {
+    display: block;
+  }
+  .mh-play-button::after {
+    display: none;
+    font-family: wdn-icon;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200%;
+    height: 0;
+    width: 30%;
+    padding: 15% 0;
+    border-radius: 50%;
+    background-color: rgba(55, 55, 55, 0.7);
+    background-image: url(https://mediahub.unl.edu/templates/html/css/images/play-icon-white.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15%;
+    margin-top: -15%;
+    line-height: 0;
+    color: #fff;
+    z-index: 10;
+  }
+</style>

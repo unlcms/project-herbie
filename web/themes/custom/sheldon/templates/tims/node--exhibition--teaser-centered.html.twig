@@ -1,0 +1,20 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('exhibition-listing featured-exhibition') }}>
+  <div class="grid-set">
+    <div class="bp465-grid-col-one-third bp956-grid-col-full">
+      <a href="{{ url }}" class="art-image">{{ content.small_image }}</a>
+    </div>
+    <div class="bp465-grid-col-two-thirds bp956-grid-col-full">
+      {{ title_prefix }}
+      <h3{{ title_attributes.addClass('exhibition-heading') }}>
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+      {{ title_suffix }}
+      {% if not content.ongoing %}
+        {{ content.exhibition_date|replace({" to": " through"}) }}
+      {% endif %}
+      <p class="exhibition-abbr-teaser">
+        {{ content.body }}
+      </p>
+    </div>
+  </div>
+</div>

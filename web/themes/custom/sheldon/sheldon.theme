@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements template_preprocess_html().
+ */
+function sheldon_preprocess_html(&$variables) {
+  $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('sheldon');
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function sheldon_preprocess_page(&$variables) {
+  // Define a default background image to pass to page template,
+  // then change it if the node has a background image field populated.
+  $variables['background_image'] = base_path() . \Drupal::service('extension.list.theme')->getPath('sheldon') . '/images/sma-elevation-087.jpg';
+//  if ($node = menu_get_object()) {
+//    if ($field = field_view_field('node', $node, 'field_background_image', 'full')) {
+//      $variables['background_image'] = render($field);
+//    }
+//  }
+}

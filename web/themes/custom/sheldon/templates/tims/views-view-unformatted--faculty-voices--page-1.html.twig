@@ -1,0 +1,28 @@
+<!-- start: views_view_unformatted__faculty_voices__page_1 -->
+<div class="exhibitions-teasers">
+  <div class="grid-set interior-intro">
+    <div class="bp752-grid-col-one-half">
+      <h2>
+        {{ title }}
+        <span class="subhead">Faculty Partnerships with Sheldon</span>
+      </h2>
+    </div>
+    <div class="bp752-grid-col-one-half">
+      <p>To collaborate with the museum on a learning experience tailored to your curricular goals, please contact Erin Hanas, curator of academic engagement, at <a href="mailto:erin.hanas@unl.edu">erin.hanas@unl.edu</a> or 402-472-3541.</p>
+    </div>
+  </div>
+  <div class="bp752-grid-set-halves forward-listings">
+    {% for row in rows %}
+      {%
+        set row_classes = [
+          default_row_class ? 'views-row',
+          'grid-col',
+        ]
+      %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- end: views_view_unformatted__faculty_voices__page_1 -->

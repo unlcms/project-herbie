@@ -1,0 +1,51 @@
+{%
+  set classes = [
+   dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'exhibitions-teasers',
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="grid-set interior-intro">
+    <div class="bp752-grid-col-one-third">
+      {{ title_prefix }}
+      <h2>{{ view.title }}</h2>
+      {{ title_suffix }}
+
+      <ul class="section-filter exhibitions-navigation">
+        <li><a href="/exhibitions">Current<span class="text-hidden">Exhibitions</span></a></li>
+        <li><a href="/exhibitions/upcoming">Upcoming<span class="text-hidden">Exhibitions</span></a></li>
+        <li><a href="/exhibitions/past">Past<span class="text-hidden">Exhibitions</span></a></li>
+      </ul>
+    </div>
+    <div class="bp752-grid-col-two-thirds">
+      {% if header %}
+        <header>
+          {{ header }}
+        </header>
+      {% endif %}
+    </div>
+  </div>
+  <div class="bp752-grid-set-halves forward-listings">
+
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+  </div>
+</div>

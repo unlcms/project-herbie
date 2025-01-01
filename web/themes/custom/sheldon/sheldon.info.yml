@@ -1,0 +1,32 @@
+name: Sheldon
+type: theme
+base theme: false
+description: 'Custom theme for the Sheldon Museum of Art.'
+core_version_requirement: ^10 || ^11
+
+libraries:
+  - sheldon/global-styling
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+  webform/webform.element.counter:
+    js:
+      js/webform.element.counter.js: js/webform.element.counter.js
+  webform/webform.element.telephone:
+    js:
+      js/webform.element.telephone.js: js/webform.element.telephone.js
+
+regions:
+  header: Header
+  navlinks: Navigation links
+  page_top: Page top
+  page_bottom: Page bottom
+
+  content_top: Content top
+  content: Content
+  content_bottom: Content bottom
+
+  sidebar: Sidebar
+  contactinfo: Footer links

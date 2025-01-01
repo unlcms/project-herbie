@@ -1,0 +1,26 @@
+<div{{ attributes.addClass('exhibition-detail') }}>
+  <div class="grid-set">
+    <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right">
+      <h1 class="tab-heading">Exhibition</h1>
+    </div>
+  </div>
+  <div class="grid-set">
+    <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right">
+      <h2 class="exhibition-heading">{{ label }}</h2>
+      {% if not content.ongoing %}
+        {{ content.exhibition_date|replace({" to": " through"}) }}
+      {% endif %}
+    </div>
+
+    <div class="bp591-grid-col-one-third bp956-grid-col-one-half pull-left">
+      <div class="sticky detail-image-set" id="exhibition_detail_image_set">
+        {{ drupal_view('collection_artwork', 'block', node.id) }}
+      </div>
+    </div>
+
+    <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right sticky-reference">
+      {{ content.body }}
+      {{ content.related_links }}
+    </div>
+  </div>
+</div>
