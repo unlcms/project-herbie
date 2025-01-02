@@ -31,7 +31,6 @@ dependencies:
   - 'feeds_tamper:feeds_tamper'
   - 'field_css:field_css'
   - 'file_delete:file_delete'
-  - 'google_analytics:google_analytics'
   - 'google_tag:google_tag'
   - 'group:group'
   - 'herbie_archive_page:herbie_archive_page'
@@ -62,5 +61,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.7.0
+version: 1.7.1
 package: Herbie
