@@ -35,6 +35,7 @@ dependencies:
     - file
     - file_delete
     - filter
+    - google_tag
     - group
     - layout_builder
     - media
@@ -83,6 +84,7 @@ permissions:
   - 'access webform submission log'
   - 'add content to books'
   - 'administer book outlines'
+  - 'administer google_tag_container'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer paragraphs types'
