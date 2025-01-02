@@ -10,8 +10,8 @@
         <a href="{{ url }}">{{ label }}</a>
       </h3>
       {{ title_suffix }}
-      {% if not content.ongoing %}
-        {{ content.exhibition_date|replace({" to": " through"}) }}
+      {% if node.ongoing.value != '1' %}
+        {{ content.exhibition_date }}
       {% endif %}
       {{ content.body }}
     </div>

@@ -25,8 +25,8 @@
             {{ title_prefix }}
             <h2 class="exhibition-heading"><a href="{{ url }}">{{ label }}</a></h2>
             {{ title_suffix }}
-            {% if not content.ongoing %}
-              {{ content.exhibition_date|replace({" to": " through"}) }}
+            {% if node.ongoing.value != '1' %}
+              {{ content.exhibition_date }}
             {% endif %}
           </div>
           <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
@@ -37,3 +37,14 @@
     </div>
   </div>
 </section>
+
+{#
+  Hide duplicates in views-view--exhibitions-front--block-1,
+  which displays node--exhibition--teaser-centered.
+  This replaces using the views_exclude_previous module which is no longer supported.
+#}
+<style>
+  .exhibitions-abbr-teasers .node-{{ node.id }} {
+    display: none !important;
+  }
+</style>

@@ -8,16 +8,14 @@
   {{ page.header }}
 
   <!-- !Navigation -->
-  {% if main_menu %}
-    <nav id="sheldon_menu" class="sheldon-nav" role="navigation" aria-labelledby="sitenav-desc">
-      <div class="page-padding">
-        <div class="wrapper">
-          <h2 id="sitenav-desc" class="text-hidden">Site navigation</h2>
-          {{ page.navlinks }}
-        </div>
+  <nav id="sheldon_menu" class="sheldon-nav" role="navigation" aria-labelledby="sitenav-desc">
+    <div class="page-padding">
+      <div class="wrapper">
+        <h2 id="sitenav-desc" class="text-hidden">Site navigation</h2>
+        {{ page.navlinks }}
       </div>
-    </nav>
-  {% endif %}
+    </div>
+  </nav>
 
   <!-- !Header -->
   <header class="header page-padding" role="banner">
@@ -76,7 +74,7 @@
             <div class="footer-module become-member">
               <span role=“heading” class="secondary-menu-heading">Become a Member</span>
               <ul class="membership-links">
-                <li><a href="join" class="button">Join or Renew Now</a></li>
+                <li><a href="https://sheldonartmuseum.doubleknot.com/donate/website-donation/3074233" class="button">Join or Renew Now</a></li>
                 <li><a href="#modal_email_signup" id="signup_open" class="button" aria-controls="modal_email_signup">Sign Up for Our Email List</a></li>
               </ul>
             </div>
@@ -136,7 +134,7 @@
         </a>
       </div>
       <div class="bp591-grid-col-one-half bp956-grid-col-one-third pull-right">
-        <p class="copyright small">&copy; <?php echo date("Y"); ?> <?php print $site_name; ?></p>
+        <p class="copyright small">&copy; {{ 'now' | date('Y') }} Sheldon Museum of Art</p>
       </div>
     </div>
     <!-- Fixed Hours Bar -->

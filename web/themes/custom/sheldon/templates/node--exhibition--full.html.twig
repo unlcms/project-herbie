@@ -7,8 +7,8 @@
   <div class="grid-set">
     <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right">
       <h2 class="exhibition-heading">{{ label }}</h2>
-      {% if not content.ongoing %}
-        {{ content.exhibition_date|replace({" to": " through"}) }}
+      {% if node.ongoing.value != '1' %}
+        {{ content.exhibition_date }}
       {% endif %}
     </div>
 
