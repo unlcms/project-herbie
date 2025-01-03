@@ -1,0 +1,28 @@
+<!-- !Hero -->
+<div class="hero">
+  <picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source srcset="{{ path_to_theme }}/images/partners/partners-hero-lg.jpg" media="(min-width: 465px) and (max-height:591px), (min-width: 591px) and (max-height: 667px), (min-width: 752px)" class="hero-poster">
+    <source srcset="{{ path_to_theme }}/images/partners/partners-hero-sm.jpg" class="hero-poster">
+    <!--[if IE 9]></video><![endif]-->
+    <img src="{{ path_to_theme }}/images/partners/partners-hero-lg.jpg" alt="" class="hero-poster" />
+  </picture>
+  <div class="page-padding">
+    <div class="hero-content">
+      <h1 id="main_desc" class="hero-heading">Partners</h1>
+      <p class="large">Our growing roster of partners at Nebraska Innovation Campus includes the following private businesses and University of Nebraska entities.</p>
+    </div>
+  </div>
+</div>
+
+<div class="not-hero" id="careers-internships">
+  <div class="nic-band">
+    <div class="page-padding">
+      <div class="partners-list {#grid-set-halves bp956-grid-set-thirds#}">
+        {% for row in rows %}
+          {{ row }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+body.logged-in.toolbar #nic_menu .primary-menu {
+  top: 5.8em;
+}
+
+body.logged-in.toolbar #nic_menu .secondary-menu {
+  top: 8em;
+}
+
+body.logged-in.toolbar #nic_search {
+  top: 4em;
+}
+
+div.tabs {
+  padding-left: 10px;
+  position: absolute;
+  top: 11em;
+  z-index: 2;
+}
+
+div.tabs ul.tabs li {
+  display: inline;
+  padding-right: 10px;
+}
+
+div.tabs ul.tabs li a {
+  color: white;
+}

@@ -1,0 +1,13 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/style.css: {}
+      css/fonts.css: {}
+      css/colors.css: {}
+      css/nic-drupal.css: {}
+
+nic.js:
+  version: VERSION
+  js:
+    js/nic.js: {}

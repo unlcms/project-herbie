@@ -1,0 +1,19 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('staff-listing') }}>
+  <div{{ content_attributes.addClass('grid-set content') }}>
+    <div class="bp465-grid-col-one-third">
+      <div class="staff-photo">
+        {{ content.photo }}
+      </div>
+    </div>
+    <div class="bp465-grid-col-two-thirds staff-bio-teaser">
+      {{ itle_prefix }}
+      <h2{{ title_attributes.addClass('staff-person') }}>
+        <a href="{{ url }}">{{ label }}</a>
+        <span class="subhead">{{ content.job_title }}</span>
+      </h2>
+      {{ title_suffix }}
+      <p>{{ content.body }}</p>
+      <a href="{{ url }}" class="button">Full Bio</a>
+    </div>
+  </div>
+</div>

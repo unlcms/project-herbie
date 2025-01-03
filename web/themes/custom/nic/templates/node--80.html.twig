@@ -1,0 +1,42 @@
+<!-- Hero -->
+<div class="top-hero">
+  <div class="top-hero-img">
+    <picture>
+      <source srcset="https://cms.unl.edu/research/nebraska-innovation-campus/sites/unl.edu.research.nebraska-innovation-campus/files/images/home/nic-students-study-at-fpc-lg.jpg" media="(min-width: 29.034em) and (max-height: 36.932em), (min-width: 36.932em) and (max-height: 41.654em), (min-width: 46.979em)">
+      <source srcset="https://cms.unl.edu/research/nebraska-innovation-campus/sites/unl.edu.research.nebraska-innovation-campus/files/images/home/nic-students-study-at-fpc-sm.jpg">
+      <img class="top-hero-poster" src="data:," alt="Students study in the commons area of the Food Processing Center on Nebraska Innovation Campus">
+    </picture>
+  </div>
+  <div class="top-hero-text">
+    <div class="page-padding">
+      <div class="top-hero-overlay">
+        <h1 class="top-hero-heading" id="main_desc">Spaces and Culture That&nbsp;Inspire</h1>
+        <a class="button play" href="https://mediahub.unl.edu/media/20225" id="play_home_video" role="button">Play Video</a>
+        <a href="http://nebraskainnovationcampus.com/" class="button" role="button">Virtual Tour</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Intro Video -->
+<div id="intro_video" class="modal-overlay modal-overlay-home-video" role="dialog" aria-hidden="true" aria-labelledby="modal_video_title">
+  <div class="modal-content modal-video" role="document">
+    <h2 id="modal_video_title" class="text-hidden">Nebraska Innovation Campus video</h2>
+    <div class="mediahub-embed">
+      <div class="wdn-responsive-embed wdn-aspect16x9">
+        <iframe src="https://mediahub.unl.edu/media/20225?format=iframe&autoplay=0" title="Video Player: Partner With Nebraska Innovation Campus" allowfullscreen></iframe>
+      </div>
+      <button id="close_home_video" class="close-video icon-close-white" type="button" aria-label="close"><span>Close</span></button>
+    </div>
+  </div>
+</div>
+
+
+{{ drupal_view('news_front', 'block_1') }}
+{{ drupal_view('featured_partners', 'block') }}
+
+<div id="node-{{ node.id }}"{{ attributes.addClass('not-hero') }}>
+  <div class="content"{{content_attributes}}>
+    {{ content.body }}
+  </div>
+</div>

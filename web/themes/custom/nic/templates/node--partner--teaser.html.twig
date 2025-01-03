@@ -1,0 +1,25 @@
+<div class="grid-set content" style="clear:both;border-bottom: 1px solid #eee;padding-bottom:1em;">
+  <div class="bp465-grid-col-one-fourth">
+    <a href="{{ content.partner_url }}" class="partner-link">
+      <div class="partner-logo">
+        {{ content.logo_jpg_or_png_ }}
+      </div>
+    </a>
+  </div>
+  <div class="bp465-grid-col-three-fourths">
+    <h4 style="margin-top:1em;">{{ label }}</h4>
+    {{ content.body }}
+    {% if node.press_release_url %}
+      <a href="{{ content.press_release_url }}" style="width:100%;text-align:center;" class="press-release-link">Press Release</a>
+    {% else %}
+    {% endif %}
+    {% if node.internships_url %}
+      | <a href="{{ content.internships_url }}" style="width:100%;text-align:center;" class="press-release-link">Internships</a>
+    {% else %}
+    {% endif %}
+    {% if node.employment_url %}
+      | <a href="{{ content.employment_url }}" style="width:100%;text-align:center;" class="press-release-link">Careers</a>
+    {% else %}
+    {% endif %}
+  </div>
+</div>

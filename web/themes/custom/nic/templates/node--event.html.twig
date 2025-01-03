@@ -1,0 +1,21 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('not-hero basic') }}>
+  <div class="page-padding">
+    <div{{ content_attributes.addClass('grid-set event-teaser content') }}>
+      <div class="bp591-grid-col-two-thirds">
+        <h1>{{ label }}</h1>
+        <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+        {#    <span class="event-time icon-clock-3-0">{{render(content.field_event_link)}}</span> #}
+        <span class="event-location icon-marker-1-0"><a href="{{ content.event_map_link.0.url }}">{{ content.event_map_link }}</a></span>
+        <p class="event-description">{{ content.body }}</p>
+        <p><a href="{{ content.event_link }}" class="more-info-link">Read More<span class="text-hidden">about "{{ label }}"</span></a></p>
+      </div>
+      <div class="bp591-grid-col-one-third" style="padding-top:3em;">
+        {% if event_image %}
+          {{ content.event_image }}
+        {% else %}
+          <img src="https://innovate.unl.edu/images/news/NIC_Logo_Horiz_CGray10_R_0.png">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

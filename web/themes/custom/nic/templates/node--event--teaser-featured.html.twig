@@ -1,0 +1,16 @@
+<div class="grid-col">
+  <div class="card">
+    <div class="card-content">
+      <a href="{{ url }}" class="card-image">
+        {% if event_image %}
+          {{ content.event_image }}
+        {% else %}
+          <img src="https://innovate.unl.edu/images/news/NIC_Logo_Horiz_CGray10_R_0.png">
+        {% endif %}
+      </a>
+      <div class="card-padding">
+        <h3 class="card-heading"><a href="{{ url }}">{{ label }}</a></h3>
+      </div>
+    </div>
+  </div>
+</div>

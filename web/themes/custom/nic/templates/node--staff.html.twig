@@ -1,0 +1,16 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('not-hero') }}>
+  <section class="staff basic">
+    <div class="page-padding">
+      <h1 id="main_desc">{{ label }} <span class="subhead">{{ content.job_title }}</span>
+        <span class="staff-contact-info"><a href="tel:{{ content.phone_number }}">{{ content.phone_number }}</a> &middot; <a href="mailto:{{ content.email_address }}">{{ content.email_address }}</a></span></h1>
+      <div class="grid-set">
+        <div class="bp465-grid-col-one-third pull-right staff-photo">
+          {{ content.photo }}
+        </div>
+        <div class="bp465-grid-col-two-thirds staff-bio">
+          {{ content.body }}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

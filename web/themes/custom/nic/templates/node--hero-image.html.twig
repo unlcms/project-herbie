@@ -1,0 +1,39 @@
+{% set large_image_uri = node.image_large|file_uri %}
+{% set small_image_uri = node.image_small|file_uri %}
+
+<div class="hero">
+  <picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    {% if large_image_uri is not null %}
+    <source srcset="{{ large_image_uri|image_style('16_9_2394x1347') }}" media="(min-width: 29.034em) and (max-height: 36.932em), (min-width: 36.932em) and (max-height: 41.654em), (min-width: 46.979em)" class="hero-poster">
+    {% endif %}
+    {% if small_image_uri is not null %}
+    <source srcset="{{ small_image_uri|image_style('16_9_960x540') }}" class="hero-poster">
+    {% endif %}
+    <!--[if IE 9]></video><![endif]-->
+    <img src="{{ large_image_uri|image_style('16_9_2394x1347') }}" alt="{{ alt }}" class="hero-poster">
+  </picture>
+  <div class="page-padding">
+    <div class="hero-content">
+      <h1 id="main_desc" class="hero-heading">{{ label }}</h1>
+      <p class="large">{{ content.body }}</p>
+      {{ content.link }}
+      {% if video_link %}
+        <a href="{{ video_link.0.url }}" id="play_home_video" class="button play" role="button">{{ video_link.0.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- !Video -->
+<div id="intro_video" class="modal-overlay modal-overlay-home-video" role="dialog" aria-hidden="true" aria-labelledby="modal_video_title">
+  <div class="modal-content modal-video" role="document">
+    <h2 id="modal_video_title" class="text-hidden">{{ label }} video</h2>
+    <div class="mediahub-embed" id="mediahub_embed_{{ video_link.0.url|slice(-4,4) }}" data-mediahub-embed-version="2">
+      <div class="wdn-responsive-embed wdn-aspect16x9">
+        <iframe src="{{ video_link.0.url }}?format=iframe&autoplay=0" title="{{ label }}" allowfullscreen></iframe>
+      </div>
+    </div>
+    <button class="close-video icon-close-white" id="close_home_video" type="button" aria-label="close"><span>Close</span></button>
+  </div>
+</div>

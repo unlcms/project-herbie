@@ -1,0 +1,31 @@
+{{ content.hero_reference }}
+
+<div id="node-{{ node.id }}" class="not-hero {% if not content.hero_reference %}basic {% endif %}{{classes}}"{{attributes}}>
+
+  <div class="nic-band">
+
+    {% if not page %}
+      {{ render(title_prefix) }}
+      <h2{{ title_attributes }}><a href="{{ node_url }}">{{ title }}</a></h2>
+      {{ render(title_suffix) }}
+    {% endif %}
+
+    <div{{ content_attributes.addClass('content') }}>
+
+      <div class="page-padding">
+        {% if page and not content.hero_reference %}
+          {{ title_prefix }}
+          <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
+          {{ title_suffix }}
+        {% endif %}
+
+        {{ content.body }}
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
