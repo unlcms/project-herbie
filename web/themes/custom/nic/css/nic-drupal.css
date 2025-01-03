@@ -1,13 +1,13 @@
-body.logged-in.toolbar #nic_menu .primary-menu {
-  top: 5.8em;
+body.toolbar-tray-open #nic_menu .primary-menu {
+  top: 7.4em;
 }
 
-body.logged-in.toolbar #nic_menu .secondary-menu {
-  top: 8em;
+body.toolbar-tray-open #nic_menu .secondary-menu {
+  top: 10em;
 }
 
-body.logged-in.toolbar #nic_search {
-  top: 4em;
+body.toolbar-tray-open #nic_search {
+  top: 6em;
 }
 
 div.tabs {
@@ -17,11 +17,11 @@ div.tabs {
   z-index: 2;
 }
 
-div.tabs ul.tabs li {
+div.tabs ul li {
   display: inline;
   padding-right: 10px;
 }
 
-div.tabs ul.tabs li a {
+div.tabs ul li a {
   color: white;
 }

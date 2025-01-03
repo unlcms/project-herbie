@@ -1,6 +1,8 @@
 <div class="page">
 
+  <div id="nic_search">
   {# page.search #}
+  </div>
 
   <!-- !Navigation -->
   <nav class="skipnav" >
@@ -62,8 +64,13 @@
         <img src="{{ path_to_theme }}/images/site/svg/nic-logo-mark.svg" alt="Nebraska Innovation Campus logomark" />
       </a>
       <div class="footer-wrapper">
-        <?php print render($page['footer_contact']); ?>
-        <?php print render($page['footer_menu']); ?>
+        <div class="nic-contact-info">
+          <p class="nic-address">Nebraska Innovation Campus<br />
+            2021 Transformation Drive<br />
+            Lincoln, NE 68508 USA</p>
+          <p class="nic-phone"><a href="tel:402-472-5535" class="tel">402-472-5535</a></p>
+          <p class="nic-email"><a href="mailto:innovate@unl.edu">innovate@unl.edu</a></p>
+        </div>
         <div class="nic-eeo-copyright">
           <p class="eeo small">The University of Nebraska–Lincoln is an equal opportunity educator and employer. For current job openings, visit <a href="http://employment.unl.edu/">employment.unl.edu</a>.</p>
           <p class="copyright small">&copy; {{ 'now' | date('Y') }} Nebraska Innovation Campus</p>

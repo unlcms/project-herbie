@@ -1,0 +1,27 @@
+<div class="not-hero">
+  <article class="news">
+    <div class="page-padding">
+      <header>
+        <h1 id="main_desc">{{ label }}</h1>
+      </header>
+      <div class="grid-set">
+        <div class="bp591-grid-col-one-third pull-right">
+          <div class="news-event-photo">
+            {{ content.n_news_image }}
+          </div>
+        </div>
+        <div class="bp591-grid-col-two-thirds">
+          {{ content.body }}
+          {#
+          <footer class="news-meta">
+            <h4 class="icon-link-3-0">Source</h4>
+            {{render(content.field_source_link)}}
+            <h4 class="icon-tags-1-0">Tags</h4>
+            {{render(content.field_news_tags)}}
+          </footer>
+          #}
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
