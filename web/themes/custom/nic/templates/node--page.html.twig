@@ -2,8 +2,6 @@
 
 <div id="node-{{ node.id }}" class="not-hero {% if not content.hero_reference %}basic {% endif %}{{classes}}"{{attributes}}>
 
-  <div class="nic-band">
-
     {% if not page %}
       {{ title_prefix }}
       <h2{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h2>
@@ -12,7 +10,6 @@
 
     <div{{ content_attributes.addClass('content') }}>
 
-      <div class="page-padding">
         {% if page and node.hero_reference.isempty %}
           {{ title_prefix }}
           <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
@@ -21,11 +18,6 @@
 
         {{ content.body }}
 
-      </div>
-
-
     </div>
-
-  </div>
 
 </div>

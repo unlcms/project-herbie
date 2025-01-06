@@ -8,6 +8,14 @@ function nic_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_node().
+ */
+function nic_preprocess_node(&$variables) {
+  $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('nic');
+}
+
+
+/**
  * Implements template_preprocess_page().
  */
 function nic_preprocess_page(&$variables) {
