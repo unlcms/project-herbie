@@ -37,7 +37,6 @@
  */
 #}
 
-{{ attach_library('unl_five_herbie/remote_video_media_type') }}
 
 {% for item in items %}
   {% set width = item.content['#attributes'].width %}
@@ -70,14 +69,9 @@
       </div>
     </div>
   {% else %}
-    {# If media is audio, change aspect ratio to 21:5 #}
-    {% set wrapper = ['dcf-ratio-21x5'] %}
-    {% set wrapper = wrapper|merge(['dcf-ratio']) %}
-
-    <div {{ attributes.addClass(wrapper) }}  >
-      <div class="dcf-ratio-child">
+    {# If media is audio, change height to 5.62em and max-width to 56.12rem #}
+    <div style="height: 5.62em; max-width: 56.12rem; overflow: hidden; position:relative; -webkit-box-flex: 1; flex-grow: 1;" >
         {{ item.content }}
-      </div>
     </div>
   {% endif %}
 {% endfor %}

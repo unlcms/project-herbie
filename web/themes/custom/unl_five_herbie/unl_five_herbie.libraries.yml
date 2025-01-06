@@ -120,9 +120,3 @@ simple_media:
   css:
     theme:
       css/theme/block/simple_media.css: {}
-
-remote_video_media_type:
-  version: VERSION
-  css:
-    theme:
-      css/theme/media_type/remote_video.css: {}
