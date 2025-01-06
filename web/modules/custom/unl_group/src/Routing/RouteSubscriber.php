@@ -18,7 +18,7 @@ class RouteSubscriber extends RouteSubscriberBase {
     // toolbar menu item by denying access to the route.
     if ($route = $collection->get('entity.group.collection')) {
       $groups = \Drupal::entityTypeManager()->getStorage('group')->loadMultiple();
-      if (!$groups && empty(array_intersect(['super_administrator', 'administrator', 'coder'], \Drupal::currentUser()->getRoles()))) {
+      if (!$groups && empty(array_intersect(['super_administrator', 'administrator', 'coder', 'temporary_development_contributor'], \Drupal::currentUser()->getRoles()))) {
         $route->setRequirement('_access', 'FALSE');
       }
     }

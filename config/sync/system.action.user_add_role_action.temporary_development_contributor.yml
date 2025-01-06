@@ -1,0 +1,14 @@
+uuid: 24a12fbf-cbeb-42ee-808f-5017c9875f75
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.temporary_development_contributor
+  module:
+    - user
+id: user_add_role_action.temporary_development_contributor
+label: 'Add the Temporary development contributor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: temporary_development_contributor
