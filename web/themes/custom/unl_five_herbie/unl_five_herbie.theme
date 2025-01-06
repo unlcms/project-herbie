@@ -311,16 +311,21 @@ function unl_five_herbie_preprocess_field(&$variables) {
   }
 
   /*
-   * Oembed Block Fields
+   * Remote Video (Oembed) Media Type Fields
    */
-  $fields = array('field_media_oembed_video');
+  $fields = array('field_media_oembed_video', 'm_rv_resource_type');
 
   if (in_array($field_name, $fields)) {
+    //Get 'm_rv_resource_type' field value from Remote Video Media Type.
+    $media_type = $variables['element']['#object']->get('m_rv_resource_type')->getValue();
+
     switch ($field_name) {
       case 'field_media_oembed_video':
         foreach ($variables['items'] as $key => $item) {
           $variables['items'][$key]['content']['#attributes']['frameborder'] = null;
           $variables['items'][$key]['content']['#attributes']['allowtransparency'] = null;
+          // Add the 'm_rv_resource_type' field value to the 'field_media_oembed_video' field for access in the 'field_media_oembed_video' Twig template.
+          $variables['items'][$key]['media_type'] = isset($media_type[0]['value']) ? strval($media_type[0]['value']) : '';
 
         }
         break;
