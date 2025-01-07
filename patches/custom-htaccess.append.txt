@@ -81,6 +81,10 @@
   # ***********************************************************
   # Sites that were previously at www.unl.edu/*
 
+  # asdnetwork
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^asdnetwork/(.*)$ https://asdnetwork.unl.edu/$1 [R=301,L]
+
   # chancellor
   RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
   RewriteRule ^chancellor/(.*)$ https://chancellor.unl.edu/$1 [R=301,L]
