@@ -200,6 +200,7 @@ third_party_settings:
               - 'inline_block:embed'
               - 'inline_block:html_code'
               - 'inline_block:logo_cloud'
+              - 'inline_block:node_include'
               - 'inline_block:proofpoint'
               - 'inline_block:simple_media'
               - 'inline_block:slideshow'
@@ -219,6 +220,7 @@ third_party_settings:
           all_regions:
             - 'Custom block types'
             - 'Custom blocks'
+            - 'Group Menus'
         dcf_onecol_section:
           all_regions:
             - 'Chaos Tools'
@@ -240,6 +242,7 @@ third_party_settings:
       - 'Custom block types'
       - 'Custom blocks'
       - Forms
+      - 'Group Menus'
       - 'Inline blocks'
       - 'Lists (Views)'
       - Menus
