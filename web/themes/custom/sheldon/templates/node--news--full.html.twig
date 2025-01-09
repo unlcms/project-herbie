@@ -8,27 +8,11 @@
     <div class="bp591-grid-col-two-thirds sticky-reference">
 
       {{ title_prefix }}
-      {% if label and not page %}
-        <h1{{ title_attributes }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h1>
-      {% else %}
-        <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
-      {% endif %}
+      <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
       {{ title_suffix }}
 
-      {% if display_submitted %}
-        <div class="submitted">
-          {{ author_picture }}
-          <div{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </div>
-      {% endif %}
-
       <div class="content"{{ content_attributes }}>
-        {{ content }}
+        {{ content.body }}
       </div>
 
   </div>
