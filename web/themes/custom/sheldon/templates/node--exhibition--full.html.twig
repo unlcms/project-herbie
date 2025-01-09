@@ -1,12 +1,12 @@
 <div{{ attributes.addClass('exhibition-detail') }}>
   <div class="grid-set">
     <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right">
-      <h1 class="tab-heading">Exhibition</h1>
+      <h2 class="tab-heading">Exhibition</h2>
     </div>
   </div>
   <div class="grid-set">
     <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right">
-      <h2 class="exhibition-heading">{{ label }}</h2>
+      <h1 class="exhibition-heading">{{ label }}</h1>
       {% if node.ongoing.value != '1' %}
         {{ content.exhibition_date }}
       {% endif %}

@@ -3,11 +3,11 @@
 
     {{ title_prefix }}
     {% if label and not page %}
-    <h2{{ title_attributes }}>
+    <h1{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+    </h1>
     {% else %}
-      <h2 id="main_desc"{{ title_attributes }}>{{ label }}</h2>
+      <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
     {% endif %}
     {{ title_suffix }}
 
@@ -23,9 +23,9 @@
 
     <div class="content"{{ content_attributes }}>
       <h5>{{ course }}</h5>
-      <p> </p>
+      <p>&nbsp;</p>
       {{ content.mediahub_video_link }}
-      <p> </p>
+      <p>&nbsp;</p>
       {{ content.body }}
     </div>
 
