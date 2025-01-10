@@ -388,7 +388,7 @@
   RewriteCond %{HTTP_HOST} ^www\.nemaha\.unl\.edu$
   RewriteRule ^(.*)$ https://extension.unl.edu/statewide/nemaha/ [R=301,L]
   RewriteCond %{HTTP_HOST} ^northernpanhandle\.unl\.edu$
-  RewriteRule ^(.*)$ https://extension.unl.edu/statewide/northernpanhandle/ [R=301,L]
+  RewriteRule ^(.*)$ https://extension.unl.edu/ [R=301,L]
   RewriteCond %{HTTP_HOST} ^otoe\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.otoe\.unl\.edu$
   RewriteRule ^(.*)$ https://extension.unl.edu/statewide/otoe/ [R=301,L]
@@ -445,17 +445,14 @@
   RewriteRule ^(.*)$ https://extension.unl.edu/statewide/seward/ [R=301,L]
 
   RewriteCond %{HTTP_HOST} ^dawes\.unl\.edu$ [OR]
-  RewriteCond %{HTTP_HOST} ^www\.dawes\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.dawes\.unl\.edu$
+  RewriteRule ^(.*)$ https://extension.unl.edu/statewide/dawes/ [R=301,L]
   RewriteCond %{HTTP_HOST} ^sheridan\.unl\.edu$ [OR]
-  RewriteCond %{HTTP_HOST} ^www\.sheridan\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sheridan\.unl\.edu$
+  RewriteRule ^(.*)$ https://extension.unl.edu/statewide/sheridan/ [R=301,L]
   RewriteCond %{HTTP_HOST} ^sioux\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.sioux\.unl\.edu$
-  RewriteRule ^(.*)$ https://extension.unl.edu/statewide/northernpanhandle/ [R=301,L]
-
-  RewriteCond %{HTTP_HOST} ^extension\.unl\.edu$
-  RewriteRule statewide/dawes(.*) https://extension.unl.edu/statewide/northernpanhandle [R=301,L]
-  RewriteRule statewide/sheridan(.*) https://extension.unl.edu/statewide/northernpanhandle [R=301,L]
-  RewriteRule statewide/sioux(.*) https://extension.unl.edu/statewide/northernpanhandle [R=301,L]
+  RewriteRule ^(.*)$ https://extension.unl.edu/statewide/sioux/ [R=301,L]
 
   RewriteCond %{HTTP_HOST} ^southeast\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.southeast\.unl\.edu$
