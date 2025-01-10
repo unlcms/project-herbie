@@ -37,7 +37,7 @@ function unl_pathauto_pathauto_pattern_alter(PathautoPatternInterface $pattern, 
     }
 
     // Check if the current route is on a regular edit page.
-    if ($current_route_name == "entity.node.edit_form") {
+    if ($current_route_name == "entity.node.edit_form" || $current_route_name == "entity.group_relationship.create_form" || $current_route_name == "node.add" ||  $current_route_name == "entity.group_relationship.add_form") {
       // Get menu object from the context
       $menu = $context['data']['node']->__get('menu');
       // If the menu is not set, or if the menu is not enabled on an edit-only page,
