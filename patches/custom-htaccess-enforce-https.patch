@@ -2,13 +2,14 @@ diff --git a/.htaccess b/.htaccess
 index 4d19147cc4..176c71c761 100644
 --- a/.htaccess
 +++ b/.htaccess
-@@ -67,6 +67,11 @@ AddEncoding gzip svgz
+@@ -67,6 +67,12 @@ AddEncoding gzip svgz
  <IfModule mod_rewrite.c>
    RewriteEngine on
  
 +  # Enforce HTTPS.
 +  RewriteCond %{HTTPS} off
 +  RewriteCond %{HTTP:X-Forwarded-Proto} !https
++  RewriteCond %{REQUEST_URI} "!^/status.php"
 +  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 +
    # Set "protossl" to "s" if we were accessed via https://.  This is used later
