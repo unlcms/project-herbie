@@ -201,6 +201,10 @@
   RewriteCond %{HTTP_HOST} ^telecomapps\.unl\.edu$
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceCatalog?CategoryID=23 [R=301,L]
 
+  # today (UNL Today, Nebraska Today)
+  RewriteCond %{HTTP_HOST} ^today\.unl\.edu$
+  RewriteRule ^(.*)$ https://news.unl.edu/ [R=301,L]
+
   # wifi
   RewriteCond %{HTTP_HOST} ^wifi\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^wireless\.unl\.edu$ [OR]
