@@ -274,6 +274,20 @@ function unl_five_herbie_preprocess_field(&$variables) {
           $variables['items'][$key]['card_data']['card_headline_link'] = $card_headline_link_url;
         }
         break;
+      case 'b_card_subhead':
+        $block_background = $variables['element']['#object']->__get('#block_lbs');
+
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['block_background'] = isset($block_background) ? $block_background : '';
+        }
+        break;
+      case 'b_card_overline':
+        $block_background = $variables['element']['#object']->__get('#block_lbs');
+
+        foreach ($variables['items'] as $key => $item) {
+          $variables['items'][$key]['block_background'] = isset($block_background) ? $block_background : '';
+        }
+        break;
     }
   }
 
