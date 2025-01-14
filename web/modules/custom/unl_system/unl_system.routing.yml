@@ -5,5 +5,3 @@ unl_system.sharedcode:
     _title: 'SharedCode'
   requirements:
     _permission: 'access content'
-  options:
-    no_cache: 'TRUE'

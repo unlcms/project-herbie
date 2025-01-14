@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Cache\Cache;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 use Drupal\link\Plugin\Field\FieldType\LinkItem;
@@ -81,6 +82,10 @@ function unl_five_herbie_preprocess_block(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   if (\Drupal::service('path.matcher')->matchPath($current_path, '/sharedcode/*')) {
     $variables['unl_sharedcode'] = true;
+
+    $block = Block::load('unl_five_herbie_mainnavigation');
+    $cache_tags_to_invalidate = $block->getCacheTagsToInvalidate();
+    Cache::invalidateTags($cache_tags_to_invalidate);
   }
 
   // Set $bundle var for custom block entities.
