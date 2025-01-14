@@ -7,20 +7,43 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\pathauto\PathautoPatternInterface;
+use Drupal\group\Entity\GroupRelationship;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_pathauto_pattern_alter().
  */
 function unl_pathauto_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
   // For Builder Pages, if no menu item exists, then use the [node:title]
-  // token instead of menu-based tokens.
-  $current_route = \Drupal::routeMatch()->getRouteName();
+  // token instead of menu-based tokens to resolve related issues (see GitHub for details).
+  $current_route_name = \Drupal::routeMatch()->getRouteName();
   if ($context['module'] == 'node' && $context['bundle'] == 'builder_page') {
-    $menu = $context['data']['node']->__get('menu');
-    if (!is_array(value: $menu) || $menu['enabled'] === 0)  {
-      // Check if the page is not a Layout Builder Page edit form
-      if($current_route !== "layout_builder.overrides.node.view") {
-        $pattern->setPattern('[node:group:url:path]/[node:title]');
+
+    // Check if the current route is on a Layout Builder edit page.
+    if ($current_route_name == "layout_builder.overrides.node.view") {
+      // Get the menu object directly, as context is empty during layout editing, whether the menu link is enabled or not.
+      $current_route = \Drupal::routeMatch();
+      $node = $current_route->getParameter('node');
+      $node_id = $node->id();
+      $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+      $node_menu = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $node_id));
+      $group = _unl_pathauto_get_current_group();
+
+      // If the node menu is disabled (menu link unchecked) and it's a group page,
+      // set the pattern below; otherwise, the default numeric path (-0) will be used and we don't want that.
+      if(empty($node_menu) && isset($group) ) {
+        $pattern->setPattern(pattern: '[node:group:url:path]/[node:title]');
+      }
+    }
+
+    // Check if the current route is on a regular edit page.
+    if ($current_route_name == "entity.node.edit_form" || $current_route_name == "entity.group_relationship.create_form" || $current_route_name == "node.add" ||  $current_route_name == "entity.group_relationship.add_form") {
+      // Get menu object from the context
+      $menu = $context['data']['node']->__get('menu');
+      // If the menu is not set, or if the menu is not enabled on an edit-only page,
+      // apply the following pattern for both group and non-group pages (non-group pages will use [node:title] tokens).
+      if (!isset($menu) || $menu['enabled'] === 0)  {
+        $pattern->setPattern(pattern: '[node:group:url:path]/[node:title]');
       }
     }
   }
@@ -47,4 +70,36 @@ function unl_pathauto_form_pathauto_pattern_form_alter(&$form, FormStateInterfac
       break;
     }
   }
+}
+
+/**
+ * Get the current Group.
+ *
+ * @return Drupal\group\Entity\Group
+ */
+function _unl_pathauto_get_current_group()
+{
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists('group')) {
+    return NULL;
+  }
+
+  // If we're on a Group entity page.
+  $group_route_context = \Drupal::service('group.group_route_context');
+  $contexts = $group_route_context->getRuntimeContexts(['group']);
+  $group = $contexts['group']->getContextValue();
+
+  // If we're on a Node entity page.
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    if (is_numeric($node)) {
+      $node = Node::load($node);
+    }
+    $group_content_array = GroupRelationship::loadByEntity($node);
+    foreach ($group_content_array as $group_content) {
+      $group = $group_content->getGroup();
+    }
+  }
+
+  return $group;
 }
