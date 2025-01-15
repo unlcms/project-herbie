@@ -51,7 +51,7 @@
                 {% endif %}
                 {% if credit is not empty %}
                   <small class="dcf-d-inline-block dcf-txt-xs dcf-italic">
-                    {{ content.n_news_image_credit }}
+                    {{ content.n_news_image_credit.0['#context'].value  }}
                   </small>
                 {% endif %}
               </figcaption>
