@@ -201,18 +201,21 @@
               <ul class="dcf-list-bare dcf-mb-0 dcf-txt-xs ">
                 {% set related_links = node.n_news_related_links %}
                 <li class="unl-dark-gray" itemscope="" itemtype="https://schema.org/Person">
-                  {% for i, value in related_links %}
-                      <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                        <div class="dcf-h-4 dcf-w-4 unl-gray">
-                          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"></path>
-                            <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"></path>
-                            <path fill="none" d="M0 0h24v24H0z"></path>
-                          </svg>
-                        </div>
-                        {{ content.n_news_related_links[i]}}
-                      </dd>
-                  {% endfor %}
+                  <dl>
+                    <dt class="dcf-sr-only">Related Links</dt>
+                    {% for i, value in related_links %}
+                        <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                          <div class="dcf-h-4 dcf-w-4 unl-gray">
+                            <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"></path>
+                              <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"></path>
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                            </svg>
+                          </div>
+                          {{ content.n_news_related_links[i]}}
+                        </dd>
+                    {% endfor %}
+                 </dl>
                 </li>
               </ul>
            </div>
