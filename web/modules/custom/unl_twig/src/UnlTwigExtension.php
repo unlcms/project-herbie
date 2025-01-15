@@ -30,6 +30,7 @@ class UnlTwigExtension extends AbstractExtension {
       new TwigFunction('string_search', 'strpos'),
       new TwigFunction('string_lowercase', 'strtolower'),
       new TwigFunction('unique_id', 'uniqid'),
+      new TwigFunction('preg_replace', 'preg_replace'),
     ];
   }
 

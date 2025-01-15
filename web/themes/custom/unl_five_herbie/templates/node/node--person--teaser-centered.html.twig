@@ -70,7 +70,8 @@
 
                     {# <a class="dcf-txt-decor-hover" href="tel:+14024727211" itemprop="telephone"> #}
                     {% if node.n_person_phone.value %}
-                      <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
+                      {% set filtered_phone_number = preg_replace('/[^0-9]/', '', node.n_person_phone.value) %}
+                        <a class="dcf-txt-decor-hover" href="tel:{{filtered_phone_number}}" itemprop="telephone">
                         <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
 
                         {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
