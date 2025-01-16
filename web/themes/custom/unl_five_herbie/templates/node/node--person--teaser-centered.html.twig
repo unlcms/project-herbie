@@ -1,8 +1,7 @@
-{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix'] %}
+{% set classes = ['node', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class), 'clearfix', 'dcf-flex-grow-1', 'dcf-w-max-md', 'dcf-mb-0', 'dcf-card-as-link', 'unlcms-img-zoom-hover'] %}
 {{ attach_library('unl_five_herbie/person') }}
 
-    <div {{ content_attributes.addClass(classes) }}>
-      <li class="dcf-flex-grow-1 dcf-w-max-md dcf-mb-0 dcf-card-as-link unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/Person">
+      <li  {{content_attributes.addClass(classes)}}  itemscope itemtype="https://schema.org/Person">
         <div class="dcf-d-flex dcf-flex-nowrap dcf-col-gap-5 dcf-row-gap-2 unlcms-centered-teaser-person">
           <!-- Image -->
           <div class="unlcms-centered-teaser-person-img dcf-h-12 dcf-w-12 dcf-flex-shrink-0">
@@ -118,4 +117,3 @@
           </div>
         </div>
       </li>
-    </div>
