@@ -12,7 +12,7 @@ field_name: b_social_media_links_instagram
 entity_type: block_content
 bundle: social_media_links
 label: 'Instagram username'
-description: 'Only enter the username.'
+description: "Only enter the username without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }

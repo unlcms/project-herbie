@@ -9,7 +9,7 @@ field_name: p_b_cinfo_sm_youtube
 entity_type: paragraph
 bundle: contact_info_social_media
 label: YouTube
-description: "Enter username without the '@' symbol."
+description: "Only enter the username without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }
