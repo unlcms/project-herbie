@@ -18,9 +18,17 @@
   RewriteCond %{HTTP_HOST} ^examservices\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/dlc [R=301,L]
 
+  # facultyaffairs
+  RewriteCond %{HTTP_HOST} ^facultyaffairs\.unl\.edu$
+  RewriteRule ^(.*)$ https://executivevc.unl.edu/faculty/ [R=301,L]
+
   # huskertech (old paths from when it was part of the ITS site)
   RewriteCond %{HTTP_HOST} ^its\.unl\.edu$
   RewriteRule ^huskertech(.*)$ https://huskertech.unl.edu/ [R=301,L]
+
+  # isso
+  RewriteCond %{HTTP_HOST} ^isso\.unl\.edu$
+  RewriteRule ^(.*)$ https://global.unl.edu/isso/ [R=301,L]
 
   # my
   RewriteCond %{HTTP_HOST} ^my\.unl\.edu$ [OR]
@@ -30,6 +38,10 @@
   # phishing
   RewriteCond %{HTTP_HOST} ^phishing\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/departments/securityunl/phishingunl/ [R=301,L]
+
+  # piesl
+  RewriteCond %{HTTP_HOST} ^piesl\.unl\.edu$
+  RewriteRule ^(.*)$ https://global.unl.edu/piesl/ [R=301,L]
 
   # physics professor sites that start with a ~
   RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
@@ -48,6 +60,11 @@
   # soil153
   RewriteCond %{HTTP_HOST} ^soil153\.unl\.edu$
   RewriteRule ^(.*)$ https://agronomy.unl.edu/academic-programs/undergraduate-programs/soil153/ [R=301,L]
+
+  # studyabroad
+  RewriteCond %{HTTP_HOST} ^studyabroad\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^globalexperiences\.unl\.edu$
+  RewriteRule ^(.*)$ https://global.unl.edu/global-experiences/ [R=301,L]
 
   # visit
   RewriteCond %{HTTP_HOST} ^visit\.unl\.edu$
