@@ -5,6 +5,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # ***********************************************************
+  # Redirects involving active CMS sites
+  # See section below for sites that "Moved away from the CMS"
+
+  # cms-docs
+  RewriteCond %{HTTP_HOST} ^cms-docs\.unl\.edu$
+  RewriteRule ^(.*)$ https://wdn.unl.edu/introduction-next-gen-cms/ [R=301,L]
+
   # dlc
   RewriteCond %{HTTP_HOST} ^dlc\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^examservices\.unl\.edu$
@@ -37,12 +45,74 @@
   RewriteCond %{HTTP_HOST} sheldonartmuseum\.org
   RewriteRule ^collection(.*)$ https://emp-web-95.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&module=exhibition&viewType=detailList [R=301,L]
 
+  # soil153
+  RewriteCond %{HTTP_HOST} ^soil153\.unl\.edu$
+  RewriteRule ^(.*)$ https://agronomy.unl.edu/academic-programs/undergraduate-programs/soil153/ [R=301,L]
+
+  # visit
+  RewriteCond %{HTTP_HOST} ^visit\.unl\.edu$
+  RewriteRule ^(.*)$ https://www.unl.edu/visit/ [R=301,L]
+
+  # ***********************************************************
+  # cehs.unl.edu
+
+  # courage
+  RewriteCond %{HTTP_HOST} ^courage\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/courage/ [R=301,L]
+
+  # designcenter
+  RewriteCond %{HTTP_HOST} ^dc\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^designcenter\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^idc\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^pixel-lab\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/pixel-lab/ [R=301,L]
+
+  # edpsyc
+  RewriteCond %{HTTP_HOST} ^edpsyc\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/edpsych/ [R=301,L]
+
+  # empowerment
+  RewriteCond %{HTTP_HOST} ^empowerment\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/empowerment/ [R=301,L]
+
+  # hrtm
+  RewriteCond %{HTTP_HOST} ^hrtm\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/hrtm/ [R=301,L]
+
+  # nafcs
+  RewriteCond %{HTTP_HOST} ^nafcs\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/nafcs/ [R=301,L]
+
+  # nutrigenomics
+  RewriteCond %{HTTP_HOST} ^nutrigenomics\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/nutrigenomics/ [R=301,L]
+
+  # secd-cal
+  RewriteCond %{HTTP_HOST} ^secd-cal\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/secd/secd-calendars/ [R=301,L]
+
+  # tmfd
+  RewriteCond %{HTTP_HOST} ^tmfd\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/tmfd/ [R=301,L]
+
+  # welc
+  RewriteCond %{HTTP_HOST} ^welc\.unl\.edu$
+  RewriteRule ^(.*)$ https://cehs.unl.edu/welc/ [R=301,L]
+
   # ***********************************************************
   # engineering.unl.edu
 
   # bse
   RewriteCond %{HTTP_HOST} ^engineering\.unl\.edu$
   RewriteRule ^bse/(.*)$ https://bse.unl.edu/$1 [R=301,L]
+
+  # civil
+  RewriteCond %{HTTP_HOST} ^civil\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/civil/$1 [R=301,L]
+
+  # mem
+  RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/mem/$1 [R=301,L]
 
   # ***********************************************************
   # HLFPA arts.unl.edu
@@ -167,6 +237,10 @@
   RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
   RewriteRule ^womenssp/(.*)$ https://wgs.unl.edu/$1 [R=301,L]
 
+  # writing
+  RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
+  RewriteRule ^writing/(.*)$ https://writing.unl.edu/$1 [R=301,L]
+
   # 19thcentury
   RewriteCond %{HTTP_HOST} ^www\.unl\.edu$
   RewriteRule ^19thcentury/(.*)$ https://19thcentury.unl.edu/$1 [R=301,L]
@@ -181,7 +255,8 @@
   RewriteCond %{HTTP_HOST} ^www\.anti-virus\.unl\.edu$
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceDet?ID=52 [R=301,L]
 
-  # cocreate
+  # beahusker/cocreate
+  RewriteCond %{HTTP_HOST} ^beahusker\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^cocreate\.unl\.edu$
   RewriteRule ^(.*)$ https://admissions.unl.edu/ [R=301,L]
 
@@ -202,7 +277,8 @@
   RewriteRule ^(.*)$ https://nusupport.nebraska.edu/TDClient/33/Portal/Requests/ServiceCatalog?CategoryID=23 [R=301,L]
 
   # today (UNL Today, Nebraska Today)
-  RewriteCond %{HTTP_HOST} ^today\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^today\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^unltoday\.unl\.edu$
   RewriteRule ^(.*)$ https://news.unl.edu/ [R=301,L]
 
   # wifi
