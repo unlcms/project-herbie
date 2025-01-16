@@ -29,6 +29,9 @@
 {% if content.b_tabs_title.0 %}
   {% set idName = content.b_tabs_title.0['#context']['value']|lower|replace({" ":"-"}) %}
   {% set idName = idName|replace({'"':""}) %}
+  {# Added unique_id to prevent duplicates when a user creates another Tabs component with the same title on the same page. #}
+  {% set idName = unique_id(idName) %}
+
 {% else %}
     {% set idName = unique_id("tabs-component-") %}
 {% endif %}
