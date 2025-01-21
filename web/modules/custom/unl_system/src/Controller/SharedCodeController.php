@@ -57,6 +57,12 @@ class SharedCodeController extends ControllerBase {
     if ($region == 'navlinks') {
       $html = str_replace('<div id="block-unl-five-herbie-mainnavigation">', '', $html);
       $html = str_replace('</div>', '', $html);
+
+      // Get the top-level <ul> HTML from the navigation region.
+      $dom = new \DOMDocument();
+      @$dom->loadHTML($html);
+      $top_level_ul_dom = $dom->getElementsByTagName('ul')->item(0);
+      $html = $dom->saveHTML($top_level_ul_dom);
     }
 
     $content = Markup::create($html);
