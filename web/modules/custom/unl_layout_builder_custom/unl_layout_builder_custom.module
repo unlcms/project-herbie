@@ -7,6 +7,8 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Form\FormHelper;
+use Drupal\node\Entity\NodeType;
+
 /**
  * Implements hook_form_alter().
  */
@@ -28,6 +30,40 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
 
   switch ($form_id) {
     case 'layout_builder_add_block':
+      if ($block_type == 'node_include') {
+        $field = FieldConfig::load('block_content.node_include.b_nodeinclude_node');
+
+        if ($field) {
+        $settings = $field->getSettings();
+        $allowed_content_types = $settings['handler_settings']['target_bundles'] ?? [];
+
+        // Get all available content types.
+        $all_content_types = NodeType::loadMultiple();
+        $formatted_content_types = array_keys($all_content_types);
+        $all_content_types = array_combine($formatted_content_types, $formatted_content_types);
+
+        // Exclude these content types from being allowed as a refrence
+        unset($all_content_types["major_option"]);
+        unset($all_content_types["webform"]);
+
+        // Check if there are new custom content types created on the site
+        $new_content_types = array_diff($all_content_types, $allowed_content_types);
+
+          if (!empty($new_content_types)) {
+          // Add new content types to the target bundles.
+          $settings['handler_settings']['target_bundles'] = array_unique(array_merge($allowed_content_types, $new_content_types));
+
+          // Save the updated field settings.
+          $field->setSettings($settings);
+          $field->save();
+
+          // Clear caches to apply changes.
+          \Drupal::service('cache.entity')->invalidateAll();
+
+          \Drupal::logger(channel: 'unl_layout_builder_custom')->notice('Custom content types have been added to the node include reference field.');
+          }
+        }
+      }
       if ($block_type == 'card') {
         // Set 'Cream' as the default.
         $form['layout_builder_style_background']['#default_value'] = ['block_background_style_light'];
@@ -44,7 +80,6 @@ function unl_layout_builder_custom_form_alter(&$form, \Drupal\Core\Form\FormStat
         // Create a callback function to '#process' so we can be able to alter form elements when adding a block.
         $form['settings']['block_form']['#process'][] = '_add_edit_simple_media_block_form_elements';
       };
-
       break;
     case 'layout_builder_update_block':
     case 'layout_builder_edit_block':
