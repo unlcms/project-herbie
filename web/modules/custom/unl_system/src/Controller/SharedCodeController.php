@@ -55,9 +55,6 @@ class SharedCodeController extends ControllerBase {
     $html = str_replace('href="/', 'href="'.$host, $html);
     // Dirty hack to remove the block <div> wrapper so its a plain <ul>.
     if ($region == 'navlinks') {
-      $html = str_replace('<div id="block-unl-five-herbie-mainnavigation">', '', $html);
-      $html = str_replace('</div>', '', $html);
-
       // Get the top-level <ul> HTML from the navigation region.
       $dom = new \DOMDocument();
       @$dom->loadHTML($html);
