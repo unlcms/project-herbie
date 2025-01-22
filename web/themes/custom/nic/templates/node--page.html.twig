@@ -1,0 +1,23 @@
+{{ content.hero_reference }}
+
+<div id="node-{{ node.id }}" class="not-hero {% if not content.hero_reference %}basic {% endif %}{{classes}}"{{attributes}}>
+
+    {% if not page %}
+      {{ title_prefix }}
+      <h2{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h2>
+      {{ title_suffix }}
+    {% endif %}
+
+    <div{{ content_attributes.addClass('content') }}>
+
+        {% if page and node.hero_reference.isempty %}
+          {{ title_prefix }}
+          <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
+          {{ title_suffix }}
+        {% endif %}
+
+        {{ content.body }}
+
+    </div>
+
+</div>

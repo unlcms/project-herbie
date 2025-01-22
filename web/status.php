@@ -33,6 +33,7 @@ echo $status['message'];
 // Perform the actual health check.
 function health_check() {
   try {
+    $_SERVER['HTTP_HOST'] = 'cms.unl.edu';
     $autoloader = require 'autoload.php';
     require_once  'core/includes/bootstrap.inc';
     $request = Request::createFromGlobals();

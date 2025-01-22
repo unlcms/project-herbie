@@ -13,7 +13,7 @@ mode: default
 content:
   b_cinfo_contact_point:
     type: paragraphs
-    weight: 0
+    weight: 1
     region: content
     settings:
       title: Paragraph
@@ -29,5 +29,12 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

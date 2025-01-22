@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
     - field.field.node.builder_page.s_n_page_options
+    - field.field.node.builder_page.s_n_site_organization_tags
     - node.type.builder_page
     - system.menu.main
   module:
@@ -284,6 +285,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: first
+  s_n_site_organization_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: first
 hidden:
   entitygroupfield: true

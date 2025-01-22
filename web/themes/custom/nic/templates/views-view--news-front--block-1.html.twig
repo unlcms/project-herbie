@@ -1,0 +1,38 @@
+<!-- !Intro text -->
+<div class="page-padding">
+  <div class="home-intro">
+    <p>Nebraska Innovation Campus (NIC) is a campus designed to facilitate new and in-depth partnerships between the University of Nebraska and private sector businesses. It is the place to build the big idea, where imagination meets hard work, and collaboration yields results. NIC provides you and your organization access to culture, talent and&nbsp;resources.</p>
+  </div>
+</div>
+
+<!-- !The Latest -->
+<section class="surface the-latest">
+  <div class="page-padding">
+    <div class="grid-set">
+      <div class="grid-col bp591-grid-col-one-half">
+        <h2 class="surface-heading">The Latest</h2>
+        <div class="bp956-grid-set-halves deck">
+          {% for row in rows %}
+            {{ row }}
+          {% endfor %}
+        </div>
+        <div class="more-info">
+          <a href="/news" class="more-info-link">More News</a>
+        </div>
+      </div>
+      <div class="grid-col bp591-grid-col-one-half">
+        <div class="grid-set">
+          <div class="grid-col bp591-grid-col-five-sixths pull-right">
+            <h2 class="surface-heading">Events</h2>
+            <div style="margin-bottom:2.618em;margin-top:1em;">
+              {{ drupal_view("events_front", "block_1") }}
+            </div>
+            <div class="more-info">
+              <a href="/events" class="more-info-link">More Events</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

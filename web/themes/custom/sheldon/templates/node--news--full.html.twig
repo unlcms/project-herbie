@@ -1,0 +1,26 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('static') }}>
+  <div class="grid-set">
+    <div class="grid-col">
+      <h2 class="tab-heading">News</h2>
+    </div>
+  </div>
+  <div class="grid-set">
+    <div class="bp591-grid-col-two-thirds sticky-reference">
+
+      {{ title_prefix }}
+      <h1 id="main_desc"{{ title_attributes }}>{{ label }}</h1>
+      {{ title_suffix }}
+
+      <div class="content"{{ content_attributes }}>
+        {{ content.body }}
+      </div>
+
+  </div>
+  <div class="bp591-grid-col-one-third">
+    <div class="sticky">
+      <nav role="navigation" aria-labelledby="sectionnav-desc">
+        {{ drupal_region('sidebar') }}
+      </nav>
+    </div>
+  </div>
+</div>

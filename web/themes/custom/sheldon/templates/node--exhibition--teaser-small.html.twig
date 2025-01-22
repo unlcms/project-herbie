@@ -1,0 +1,19 @@
+{# Ongoing Exhibitions #}
+<div id="node-{{ node.id }}"{{ attributes }} style="clear:both">
+  <div class="grid-set">
+    <div class="bp465-grid-col-one-third">
+      <a href="{{ url }}" class="art-image">{{ content.small_image }}</a>
+    </div>
+    <div class="bp465-grid-col-two-thirds">
+      {{ title_prefix }}
+      <h3{{ title_attributes.addClass('exhibition-heading') }}>
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+      {{ title_suffix }}
+      {% if node.ongoing.value != '1' %}
+        {{ content.exhibition_date }}
+      {% endif %}
+      {{ content.body }}
+    </div>
+  </div>
+</div>

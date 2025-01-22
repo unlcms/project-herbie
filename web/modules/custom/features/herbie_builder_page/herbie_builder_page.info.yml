@@ -41,6 +41,7 @@ dependencies:
   - 'drupal:toolbar'
   - 'drupal:user'
   - 'drupal:views_ui'
+  - 'drupal:workflows'
   - 'entity_reference_revisions:entity_reference_revisions'
   - 'entity_usage:entity_usage'
   - 'entitygroupfield:entitygroupfield'
@@ -70,10 +71,11 @@ dependencies:
   - 'queue_ui:queue_ui'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'select2:select2'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.8.4
+version: 1.9.0
 package: Herbie

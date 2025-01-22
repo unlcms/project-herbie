@@ -1,0 +1,152 @@
+@charset "UTF-8";
+html,
+body {
+  background: none;
+  font-size: 10px;
+}
+a:after {
+  content: " (" attr(href) ")" !important;
+  display: inline !important;
+  height: auto !important;
+  width: auto !important;
+  background: none !important;
+  font-size: 8px;
+}
+a.tel:after {
+  content: none !important;
+}
+.more-info {
+  display: none !important;
+}
+.tab-heading,
+.rgba .tab-heading {
+  color: #fff;
+  background-color: #000;
+}
+.skipnav {
+  display: none !important;
+}
+#start-content {
+  display: none !important;
+}
+#sheldon_search,
+#sheldon_menu,
+#search_toggle,
+#menu_toggle {
+  display: none !important;
+}
+.header {
+  position: static;
+  width: 100%;
+}
+.header .wrapper {
+  position: relative;
+  height: 5.388em;
+}
+.header a.icon-sheldon-logo {
+  position: static;
+  float: left;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background-image: none !important;
+}
+.header a.icon-sheldon-logo:before {
+  content: url('../images/site/print/sheldon-logo-print.jpg');
+  margin-top: 1em;
+  width: auto;
+  height: auto;
+  float: left;
+}
+.header a.icon-sheldon-logo:after {
+  position: absolute;
+  top: 2.618em;
+  left: 15.91em;
+}
+.featured-content {
+  height: auto;
+}
+.featured-content-image-holder,
+.featured-content-image {
+  display: block;
+  position: static;
+  width: 100%;
+  height: auto;
+}
+.cssvhunit .featured-content-image-holder,
+.cssvhunit .featured-content-image {
+  width: 100%;
+  height: auto;
+}
+.featured-content-image {
+  top: 0;
+  left: 0;
+}
+.csstransforms .featured-content-image {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  transform: none;
+}
+.cssanimations .featured-content-image {
+  animation: none;
+}
+.join-email-list a.button {
+  padding: 0;
+  border: none;
+}
+.join-email-list a.button:before {
+  background-image: none;
+}
+.join-email-list h4 {
+  padding: 0;
+}
+.museum-social li {
+  display: block;
+}
+.museum-social li a {
+  width: auto;
+  height: auto;
+  border: none;
+}
+.museum-social li a.button {
+  padding: 0;
+}
+.museum-social li a .text-hidden {
+  font-size: inherit;
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: auto;
+  position: static !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: auto;
+}
+.museum-social li a:before {
+  background-image: none;
+}
+a.icon-unl-logo {
+  position: relative;
+  background-image: none !important;
+}
+a.icon-unl-logo:before {
+  content: url('../images/site/print/unl-logo-print.jpg');
+  margin-top: 1em;
+  width: auto;
+  height: auto;
+  float: left;
+}
+a.icon-unl-logo:after {
+  position: absolute;
+  top: 2.058em;
+  left: 9.833em;
+}
+.interior-content {
+  padding: 2.618em 0;
+}
+a.gallery:after {
+  content: none !important;
+}

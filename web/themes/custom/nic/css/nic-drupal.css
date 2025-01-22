@@ -1,0 +1,27 @@
+body.toolbar-tray-open #nic_menu .primary-menu {
+  top: 7.4em;
+}
+
+body.toolbar-tray-open #nic_menu .secondary-menu {
+  top: 10em;
+}
+
+body.toolbar-tray-open #nic_search {
+  top: 6em;
+}
+
+div.tabs {
+  padding-left: 10px;
+  position: absolute;
+  top: 11em;
+  z-index: 2;
+}
+
+div.tabs ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+div.tabs ul li a {
+  color: white;
+}

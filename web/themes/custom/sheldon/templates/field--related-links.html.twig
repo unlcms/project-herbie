@@ -1,0 +1,6 @@
+<h3 class="related-links-heading">Related Links</h3>
+<ul class="related-links-list">
+  {% for item in items %}
+    <li{{ item.attributes }}>{{ item.content }}</li>
+  {% endfor %}
+</ul>

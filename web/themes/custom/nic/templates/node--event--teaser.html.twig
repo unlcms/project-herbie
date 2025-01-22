@@ -1,0 +1,17 @@
+<div class="grid-set event-teaser">
+  <div class="bp591-grid-col-two-thirds">
+    <h2><a href="{{ url }}">{{ label }}</a></h2>
+    <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+    {#    <span class="event-time icon-clock-3-0">{{render(content.field_event_link)}}</span> #}
+    <span class="event-location icon-marker-1-0"><a href="{{ event_map_link.0.url }}">{{ content.event_map_link }}</a></span>
+    <p class="event-description">{{ content.body }}</p>
+    <a href="{{ url }}" class="more-info-link">Read More<span class="text-hidden">of "{{ label }}"</span></a>
+  </div>
+  <div class="bp591-grid-col-one-third">
+    {% if event_image %}
+      {{ content.event_image }}
+    {% else %}
+      <img src="{{ path_to_theme }}/images/news/NIC_Logo_Horiz_CGray10_R_0.png">
+    {% endif %}
+  </div>
+</div>

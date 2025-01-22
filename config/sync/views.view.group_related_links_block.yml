@@ -91,7 +91,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 1
       exposed_form:
         type: basic
         options:
@@ -180,6 +180,11 @@ display:
         type: default
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -219,6 +224,7 @@ display:
           entity_field: gid
           plugin_id: standard
           required: false
+      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }

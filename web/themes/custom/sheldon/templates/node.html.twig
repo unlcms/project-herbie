@@ -1,0 +1,36 @@
+<div id="node-{{ node.id }}" class="grid-set static"{{ attributes }}>
+  <div class="bp591-grid-col-two-thirds sticky-reference">
+
+    {{ title_prefix }}
+    {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+    {% else %}
+      <h2 id="main_desc"{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+
+    {% if display_submitted %}
+      <div class="submitted">
+        {{ author_picture }}
+        <div{{ author_attributes }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="content"{{ content_attributes }}>
+      {{ content }}
+    </div>
+
+  </div>
+  <div class="bp591-grid-col-one-third">
+    <div class="sticky">
+      <nav role="navigation" aria-labelledby="sectionnav-desc">
+        {{ drupal_region('sidebar') }}
+      </nav>
+    </div>
+  </div>
+</div>

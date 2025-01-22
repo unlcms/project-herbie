@@ -1,0 +1,54 @@
+{%
+  set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'exhibitions-abbr-teasers',
+]
+%}
+
+{% if header %}
+  <header>
+    {{ header }}
+  </header>
+{% endif %}
+
+{{ exposed }}
+{{ attachment_before }}
+
+<section{{ attributes.addClass(classes) }}>
+  <div class="page-padding">
+
+    {{ title_prefix }}
+    <h2 class="tab-heading">{{ view.title }}</h2>
+    {{ title_suffix }}
+
+    <div class="bp956-grid-set-thirds">
+      {% if rows -%}
+        {{ rows }}
+      {% elseif empty -%}
+        {{ empty }}
+      {% endif %}
+    </div>
+
+    {{ pager }}
+
+    {{ attachment_after }}
+
+    {% if more %}
+      <div class="grid-set-full">
+        <div class="grid-col">
+          {{ more }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+
+  </div>
+</section>
+

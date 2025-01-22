@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html class="no-js"{{ html_attributes }}>
+
+<head>
+
+  <!-- !Meta -->
+  <meta charset="UTF-8" />
+  <meta name="author" content="Sheldon Museum of Art" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+  <!-- !Title -->
+  <title>{{ head_title|safe_join(' | ') }}</title>
+
+  <!-- !Favicons -->
+  <link rel="icon" href="{{ path_to_theme }}/favicons/favicon.ico?v=3" sizes="32x32">
+  <link rel="icon" href="{{ path_to_theme }}/favicons/sheldon-icon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ path_to_theme }}/favicons/sheldon-icon-180x180.png"><!-- 180×180 -->
+  <link rel="manifest" href="{{ path_to_theme }}/manifest.webmanifest">
+
+  <!-- !CSS -->
+  <link rel="stylesheet" type="text/css" media="all" href="{{ path_to_theme }}/css/sma-screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ path_to_theme }}/css/sma-print.css" />
+
+  <!-- !JavaScript (Head) -->
+  <script src="{{ path_to_theme }}/js/sma-polyfills.min.js"></script>
+  <script>
+      grunticon(["{{ path_to_theme }}/icons/output/icons.data.svg.css", "{{ path_to_theme }}/icons/output/icons.data.png.css", "{{ path_to_theme }}/icons/output/icons.fallback.css"]);
+  </script>
+  <noscript><link href="{{ path_to_theme }}/icons/output/icons.fallback.css" rel="stylesheet" /></noscript>
+
+  <!-- Drupal -->
+  <head-placeholder token="{{ placeholder_token }}">
+  <css-placeholder token="{{ placeholder_token }}">
+  <js-placeholder token="{{ placeholder_token }}">
+
+</head>
+<body{{ attributes }}>
+
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+
+<!-- !JavaScript (Body) -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ path_to_theme }}/js/jquery-1.11.3.min.js"><\/script>')</script>
+<script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+<script>window.jQuery.validator || document.write('<script src="{{ path_to_theme }}/js/jquery.validate.min.js"><\/script>')</script>
+<script src="//cdn.jsdelivr.net/underscorejs/1.8.3/underscore-min.js"></script>
+<script>window._ || document.write('<script src="{{ path_to_theme }}/js/underscore.min.js"><\/script>')</script>
+<script src="{{ path_to_theme }}/js/sma-all.min.js"></script>
+<script src="{{ path_to_theme }}/js/sma-modules.min.js"></script>
+<js-bottom-placeholder token="{{ placeholder_token }}">
+
+</body>
+</html>

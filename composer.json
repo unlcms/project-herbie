@@ -281,7 +281,6 @@
             "cd web && patch -p1 < ../patches/custom-htaccess-maxsize.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
-            "cd web && patch -p1 < ../patches/custom-htaccess-unldomains.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
@@ -323,7 +322,8 @@
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
                 "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch",
                 "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch",
-                "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch"
+                "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch",
+                "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
@@ -356,6 +356,9 @@
         },
         "drupal-scaffold": {
             "file-mapping": {
+                "[web-root]/.htaccess": {
+                  "append": "patches/custom-htaccess.append.txt"
+                },
                 "[web-root]/sites/default/default.settings.php": {
                   "append": "patches/default.settings.php.append.php"
                 }

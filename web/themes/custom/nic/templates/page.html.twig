@@ -1,0 +1,82 @@
+<div class="page">
+
+  <div id="nic_search">
+  {# page.search #}
+  </div>
+
+  <!-- !Navigation -->
+  <nav class="skipnav" >
+    <a href="#main_content">Skip Navigation</a>
+  </nav>
+
+  <nav id="nic_menu" class="navigation" role="navigation" aria-labelledby="sitenav-desc">
+    <div class="page-padding">
+      <div class="wrapper">
+        <h2 id="sitenav-desc" class="text-hidden">Site navigation</h2>
+        {{ page.navigation }}
+        {# START page.header_menu #}
+        <h2 class="text-hidden">Secondary site navigation</h2>
+        <ul class="secondary-menu">
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/directions">Directions</a></li>
+          <li><a href="/parking-nic">Parking</a>
+            <ul class="social-media-links">
+              <li><a href="https://www.facebook.com/pages/Nebraska-Innovation-Campus/135794333161572" class="icon-facebook-white"><span class="text-hidden">Like Nebraska Innovation Campus on Facebook</span></a></li>
+              <li><a href="https://twitter.com/NIC_Innovates" class="icon-twitter-white"><span class="text-hidden">Follow Nebraska Innovation Campus on Twitter</span></a></li>
+              <li><a href="https://www.linkedin.com/company/9210834?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2Cidx%3A1-1-1%2CtarId%3A1427651300885%2Ctas%3Anebraska+innovation" class="icon-linkedin-white"><span class="text-hidden">Follow Nebraska Innovation Campus on LinkedIn</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        {# END page.header_menu #}
+      </div>
+    </div>
+  </nav>
+
+  <!-- !Header -->
+  <header class="header">
+    <div class="page-padding">
+      <div class="wrapper">
+        <a href="/" class="header-logo">
+          <img src="{{ path_to_theme }}/images/site/svg/nic-logo-full.svg" alt="Nebraska Innovation Campus logo" />
+        </a>
+        <a href="#nic_menu" id="menu_toggle" class="menu-toggle icon-menu-white"><span>Menu</span></a>
+        <a href="#nic_search" id="search_toggle" class="search-toggle icon-search-white"><span>Search</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main_content" aria-labelledby="main_desc" tabindex="-1">
+
+    {{ messages }}
+    <div class="tabs">{{ drupal_block('local_tasks_block') }}</div>
+    {{ page.help }}
+
+    {{ page.content }}
+
+  </main>
+
+  <!-- !Footer -->
+  <footer class="footer" aria-labelledby="footer-desc">
+    <h2 id="footer-desc" class="text-hidden">Footer content</h2>
+    <div class="page-padding">
+      <a href="/" class="footer-logo">
+        <img src="{{ path_to_theme }}/images/site/svg/nic-logo-mark.svg" alt="Nebraska Innovation Campus logomark" />
+      </a>
+      <div class="footer-wrapper">
+        <div class="nic-contact-info">
+          <p class="nic-address">Nebraska Innovation Campus<br />
+            2021 Transformation Drive<br />
+            Lincoln, NE 68508 USA</p>
+          <p class="nic-phone"><a href="tel:402-472-5535" class="tel">402-472-5535</a></p>
+          <p class="nic-email"><a href="mailto:innovate@unl.edu">innovate@unl.edu</a></p>
+        </div>
+        <div class="nic-eeo-copyright">
+          <p class="eeo small">The University of Nebraska–Lincoln is an equal opportunity educator and employer. For current job openings, visit <a href="http://employment.unl.edu/">employment.unl.edu</a>.</p>
+          <p class="copyright small">&copy; {{ 'now' | date('Y') }} Nebraska Innovation Campus</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end page -->

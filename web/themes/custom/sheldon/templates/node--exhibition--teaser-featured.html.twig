@@ -1,0 +1,50 @@
+{% set large_image_uri = node.large_image|file_uri %}
+{% set small_image_uri = node.small_image|file_uri %}
+
+<!-- !Featured Content -->
+<section id="node-{{ node.id }}"{{ attributes.addClass('featured-content') }}>
+  <div class="featured-content-image-holder">
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      {% if large_image_uri is not null %}
+      <source srcset="{{ large_image_uri|image_style('16_9_2394x1347') }}" media="(min-width: 465px) and (max-height:591px), (min-width: 591px) and (max-height: 667px), (min-width: 752px)" class="featured-content-image">
+      {% endif %}
+      {% if small_image_uri is not null %}
+      <source srcset="{{ small_image_uri|image_style('16_9_960x540') }}" media="" class="featured-content-image">
+      {% endif %}
+      <!--[if IE 9]></video><![endif]-->
+      <img src="{{ large_image_uri|image_style('16_9_2394x1347') }}" alt="{{ alt }}" class="featured-content-image" />
+    </picture>
+  </div>
+  <div class="page-padding">
+    <div class="featured-content-info">
+      <div class="card">
+        <div class="grid-set">
+          <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
+            <h1 class="tab-heading text-hidden">Featured Exhibition</h1>
+            {{ title_prefix }}
+            <h2 class="exhibition-heading"><a href="{{ url }}">{{ label }}</a></h2>
+            {{ title_suffix }}
+            {% if node.ongoing.value != '1' %}
+              {{ content.exhibition_date }}
+            {% endif %}
+          </div>
+          <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
+            <p class="featured-content-teaser">{{ content.body }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#
+  Hide duplicates in views-view--exhibitions-front--block-1,
+  which displays node--exhibition--teaser-centered.
+  This replaces using the views_exclude_previous module which is no longer supported.
+#}
+<style>
+  .exhibitions-abbr-teasers .node-{{ node.id }} {
+    display: none !important;
+  }
+</style>

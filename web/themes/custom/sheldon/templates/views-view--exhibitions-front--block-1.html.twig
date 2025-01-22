@@ -1,0 +1,34 @@
+{% if header %}
+  <header>
+    {{ header }}
+  </header>
+{% endif %}
+
+{{ exposed }}
+{{ attachment_before }}
+
+      {% if rows -%}
+        {{ rows }}
+      {% elseif empty -%}
+        {{ empty }}
+      {% endif %}
+
+    {{ pager }}
+
+    {{ attachment_after }}
+
+    {% if more %}
+      <div class="grid-set-full">
+        <div class="grid-col">
+          {{ more }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}

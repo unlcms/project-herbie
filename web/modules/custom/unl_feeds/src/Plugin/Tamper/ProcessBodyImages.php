@@ -62,8 +62,8 @@ class ProcessBodyImages extends TamperBase {
    */
   public function tamper($data, TamperableItemInterface $item = NULL) {
     // Get img tags.
-    $dom = new DOMDocument();
-    @$dom->loadHTML($data, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    $dom = new DOMDocument('1.0', 'UTF-8');
+    @$dom->loadHTML(mb_convert_encoding($data, 'HTML-ENTITIES', 'UTF-8'));
     $xpath = new DOMXpath($dom);
 
     $nodes = $xpath->query("/");

@@ -1,0 +1,43 @@
+{%
+  set classes = [
+   dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'events',
+  'grid-set',
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class ="bp752-grid-col-one-third interior-intro">
+    {{ title_prefix }}
+    <h2>{{ view.title }}</h2>
+    {{ title_suffix }}
+  </div>
+  <div class="bp752-grid-col-two-thirds">
+
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
+
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+  </div>
+</div>

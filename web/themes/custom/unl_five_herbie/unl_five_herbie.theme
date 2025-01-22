@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Cache\Cache;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 use Drupal\link\Plugin\Field\FieldType\LinkItem;
@@ -76,6 +77,17 @@ function unl_five_herbie_preprocess_block(&$variables) {
   $config = \Drupal::config('system.site');
   $variables['name_of_site'] = $config->get('name');
 
+  // Set a variable if the request is for a /sharedcode/% HTML snippet
+  // so that the UNL Framework includes can be hidden in Twig.
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (\Drupal::service('path.matcher')->matchPath($current_path, '/sharedcode/*')) {
+    $variables['unl_sharedcode'] = true;
+
+    $block = Block::load('unl_five_herbie_mainnavigation');
+    $cache_tags_to_invalidate = $block->getCacheTagsToInvalidate();
+    Cache::invalidateTags($cache_tags_to_invalidate);
+  }
+
   // Set $bundle var for custom block entities.
   $bundle = NULL;
   if (isset($variables['content']['#block_content'])) {
@@ -110,19 +122,19 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['data']['host'] = \Drupal::request()->getHost();
     $group = _unl_five_get_current_group();
 
-   if ($group) {
-     if($variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
+    if ($group && $variables['elements']['#id'] == 'unl_five_herbie_contactinfo') {
       $variables['hide_block'] = TRUE;
-     }
-   }
-  }
-  // If it's a group page, hide main site's Related Links block.
-  if($variables['elements']['#id'] == "unl_five_herbie_relatedlinks") {
-   $group = _unl_five_get_current_group();
-    if ($group) {
-     $variables['hide_related_links_block'] = TRUE;
     }
-   }
+  }
+
+  // If it's a group page, hide main site's Related Links block.
+  if (isset($variables['elements']['#id']) && $variables['elements']['#id'] == 'unl_five_herbie_relatedlinks') {
+    $group = _unl_five_get_current_group();
+    if ($group) {
+      $variables['hide_related_links_block'] = TRUE;
+    }
+  }
+
   // Make section Layout Builder Block Styles array available to each block in the layout.
   // Values can be accessed in a Twig template with data.block_lbs, see unl_five_herbie_preprocess_block().
   if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
@@ -136,7 +148,6 @@ function unl_five_herbie_preprocess_block(&$variables) {
     $variables['content']['#block_content']->__set('#block_lbs', $block_layout_builder_styles);
   }
 }
-
 
 /**
  * Implements template_preprocess_node__TYPE().
@@ -221,13 +232,13 @@ function unl_five_herbie_preprocess_field(&$variables) {
 
   if (in_array($field_name, $ctaFields)) {
     $block_background = $variables['element']['#object']->__get('#block_lbs');
-    $block_background = $variables['element']['#object']->__get('#block_lbs');
     switch ($field_name) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
-          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
+          if (is_array($block_background) && (in_array('block_background_style_brand', $block_background) || in_array('block_background_style_dark', $block_background))) {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary dcf-uppercase dcf-d-block unlcms-cta-link-width';
-          } else {
+          }
+          else {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary dcf-uppercase dcf-d-block unlcms-cta-link-width';
           }
         }
@@ -246,7 +257,7 @@ function unl_five_herbie_preprocess_field(&$variables) {
         $block_background = $variables['element']['#object']->__get('#block_lbs');
 
         foreach ($variables['items'] as $key => $item) {
-          if(in_array("block_background_style_brand", $block_background) ||in_array("block_background_style_dark", $block_background) ) {
+          if (is_array($block_background) && (in_array('block_background_style_brand', $block_background) || in_array('block_background_style_dark', $block_background))) {
             $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
           }
           else {
@@ -423,7 +434,9 @@ function unl_five_herbie_preprocess_layout(&$variables) {
         $variables['region_attributes']['first']->removeClass('dcf-col-50%-start@md');
         $variables['region_attributes']['first']->removeClass('dcf-col-67%-start@md');
         $variables['region_attributes']['first']->removeClass('dcf-col-75%-start@md');
-        $variables['region_attributes']['second']->addClass('dcf-d-none');
+        if (isset($variables['region_attributes']['second'])) {
+          $variables['region_attributes']['second']->addClass('dcf-d-none');
+        }
       }
     }
   }

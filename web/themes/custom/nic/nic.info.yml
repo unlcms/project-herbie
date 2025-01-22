@@ -1,0 +1,32 @@
+name: NIC
+type: theme
+base theme: false
+description: 'Custom theme for Nebraska Innovation Campus.'
+core_version_requirement: ^10 || ^11
+
+libraries:
+  - nic/global-styling
+  - nic/nic.js
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+  webform/webform.element.counter:
+    js:
+      js/webform.element.counter.js: js/webform.element.counter.js
+  webform/webform.element.telephone:
+    js:
+      js/webform.element.telephone.js: js/webform.element.telephone.js
+
+regions:
+  search: Search
+  navigation: Navigation
+  header_menu: Header menu
+  page_top: Page top
+  page_bottom: Page bottom
+
+  content: Content
+
+  footer_contact: Footer contact
+  footer_menu: Footer menu

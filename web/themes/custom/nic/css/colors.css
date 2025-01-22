@@ -1,0 +1,106 @@
+
+/* ---------- Color Module Styles ----------- */
+
+/** Links **/
+a {
+    color: #d00000
+}
+
+a:link {
+    color: #d00000
+}
+
+a:active, a:visited {
+    color: #9d0000
+}
+
+a.button, input[type=submit] {
+    border: 1px solid #d00000;
+    background-color: #d00000
+}
+
+a.button:hover, input[type=submit]:hover {
+    background-color: #9d0000
+}
+
+a.button:focus, input[type=submit]:focus {
+    box-shadow: 0 0 8px 0 #d00000
+}
+
+a.button:active, a.button:visited, input[type=submit]:active, input[type=submit]:visited {
+    color: #fff;
+    background-color: #9d0000
+}
+
+a.button[disabled], input[type=submit][disabled] {
+    background-color: #963838;
+    color: #f2f2f2
+}
+
+a.news-event-photo:hover {
+    border: 1px solid #d00000;
+    transition: border .3s ease-out
+}
+
+/** Header **/
+.not-front .header {
+    background-color: #616265;
+    background-image: -moz-linear-gradient(top, #616265 0%, #616266 100%);
+    background-image: -ms-linear-gradient(top, #616265 0%, #616266 100%);
+    background-image: -o-linear-gradient(top, #616265 0%, #616266 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #616265), color-stop(1, #616266));
+    background-image: -webkit-linear-gradient(top, #616265 0%, #616266 100%);
+    background-image: linear-gradient(top, #616265 0%, #616266 100%);
+}
+
+/** Header Links **/
+.primary-menu a, .secondary-menu a, .social-media-links a,
+.csstransitions .primary-menu a, .csstransitions .secondary-menu a, .csstransitions .social-media-links a {
+    color: #dfe0e0;
+}
+
+/** Stripe **/
+.front .not-hero:before, .not-front .header .page-padding:before {
+    background: transparent linear-gradient(to right, #d00001, #40b7e8) 0 0 repeat-x;
+    content: "";
+    height: 6px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/** bg **/
+html {
+    background: #ffffff;
+}
+
+/** text **/
+main,
+.not-hero p {
+    color: #616161;
+}
+
+/** footer **/
+.footer,
+.backgroundsize.svg .footer {
+    background-color: #616267;
+    color: #dfe0e1;
+}
+.footer a, .footer a:active, .footer a:visited,
+.footer .secondary-menu > li > a {
+    color: #dfe0e1;
+}
+
+/** other **/
+.webform-component--e-mail .form-text:hover, .webform-component--first-name .form-text:hover, .webform-component--last-name .form-text:hover, .webform-component--phone-number .form-text:hover {
+    border-left: 2.618em solid #40b7e8;
+}
+
+@media (min-width: 46.979em) {
+    .primary-menu li > ul {
+        background-color: #d00000;
+    }
+    .primary-menu li > ul::before {
+        border-bottom: 12px solid #d00000;
+    }
+}

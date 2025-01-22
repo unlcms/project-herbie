@@ -12,6 +12,7 @@ global_role: null
 group_type: group_subsite
 permissions:
   - 'access group_node overview'
+  - 'create group_node:archive_page entity'
   - 'create group_node:archive_page relationship'
   - 'create group_node:book entity'
   - 'create group_node:book relationship'

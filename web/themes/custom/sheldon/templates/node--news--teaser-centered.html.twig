@@ -1,0 +1,28 @@
+{#
+  Add a node ID class so that node--news--teaser-featured can hide
+  duplicate items.
+#}
+{%
+  set classes = [
+    'exhibition-listing',
+    'featured-exhibition',
+    'node-' ~ node.id,
+  ]
+  %}
+<div id="node-{{ node.id }}"{{ attributes.addClass(classes) }}>
+  <div class="grid-set">
+    <div class="bp465-grid-col-one-third bp956-grid-col-full">
+      <a href="{{ url }}" class="art-image">{{ content.n_news_image }}</a>
+    </div>
+    <div class="bp465-grid-col-two-thirds bp956-grid-col-full">
+      {{ title_prefix }}
+      <h3{{ title_attributes.addClass('exhibition-heading') }}>
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+      {{ title_suffix }}
+      <p class="exhibition-abbr-teaser">
+        {{ node.body.summary }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+.add:before,
+.icon-add { background-image: url('png/add.png'); background-repeat: no-repeat; }
+
+.bookmarkLink a:before,
+.icon-bookmark { background-image: url('png/bookmark.png'); background-repeat: no-repeat; }
+
+.icon-calendar { background-image: url('png/calendar.png'); background-repeat: no-repeat; }
+
+.icon-close-sm { background-image: url('png/close-sm.png'); background-repeat: no-repeat; }
+
+.icon-close { background-image: url('png/close.png'); background-repeat: no-repeat; }
+
+.icon-down-arrow-sm { background-image: url('png/down-arrow-sm.png'); background-repeat: no-repeat; }
+
+.icon-email { background-image: url('png/email.png'); background-repeat: no-repeat; }
+
+.icon-facebook:before,
+.icon-facebook { background-image: url('png/facebook.png'); background-repeat: no-repeat; }
+
+.icon-imls-logo { background-image: url('png/imls-logo.png'); background-repeat: no-repeat; }
+
+.icon-instagram:before,
+.icon-instagram { background-image: url('png/instagram.png'); background-repeat: no-repeat; }
+
+.elementNavigatorBack .arrowButton:before,
+.returnToResults a:before,
+.icon-left-arrow-sm { background-image: url('png/left-arrow-sm.png'); background-repeat: no-repeat; }
+
+.icon-prev:before,
+.icon-left-arrow { background-image: url('png/left-arrow.png'); background-repeat: no-repeat; }
+
+.icon-mail-add { background-image: url('png/mail-add.png'); background-repeat: no-repeat; }
+
+.icon-email:before,
+.icon-mail { background-image: url('png/mail.png'); background-repeat: no-repeat; }
+
+.icon-location:before,
+.icon-map-marker { background-image: url('png/map-marker.png'); background-repeat: no-repeat; }
+
+.icon-menu { background-image: url('png/menu.png'); background-repeat: no-repeat; }
+
+.remove:before,
+.icon-minus { background-image: url('png/minus.png'); background-repeat: no-repeat; }
+
+.elementNavigatorNext .arrowButton:before,
+.icon-right-arrow-sm { background-image: url('png/right-arrow-sm.png'); background-repeat: no-repeat; }
+
+.icon-next:before,
+.more-info:after,
+.icon-right-arrow { background-image: url('png/right-arrow.png'); background-repeat: no-repeat; }
+
+.icon-search-white { background-image: url('png/search-white.png'); background-repeat: no-repeat; }
+
+.icon-search { background-image: url('png/search.png'); background-repeat: no-repeat; }
+
+.icon-twitter:before,
+.icon-twitter { background-image: url('png/twitter.png'); background-repeat: no-repeat; }
+
+.icon-unl-logo { background-image: url('png/unl-logo.png'); background-repeat: no-repeat; }
+
+.icon-vimeo { background-image: url('png/vimeo.png'); background-repeat: no-repeat; }
+
+.icon-youtube:before,
+.icon-youtube { background-image: url('png/youtube.png'); background-repeat: no-repeat; }
+

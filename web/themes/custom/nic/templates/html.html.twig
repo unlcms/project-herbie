@@ -1,0 +1,68 @@
+{%
+  set body_classes = [
+    logged_in ? 'logged-in',
+    not root_path ? 'front' : 'not-front',
+    node_type ? 'node-type-' ~ node_type|clean_class,
+  ]
+%}
+<!DOCTYPE HTML>
+<html class="no-js"{{ html_attributes }}>
+
+<head>
+
+  <!-- !Meta -->
+  <meta name="author" content="Nebraska Innovation Campus" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+  <!-- !Title -->
+  <title>{{ head_title|safe_join(' | ') }}</title>
+
+  <!-- !Favicons -->
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ path_to_theme }}/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ path_to_theme }}/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ path_to_theme }}/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ path_to_theme }}/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ path_to_theme }}/favicons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ path_to_theme }}/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ path_to_theme }}/favicons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ path_to_theme }}/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ path_to_theme }}/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ path_to_theme }}/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ path_to_theme }}/favicons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ path_to_theme }}/favicons/apple-touch-icon-180x180.png" />
+  <link rel="icon" sizes="192x192" href="{{ path_to_theme }}/favicons/icon-hires.png" />
+  <link rel="icon" sizes="128x128" href="{{ path_to_theme }}/favicons/icon-normal.png" />
+  <meta name="application-name" content="<?php print $site_name; ?>"/>
+  <meta name="msapplication-TileColor" content="#616265"/>
+  <meta name="msapplication-TileImage" content="{{ path_to_theme }}/favicons/windows-8-tile.png"/>
+
+  <!-- !JavaScript (Head) -->
+  <script src="{{ path_to_theme }}/js/nic-polyfills.min.js"></script>
+  <script>
+      grunticon(["{{ path_to_theme }}/icons/output/icons.data.svg.css", "{{ path_to_theme }}/icons/output/icons.data.png.css", "{{ path_to_theme }}/icons/output/icons.fallback.css"]);
+  </script>
+  <noscript><link href="{{ path_to_theme }}/icons/output/icons.fallback.css" rel="stylesheet" /></noscript>
+
+  <!-- !Drupal -->
+  <head-placeholder token="{{ placeholder_token }}">
+  <css-placeholder token="{{ placeholder_token }}">
+  <js-placeholder token="{{ placeholder_token }}">
+
+</head>
+<body{{ attributes.addClass(body_classes) }}>
+
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+
+<!-- !JavaScript (Body) -->
+<script>document.write('<script src="{{ path_to_theme }}/js/jquery-1.11.3.min.js"><\/script>')</script>
+<script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+<script>window.jQuery.validator || document.write('<script src="{{ path_to_theme }}/js/jquery.validate.min.js"><\/script>')</script>
+<script src="//cdn.jsdelivr.net/underscorejs/1.8.3/underscore-min.js"></script>
+<script>window._ || document.write('<script src="{{ path_to_theme }}/js/underscore.min.js"><\/script>')</script>
+<js-bottom-placeholder token="{{ placeholder_token }}">
+<script src="{{ path_to_theme }}/js/unlalert.js"></script>
+
+</body>
+</html>

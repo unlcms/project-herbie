@@ -1,0 +1,23 @@
+<div id="node-{{ node.id }}"{{ attributes.addClass('events event-detail') }}>
+  <div class="grid-set">
+    <div class="grid-col">
+      <h2 class="tab-heading">Events</h2>
+    </div>
+  </div>
+  <div class="grid-set">
+    <div class="bp591-grid-col-two-thirds">
+      <article class="event-listing">
+        <header>
+          <h4 class="event-heading">{{ label }}</h4>
+          <span class="subhead">
+            <span class="event-date">{{ content.event_date_start }}</span>
+            <span class="event-location">{{ content.event_map_link }}</span>
+          </span>
+        </header>
+        <div{{ content_attributes }}>
+          {{ content.body }}
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
