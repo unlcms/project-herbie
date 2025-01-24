@@ -6,16 +6,12 @@
 #}
 {% extends "block.html.twig" %}
 {% block content %}
-  {% if unl_sharedcode is not defined %}
     {% include wdn.directory ~ "/includes/global/nav-menu-1.html" %}
     {% include wdn.directory ~ "/includes/global/nav-toggle-btn.html" %}
     {% include wdn.directory ~ "/includes/global/nav-menu-child-1.html" %}
-  {% endif %}
   <!-- InstanceBeginEditable name="navlinks" -->
   {{ content }}
   <!-- InstanceEndEditable -->
-  {% if unl_sharedcode is not defined %}
     {% include wdn.directory ~ "/includes/global/nav-menu-child-2.html" %}
     {% include wdn.directory ~ "/includes/global/nav-menu-2.html" %}
-  {% endif %}
 {% endblock %}
