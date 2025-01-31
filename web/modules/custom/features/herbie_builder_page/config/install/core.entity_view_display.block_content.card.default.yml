@@ -11,7 +11,7 @@ dependencies:
     - field.field.block_content.card.b_card_overline
     - field.field.block_content.card.b_card_subhead
   module:
-    - link
+    - linkit
     - text
 id: block_content.card.default
 targetEntityType: block_content
@@ -26,7 +26,7 @@ content:
     weight: 2
     region: content
   b_card_cta:
-    type: link
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -34,6 +34,7 @@ content:
       url_plain: false
       rel: ''
       target: ''
+      linkit_profile: default
     third_party_settings: {  }
     weight: 5
     region: content
@@ -46,7 +47,7 @@ content:
     weight: 0
     region: content
   b_card_headline_link:
-    type: link
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -54,6 +55,7 @@ content:
       url_plain: false
       rel: '0'
       target: '0'
+      linkit_profile: default
     third_party_settings: {  }
     weight: 1
     region: content

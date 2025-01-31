@@ -79,9 +79,6 @@ function unl_five_herbie_preprocess_block(&$variables) {
   // Set a variable if the request is for a /sharedcode/% HTML snippet
   // so that the UNL Framework includes can be hidden in Twig.
   $current_path = \Drupal::service('path.current')->getPath();
-  if (\Drupal::service('path.matcher')->matchPath($current_path, '/sharedcode/*')) {
-    $variables['unl_sharedcode'] = true;
-  }
 
   // Set $bundle var for custom block entities.
   $bundle = NULL;

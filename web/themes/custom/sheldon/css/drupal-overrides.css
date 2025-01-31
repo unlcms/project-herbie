@@ -31,3 +31,8 @@
 .content .layout__region--second {
   display: none !important;
 }
+
+/* Fix for logged-in contextual links wrapper */
+.exhibitions-abbr-teasers .contextual-region.media-entity {
+  position: initial;
+}
