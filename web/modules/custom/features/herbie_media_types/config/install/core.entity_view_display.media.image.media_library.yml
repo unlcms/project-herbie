@@ -12,7 +12,8 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
-    - image
+    - image_class
+    - svg_image
 id: media.image.media_library
 targetEntityType: media
 bundle: image
@@ -26,7 +27,13 @@ content:
       image_style: medium
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
+    third_party_settings:
+      image_class:
+        class: ''
     weight: 0
     region: content
 hidden:

@@ -49,6 +49,8 @@
 {% set idName = content.p_b_tab_item_title.0['#context']['value']|lower|replace({" ":"-"}) %}
 {% set idName = idName|replace({'"':""}) %}
 {% set idName =  'tab-' ~ idName %}
+{# Added unique_id to prevent duplicates when a user creates another Tabs component with the same title on the same page. #}
+{% set idName = unique_id(idName) %}
 {% set attributes = attributes ?: create_attribute() %}
 {% block paragraph %}
   <section{{attributes.setAttribute('id', idName) }}>

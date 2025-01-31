@@ -61,9 +61,9 @@
       <div class="dcf-ratio {{display_ratio}}">
         <iframe
           id="tableau-embed-{{string_lowercase(title_with_no_whitespace)}}"
-          class="tableau-embed dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray"
-          title="{{title}} | Tableau Visualization" allowtransparency="true"
-          allowfullscreen="true"
+          class="tableau-embed dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
+          title="{{title}} | Tableau Visualization"
+          allow="fullscreen"
           src="{{url_with_param}}">
         </iframe>
       </div>
@@ -71,9 +71,9 @@
       <div class="dcf-ratio {{display_ratio}}">
         <iframe
           id="embed-{{string_lowercase(title_with_no_whitespace)}}"
-          class="dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray"
-          title="{{title}}" allowtransparency="true"
-          allowfullscreen="true"
+          class="dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
+          title="{{title}}"
+          allow="fullscreen"
           src="{{url}}">
         </iframe>
       </div>

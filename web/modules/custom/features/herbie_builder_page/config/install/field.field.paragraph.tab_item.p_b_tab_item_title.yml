@@ -10,7 +10,7 @@ entity_type: paragraph
 bundle: tab_item
 label: 'Tab Item Title'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -37,8 +37,15 @@
  */
 #}
 {% set element_attributes = create_attribute() %}
-{% set element_attributes = element_attributes.addClass(['dcf-subhead', 'unl-font-sans', 'unl-dark-gray']) %}
 
 {% for item in items %}
+  {% set card_block_background = item.block_background|first %}
+
+  {% if card_block_background == "block_background_style_lighter" or card_block_background == "block_background_style_lightest" %}
+    {% set element_attributes = element_attributes.addClass(['dcf-subhead', 'unl-font-sans', 'unl-darker-gray']) %}
+  {% else %}
+    {% set element_attributes = element_attributes.addClass(['dcf-subhead', 'unl-font-sans', 'unl-dark-gray']) %}
+  {% endif %}
+
   <p {{ element_attributes }}>{{ item.content }}</p>
 {% endfor %}
