@@ -10,7 +10,7 @@
         <p><a href="{{ content.event_link }}" class="more-info-link">Read More<span class="text-hidden">about "{{ label }}"</span></a></p>
       </div>
       <div class="bp591-grid-col-one-third" style="padding-top:3em;">
-        {% if event_image %}
+        {% if node.event_image %}
           {{ content.event_image }}
         {% else %}
           <img src="{{ path_to_theme }}/images/news/NIC_Logo_Horiz_CGray10_R_0.png">
