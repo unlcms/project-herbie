@@ -71,12 +71,12 @@
                     {% if node.n_person_phone.value %}
                       {% set filtered_phone_number = preg_replace('/[^0-9]/', '', node.n_person_phone.value) %}
                         <a class="dcf-txt-decor-hover" href="tel:{{filtered_phone_number}}" itemprop="telephone">
-                        <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
-
-                        {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
-                          <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus
-                            {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
-                        {% endif %}
+                          <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
+                          {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
+                            <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus
+                              {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
+                          {% endif %}
+                        </a>
                       {% else %}
                         <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
                           <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
