@@ -335,6 +335,9 @@
             "drupal/feeds": {
                 "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
             },
+            "drupal/google_tag": {
+                "Custom (gh#938) - Remove gtag.ajax to avoid jQuery dependency moving jQuery to the head": "patches/3213116-googe_tag-remove_jquery.patch"
+            },
             "drupal/group": {
                 "2815971 - More contexts needed": "patches/group-context-2815971-52.patch",
                 "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"

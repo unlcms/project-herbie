@@ -1,0 +1,13 @@
+diff --git a/google_tag.module b/google_tag.module
+index 4cd7f52..7fa9287 100644
+--- a/google_tag.module
++++ b/google_tag.module
+@@ -131,7 +131,7 @@ function google_tag_page_attachments(array &$attachments) {
+   // ^ returns the config which is active and the main tag ID.
+   // @todo if no config, only send events to datalayer.
+   $attachments['#attached']['library'][] = 'google_tag/gtag';
+-  $attachments['#attached']['library'][] = 'google_tag/gtag.ajax';
++  //$attachments['#attached']['library'][] = 'google_tag/gtag.ajax';
+   $attachments['#attached']['drupalSettings']['gtag'] = [
+     'tagId' => $config->getDefaultTagId(),
+     'otherIds' => $config->getAdditionalIds(),
