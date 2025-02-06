@@ -18,36 +18,41 @@ function unl_person_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Temporarily commented out until further research is conducted to determine
+ * when it’s appropriate to automatically unpublish a person after they leave the university,
+ * as there may be alumni and news items referencing these individuals. Also add a 404 logic.
+ *
  * Implements hook_cron().
  */
-function unl_person_cron() {
 
-  // Load all nodes of the 'person' content type.
-  $nids = \Drupal::entityQuery('node')
-    ->accessCheck(access_check: FALSE)  // Disable access checks.
-    ->condition('type', 'person')
-    ->execute();
+// function unl_person_cron() {
 
-  // Load the nodes.
-  $nodes = Node::loadMultiple($nids);
+//   // Load all nodes of the 'person' content type.
+//   $nids = \Drupal::entityQuery('node')
+//     ->accessCheck(access_check: FALSE)  // Disable access checks.
+//     ->condition('type', 'person')
+//     ->execute();
 
-  foreach ($nodes as $node) {
-    // Check if n_person_unldirectoryreference field has data.
-    if ($node->hasField(field_name: 'n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
-      if ($node->get('n_person_unldirectoryreference')->getValue()) {
-        $n_person_unldirectoryreference_value = $node->get('n_person_unldirectoryreference')->getValue()[0]['target_id'];
-        $person_unldirectoryreference_data = file_get_contents('https://directory.unl.edu/service.php?format=json&uid=' . $n_person_unldirectoryreference_value);
-      }
-      // Check is person still exists in directorys
-      if ($person_unldirectoryreference_data == false) {
-        // Unpublish person node if person no longer exists in directory
-        $node->setUnpublished();
-        $node->set('moderation_state', value: "unpublished");
-        $node->save();
-      }
-    }
-  }
-}
+//   // Load the nodes.
+//   $nodes = Node::loadMultiple($nids);
+
+//   foreach ($nodes as $node) {
+//     // Check if n_person_unldirectoryreference field has data.
+//     if ($node->hasField(field_name: 'n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
+//       if ($node->get('n_person_unldirectoryreference')->getValue()) {
+//         $n_person_unldirectoryreference_value = $node->get('n_person_unldirectoryreference')->getValue()[0]['target_id'];
+//         $person_unldirectoryreference_data = file_get_contents('https://directory.unl.edu/service.php?format=json&uid=' . $n_person_unldirectoryreference_value);
+//       }
+//       // Check is person still exists in directory
+//       if ($person_unldirectoryreference_data == false) {
+//         // Unpublish person node if person no longer exists in directory
+//         $node->setUnpublished();
+//         $node->set('moderation_state', value: "unpublished");
+//         $node->save();
+//       }
+//     }
+//   }
+// }
 
 /**
  * Implements hook_form_alter().
