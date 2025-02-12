@@ -3,7 +3,7 @@
 {% set unlcms_abbr_teaser_person_classes = ['unlcms-abbr-teaser-person', 'dcf-d-grid', 'dcf-col-gap-4', 'dcf-row-gap-2'] %}
 
 {{ attach_library('unl_five_herbie/person') }}
-<li {{ attributes.addClass(classes) }} itemscope itemtype="https://schema.org/Person">
+<li {{ attributes.addClass(classes).remove('role') }} itemscope itemtype="https://schema.org/Person">
   <div {{ content_attributes.addClass(unlcms_abbr_teaser_person_classes) }}>
     <div class="unlcms-abbr-teaser-person-img dcf-flex-shrink-0">
       {% if node.n_person_photo.value %}

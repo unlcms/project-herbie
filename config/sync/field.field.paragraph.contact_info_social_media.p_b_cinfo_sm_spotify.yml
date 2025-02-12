@@ -10,7 +10,7 @@ field_name: p_b_cinfo_sm_spotify
 entity_type: paragraph
 bundle: contact_info_social_media
 label: Spotify
-description: "Enter username/userid without the '@' symbol."
+description: "Only enter username/userid without the '@' symbol."
 required: false
 translatable: false
 default_value: {  }

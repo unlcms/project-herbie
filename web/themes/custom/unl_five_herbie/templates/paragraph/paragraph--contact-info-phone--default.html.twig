@@ -78,14 +78,16 @@
                 {% if content.p_b_cinfo_phone_header.0 %}
                   <div class="dcf-pl-6 dcf-bold" aria-hidden="true">{{phoneHeader}}</div>
                 {% endif %}
-                <a class="dcf-pl-6" href="tel:+1{{phoneNumberDetails.0|replace({'-':''})}};{{phoneNumberDetails.1}}" itemprop="telephone">
+                {% set filtered_phone_number = preg_replace('/[^0-9]/', '', phoneNumberDetails.0) %}
+                <a class="dcf-pl-6" href="tel:{{filtered_phone_number}}" itemprop="telephone">
                   <span class="dcf-txt-nowrap">{{phoneNumberDetails.0 ~ ' ext. ' ~ phoneNumberDetails.1 }}</span>
                 </a>
               {% else  %}
                 {% if content.p_b_cinfo_phone_header.0 %}
                   <div class="dcf-pl-6 dcf-bold" aria-hidden="true">{{phoneHeader}}</div>
                 {% endif %}
-                <a class="dcf-pl-6" href="tel:+1{{phoneNumberDetails.0|replace({'-':''})}}" itemprop="telephone">
+                {% set filtered_phone_number = preg_replace('/[^0-9]/', '', phoneNumberDetails.0) %}
+                <a class="dcf-pl-6" href="tel:{{filtered_phone_number}}" itemprop="telephone">
                   <span class="dcf-txt-nowrap">{{phoneNumberDetails.0}}</span>
                 </a>
               {% endif %}
