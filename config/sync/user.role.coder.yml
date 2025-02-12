@@ -14,7 +14,6 @@ dependencies:
     - field_css
     - field_ui
     - filter
-    - google_analytics
     - google_tag
     - group
     - key
@@ -29,6 +28,7 @@ dependencies:
     - system
     - taxonomy
     - twig_ui
+    - unl_webform
     - views_ui
 _core:
   default_config_hash: pjZngoP_kq80I1xBCMa6k4sk--mrzHRIpBC2HjNgftE
@@ -45,7 +45,6 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
-  - 'add JS snippets for google analytics'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
