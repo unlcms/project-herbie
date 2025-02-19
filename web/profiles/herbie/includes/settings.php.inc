@@ -24,6 +24,16 @@ $settings['trusted_host_patterns'] = [
  */
 $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
 
+/**
+ * Honeypot time limit.
+ */
+$config['honeypot.settings']['time_limit'] = 20;
+
+
+
+
+
+
 /*
  * Set environment-specific configuration.
  */
@@ -133,4 +143,3 @@ if (PHP_SAPI == "cli" && ini_get('memory_limit') !== '-1') {
     ini_set('memory_limit', '512M');
   }
 }
-

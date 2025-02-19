@@ -343,6 +343,10 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^civil\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/civil/$1 [R=301,L]
 
+  # eweek
+  RewriteCond %{HTTP_HOST} ^eweek\.unl\.edu$
+  RewriteRule ^(.*)$ https://cms.unl.edu/engineering/e-week/$1 [R=301,L]
+
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/mem/$1 [R=301,L]
