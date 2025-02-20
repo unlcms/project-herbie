@@ -8,7 +8,7 @@
     <a href="{{ url }}" class="more-info-link">Read More<span class="text-hidden">of "{{ label }}"</span></a>
   </div>
   <div class="bp591-grid-col-one-third">
-    {% if event_image %}
+    {% if node.event_image %}
       {{ content.event_image }}
     {% else %}
       <img src="{{ path_to_theme }}/images/news/NIC_Logo_Horiz_CGray10_R_0.png">

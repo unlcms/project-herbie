@@ -22,6 +22,10 @@
   RewriteCond %{HTTP_HOST} ^facultyaffairs\.unl\.edu$
   RewriteRule ^(.*)$ https://executivevc.unl.edu/faculty/ [R=301,L]
 
+  # facultyombuds
+  RewriteCond %{HTTP_HOST} ^facultyombuds\.unl\.edu$
+  RewriteRule ^(.*)$ https://executivevc.unl.edu/ombuds/ [R=301,L]
+
   # huskertech (old paths from when it was part of the ITS site)
   RewriteCond %{HTTP_HOST} ^its\.unl\.edu$
   RewriteRule ^huskertech(.*)$ https://huskertech.unl.edu/ [R=301,L]
@@ -52,6 +56,10 @@
   RewriteRule ^~tsymbal(.*)$ https://tsymbal.unl.edu$1 [R=301,L]
   RewriteCond %{HTTP_HOST} ^physics\.unl\.edu$
   RewriteRule ^~(.*)$ https://www.physics.unl.edu/~$1 [R=301,L]
+
+  # reaffirm2016
+  RewriteCond %{HTTP_HOST} ^reaffirm2016\.unl\.edu$
+  RewriteRule ^(.*)$ https://executivevc.unl.edu/reaffirm-2016/ [R=301,L]
 
   # sheldon
   RewriteCond %{HTTP_HOST} sheldonartmuseum\.org
@@ -126,6 +134,10 @@
   # civil
   RewriteCond %{HTTP_HOST} ^civil\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/civil/$1 [R=301,L]
+
+  # eweek
+  RewriteCond %{HTTP_HOST} ^eweek\.unl\.edu$
+  RewriteRule ^(.*)$ https://cms.unl.edu/engineering/e-week/$1 [R=301,L]
 
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$

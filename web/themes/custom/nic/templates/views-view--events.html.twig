@@ -1,8 +1,47 @@
-<div class="not-hero basic">
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'not-hero basic',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
   <div class="page-padding">
+    {{ title_prefix }}
     <h1 id="main_desc">Events</h1>
-    {% for row in rows %}
-      {{ row }}
-    {% endfor %}
+    {{ title_suffix }}
+
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
+
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    
+    <div style="margin-top:6em">
+      {{ pager }}
+    </div>
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
   </div>
 </div>
