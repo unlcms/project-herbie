@@ -335,13 +335,56 @@ AddEncoding gzip svgz
   # ***********************************************************
   # engineering.unl.edu
 
+  # agen
+  RewriteCond %{HTTP_HOST} ^agen\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/agen/$1 [R=301,L]
+
   # bse
   RewriteCond %{HTTP_HOST} ^engineering\.unl\.edu$
   RewriteRule ^bse/(.*)$ https://bse.unl.edu/$1 [R=301,L]
 
+  # cee
+  RewriteCond %{HTTP_HOST} ^cee\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/cee/$1 [R=301,L]
+
+  # ceen
+  RewriteCond %{HTTP_HOST} ^ceen\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/ece/$1 [R=301,L]
+
+  # chme
+  RewriteCond %{HTTP_HOST} ^che\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^cheme\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/chme/$1 [R=301,L]
+
   # civil
   RewriteCond %{HTTP_HOST} ^civil\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/civil/$1 [R=301,L]
+
+  # completeengineer
+  RewriteCond %{HTTP_HOST} ^completeengineer\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/complete-engineer/$1 [R=301,L]
+
+  # durhamschool
+  RewriteCond %{HTTP_HOST} ^ae\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^ce\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^cem\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^ceng\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^cm-web\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^cm\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^const\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^durhamschool\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^durhamevents\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/durhamschool/$1 [R=301,L]
+
+  # ece
+  RewriteCond %{HTTP_HOST} ^ece\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^ee\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^elec\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/ece/$1 [R=301,L]
+
+  # era
+  RewriteCond %{HTTP_HOST} ^era\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/era/$1 [R=301,L]
 
   # eweek
   RewriteCond %{HTTP_HOST} ^eweek\.unl\.edu$
@@ -350,6 +393,20 @@ AddEncoding gzip svgz
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/mem/$1 [R=301,L]
+
+  # mme
+  RewriteCond %{HTTP_HOST} ^me\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^mech\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^mme\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/mme/$1 [R=301,L]
+
+  # pkfacademy
+  RewriteCond %{HTTP_HOST} ^pkfacademy\.unl\.edu$
+  RewriteRule ^(.*)$ https://cms.unl.edu/engineering/pkf-engineering-academy/$1 [R=301,L]
+
+  # sds
+  RewriteCond %{HTTP_HOST} ^sds\.unl\.edu$
+  RewriteRule ^(.*)$ https://cms.unl.edu/engineering/undergraduate-programs/signature-programs-events/senior-design-showcase/$1 [R=301,L]
 
   # ***********************************************************
   # HLFPA arts.unl.edu
