@@ -1,5 +1,4 @@
 bundle: herbie
 excluded:
   - filter.format.html_code
-  - google_analytics.settings
 required: true
