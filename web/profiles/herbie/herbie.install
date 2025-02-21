@@ -116,7 +116,7 @@ function herbie_update_8106(&$sandbox) {
 
   foreach ($nodes as $node) {
     if ($node->hasField('n_person_bio')) {
-      $node->get('n_person_bio')->first()->set('format', 'standard');
+      $node->get('n_person_bio')->format = 'standard';
       $node->save();
     }
   }
