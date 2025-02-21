@@ -3,17 +3,16 @@
 
 {{ attach_library('unl_five_herbie/person') }}
 
-<li {{ attributes.addClass(classes) }} itemscope itemtype="https://schema.org/Person">
-  <div {{ content_attributes.addClass(unlcms_centered_teaser_person_classes) }}>
+<li  {{attributes.addClass(classes).remove('role')}}  itemscope itemtype="https://schema.org/Person">
+  <div {{ content_attributes.addClass(unlcms_centered_teaser_person_classes)}}>
     <!-- Image -->
     <div class="unlcms-teaser-person-img dcf-flex-shrink-0">
-      <div class=" unlcms-person-img dcf-ratio dcf-ratio-1x1 unl-bg-light-gray dcf-circle">
+      <div class="unlcms-person-img dcf-ratio dcf-ratio-1x1 dcf-circle unl-bg-light-gray dcf-circle">
         {% if node.n_person_photo.value %}
           {{ content.n_person_photo }}
         {% elseif node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value %}
           {% set alt = 'Avatar for ' ~ node.label %}
-          <img
-            class="dcf-ratio-child dcf-obj-fit-cover" itemprop="image" src="{{ node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value }}?s=original" alt="{{ alt }}" />
+          <img class="dcf-ratio-child dcf-obj-fit-cover" itemprop="image" src="{{node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value}}?s=original" alt="{{ alt }}"/>
         {% else %}
           <div class="dcf-ratio-child dcf-d-flex dcf-ai-center dcf-jc-center unl-gray">
             <svg class="dcf-h-7 dcf-w-7 dcf-circle dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewbox="0 0 48 48">
@@ -24,14 +23,15 @@
       </div>
     </div>
 
-    <!-- Headline -->
     <div class="unlcms-centered-teaser-person-text dcf-as-center">
+      <!-- Headline -->
       {{ title_prefix }}
       <div class="dcf-lh-2 dcf-mb-1">
         <a href="{{ url }}" class="dcf-txt-h4 dcf-bold dcf-word-wrap dcf-card-link dcf-txt-decor-hover unl-ls-h" itemprop="name">
           {{ label }}
         </a>
       </div>
+
       {{ title_suffix }}
 
       {# Position #}
@@ -43,7 +43,6 @@
             {{ node.n_person_unldirectoryreference.entity.ee_unldir_title.value }}
           {% endif %}
         </span>
-
         {% if node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value or node.n_person_affiliation.value %}
           <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
             <span class="organization-unit dcf-d-block dcf-txt-sm">
@@ -52,15 +51,9 @@
               {% else %}
                 {% set affiliation = node.n_person_unldirectoryreference.entity.ee_unldir_unlhrprimarydepartment.value %}
               {% endif %}
-              <span itemprop="name">
-                {{ affiliation }}
-              </span>
+              <span itemprop="name"> {{ affiliation }}</span>
             </span>
-            <span class="organization-name dcf-d-none" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
-              <span itemprop="name">
-                University of Nebraska-Lincoln
-              </span>
-            </span>
+            <span class="organization-name dcf-d-none" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization"> <span itemprop="name"> University of Nebraska-Lincoln </span> </span>
           </span>
         {% endif %}
       </div>
@@ -90,27 +83,20 @@
 
               {# <a class="dcf-txt-decor-hover" href="tel:+14024727211" itemprop="telephone"> #}
               {% if node.n_person_phone.value %}
-                <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
-                    <span class="dcf-txt-nowrap">
-                      {{ node.n_person_phone.value }}
-                    </span>
-
-                  {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
-                    <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">
-                      On-campus
-                      {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}
-                    </small>
-                  {% endif %}
-                </a>
+                {% set filtered_phone_number = preg_replace('/[^0-9]/', '', node.n_person_phone.value) %}
+                  <a class="dcf-txt-decor-hover" href="tel:{{filtered_phone_number}}" itemprop="telephone">
+                    <span class="dcf-txt-nowrap">{{ node.n_person_phone.value }}</span>
+                      {% if (node.n_person_phone.value|slice(0, 7)) == '402-472' %}
+                        <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_phone.value }}">On-campus
+                          {{ node.n_person_phone.value|replace({ '402-472-': '2-' }) }}
+                        </small>
+                      {% endif %}
+                  </a>
               {% else %}
-                <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''}) }}" itemprop="telephone">
-                  <span class="dcf-txt-nowrap">
-                    {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}
-                  </span>
-
+                <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
+                  <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
                   {% if (node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
-                    <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">
-                      On-campus
+                    <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
                       {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}
                     </small>
                   {% endif %}
@@ -148,6 +134,8 @@
               {% endif %}
             </dd>
           {% endif %}
+
+
 
           <!-- Website -->
           {% if node.n_person_website.value %}

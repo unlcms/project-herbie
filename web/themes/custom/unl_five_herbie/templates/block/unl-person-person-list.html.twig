@@ -3,7 +3,7 @@
     {{ drupal_entity('node', nid, view_mode) }}
   {% endfor %}
 {% elseif view_mode == 'teaser_centered' %}
-  <ul class="dcf-d-flex dcf-flex-wrap dcf-jc-center unlcms-centered-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-12" role="list">
+  <ul class="dcf-d-flex dcf-flex-wrap dcf-jc-center unlcms-centered-teaser-person-list dcf-col-gap-vw dcf-row-gap-8" role="list">
     {% for nid in nodes %}
       {{ drupal_entity('node', nid, view_mode) }}
     {% endfor %}

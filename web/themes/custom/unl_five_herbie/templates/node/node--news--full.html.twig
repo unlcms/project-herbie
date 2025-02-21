@@ -51,7 +51,7 @@
                 {% endif %}
                 {% if credit is not empty %}
                   <small class="dcf-d-inline-block dcf-txt-xs dcf-italic">
-                    {{ content.n_news_image_credit }}
+                    {{ content.n_news_image_credit.0['#context'].value  }}
                   </small>
                 {% endif %}
               </figcaption>
@@ -83,7 +83,8 @@
               </a>
             </li>
             <li class="dcf-mb-0">
-              <a class="dcf-d-block dcf-h-6 dcf-w-6" href="http://twitter.com/share?text={{ node.label }}&url={{ fullUrl }}" aria-label="Share this article on X/Twitter">
+              {% set filtered_node_label = node.label|url_encode %}
+              <a class="dcf-d-block dcf-h-6 dcf-w-6" href="http://x.com/share?text={{filtered_node_label}}&url={{ fullUrl }}" aria-label="Share this article on X">
                 <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 48 48">
                   <path d="M28.5 20.3 46 0h-4.1L26.6 17.6 14.5 0H.5l18.3 26.7L.5 48h4.1l16-18.6L33.5 48h14l-19-27.7zm-5.7 6.6-1.9-2.7L6.2 3.1h6.4l11.9 17.1 1.9 2.7L41.8 45h-6.4L22.8 26.9z"></path>
                 </svg>
@@ -134,9 +135,9 @@
                           </div>
 
                           {% if personOneTestDetails.n_person_phone.value %}
-                            <a class="dcf-txt-decor-hover" href="tel:{{ personOneTestDetails.n_person_phone.value|replace({'-':''}) }}" itemprop="telephone">
+                              {% set filtered_phone_number = preg_replace('/[^0-9]/', '', personOneTestDetails.n_person_phone.value) %}
+                              <a class="dcf-txt-decor-hover" href="tel:{{filtered_phone_number}}" itemprop="telephone">
                               <span class="dcf-txt-nowrap">{{ personOneTestDetails.n_person_phone.value }}</span>
-
                               {% if (personOneTestDetails.n_person_phone.value|slice(0, 7)) == '402-472' %}
                                 <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ personOneTestDetails.n_person_phone.value }}">On-campus
                                   {{ personOneTestDetails.n_person_phone.value|replace({ '402-472-': '2-' }) }}</small>
@@ -201,18 +202,21 @@
               <ul class="dcf-list-bare dcf-mb-0 dcf-txt-xs ">
                 {% set related_links = node.n_news_related_links %}
                 <li class="unl-dark-gray" itemscope="" itemtype="https://schema.org/Person">
-                  {% for i, value in related_links %}
-                      <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
-                        <div class="dcf-h-4 dcf-w-4 unl-gray">
-                          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"></path>
-                            <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"></path>
-                            <path fill="none" d="M0 0h24v24H0z"></path>
-                          </svg>
-                        </div>
-                        {{ content.n_news_related_links[i]}}
-                      </dd>
-                  {% endfor %}
+                  <dl>
+                    <dt class="dcf-sr-only">Related Links</dt>
+                    {% for i, value in related_links %}
+                        <dd class="dcf-d-flex dcf-col-gap-2 dcf-ai-center">
+                          <div class="dcf-h-4 dcf-w-4 unl-gray">
+                            <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="m14.474 10.232-.706-.706a4.004 4.004 0 0 0-5.658-.001l-4.597 4.597a4.004 4.004 0 0 0 0 5.657l.707.706a3.97 3.97 0 0 0 2.829 1.173 3.973 3.973 0 0 0 2.827-1.172l2.173-2.171a.999.999 0 1 0-1.414-1.414l-2.173 2.17c-.755.756-2.071.757-2.828 0l-.707-.706a2.004 2.004 0 0 1 0-2.829l4.597-4.596c.756-.756 2.073-.756 2.828 0l.707.707a1.001 1.001 0 0 0 1.415-1.415z"></path>
+                              <path d="m20.486 4.221-.707-.706a3.97 3.97 0 0 0-2.829-1.173 3.977 3.977 0 0 0-2.827 1.172L12.135 5.5a.999.999 0 1 0 1.414 1.414l1.988-1.984c.755-.756 2.071-.757 2.828 0l.707.706c.779.78.779 2.049 0 2.829l-4.597 4.596c-.756.756-2.073.756-2.828 0a.999.999 0 0 0-1.414 0 .999.999 0 0 0-.001 1.414 4.001 4.001 0 0 0 5.657.001l4.597-4.597a4.005 4.005 0 0 0 0-5.658z"></path>
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                            </svg>
+                          </div>
+                          {{ content.n_news_related_links[i]}}
+                        </dd>
+                    {% endfor %}
+                 </dl>
                 </li>
               </ul>
            </div>

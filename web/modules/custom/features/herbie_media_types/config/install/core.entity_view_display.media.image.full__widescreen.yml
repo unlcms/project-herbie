@@ -15,7 +15,7 @@ dependencies:
     - dcf_lazyload
     - image_class
     - layout_builder
-    - responsive_image
+    - svg_image_responsive
 third_party_settings:
   layout_builder:
     enabled: false
@@ -31,6 +31,10 @@ content:
     settings:
       responsive_image_style: full__widescreen
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
     third_party_settings:
       image_class:
         class: ''

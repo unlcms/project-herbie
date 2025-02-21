@@ -42,11 +42,13 @@
     'dcf-mb-3',
     'dcf-txt-md',
     'unl-cream',
+    'dcf-bold',
+    'unl-ls-2'
   ]
 %}
 
-<div{{ attributes }}>
-  <h3{{ items[0].attributes.addClass(classes).setAttribute('itemprop','name') }}>
+<div{{ attributes.addClass(classes) }}>
+  <span {{ items[0].attributes.setAttribute('itemprop','name') }}>
   {{ items[0].content }}
-  </h3>
+  </span>
 </div>
