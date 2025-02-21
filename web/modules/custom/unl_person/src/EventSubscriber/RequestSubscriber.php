@@ -46,7 +46,6 @@ class RequestSubscriber implements EventSubscriberInterface {
         if ($role->hasPermission($permission)) {
           // Revoke permissions if they were previously set to allow access.
           user_role_revoke_permissions($role->id(), [$permission]);
-          \Drupal::logger('mymodule')->notice("Revoked permission '$permission' for role '$role_name' on node .");
         }
       }
     }
