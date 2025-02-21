@@ -105,3 +105,19 @@ function herbie_update_8105(&$sandbox) {
   $config->set('settings.max_length', 1000);
   $config->save(TRUE);
 }
+
+/**
+ * Update WYSIWYG format for the Body field (n_person_bio) in the Person content type. From Simple to Standard.
+ */
+function herbie_update_8106(&$sandbox) {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  // Load nodes of type 'person'
+  $nodes = $storage->loadByProperties(['type' => 'person']);
+
+  foreach ($nodes as $node) {
+    if ($node->hasField('n_person_bio')) {
+      $node->get('n_person_bio')->first()->set('format', 'standard');
+      $node->save();
+    }
+  }
+}
