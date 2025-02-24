@@ -63,7 +63,7 @@
 }
 
 @media screen and (min-width: 23.68em) {
-  .unlcms-teaser-person-list { grid-template-columns: repeat( auto-fit, minmax(15rem, 1fr) ); }
+  .unlcms-teaser-person-list { grid-template-columns: repeat( auto-fill, minmax(15rem, 1fr) ); }
 }
 
 /* Abbreviated Teaser */
@@ -75,7 +75,7 @@
 }
 
 @media screen and (min-width: 23.68em) {
-  .unlcms-abbr-teaser-person-list { grid-template-columns: repeat( auto-fit, minmax(13.32rem, 1fr) ); }
+  .unlcms-abbr-teaser-person-list { grid-template-columns: repeat( auto-fill, minmax(13.32rem, 1fr) ); }
 }
 
 .unlcms-grid-person-detail-bio h2,
