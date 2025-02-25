@@ -201,6 +201,7 @@
         "drupal/queue_ui": "^3.1",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.5",
+        "drupal/redis": "^1.9",
         "drupal/replicate": "^1.2",
         "drupal/replicate_ui": "^1.1",
         "drupal/salesforce": "^5.0",
