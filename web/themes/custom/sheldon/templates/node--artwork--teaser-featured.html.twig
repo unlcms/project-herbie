@@ -6,7 +6,7 @@
   <div class="bp591-grid-col-one-third">
     <p class="modal-gallery-attribution tombstone">
       <span class="tombstone-artist">{{ content.artist }}</span>
-      <span class="tombstone-location">{% if artist_year_of_death %}{{ content.artist_place_of_birth }} {{ content.artist_year_of_birth }}<span class="endash">&ndash;</span>{{ content.artist_place_of_death }} {{ content.artist_year_of_death }}{% else %}born {{ content.artist_place_of_birth }} {{ content.artist_year_of_birth }}{% endif %}</span>
+      <span class="tombstone-location">{% if node.artist_year_of_death.value %}{{ content.artist_place_of_birth }} {{ content.artist_year_of_birth }}<span class="endash">&ndash;</span>{{ content.artist_place_of_death }} {{ content.artist_year_of_death }}{% else %}born {{ content.artist_place_of_birth }} {{ content.artist_year_of_birth }}{% endif %}</span>
       <span class="tombstone-title"><em>{{ content.artwork_title }}</em></span>
       <span class="tombstone-medium">{{ content.medium }}, {{ content.creation_date }}</span>
       <span class="tombstone-dimensions">{{ content.dimensions }} inches</span>

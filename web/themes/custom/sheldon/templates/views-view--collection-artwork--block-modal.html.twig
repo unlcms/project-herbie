@@ -1,0 +1,51 @@
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'modal-overlay modal-overlay-gallery',
+  ]
+%}
+<!-- !Modal Gallery -->
+<section{{ attributes.addClass(classes) }} id="modal_gallery" role="dialog" aria-expanded="false" aria-labelledby="modal_gallery_title">
+  <div class="modal-content modal-gallery">
+    <h2 id="modal_gallery_title" class="text-hidden">Gallery of Artwork Images</h2>
+    <a href="" id="prev-gallery-image" class="icon-prev"><span class="text-hidden">Previous Image</span></a>
+    <a href="" id="next-gallery-image" class="icon-next"><span class="text-hidden">Next Image</span></a>
+
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
+
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
+
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+
+    <button id="gallery_close" class="close-modal icon-close"><span>Close</span></button>
+  </div>
+</section>
