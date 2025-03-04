@@ -22,12 +22,30 @@
   display: block !important;
 }
 
+/* Make cards equal height. A card will only have 100% height if it
+   is the only card in a column. Also account for Layout Builder's
+   "Add component" and multiple cards in one column.
+ */
+.dcf-card {
+  height: 100%;
+}
+.dcf-card ~ .dcf-card {
+  height: auto;
+}
+.dcf-card:has(+ .dcf-card) {
+  height: auto;
+}
+.dcf-card ~ .layout-builder__add-block {
+  position: relative;
+  top: -5.1em;
+}
+.dcf-card ~ .dcf-card ~ .layout-builder__add-block {
+  position: static;
+}
+
 /* This should apply only on a card! */
 /* Gets overridden with code in global so I have moved this code to global.css/ This CSS block might not be necessary
 
 /* div.dcf-card-block .dcf-subhead  {
   color: #6b6b68;
   } */
-
-
-
