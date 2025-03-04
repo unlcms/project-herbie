@@ -26,26 +26,29 @@
  */
 #}
 {{ attach_library('unl_five_herbie/tabs') }}
-{% if content.b_tabs_title.0 %}
-  {% set idName = content.b_tabs_title.0['#context']['value']|lower|replace({" ":"-"}) %}
-  {% set idName = idName|replace({'"':""}) %}
-  {# Added unique_id to prevent duplicates when a user creates another Tabs component with the same title on the same page. #}
-  {% set idName = unique_id(idName) %}
+{% block content %}
+  {% if content.b_tabs_title.0 %}
+    {% set tab_objects = content.b_tabs_title['#object'] %}
+    {% set tab_id = tab_objects.get('id').value %}
+    {% set idName = content.b_tabs_title.0['#context']['value']|lower|replace({" ":"-"}) %}
+    {% set idName = idName|replace({'"':""}) %}
+    {# Append the tab's component ID to the ID name to create a unique identifier, preventing duplicates when a user adds another Tabs component with the same title on the same page. #}
+    {% set idName = 'tabs-component-' ~ idName ~ '-' ~ tab_id %}
+  {% else %}
+      {% set idName = "tabs-component-" ~ content['#block_content'].get('id').value %}
+  {% endif %}
 
-{% else %}
-    {% set idName = unique_id("tabs-component-") %}
-{% endif %}
+  {% set attributes = attributes ?: create_attribute() %}
+  {% set attributes = attributes.addClass(['dcf-tabs']) %}
 
-{% set attributes = attributes ?: create_attribute() %}
-{% set attributes = attributes.addClass(['dcf-tabs']) %}
-<div{{attributes.setAttribute('id', idName) }}>
-  {{ title_prefix }}
-    {% if content.b_tabs_title.0 %}
-    <h2>{{ content.b_tabs_title }}</h2>
-    {% endif %}
-  {{ title_suffix }}
-    {% block content %}
-      {{ content.b_tab_item }}
-    {% endblock %}
+  <div{{attributes.setAttribute('id', idName) }}>
+    {{ title_prefix }}
+      {% if content.b_tabs_title.0 %}
+      <h2>{{ content.b_tabs_title }}</h2>
+      {% endif %}
+    {{ title_suffix }}
+    {{ content.b_tab_item }}
+  </div>
+{% endblock %}
 
-</div>
+
