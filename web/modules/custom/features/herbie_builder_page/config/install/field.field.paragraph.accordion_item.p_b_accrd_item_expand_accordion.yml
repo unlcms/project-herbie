@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.p_b_accrd_item_expand_accordion
+    - paragraphs.paragraphs_type.accordion_item
+id: paragraph.accordion_item.p_b_accrd_item_expand_accordion
+field_name: p_b_accrd_item_expand_accordion
+entity_type: paragraph
+bundle: accordion_item
+label: 'Expand Accordion'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
