@@ -20,16 +20,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  p_b_accrd_item_expand_accordion:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
   p_b_accrd_item_title:
     type: string
     label: hidden
@@ -38,4 +28,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  p_b_accrd_item_expand_accordion: true
