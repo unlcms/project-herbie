@@ -1,3 +1,7 @@
+.unlcms-component-spacer + .unlcms-component-spacer.unlcms-iconlinks-component {
+  margin-top: 2em;
+}
+
 .unlcms-ul-icon-links  {
   display: flex;
   flex-wrap: wrap;
