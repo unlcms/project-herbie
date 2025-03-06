@@ -2,7 +2,8 @@
   margin-top: 2em;
 } */
 
-.unlcms-component-spacer + .unlcms-component-spacer.dcf-card {
+/* Spacing for multiple components in a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.dcf-card {
   margin-top: 2em;
 }
 
