@@ -47,9 +47,13 @@
   ]
 %}
 {% block paragraph %}
-  <details{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </details>
+  {% if paragraph.get('p_b_accrd_item_expand_accordion').value %}
+    <details{{ attributes.addClass(classes).setAttribute('open', true) }}>
+  {% else %}
+    <details{{ attributes.addClass(classes) }}>
+  {% endif %}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </details>
 {% endblock paragraph %}

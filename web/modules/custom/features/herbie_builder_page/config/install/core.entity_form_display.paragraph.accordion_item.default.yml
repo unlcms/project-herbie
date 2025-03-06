@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion_item.p_b_accrd_item_body
+    - field.field.paragraph.accordion_item.p_b_accrd_item_expand_accordion
     - field.field.paragraph.accordion_item.p_b_accrd_item_title
     - paragraphs.paragraphs_type.accordion_item
   module:
@@ -20,6 +21,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  p_b_accrd_item_expand_accordion:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   p_b_accrd_item_title:
     type: string_textfield
     weight: 0
@@ -30,7 +38,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 2
+    weight: 3
     region: content
     settings:
       display_label: true

@@ -28,7 +28,9 @@
 <div{{ attributes.addClass('dcf-d-flex').addClass('dcf-jc-center').addClass('dcf-pt-9').addClass('dcf-pb-9') }}>
   <div class="dcf-w-100% dcf-w-max-lg">
     {{ title_prefix }}
-      <h2>{{ content.b_accordion_title }}</h2>
+      {% if content.b_accordion_title.0 %}
+        <h2>{{ content.b_accordion_title }}</h2>
+      {% endif %}
     {{ title_suffix }}
     {% block content %}
       <div class="dcf-mt-6">
