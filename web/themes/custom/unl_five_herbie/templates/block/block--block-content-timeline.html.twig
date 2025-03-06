@@ -8,9 +8,8 @@
 {% else %}
 	{% set orderedListClass = verticalListClass %}
 {% endif %}
-
-<div{{attributes}}>
-	<div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 unl-bg-light-gray">
+<div {{attributes.addClass('unlcms-component-spacer').addClass('unlcms-timeline-component')}}>
+	<div class="dcf-bleed dcf-wrapper unlcms-component-spacer unl-bg-light-gray">
 		{% if content.b_timeline_timeline_heading %}
 			{{ title_prefix }}
 			<h2>{{content.b_timeline_timeline_heading}}</h2>
