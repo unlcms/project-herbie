@@ -46,11 +46,14 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{# Get the block object #}
+{% set paragraph_tab_item_objects = content.p_b_tab_item_title['#object'] %}
+{# Get tab paragraph field id #}
+{% set tab_item_id = paragraph_tab_item_objects.get('id').value %}
 {% set idName = content.p_b_tab_item_title.0['#context']['value']|lower|replace({" ":"-"}) %}
 {% set idName = idName|replace({'"':""}) %}
-{% set idName =  'tab-' ~ idName %}
-{# Added unique_id to prevent duplicates when a user creates another Tabs component with the same title on the same page. #}
-{% set idName = unique_id(idName) %}
+{# Append the tab ID to the ID name to create a unique identifier, preventing duplicates when a user adds another Tabs component with the same title on the same page. #}
+{% set idName =  'tab-item-' ~ idName ~ '-' ~ tab_item_id %}
 {% set attributes = attributes ?: create_attribute() %}
 {% block paragraph %}
   <section{{attributes.setAttribute('id', idName) }}>
