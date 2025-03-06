@@ -14,6 +14,7 @@ scope: individual
 global_role: null
 group_type: group_subsite
 permissions:
+  - 'access group content menu overview'
   - 'access group_node overview'
   - 'administer members'
   - 'create group_node:archive_page entity'
