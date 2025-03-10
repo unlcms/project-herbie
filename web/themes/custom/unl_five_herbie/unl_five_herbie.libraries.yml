@@ -43,7 +43,7 @@ card:
   version: VERSION
   css:
     theme:
-      css/theme/card.css: {}
+      css/theme/block/card.css: {}
   js:
     js/theme/card.js: {}
 
@@ -120,3 +120,15 @@ simple_media:
   css:
     theme:
       css/theme/block/simple_media.css: {}
+
+accordion:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/accordion.css: {}
+
+social_media_links:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/social_media_links.css: {}

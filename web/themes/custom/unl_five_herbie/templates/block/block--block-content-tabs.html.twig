@@ -41,7 +41,7 @@
   {% set attributes = attributes ?: create_attribute() %}
   {% set attributes = attributes.addClass(['dcf-tabs']) %}
 
-  <div{{attributes.setAttribute('id', idName) }}>
+  <div{{attributes.setAttribute('id', idName).addClass('unlcms-component-spacer')}}>
     {{ title_prefix }}
       {% if content.b_tabs_title.0 %}
       <h2>{{ content.b_tabs_title }}</h2>
@@ -50,5 +50,3 @@
     {{ content.b_tab_item }}
   </div>
 {% endblock %}
-
-
