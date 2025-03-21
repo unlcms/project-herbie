@@ -1,7 +1,16 @@
 <div class="grid-set event-teaser">
   <div class="bp591-grid-col-two-thirds">
     <h2><a href="{{ url }}">{{ label }}</a></h2>
-    <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+
+    {% if not node.event_date.end_date.gettimestamp %}
+      <span class="event-date icon-calendar-2-1">{{ node.event_date.start_date.gettimestamp|format_date('custom', 'l, F j, Y - g:ia') }}</span>
+    {% else %}
+      <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+    {% endif %}
+
+    {% if node.events_recurringtype.value %}
+      <span class="event-date">Runs {{ content.events_recurringtype }} until {{  content.event_recursuntil }}</span>
+    {% endif %}
     {#    <span class="event-time icon-clock-3-0">{{render(content.field_event_link)}}</span> #}
     <span class="event-location icon-marker-1-0"><a href="{{ event_map_link.0.url }}">{{ content.event_map_link }}</a></span>
     <p class="event-description">{{ content.body }}</p>
