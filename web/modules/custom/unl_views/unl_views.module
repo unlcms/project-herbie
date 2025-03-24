@@ -49,6 +49,7 @@ function unl_views_form_views_exposed_form_alter(&$form, FormStateInterface $for
       unset($form['role']['#options']['administrator']);
       unset($form['role']['#options']['super_administrator']);
       unset($form['role']['#options']['coder']);
+      unset($form['role']['#options']['temporary_development_contributor']);
     }
   }
 }

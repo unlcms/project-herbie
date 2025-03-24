@@ -5,6 +5,7 @@ required:
   - entity_usage.settings
   - google_tag.settings
   - moderated_content_bulk_publish.settings
+  - administerusersbyrole.settings
   - views.view.content
   - system.action.draft_current
   - system.action.pin
