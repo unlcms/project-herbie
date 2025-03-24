@@ -1,5 +1,5 @@
 <?php
-
+use Drupal\user\Entity\Role;
 /**
  * Implements hook_install_tasks().
  *
@@ -119,5 +119,20 @@ function herbie_update_8106(&$sandbox) {
       $node->get('n_person_bio')->format = 'standard';
       $node->save();
     }
+  }
+}
+
+
+/**
+ * Update the authenticated role if it has a specific permission.
+ */
+function herbie_update_8107(&$sandbox) {
+  $role_name = 'authenticated';
+  $permission = 'edit any person content';
+  $role = Role::load(id: $role_name);
+
+  if ($role && $role->hasPermission($permission)) {
+    $role->revokePermission($permission);
+    $role->save();
   }
 }
