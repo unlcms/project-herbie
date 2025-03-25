@@ -51,7 +51,10 @@
       {% if content.b_social_media_links_linkedin[0]['#context']['value'] %}
       <li class="dcf-mb-0">
         {% set filtered_username_input =  content.b_social_media_links_linkedin[0]['#context']['value']|url_encode %}
-        <a class="dcf-d-block dcf-h-6 dcf-w-6 unl-cream" href="https://www.linkedin.com/in/{{filtered_username_input}}" aria-label="Our LinkedIn profile">
+        {% set filtered_username_input = preg_replace('/%2F/', '/', filtered_username_input) %}
+        {# As of this time, LinkedIn doesn't define URL patterns for profiles (no official documentation).
+           We ask for everything after "linkedin.com/" and append it to the base URL. #}
+        <a class="dcf-d-block dcf-h-6 dcf-w-6 unl-cream" href="https://www.linkedin.com/{{filtered_username_input}}" aria-label="Our LinkedIn profile">
           <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 48 48">
             <path d="M44.45 0H3.54A3.5 3.5 0 0 0 0 3.46v41.08A3.5 3.5 0 0 0 3.54 48h40.91A3.51 3.51 0 0 0 48 44.54V3.46A3.51 3.51 0 0 0 44.45 0zM14.24 40.9H7.11V18h7.13zm-3.56-26a4.13 4.13 0 1 1 4.13-4.13 4.13 4.13 0 0 1-4.13 4.1zm30.23 26h-7.12V29.76c0-2.66 0-6.07-3.7-6.07s-4.27 2.9-4.27 5.88V40.9h-7.11V18h6.82v3.13h.1a7.48 7.48 0 0 1 6.74-3.7c7.21 0 8.54 4.74 8.54 10.91z"></path>
           </svg>
