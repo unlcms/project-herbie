@@ -170,3 +170,7 @@
 .unlcms-timeline-horizontal .dcf-card {
   min-width: 23.68em;
 }
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-timeline-component {
+  margin-top: 2em;
+}

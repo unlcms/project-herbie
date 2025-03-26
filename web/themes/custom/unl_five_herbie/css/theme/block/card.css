@@ -1,4 +1,9 @@
-.layout__region .dcf-card+.dcf-card {
+/* .layout__region .dcf-card+.dcf-card {
+  margin-top: 2em;
+} */
+
+/* Spacing for multiple components in a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.dcf-card {
   margin-top: 2em;
 }
 
