@@ -1,6 +1,6 @@
 {% set nid = content.b_nodeinclude_node.0["#node"].id %}
 
-<div{{ attributes.addClass('cms-node-include-'~nid) }}>
+<div{{ attributes.addClass('cms-node-include-'~nid).addClass('unlcms-component-spacer')  }}>
   {{ title_prefix }}
   {{ title_suffix }}
   {% if nid is not empty %}

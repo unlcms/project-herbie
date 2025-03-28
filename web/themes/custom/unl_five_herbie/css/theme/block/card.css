@@ -54,3 +54,9 @@
 /* div.dcf-card-block .dcf-subhead  {
   color: #6b6b68;
   } */
+
+/* Changed a card's height to auto if there are other components before or after it within the same section. */
+.unlcms-component-spacer ~ .dcf-card,
+.dcf-card:has(+ .unlcms-component-spacer) {
+  height: auto;
+}
