@@ -1,6 +1,10 @@
 <div style="margin-bottom: 1em;">
   <h3><a href="{{ content.event_link }}">{{ label }}</a></h3>
-  <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+  {% if not node.event_date.end_date.gettimestamp %}
+    <span class="event-date icon-calendar-2-1">{{ node.event_date.start_date.gettimestamp|format_date('custom', 'l, F j, Y - g:ia') }}</span>
+  {% else %}
+    <span class="event-date icon-calendar-2-1">{{ content.event_date }}</span>
+  {% endif %}
   {#    <span class="event-time icon-clock-3-0">{{render(content.field_event_link)}}</span> #}
   <span class="event-location icon-marker-1-0"><a href="{{ content.event_map_link.0.url }}">{{ content.event_map_link }}</a></span>
 </div>
