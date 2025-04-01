@@ -370,6 +370,10 @@
   RewriteCond %{HTTP_HOST} ^unltoday\.unl\.edu$
   RewriteRule ^(.*)$ https://news.unl.edu/ [R=301,L]
 
+  # training
+  RewriteCond %{HTTP_HOST} ^training\.unl\.edu$
+  RewriteRule ^(.*)$ https://nebraska.bridgeapp.com/ [R=301,L]
+
   # wifi
   RewriteCond %{HTTP_HOST} ^wifi\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^wireless\.unl\.edu$ [OR]
