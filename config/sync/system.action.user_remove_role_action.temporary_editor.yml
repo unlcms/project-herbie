@@ -1,0 +1,14 @@
+uuid: 17a79aef-9189-46fe-a865-4edaea9f52f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.temporary_editor
+  module:
+    - user
+id: user_remove_role_action.temporary_editor
+label: 'Remove the Temporary Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: temporary_editor

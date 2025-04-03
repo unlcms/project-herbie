@@ -1,5 +1,6 @@
 services:
   unl_person.request_subscriber:
     class: Drupal\unl_person\EventSubscriber\RequestSubscriber
+    arguments: ['@current_user', '@path_alias.manager', '@messenger']
     tags:
       - { name: event_subscriber }

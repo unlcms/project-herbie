@@ -6,3 +6,4 @@ roles:
   site_admin: safe
   coder: safe
   administrator: perm
+  temporary_editor: unsafe
