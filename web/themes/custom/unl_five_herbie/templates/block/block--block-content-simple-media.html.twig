@@ -1,7 +1,7 @@
 {{ attach_library('unl_five_herbie/tandem') }}
 {{ attach_library('unl_five_herbie/simple_media') }}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass('unlcms-component-spacer') }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>

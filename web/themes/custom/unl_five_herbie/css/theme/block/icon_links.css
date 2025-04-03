@@ -1,3 +1,8 @@
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-iconlinks-component {
+  margin-top: 2em;
+}
+
 .unlcms-ul-icon-links  {
   display: flex;
   flex-wrap: wrap;

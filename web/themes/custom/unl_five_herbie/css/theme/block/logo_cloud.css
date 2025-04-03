@@ -1,3 +1,8 @@
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-logocloud-component {
+  margin-top: 2em;
+}
+
 .unlcms-li-logo {
   flex: 0 0 10em;
 }
