@@ -1,0 +1,7 @@
+cleanup_major_revisions.form:
+  path: '/admin/config/unl/cleanup-major-revisions'
+  defaults:
+    _form: '\Drupal\unl_contenthub\Form\CleanupMajorRevisionsForm'
+    _title: 'Cleanup Major Revisions'
+  requirements:
+    _role: 'super_administrator'

@@ -46,4 +46,3 @@ function unl_contenthub_preprocess_page_title(&$variables) {
     $variables['title'] = t('Pull from Content Hub');
   }
 }
-
