@@ -44,6 +44,22 @@ if ($environment == 'production') {
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
   $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
+
+  // Memcache settings.
+  $settings['memcache']['servers'] = [
+    '10.172.23.62:11211'  => 'default',
+    '10.172.25.145:11211' => 'default',
+    '10.172.29.177:11211' => 'default',
+    '10.172.23.197:11211' => 'default',
+  ];
+  $settings['memcache']['bins'] = ['default' => 'default'];
+  $settings['memcache']['key_prefix'] = $site_path;
+  $settings['memcache']['options'] = [
+    Memcached::OPT_COMPRESSION => TRUE,
+    Memcached::OPT_DISTRIBUTION => Memcached::DISTRIBUTION_CONSISTENT,
+  ];
+  $settings['cache']['default'] = 'cache.backend.memcache';
+  $settings['container_yamls'][] = 'web/modules/contrib/memcache/memcache.services.yml';
 }
 elseif ($environment == 'stage') {
   $config['config_split.config_split.production']['status'] = FALSE;
