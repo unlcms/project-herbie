@@ -1,7 +1,7 @@
 {{ attach_library('unl_five_herbie/card') }}
 
 {% set attributes = attributes ?: create_attribute() %}
-{% set card_classes = ['dcf-card', 'dcf-d-flex', 'dcf-flex-col', 'unl-box-shadow'] %}
+{% set card_classes = ['dcf-card', 'dcf-d-flex', 'dcf-flex-col', 'unl-box-shadow', 'unlcms-component-spacer'] %}
 
 {% set cardblock_wrapper_attributes = create_attribute() %}
 {% set cardblock_wrapper_attributes = cardblock_wrapper_attributes.addClass('dcf-card-block dcf-2nd') %}
@@ -9,7 +9,7 @@
 {% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-ratio dcf-ratio-4x3') %}
 
 {% if content.b_card_headline_link[0]['#url']%}
-  <div{{ attributes.addclass(card_classes, 'dcf-card-as-link') }}>
+  <div{{ attributes.addclass(card_classes, 'dcf-card-as-link', 'unlcms-component-spacer') }}>
 {% else %}
   <div{{ attributes.addclass(card_classes) }}>
 {% endif %}
