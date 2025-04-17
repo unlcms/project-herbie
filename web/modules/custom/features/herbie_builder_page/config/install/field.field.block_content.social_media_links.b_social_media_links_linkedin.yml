@@ -9,7 +9,7 @@ field_name: b_social_media_links_linkedin
 entity_type: block_content
 bundle: social_media_links
 label: Linkedin
-description: "Only enter everything after 'https://www.linkedin.com/ln' from your LinkedIn profile's URL address."
+description: "Only enter everything after 'https://www.linkedin.com/' from your LinkedIn profile's URL address."
 required: false
 translatable: false
 default_value: {  }
