@@ -1,0 +1,4 @@
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-accordion-component {
+  margin-top: 2em;
+}

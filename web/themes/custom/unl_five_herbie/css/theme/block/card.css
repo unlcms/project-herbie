@@ -1,4 +1,9 @@
-.layout__region .dcf-card+.dcf-card {
+/* .layout__region .dcf-card+.dcf-card {
+  margin-top: 2em;
+} */
+
+/* Spacing for multiple components in a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.dcf-card {
   margin-top: 2em;
 }
 
@@ -49,3 +54,9 @@
 /* div.dcf-card-block .dcf-subhead  {
   color: #6b6b68;
   } */
+
+/* Changed a card's height to auto if there are other components before or after it within the same section. */
+.unlcms-component-spacer ~ .dcf-card,
+.dcf-card:has(+ .unlcms-component-spacer) {
+  height: auto;
+}
