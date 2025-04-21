@@ -53,6 +53,7 @@ type_settings:
       label: Unpublish
       from:
         - published
+        - unpublished
       to: unpublished
       weight: 2
   entity_types:
