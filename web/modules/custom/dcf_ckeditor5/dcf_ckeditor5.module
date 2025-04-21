@@ -61,17 +61,32 @@ function __dcf_ckeditor5_validate_links_in_text_fields(array &$form, FormStateIn
             $href = $anchor_tag->getAttribute('href');
             // Validate URL (applies to both internal and external links).
             if (!filter_var($href, FILTER_VALIDATE_URL)) {
-                $base_url = \Drupal::request()->getSchemeAndHttpHost();
+              $base_url = \Drupal::request()->getSchemeAndHttpHost();
 
               // Currently, only node and media items can be linked internally. Verify if the URL is not internal.
               if ((substr($href, 0, 6) !== "/node/") && (substr($href, 0, 7) !== "/media/")) {
                 if (!empty($href)) {
-                    // Combine the base URL with the user-provided partial path to check if it transforms into a valid URL.
+                  $path_validator = \Drupal::service('path.validator');
+                  $url_without_anchor = strtok($href, '#');
+                    // Check if the user-provided path (alias), with any anchor removed, resolves to a valid internal URL.                  if ($path_validator->isValid($url_without_anchor)) {
                     $full_url = $base_url . $href;
-                    $path_validator = \Drupal::service('path.validator');
-                    if(!$path_validator->isValid($href)) {
-                       $invalid_urls[] = '[' . $href . ']';
+                    if (!filter_var($full_url, FILTER_VALIDATE_URL)) {
+                      $invalid_urls[] = '[' . $href . ']';
+                    }
+
+                  // Determine if the URL is only an anchor reference (starts with '#')
+                  } elseif (str_starts_with($href, '#')) {
+                    $node = \Drupal::routeMatch()->getParameter('node');
+                    if ($node instanceof \Drupal\node\NodeInterface) {
+                      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+                      $full_url = $base_url . $alias . $href;
+                      if (!filter_var($full_url, FILTER_VALIDATE_URL)) {
+                        $invalid_urls[] = '[' . $href . ']';
                       }
+                    }
+                  } else {
+                    $invalid_urls[] = '[' . $href . ']';
+                  }
                 } else {
                   // If href is empty or missing (common for ckeditor anchor link additions), validate the anchor link ID.
                   $anchor_class = $anchor_tag->getAttribute('class');
