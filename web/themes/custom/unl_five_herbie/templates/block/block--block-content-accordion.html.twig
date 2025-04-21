@@ -25,7 +25,8 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes.addClass('dcf-d-flex').addClass('dcf-jc-center').addClass('dcf-pt-9').addClass('dcf-pb-9') }}>
+{{ attach_library('unl_five_herbie/accordion') }}
+<div{{ attributes.addClass('dcf-d-flex').addClass('dcf-jc-center').addClass('unlcms-component-spacer').addClass('unlcms-accordion-component') }}>
   <div class="dcf-w-100% dcf-w-max-lg">
     {{ title_prefix }}
       {% if content.b_accordion_title.0 %}

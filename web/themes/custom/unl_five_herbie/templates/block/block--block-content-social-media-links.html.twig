@@ -1,7 +1,8 @@
+{{ attach_library('unl_five_herbie/social_media_links') }}
 {% set attributes = attributes ?: create_attribute() %}
-{% set card_classes = [' dcf-pt-7 dcf-pb-7 unl-bg-scarlet dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-jc-center dcf-row-gap-5 dcf-col-gap-8'] %}
+{% set social_media_classes = ['unlcms-component-spacer unlcms-socialmedia-component unl-bg-scarlet dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-jc-center dcf-row-gap-5 dcf-col-gap-8'] %}
 
-<div{{ attributes.addclass(card_classes) }}>
+<div{{ attributes.addclass(social_media_classes) }}>
   {{ title_prefix }}
   {{ content.b_social_media_links_title }}
   {{ title_suffix }}
