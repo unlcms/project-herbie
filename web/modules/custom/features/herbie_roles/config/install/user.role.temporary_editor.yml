@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.simple
+    - filter.format.standard
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - filter
+id: temporary_editor
+label: 'Temporary Editor'
+weight: -2
+is_admin: null
+permissions:
+  - 'use editorial transition publish'
+  - 'use text format simple'
+  - 'use text format standard'

@@ -1,0 +1,14 @@
+uuid: 6cad72a1-b1fa-4903-aa3f-e27f5d292d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.temporary_editor
+  module:
+    - user
+id: user_add_role_action.temporary_editor
+label: 'Add the Temporary Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: temporary_editor

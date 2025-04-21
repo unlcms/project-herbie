@@ -1,6 +1,10 @@
 <?php
 
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -61,12 +65,106 @@ function unl_person_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == "node_person_edit_form") {
     $user = \Drupal::currentUser();
     $current_user_roles = $user->getRoles();
-    $allowed_roles = ['authenticated', 'viewer'];
+    $allowed_roles = ['authenticated', 'viewer', 'temporary_editor'];
 
     // Disable entitygroup and unldirectoryreference fields
     if (array_diff($current_user_roles, $allowed_roles) === [] && count($current_user_roles) <= count($allowed_roles)) {
       $form['n_person_unldirectoryreference']['widget']['#disabled'] = TRUE;
       $form['entitygroupfield']['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ * Checks if the user has access to edit a person node.
+ */
+function unl_person_node_access(NodeInterface $node, $operation, AccountInterface $account) {
+  // Make sure this only applies to authenticated users not other roles like super admin or editor roles
+  $current_node = \Drupal::routeMatch()->getParameter('node');
+  if ($current_node instanceof Node && $current_node->id() === $node->id()) {
+    $roles_to_check = ['editor', 'administrator', 'super_administrator', 'coder', 'site_admin'];
+    if (empty(array_intersect($roles_to_check, $account->getRoles()))) {
+      if ($node->getType() === 'person' && $account->isAuthenticated()) {
+        if ($operation === 'update') {
+          if (__unl_person_user_has_edit_access($account, $current_node)) {
+            return \Drupal\Core\Access\AccessResult::allowed();
+          }
+        }
+        if ($operation === 'view') {
+          if (__unl_person_user_has_edit_access($account, $current_node)) {
+            return \Drupal\Core\Access\AccessResult::allowed();
+          }
+        }
+      }
+      return \Drupal\Core\Access\AccessResult::neutral();
+    }
+  }
+  return \Drupal\Core\Access\AccessResult::allowed();
+}
+
+/**
+ * Check if the user has access to edit a person node.
+ */
+
+function __unl_person_user_has_edit_access(AccountInterface $account, NodeInterface $node) {
+  $request = \Drupal::request();
+  $session = $request->getSession();
+  $current_user_roles = $account->getRoles();
+  $roles_to_check = ['authenticated', 'temporary_editor', 'viewer'];
+  $user = User::load($account->id());
+  $role_name = 'temporary_editor';
+
+  $current_user_roles_check = empty(array_diff(array_values($current_user_roles), $roles_to_check,));
+  if ($current_user_roles === ['authenticated'] ||  $current_user_roles_check) {
+    if ($node->getType() === 'person') {
+      if ($node->hasField('n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
+        $person_unldirectoryreference_data = $node->get('n_person_unldirectoryreference')->getValue()[0]['target_id'];
+        $person_referenced_account = user_load_by_name($person_unldirectoryreference_data);
+        // If the n_person_unldirectoryreference field has a value and it matches the current user, allow access.
+        if ($person_referenced_account && $person_referenced_account->id() === $account->id()) {
+          if ($user) {
+            // Add the temporary role to the user.
+            $user->addRole($role_name);
+            $user->save();          }
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+/**
+ * Remove any lingering temporary roles from users.
+ */
+function unl_person_cron() {
+  $role_to_remove = 'temporary_editor'; // Replace with the actual role machine name
+
+  $query = \Drupal::entityQuery('user')
+    ->condition('roles', $role_to_remove);
+  $uids = $query->execute();
+
+  if (!empty($uids)) {
+    $users = \Drupal\user\Entity\User::loadMultiple($uids);
+    foreach ($users as $user) {
+      $user->removeRole($role_to_remove);
+      $user->save();
+    }
+    \Drupal::logger('unl_person')->notice("Role '$role_to_remove' removed from all users.");
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_person_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Remove certain roles from the views exposed filter on /admin/people.
+  $view = $form_state->get('view');
+  if ($view && $view->id() === 'administerusersbyrole_people') {
+    if (!User::load(\Drupal::currentUser()->id())->hasRole('administrator') &&
+      !User::load(\Drupal::currentUser()->id())->hasRole('super_administrator')) {
+      unset($form['role']['#options']['temporary_editor']);
     }
   }
 }
