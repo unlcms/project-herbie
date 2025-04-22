@@ -1,4 +1,6 @@
 /* Adds spacing between multiple components within a section */
-.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-socialmedia-component {
+/* commenting this code because we don't want to remove the default padding for social media component since it has a scarlet background */
+
+/* .layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-socialmedia-component {
   margin-top: 2em;
-}
+} */
