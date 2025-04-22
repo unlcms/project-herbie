@@ -135,9 +135,6 @@ module:
   path: 0
   path_alias: 0
   protected_pages: 0
-  purge: 0
-  purge_tokens: 0
-  purge_ui: 0
   queue_ui: 0
   rabbit_hole: 0
   redirect: 0
@@ -195,7 +192,6 @@ module:
   unl_webform: 0
   user: 0
   variationcache: 0
-  varnish_purger: 0
   views_bulk_operations: 0
   views_data_export: 0
   views_ui: 0
