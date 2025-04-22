@@ -192,7 +192,6 @@ module:
   unl_webform: 0
   user: 0
   variationcache: 0
-  varnish: 0
   views_bulk_operations: 0
   views_data_export: 0
   views_ui: 0
