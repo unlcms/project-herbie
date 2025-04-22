@@ -5,6 +5,7 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   administerusersbyrole: 0
+  adv_varnish: 0
   allowed_formats: 0
   anchor_link: 0
   asset_injector: 0
