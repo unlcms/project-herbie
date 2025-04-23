@@ -170,7 +170,9 @@
 .unlcms-timeline-horizontal .dcf-card {
   min-width: 23.68em;
 }
+/* Commenting out this code to preserve the default padding for the timeline component, as it uses a gray background that differs from the standard lighter or lightest gray section background. */
+
 /* Adds spacing between multiple components within a section */
-.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-timeline-component {
+/* .layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-timeline-component {
   margin-top: 2em;
-}
+} */
