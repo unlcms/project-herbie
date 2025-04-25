@@ -25,9 +25,25 @@ $settings['trusted_host_patterns'] = [
 $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files/private';
 
 /**
+ * Advanced Varnish module config.
+ *
+ * Environment specific configuration is defined below for production and stage.
+ *
+ * The setting general.noise is set in sites/all/settings.php.
+ */
+$config['adv_varnish.cache_settings']['available']['enable_cache'] = false;
+$config['adv_varnish.cache_settings']['general']['varnish_purger'] = false;
+$config['adv_varnish.cache_settings']['general']['page_cache_maximum_age'] = '604800';
+$config['adv_varnish.cache_settings']['general']['debug'] = '0';
+$config['adv_varnish.cache_settings']['general']['logging'] = '0';
+$config['adv_varnish.cache_settings']['general']['secret'] = hash('sha256', $site_path);
+$config['adv_varnish.cache_settings']['general']['grace'] = '10';
+
+/**
  * Honeypot time limit.
  */
 $config['honeypot.settings']['time_limit'] = 20;
+
 
 
 
@@ -44,6 +60,11 @@ if ($environment == 'production') {
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
   $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
+
+  // Advanced Varnish module config.
+//  $config['adv_varnish.cache_settings']['available']['enable_cache'] = true;
+//  $config['adv_varnish.cache_settings']['general']['varnish_purger'] = true;
+//  $config['adv_varnish.cache_settings']['general']['varnish_server'] = '10.172.30.16:6082 10.172.27.196:6082 10.172.26.89:6082';
 
   // Memcache settings.
   $settings['memcache']['servers'] = [
@@ -66,11 +87,33 @@ elseif ($environment == 'stage') {
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = FALSE;
   $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
+
+  // Advanced Varnish module config.
+  $config['adv_varnish.cache_settings']['available']['enable_cache'] = true;
+  $config['adv_varnish.cache_settings']['general']['varnish_purger'] = true;
+  $config['adv_varnish.cache_settings']['general']['varnish_server'] = '127.0.0.1:80';
+  $config['adv_varnish.cache_settings']['general']['debug'] = '1';
+  $config['adv_varnish.cache_settings']['general']['logging'] = '1';
+
+  // Memcache settings.
+  $settings['memcache']['servers'] = [
+    '127.0.0.1:11211'  => 'default',
+  ];
+  $settings['memcache']['bins'] = ['default' => 'default'];
+  $settings['memcache']['key_prefix'] = $site_path;
+  $settings['memcache']['options'] = [
+    Memcached::OPT_COMPRESSION => TRUE,
+    Memcached::OPT_DISTRIBUTION => Memcached::DISTRIBUTION_CONSISTENT,
+  ];
+  $settings['cache']['default'] = 'cache.backend.memcache';
+  $settings['container_yamls'][] = 'web/modules/contrib/memcache/memcache.services.yml';
 }
 // If not production or stage, then assumed to be development.
 else {
+
+
   $config['config_split.config_split.production']['status'] = FALSE;
-  $config['config_split.config_split.stage']['status'] = FALSE;
+  $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = TRUE;
 
   /*

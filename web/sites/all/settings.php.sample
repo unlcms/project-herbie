@@ -1,5 +1,7 @@
 <?php
 
+#$config['adv_varnish.cache_settings']['general']['noise'] = 'RandomCharactersGoHere737';
+
 $config['unl_user.settings']['password'] = 'PASSWORD_GOES_HERE';
 
 #$config['imagemagick.settings']['path_to_binaries'] = "/path/to/binaries/";
