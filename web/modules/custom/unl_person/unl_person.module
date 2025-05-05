@@ -142,7 +142,8 @@ function unl_person_cron() {
   $role_to_remove = 'temporary_editor'; // Replace with the actual role machine name
 
   $query = \Drupal::entityQuery('user')
-    ->condition('roles', $role_to_remove);
+    ->condition('roles', $role_to_remove)
+    ->accessCheck(FALSE);
   $uids = $query->execute();
 
   if (!empty($uids)) {
