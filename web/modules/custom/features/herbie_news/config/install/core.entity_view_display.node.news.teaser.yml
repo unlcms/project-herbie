@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_site_organization_tags
     - node.type.news
   module:
     - user
@@ -49,3 +50,4 @@ hidden:
   n_news_image_cutline: true
   n_news_related_links: true
   n_person_reference: true
+  s_n_site_organization_tags: true
