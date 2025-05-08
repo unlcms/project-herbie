@@ -27,6 +27,7 @@
   display: block !important;
 }
 
+/* CSS for the article lead image when there is no caption or credit filled out */
 .unlcms-article-lead-img-only .media-entity-bundle--image {
   margin-bottom: 0;
   /* .dcf-ratio-child */
