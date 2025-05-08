@@ -4772,7 +4772,8 @@ li:not(:first-of-type) .support-tier-heading {
   font-style: italic;
 }
 
-
-#main_content {
-  padding-top: 5.388em;
+@media  (max-width: 752px) {
+  #main_content {
+    padding-top: 5.388em;
+  }
 }
