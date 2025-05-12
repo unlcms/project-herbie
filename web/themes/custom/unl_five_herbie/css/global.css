@@ -513,3 +513,17 @@ div.unlcms-section-standard-wrapper.unl-bg-scarlet  div.unl-news-news-aggregatio
   background-color: #fefdfa !important;
   color: #d00000 !important;
 }
+
+/* CSS override for media captions on lighter gray, scarlet, and dark gray backgrounds to fix Axe color contrast issues in both light and dark modes. */
+div.unl-bg-scarlet figure figcaption{
+  color: #ebebea !important;}
+
+div.unl-bg-lighter-gray figure figcaption {
+  color:  var(--caption) !important;
+}
+
+div.unl-bg-dark-gray figure figcaption {
+  color: #f6f6f5 !important;
+}
+
+
