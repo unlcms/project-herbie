@@ -62,9 +62,15 @@ if ($environment == 'production') {
   $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 
   // Advanced Varnish module config.
-//  $config['adv_varnish.cache_settings']['available']['enable_cache'] = true;
-//  $config['adv_varnish.cache_settings']['general']['varnish_purger'] = true;
-//  $config['adv_varnish.cache_settings']['general']['varnish_server'] = '10.172.30.16:6082 10.172.27.196:6082 10.172.26.89:6082';
+  // The file settings-varnish.php is dynamically generated with the current
+  // addresses of the Varnish servers.
+  $config['adv_varnish.cache_settings']['available']['enable_cache'] = true;
+  $config['adv_varnish.cache_settings']['general']['varnish_purger'] = true;
+  if (!isset($conf)) {
+    // The settings-varnish.php file may have an unneeded $conf['varnish_control_terminal'] present from the previous Drupal 7 CMS.
+    $conf = [];
+  }
+  include __DIR__ . '/settings-varnish.php';
 
   // Memcache settings.
   $settings['memcache']['servers'] = [
