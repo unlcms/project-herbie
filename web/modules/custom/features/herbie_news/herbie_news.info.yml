@@ -21,10 +21,12 @@ dependencies:
   - 'drupal:views'
   - 'entitygroupfield:entitygroupfield'
   - 'field_group:field_group'
+  - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_person:herbie_person'
   - 'herbie_webform:herbie_webform'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
-version: 1.4.2
+  - 'select2:select2'
+version: 1.4.3
 package: Herbie
