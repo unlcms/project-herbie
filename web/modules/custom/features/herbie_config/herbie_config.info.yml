@@ -2,12 +2,16 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^9.4 || ^10'
-version: '1.4'
+version: '1.5'
 package: Herbie
 dependencies:
   - 'drupal:node'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
   - 'entity_usage:entity_usage'
   - 'google_tag:google_tag'
-  - 'moderated_content_bulk_publish:moderated_content_bulk_publish'
   - 'linkit:linkit'
+  - 'mathjax:mathjax'
+  - 'moderated_content_bulk_publish:moderated_content_bulk_publish'
   - 'replicate_ui:replicate_ui'

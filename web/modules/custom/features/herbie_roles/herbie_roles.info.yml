@@ -41,6 +41,7 @@ dependencies:
   - 'herbie_webform:herbie_webform'
   - 'honeypot:honeypot'
   - 'key:key'
+  - 'mathjax:mathjax'
   - 'media_file_delete:media_file_delete'
   - 'menu_admin_per_menu:menu_admin_per_menu'
   - 'metatag:metatag'
@@ -61,5 +62,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.7.2
+version: 1.7.3
 package: Herbie
