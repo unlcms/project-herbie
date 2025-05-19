@@ -9,6 +9,7 @@ dependencies:
     - dcf_ckeditor5
     - editor
     - linkit
+    - mathjax
     - media
 name: Standard
 format: standard
@@ -110,3 +111,9 @@ filters:
     weight: 0
     settings:
       dcftable: '1'
+  filter_mathjax:
+    id: filter_mathjax
+    provider: mathjax
+    status: true
+    weight: 50
+    settings: {  }

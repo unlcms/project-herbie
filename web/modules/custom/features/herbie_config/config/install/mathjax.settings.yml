@@ -1,0 +1,5 @@
+use_cdn: 1
+cdn_url: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+config_type: 0
+default_config_string: '{"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"processEscapes":"true"},"showProcessingMessages":"false","messageStyle":"none"}'
+enable_for_admin: 0
