@@ -54,11 +54,13 @@
     <div {{ image_wrapper_attributes }}>
       {{ content.p_b_slideshow_image }}
     </div>
-    <figcaption>{{ content.p_b_slideshow_caption }}{% if content.p_b_slideshow_credit %}<small class="dcf-txt-xs dcf-txt-nowrap">{{ content.p_b_slideshow_credit }}</small>{% endif %}</figcaption>
+    <figcaption>
+      {{ content.p_b_slideshow_caption}}
+      {% if content.p_b_slideshow_credit %}
+        <small class="dcf-txt-xs dcf-txt-nowrap">
+          {{content.p_b_slideshow_credit.0['#context'].value}}
+        </small>{% endif %}
+    </figcaption>
   </figure>
 </li>
-
-{#<pre>
-{{ dd(content.p_b_slideshow_image) }}
-</pre>#}
 {% endblock paragraph %}

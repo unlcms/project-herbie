@@ -515,14 +515,14 @@ div.unlcms-section-standard-wrapper.unl-bg-scarlet  div.unl-news-news-aggregatio
 }
 
 /* CSS override for media captions on lighter gray, scarlet, and dark gray backgrounds to fix Axe color contrast issues in both light and dark modes. */
-div.unl-bg-scarlet figure figcaption{
+div.unl-bg-scarlet figure.figure--embedded-media figcaption {
   color: #ebebea !important;}
 
-div.unl-bg-lighter-gray figure figcaption {
+div.unl-bg-lighter-gray figure.figure--embedded-media figcaption {
   color:  var(--caption) !important;
 }
 
-div.unl-bg-dark-gray figure figcaption {
+div.unl-bg-dark-gray figure.figure--embedded-media figcaption {
   color: #f6f6f5 !important;
 }
 
