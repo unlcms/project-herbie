@@ -123,10 +123,6 @@ function __unl_person_user_has_edit_access(AccountInterface $account, NodeInterf
         $person_referenced_account = user_load_by_name($person_unldirectoryreference_data);
         // If the n_person_unldirectoryreference field has a value and it matches the current user, allow access.
         if ($person_referenced_account && $person_referenced_account->id() === $account->id()) {
-          if ($user) {
-            // Add the temporary role to the user.
-            $user->addRole($role_name);
-            $user->save();          }
           return true;
         }
       }
