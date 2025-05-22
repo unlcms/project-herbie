@@ -34,7 +34,7 @@ div.unl-bg-scarlet h4,
 div.unl-bg-scarlet h5,
 div.unl-bg-scarlet h6,
 div.unl-bg-scarlet p,
-div.unl-bg-scarlet div,
+div.unl-bg-scarlet div:not(.dcf-badge), /* We don't want to affect the badge for news articles coming from Nebraska Today */
 div.unl-bg-scarlet summary,
 div.unl-bg-scarlet span,
 div.unl-bg-scrarlet ol,
@@ -52,7 +52,7 @@ div.unl-bg-dark-gray h4,
 div.unl-bg-dark-gray h5,
 div.unl-bg-dark-gray h6,
 div.unl-bg-dark-gray p,
-div.unl-bg-dark-gray div,
+div.unl-bg-dark-gray div:not(.dcf-badge),
 div.unl-bg-dark-gray summary,
 div.unl-bg-dark-gray span,
 div.unl-bg-dark-gray ol,
@@ -491,4 +491,44 @@ This maybe needed later
   .unlcms-bg-majors-lighter-gray { background-image: url(../images/majors-2e2e2d.svg); }
   .unlcms-bg-majors-lightest-gray { background-image: url(../images/majors-292928.svg); }
 
+}
+
+/* CSS override for news item date text to address Axe color contrast issues */
+div.unlcms-section-standard-wrapper.unl-bg-lighter-gray article.node--view-mode-teaser  div.dcf-txt-xs.unl-dark-gray {
+  color: var(--darker-gray) !important;
+}
+/* CSS override for news item button on a unl-bg-dark-gray background to address Axe color contrast issues */
+div.unlcms-section-standard-wrapper.unl-bg-dark-gray  div.unl-news-news-aggregation-block a.dcf-btn.dcf-btn-secondary{
+  color:  var(--brand-alpha) !important;
+}
+
+/* CSS override for the news item pill badge on a unl-bg-darkgray background to improve visual appearance */
+div.unlcms-section-standard-wrapper.unl-bg-dark-gray  div.unl-news-news-aggregation-block div.dcf-mb-4.dcf-badge.dcf-badge-pill{
+  background-color: #fefdfa !important;
+  color: #242423 !important;
+}
+
+/* CSS override for the news item pill badge on a unl-bg-scarlet background to improve visual appearance */
+div.unlcms-section-standard-wrapper.unl-bg-scarlet  div.unl-news-news-aggregation-block div.dcf-mb-4.dcf-badge.dcf-badge-pill{
+  background-color: #fefdfa !important;
+  color: #d00000 !important;
+}
+
+/* CSS override for media captions on lighter gray, scarlet, and dark gray backgrounds to fix Axe color contrast issues in both light and dark modes. */
+div.unl-bg-scarlet figure.figure--embedded-media figcaption {
+  color: #ebebea !important;}
+
+div.unl-bg-lighter-gray figure.figure--embedded-media figcaption {
+  color:  var(--caption) !important;
+}
+
+div.unl-bg-dark-gray figure.figure--embedded-media figcaption {
+  color: #f6f6f5 !important;
+}
+
+
+/* CSS color overrides for Tandem Fade overline and subheads on lightest and lighter gray backgrounds to fix Axe color contrast issues in light mode*/
+div.unl-bg-lightest-gray div.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead,
+div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead {
+  color: var(--darker-gray) !important;
 }

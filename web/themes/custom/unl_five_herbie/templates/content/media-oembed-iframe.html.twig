@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override to display an oEmbed resource in an iframe.
+ */
+#}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include wdn.directory ~ "/includes/global/head-1.html" %}
+      <title>{{ 'Embedded Media | ' ~ resource.title|default('Embedded Media') ~ ' | Nebraska' }}</title>
+      <css-placeholder token="{{ placeholder_token }}">
+      <link rel="icon" href="https://unlcms.unl.edu/wdn/templates_5.3/includes/global/favicon/favicon.ico" sizes="any">
+  </head>
+  <body style="margin: 0">
+    {{ media|raw }}
+  </body>
+</html>
