@@ -151,14 +151,18 @@ class RequestSubscriber implements EventSubscriberInterface {
    */
   public function onResponse(ResponseEvent $event) {
     $request = $event->getRequest();
-    $session = $request->getSession();
-    // Check if the page requires reloading and ensure it hasn't already been reloaded to prevent an infinite redirect loop.
-    if ($this->reload_page && !$session->has('page_reloaded')) {
-      $request = $event->getRequest();
-      $url = $request->getUri();
-      // Redirect user to the same page to reload the page.
-      $event->setResponse(new RedirectResponse($url));
-      $session->set('page_reloaded', true);
+    if (isset($request->attributes) && $request->attributes->has('node')) {
+      $node = $request->attributes->get('node');
+      if ($node instanceof \Drupal\node\NodeInterface && $node->access('view') && $node->getType() === 'person') {
+        $session = $request->getSession();
+        // Check if the page requires reloading and ensure it hasn't already been reloaded to prevent an infinite redirect loop.
+        if ($this->reload_page && !$session->has('page_reloaded')) {
+          $node_url = $node->toUrl('canonical', ['absolute' => TRUE])->toString();
+          // Redirect user to their person page.
+          $event->setResponse(new RedirectResponse($node_url));
+          $session->set('page_reloaded', true);
+        }
+      }
     }
   }
 
