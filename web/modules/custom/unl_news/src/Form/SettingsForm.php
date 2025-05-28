@@ -294,7 +294,7 @@ class SettingsForm extends ConfigFormBase {
 
     $config = $this->configFactory->getEditable(static::SETTINGS);
 
-    if (!$form['tag_ids']['#disabled']) {
+    if (!$form['tags']['tag_ids']['#disabled']) {
       $tag_ids = $form_state->getValue('tag_ids');
       $tag_ids = array_keys($tag_ids);
 
