@@ -6,6 +6,7 @@ required:
   - google_tag.settings
   - moderated_content_bulk_publish.settings
   - views.view.content
+  - views.view.taxonomy_term
   - system.action.draft_current
   - system.action.pin
   - system.action.publish_latest

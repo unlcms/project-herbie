@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_site_organization_tags
     - node.type.news
     - workflows.workflow.editorial
   module:
@@ -21,6 +22,7 @@ dependencies:
     - link
     - media_library
     - path
+    - select2
     - text
 third_party_settings:
   field_group:
@@ -52,6 +54,22 @@ third_party_settings:
       format_type: details_sidebar
       format_settings:
         classes: ''
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_page_options:
+      children:
+        - s_n_site_organization_tags
+      label: 'Page options'
+      region: content
+      parent_name: ''
+      weight: 20
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
         id: ''
         open: false
         description: ''
@@ -172,6 +190,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  s_n_site_organization_tags:
+    type: select2_entity_reference
+    weight: 30
+    region: content
+    settings:
+      width: 100%
+      autocomplete: true
+      match_operator: CONTAINS
+      match_limit: 10
     third_party_settings: {  }
   status:
     type: boolean_checkbox

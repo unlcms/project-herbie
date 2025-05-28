@@ -239,3 +239,25 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_node__TYPE().
+ */
+function unl_news_preprocess_node__news(&$variables) {
+  // Determine URL, depending on whether local content or remote
+  // (Nebraska Today) content.
+  if ($canonical_url = $variables['node']->get('n_news_canonical_url')->getString()) {
+    $variables['link'] = $canonical_url;
+    $variables['source'] = 'remote';
+    if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
+      $variables['publication'] = 'IANR News';
+    }
+    else {
+      $variables['publication'] = 'Nebraska Today';
+    }
+  }
+  else {
+    $variables['link'] = $variables['url'];
+    $variables['source'] = 'local';
+  }
+}

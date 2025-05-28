@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_site_organization_tags
     - node.type.news
   module:
     - link
@@ -111,6 +112,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 7
+    region: content
+  s_n_site_organization_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   entitygroupfield: true
