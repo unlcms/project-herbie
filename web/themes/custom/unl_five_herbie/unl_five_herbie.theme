@@ -150,6 +150,12 @@ function unl_five_herbie_preprocess_node__news(&$variables) {
   if ($canonical_url = $variables['node']->get('n_news_canonical_url')->getString()) {
     $variables['link'] = $canonical_url;
     $variables['source'] = 'remote';
+    if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
+      $variables['publication'] = 'IANR News';
+    }
+    else {
+      $variables['publication'] = 'Nebraska Today';
+    }
   }
   else {
     $variables['link'] = $variables['url'];
