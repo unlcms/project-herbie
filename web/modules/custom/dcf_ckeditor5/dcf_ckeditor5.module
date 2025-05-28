@@ -76,7 +76,8 @@ function __dcf_ckeditor5_validate_links_in_text_fields(array &$form, FormStateIn
                     if (!filter_var($full_url, FILTER_VALIDATE_URL)) {
                       $invalid_urls[] = '[' . $href . ']';
                     }
-                  } elseif (!empty($base_path)) {
+                  }
+                  elseif (!empty($base_path)) {
                     if (!filter_var($full_url_base_path, FILTER_VALIDATE_URL)) {
                       $invalid_urls[] = '[' . $href . ']';
                     }
@@ -90,21 +91,25 @@ function __dcf_ckeditor5_validate_links_in_text_fields(array &$form, FormStateIn
                       if (!filter_var($full_url, FILTER_VALIDATE_URL)) {
                         if (empty($base_path)) {
                           $invalid_urls[] = '[' . $href . ']';
-                        } elseif (!filter_var($base_url . $base_path . $alias . $href, FILTER_VALIDATE_URL)) {
+                        }
+                        elseif (!filter_var($base_url . $base_path . $alias . $href, FILTER_VALIDATE_URL)) {
                           $invalid_urls[] = '[' . $href . ']';
                         }
                       }
                     }
-                  } else {
+                  }
+                  else {
                     $invalid_urls[] = '[' . $href . ']';
                   }
-                } else {
+                }
+                else {
                   // If href is empty or missing (common for ckeditor anchor link additions), validate the anchor link ID.
                   $anchor_class = $anchor_tag->getAttribute('class');
                   if ($anchor_class !== 'ck-anchor') {
                     // If the link is not a ckeditor anchor link and has no href value, mark it as an invalid URL for accessibility.
                     $invalid_urls[] = '[' . $href . ']';
-                  } else if ($anchor_class === 'ck-anchor') {
+                  }
+                  elseif ($anchor_class === 'ck-anchor') {
                     $anchor_id = $anchor_tag->getAttribute('id');
                     // Validate ID
                     if (empty($anchor_id) || preg_match('/\s/', $anchor_id)) {
