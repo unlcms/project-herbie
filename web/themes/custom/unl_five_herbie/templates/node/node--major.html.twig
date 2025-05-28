@@ -195,19 +195,19 @@
 					</div>
       <div class="dcf-grid-thirds@md dcf-col-gap-vw dcf-row-gap-6">
         <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
-          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_internships_title) }}
+          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_internships_title.0['#context'].value) }}
           </h3>
           {{ (content.n_major_internships_list) }}
         </div>
 
         <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
-          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_careers_title) }}
+          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_careers_title.0['#context'].value) }}
           </h3>
           {{ (content.n_major_careers_list) }}
         </div>
 
         <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
-          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_grad_schools_title) }}
+          <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_grad_schools_title.0['#context'].value) }}
           </h3>
           {{ (content.n_major_grad_schools_list) }}
         </div>
@@ -238,7 +238,7 @@
         {{ (content.n_major_featured_faculty) }}
       </div>
     </div>
- 
+
     {% endif %}
 
     <!--MINDSETS-->
