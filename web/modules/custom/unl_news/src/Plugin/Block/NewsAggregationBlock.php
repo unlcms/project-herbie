@@ -62,6 +62,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
   public function defaultConfiguration() {
     return [
       'quantity' => 8,
+      'tag' => [],
     ];
   }
 
@@ -83,6 +84,22 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       '#default_value' => $this->configuration['quantity'],
     ];
 
+
+    $form['tag'] = [
+      '#type' => 'select2',
+      '#target_type' => 'taxonomy_term',
+      '#title' => $this->t('Tag'),
+      '#description' => $this->t('Tag to optionally filter the displayed news items.'),
+      '#tags' => TRUE,
+      '#selection_handler' => 'default',
+      '#selection_settings' => [
+        'target_bundles' => ['site_organization_tags'],
+      ],
+      '#multiple' => TRUE,
+      '#autocomplete' => TRUE,
+      '#default_value' => $this->configuration['tag'],
+    ];
+
     return $form;
   }
 
@@ -91,60 +108,64 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
+    $this->configuration['tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['tag'];
   }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $node_storage = $this->entityTypeManager->getStorage('node');
-    $query = $node_storage->getQuery();
+    // Load the view.
+    $view = \Drupal\views\Views::getView('news_recent');
+    if (!$view) {
+      return [];
+    }
+    $selected_tags = $this->configuration['tag'] ?? [];
+    $view->selected_tags = $this->configuration['tag'] ?? NULL;
 
-    $ids = $query->condition('status', 1)
-      ->accessCheck(FALSE)
-      ->condition('type', 'news')
-      ->sort('created', 'DESC')
-      ->range(0, $this->configuration['quantity'])
-      ->execute();
-    $articles = $node_storage->loadMultiple($ids);
+    // Set the display ID.
+    $display_id = 'block_1';
+    $view->setDisplay($display_id);
 
-    $items = [];
-    foreach ($articles as $nid => $article) {
-      $items[$nid]['title'] = $article->get('title')->getString();
-      $items[$nid]['created'] = $article->getCreatedTime();
+    // Filter by selected tags.
+    if ($selected_tags) {
+      $node_storage = $this->entityTypeManager->getStorage('node');
+      if ($node_storage) {
+      $query = $node_storage->getQuery();
+      $query = $view->getQuery();
+      $join = $this->getViewsPluginManager('join')->createInstance('standard', [
+        'table' => 'taxonomy_index',
+        'left_table' => 'node_field_data',
+        'left_field' => 'nid',
+        'field' => 'nid',
+        'type' => 'INNER',
+      ]);
 
-      // Determine URL, depending on whether local content or remote
-      // (Nebraska Today) content.
-      if ($canonical_url = $article->get('n_news_canonical_url')->getString()) {
-        $items[$nid]['link'] = $canonical_url;
-        $items[$nid]['source'] = 'remote';
-        if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
-          $items[$nid]['publication'] = 'IANR News';
-        }
-        else {
-          $items[$nid]['publication'] = 'Nebraska Today';
-        }
-      }
-      else {
-        $items[$nid]['link'] = $article->toLink(NULL, 'canonical', ['absolute' => TRUE])->getUrl();
-        $items[$nid]['source'] = 'local';
-      }
-
-      if ($article->get('n_news_image')->getValue()) {
-        $items[$nid]['image'] = $article->get('n_news_image')->view('teaser');
-      }
+      $query->addTable('taxonomy_index', 'node_field_data', $join);
+      $query->addWhere('taxonomy_filter_group', 'taxonomy_index.tid', $selected_tags, 'IN');
+     }
     }
 
-    $return = [
-      '#theme' => 'unl_news_news_aggregation_block',
-      '#items' => $items,
-      '#quantity' => $this->configuration['quantity'],
-      '#cache' => [
-        'tags' => ['node_list:news'],
-      ],
-    ];
+    // Set items per page from configuration.
+    $view->setItemsPerPage($this->configuration['quantity']);
 
-    return $return;
+    // Execute and render the view.
+    $view->preExecute();
+    $view->execute();
+    return $view->render();
   }
 
+
+  /**
+   * Helper function to get the Views plugin manager.
+   *
+   * @param string $type
+   * The type of plugin manager to get (e.g., 'join', 'filter').
+   *
+   * @return \Drupal\Core\Plugin\PluginManagerInterface
+   * The plugin manager.
+   */
+  protected function getViewsPluginManager(string $type) {
+    return \Drupal::service('plugin.manager.views.' . $type);
+  }
 }
