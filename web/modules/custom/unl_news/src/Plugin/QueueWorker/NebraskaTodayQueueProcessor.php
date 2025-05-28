@@ -32,6 +32,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The name of the website being fetched from.
+   *
+   * @var string
+   */
+  const PUBLICATION_NAME = 'Nebraska Today';
+
+  /**
    * The entity type manager service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -177,10 +184,10 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
         $file->setPermanent();
         $file->save();
 
-        // Get (or create) the 'Imported from Nebraska Today' tag to add to the media item.
+        // Get (or create) the 'Imported from PUBLICATION_NAME' tag to add to the media item.
         $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
         $vid = 'media_tags';
-        $name = 'Imported from Nebraska Today';
+        $name = 'Imported from ' . static::PUBLICATION_NAME;
         $terms = $storage->loadByProperties([
           'vid' => $vid,
           'name' => $name,
@@ -209,7 +216,7 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
             'target_id' => $tid,
           ],
         ]);
-        $media->setName($filename . ' (from Nebraska Today)')
+        $media->setName($filename . ' (from ' . static::PUBLICATION_NAME . ')')
           ->setPublished(TRUE)
           ->save();
 
@@ -239,9 +246,15 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
     $node->save();
 
     // Remove item from state queued-items list.
-    $queued_items = $this->state->get('unl_news.nebraska_today.queued_items', []);
+    if (static::class == 'IANRNewsQueueProcessor') {
+      $queue = 'unl_news.ianrnews.queued_items';
+    }
+    else {
+      $queue = 'unl_news.nebraska_today.queued_items';
+    }
+    $queued_items = $this->state->get($queue, []);
     unset($queued_items[$item->id]);
-    $queued_items = $this->state->set('unl_news.nebraska_today.queued_items', $queued_items);
+    $queued_items = $this->state->set($queue, $queued_items);
   }
 
 }

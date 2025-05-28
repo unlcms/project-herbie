@@ -1,5 +1,12 @@
 unl_news.settings:
   title: 'UNL News'
   parent: system.admin_config_content
-  description: 'Configure tags from Nebraska Today to import articles from.'
+  description: 'Configure tags from Nebraska Today & IANR News to import articles from.'
   route_name: unl_news.settings
+  menu_name: admin
+unl_news.ianrnews.settings:
+  title: 'IANR News'
+  parent: unl_news.settings
+  description: 'Configure tags from IANR News to import articles from.'
+  route_name: unl_news.ianrnews.settings
+  menu_name: admin

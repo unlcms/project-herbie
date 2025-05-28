@@ -118,6 +118,12 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       if ($canonical_url = $article->get('n_news_canonical_url')->getString()) {
         $items[$nid]['link'] = $canonical_url;
         $items[$nid]['source'] = 'remote';
+        if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
+          $items[$nid]['publication'] = 'IANR News';
+        }
+        else {
+          $items[$nid]['publication'] = 'Nebraska Today';
+        }
       }
       else {
         $items[$nid]['link'] = $article->toLink(NULL, 'canonical', ['absolute' => TRUE])->getUrl();

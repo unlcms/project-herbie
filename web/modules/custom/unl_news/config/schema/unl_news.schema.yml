@@ -8,3 +8,9 @@ unl_news.settings:
       sequence:
         type: integer
         label: 'Tag'
+    ianrnews_tag_ids:
+      type: sequence
+      label: 'IANR News Tags'
+      sequence:
+        type: integer
+        label: 'IANR News Tag'
