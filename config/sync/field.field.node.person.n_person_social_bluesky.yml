@@ -1,14 +1,15 @@
+uuid: 041e6a40-ed49-4ac2-9c30-cd020c71ffca
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.n_person_social_twitter
+    - field.storage.node.n_person_social_bluesky
     - node.type.person
-id: node.person.n_person_social_twitter
-field_name: n_person_social_twitter
+id: node.person.n_person_social_bluesky
+field_name: n_person_social_bluesky
 entity_type: node
 bundle: person
-label: "X (formerly Twitter)\t"
+label: Bluesky
 description: "Enter username without the '@' symbol."
 required: false
 translatable: false

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_social_bluesky
     - field.field.node.person.n_person_social_fb
     - field.field.node.person.n_person_social_instagram
     - field.field.node.person.n_person_social_linkedin
@@ -121,6 +122,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  n_person_social_bluesky:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
     region: content
   n_person_social_fb:
     type: string

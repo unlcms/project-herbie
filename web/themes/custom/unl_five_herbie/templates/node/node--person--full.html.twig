@@ -221,6 +221,17 @@
                         </dd>
                       {% endif %}
 
+                      {% if node.n_person_social_bluesky.value %}
+                        <dd class="dcf-d-inline-block dcf-pt-4 dcf-pr-3">
+                          {% set filtered_username_input = node.n_person_social_bluesky.value|url_encode %}
+                          <a class="dcf-d-block dcf-h-6 dcf-w-6" href="https://bsky.app/profile/{{filtered_username_input}}" aria-label="{{ label }} on Bluesky">
+                            <svg viewBox="0 0 600 530" height="16" width="16" focusable="false" aria-hidden="true" class="dcf-h-100% dcf-w-100% dcf-fill-current"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.45-163.25-81.433C20.15 217.613 9.997 86.535 9.997 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+                             <path d="M28.5 20.3 46 0h-4.1L26.6 17.6 14.5 0H.5l18.3 26.7L.5 48h4.1l16-18.6L33.5 48h14l-19-27.7zm-5.7 6.6-1.9-2.7L6.2 3.1h6.4l11.9 17.1 1.9 2.7L41.8 45h-6.4L22.8 26.9z"></path>
+                            </svg>
+                          </a>
+                        </dd>
+                      {% endif %}
+
                       {% if node.n_person_social_youtube.value %}
                         <dd class="dcf-d-inline-block dcf-pt-4 dcf-pr-3">
                           {% set filtered_username_input =  node.n_person_social_youtube.value|url_encode %}

@@ -1,14 +1,15 @@
+uuid: e4a85d3c-3dba-4134-91c6-2316ec609639
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.p_b_cinfo_sm_twitter
+    - field.storage.paragraph.p_b_cinfo_sm_bluesky
     - paragraphs.paragraphs_type.contact_info_social_media
-id: paragraph.contact_info_social_media.p_b_cinfo_sm_twitter
-field_name: p_b_cinfo_sm_twitter
+id: paragraph.contact_info_social_media.p_b_cinfo_sm_bluesky
+field_name: p_b_cinfo_sm_bluesky
 entity_type: paragraph
 bundle: contact_info_social_media
-label: 'X (formerly Twitter)'
+label: Bluesky
 description: "Only enter the username without the '@' symbol."
 required: false
 translatable: false

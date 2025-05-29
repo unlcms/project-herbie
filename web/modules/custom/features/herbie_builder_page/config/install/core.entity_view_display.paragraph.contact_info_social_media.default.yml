@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_bluesky
     - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_facebook
     - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_instagram
     - field.field.paragraph.contact_info_social_media.p_b_cinfo_sm_linkedin
@@ -16,6 +17,14 @@ targetEntityType: paragraph
 bundle: contact_info_social_media
 mode: default
 content:
+  p_b_cinfo_sm_bluesky:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
   p_b_cinfo_sm_facebook:
     type: string
     label: hidden
