@@ -239,7 +239,7 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     /** @var \Drupal\Core\Queue\QueueInterface */
-    $queue = $this->queueFactory->get(self::QUEUE_NAME);
+    $queue = $this->queueFactory->get(static::QUEUE_NAME);
 
     $form['queue']['queue_number_of_items'] = [
       '#markup' => $this->t('<p><strong>Number of items in queue:</strong> @number.</p><p>Queue items are processed by cron. Depending on how many items are in queue, it may take several cron jobs cycles to process all of the items.</p>', ['@number' => $queue->numberOfItems()]),
@@ -310,7 +310,7 @@ class SettingsForm extends ConfigFormBase {
    * Initiates batch processing with queue_ui.batch service.
    */
   public function manualBatch() {
-    \Drupal::service('queue_ui.batch')->batch([self::QUEUE_NAME]);
+    \Drupal::service('queue_ui.batch')->batch([static::QUEUE_NAME]);
   }
 
   /**
