@@ -137,7 +137,7 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
     // another node already exists with the same n_news_canonical_url value.
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'news')
-      ->condition('n_news_canonical_url', $item->id)
+      ->condition('n_news_foreign_key', $item->id)
       ->accessCheck(FALSE)
       ->range(0, 1);
     $node_id = $query->execute();
