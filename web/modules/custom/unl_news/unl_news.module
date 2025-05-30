@@ -48,7 +48,8 @@ function unl_news_cron() {
 
     /** @var \GuzzleHttp\ClientInterface */
     $client = \Drupal::service('http_client');
-    $url = 'https://news.unl.edu/api/v1/articles?format=json';
+    $pubDate = date('Y-m-d', strtotime('-1 year'));
+    $url = 'https://news.unl.edu/api/v1/articles?format=json&pubDate=' . $pubDate;
 
     // Set initial page values for while loop.
     $current_page = 0;
@@ -115,7 +116,8 @@ function unl_news_cron() {
 
     /** @var \GuzzleHttp\ClientInterface */
     $client = \Drupal::service('http_client');
-    $url = 'https://ianrnews.unl.edu/api/v1/articles?format=json';
+    $pubDate = date('Y-m-d', strtotime('-1 year'));
+    $url = 'https://ianrnews.unl.edu/api/v1/articles?format=json&pubDate=' . $pubDate;
 
     // Set initial page values for while loop.
     $current_page = 0;
