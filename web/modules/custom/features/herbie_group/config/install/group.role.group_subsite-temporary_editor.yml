@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.group_subsite
+    - user.role.temporary_editor
+id: group_subsite-temporary_editor
+label: 'Temporary Editor'
+weight: -2
+admin: false
+scope: outsider
+global_role: temporary_editor
+group_type: group_subsite
+permissions:
+  - 'update any group_node:person entity'
