@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements template_preprocess_html().
+ */
+function morrill_preprocess_html(&$variables) {
+  $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function morrill_preprocess_page(&$variables) {
+  $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+}
