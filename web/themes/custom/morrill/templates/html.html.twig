@@ -9,13 +9,20 @@
 <!DOCTYPE html>
 <html class="no-js dcf-no-js dcf-no-webp"{{ html_attributes }}>
 <head>
-  {% include wdn.directory ~ "/includes/global/head-1.html" %}
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{ head_title|safe_join(' | ') }}</title>
-  {% include wdn.directory ~ "/includes/global/head-2.html" %}
-
   <link rel="stylesheet" href="{{ path_to_theme }}/css/dcf/main.css">
   <link rel="stylesheet" href="{{ path_to_theme }}/css/dcf/print.css" media="print">
   <link rel="stylesheet" href="{{ path_to_theme }}/css/museum.css">
+  <script src="{{ path_to_theme }}/js/vendor/bodyScrollLock.min.js"></script>
+  <script src="{{ path_to_theme }}/js/vendor/require.js"></script>
+  <script>
+      require.config({
+          baseUrl: '/themes/custom/morrill'
+      });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -25,13 +32,23 @@
   <css-placeholder token="{{ placeholder_token }}">
   <js-placeholder token="{{ placeholder_token }}">
 </head>
-<body{{ attributes.addClass(body_classes) }} data-version="5.3">
+<body{{ attributes.addClass(body_classes) }}>
 
 {{ page_top }}
 {{ page }}
 {{ page_bottom }}
 
-{% include wdn.directory ~ "/includes/global/js-body.html" %}
+<script src="{{ path_to_theme }}/js/starter-main.js"></script>
+<script>
+    require(['js/dcf-navMenuToggle', 'js/vendor/headroom.min'], function(DCFNavMenuToggleModule, headroom) {
+        var navMenuToggle = new DCFNavMenuToggleModule.DCFNavMenuToggle(headroom, bodyScrollLock);
+    });
+</script>
+<script>
+    define.origAmd = define.amd;
+    delete define.amd;
+</script>
+
 <js-bottom-placeholder token="{{ placeholder_token }}">
 </body>
 </html>
