@@ -11,15 +11,7 @@ libraries-override:
   core/classList: false
   core/html5shiv: false
   core/normalize: false
-  unl_five/amd:
-    js:
-      js/amd-disable.js: false
-  unl_five/idm:
-    js:
-      js/idm.js: false
-  unl_five/messages:
-    js:
-      js/messages.js: false
+
 
 regions:
   page_top: Page top
