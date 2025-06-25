@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_social_bluesky
     - field.field.node.person.n_person_social_fb
     - field.field.node.person.n_person_social_instagram
     - field.field.node.person.n_person_social_linkedin
@@ -185,3 +186,4 @@ hidden:
   n_additional: true
   n_education: true
   n_person_affiliation: true
+  n_person_social_bluesky: true

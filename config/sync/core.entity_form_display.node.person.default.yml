@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.person.n_person_phone
     - field.field.node.person.n_person_photo
     - field.field.node.person.n_person_position
+    - field.field.node.person.n_person_social_bluesky
     - field.field.node.person.n_person_social_fb
     - field.field.node.person.n_person_social_instagram
     - field.field.node.person.n_person_social_linkedin
@@ -60,6 +61,7 @@ third_party_settings:
         - n_person_website
         - n_person_social_fb
         - n_person_social_twitter
+        - n_person_social_bluesky
         - n_person_social_youtube
         - n_person_social_instagram
         - n_person_social_linkedin
@@ -86,13 +88,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   entitygroupfield:
     type: entitygroupfield_select_widget
-    weight: 15
+    weight: 16
     region: content
     settings:
       help_text: ''
@@ -108,7 +110,7 @@ content:
     third_party_settings: {  }
   n_additional:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -118,7 +120,7 @@ content:
     third_party_settings: {  }
   n_education:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -144,7 +146,7 @@ content:
     third_party_settings: {  }
   n_person_bio:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 4
     region: content
     settings:
       rows: 9
@@ -183,6 +185,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  n_person_social_bluesky:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   n_person_social_fb:
     type: string_textfield
     weight: 6
@@ -193,7 +203,7 @@ content:
     third_party_settings: {  }
   n_person_social_instagram:
     type: string_textfield
-    weight: 9
+    weight: 10
     region: content
     settings:
       size: 60
@@ -233,7 +243,7 @@ content:
     third_party_settings: {  }
   n_person_social_youtube:
     type: string_textfield
-    weight: 8
+    weight: 9
     region: content
     settings:
       size: 60
@@ -294,7 +304,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
