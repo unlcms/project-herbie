@@ -2,10 +2,9 @@
 Contact: mailto:abuse@nebraska.edu
 Contact: tel:+1-402-472-5700
 
-Expires: 2026-11-01T00:00:00z
+Expires: 2026-05-21T00:00:00z
 Preferred-Languages: en
 
-Policy: https://nebraska.edu/offices-policies/its/bug-bounty
+Policy: https://nebraska.edu/offices-policies/its/vulnerability-disclosure-program
 
-Acknowledgments: https://nebraska.edu/offices-policies/its/bug-bounty#hall-of-fame
-
+Acknowledgments: https://nebraska.edu/offices-policies/its/vulnerability-disclosure-program/hall-of-fame

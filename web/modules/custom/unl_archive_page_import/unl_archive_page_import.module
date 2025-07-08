@@ -1,5 +1,11 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_node().
+ */
 function unl_archive_page_import_preprocess_node(&$vars) {
   // Add .dcf-bleed to the node wrapper if the Archive Page body contains a hero.
   if ($vars['node']->getType() == 'archive_page') {
@@ -10,4 +16,53 @@ function unl_archive_page_import_preprocess_node(&$vars) {
       $vars['#attached']['library'][] = 'unl_archive_page_import/unl_archive_page_import.overrides';
     }
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function unl_archive_page_import_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Disable editing of the archive_page_body field.
+  if (strpos($form_id, 'node_') !== 0 || !str_ends_with($form_id, '_edit_form')) {
+    return;
+  }
+  $form_object = $form_state->getFormObject();
+  if (!method_exists($form_object, 'getEntity')) {
+    return;
+  }
+  $entity = $form_object->getEntity();
+  if (!$entity instanceof NodeInterface || $entity->getType() !== 'archive_page') {
+    return;
+  }
+
+  $allowed_roles = ['administrator', 'super_administrator'];
+  if (empty(array_intersect($allowed_roles, \Drupal::currentUser()->getRoles()))) {
+    $form['archive_page_body']['widget']['#disabled'] = TRUE;
+    $form['archive_page_body']['widget'][0]['#format'] = 'plain_text';
+    $form['archive_page_body']['widget'][0]['#after_build'][] = '_unl_archive_page_import_remove_text_format';
+
+    // Add a note to inform users why the body field is disabled.
+    $form['disabled_message'] = [
+      '#type' => 'markup',
+      '#weight' => -50,
+      '#markup' => '<div class="messages messages--warning">
+        <p>As of June 30, 2025 content editing is disabled for Temporary Transition Pages.</p>
+        <p>If changes are needed on this page, a new <em>Builder Page</em> should be made as a replacement and this page set to <em>Unpublished</em> (or deleted entirely).</p>
+        <p>Once the new <em>Builder Page</em> has been created, you will want to <a href="/admin/config/search/path">find and edit the URL alias path</a> that this page is using so that the new page maintains the same address.</p>
+        <p>Unless you unpublish or delete this page yourself, it will remain <em>Published</em> and live until January 2026 at which time it will be permanently set to <em>Unpublished</em>.</p>
+        </div>',
+    ];
+  }
+  else {
+    \Drupal::messenger()->addMessage(t('TTP Pages are disabled for most users but you are an Administrator so you are allowed to edit. Keep this in mind when communicating with users.'));
+  }
+}
+
+/**
+ * Custom after_build callback to remove the text format selector.
+ */
+function _unl_archive_page_import_remove_text_format($element, FormStateInterface $form_state) {
+  // Hide the text format selector to prevent users from switching back to a rich text format.
+  unset($element['format']);
+  return $element;
 }

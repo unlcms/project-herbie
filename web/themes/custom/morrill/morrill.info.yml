@@ -1,0 +1,31 @@
+name: Morrill
+type: theme
+base theme: unl_five_herbie
+description: 'Subtheme for UNLedu 5.3 Project Herbie. Custom theme for the State Museum.'
+core_version_requirement: ^10 || ^11
+
+libraries:
+  - morrill/global-styling
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+
+
+regions:
+  page_top: Page top
+  page_bottom: Page bottom
+
+  header: Header
+  navlinks: Navigation links
+  hero: Hero
+  content_top: Content top
+  sidebar_first: Sidebar first
+  content: Content
+  sidebar_second: Sidebar second
+  content_bottom: Content bottom
+
+  contactinfo: Contact info
+  socialmedia: Social media
+  leftcollinks: Related links

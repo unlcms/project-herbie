@@ -32,6 +32,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The name of the website being fetched from.
+   *
+   * @var string
+   */
+  const PUBLICATION_NAME = 'Nebraska Today';
+
+  /**
    * The entity type manager service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -126,122 +133,141 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
    * {@inheritdoc}
    */
   public function processItem($item) {
-    $node = Node::create([
-      'type' => 'news',
-    ]);
-    // Truncate title to 255 characters as is allowed by the
-    // node title field.
-    $title = Unicode::truncate($item->title, 255, TRUE, TRUE);
-    $node->set('title', $title);
-    $node->set('n_news_foreign_key', $item->id);
-    $node->set('n_news_canonical_url', $item->canonicalUrl);
+    // Ensure that n_news_canonical_url is unique. Skip creating a node if
+    // another node already exists with the same n_news_canonical_url value.
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'news')
+      ->condition('n_news_foreign_key', $item->id)
+      ->accessCheck(FALSE)
+      ->range(0, 1);
+    $node_id = $query->execute();
 
-    // Expect ISO8601 date.
-    // Convert incoming timestamp to local timezone and then into a
-    // UNIX timestamp.
-    $pub_date = new \DateTime($item->pubDate);
-    $default_system_timezone = $this->configFactory->get('system.date')->get('timezone')['default'];
-    $default_system_timezone = new \DateTimeZone($default_system_timezone);
-    $pub_date = $pub_date->setTimezone($default_system_timezone);
-    $pub_date = $pub_date->format('U');
-    $node->set('created', $pub_date);
+    if (empty($node_id)) {
+      // Create a new node.
+      $node = Node::create([
+        'type' => 'news',
+      ]);
+      // Truncate title to 255 characters as is allowed by the
+      // node title field.
+      $title = Unicode::truncate($item->title, 255, TRUE, TRUE);
+      $node->set('title', $title);
+      $node->set('n_news_foreign_key', $item->id);
+      $node->set('n_news_canonical_url', $item->canonicalUrl);
 
-    if (isset($item->articleImage)) {
-      // Due to an API bug, non images (e.g. video links) are
-      // sometimes returned.
-      if (stripos($item->articleImage->mimeType, 'image/') === 0) {
-        $remote_image_url = $item->articleImage->url;
-        $filename = explode('/', $remote_image_url);
-        $filename = end($filename);
+      // Expect ISO8601 date.
+      // Convert incoming timestamp to local timezone and then into a
+      // UNIX timestamp.
+      $pub_date = new \DateTime($item->pubDate);
+      $default_system_timezone = $this->configFactory->get('system.date')
+        ->get('timezone')['default'];
+      $default_system_timezone = new \DateTimeZone($default_system_timezone);
+      $pub_date = $pub_date->setTimezone($default_system_timezone);
+      $pub_date = $pub_date->format('U');
+      $node->set('created', $pub_date);
 
-        // Truncate alt text to 512 characters.
-        $alt = Unicode::truncate($item->articleImage->alt, 512, TRUE, TRUE);
+      if (isset($item->articleImage)) {
+        // Due to an API bug, non images (e.g. video links) are
+        // sometimes returned.
+        if (stripos($item->articleImage->mimeType, 'image/') === 0) {
+          $remote_image_url = $item->articleImage->url;
+          $filename = explode('/', $remote_image_url);
+          $filename = end($filename);
 
-        // Get image upload path from field config.
-        /** @var \Drupal\field\Entity\FieldConfig */
-        $img_field_config = FieldConfig::loadByName('media', 'image', 'field_media_image');
-        $img_dir = $img_field_config->getSetting('file_directory');
-        $img_dir = $this->token->replace($img_dir);
-        $img_dir = 'public://' . $img_dir;
+          // Truncate alt text to 512 characters.
+          $alt = Unicode::truncate($item->articleImage->alt, 512, TRUE, TRUE);
 
-        $this->fileSystem->prepareDirectory($img_dir, $this->fileSystem::CREATE_DIRECTORY);
+          // Get image upload path from field config.
+          /** @var \Drupal\field\Entity\FieldConfig */
+          $img_field_config = FieldConfig::loadByName('media', 'image', 'field_media_image');
+          $img_dir = $img_field_config->getSetting('file_directory');
+          $img_dir = $this->token->replace($img_dir);
+          $img_dir = 'public://' . $img_dir;
 
-        $local_image_uri = $img_dir . '/' . $filename;
-        // Download the file with GuzzleHTTP.
-        $this->client->request('GET', $remote_image_url, ['sink' => $local_image_uri]);
+          $this->fileSystem->prepareDirectory($img_dir, $this->fileSystem::CREATE_DIRECTORY);
 
-        // Create the File entity.
-        $file = File::create([
-          'uri' => $local_image_uri,
-        ]);
-        $file->setPermanent();
-        $file->save();
+          $local_image_uri = $img_dir . '/' . $filename;
+          // Download the file with GuzzleHTTP.
+          $this->client->request('GET', $remote_image_url, ['sink' => $local_image_uri]);
 
-        // Get (or create) the 'Imported from Nebraska Today' tag to add to the media item.
-        $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
-        $vid = 'media_tags';
-        $name = 'Imported from Nebraska Today';
-        $terms = $storage->loadByProperties([
-          'vid' => $vid,
-          'name' => $name,
-        ]);
-        if ($terms) {
-          // Only use the first term returned; (there should only be one anyway).
-          $term = reset($terms);
-        }
-        else {
-          $term = Term::create([
+          // Create the File entity.
+          $file = File::create([
+            'uri' => $local_image_uri,
+          ]);
+          $file->setPermanent();
+          $file->save();
+
+          // Get (or create) the 'Imported from PUBLICATION_NAME' tag to add to the media item.
+          $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+          $vid = 'media_tags';
+          $name = 'Imported from ' . static::PUBLICATION_NAME;
+          $terms = $storage->loadByProperties([
             'vid' => $vid,
             'name' => $name,
           ]);
-          $term->save();
-        }
-        $tid = $term->id();
+          if ($terms) {
+            // Only use the first term returned; (there should only be one anyway).
+            $term = reset($terms);
+          }
+          else {
+            $term = Term::create([
+              'vid' => $vid,
+              'name' => $name,
+            ]);
+            $term->save();
+          }
+          $tid = $term->id();
 
-        // Create the media image.
-        $media = Media::create([
-          'bundle' => 'image',
-          'field_media_image' => [
-            'target_id' => $file->id(),
-            'alt' => $alt,
-          ],
-          's_m_tags' => [
-            'target_id' => $tid,
-          ],
-        ]);
-        $media->setName($filename . ' (from Nebraska Today)')
-          ->setPublished(TRUE)
-          ->save();
+          // Create the media image.
+          $media = Media::create([
+            'bundle' => 'image',
+            'field_media_image' => [
+              'target_id' => $file->id(),
+              'alt' => $alt,
+            ],
+            's_m_tags' => [
+              'target_id' => $tid,
+            ],
+          ]);
+          $media->setName($filename . ' (from ' . static::PUBLICATION_NAME . ')')
+            ->setPublished(TRUE)
+            ->save();
 
-        // Populate the node's reference field.
-        $node->set('n_news_image', [
-          'target_id' => $media->id(),
-        ]);
+          // Populate the node's reference field.
+          $node->set('n_news_image', [
+            'target_id' => $media->id(),
+          ]);
 
-        // Generate images styles for the image.
-        // Get the responsive image style for the large__widescreen display.
-        $display_settings = $this->entityTypeManager
-          ->getStorage('entity_view_display')
-          ->load('media.image.large__widescreen')
-          ->getRenderer('field_media_image')
-          ->getSettings();
-        $responsive_image_style = ResponsiveImageStyle::load($display_settings['responsive_image_style']);
+          // Generate images styles for the image.
+          // Get the responsive image style for the large__widescreen display.
+          $display_settings = $this->entityTypeManager
+            ->getStorage('entity_view_display')
+            ->load('media.image.large__widescreen')
+            ->getRenderer('field_media_image')
+            ->getSettings();
+          $responsive_image_style = ResponsiveImageStyle::load($display_settings['responsive_image_style']);
 
-        // Loop through image styles used by responsive image style and generate
-        // derivative images.
-        foreach ($responsive_image_style->getImageStyleIds() as $image_style) {
-          $image_style = ImageStyle::load($image_style);
-          $destination_uri = $image_style->buildUri($file->uri->value);
-          $image_style->createDerivative($local_image_uri, $destination_uri);
+          // Loop through image styles used by responsive image style and generate
+          // derivative images.
+          foreach ($responsive_image_style->getImageStyleIds() as $image_style) {
+            $image_style = ImageStyle::load($image_style);
+            $destination_uri = $image_style->buildUri($file->uri->value);
+            $image_style->createDerivative($local_image_uri, $destination_uri);
+          }
         }
       }
+      $node->save();
     }
-    $node->save();
 
     // Remove item from state queued-items list.
-    $queued_items = $this->state->get('unl_news.nebraska_today.queued_items', []);
+    if (static::class == 'IANRNewsQueueProcessor') {
+      $queue = 'unl_news.ianrnews.queued_items';
+    }
+    else {
+      $queue = 'unl_news.nebraska_today.queued_items';
+    }
+    $queued_items = $this->state->get($queue, []);
     unset($queued_items[$item->id]);
-    $queued_items = $this->state->set('unl_news.nebraska_today.queued_items', $queued_items);
+    $queued_items = $this->state->set($queue, $queued_items);
   }
 
 }

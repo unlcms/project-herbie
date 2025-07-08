@@ -1,0 +1,9 @@
+unl_news.settings:
+  route_name: unl_news.settings
+  base_route: unl_news.settings
+  title: Nebraska Today settings
+unl_news.ianrnews.settings:
+  route_name: unl_news.ianrnews.settings
+  base_route: unl_news.settings
+  title: IANR News Settings
+  weight: 50

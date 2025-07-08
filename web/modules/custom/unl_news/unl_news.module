@@ -43,53 +43,122 @@ function unl_news_cron() {
 
   // Get tag IDs from config.
   $tag_ids = $config->get('tag_ids');
-  if (empty($tag_ids)) {
-    return;
-  }
-  $tag_ids = implode('+', $tag_ids);
+  if (!empty($tag_ids)) {
+    $tag_ids = implode('+', $tag_ids);
 
-  /** @var \GuzzleHttp\ClientInterface */
-  $client = \Drupal::service('http_client');
-  $url = 'https://news.unl.edu/api/v1/articles?format=json';
+    /** @var \GuzzleHttp\ClientInterface */
+    $client = \Drupal::service('http_client');
+    $pubDate = date('Y-m-d', strtotime('-1 year'));
+    $url = 'https://news.unl.edu/api/v1/articles?format=json&pubDate=' . $pubDate;
 
-  // Set initial page values for while loop.
-  $current_page = 0;
-  $total_pages = 1;
+    // Set initial page values for while loop.
+    $current_page = 0;
+    $total_pages = 1;
 
-  // Loop through API result pages.
-  while ($current_page < $total_pages) {
-    $request = $client->get($url . '&tagIds=' . $tag_ids . '&page=' . $current_page);
-    $json_string = (string) $request->getBody();
-    $response_payload = json_decode($json_string);
+    // Loop through API result pages.
+    while ($current_page <= $total_pages) {
+      $request = $client->get($url . '&tagIds=' . $tag_ids . '&page=' . $current_page);
+      $json_string = (string) $request->getBody();
+      $response_payload = json_decode($json_string);
 
-    $current_page++;
-    $total_pages = $response_payload->resultsSummary->pages;
+      $current_page++;
+      $total_pages = $response_payload->resultsSummary->pages;
 
-    // Loop through returned news items.
-    foreach ($response_payload->data as $item) {
-      // Check if item is already queued before adding to queue.
-      if (in_array($item->id, $queued_items)) {
-        continue;
-      }
+      // Loop through returned news items.
+      foreach ($response_payload->data as $item) {
+        // Check if item is already queued before adding to queue.
+        if (in_array($item->id, $queued_items)) {
+          continue;
+        }
 
-      // Check if news node with foreign key exists before adding to queue.
-      $query = \Drupal::entityQuery('node')
-        ->condition('type', 'news')
-        ->condition('n_news_foreign_key', $item->id)
-        ->accessCheck(FALSE);
-      $results = $query->execute();
-      if (!$results) {
-        $queue->createItem($item);
-        $queued_items[$item->id] = $item->id;
+        // Check if news node with foreign key exists before adding to queue.
+        $query = \Drupal::entityQuery('node')
+          ->condition('type', 'news')
+          ->condition('n_news_foreign_key', $item->id)
+          ->accessCheck(FALSE);
+        $results = $query->execute();
+        if (!$results) {
+          $queue->createItem($item);
+          $queued_items[$item->id] = $item->id;
+        }
       }
     }
+
+    // Add items to state queued-items list.
+    $state_service->set('unl_news.nebraska_today.queued_items', $queued_items);
+
+    $time = \Drupal::service('datetime.time')->getCurrentTime();
+    $state_service->set('unl_news.nebraska_today.queue_last_run', $time);
   }
 
-  // Add items to state queued-items list.
-  $state_service->set('unl_news.nebraska_today.queued_items', $queued_items);
 
-  $time = \Drupal::service('datetime.time')->getCurrentTime();
-  $state_service->set('unl_news.nebraska_today.queue_last_run', $time);
+  /*
+   * IANR News
+   *
+   * @todo Refactor the above and abstract it so this doesn't have to be copied.
+   */
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('ianrnews_queue_processor');
+
+  /** @var Drupal\Core\State\StateInterface */
+  $state_service = \Drupal::service('state');
+  $queued_items = $state_service->get('unl_news.ianrnews.queued_items', []);
+
+  /** @var \Drupal\Core\Cache\RefinableCacheableDependencyInterface */
+  $config = \Drupal::service('config.factory')->get('unl_news.settings');
+
+  // Get tag IDs from config.
+  $tag_ids = $config->get('ianrnews_tag_ids');
+  if (!empty($tag_ids)) {
+    $tag_ids = implode('+', $tag_ids);
+
+    /** @var \GuzzleHttp\ClientInterface */
+    $client = \Drupal::service('http_client');
+    $pubDate = date('Y-m-d', strtotime('-1 year'));
+    $url = 'https://ianrnews.unl.edu/api/v1/articles?format=json&pubDate=' . $pubDate;
+
+    // Set initial page values for while loop.
+    $current_page = 0;
+    $total_pages = 1;
+
+    // Loop through API result pages.
+    while ($current_page <= $total_pages) {
+      $request = $client->get($url . '&tagIds=' . $tag_ids . '&page=' . $current_page);
+      $json_string = (string) $request->getBody();
+      $response_payload = json_decode($json_string);
+
+      $current_page++;
+      $total_pages = $response_payload->resultsSummary->pages;
+
+      // Loop through returned news items.
+      foreach ($response_payload->data as $item) {
+        // Check if item is already queued before adding to queue.
+        if (in_array($item->id, $queued_items)) {
+          continue;
+        }
+
+        // Check if news node with foreign key exists before adding to queue.
+        $query = \Drupal::entityQuery('node')
+          ->condition('type', 'news')
+          ->condition('n_news_foreign_key', $item->id)
+          ->accessCheck(FALSE);
+        $results = $query->execute();
+        if (!$results) {
+          $queue->createItem($item);
+          $queued_items[$item->id] = $item->id;
+        }
+      }
+    }
+
+    // Add items to state queued-items list.
+    $state_service->set('unl_news.ianrnews.queued_items', $queued_items);
+
+    $time = \Drupal::service('datetime.time')->getCurrentTime();
+    $state_service->set('unl_news.ianrnews.queue_last_run', $time);
+  }
+
 }
 
 /**
@@ -168,5 +237,27 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       unset($form['n_news_canonical_url']);
       unset($form['n_news_foreign_key']);
     }
+  }
+}
+
+/**
+ * Implements template_preprocess_node__TYPE().
+ */
+function unl_news_preprocess_node__news(&$variables) {
+  // Determine URL, depending on whether local content or remote
+  // (Nebraska Today) content.
+  if ($canonical_url = $variables['node']->get('n_news_canonical_url')->getString()) {
+    $variables['link'] = $canonical_url;
+    $variables['source'] = 'remote';
+    if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
+      $variables['publication'] = 'IANR News';
+    }
+    else {
+      $variables['publication'] = 'Nebraska Today';
+    }
+  }
+  else {
+    $variables['link'] = $variables['url'];
+    $variables['source'] = 'local';
   }
 }

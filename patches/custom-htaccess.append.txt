@@ -39,6 +39,10 @@
   RewriteCond %{HTTP_HOST} ^myplan\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/service-portal/myunl/ [R=301,L]
 
+  # nodrift
+  RewriteCond %{HTTP_HOST} ^nodrift\.unl\.edu$
+  RewriteRule ^(.*)$ https://pested.unl.edu/herbicide-stewardship/ [R=301,L]
+
   # phishing
   RewriteCond %{HTTP_HOST} ^phishing\.unl\.edu$
   RewriteRule ^(.*)$ https://its.unl.edu/departments/securityunl/phishingunl/ [R=301,L]

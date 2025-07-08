@@ -2,6 +2,13 @@ unl_news.settings:
   path: '/admin/config/content/unl-news'
   defaults:
     _form: '\Drupal\unl_news\Form\SettingsForm'
-    _title: 'UNL News settings'
+    _title: 'Nebraska Today settings'
+  requirements:
+    _permission: 'administer unl news'
+unl_news.ianrnews.settings:
+  path: '/admin/config/content/unl-news/ianrnews'
+  defaults:
+    _form: '\Drupal\unl_news\Form\IANRSettingsForm'
+    _title: 'IANR News settings'
   requirements:
     _permission: 'administer unl news'

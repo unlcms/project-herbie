@@ -26,6 +26,27 @@ class SettingsForm extends ConfigFormBase {
   const SETTINGS = 'unl_news.settings';
 
   /**
+   * Tag config name for this newsroom.
+   *
+   * @var string
+   */
+  const SETTINGS_TAGS_NAME = 'tag_ids';
+
+  /**
+   * Cache bin name.
+   *
+   * @var string
+   */
+  const CACHE_NAME = 'unl_news.ne_today_tags';
+
+  /**
+   * URL with a JSON list of tags.
+   *
+   * @var string
+   */
+  const TAG_API_ENDPOINT = 'https://news.unl.edu/api/v1/tags?format=json';
+
+  /**
    * Queue name.
    *
    * @var string
@@ -136,14 +157,14 @@ class SettingsForm extends ConfigFormBase {
     $config = $this->config(static::SETTINGS);
 
     // Load tags from cache.
-    $cache = $this->cache->get('unl_news.ne_today_tags');
+    $cache = $this->cache->get(static::CACHE_NAME);
     if ($cache) {
       $options = $cache->data;
     }
     // If tags are not cached, then attempt to refresh.
     else {
       if ($this->tagsRefresh()) {
-        $cache = $this->cache->get('unl_news.ne_today_tags');
+        $cache = $this->cache->get(static::CACHE_NAME);
         $options = $cache->data;
       }
       else {
@@ -158,7 +179,7 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     $current_tags = [];
-    foreach ($config->get('tag_ids') as $id) {
+    foreach ($config->get(static::SETTINGS_TAGS_NAME) as $id) {
       $current_tags[] = '<span class="unl-news-tag">'.$options[$id].'</span>';
     }
     $tag_text = 'None';
@@ -172,15 +193,15 @@ class SettingsForm extends ConfigFormBase {
     $form['tags']['tag_ids'] = [
       '#type' => 'select',
       '#title' => $this->t('Available tags'),
-      '#description' => $this->t('Articles in Nebraska Today with the selected tags will be imported into this site.'),
+      '#description' => $this->t('Articles with the selected tags will be imported into this site.'),
       '#multiple' => TRUE,
       '#options' => $options,
-      '#default_value' => $config->get('tag_ids'),
+      '#default_value' => $config->get(static::SETTINGS_TAGS_NAME),
       '#disabled' => FALSE,
     ];
     if (isset($tag_ids_disabled) && $tag_ids_disabled) {
       $form['tags']['tag_ids']['#disabled'] = TRUE;
-      $form['tags']['tag_ids']['#description'] = $this->t('<strong>Unable to retrieve tags from Nebraska Today API. This field is disabled to prevent data loss.</strong><br>Nebraska Today tags to be imported by this site.');
+      $form['tags']['tag_ids']['#description'] = $this->t('<strong>Unable to retrieve tags from the API. This field is disabled to prevent data loss.</strong><br>Tags to be imported by this site.');
     }
 
     $form['tags']['tags_refresh'] = [
@@ -190,7 +211,7 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     $form['tags']['tags_refresh_description'] = [
-      '#markup' => $this->t('Download an updated tags list from Nebraska Today.'),
+      '#markup' => $this->t('Download an updated tags list.'),
     ];
 
     $form['retrieve_articles'] = [
@@ -199,7 +220,7 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     $form['retrieve_articles']['markup'] = [
-      '#markup' => $this->t('<p>Articles are retrieved from the Nebraska Today API and then queued by cron.</p>'),
+      '#markup' => $this->t('<p>Articles are retrieved from the News API and then queued by cron.</p>'),
     ];
 
     $form['retrieve_articles']['manual_api_pull'] = [
@@ -218,7 +239,7 @@ class SettingsForm extends ConfigFormBase {
     ];
 
     /** @var \Drupal\Core\Queue\QueueInterface */
-    $queue = $this->queueFactory->get(self::QUEUE_NAME);
+    $queue = $this->queueFactory->get(static::QUEUE_NAME);
 
     $form['queue']['queue_number_of_items'] = [
       '#markup' => $this->t('<p><strong>Number of items in queue:</strong> @number.</p><p>Queue items are processed by cron. Depending on how many items are in queue, it may take several cron jobs cycles to process all of the items.</p>', ['@number' => $queue->numberOfItems()]),
@@ -273,11 +294,11 @@ class SettingsForm extends ConfigFormBase {
 
     $config = $this->configFactory->getEditable(static::SETTINGS);
 
-    if (!$form['tag_ids']['#disabled']) {
+    if (!$form['tags']['tag_ids']['#disabled']) {
       $tag_ids = $form_state->getValue('tag_ids');
       $tag_ids = array_keys($tag_ids);
 
-      $config->set('tag_ids', $tag_ids);
+      $config->set(static::SETTINGS_TAGS_NAME, $tag_ids);
     }
 
     $config->save();
@@ -289,7 +310,7 @@ class SettingsForm extends ConfigFormBase {
    * Initiates batch processing with queue_ui.batch service.
    */
   public function manualBatch() {
-    \Drupal::service('queue_ui.batch')->batch([self::QUEUE_NAME]);
+    \Drupal::service('queue_ui.batch')->batch([static::QUEUE_NAME]);
   }
 
   /**
@@ -300,7 +321,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public function tagsRefresh() {
     try {
-      $request = $this->httpClient->get('https://news.unl.edu/api/v1/tags?format=json');
+      $request = $this->httpClient->get(static::TAG_API_ENDPOINT);
       $json_string = (string) $request->getBody();
       $response_payload = json_decode($json_string);
       $options = [];
@@ -310,14 +331,14 @@ class SettingsForm extends ConfigFormBase {
       asort($options, SORT_STRING | SORT_FLAG_CASE);
 
       // Cache permanently.
-      $this->cache->set('unl_news.ne_today_tags', $options);
-      $this->messenger->addMessage('Tags successfully refreshed from Nebraska Today API.');
+      $this->cache->set(static::CACHE_NAME, $options);
+      $this->messenger->addMessage('Tags successfully refreshed from the News API.');
       return TRUE;
     }
     catch (GuzzleException $e) {
       $message = 'Guzzle exception: ' . get_class($e) . '. Error message: ' . $e->getMessage();
       $this->logger->error($message);
-      $this->messenger->addError('Unable to retrieve tags from Nebraska Today API.');
+      $this->messenger->addError('Unable to retrieve tags from the News API.');
       return FALSE;
     }
   }

@@ -3094,22 +3094,12 @@ button.close-modal span:after {
 }
 .featured-content-image-holder {
   overflow: hidden;
-  height: 70vh;
+  height: auto;
   width: 100%;
   background-color: #58585a;
   position: relative;
 }
-@media  (min-width: 591px) {
-  .featured-content-image-holder {
-    height: 62vh;
-    min-height: 29.034em;
-  }
-}
-@media  (min-width: 591px) and (max-width: 956px) {
-  .featured-content-image-holder {
-    max-height: 32.746em;
-  }
-}
+
 @media  (min-width: 956px) and (min-height: 666px) {
   .featured-content-image-holder {
     height: 32.746em;
@@ -3129,16 +3119,13 @@ button.close-modal span:after {
   }
 }
 .featured-content-image {
-  position: absolute;
   display: block;
-  top: 50%;
-  left: 50%;
-  width: auto;
+  width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
 }
-@media  (min-width: 591px) {
+@media  (min-width: 956px) {
   .featured-content-image {
+    position: absolute;
     top: auto;
     left: auto;
     right: auto;
@@ -4783,4 +4770,10 @@ li:not(:first-of-type) .support-tier-heading {
 }
 .new-benefit {
   font-style: italic;
+}
+
+@media  (max-width: 752px) {
+  #main_content {
+    padding-top: 5.388em;
+  }
 }

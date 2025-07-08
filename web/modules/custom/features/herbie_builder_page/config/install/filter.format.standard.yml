@@ -110,3 +110,4 @@ filters:
     weight: 0
     settings:
       dcftable: '1'
+      dcfblockquote: '1'

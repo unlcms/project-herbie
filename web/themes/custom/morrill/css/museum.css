@@ -1,0 +1,1211 @@
+
+    :root {
+      font-size: 1em;
+    }
+    .dcf-header, #main-museum-nav {
+      z-index: 998;
+      background-color: transparent;
+    }
+    .unl-sm-logo {
+      width: 345px !important;
+      height: auto;
+      position: absolute;
+      top: 0;
+      z-index: 998;
+    }
+    .museum, .morrill .museum {
+      color:#fff ;
+      text-decoration: none;
+      position: relative;
+    }
+
+.background-morrill {
+  background-color: #700949;
+}
+.morrill-card .dcf-card {
+  background-color: #700949;
+  color: #fff;
+}
+a.morrill-card .dcf-card:hover {
+  box-shadow: none;
+}
+.theme .dcf-card.edu-block:hover {
+  box-shadow: none;
+}
+a.morrill-card {
+  text-decoration: none;
+  position:relative;
+  transition: opacity 0.3s ease-in-out;
+}
+a.morrill-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px #700949;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+a.morrill-card:hover::after {
+  box-shadow: 0px 0px 0px 1em #700949;
+  opacity: 1;
+}
+a.morrill-card .museum {
+      text-decoration: none;
+      position: relative;
+    }
+a.morrill-card .museum::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 4px; /* Adjust thickness as desired */
+  bottom: -4px; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #ffffff; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Animate the underline on hover */
+a.morrill-card .museum:hover::after {
+  width: 100%; /* Expand to full width on hover */
+} 
+
+.background-ashfall {
+  background-color: #99031e;
+}
+.ashfall-card .dcf-card {
+  background-color: #99031e;
+  color: #fff;
+}
+a.ashfall-card .dcf-card:hover {
+  box-shadow: none;
+}
+a.ashfall-card {
+  text-decoration: none;
+  position:relative;
+  transition: opacity 0.3s ease-in-out;
+}
+a.ashfall-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px #99031e;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+a.ashfall-card:hover::after {
+  box-shadow: 0px 0px 0px 1em #99031e;
+  opacity: 1;
+}
+a.ashfall-card .museum {
+      text-decoration: none;
+      position: relative;
+    }
+a.ashfall-card .museum::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 4px; /* Adjust thickness as desired */
+  bottom: -4px; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #ffffff; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Animate the underline on hover */
+a.ashfall-card .museum:hover::after {
+  width: 100%; /* Expand to full width on hover */
+} 
+
+.background-trailside {
+  background-color: #09406c;
+}
+.trailside-card .dcf-card {
+  background-color: #09406c;
+  color: #fff;
+}
+a.trailside-card .dcf-card:hover {
+  box-shadow: none;
+}
+a.trailside-card {
+  text-decoration: none;
+  position:relative;
+  transition: opacity 0.3s ease-in-out;
+}
+a.trailside-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px #09406c;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+a.trailside-card:hover::after {
+  box-shadow: 0px 0px 0px 1em #09406c;
+  opacity: 1;
+}
+
+a.trailside-card .museum {
+      text-decoration: none;
+      position: relative;
+    }
+a.trailside-card .museum::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 4px; /* Adjust thickness as desired */
+  bottom: -4px; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #ffffff; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Animate the underline on hover */
+a.trailside-card .museum:hover::after {
+  width: 100%; /* Expand to full width on hover */
+} 
+.Our-Family-Museums-nav {
+ 
+}
+.Our-Family-Museums-nav a.morrill-color {
+  color:#700949;
+  text-decoration: none;
+  position: relative;
+}
+.Our-Family-Museums-nav a.ashfall-color {
+  color:#99031e;
+  text-decoration: none;
+  position: relative;
+}
+.Our-Family-Museums-nav a.trailside-color {
+  color:#09406c;
+  text-decoration: none;
+  position: relative;
+}
+
+.Our-Family-Museums-nav a.morrill-color::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 2px; /* Adjust thickness as desired */
+  bottom: 0; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #700949; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Animate the underline on hover */
+.Our-Family-Museums-nav a.morrill-color:hover::after {
+  width: 100%; /* Expand to full width on hover */
+}
+.Our-Family-Museums-nav a.ashfall-color::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 2px; /* Adjust thickness as desired */
+  bottom: 0; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #99031e; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+/* Animate the underline on hover */
+.Our-Family-Museums-nav a.ashfall-color:hover::after {
+  width: 100%; /* Expand to full width on hover */
+}
+.Our-Family-Museums-nav a.trailside-color::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 2px; /* Adjust thickness as desired */
+  bottom: 0; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #09406c;; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+/* Animate the underline on hover */
+.Our-Family-Museums-nav a.trailside-color:hover::after {
+  width: 100%; /* Expand to full width on hover test */
+}
+ 
+.top-nav-left {
+  z-index: 998;
+}
+/* .top-level .top-nav-right::before {
+  content: "";
+  background-image: url("images/state-museum-logo4.png");
+  z-index: 999;
+  height: 164px;
+  width: 27%;
+  max-width:337px;
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:0;
+  right: 69%;
+  background-size: contain;
+} */
+/* .morrill .top-nav-right::before {
+  content: "";
+  background-image: url("images/state-museum-logo5.png");
+  z-index: 999;
+  height: 164px;
+  width: 27%;
+  max-width:337px;
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:0;
+  right: 69%;
+  background-size: contain;
+} */
+/* .trailside .top-nav-right::before {
+  content: "";
+  background-image: url("images/state-museum-logo3.png");
+  z-index: 999;
+  height: 164px;
+  width: 27%;
+  max-width:337px;
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:0;
+  right: 69%;
+  background-size: contain;
+}
+.ashfall .top-nav-right::before {
+  content: "";
+  background-image: url("images/state-museum-logo6.png");
+  z-index: 999;
+  height: 164px;
+  width: 27%;
+  max-width:337px;
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:0;
+  right: 69%;
+  background-size: contain;
+} */
+.nav-block-logo {
+    position: absolute;
+    right: calc(69vw);
+    top: 0;
+    width: auto;
+    max-width: 337px;
+    height: auto;
+    max-height: 164px;
+    z-index: 999;
+}
+.nav-top-row {
+  background-color:#e5e5e5 ;
+  box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.333);
+  position:relative;
+  z-index: 998;
+}
+.nav-mid-row {
+  background-color:#d00000 ;
+  border-bottom: #a3a3a3 solid 1px;
+  z-index: 998;
+}
+.nav-bot-row {
+  background-color:#d00000 ;
+  box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.333);
+  z-index: 998;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: inherit;
+}
+.top-level .nav-bot-row {
+  background-color:#d00000 ;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: inherit;
+}
+.morrill .nav-bot-row {
+  background-color:#700949 ;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: inherit;
+}
+.trailside .nav-bot-row {
+  background-color:#08406b ;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: inherit;
+}
+.ashfall .nav-bot-row {
+  background-color:#9a031e ;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: inherit;
+}
+.nav-mid-row .middle-nav li a {
+  color:#fff ;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+.nav-bot-row .bottom-nav li a {
+  color:#fff ;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+.nav-mid-row .middle-nav li a:hover {   
+  text-decoration: underline;
+}
+.nav-bot-row .bottom-nav li a:hover {
+  text-decoration: underline;  
+}
+a .UNL-logo {
+  transition: 0.3s;
+ }
+a .UNL-logo:hover {
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.95);
+}
+.bottom-nav {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.nav-bot-row.dcf-nav-menu ul li ul {
+  padding-left: 0;
+
+}
+.lato-thin {
+  font-family: "Lato", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.lato-light {
+  font-family: "Lato", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.lato-regular {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.lato-bold {
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.lato-black {
+  font-family: "Lato", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.lato-thin-italic {
+  font-family: "Lato", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+.lato-light-italic {
+  font-family: "Lato", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.lato-regular-italic {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.lato-bold-italic {
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.lato-black-italic {
+  font-family: "Lato", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+p, ul {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.visuallyHidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+.hamburger {
+    margin: 0 auto;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    line-height: 1px;
+}
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    border-radius: 1px;
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+}
+.bar1 {
+    top: 5px;
+}
+.bar2,
+.bar3 {
+    top: 12px;
+}
+.bar3 {
+    right: 0;
+}
+.bar4 {
+    bottom: 0px;
+}
+/* HAMBURGER 1 */
+.checkbox1:checked + label > .hamburger1 > .bar1 {
+    transform: rotate(45deg);
+    transform-origin: 20%;
+    width: 30px;
+    height: 2px;
+    line-height: 1;
+}
+.checkbox1:checked + label > .hamburger1 > .bar2 {
+    transform: translateX(-30px);
+    background-color: transparent;
+}
+.checkbox1:checked + label > .hamburger1 > .bar3 {
+    transform: translateX(30px);
+    background-color: transparent;
+}
+.checkbox1:checked + label > .hamburger1 > .bar4 {
+    transform-origin: 20%;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+@supports (display:grid) {
+    .unl-grid-cols {
+        grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
+    }
+}
+@supports (display:grid) {
+    @media only screen and (min-width: 42.09em) {
+        .unl-grid-cols {
+            grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 3.160493824vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
+        }
+    }
+}
+@supports (display:grid) {
+    @media only screen and (min-width: 74.83em) {
+        .unl-grid-cols {
+            grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 2fr 1fr 3.160493824rem 1rem 3.160493824vw 3.160493824rem 1rem 1fr 2fr 3.160493824rem 1rem 5.6186556843vw;
+        }
+    }
+}
+.unlcms-display-banner {
+  z-index: 1;
+  position: relative;
+}
+@media (min-width: 42.09em) {
+    .unlcms-display-banner {
+        grid-template-rows: 1fr auto auto .78rem;
+        height: 63vh;
+        max-height: 31.57em;
+    }
+}
+@media (max-width: 42.09em) {
+    .unlcms-display-banner {
+        grid-template-rows: auto auto auto;
+        padding-bottom: 2.37em;
+    }
+}
+@media (min-width: 42.09em) {
+    .unlcms-display-banner-text-c {
+        align-items: center;
+        display: flex
+;
+        flex-direction: column;
+        grid-area: 2 / 2 / 3 / -2;
+        text-align: center;
+    }
+}
+@media (max-width: 42.09em) {
+    .unlcms-display-banner-text {
+        grid-area: 2 / 2 / 3 / -2;
+        padding-top: 1em;
+    }
+}
+@media (min-width: 42.09em) {
+    .unlcms-display-banner-img {
+        grid-area: 1 / 1 / -1 / -1;
+    }
+}
+@media (max-width: 42.09em) {
+    .unlcms-display-banner-img {
+        grid-area: 1 / 1 / 2 / -1;
+    }
+}
+.media-entity {
+    display: grid;
+}
+.dropshadow {
+  -webkit-box-shadow: 0px 4px 2px -2px rgba(75, 75, 75, 0.25);
+  box-shadow: 0px 4px 2px -2px rgba(75, 75, 75, 0.25);
+}
+.nav-wrapper {
+    width: 69vw;
+    max-width: 1282px;
+}
+.museum-bg {
+  background-image: url("/images/bg-wavy-01.jpg");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.cta-bg {
+  background-image: url("/images/bg-CTA-01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cta-bg-morrill {
+  background-image: url("/images/bg-CTA-02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.news-bg {
+  border-color:#ccccca;
+  background-color: #f4f3f0;
+}
+.lil-archie {
+  background-image: url("/images/archie-skeleton02.png");
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+.tan-light {
+  background-color: #f8f7f4;
+}
+.tan-mid {
+  background-color: #f1eee8;
+}
+.tan-dark {
+  background-color: #e4dece;
+  background-image: url("/images/bg-wavy-03.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+.membership-bg {
+  background-image: url("/images/morrill-hall-interior-01.jpg");
+  background-size: cover;
+}
+.research-overlay {
+  background-color: rgba(0, 0, 0, .45);
+  transition-behavior: normal;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    transition-property: background-color;
+}
+.hero-overlay {
+  background-color: rgba(0, 0, 0, .45);
+}
+a .research-overlay:hover {
+  background-color: rgba(0, 0, 0, .75)
+}
+a .research-overlay h4::after {
+  content: "";
+  position: absolute; /* Position relative to the parent */
+  width: 0; /* Initially invisible */
+  height: 2px; /* Adjust thickness as desired */
+  bottom: 0; /* Position at the bottom of the text */
+  right: 0; /* Position at the left of the text */
+  background-color: #fff; /* Set the underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Animate the underline on hover */
+a .research-overlay h4:hover::after {
+  width: 100%; /* Expand to full width on hover */
+}
+
+/* //////Menu banner/flag shape START////// */
+.top {
+  clip-path: polygon(0 0,100% 0,100% calc(100% - 1.7em),50% 100%,0 calc(100% - 1.7em));
+  background-color: #3d3a3a;
+}
+/* //////Menu banner/flag shape END////// */
+
+.dcf-btn .dcf-btn-secondary:hover {
+  background-color: #3d3a3a;
+  color:#fff;
+} 
+.theme .dcf-btn-secondary:not(:disabled):hover, .theme .dcf-btn-secondary:not(:disabled):active, .theme .dcf-btn-tertiary:not(:disabled):hover, .theme .dcf-btn-tertiary:not(:disabled):active {
+    background-color: var(--bg-btn-secondary-tertiary-hover);
+    color: #fff;
+}
+.edu-block {
+  background-color: transparent;
+}
+.education-button {
+  background-color: #454545;
+  text-decoration: none;
+  position:relative;
+  transition: opacity 0.3s ease-in-out;
+}
+.education-button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px #99031e;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.education-button:hover {
+  background-color: #99031e;
+}
+.education-button:hover::after {
+  box-shadow: 0px 0px 0px 1em #99031e;
+  opacity: 1;
+}
+.mus-flex {
+  flex-direction: row;
+}
+.inset-block {
+  right: 66%;
+  background-color: #F4F3EF;
+  width: 350px;
+  z-index: 3;
+  position: absolute;
+}
+.mag-bleed {
+  height:48vw;max-height:750px;min-height:350px;
+}
+@media screen and (max-width: 1070px) {
+  .inset-block {
+    right: 55%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .inset-block {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .mus-flex {
+  flex-direction: column;
+}
+.mag-bleed {
+  height:48vw;
+  max-height:750px;
+  min-height:350px;
+  width: 100%;
+}
+}
+.event-date {
+  background-color:  #454545;
+  width: fit-content;
+}
+.event-month {
+  background-color: #d00000;
+  width: 100%;
+}
+.circle-button {
+  width: 5em;
+  height: 5em;
+  background-color: #e5e5e5;
+  text-decoration: none;
+  border-color: #e5e5e5;
+  color:#000;
+}
+.dcf-footer {
+  background-color: #454545;
+}
+@media screen {
+  
+}
+.icon-membership::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px #99031e;
+  opacity: 0;
+  transition: 0.3s ease-in-out; 
+
+}
+.icon-donate {
+
+}
+.icon-get-involved {
+
+}
+.icon-search {
+
+}
+/*   / SLIDESHOW /  */
+
+
+/* Media Carousel */
+      .lincoln-slide {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        position: relative;
+        right: -5.62vw;
+        left: 0;   
+        max-width: calc(100% + 5.62vw);
+        width: calc(100% + 5.62vw);
+      }
+      .lincoln-slide[data-start="right"] {
+        right: 0;
+        left: -5.62vw;
+      }
+
+/* Media Carousel Slide List */
+
+   .lincoln-slide ul {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;                    /* This is the column gap between slides */
+    max-width: 100%;
+    overflow-x: scroll;           /* This is for when JS fails */
+    overflow-y: hidden;
+    height: auto;                /* This is the height of the slides */
+    padding: 0;
+    overflow-x: hidden;
+    }
+      
+      
+      .lincoln-slide[data-start="right"] ul {
+        flex-direction: row-reverse;
+      }
+      .lincoln-slide li {
+        flex: 0 0 auto;
+        height: 100%;
+        min-width: 300px;   /* This is the min width of the slides */
+        max-width: 100%;    /* This is the max width of the slides, this should probably stay at 100% for mobile use */
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .lincoln-slide li.lincoln-half-height {
+          width: 29%;
+       }
+
+      /* This is to section the slides internals vertically */
+      .lincoln-slide .lincoln-full-height>*{
+        width: auto;
+        height: 100%;
+      }
+    
+      .lincoln-slide li.lincoln-full-height>*{
+        min-width: 250px;
+
+      }
+      
+      .lincoln-slide .lincoln-half-height>*{
+        width: auto;
+        height: calc(50% - 0.5rem);       /* This has 0.5rem because it is half the row gap */
+        margin-bottom: 1rem;              /* This is the row gap inside the slide */
+      }
+
+       /* Media Carousel Controls */
+      .lincoln-slide-controls {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;                 /* This is the column gap between the buttons and the progress bar */
+        position: relative;
+        max-width: calc(100% - 5.62vw);
+      }
+      .lincoln-slide[data-start="right"] .lincoln-slide-controls {
+       left: 5.62vw;
+       }
+       .lincoln-slide[data-start="left"] .lincoln-slide-controls {
+       left: 5.62vw;
+       }
+      /* The control buttons */
+      .lincoln-slide-controls button {
+        padding: 0;
+        font-size: 0;
+        line-height: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: transparent !important;
+        box-shadow: none;
+        z-index: 2;
+        text-align: center;
+        transition: opacity 0.2s linear;
+        border-style: solid;
+        border-width: 2px;                /* The button border width */
+        touch-action: manipulation;
+      }
+       .lincoln-slide-controls button:disabled {
+        opacity: 0.35;
+      }
+     @media (hover: hover) and (pointer: fine) {
+        .lincoln-slide-controls button:hover {
+          opacity: 0.5;
+        }
+      }
+      .lincoln-progress-container {
+        display: grid;
+        align-items: center;
+      }
+
+      /* The progress bar */
+      .lincoln-progress-base {
+        grid-row: 1;
+        grid-column: 1;
+        height: 4px;       /* The vertical size of the bar base */
+        width: calc(100% - 3em);
+      }
+      .lincoln-progress-progression{
+        grid-row: 1;
+        grid-column: 1;
+        height: 10px;       /* The vertical size of the bar */
+        width: 0%;
+      }
+      .lincoln-slide[data-start="right"] .lincoln-progress-progression {
+        justify-self: end;
+      }
+
+      /* The styles for the color of the controls */
+      .lincoln-slide-controls-scarlet .lincoln-progress-progression,
+      .lincoln-slide-controls-scarlet .lincoln-progress-base,
+      .lincoln-slide-controls-scarlet .lincoln-slide-controls button
+      {
+        background-color: var(--bg-overlay-dark);
+        color: var(--bg-overlay-dark);
+        border-color: var(--bg-overlay-dark);
+      }
+      .lincoln-slide-controls-cream .lincoln-progress-progression,
+      .lincoln-slide-controls-cream .lincoln-progress-base,
+      .lincoln-slide-controls-cream .lincoln-slide-controls button
+      {
+        background-color: var(--bg-overlay-dark);
+        color: var(--bg-overlay-dark);
+        border-color: var(--bg-overlay-dark);
+      }
+    .mobile-hide {
+            display: grid;
+    }
+    .mobile-show {
+        display: none;
+    }
+@media (max-width:736px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+   .mobile-hide {
+        display: none!important;
+    }
+    .mobile-show {
+        display: inherit;
+    }
+}
+@media only screen and (max-width: 897px) and (orientation: landscape) {
+   .mobile-hide {
+        display: none!important;
+    }
+    .mobile-show {
+        display: inherit;
+    }
+}
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+   figure.dcf-relative .dcf-btn {
+        display: none!important;
+    }
+    }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+.morrill-planetarium {
+  background-image: url("/images/planetarium_bg_01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.member-levels a {
+  text-decoration: none;
+  color:#99031e;
+}
+.research-btn {
+    display: block;
+    background-color: rgba(0, 0, 0, .65);
+    transition-behavior: normal;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
+      transition-delay: 0s;
+      transition-property: background-color;
+  }
+
+.research-btn:hover {
+    background-color: rgba(0, 0, 0, 1)
+  }
+@media only screen and (min-width: 56.12em) {
+    .dcf-header-global-child {
+        margin-left:0;
+    }
+}
+@media only screen and (min-width: 56.12em) {
+    .dcf-nav-menu {
+        display: inherit;
+        /* flex-wrap: nowrap; */
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.morrill .nav-bot-row .dcf-nav-menu {
+  background-color:#700949 ;
+}
+.ashfall .nav-bot-row .dcf-nav-menu {
+  background-color:#9a031e ;
+}
+.trailside .nav-bot-row .dcf-nav-menu {
+  background-color:#08406b ;
+}
+
+.dcf-nav-menu-child a, .dcf-nav-menu-child button {
+  line-height: 1.333333333;
+  display: inherit;
+  padding: 0;
+}
+.morrill .dcf-nav-menu-child .dcf-nav-local ul {
+  background-color:#700949 ;
+}
+.ashfall .dcf-nav-menu-child .dcf-nav-local ul {
+  background-color:#9a031e ;
+}
+.trailside .dcf-nav-menu-child .dcf-nav-local ul {
+  background-color:#08406b ;
+}
+.dcf-nav-local ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+.dcf-nav-local ul ul li {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-right: 0.8em;
+}
+.theme .dcf-nav-toggle-btn {
+  flex-basis: inherit;
+}
+.theme.morrill .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+  background-color:#700949 ;
+}
+.theme.trailside .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+  background-color:#08406b ;
+}
+.theme.ashfall .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+  background-color:#9a031e ;
+}  
+.dcf-nav-local>ul:first-child {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.dcf-header-global {
+  display: block!important;
+}
+/* Button hover issue */
+.theme .dcf-btn-primary:not(:disabled):hover, .theme .dcf-btn-primary:not(:disabled):active {
+  background-color: var(--bg-btn-primary-hover);
+  border-color: var(--b-btn-primary-hover);
+  color: var(--btn-primary);
+}
+.dcf-btn-secondary, .dcf-btn-secondary:link {
+  background-color: var(--bg-btn-secondary);
+  border-color: var(--bg-btn-secondary);
+  color: var(--btn-secondary);
+}
+@media only screen and (min-width: 42.09em) {
+  .dcf-nav-local>ul:first-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 56.12em) {
+  .dcf-header-global {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  .dcf-nav-local>ul:first-child {
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+    width: 100%;
+}
+  .theme .dcf-nav-local>ul>li {
+    position: relative;
+    width: 100%;
+  }
+  .top-level .dcf-nav-local ul ul:before {
+    background-color: #d00000;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 200vw;
+    z-index: -1;
+  }
+  .morrill .dcf-nav-local ul ul:before {
+      background-color: #700949;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 200vw;
+      z-index: -1;
+  }
+  .ashfall .dcf-nav-local ul ul:before {
+    background-color: #9a031e;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 200vw;
+    z-index: -1;
+  }
+  .trailside .dcf-nav-local ul ul:before {
+    background-color: #08406b;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 200vw;
+    z-index: -1;
+  }
+.umbrella .nav-top-row-mobile, .morrill .nav-bot-row-mobile, .ashfall .nav-bot-row-mobile, .trailside .nav-bot-row-mobile, .museum-mobile-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 56.12em) {
+  .dcf-nav-menu a, .dcf-nav-menu button {
+    margin-left: 0;
+}
+
+  .top-level .nav-bot-row, .morrill .nav-bot-row {
+    justify-content: flex-start;
+    width: 100%;
+    /* opacity: 1;
+    visibility: visible; */
+  }
+  .nav-wrapper {
+    width: 100vw;
+    max-width: 1282px;
+}
+.mobile-logo-hide, .nav-block-logo, .nav-bot-row, .museum-button-catch, .Button-menu-holder, .top-level .top-nav-right::before, .morrill .top-nav-right::before, .ashfall .top-nav-right::before, .trailside .top-nav-right::before, .top-level .nav-top-row, .top-level .nav-mid-row  {
+    opacity: 0;
+    visibility: hidden;
+    display: none!important;
+  }
+  .theme .dcf-nav-toggle-btn {
+    flex-basis: 25%;
+  }
+
+  .umbrella .nav-top-row-mobile, .morrill .nav-top-row-mobile, .ashfall .nav-top-row-mobile, .trailside .nav-top-row-mobile {
+  background-color: #e5e5e5;
+  box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.333);
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  }
+.umbrella .nav-bot-row-mobile {
+    background-color: #d00000;
+      display: flex;
+      justify-content: center;
+      overflow: visible;
+      height: 134px;
+      position: relative;
+    }
+.morrill .nav-bot-row-mobile {
+  background-color: #700949;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    height: 134px;
+    position: relative;
+  }
+.trailside .nav-bot-row-mobile {
+  background-color: #08406B;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    height: 134px;
+    position: relative;
+  }
+  .ashfall .nav-bot-row-mobile {
+  background-color: #9A041E;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    height: 134px;
+    position: relative;
+  }
+  .dcf-nav-menu {
+    height: 0;
+    opacity: 0;
+    pointer-events: visible;
+    position: fixed;
+    transition: opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0ms .4s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 998;
+}
+  .morrill .dcf-nav-menu-child {
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--bg-brand-alpha);
+    bottom: 4.2139917643em;
+    height: 57vh;
+    overflow-y: auto;
+    padding-left: 5.6186556843vw;
+    padding-right: 5.6186556843vw;
+    position: fixed;
+    padding-top: 1em;;
+}
+}
+
