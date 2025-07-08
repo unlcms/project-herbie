@@ -14359,16 +14359,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.29",
+            "version": "10.5.3.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "e3498257563fda9321cad50ed074f8ab48948e48"
+                "reference": "9f40322476539f68dbad7df058491128a13cfda5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/e3498257563fda9321cad50ed074f8ab48948e48",
-                "reference": "e3498257563fda9321cad50ed074f8ab48948e48",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/9f40322476539f68dbad7df058491128a13cfda5",
+                "reference": "9f40322476539f68dbad7df058491128a13cfda5",
                 "shasum": ""
             },
             "require": {
@@ -14386,9 +14386,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.29"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.30"
             },
-            "time": "2025-02-21T15:54:25+00:00"
+            "time": "2025-07-08T22:13:58+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
