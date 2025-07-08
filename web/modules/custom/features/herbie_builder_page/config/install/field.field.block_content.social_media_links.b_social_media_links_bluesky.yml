@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - block_content.type.social_media_links
-    - field.storage.block_content.b_social_media_links_twitter
-id: block_content.social_media_links.b_social_media_links_twitter
-field_name: b_social_media_links_twitter
+    - field.storage.block_content.b_social_media_links_bluesky
+id: block_content.social_media_links.b_social_media_links_bluesky
+field_name: b_social_media_links_bluesky
 entity_type: block_content
 bundle: social_media_links
-label: "X (formerly Twitter)\t username"
+label: 'Bluesky username'
 description: "Only enter the username without the '@' symbol."
 required: false
 translatable: false

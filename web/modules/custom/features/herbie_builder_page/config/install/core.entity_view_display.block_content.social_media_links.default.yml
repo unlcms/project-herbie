@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - block_content.type.social_media_links
+    - field.field.block_content.social_media_links.b_social_media_links_bluesky
     - field.field.block_content.social_media_links.b_social_media_links_facebook
     - field.field.block_content.social_media_links.b_social_media_links_instagram
     - field.field.block_content.social_media_links.b_social_media_links_linkedin
@@ -16,6 +17,14 @@ targetEntityType: block_content
 bundle: social_media_links
 mode: default
 content:
+  b_social_media_links_bluesky:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   b_social_media_links_facebook:
     type: string
     label: hidden
