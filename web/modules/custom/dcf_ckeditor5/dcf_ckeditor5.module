@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\editor\Entity\Editor;
 
 /**
  * Implements hook_form_alter().
@@ -146,3 +147,11 @@ function __dcf_ckeditor5_validate_links_in_text_fields(array &$form, FormStateIn
     }
   }
 }
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ * We can use this hook to modify the CKEditor 5 settings.
+ * We can add the disallow rule to the htmlSupport configuration.
+ */
+// function dcf_ckeditor5_editor_js_settings_alter(array &$settings, ?Editor $editor) {
+// }
