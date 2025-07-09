@@ -66,7 +66,7 @@ class RequestSubscriber implements EventSubscriberInterface {
     // Check if logged in user is referenced on the Person page.
     $curent_user_is_referenced = function () use ($node, $roles_to_check, $current_user_roles, $user, $entity_form, $route_name, $request) {
       if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== FALSE) {
-        if ($node->getType() === 'person' && empty(array_intersect($roles_to_check, $current_user_roles))) {
+        if ($node && $node instanceof Node && $node->getType() === 'person' && empty(array_intersect($roles_to_check, $current_user_roles))) {
           if ($node->hasField('n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
             $person_unldirectoryreference_data = $node->get('n_person_unldirectoryreference')->getValue()[0]['target_id'];
             $person_referenced_account = user_load_by_name($person_unldirectoryreference_data);
