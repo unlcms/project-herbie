@@ -1,0 +1,105 @@
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-iconlinks-component {
+  margin-top: 2em;
+}
+
+.unlcms-ul-icon-links  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.unlcms-ul-icon-links:has(> :last-child:nth-child(3)) li,
+.unlcms-ul-icon-links:has(> :last-child:nth-child(5)) li,
+.unlcms-ul-icon-links:has(> :last-child:nth-child(7)) li,
+.unlcms-ul-icon-links:has(:nth-child(n+9)) li {
+  --item-size: 10em;
+  flex: 1 0 var(--item-size);
+}
+
+.unlcms-ul-icon-links:has(> :last-child:nth-child(2)),
+.unlcms-ul-icon-links:has(> :last-child:nth-child(4)),
+.unlcms-ul-icon-links:has(> :last-child:nth-child(6)),
+.unlcms-ul-icon-links:has(> :last-child:nth-child(8)) {
+  --item-size: 10em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--item-size), 1fr));
+}
+
+@media screen and (min-width: 36.75em) and (max-width: 53em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(4)) {
+    --item-size: 15em;
+  }
+
+}
+
+@media screen and (min-width: 52.5em) and (max-width: 65em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(5)) li {
+    --item-size: 15em;
+  }
+
+}
+
+@media screen and (min-width: 52.5em) and (max-width: 84em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(6)) {
+    --item-size: 15em;
+  }
+
+}
+
+@media screen and (min-width: 65em) and (max-width: 94em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(5)) li {
+    --item-size: 8.43em;
+  }
+
+}
+
+@media screen and (min-width: 71.5em) and (max-width: 101em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(7)) li {
+    --item-size: 13.32em;
+  }
+
+}
+
+@media screen and (min-width: 71.5em) and (max-width: 98em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(8)) {
+    --item-size: 13.32em;
+  }
+
+}
+
+@media screen and (min-width: 84em) and (max-width: 94em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(6)) {
+    --item-size: 8.43em;
+  }
+
+}
+
+@media screen and (min-width: 98em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(8)) {
+    --item-size: 15em;
+  }
+
+  .unlcms-ul-icon-links:has(:nth-child(n+9)) li {
+    --item-size: 13.32em;
+  }
+
+}
+
+@media screen and (min-width: 101em) {
+
+  .unlcms-ul-icon-links:has(> :last-child:nth-child(7)) li {
+    --item-size: 8.43em;
+  }
+
+}
+
+

@@ -1,0 +1,10 @@
+.dcf-hero .media-entity-bundle--image {
+  margin-bottom: 0;
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.unl.page-node-type-builder-page .dcf-hero {
+  margin-bottom: 0;
+}

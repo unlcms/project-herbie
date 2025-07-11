@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% for item in items %}
+    <dl>
+      <dt class="dcf-sr-only">Email</dt>
+      <dd class="dcf-d-flex dcf-flex-nowrap dcf-ai-center dcf-col-gap-2 dcf-mb-2">
+        <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+          <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+            <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 0 1 .062-.309l9.625 7.7a.504.504 0 0 0 .625 0l9.625-7.7c.033.099.063.2.063.309v11z"/><path fill="none" d="M0 0h24v24H0z"/>
+          </svg>
+        </div>
+        <a {{ items[0].attributes }} href="mailto:{{ items[0].content }}" itemprop="email">
+          <span class="dcf-txt-nowrap">{{item.content}}</span>
+        </a>
+      </dd>
+    </dl>
+  {% endfor %}
+</div>

@@ -1,0 +1,133 @@
+.align-center {
+  clear: both;
+}
+
+/* Remove whitespace under element */
+.media-entity {
+  display: grid;
+}
+
+/* Since images are always inside a container element, they're always 100% wide. */
+.media-entity.view-mode--default img
+.media-entity.view-mode--narrow img,
+.media-entity.view-mode--wide img
+{
+  width: 100%;
+}
+
+/* Set widths on media elements.
+   - Prepended with .unl since inside ckeditor there is an additional
+     wrapper that shrinks the item to 50% of the wrapper container.
+   - Applies to:
+     - Narrow view mode.
+     - Left and right alignment means there should always be text wrapping.
+*/
+.unl .media-entity.view-mode--narrow,
+.unl .align-left.media-entity,
+.unl .align-right.media-entity {
+  width: 50%;
+}
+
+.unl div.align-left.media-entity.view-mode--narrow.media-entity-bundle--image,
+.unl div.align-right.media-entity.view-mode--narrow.media-entity-bundle--image,
+.unl div.align-left.media-entity.view-mode--default.media-entity-bundle--image,
+.unl div.align-right.media-entity.view-mode--default.media-entity-bundle--image
+{
+  /* width: 50%; */
+  width: unset;
+}
+
+.unl div.align-left.media-entity {
+  margin-right: 1em;
+  margin-bottom: unset;
+}
+
+.unl div.align-right.media-entity {
+  margin-left: 1em;
+  margin-bottom: unset;
+}
+
+.align-center.media-entity.view-mode--narrow.media-entity-bundle--image {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-entity.view-mode--wide,
+.media-entity.media-entity-bundle--remote_video.view-mode--default {
+  width: 100%;
+}
+
+/* Add margin to bottom of media element */
+.media-entity {
+  margin-bottom: 1em;
+}
+
+/* If media element is wrapper in figure, then move margin-bottom to figure */
+.figure--embedded-media div.media-entity.view-mode--narrow {
+  width: 100%;
+  /* text-align: center; */
+}
+
+.unl .figure--embedded-media.align-left {
+  margin-right: 1em;
+  margin-bottom: unset;
+}
+
+.unl .figure--embedded-media.align-right {
+  margin-left: 1em;
+  margin-bottom: unset;
+}
+
+.figure--embedded-media {
+  margin-bottom: 1em;
+}
+
+.figure--embedded-media .media-entity {
+  margin-bottom: 0;
+}
+
+/* When image is inside figure, set width on figure element. */
+.figure--embedded-media:not(.view-mode--wide, .view-mode--default) {
+  width: 50%;
+}
+
+.figure--embedded-media.view-mode--narrow .media-entity.view-mode--narrow {
+  width: 100%;
+}
+
+.figure--embedded-media.view-mode--default,
+.figure--embedded-media.view-mode--wide {
+  width: 100%;
+}
+
+.figure--embedded-media.view-mode--default .media-entity,
+.figure--embedded-media.view-mode--narrow .media-entity,
+.figure--embedded-media.view-mode--wide .media-entity {
+  width: 100%;
+}
+
+.figure--embedded-media figcaption {
+  margin-top: .5em;
+}
+
+/* Set remote video iframe width and height to fill width. */
+.media-entity.media-entity-bundle--remote_video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+div.align-center.media-entity.view-mode--default.media-entity-bundle--image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.align-center.media-entity.view-mode--narrow.media-entity-bundle--remote_video {
+  /* margin-left and margin-right are set to auto by align.module.css, so there is no need to set them here. */
+  width: 50%;
+}
+

@@ -1,0 +1,25 @@
+<ul class="dcf-list-bare">
+  {% for item in items %}
+    {% if item.content['#markup'] == 'College of Agricultural Sciences and Natural Resources' %}
+      <li><a href="https://casnr.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Architecture' %}
+      <li><a href="https://architecture.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Arts and Sciences' %}
+      <li><a href="https://cas.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Business' %}
+      <li><a href="https://business.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Education and Human Sciences' %}
+      <li><a href="https://cehs.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Engineering' %}
+      <li><a href="https://engineering.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'Hixson Lied College of Fine and Performing Arts' %}
+      <li><a href="https://arts.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Journalism and Mass Communications' %}
+      <li><a href="https://journalism.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'Exploratory and Pre-Professional Advising Center' %}
+      <li><a href="https://explorecenter.unl.edu/">{{ item.content }}</a></li>
+    {% elseif item.content['#markup'] == 'College of Public Affairs and Community Service' %}
+      <li><a href="https://cpacs.unl.edu/">{{ item.content }}</a></li>
+    {% endif %}
+  {% endfor %}
+ </ul>

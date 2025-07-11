@@ -1,0 +1,37 @@
+name: UNL 6.0 Project Herbie
+type: theme
+description: 'Subtheme for unl_six.'
+core_version_requirement: ^10 || ^11
+base theme: unl_six
+
+libraries:
+  - unl_six_herbie/global-styling
+
+ckeditor_stylesheets:
+  - css/media.css
+
+ckeditor5-stylesheets:
+  - css/media.css
+  - css/ckeditor5-media.css
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+
+regions:
+  page_top: Page top
+  page_bottom: Page bottom
+
+  header: Header
+  navlinks: Navigation links
+  hero: Hero
+  content_top: Content top
+  sidebar_first: Sidebar first
+  content: Content
+  sidebar_second: Sidebar second
+  content_bottom: Content bottom
+
+  contactinfo: Contact info
+  socialmedia: Social media
+  leftcollinks: Related links

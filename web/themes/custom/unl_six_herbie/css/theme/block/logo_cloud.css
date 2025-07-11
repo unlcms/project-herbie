@@ -1,0 +1,28 @@
+/* Adds spacing between multiple components within a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-logocloud-component {
+  margin-top: 2em;
+}
+
+.unlcms-li-logo {
+  flex: 0 0 10em;
+}
+.unlcms-li-logo img[src$=".jpg"],
+.unlcms-li-logo img[src$=".png"] {
+  filter: unset !important;
+  mix-blend-mode: multiply;
+}
+/* Duplicate .dcf-obj-fit-contain since it is difficult to apply classes to image tags. */
+.unlcms-li-logo img {
+  object-fit: contain !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.unlcms-li-logo .contextual-region.media-entity.view-mode--default.media-entity-bundle--image {
+  aspect-ratio: 4 / 3;
+}
+
+.unlcms-li-logo .media-entity {
+  margin-bottom: unset;
+  display: unset;
+}

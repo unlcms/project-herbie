@@ -1,0 +1,49 @@
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+    'dcf-hero',
+  ]
+%}
+{% if s_n_hero %}
+  {%
+    set classes = classes|merge([
+      'unl-hero-notch-stripe',
+      'dcf-d-flex',
+      'dcf-flex-row',
+      'dcf-flex-wrap',
+      'unl-bg-darker-gray',
+    ])
+  %}
+{% else %}
+  {% set classes = classes|merge(['dcf-hero-default']) %}
+  {% if title_hidden or group_homepage %}{% set classes = classes|merge(['dcf-sr-only']) %}{% endif %}
+{% endif %}
+
+{{ attach_library('unl_six_herbie/hero') }}
+
+<!-- InstanceBeginEditable name="hero" -->
+<div{{ attributes.addClass(classes) }}>
+  <!-- InstanceEndEditable -->
+  <div class="dcf-hero-group-1">
+    {{ elements.unl_six_herbie_breadcrumbs }}
+    <header class="dcf-page-title{% if title_hidden or group_homepage %} dcf-sr-only{% endif %}" id="dcf-page-title">
+      <!-- InstanceBeginEditable name="pagetitle" -->
+      {{ s_n_hero.b_hero_overline }}
+      {% if s_n_hero.b_hero_title.0 %}
+        <h1>{{ s_n_hero.b_hero_title }}</h1>
+      {% else %}
+        {{ elements.unl_six_herbie_page_title }}
+      {% endif %}
+      {{ s_n_hero.b_hero_subhead }}
+      <!-- InstanceEndEditable -->
+    </header>
+    <!-- InstanceBeginEditable name="herogroup1" -->
+    <!-- InstanceEndEditable -->
+  </div>
+  <!-- InstanceBeginEditable name="herogroup2" -->
+  <div class="dcf-hero-group-2 dcf-w-100% {{ hero_size_class }}">
+    {{ s_n_hero.b_hero_image }}
+  </div>
+  <!-- InstanceEndEditable -->
+</div>

@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'dcf-mb-0 unlcms-li-icon-link',
+  ]
+%}
+{% block paragraph %}
+  <li{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <a class="dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-ai-center dcf-txt-center dcf-txt-decor-hover" href="{{ content.p_b_icon_links_link[0]['#url'] }}">
+        {{ content.s_p_unl_icon }}
+        <span class="dcf-txt-sm">{{ content.p_b_icon_links_link[0]['#title'] }}</span>
+      </a>
+    {% endblock %}
+  </li>
+{% endblock paragraph %}

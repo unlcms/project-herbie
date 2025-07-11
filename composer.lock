@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1623d0e8d2b7569f885244d631736e28",
+    "content-hash": "76085541b4913b57081fe7f47d0a3316",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -14423,6 +14423,39 @@
                 "source": "https://github.com/unlcms/unl_multisite/tree/1.7"
             },
             "time": "2025-06-05T13:57:03+00:00"
+        },
+        {
+            "name": "unlcms/unl_six",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_six.git",
+                "reference": "37338df04de75a0e519824a168a73d2135b15fa0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/37338df04de75a0e519824a168a73d2135b15fa0",
+                "reference": "37338df04de75a0e519824a168a73d2135b15fa0",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "type": "drupal-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "UNLedu Framework 6.x theme.",
+            "support": {
+                "issues": "https://github.com/unlcms/unl_six/issues",
+                "source": "https://github.com/unlcms/unl_six/tree/6.0.0"
+            },
+            "time": "2025-07-11T21:14:04+00:00"
         },
         {
             "name": "unlcms/unl_user",

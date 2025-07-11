@@ -1,0 +1,116 @@
+
+.unlcms-display-banner-body p {
+  margin-bottom: 0;
+  margin-left: 0.56rem !important;
+ }
+
+.unlcms-display-banner-heading,
+.unlcms-display-banner-body {
+  box-shadow: .75rem 0 0 #242423, -.56rem 0 0 #242423;
+  margin-left: .56rem !important;
+}
+
+.unlcms-display-banner-heading {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.unlcms-display-banner-subhead {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: .75rem 0 0 #242423, -.75rem 0 0 #242423;
+  margin-left: .75rem !important;
+  padding-block: .18rem;
+}
+
+/* max sm 673 */
+@media (max-width: 42.09em) {
+
+  .unlcms-display-banner {
+    grid-template-rows: auto auto auto;
+    padding-bottom: 2.37em;
+  }
+
+  .unlcms-display-banner-text {
+    grid-area: 2 / 2 / 3 / -2;
+    padding-top: 1em;
+  }
+
+  .unlcms-display-banner-img {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+
+  .unlcms-display-banner-btn-group {
+    grid-area: 3 / 2 / 4 / -2;
+  }
+
+}
+
+.unlcms-slow-zoom-in {
+ /* Animation */
+ translate: none; rotate: none; scale: none; transform: scale(1, 1);
+}
+
+ /* sm 673 */
+@media (min-width: 42.09em) {
+
+  .unlcms-display-banner {
+    grid-template-rows: 1fr auto auto .78rem;
+     height: 63vh;
+    max-height: 31.57em;
+  }
+
+  .unlcms-display-banner-text-l {
+    grid-area: 2 / 2 / 3 / 10;
+  }
+
+  .unlcms-display-banner-text-c {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-area: 2 / 2 / 3 / -2;
+    text-align: center;
+  }
+
+  .unlcms-display-banner-text-c .unlcms-display-banner-header,
+  .unlcms-display-banner-text-c .unlcms-display-banner-body {
+    max-width: 42.09em;
+  }
+
+  .unlcms-display-banner-text-r {
+    grid-area: 2 / 8 / 3 / -2;
+  }
+
+  .unlcms-display-banner-img {
+    grid-area: 1 / 1 / -1 / -1;
+  }
+
+  .unlcms-display-banner-btn-group-l {
+    grid-area: 3 / 2 / 4 / 10;
+  }
+
+  .unlcms-display-banner-btn-group-c {
+    grid-area: 3 / 2 / 4 / -2;
+    justify-content: center;
+  }
+
+  .unlcms-display-banner-btn-group-r {
+    grid-area: 3 / 8 / 4 / -2;
+  }
+
+}
+
+/* lg 1197 */
+@media (min-width: 74.83em) {
+
+  .unlcms-display-banner-text-l,
+  .unlcms-display-banner-btn-group-l {
+    grid-column-end: 8;
+  }
+
+  .unlcms-display-banner-text-r,
+  .unlcms-display-banner-btn-group-r {
+    grid-column-start: 10;
+  }
+
+}

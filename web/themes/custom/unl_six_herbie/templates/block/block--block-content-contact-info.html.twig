@@ -1,0 +1,31 @@
+{% if not hide_block %}
+
+<div{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes.addClass('dcf-footer-group-heading').setAttribute('id','dcf-footer-group-1-heading') }}>
+      {{ label }}
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% block content %}
+  {# @todo check if flagship site. if so, then swap out department for organization and remove parent #}
+  {# Commented out the address tag as the same code exists in field--block-content--contact-info.html.twig. The address tag is required in that template specifically for group pages. #}
+
+    {# <div class="content">
+      <address itemscope itemtype='http://schema.org/Organization'>
+          <span class="dcf-d-none visually-hidden" itemprop="name" itemscope itemtype="http://schema.org/Text">{{ name_of_site }}</span>
+          <span class="dcf-d-none visually-hidden" itemprop="url" itemscope itemtype="http://schema.org/URL">https://{{ data.host }}</span>
+          <span class="dcf-d-none visually-hidden" itemprop="parentOrganization" itemscope itemtype="http://schema.org/Organization">
+            <a href="https://www.unl.edu" itemprop="url">www.unl.edu</a>
+          </span> #}
+          {{ content }}
+      {# </address>
+    </div> #}
+  {% endblock %}
+
+</div>
+
+{% endif %}

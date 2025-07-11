@@ -1,0 +1,42 @@
+div.unl-bg-scarlet section.dcf-tabs-panel h2,
+div.unl-bg-scarlet section.dcf-tabs-panel h3,
+div.unl-bg-scarlet section.dcf-tabs-panel h4,
+div.unl-bg-scarlet section.dcf-tabs-panel h5,
+div.unl-bg-scarlet section.dcf-tabs-panel h6,
+div.unl-bg-scarlet section.dcf-tabs-panel p,
+div.unl-bg-scarlet section.dcf-tabs-panel div,
+div.unl-bg-scarlet section.dcf-tabs-panel summary,
+div.unl-bg-scarlet section.dcf-tabs-panel span,
+div.unl-bg-scarlet section.dcf-tabs-panel ol,
+div.unl-bg-scarlet section.dcf-tabs-panel li,
+.unl-bg-scarlet section.dcf-tabs-panel a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-scarlet section.dcf-tabs-panel a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
+color: var(--darker-gray) !important;
+}
+
+div.unl-bg-dark-gray section.dcf-tabs-panel h2,
+div.unl-bg-dark-gray section.dcf-tabs-panel h3,
+div.unl-bg-dark-gray section.dcf-tabs-panel h4,
+div.unl-bg-dark-gray section.dcf-tabs-panel h5,
+div.unl-bg-dark-gray section.dcf-tabs-panel h6,
+div.unl-bg-dark-gray section.dcf-tabs-panel p,
+div.unl-bg-dark-gray section.dcf-tabs-panel div,
+div.unl-bg-dark-gray section.dcf-tabs-panel summary,
+div.unl-bg-dark-gray section.dcf-tabs-panel span,
+div.unl-bg-dark-gray section.dcf-tabs-panel ol,
+div.unl-bg-dark-gray section.dcf-tabs-panel li,
+.unl-bg-dark-gray section.dcf-tabs-panel a:link:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:hover:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:visited:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax),
+.unl-bg-dark-gray section.dcf-tabs-panel a:active:not(.dcf-btn, .layout-builder__direct-add__toggle, .js-layout-builder-block-link, .use-ajax) {
+  color: var(--darker-gray) !important;
+}
+
+div.unl-bg-dark-gray .dcf-tab:not([aria-selected]) {
+  background-color: inherit;
+  border: none;
+  color: #fefdfa !important;
+  text-decoration: underline;
+}

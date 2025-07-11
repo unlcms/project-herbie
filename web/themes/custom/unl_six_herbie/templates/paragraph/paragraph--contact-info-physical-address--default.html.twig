@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes }}>
+    {% block content %}
+      <dl>
+        <dt class="dcf-sr-only">Address</dt>
+        <dd class="dcf-d-flex dcf-flex-nowrap dcf-col-gap-1 dcf-mb-2">
+          <div class="dcf-flex-shrink-0 dcf-h-5 dcf-w-5 unl-gray">
+            <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+              <path d="M12 0C7.589 0 4 3.589 4 8c0 4.245 7.273 15.307 7.583 15.775a.497.497 0 0 0 .834 0C12.727 23.307 20 12.245 20 8c0-4.411-3.589-8-8-8zm0 22.58C10.434 20.132 5 11.396 5 8c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.395-5.434 12.132-7 14.58z"/><path d="M12 4.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zm0 6c-1.378 0-2.5-1.122-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.122 2.5 2.5-1.122 2.5-2.5 2.5z"/><path fill="none" d="M0 0h24v24H0z"/>
+            </svg>
+          </div>
+
+          {% if content.p_b_cinfo_padd_maps_link.0  %}
+            <a href='{{content.p_b_cinfo_padd_maps_link.0}}' itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" translate="no">
+          {% else %}
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" translate="no">
+          {% endif %}
+
+          <span itemprop="streetAddress">
+            {{content.p_b_cinfo_padd_st_address}}
+            {% if content.p_b_cinfo_padd_scnd_address.0  %}
+            <br> {{content.p_b_cinfo_padd_scnd_address}}
+            {% endif %}
+          </span> <br>
+          {% if content.p_b_cinfo_padd_pobox.0 %}
+            <span> P.O. Box {{content.p_b_cinfo_padd_pobox}} </span> <br>
+          {% endif %}
+
+          {{content.p_b_cinfo_padd_city}}
+          {{content.p_b_cinfo_padd_state}}
+          {{content.p_b_cinfo_padd_postal_code}}
+          <abbr class="dcf-d-none" itemprop="addressCountry">US</abbr>
+
+          {% if content.p_b_cinfo_padd_maps_link.0  %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+        </dd>
+      </dl>
+   {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,23 @@
+{% if view_mode == 'teaser_featured' %}
+  {% for nid in nodes %}
+    {{ drupal_entity('node', nid, view_mode) }}
+  {% endfor %}
+{% elseif view_mode == 'teaser_centered' %}
+  <ul class="dcf-d-flex dcf-flex-wrap dcf-jc-center unlcms-centered-teaser-person-list dcf-col-gap-vw dcf-row-gap-8" role="list">
+    {% for nid in nodes %}
+      {{ drupal_entity('node', nid, view_mode) }}
+    {% endfor %}
+  </ul>
+{% elseif view_mode == 'teaser' %}
+  <ol {{ attributes.addClass(['dcf-list-bare', 'dcf-d-grid', 'unlcms-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-8', 'dcf-mb-9']) }} role="list">
+    {% for nid in nodes %}
+      {{ drupal_entity('node', nid, view_mode) }}
+    {% endfor %}
+  </ol>
+{% elseif view_mode == 'teaser_small' %}
+  <ol {{ attributes.addClass(['unlcms-abbr-teaser-person-list', 'dcf-d-grid', 'dcf-col-gap-vw', 'dcf-row-gap-6']) }} role="list">
+    {% for nid in nodes %}
+      {{ drupal_entity('node', nid, view_mode) }}
+    {% endfor %}
+  </ol>
+{% endif %}

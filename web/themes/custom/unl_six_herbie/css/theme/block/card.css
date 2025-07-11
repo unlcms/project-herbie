@@ -1,0 +1,62 @@
+/* .layout__region .dcf-card+.dcf-card {
+  margin-top: 2em;
+} */
+
+/* Spacing for multiple components in a section */
+.layout__region .unlcms-component-spacer + .unlcms-component-spacer.dcf-card {
+  margin-top: 2em;
+}
+
+.dcf-card .media-entity-bundle--image {
+  margin-bottom: 0;
+  /* .dcf-ratio-child */
+  bottom: 0 !important;
+  left: 0 !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+
+}
+
+.dcf-card img {
+  /* .dcf-obj-fit-cover */
+  object-fit: cover !important;
+  height: 100% !important;
+  width: 100% !important;
+  /* .dcf-d-block */
+  display: block !important;
+}
+
+/* Make cards equal height. A card will only have 100% height if it
+   is the only card in a column. Also account for Layout Builder's
+   "Add component" and multiple cards in one column.
+ */
+.dcf-card {
+  height: 100%;
+}
+.dcf-card ~ .dcf-card {
+  height: auto;
+}
+.dcf-card:has(+ .dcf-card) {
+  height: auto;
+}
+.dcf-card ~ .layout-builder__add-block {
+  position: relative;
+  top: -5.1em;
+}
+.dcf-card ~ .dcf-card ~ .layout-builder__add-block {
+  position: static;
+}
+
+/* This should apply only on a card! */
+/* Gets overridden with code in global so I have moved this code to global.css/ This CSS block might not be necessary
+
+/* div.dcf-card-block .dcf-subhead  {
+  color: #6b6b68;
+  } */
+
+/* Changed a card's height to auto if there are other components before or after it within the same section. */
+.unlcms-component-spacer ~ .dcf-card,
+.dcf-card:has(+ .unlcms-component-spacer) {
+  height: auto;
+}

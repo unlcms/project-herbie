@@ -1,0 +1,178 @@
+.unlcms-timeline {
+  --timeline-line-size: 4px;
+  --timeline-arrow-size: .56em;
+  --timeline-point-size: 1em;
+  --timeline-vertical-spacing: 1.33em;
+}
+
+/* Arrows and timeline points */
+.unlcms-timeline li:nth-child(odd)::before,
+.unlcms-timeline li:nth-child(even)::before,
+.unlcms-timeline li:nth-child(odd)::after,
+.unlcms-timeline li:nth-child(even)::after {
+  content: '';
+  position: absolute;
+}
+
+/* Timeline points */
+.unlcms-timeline li::before {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--dark-gray);
+  border-radius: 50%;
+  height: var(--timeline-point-size);
+  width: var(--timeline-point-size);
+}
+
+/* Arrows */
+.unlcms-timeline li:nth-child(odd)::after,
+.unlcms-timeline li:nth-child(even)::after {
+  border-style: solid;
+  height: 0;
+  width: 0;
+}
+
+/* VERTICAL */
+.unlcms-timeline-vertical::before {
+  background-image: linear-gradient(transparent, var(--dark-gray) 7.49em, var(--dark-gray) calc(100% - 7.49em), transparent);
+  bottom: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: var(--timeline-line-size);
+}
+
+/* Arrows and timeline points */
+.unlcms-timeline-vertical li:nth-child(odd)::before,
+.unlcms-timeline-vertical li:nth-child(even)::before,
+.unlcms-timeline-vertical li:nth-child(odd)::after,
+.unlcms-timeline-vertical li:nth-child(even)::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.unlcms-timeline-vertical {
+  container-type: inline-size;
+}
+
+@container (max-width: 42.09em) {
+
+  .unlcms-timeline-vertical::before {
+    left: 0;
+  }
+
+  /* Timeline list items */
+  .unlcms-timeline-vertical li {
+    left: var(--timeline-vertical-spacing);
+    width: calc(100% - var(--timeline-vertical-spacing));
+  }
+
+  .unlcms-timeline-vertical li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Timeline points */
+  .unlcms-timeline-vertical li::before {
+    left: calc(calc(var(--timeline-vertical-spacing) * -1) - calc(var(--timeline-point-size) / 2) + calc(var(--timeline-line-size) / 2));
+  }
+
+  /* Arrows */
+  .unlcms-timeline-vertical li::after {
+    border-color: transparent var(--bg-card) transparent transparent;
+    border-width: var(--timeline-arrow-size) var(--timeline-arrow-size) var(--timeline-arrow-size) 0;
+    left: calc(calc(var(--timeline-arrow-size) * -1) + 1px);
+  }
+
+}
+
+@container (min-width: 42.09em) {
+
+  .unlcms-timeline-vertical::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .unlcms-timeline-vertical li {
+    margin-bottom: 0;
+    width: calc(50% - var(--timeline-vertical-spacing));
+  }
+
+  /* Timeline list items */
+  .unlcms-timeline-vertical li:nth-child(even) {
+    left: calc(50% + var(--timeline-vertical-spacing));
+  }
+
+  .unlcms-timeline-vertical li:not(:first-child) {
+    margin-top: -2.37em;
+  }
+
+  /* Timeline points */
+  .unlcms-timeline-vertical li:nth-child(odd)::before {
+    left: calc(100% + var(--timeline-vertical-spacing) - calc(var(--timeline-point-size) / 2));
+  }
+
+  .unlcms-timeline-vertical li:nth-child(even)::before {
+    left: calc(calc(var(--timeline-vertical-spacing) * -1) - calc(var(--timeline-point-size) / 2));
+  }
+
+  /* Arrows */
+  .unlcms-timeline-vertical li:nth-child(odd)::after {
+    border-color: transparent transparent transparent var(--bg-card);
+    border-width: var(--timeline-arrow-size) 0 var(--timeline-arrow-size) var(--timeline-arrow-size);
+    right: calc(calc(var(--timeline-arrow-size) * -1) + 1px);
+  }
+
+  .unlcms-timeline-vertical li:nth-child(even)::after {
+    border-color: transparent var(--bg-card) transparent transparent;
+    border-width: var(--timeline-arrow-size) var(--timeline-arrow-size) var(--timeline-arrow-size) 0;
+    left: calc(calc(var(--timeline-arrow-size) * -1) + 1px);
+  }
+
+}
+
+/* HORIZONTAL */
+.unlcms-timeline-horizontal {
+  background: linear-gradient(90deg, transparent, var(--dark-gray) 7.49em, var(--dark-gray) calc(100% - 7.49em), transparent) 0 calc(calc(var(--timeline-point-size) / 2) - calc(var(--timeline-line-size) / 2)) / 100% var(--timeline-line-size);
+  scroll-snap-type: x mandatory;
+}
+
+.unlcms-timeline-horizontal li {
+  scroll-snap-align: start;
+}
+
+.unlcms-timeline-horizontal li:first-of-type {
+  padding-left: 5.62vw;
+}
+
+.unlcms-timeline-horizontal li:last-of-type {
+  padding-right: 5.62vw;
+}
+
+/* Arrows and timeline points */
+.unlcms-timeline-horizontal li::before,
+.unlcms-timeline-horizontal li::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline points */
+.unlcms-timeline-horizontal li::before {
+  top: 0;
+}
+
+/* Arrows */
+.unlcms-timeline-horizontal li::after {
+  border-color: transparent transparent var(--bg-card) transparent;
+  border-width: 0 var(--timeline-arrow-size) var(--timeline-arrow-size) var(--timeline-arrow-size);
+  top: calc(1.78em - var(--timeline-arrow-size) + 1px);
+}
+
+/* Cards */
+.unlcms-timeline-horizontal .dcf-card {
+  min-width: 23.68em;
+}
+/* Commenting out this code to preserve the default padding for the timeline component, as it uses a gray background that differs from the standard lighter or lightest gray section background. */
+
+/* Adds spacing between multiple components within a section */
+/* .layout__region .unlcms-component-spacer + .unlcms-component-spacer.unlcms-timeline-component {
+  margin-top: 2em;
+} */

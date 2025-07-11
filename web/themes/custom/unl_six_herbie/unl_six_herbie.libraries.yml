@@ -1,0 +1,134 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/global.css: {}
+      css/media.css: {}
+      css/wdn-overrides.css: {}
+
+layout-builder:
+  css:
+    component:
+      css/layout-builder.css: { weight: -500, preprocess: false }
+
+major:
+  version: VERSION
+  css:
+    theme:
+      css/theme/major.css: {}
+
+person:
+  version: VERSION
+  css:
+    theme:
+      css/theme/person.css: {}
+  js:
+    js/theme/person.js: {}
+
+hero:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/hero.css: {}
+
+photo_hero:
+  version: VERSION
+  css:
+    theme:
+      css/theme/photo_hero.css: {}
+  # js:
+  #   js/theme/photo_hero.js: {}
+
+card:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/card.css: {}
+  js:
+    js/theme/card.js: {}
+
+news_teaser:
+  version: VERSION
+  css:
+    theme:
+      css/theme/news_teaser.css: {}
+  # js:
+  #   js/theme/news_teaser.js: {}
+
+news_article:
+  version: VERSION
+  css:
+    theme:
+      css/theme/news_article.css: {}
+  js:
+    js/theme/news_article.js: {}
+
+logo_cloud:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/logo_cloud.css: {}
+
+instagram:
+  version: VERSION
+  css:
+    theme:
+      css/theme/media_type/instagram.css: {}
+
+slideshow:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/slideshow.css: {}
+  js:
+    js/theme/slideshow.js: {}
+
+timeline:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/timeline.css: {}
+
+icon_links:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/icon_links.css: {}
+
+tabs:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/tabs.css: {}
+  js:
+    js/theme/tabs.js: {}
+
+cta:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/cta.css: {}
+
+tandem:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/tandem.css: {}
+
+simple_media:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/simple_media.css: {}
+
+accordion:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/accordion.css: {}
+
+social_media_links:
+  version: VERSION
+  css:
+    theme:
+      css/theme/block/social_media_links.css: {}
