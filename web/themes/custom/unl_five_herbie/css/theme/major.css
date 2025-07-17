@@ -207,7 +207,7 @@
 		clip-path: polygon(0px 0px, 100% 7.5em, 100% 100%, 0px calc(100% - 7.5em));
 	}
 
-/*Contact Area link overrides*/
-.unl-cream, a.unl-cream, a.unl-cream:active, a.unl-cream:hover, a.unl-cream:link, a.unl-cream:visited {
-	color: #FEFDFA !important;
+/*Contact Area link overrides - Major & Major Option share contact fields but have different bg colors*/
+.page-node-type-major .paragraph--type--p-n-major-contact a {
+	color: var(--inverse);
 }
