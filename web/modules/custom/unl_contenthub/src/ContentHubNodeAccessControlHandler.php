@@ -69,12 +69,18 @@ class ContentHubNodeAccessControlHandler extends NodeAccessControlHandler {
   protected function siteIsContentHub() {
     $siteBase = rtrim(Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString(),'/');
 
-    $remotes = \Drupal::entityTypeManager()->getStorage('remote')->loadMultiple();
+    // This is the former method of doing it. It broke when we needed to remove the settings
+    // from /admin/config/services/entity_share/remote on the Content Hub site in
+    // order to prevent self-referencial importing.
+//    $remotes = \Drupal::entityTypeManager()->getStorage('remote')->loadMultiple();
+//    foreach($remotes as $label => $remote) {
+//      if ($remote->get('url') == $siteBase) {
+//        return TRUE;
+//      }
+//    }
 
-    foreach($remotes as $label => $remote) {
-      if ($remote->get('url') == $siteBase) {
-        return TRUE;
-      }
+    if ($siteBase == 'https://contenthub.unl.edu') {
+      return TRUE;
     }
 
     return FALSE;
