@@ -18,6 +18,10 @@ ignored_config_entities:
   - ~block.block.unl_five_branding
   - ~block.block.unl_five_breadcrumbs
   - ~block.block.unl_five_content
+  - ~block.block.unl_five_local_actions
+  - ~block.block.unl_five_local_tasks
+  - ~block.block.unl_five_messages
+  - ~block.block.unl_five_page_title
   - ~block.block.unl_five_herbie_branding
   - ~block.block.unl_five_herbie_breadcrumbs
   - ~block.block.unl_five_herbie_contactinfo
@@ -28,6 +32,20 @@ ignored_config_entities:
   - ~block.block.unl_five_herbie_messages
   - ~block.block.unl_five_herbie_page_title
   - ~block.block.unl_five_herbie_relatedlinks
+  - ~block.block.unl_six_herbie_booknavigation
+  - ~block.block.unl_six_herbie_branding
+  - ~block.block.unl_six_herbie_breadcrumbs
+  - ~block.block.unl_six_herbie_contactinfo
+  - ~block.block.unl_six_herbie_content
+  - ~block.block.unl_six_herbie_local_actions
+  - ~block.block.unl_six_herbie_local_tasks
+  - ~block.block.unl_six_herbie_mainnavigation
+  - ~block.block.unl_six_herbie_messages
+  - ~block.block.unl_six_herbie_page_title
+  - ~block.block.unl_six_herbie_relatedlinks
+  - ~block.block.unl_six_herbie_subsitemenu
+  - ~block.block.unl_six_herbie_views_block__group_contact_info_block
+  - ~block.block.unl_six_herbie_views_block__group_related_links_block
   - ~block.block.unl_herbie_admin_breadcrumbs
   - ~block.block.unl_herbie_admin_content
   - ~block.block.unl_herbie_admin_local_actions
@@ -35,10 +53,6 @@ ignored_config_entities:
   - ~block.block.unl_herbie_admin_page_title
   - ~block.block.unl_herbie_admin_primary_local_tasks
   - ~block.block.unl_herbie_admin_secondary_local_tasks
-  - ~block.block.unl_five_local_actions
-  - ~block.block.unl_five_local_tasks
-  - ~block.block.unl_five_messages
-  - ~block.block.unl_five_page_title
   - ~block.block.views_block__group_contact_info_block
   - ~block.block.views_block__group_related_links_block
   - entity_share_client.remote.content_hub_development

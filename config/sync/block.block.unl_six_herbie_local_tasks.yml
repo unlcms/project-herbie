@@ -1,0 +1,36 @@
+uuid: b8b167f7-fb2e-4162-9eb1-10ae69e7002e
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - unl_six_herbie
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: unl_six_herbie_local_tasks
+theme: unl_six_herbie
+region: navlinks
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      viewer: viewer
+      editor: editor
+      site_admin: site_admin
+      coder: coder
+      administrator: administrator
+      super_administrator: super_administrator

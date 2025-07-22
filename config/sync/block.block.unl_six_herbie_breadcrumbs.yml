@@ -1,0 +1,20 @@
+uuid: a747185a-b110-4080-9d04-bd6b9f21fd87
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_six_herbie
+id: unl_six_herbie_breadcrumbs
+theme: unl_six_herbie
+region: hero
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: fddfaca5-5526-4056-914e-dcd92e2786d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_contact_info_block
+  module:
+    - views
+  theme:
+    - unl_six_herbie
+id: unl_six_herbie_views_block__group_contact_info_block
+theme: unl_six_herbie
+region: contactinfo
+weight: 0
+provider: null
+plugin: 'views_block:group_contact_info_block-block_1'
+settings:
+  id: 'views_block:group_contact_info_block-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

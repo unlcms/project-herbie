@@ -1,0 +1,25 @@
+uuid: cdb2c649-ad2e-4f17-81a3-7e503f9a8852
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+  module:
+    - block_content
+  theme:
+    - unl_six_herbie
+id: unl_six_herbie_relatedlinks
+theme: unl_six_herbie
+region: leftcollinks
+weight: 0
+provider: null
+plugin: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+settings:
+  id: 'block_content:260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8'
+  label: 'Related links'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
