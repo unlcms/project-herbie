@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76085541b4913b57081fe7f47d0a3316",
+    "content-hash": "ae4b605e715f28e02bc04e7703717929",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -7627,6 +7627,54 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/tamper",
                 "issues": "http://drupal.org/project/issues/tamper"
+            }
+        },
+        {
+            "name": "drupal/theme_per_user",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/theme_per_user.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/theme_per_user-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "b6aa6d835298210f2a0c8cf0e282e8b9ce49715f"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1680626526",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bhavanasisarath",
+                    "homepage": "https://www.drupal.org/user/2909833"
+                },
+                {
+                    "name": "yookoala",
+                    "homepage": "https://www.drupal.org/user/83549"
+                }
+            ],
+            "description": "Select a theme per User wise.",
+            "homepage": "https://www.drupal.org/project/theme_per_user",
+            "support": {
+                "source": "https://git.drupalcode.org/project/theme_per_user"
             }
         },
         {

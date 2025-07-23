@@ -3,3 +3,7 @@ services:
     class: Drupal\unl_system\EventSubscriber\PrimaryBaseUrlSubscriber
     tags:
       - {name: event_subscriber}
+  unl_system.route_subscriber:
+    class: Drupal\unl_system\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
