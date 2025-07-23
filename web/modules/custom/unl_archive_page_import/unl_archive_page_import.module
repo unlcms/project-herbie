@@ -38,7 +38,12 @@ function unl_archive_page_import_form_alter(&$form, FormStateInterface $form_sta
   $allowed_roles = ['administrator', 'super_administrator'];
   if (empty(array_intersect($allowed_roles, \Drupal::currentUser()->getRoles()))) {
     $form['archive_page_body']['widget']['#disabled'] = TRUE;
-    $form['archive_page_body']['widget'][0]['#format'] = 'plain_text';
+    $current_text_format = $form['archive_page_body']['widget'][0]['#format'];
+    if($current_text_format == 'plain_text') {
+      // If the text format is currently set to plain_text, change it to "archive" so the code renders as visual output.
+      $form['archive_page_body']['widget'][0]['#format'] = 'archive';
+    }
+
     $form['archive_page_body']['widget'][0]['#after_build'][] = '_unl_archive_page_import_remove_text_format';
 
     // Add a note to inform users why the body field is disabled.
