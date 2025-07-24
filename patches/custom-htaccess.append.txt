@@ -89,7 +89,8 @@
   # business.unl.edu
 
   # bbr
-  RewriteCond %{HTTP_HOST} ^bbr\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^bbr\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.bbr\.unl\.edu$
   RewriteRule ^(.*)$ https://business.unl.edu/research/bureau-business-research/ [R=301,L]
 
   # entrepreneurship
@@ -97,7 +98,8 @@
   RewriteRule ^(.*)$ https://business.unl.edu/student-resources/center-entrepreneurship/ [R=301,L]
 
   # mba
-  RewriteCond %{HTTP_HOST} ^mba\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^mba\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.mba\.unl\.edu$
   RewriteRule ^(.*)$ https://business.unl.edu/mba/ [R=301,L]
 
   # nebraskacouncil
