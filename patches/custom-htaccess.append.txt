@@ -86,6 +86,33 @@
   RewriteRule ^(.*)$ https://www.unl.edu/visit/ [R=301,L]
 
   # ***********************************************************
+  # business.unl.edu
+
+  # bbr
+  RewriteCond %{HTTP_HOST} ^bbr\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/research/bureau-business-research/ [R=301,L]
+
+  # entrepreneurship
+  RewriteCond %{HTTP_HOST} ^entrepreneurship\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/student-resources/center-entrepreneurship/ [R=301,L]
+
+  # mba
+  RewriteCond %{HTTP_HOST} ^mba\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/mba/ [R=301,L]
+
+  # nebraskacouncil
+  RewriteCond %{HTTP_HOST} ^nebraskacouncil\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/research/centers-and-institutes/economic-education/nebraska-council-economic-education/ [R=301,L]
+
+  # rdc
+  RewriteCond %{HTTP_HOST} ^rdc\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/research/central-plains-federal-statistical-research-data-center/ [R=301,L]
+
+  # taxinstitute
+  RewriteCond %{HTTP_HOST} ^taxinstitute\.unl\.edu$
+  RewriteRule ^(.*)$ https://business.unl.edu/graduate-programs/executive-and-professional-development/tax-institute/ [R=301,L]
+
+  # ***********************************************************
   # cehs.unl.edu
 
   # courage
