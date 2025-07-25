@@ -76,15 +76,17 @@ function unl_webform_form_alter(&$form, FormStateInterface &$form_state, $form_i
     'webform_telephone',
   ];
   // Add required text on fieldset webform elements
-    if ((isset($form['#entity_type']) && $form['#entity_type'] == 'webform_submission') || $form['#theme'][0] == 'webform_submission_form') {
+  if ((isset($form['#entity_type']) && $form['#entity_type'] == 'webform_submission') || $form['#theme'][0] == 'webform_submission_form') {
+    if (isset($form['elements']) && is_array($form['elements'])) {
       foreach ($form['elements'] as $key => $element) {
         if (in_array($element['#type'], $fieldset_elements)) {
-          if ($element['#required'] ==  true) {
+          if (isset($element['#required']) && $element['#required'] == true) {
             $form['elements'][$key]['#title'] = $element['#title'] . ' <small class="dcf-required dcf-regular">Required</small>';
           }
         }
       }
     }
+  }
 }
 
 /**
@@ -106,7 +108,8 @@ function unl_webform_preprocess_input__webform_time(&$variables) {
 function unl_webform_preprocess_input__date(&$variables) {
   //Remove maxlength attribute from time input. Causes HTML5 validation error.
   unset($variables['attributes']['maxlength']);
-  unset($variables['attributes']['placeholder']);}
+  unset($variables['attributes']['placeholder']);
+}
 
 function unl_webform_preprocess_input__hidden(&$variables) {
   // If an element is a hidden field, remove the autocomplete attribute.
