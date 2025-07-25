@@ -1,0 +1,13 @@
+uuid: d1222a93-a77f-4f1e-8ce3-aaa7c14ee9db
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: qYYCrIkNdJFJTKjjUtm1aXvHSofqlHnMrKpd5mrdJus
+id: remove_any_affiliation_to_node
+label: "Remove 'Any Affiliation'"
+type: node
+plugin: remove_any_affiliation_to_node
+configuration: {  }

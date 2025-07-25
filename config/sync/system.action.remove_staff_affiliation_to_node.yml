@@ -1,0 +1,13 @@
+uuid: 604756be-096b-4287-bfc2-aa1b3542dc7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: B-zPdWcjbDgFYwN1FWEGck0LuHxhApre0JaWQhW9_WM
+id: remove_staff_affiliation_to_node
+label: "Remove 'Staff Affiliation'"
+type: node
+plugin: remove_staff_affiliation_to_node
+configuration: {  }

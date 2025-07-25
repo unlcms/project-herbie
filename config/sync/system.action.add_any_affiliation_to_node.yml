@@ -1,0 +1,13 @@
+uuid: 58d1ad4a-37e0-47be-9e87-c35ea7c8ca1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: e454Lq2fN6pJWQArSw4qKRQbLIvAQ7bvBdaMcekUGh4
+id: add_any_affiliation_to_node
+label: "Add 'Any Affiliation'"
+type: node
+plugin: add_any_affiliation_to_node
+configuration: {  }

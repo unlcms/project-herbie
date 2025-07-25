@@ -1,0 +1,13 @@
+uuid: 7e62b3f8-cdf7-4f5d-a7d1-1596a5b59052
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: WDeuL6OAPuOHziibCmd5P0s8opvP1P-qnMLrPW314RY
+id: add_guest_affiliation_to_node
+label: "Add 'Guest Affiliation'"
+type: node
+plugin: add_guest_affiliation_to_node
+configuration: {  }

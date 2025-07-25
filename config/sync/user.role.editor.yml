@@ -46,6 +46,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - unl_access
     - webform
     - webform_node
 _core:
@@ -71,6 +72,7 @@ permissions:
   - 'administer book outlines'
   - 'administer main menu items'
   - 'administer nodes'
+  - 'bypass unl access grant'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'

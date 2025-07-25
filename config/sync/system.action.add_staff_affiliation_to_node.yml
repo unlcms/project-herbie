@@ -1,0 +1,13 @@
+uuid: 183e62a0-5fa7-4bf0-bec5-d2da642d6aa0
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: JRNF33wGnXeAQZ-rZ5M7znj_-Oadjxei5ENE57XMdxE
+id: add_staff_affiliation_to_node
+label: "Add 'Staff Affiliation'"
+type: node
+plugin: add_staff_affiliation_to_node
+configuration: {  }

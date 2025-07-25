@@ -19,6 +19,7 @@ dependencies:
     - paragraphs
     - system
     - toolbar
+    - unl_access
     - webform_node
 _core:
   default_config_hash: Z3OOVhYKI-1mToZSwV032-uFnaXlAIDpeWOG32SrWeI
@@ -34,6 +35,7 @@ permissions:
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'bypass unl access grant'
   - 'view any unpublished content'
   - 'view archive_page revisions'
   - 'view book revisions'

@@ -1,0 +1,13 @@
+uuid: beab9114-1da6-439e-bcc0-f2fae044b96b
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: Dvad9vjYXjGjl4MAu31__RPZANgPl4MpCGSzH3ezQx4
+id: remove_student_affiliation_to_node
+label: "Remove 'Student Affiliation'"
+type: node
+plugin: remove_student_affiliation_to_node
+configuration: {  }

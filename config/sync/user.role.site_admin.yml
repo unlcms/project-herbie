@@ -52,6 +52,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - unl_access
     - unl_breadcrumbs
     - unl_config
     - unl_news
@@ -95,6 +96,7 @@ permissions:
   - 'administer url aliases'
   - 'administer webform submission'
   - 'allow empty user mail'
+  - 'bypass unl access grant'
   - 'configure editable builder_page node layout overrides'
   - 'create accordion block content'
   - 'create and edit custom blocks'

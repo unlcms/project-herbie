@@ -1,0 +1,13 @@
+uuid: 964caade-860a-42f9-a83d-899aafd8207a
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: moIEXRPaAkDapee9fzSDpJlqcd4pmFkzre4LTFfmXoE
+id: remove_faculty_emeriti_affiliation_to_node
+label: "Remove 'Faculty/Emeriti Affiliation'"
+type: node
+plugin: remove_faculty_emeriti_affiliation_to_node
+configuration: {  }

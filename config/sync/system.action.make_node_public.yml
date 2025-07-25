@@ -1,0 +1,13 @@
+uuid: 5ed3d7c1-96ec-4360-9397-b3eb26c81e11
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: 4Y1d343QImrTmxV0j9mzvRGAiEydRDcA2x_GleswKN4
+id: make_node_public
+label: 'Make public'
+type: node
+plugin: make_node_public
+configuration: {  }

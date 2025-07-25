@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae4b605e715f28e02bc04e7703717929",
+    "content-hash": "e8e553bb6bd73330505e678daf004f0c",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -14335,6 +14335,45 @@
             "time": "2023-02-23T16:17:32+00:00"
         },
         {
+            "name": "unlcms/unl_access",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unlcms/unl_access.git",
+                "reference": "ac3d8c24fbe7c5991d3abee7633320da589f7177"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unlcms/unl_access/zipball/ac3d8c24fbe7c5991d3abee7633320da589f7177",
+                "reference": "ac3d8c24fbe7c5991d3abee7633320da589f7177",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "unlcms/unl_cas": "^2.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Saron Gebre",
+                    "homepage": "https://github.com/sarongebre",
+                    "role": "Author/Maintainer"
+                },
+                {
+                    "name": "Eric Rasmussen (ericras)",
+                    "homepage": "https://www.drupal.org/u/ericras",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allows content viewing restriction based on UNL affiliations.",
+            "support": {
+                "issues": "https://github.com/unlcms/unl_access/issues",
+                "source": "https://github.com/unlcms/unl_access/tree/1.0.0"
+            },
+            "time": "2025-07-25T17:39:20+00:00"
+        },
+        {
             "name": "unlcms/unl_breadcrumbs",
             "version": "1.0.3",
             "source": {
@@ -19072,7 +19111,8 @@
         "drupal/scanner": 5,
         "drupal/seven": 15,
         "drupal/webform": 10,
-        "unlcms/features_readonly": 20
+        "unlcms/features_readonly": 20,
+        "unlcms/unl_access": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

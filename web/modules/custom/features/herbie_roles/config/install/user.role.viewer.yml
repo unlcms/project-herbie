@@ -18,6 +18,7 @@ dependencies:
     - paragraphs
     - system
     - toolbar
+    - unl_access
     - webform_node
 id: viewer
 label: Viewer
@@ -31,6 +32,7 @@ permissions:
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'bypass unl access grant'
   - 'view any unpublished content'
   - 'view archive_page revisions'
   - 'view book revisions'

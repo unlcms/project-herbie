@@ -1,0 +1,13 @@
+uuid: 763a012b-6ccc-4e3f-bb34-48b4dfaccc5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: r67hDRm9Y6hUPgPdLJ7nyva5ZRxLVZesDWc1RejCWGc
+id: remove_guest_affiliation_to_node
+label: "Remove 'Guest Affiliation'"
+type: node
+plugin: remove_guest_affiliation_to_node
+configuration: {  }

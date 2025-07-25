@@ -1,0 +1,13 @@
+uuid: 701ad515-4891-407d-866c-399e90104107
+langcode: en
+status: true
+dependencies:
+  module:
+    - unl_access
+_core:
+  default_config_hash: 1mc6bDZWaX6lR5Tcvg6GFZ5LZ2d0FCYv0CDxpvD1jBQ
+id: add_faculty_emeriti_affiliation_to_node
+label: "Add 'Faculty/Emeriti Affiliation'"
+type: node
+plugin: add_faculty_emeriti_affiliation_to_node
+configuration: {  }
