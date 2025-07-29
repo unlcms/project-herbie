@@ -134,10 +134,10 @@ function _unl_layout_builder_custom_validate_embed_block(array $element, FormSta
   $values = $form_state->getValues();
   $uri = $values['settings']['block_form']['b_embed_link'][0]['uri'];
   $host = parse_url($uri)['host'];
-  $pattern = "/(unl.edu$)|(nebraska.edu$)|(unl.yuja.com$)/i";
+  $pattern = "/(unl.edu$)|(nebraska.edu$)|(microsoft.com$)|(app.powerbi.com$)|(unl.yuja.com$)/i";
 
   if (!preg_match($pattern, $host)) {
-    $form_state->setErrorByName('b_embed_link', t('Embedding links are restricted to the domains unl.edu, nebraska.edu, or unl.yuja.com.'));
+    $form_state->setErrorByName('b_embed_link', t('Embedding a URL from that domain is not allowed.'));
     $form_state->setError($element);
  }
 }
