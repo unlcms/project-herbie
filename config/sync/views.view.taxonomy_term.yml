@@ -10,7 +10,7 @@ dependencies:
     - taxonomy
     - user
 _core:
-  default_config_hash: cXa7KV0332ComoYuKrhQquVdkRYVpxiADft08_GShHs
+  default_config_hash: Gy5PaLdfFhtFSRqJxV-DBTF5AocKgNA2CsCNNEbvx4c
 id: taxonomy_term
 label: 'Taxonomy term'
 module: taxonomy
@@ -32,11 +32,11 @@ display:
         options:
           offset: 0
           items_per_page: 12
-          total_pages: 0
+          total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: 'Next ›'
+            previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
           expose:
@@ -269,6 +269,7 @@ display:
       row:
         type: 'entity:node'
         options:
+          relationship: none
           view_mode: teaser
       query:
         type: views_query
@@ -351,6 +352,27 @@ display:
     position: 1
     display_options:
       title: ''
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       filters:
         langcode:
           id: langcode
@@ -483,6 +505,7 @@ display:
         options: {  }
       defaults:
         title: false
+        pager: false
         filters: false
         filter_groups: false
         footer: false
@@ -516,6 +539,11 @@ display:
     position: 3
     display_options:
       title: 'Tagged News Items '
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 12
       style:
         type: default
         options:
@@ -529,10 +557,101 @@ display:
           view_mode: teaser
       defaults:
         title: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
         style: false
         row: false
+      use_more: true
+      use_more_always: false
+      use_more_text: more
       display_extenders: {  }
       block_description: 'Tagged News Items'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  tagged_news_items_page:
+    id: tagged_news_items_page
+    display_title: 'Tagged News Items Page'
+    display_plugin: page
+    position: 4
+    display_options:
+      title: 'Tagged News Items Page'
+      arguments:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: term_node_tid
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          default_action: empty
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: 'News Tagged: {{ arguments.name }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: taxonomy_term_name
+            fail: 'not found'
+          validate_options:
+            bundles: {  }
+            access: true
+            operation: view
+            transform: false
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+          add_table: false
+          require_value: false
+      defaults:
+        title: false
+        relationships: false
+        arguments: false
+        header: false
+      relationships:
+        term_node_tid:
+          id: term_node_tid
+          table: node_field_data
+          field: term_node_tid
+          relationship: none
+          group_type: group
+          admin_label: term
+          entity_type: node
+          plugin_id: node_term_data
+          required: true
+          vids: {  }
+      display_description: ''
+      header: {  }
+      display_extenders: {  }
+      path: tag/%/news
     cache_metadata:
       max-age: -1
       contexts:
