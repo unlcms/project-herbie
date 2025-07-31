@@ -5,6 +5,7 @@
  * This is the module provides block customizations and functionality.
  */
 
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -134,4 +135,17 @@ function unl_blocks_form_block_form_alter(array &$form, FormStateInterface &$for
     }
   }
 
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function unl_blocks_block_view_alter(array &$build, BlockPluginInterface $block) {
+  // Set Group-related cache context on blocks that change on a per-group basis.
+  // These are the Site Branding and Related Links & Contact Info custom blocks.
+  if ($block->getBaseId() === 'system_branding_block' ||
+      $block->getDerivativeId() == '260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8' ||
+      $block->getDerivativeId() == 'a8ccb1df-9c44-464b-be7a-b7960206dee1') {
+    $build['#cache']['contexts'][] = 'route.group';
+  }
 }
