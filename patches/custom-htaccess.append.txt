@@ -9,6 +9,10 @@
   # Redirects involving active CMS sites
   # See section below for sites that "Moved away from the CMS"
 
+  # appliedscience
+  RewriteCond %{HTTP_HOST} ^appliedscience\.unl\.edu$
+  RewriteRule ^(.*)$ https://casnr.unl.edu/master-applied-science/ [R=301,L]
+
   # cms-docs
   RewriteCond %{HTTP_HOST} ^cms-docs\.unl\.edu$
   RewriteRule ^(.*)$ https://wdn.unl.edu/introduction-next-gen-cms/ [R=301,L]
