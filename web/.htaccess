@@ -218,7 +218,10 @@ AddEncoding gzip svgz
   # See section below for sites that "Moved away from the CMS"
 
   # appliedscience
-  RewriteCond %{HTTP_HOST} ^appliedscience\.unl\.edu$
+  RewriteCond %{HTTP_HOST} ^appliedscience\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.appliedscience\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^divag\.unl\.edu$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.divag\.unl\.edu$
   RewriteRule ^(.*)$ https://casnr.unl.edu/master-applied-science/ [R=301,L]
 
   # cms-docs
