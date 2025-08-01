@@ -114,3 +114,9 @@ filters:
     settings:
       dcftable: '1'
       dcfblockquote: '1'
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -41
+    settings: {  }

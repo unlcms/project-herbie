@@ -5,13 +5,9 @@ dependencies:
   config:
     - block_content.type.cta
     - field.storage.block_content.b_cta_summary
+    - filter.format.minimal
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - minimal
 _core:
   default_config_hash: nbZQ0zuHR-G4d9u6zBOwktlVA9OjIrERCiF3V_mBQLc
 id: block_content.cta.b_cta_summary
@@ -24,5 +20,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - minimal
 field_type: text_long

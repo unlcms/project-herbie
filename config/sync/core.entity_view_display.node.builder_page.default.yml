@@ -27,12 +27,12 @@ third_party_settings:
         layout_id: dcf_twocol_section
         layout_settings:
           label: Content
-          context_mapping: {  }
           column_widths: 75-25
           title: Content
           title_classes: {  }
           title_display: false
           section_element_id: ''
+          context_mapping: {  }
           layout_builder_styles_style:
             - ''
             - section_margin_standard_wrapper

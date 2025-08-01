@@ -39,7 +39,6 @@ dependencies:
     - group
     - layout_builder
     - media
-    - media_file_delete
     - menu_admin_per_menu
     - moderated_content_bulk_publish
     - node
@@ -168,6 +167,7 @@ permissions:
   - 'delete own book content'
   - 'delete own builder_page content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own news content'
   - 'delete own person content'

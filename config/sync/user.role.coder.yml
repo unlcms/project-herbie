@@ -13,6 +13,7 @@ dependencies:
     - feeds_tamper
     - field_css
     - field_ui
+    - file
     - filter
     - google_tag
     - group
@@ -75,6 +76,7 @@ permissions:
   - 'create group_subsite group'
   - 'create html_code block content'
   - 'delete any html_code block content'
+  - 'delete own files'
   - 'load twig templates from file system'
   - 'moderated content bulk draft'
   - 'moderated content bulk pin'

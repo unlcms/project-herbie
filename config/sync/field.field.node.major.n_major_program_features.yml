@@ -6,11 +6,7 @@ dependencies:
     - field.storage.node.n_major_program_features
     - node.type.major
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 _core:
   default_config_hash: 8uJebkkN01lONuMnLlLaByROVY6rgfAFR5R9PrxubAE
 id: node.major.n_major_program_features
@@ -23,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long
