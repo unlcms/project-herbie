@@ -2,9 +2,10 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^9.4 || ^10'
-version: 1.4.3
+version: 1.4.4
 package: Herbie
 dependencies:
+  - 'cas:cas'
   - 'drupal:node'
   - 'drupal:system'
   - 'drupal:taxonomy'
