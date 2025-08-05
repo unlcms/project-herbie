@@ -136,6 +136,7 @@ permissions:
   - 'administer unl webform download settings'
   - 'administer url aliases'
   - 'administer views'
+  - 'administer webform element access'
   - 'administer webform submission'
   - 'allow empty user mail'
   - 'authorize salesforce'

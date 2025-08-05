@@ -30,6 +30,7 @@ dependencies:
     - twig_ui
     - unl_webform
     - views_ui
+    - webform
 _core:
   default_config_hash: pjZngoP_kq80I1xBCMa6k4sk--mrzHRIpBC2HjNgftE
 id: coder
@@ -70,6 +71,7 @@ permissions:
   - 'administer taxonomy_term form display'
   - 'administer twig templates'
   - 'administer views'
+  - 'administer webform element access'
   - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'

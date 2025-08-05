@@ -29,6 +29,7 @@ dependencies:
     - twig_ui
     - unl_webform
     - views_ui
+    - webform
 id: coder
 label: Developer
 weight: -5
@@ -67,6 +68,7 @@ permissions:
   - 'administer taxonomy_term form display'
   - 'administer twig templates'
   - 'administer views'
+  - 'administer webform element access'
   - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'
