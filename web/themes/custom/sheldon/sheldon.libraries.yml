@@ -3,3 +3,4 @@ global-styling:
   css:
     base:
       css/drupal-overrides.css: {}
+      css/media.css: {}

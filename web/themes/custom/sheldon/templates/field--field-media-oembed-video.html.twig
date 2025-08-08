@@ -1,0 +1,99 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+
+{% for item in items %}
+  {% set width = item.content['#attributes'].width %}
+  {% set height = item.content['#attributes'].height %}
+  {% set aspect_ratio = (width / height)|round(2, 'common' ) %}
+  {% set media_type = item.media_type %}
+  {# A value of rich indicates an audio media file on https://github.com/unl/UNL_MediaHub/blob/master/src/UNL/MediaHub/Media/Oembed.php#L56-L57 #}
+  {% if media_type != 'rich' %}
+    {# If 9/16 aspect ratio #}
+    {% if aspect_ratio == 0.56 %}
+      {% set wrapper = ['dcf-ratio-9x16'] %}
+      {# If 4/3 aspect ratio #}
+    {% elseif aspect_ratio == 1.33 %}
+      {% set wrapper = ['dcf-ratio-4x3'] %}
+      {# If 3/4 aspect ratio #}
+    {% elseif aspect_ratio == 0.75 %}
+      {% set wrapper = ['dcf-ratio-3x4'] %}
+      {# If 1/1 aspect ratio #}
+    {% elseif aspect_ratio == 1.0 %}
+      {% set wrapper = ['dcf-ratio-1x1'] %}
+    {% else %}
+      {% set wrapper = ['dcf-ratio-16x9'] %}
+    {% endif %}
+
+    {% set wrapper = wrapper|merge(['dcf-ratio']) %}
+
+    <div {{ attributes.addClass(wrapper) }}  >
+      <div class="dcf-ratio-child">
+        {{ item.content }}
+      </div>
+    </div>
+  {% else %}
+    {# If media is audio, change height to 5.62em and max-width to 56.12rem #}
+    <div style="height: 5.62em; max-width: 56.12rem; overflow: hidden; position:relative; -webkit-box-flex: 1; flex-grow: 1;" >
+      {{ item.content }}
+    </div>
+  {% endif %}
+{% endfor %}
+
+<style>
+  .dcf-ratio {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  .dcf-ratio-16x9::before {
+    padding-top: 56.25% !important;
+  }
+  .dcf-ratio::before {
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  .dcf-ratio-child {
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+</style>
