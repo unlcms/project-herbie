@@ -36,3 +36,14 @@
 .exhibitions-abbr-teasers .contextual-region.media-entity {
   position: initial;
 }
+
+.sheldon-pill {
+  background: #ebebeb;
+  color: #28282a;
+  padding: 1px 7px;
+  margin-bottom: 10px;
+}
+.sheldon-pill a {
+  color: #28282a;
+  border-bottom: 1px solid #000000;
+}
