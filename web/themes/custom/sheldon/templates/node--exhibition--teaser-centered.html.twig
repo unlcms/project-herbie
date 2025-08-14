@@ -17,7 +17,12 @@
     <div class="bp465-grid-col-two-thirds bp956-grid-col-full">
       {{ title_prefix }}
       <h3{{ title_attributes.addClass('exhibition-heading') }}>
-        <a href="{{ url }}">{{ label }}</a>
+        <a href="{{ url }}">
+          {% if not is_in_date_range and node.ongoing.value != '1' %}
+            Upcoming:
+          {% endif %}
+          {{ label }}
+        </a>
       </h3>
       {{ title_suffix }}
       {% if node.ongoing.value != '1' %}
