@@ -5,7 +5,23 @@
  * This module extends Group functionality.
  */
 
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_block_build_alter().
+ */
+function unl_group_block_build_alter(array &$build, BlockPluginInterface $block) {
+  if ($block->getPluginId() === 'group_content_menu:gcm_subsite_menu') {
+    // Prevent BigPipe from making this block lazy.
+    if (isset($build['#lazy_builder'])) {
+      unset($build['#lazy_builder']);
+    }
+
+    // Disable placeholder creation so it renders in initial HTML.
+    $build['#create_placeholder'] = FALSE;
+  }
+}
 
 /**
  * Implements hook_field_widget_complete_form_alter().
