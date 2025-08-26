@@ -1,4 +1,5 @@
-.unlcms-simple-media-img .media-entity-bundle--image, .unlcms-simple-media-img .media-entity-bundle--remote_video {
+.unlcms-simple-media-img .media-entity-bundle--image,
+.unlcms-simple-media-img .media-entity-bundle--remote_video {
   margin-bottom: 0;
   /* .dcf-ratio-child */
   bottom: 0 !important;
