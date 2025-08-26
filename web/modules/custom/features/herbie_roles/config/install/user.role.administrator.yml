@@ -26,6 +26,7 @@ dependencies:
   module:
     - administerusersbyrole
     - asset_injector
+    - block
     - block_content_permissions
     - book
     - content_moderation
@@ -100,6 +101,7 @@ permissions:
   - 'access webform overview'
   - 'access webform submission log'
   - 'add content to books'
+  - 'administer blocks'
   - 'administer book outlines'
   - 'administer content types'
   - 'administer css assets injector'
