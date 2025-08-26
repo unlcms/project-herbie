@@ -6,6 +6,7 @@ dependencies:
     - filter.format.webform_email
   module:
     - asset_injector
+    - block
     - block_content_permissions
     - contextual
     - feeds
@@ -43,6 +44,7 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
+  - 'administer blocks'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'

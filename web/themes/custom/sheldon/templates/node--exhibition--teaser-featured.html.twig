@@ -23,11 +23,18 @@
           <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
             <h1 class="tab-heading text-hidden">Featured Exhibition</h1>
             {{ title_prefix }}
-            <h2 class="exhibition-heading"><a href="{{ url }}">{{ label }}</a></h2>
+            <h2 class="exhibition-heading">
+              <a href="{{ url }}">
+                {% if is_upcoming and node.ongoing.value != '1' %}
+                  Upcoming:
+                {% endif %}{{ label }}
+              </a>
+            </h2>
             {{ title_suffix }}
             {% if node.ongoing.value != '1' %}
               {{ content.exhibition_date }}
             {% endif %}
+            {{ content.subhead }}
           </div>
           <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
             <p class="featured-content-teaser">{{ content.body }}</p>

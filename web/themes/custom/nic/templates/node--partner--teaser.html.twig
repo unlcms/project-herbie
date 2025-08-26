@@ -7,18 +7,18 @@
     </a>
   </div>
   <div class="bp465-grid-col-three-fourths">
-    <h4 style="margin-top:1em;">{{ label }}</h4>
+    <h4 style="margin-top:1em;"><a href="{{ content.partner_url }}">{{ label }}</a></h4>
     {{ content.body }}
-    {% if node.press_release_url %}
-      <a href="{{ content.press_release_url }}" style="width:100%;text-align:center;" class="press-release-link">Press Release</a>
+    {% if content.press_release_url|render|striptags|trim is not empty %}
+      <a href="{{ content.press_release_url }}" style="width:100%;text-align:center;" class="press-release-link">Press Release</a> |
     {% else %}
     {% endif %}
-    {% if node.internships_url %}
-      | <a href="{{ content.internships_url }}" style="width:100%;text-align:center;" class="press-release-link">Internships</a>
+    {% if content.internships_url|render|striptags|trim is not empty %}
+      <a href="{{ content.internships_url }}" style="width:100%;text-align:center;" class="press-release-link">Internships</a> |
     {% else %}
     {% endif %}
-    {% if node.employment_url %}
-      | <a href="{{ content.employment_url }}" style="width:100%;text-align:center;" class="press-release-link">Careers</a>
+    {% if content.employment_url|render|striptags|trim is not empty %}
+      <a href="{{ content.employment_url }}" style="width:100%;text-align:center;" class="press-release-link">Careers</a>
     {% else %}
     {% endif %}
   </div>

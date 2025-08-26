@@ -1,10 +1,44 @@
 <?php
 
+use Drupal\Core\Datetime\DrupalDateTime;
+
 /**
  * Implements template_preprocess_html().
  */
 function sheldon_preprocess_html(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('sheldon');
+}
+
+/**
+ * Implements template_preprocess_node().
+ */
+function sheldon_preprocess_node(&$variables) {
+  // Inject the Guidebook Embed code into the Body on Exhibition nodes.
+  if ($variables['node']->bundle() === 'exhibition') {
+    $variables['guidebook_embed_html'] = '';
+    if (!$variables['node']->get('guidebook_embed')->isEmpty()) {
+      $variables['guidebook_embed_html'] = '
+        <div style="position:relative;padding-top:max(60%,326px);height:0;width:100%">
+        <iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" 
+          allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" 
+          src="'
+        . $variables['node']->get('guidebook_embed')->value
+        . '"></iframe></div>';
+    }
+  }
+
+
+  // Provide flag to node template indicating if the exhibition is currently live.
+  $field_name = 'exhibition_date';
+  if (isset($variables['node']) && $variables['node']->hasField($field_name) && !$variables['node']->get($field_name)->isEmpty()) {
+    $date_range = $variables['node']->get($field_name)->first();
+    $start_value = $date_range->start_date->format('Y-m-d');
+    $today = (new DrupalDateTime('now', new \DateTimeZone(date_default_timezone_get())))->format('Y-m-d');
+    $variables['is_upcoming'] = $today <= $start_value;
+  }
+  else {
+    $variables['is_upcoming'] = FALSE;
+  }
 }
 
 /**
