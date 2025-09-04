@@ -74,24 +74,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       'dcf-uppercase' => 'dcf-uppercase',
     ];
 
-    // Add an option to add grid column classes only for two, three, and four column layouts.
-    if( $this->getPluginId() === 'dcf_twocol_section' || $this->getPluginId() === 'dcf_threecol_section' || $this->getPluginId() === 'dcf_fourcol_section' ) {
-        $column_options = [
-          'dcf-as-center' => 'dcf-as-center',
-        ];
-
-        $form['column_classes'] = [
-          '#type' => 'select',
-          '#title' => $this->t('Grid column classes'),
-          '#default_value' => $configuration['column_classes'],
-          '#options' => $column_options,
-          '#description' => $this->t('Optional classes for all grid columns in a section.'),
-          '#empty_option' => $this->t('- None -'),
-          '#empty_value' => '',
-          '#multiple' => TRUE,
-        ];
-    }
-
     $form['title_classes'] = [
       '#type' => 'select',
       '#title' => $this->t('Section heading classes'),
@@ -121,6 +103,24 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#default_value' => $configuration['section_element_id'],
     ];
 
+    // Add an option to add grid column classes only for two, three, and four column layouts.
+    if ($this->getPluginId() === 'dcf_twocol_section' || $this->getPluginId() === 'dcf_threecol_section' || $this->getPluginId() === 'dcf_fourcol_section') {
+      $column_options = [
+        'dcf-as-center' => 'dcf-as-center',
+      ];
+
+      $form['advanced']['column_classes'] = [
+        '#type' => 'select',
+        '#title' => $this->t('Grid column classes'),
+        '#default_value' => $configuration['column_classes'],
+        '#options' => $column_options,
+        '#description' => $this->t('Optional classes for all grid columns in a section.'),
+        '#empty_option' => $this->t('- None -'),
+        '#empty_value' => '',
+        '#multiple' => TRUE,
+      ];
+    }
+
     return $form;
   }
 
@@ -144,7 +144,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $this->configuration['title'] = $form_state->getValue('title');
     $this->configuration['title_display'] = (boolean) $form_state->getValue('title_display');
     $this->configuration['title_classes'] = $form_state->getValue('title_classes');
-    $this->configuration['column_classes'] = $form_state->getValue('column_classes');
+    $this->configuration['column_classes'] = $form_state->getValue('advanced')['column_classes'];
     $this->configuration['section_element_id'] = $form_state->getValue('advanced')['section_element_id'];
   }
 

@@ -28,7 +28,7 @@ class FourColumnLayout extends DcfLayoutBase {
 
     // Loop through each region and set grid column classes.
     foreach ($regions as $key => $value) {
-      if(isset($configuration['column_classes'])) {
+      if (isset($configuration['column_classes'])) {
         foreach ((array) $configuration['column_classes'] as $class) {
           if (!empty($class)) {
             $build[$key]['#attributes']['class'][] = $class;
