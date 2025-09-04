@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.webform.body
     - field.field.node.webform.webform
     - node.type.webform
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - entitygroupfield
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
     - text
     - webform
 _core:
@@ -64,6 +67,23 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 53
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 10
@@ -95,6 +115,18 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 55
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 8

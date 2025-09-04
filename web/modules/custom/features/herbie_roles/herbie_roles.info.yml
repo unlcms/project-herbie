@@ -53,6 +53,7 @@ dependencies:
   - 'salesforce:salesforce'
   - 'salesforce:salesforce_mapping'
   - 'scanner:scanner'
+  - 'scheduler:scheduler'
   - 'twig_ui:twig_ui'
   - 'unl_access:unl_access'
   - 'unl_breadcrumbs:unl_breadcrumbs'
@@ -62,5 +63,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: '1.8'
+version: '1.9'
 package: Herbie

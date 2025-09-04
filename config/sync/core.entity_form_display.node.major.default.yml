@@ -38,6 +38,7 @@ dependencies:
     - field.field.node.major.n_major_program_features_image
     - image.style.thumbnail
     - node.type.major
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - field_group
@@ -533,3 +534,7 @@ content:
     third_party_settings: {  }
 hidden:
   entitygroupfield: true
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

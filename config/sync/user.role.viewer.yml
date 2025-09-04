@@ -17,6 +17,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - scheduler
     - system
     - toolbar
     - unl_access
@@ -45,6 +46,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view webform revisions'

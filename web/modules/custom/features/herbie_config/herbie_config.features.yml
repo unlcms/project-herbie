@@ -6,6 +6,7 @@ required:
   - moderated_content_bulk_publish.settings
   - theme_per_user.settings
   - cas.settings
+  - scheduler.settings
   - views.view.content
   - views.view.taxonomy_term
   - system.action.draft_current

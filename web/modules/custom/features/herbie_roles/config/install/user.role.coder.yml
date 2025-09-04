@@ -25,6 +25,7 @@ dependencies:
     - replicate_ui
     - salesforce
     - salesforce_mapping
+    - scheduler
     - system
     - taxonomy
     - twig_ui
@@ -84,8 +85,10 @@ permissions:
   - 'moderated content bulk unpin'
   - 'moderated content bulk unpublish'
   - 'replicate entities'
+  - 'schedule publishing of nodes'
   - 'update any html_code block content'
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'
+  - 'view scheduled content'
   - 'view the administration theme'

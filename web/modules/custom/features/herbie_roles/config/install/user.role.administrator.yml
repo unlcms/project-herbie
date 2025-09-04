@@ -61,6 +61,7 @@ dependencies:
     - salesforce
     - salesforce_mapping
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -281,6 +282,7 @@ permissions:
   - 'revert webform revisions'
   - 'role-assign users by role'
   - 'role-assign users with role administrator'
+  - 'schedule publishing of nodes'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
@@ -324,6 +326,7 @@ permissions:
   - 'view own webform submission'
   - 'view person revisions'
   - 'view salesforce mapping'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'

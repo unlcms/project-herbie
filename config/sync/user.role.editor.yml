@@ -43,6 +43,7 @@ dependencies:
     - rabbit_hole
     - replicate_ui
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -175,6 +176,7 @@ permissions:
   - 'revert news revisions'
   - 'revert person revisions'
   - 'revert webform revisions'
+  - 'schedule publishing of nodes'
   - 'update any accordion block content'
   - 'update any card block content'
   - 'update any contact_info block content'
@@ -212,6 +214,7 @@ permissions:
   - 'view own unpublished media'
   - 'view own webform submission'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'
