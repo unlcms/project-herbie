@@ -22,6 +22,10 @@
             "url": "https://github.com/unlcms/project-herbie-composer-plugin.git"
         },
         {
+            "type": "vcs",
+            "url": "https://git.unl.edu/dxg/icon-library.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "unl/wdntemplates",
@@ -30,19 +34,6 @@
                     "type": "git",
                     "url": "https://github.com/unl/wdntemplates.git",
                     "reference": "5.3"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "dxg/icon-library",
-                "version": "1.2",
-                "type": "drupal-library",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.unl.edu/dxg/icon-library.git",
-                    "reference": "main"
                 }
             }
         },
@@ -224,7 +215,7 @@
         "drupal/views_data_export": "^1.4",
         "drupal/webform": "^6.2@beta",
         "drush/drush": "^11.6",
-        "dxg/icon-library": "^1.0",
+        "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
         "nigelotoole/progress-tracker": "^2.0",
         "northernco/ckeditor5-anchor-drupal": "^0.3.0",
@@ -299,6 +290,7 @@
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": [
+                "dxg/icon-library",
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
