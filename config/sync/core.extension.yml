@@ -113,6 +113,7 @@ module:
   linkit: 0
   linkit_media_library: 0
   markup: 0
+  mathjax: 0
   media: 0
   media_entity_file_replace: 0
   media_file_delete: 0

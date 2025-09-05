@@ -64,6 +64,7 @@ dependencies:
   - 'lb_direct_add:lb_direct_add'
   - 'linkit:linkit'
   - 'markup:markup'
+  - 'mathjax:mathjax'
   - 'menu_block:menu_block'
   - 'oembed_providers:oembed_providers'
   - 'paragraphs:paragraphs'
@@ -79,5 +80,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.10.0
+version: 1.11.0
 package: Herbie

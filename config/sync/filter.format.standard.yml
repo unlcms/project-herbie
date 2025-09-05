@@ -10,6 +10,7 @@ dependencies:
     - dcf_ckeditor5
     - editor
     - linkit
+    - mathjax
     - media
 _core:
   default_config_hash: 5anSBiLTqs4dOkhLlIFIaJ8nZp-aMBQXtZ42IK2ONWo
@@ -114,3 +115,9 @@ filters:
     settings:
       dcftable: '1'
       dcfblockquote: '1'
+  filter_mathjax:
+    id: filter_mathjax
+    provider: mathjax
+    status: true
+    weight: 50
+    settings: {  }
