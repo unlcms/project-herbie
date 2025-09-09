@@ -5,6 +5,12 @@
  */
 function morrill_preprocess_html(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+
+  $group = _morrill_get_current_group();
+  if ($group) {
+    $group_id = $group->id();
+    $variables['group_id'] = $group_id;
+  }
 }
 
 /**
@@ -12,4 +18,35 @@ function morrill_preprocess_html(&$variables) {
  */
 function morrill_preprocess_page(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+}
+
+/**
+ * Get the current Group.
+ *
+ * @return Drupal\group\Entity\Group
+ */
+function _morrill_get_current_group() {
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists('group')) {
+    return NULL;
+  }
+
+  // If we're on a Group entity page.
+  $group_route_context = \Drupal::service('group.group_route_context');
+  $contexts = $group_route_context->getRuntimeContexts(['group']);
+  $group = $contexts['group']->getContextValue();
+
+  // If we're on a Node entity page.
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    if (is_numeric($node)) {
+      $node = Node::load($node);
+    }
+    $group_content_array = GroupRelationship::loadByEntity($node);
+    foreach ($group_content_array as $group_content) {
+      $group = $group_content->getGroup();
+    }
+  }
+
+  return $group;
 }
