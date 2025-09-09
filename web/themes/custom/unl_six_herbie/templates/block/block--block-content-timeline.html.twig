@@ -16,7 +16,7 @@
 			{{ title_suffix }}
 		{% endif %}
 
-		<ol {{attributes.addclass(orderedListClass)}} tabindex="0">
+		<ol role="list" {{attributes.addclass(orderedListClass)}} tabindex="0">
 			{% block content %}
 				{{ content.b_timeline_item}}
 			{% endblock %}

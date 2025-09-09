@@ -30,8 +30,8 @@
 
   <div{{ content_attributes }}>
     {% if credit is empty and cutline is empty and content.n_news_image.0 %}
-      <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
-        <div class="dcf-col-100% dcf-col-67%-start@md dcf-ratio dcf-ratio-16x9 unl-frame-quad dcf-mb-7 unlcms-article-lead-img-only">
+      <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-5">
+        <div class="dcf-col-span-12 dcf-col-span-8@md dcf-16x9 unl-frame-quad dcf-mb-7 unlcms-article-lead-img-only">
           {{ content.n_news_image }}
         </div>
       </div>
@@ -39,7 +39,7 @@
       {% if content.n_news_image.0 or cutline or credit %}
         <figure class="dcf-d-grid dcf-col-gap-vw dcf-row-gap-2 dcf-mb-6 unlcms-grid-article">
            {% if content.n_news_image %}
-            <div class="dcf-ratio dcf-ratio-16x9 unl-frame-quad unlcms-article-lead-img">
+            <div class="dcf-16x9 unl-frame-quad unlcms-article-lead-img">
               {{ content.n_news_image }}
             </div>
             {% endif %}
@@ -74,7 +74,7 @@
           <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">
             Share <span class="dcf-sr-only">This Article</span>
           </h2>
-          <ul class="dcf-list-bare dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-col-gap-7 dcf-row-gap-5 dcf-mb-0">
+          <ul role = "list" class="dcf-list-bare dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-col-gap-7 dcf-row-gap-5 dcf-mb-0">
             <li class="dcf-mb-0">
               <a class="dcf-d-block dcf-h-6 dcf-w-6" href="https://www.facebook.com/sharer.php?u={{fullUrl}}" aria-label="Share this article on Facebook">
                 <svg class="dcf-h-100% dcf-w-100% dcf-fill-current" focusable="false" height="16" width="16" viewbox="0 0 48 48">

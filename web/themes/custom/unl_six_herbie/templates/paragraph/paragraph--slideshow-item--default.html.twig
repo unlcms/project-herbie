@@ -46,14 +46,14 @@
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
-{% set image_wrapper_attributes = create_attribute() %}
-{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-ratio dcf-ratio-16x9') %}
+{# {% set image_wrapper_attributes = create_attribute() %} #}
+{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-16x9') %}
 {% block paragraph %}
 <li>
   <figure>
-    <div {{ image_wrapper_attributes }}>
+    {# <div {{ image_wrapper_attributes }}> #}
       {{ content.p_b_slideshow_image }}
-    </div>
+    {# </div> #}
     <figcaption>
       {{ content.p_b_slideshow_caption}}
       {% if content.p_b_slideshow_credit %}

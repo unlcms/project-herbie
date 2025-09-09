@@ -540,7 +540,7 @@ function unl_six_herbie_preprocess_media(&$variables) {
       $field_name = $referring_field->getName();
 
       if ($field_name == "b_hero_image") {
-        $variables['attributes']['class'][] = "dcf-ratio dcf-ratio-16x9";
+        $variables['attributes']['class'][] = "dcf-16x9 dcf-relative";
       }
     }
 
@@ -549,7 +549,7 @@ function unl_six_herbie_preprocess_media(&$variables) {
       $field_name = $referring_field->getName();
 
       if ($field_name == "b_photohero_image") {
-        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-ratio dcf-ratio-16x9 dcf-mb-0";
+        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-relative dcf-mb-0";
       }
     }
 
@@ -602,11 +602,13 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
       $field_name = $referring_field->getName();
 
       if ($field_name == "b_hero_image" || $field_name == "b_photohero_image") {
-        $hero_image_classes = ['dcf-ratio-child', 'dcf-obj-fit-cover'];
 
         if ($field_name == 'b_hero_image') {
+        $hero_image_classes = ['dcf-obj-fit-cover'];
+
           $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
         } else if ($field_name == 'b_photohero_image') {
+          $hero_image_classes = ['dcf-obj-fit-cover', 'dcf-absolute'];
           array_push($hero_image_classes, "unlcms-slow-zoom-in");
           $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
         }
@@ -664,6 +666,16 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
       }
     }
 
+
+    // if ($bundle == 'slideshow_item') {
+    //   $referring_field = $referring_item->getParent();
+    //   $field_name = $referring_field->getName();
+
+    //   if ($field_name == "p_b_slideshow_image") {
+    //     $variables['attributes']['class'][] = "dcf-16";
+    //   }
+    // }
+
     if ($bundle == 'simple_media') {
       $classes = array(
         "animations" => array(
@@ -689,6 +701,12 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
         }
       }
     }
+
+
+    if ($bundle == 'slideshow_item') {
+          $variables['responsive_image']['#attributes']['class'][] = "dcf-16x9";
+    }
+
   }
 }
 
