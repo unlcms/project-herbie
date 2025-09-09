@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\group\Entity\GroupRelationship;
+use Drupal\node\Entity\Node;
+
 /**
  * Implements template_preprocess_html().
  */
