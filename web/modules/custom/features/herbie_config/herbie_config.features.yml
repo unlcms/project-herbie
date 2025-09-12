@@ -7,6 +7,7 @@ required:
   - theme_per_user.settings
   - cas.settings
   - scheduler.settings
+  - mathjax.settings
   - views.view.content
   - views.view.taxonomy_term
   - system.action.draft_current
