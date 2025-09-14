@@ -14,7 +14,6 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
-  block_content_permissions: 0
   block_form_alter: 0
   block_type_templates: 0
   book: 0

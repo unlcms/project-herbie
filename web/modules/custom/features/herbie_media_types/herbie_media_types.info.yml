@@ -4,7 +4,6 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'asset_injector:asset_injector'
-  - 'block_content_permissions:block_content_permissions'
   - 'crop:crop'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:block_content'
@@ -48,5 +47,5 @@ dependencies:
   - 'twig_ui:twig_ui'
   - 'unl_config:unl_config'
   - 'webform:webform'
-version: 2.1.4
+version: '2.2'
 package: Herbie

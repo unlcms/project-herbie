@@ -6,7 +6,6 @@ dependencies:
   - 'allowed_formats:allowed_formats'
   - 'asset_injector:asset_injector'
   - 'auto_entitylabel:auto_entitylabel'
-  - 'block_content_permissions:block_content_permissions'
   - 'codemirror_editor:codemirror_editor'
   - 'config_split:config_split'
   - 'crop:crop'
@@ -79,5 +78,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.11.1
+version: 1.12.0
 package: Herbie

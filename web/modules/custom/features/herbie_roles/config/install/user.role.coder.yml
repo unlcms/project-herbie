@@ -7,12 +7,12 @@ dependencies:
   module:
     - asset_injector
     - block
-    - block_content_permissions
     - contextual
     - feeds
     - feeds_tamper
     - field_css
     - field_ui
+    - file
     - filter
     - google_tag
     - group
@@ -75,8 +75,7 @@ permissions:
   - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'
-  - 'create html_code block content'
-  - 'delete any html_code block content'
+  - 'delete own files'
   - 'load twig templates from file system'
   - 'moderated content bulk draft'
   - 'moderated content bulk pin'
@@ -86,7 +85,6 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'replicate entities'
   - 'schedule publishing of nodes'
-  - 'update any html_code block content'
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'

@@ -3,7 +3,6 @@ excluded:
   - user.role.editor
   - user.role.site_admin
   - user.role.coder
-  - views.view.user_admin_people
   - block_content.type.simple_media
   - core.entity_form_display.block_content.simple_media.default
   - core.entity_view_display.block_content.simple_media.default

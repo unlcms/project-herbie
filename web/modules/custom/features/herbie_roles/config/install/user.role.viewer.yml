@@ -34,6 +34,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'bypass unl access grant'
+  - 'delete own files'
   - 'view any unpublished content'
   - 'view archive_page revisions'
   - 'view book revisions'
