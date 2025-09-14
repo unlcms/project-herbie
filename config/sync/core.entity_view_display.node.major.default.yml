@@ -52,6 +52,11 @@ targetEntityType: node
 bundle: major
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }

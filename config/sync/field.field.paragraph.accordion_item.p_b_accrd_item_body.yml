@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.p_b_accrd_item_body
+    - filter.format.standard
     - paragraphs.paragraphs_type.accordion_item
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - standard
 _core:
   default_config_hash: tMrhiPrhmFQIm37TM416G6T90vz5NZe3-SBfTFWneU8
 id: paragraph.accordion_item.p_b_accrd_item_body
@@ -24,5 +20,7 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - standard
 field_type: text_long

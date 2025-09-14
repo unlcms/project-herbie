@@ -5,13 +5,9 @@ dependencies:
   config:
     - block_content.type.card
     - field.storage.block_content.b_card_body
+    - filter.format.block_body
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - block_body
 _core:
   default_config_hash: lyhW_AA4yA60diwSE2MEk7Ai4WEv4Oo9Z7ZfonHo8uM
 id: block_content.card.b_card_body
@@ -24,5 +20,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - block_body
 field_type: text_long
