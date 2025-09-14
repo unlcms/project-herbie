@@ -17,12 +17,25 @@ class FourColumnLayout extends DcfLayoutBase {
    */
   public function build(array $regions) {
     $build = parent::build($regions);
+    $configuration = $this->getConfiguration();
+
     $build['#settings']['grid_wrapper_attributes']['class'] = [
       'dcf-grid-halves@sm',
       'dcf-grid-fourths@lg',
       'dcf-col-gap-vw',
       'dcf-row-gap-5',
     ];
+
+    // Loop through each region and set grid column classes.
+    foreach ($regions as $key => $value) {
+      if (isset($configuration['column_classes'])) {
+        foreach ((array) $configuration['column_classes'] as $class) {
+          if (!empty($class)) {
+            $build[$key]['#attributes']['class'][] = $class;
+          }
+        }
+      }
+    }
 
     return $build;
   }

@@ -3,7 +3,6 @@ description: 'Provides all the role (with permissions included) config objects.'
 type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
-  - ':unl_access'
   - 'administerusersbyrole:administerusersbyrole'
   - 'asset_injector:asset_injector'
   - 'block_content_permissions:block_content_permissions'
@@ -54,7 +53,9 @@ dependencies:
   - 'salesforce:salesforce'
   - 'salesforce:salesforce_mapping'
   - 'scanner:scanner'
+  - 'scheduler:scheduler'
   - 'twig_ui:twig_ui'
+  - 'unl_access:unl_access'
   - 'unl_breadcrumbs:unl_breadcrumbs'
   - 'unl_config:unl_config'
   - 'unl_news:unl_news'
@@ -62,5 +63,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.7.3
+version: '1.9'
 package: Herbie

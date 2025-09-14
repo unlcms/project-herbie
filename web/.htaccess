@@ -431,6 +431,10 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^elec\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/ece/$1 [R=301,L]
 
+  # engrgradprograms
+  RewriteCond %{HTTP_HOST} ^engrgradprograms\.unl\.edu$
+  RewriteRule ^(.*)$ https://engineering.unl.edu/graduate-programs/$1 [R=301,L]
+
   # era
   RewriteCond %{HTTP_HOST} ^era\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/era/$1 [R=301,L]

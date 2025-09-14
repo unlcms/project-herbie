@@ -7,12 +7,18 @@
     <div class="bp465-grid-col-two-thirds">
       {{ title_prefix }}
       <h3{{ title_attributes.addClass('exhibition-heading') }}>
-        <a href="{{ url }}">{{ label }}</a>
+        <a href="{{ url }}">
+          {% if is_upcoming and node.ongoing.value != '1' %}
+            Upcoming:
+          {% endif %}
+          {{ label }}
+        </a>
       </h3>
       {{ title_suffix }}
       {% if node.ongoing.value != '1' %}
         {{ content.exhibition_date }}
       {% endif %}
+      {{ content.subhead }}
       {{ content.body }}
     </div>
   </div>

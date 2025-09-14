@@ -6,6 +6,7 @@ dependencies:
     - filter.format.webform_email
   module:
     - asset_injector
+    - block
     - block_content_permissions
     - contextual
     - feeds
@@ -24,11 +25,13 @@ dependencies:
     - replicate_ui
     - salesforce
     - salesforce_mapping
+    - scheduler
     - system
     - taxonomy
     - twig_ui
     - unl_webform
     - views_ui
+    - webform
 id: coder
 label: Developer
 weight: -5
@@ -42,6 +45,7 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
+  - 'administer blocks'
   - 'administer content types'
   - 'administer css assets injector'
   - 'administer feeds'
@@ -67,6 +71,7 @@ permissions:
   - 'administer taxonomy_term form display'
   - 'administer twig templates'
   - 'administer views'
+  - 'administer webform element access'
   - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'
@@ -80,8 +85,10 @@ permissions:
   - 'moderated content bulk unpin'
   - 'moderated content bulk unpublish'
   - 'replicate entities'
+  - 'schedule publishing of nodes'
   - 'update any html_code block content'
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'
+  - 'view scheduled content'
   - 'view the administration theme'

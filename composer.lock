@@ -5858,6 +5858,58 @@
             }
         },
         {
+            "name": "drupal/mathjax",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/mathjax.git",
+                "reference": "4.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/mathjax-4.1.0.zip",
+                "reference": "4.1.0",
+                "shasum": "f7b3fe1e07ea2d0fa5133953497328cc4943ec12"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.1.0",
+                    "datestamp": "1724272614",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "cilefen",
+                    "homepage": "https://www.drupal.org/user/1850070"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
+                    "name": "julou",
+                    "homepage": "https://www.drupal.org/user/273952"
+                }
+            ],
+            "description": "Javascript-based LaTeX rendering solution for your Drupal website.",
+            "homepage": "https://www.drupal.org/project/mathjax",
+            "support": {
+                "source": "https://git.drupalcode.org/project/mathjax"
+            }
+        },
+        {
             "name": "drupal/media_entity_file_replace",
             "version": "1.1.0",
             "source": {
@@ -7316,6 +7368,145 @@
             }
         },
         {
+            "name": "drupal/scheduler",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scheduler.git",
+                "reference": "2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduler-2.2.1.zip",
+                "reference": "2.2.1",
+                "shasum": "ce9a9405ea88140fbdd53f1e3ed3741b6f27266c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/commerce": "^2 || ^3",
+                "drupal/devel_generate": ">=4",
+                "drupal/rules": "^3 || ^4",
+                "drupal/workbench_moderation": "*",
+                "drupal/workbench_moderation_actions": "*",
+                "drush/drush": ">=9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.1",
+                    "datestamp": "1738771365",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Schaefer (Eric Schaefer)",
+                    "homepage": "https://www.drupal.org/u/eric-schaefer",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jonathan Smith (jonathan1055)",
+                    "homepage": "https://www.drupal.org/u/jonathan1055",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Pieter Frenssen (pfrenssen)",
+                    "homepage": "https://www.drupal.org/u/pfrenssen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Rick Manelius (rickmanelius)",
+                    "homepage": "https://www.drupal.org/u/rickmanelius",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Automatically publish and unpublish content at specified dates and times.",
+            "homepage": "https://drupal.org/project/scheduler",
+            "support": {
+                "source": "https://git.drupalcode.org/project/scheduler",
+                "issues": "https://www.drupal.org/project/issues/scheduler"
+            }
+        },
+        {
+            "name": "drupal/scheduler_content_moderation_integration",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scheduler_content_moderation_integration.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduler_content_moderation_integration-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "74d4dd546b7ce6fd5c68312d50f20c366ee8772c"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/scheduler": "^2"
+            },
+            "require-dev": {
+                "drupal/commerce": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1738678266",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "chr.fritsch",
+                    "homepage": "https://www.drupal.org/user/2103716"
+                },
+                {
+                    "name": "daniel.bosen",
+                    "homepage": "https://www.drupal.org/user/404865"
+                },
+                {
+                    "name": "jonathan1055",
+                    "homepage": "https://www.drupal.org/user/92645"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
+                },
+                {
+                    "name": "volkerk",
+                    "homepage": "https://www.drupal.org/user/57527"
+                }
+            ],
+            "description": "Scheduler sub-module providing content moderation functionality for publishing/unpublishing",
+            "homepage": "https://www.drupal.org/project/scheduler_content_moderation_integration",
+            "support": {
+                "source": "https://git.drupalcode.org/project/scheduler_content_moderation_integration",
+                "error": "Invalid dependency: \"scheduler\", Could not parse version constraint ~: Invalid version string \"~\""
+            }
+        },
+        {
             "name": "drupal/select2",
             "version": "1.14.0",
             "source": {
@@ -8373,13 +8564,15 @@
         },
         {
             "name": "dxg/icon-library",
-            "version": "1.2",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://git.unl.edu/dxg/icon-library.git",
-                "reference": "main"
+                "reference": "6e19f16477dfbe9899a086647dcf360139f40802"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "description": "UNL's icon library.",
+            "time": "2025-09-10T15:23:44+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -14677,16 +14870,16 @@
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.34",
+            "version": "10.5.3.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "ba279417477fc0db4e5776a361165627fb4e627d"
+                "reference": "05f2a798c10689a3568d9a5536ed21cf1b3bd2f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/ba279417477fc0db4e5776a361165627fb4e627d",
-                "reference": "ba279417477fc0db4e5776a361165627fb4e627d",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/05f2a798c10689a3568d9a5536ed21cf1b3bd2f1",
+                "reference": "05f2a798c10689a3568d9a5536ed21cf1b3bd2f1",
                 "shasum": ""
             },
             "require": {
@@ -14704,9 +14897,9 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.34"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.36"
             },
-            "time": "2025-08-01T18:54:27+00:00"
+            "time": "2025-09-05T21:56:05+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
@@ -14744,16 +14937,16 @@
         },
         {
             "name": "unlcms/unl_six",
-            "version": "6.0.4",
+            "version": "6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_six.git",
-                "reference": "bfafd3130876bfad3257d8f590cca64657cda89b"
+                "reference": "560d2d6611045f010b817b8ba9e209c1ab0f4981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/bfafd3130876bfad3257d8f590cca64657cda89b",
-                "reference": "bfafd3130876bfad3257d8f590cca64657cda89b",
+                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/560d2d6611045f010b817b8ba9e209c1ab0f4981",
+                "reference": "560d2d6611045f010b817b8ba9e209c1ab0f4981",
                 "shasum": ""
             },
             "require": {
@@ -14771,9 +14964,9 @@
             "description": "UNLedu Framework 6.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_six/issues",
-                "source": "https://github.com/unlcms/unl_six/tree/6.0.4"
+                "source": "https://github.com/unlcms/unl_six/tree/6.0.5"
             },
-            "time": "2025-08-01T18:54:52+00:00"
+            "time": "2025-09-05T21:57:00+00:00"
         },
         {
             "name": "unlcms/unl_user",

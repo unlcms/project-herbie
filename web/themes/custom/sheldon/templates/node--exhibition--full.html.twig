@@ -19,7 +19,7 @@
     </div>
 
     <div class="bp591-grid-col-two-thirds bp956-grid-col-one-half pull-right sticky-reference">
-      {{ content.body }}
+      {{ content.body|render|replace({'[guidebook]': guidebook_embed_html})|raw }}
       {{ content.related_links }}
     </div>
   </div>

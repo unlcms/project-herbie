@@ -27,6 +27,7 @@ dependencies:
   module:
     - administerusersbyrole
     - asset_injector
+    - block
     - block_content_permissions
     - book
     - content_moderation
@@ -60,6 +61,7 @@ dependencies:
     - salesforce
     - salesforce_mapping
     - scanner
+    - scheduler
     - system
     - taxonomy
     - toolbar
@@ -102,6 +104,7 @@ permissions:
   - 'access webform overview'
   - 'access webform submission log'
   - 'add content to books'
+  - 'administer blocks'
   - 'administer book outlines'
   - 'administer content types'
   - 'administer css assets injector'
@@ -138,6 +141,7 @@ permissions:
   - 'administer unl webform download settings'
   - 'administer url aliases'
   - 'administer views'
+  - 'administer webform element access'
   - 'administer webform submission'
   - 'allow empty user mail'
   - 'authorize salesforce'
@@ -281,6 +285,7 @@ permissions:
   - 'revert webform revisions'
   - 'role-assign users by role'
   - 'role-assign users with role administrator'
+  - 'schedule publishing of nodes'
   - 'unl administer site configuration'
   - 'update any accordion block content'
   - 'update any card block content'
@@ -324,6 +329,7 @@ permissions:
   - 'view own webform submission'
   - 'view person revisions'
   - 'view salesforce mapping'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
   - 'view unl_directory_entry external entity collection'
