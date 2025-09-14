@@ -27,6 +27,7 @@ dependencies:
     - administerusersbyrole
     - asset_injector
     - block
+    - block_content
     - book
     - content_moderation
     - contextual
@@ -80,6 +81,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access css fields'
@@ -100,6 +102,7 @@ permissions:
   - 'access webform overview'
   - 'access webform submission log'
   - 'add content to books'
+  - 'administer block content'
   - 'administer blocks'
   - 'administer book outlines'
   - 'administer content types'

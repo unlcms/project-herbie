@@ -6,6 +6,7 @@ dependencies:
   - 'administerusersbyrole:administerusersbyrole'
   - 'asset_injector:asset_injector'
   - 'drupal:block'
+  - 'drupal:block_content'
   - 'drupal:book'
   - 'drupal:content_moderation'
   - 'drupal:contextual'
@@ -62,5 +63,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: '2.0'
+version: '2.1'
 package: Herbie

@@ -3,6 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.accordion
+    - block_content.type.card
+    - block_content.type.contact_info
+    - block_content.type.content
+    - block_content.type.cta
+    - block_content.type.embed
+    - block_content.type.hero
+    - block_content.type.icon_links
+    - block_content.type.logo_cloud
+    - block_content.type.node_include
+    - block_content.type.photo_hero
+    - block_content.type.proofpoint
+    - block_content.type.simple_media
+    - block_content.type.slideshow
+    - block_content.type.social_media_links
+    - block_content.type.tabs
+    - block_content.type.tandem
+    - block_content.type.timeline
     - core.entity_view_display.node.builder_page.default
     - filter.format.archive
     - filter.format.block_body
@@ -25,6 +43,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - block_content
     - book
     - content_moderation
     - contextual
@@ -97,31 +116,67 @@ permissions:
   - 'allow empty user mail'
   - 'bypass unl access grant'
   - 'configure editable builder_page node layout overrides'
+  - 'create accordion block content'
   - 'create and edit custom blocks'
   - 'create book content'
   - 'create builder_page content'
+  - 'create card block content'
+  - 'create contact_info block content'
+  - 'create content block content'
+  - 'create cta block content'
+  - 'create embed block content'
   - 'create file media'
+  - 'create hero block content'
+  - 'create icon_links block content'
   - 'create image media'
+  - 'create logo_cloud block content'
   - 'create new books'
   - 'create news content'
+  - 'create node_include block content'
   - 'create person content'
+  - 'create photo_hero block content'
+  - 'create proofpoint block content'
   - 'create remote_video media'
+  - 'create simple_media block content'
+  - 'create slideshow block content'
+  - 'create social_media_links block content'
+  - 'create tabs block content'
+  - 'create tandem block content'
   - 'create terms in media_tags'
   - 'create terms in site_organization_tags'
+  - 'create timeline block content'
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
   - 'create users'
   - 'create webform'
   - 'create webform content'
+  - 'delete any accordion block content'
   - 'delete any archive_page content'
   - 'delete any book content'
   - 'delete any builder_page content'
+  - 'delete any card block content'
+  - 'delete any contact_info block content'
+  - 'delete any content block content'
+  - 'delete any cta block content'
+  - 'delete any embed block content'
   - 'delete any file'
   - 'delete any file media'
+  - 'delete any hero block content'
+  - 'delete any icon_links block content'
   - 'delete any image media'
+  - 'delete any logo_cloud block content'
   - 'delete any news content'
+  - 'delete any node_include block content'
   - 'delete any person content'
+  - 'delete any photo_hero block content'
+  - 'delete any proofpoint block content'
   - 'delete any remote_video media'
+  - 'delete any simple_media block content'
+  - 'delete any slideshow block content'
+  - 'delete any social_media_links block content'
+  - 'delete any tabs block content'
+  - 'delete any tandem block content'
+  - 'delete any timeline block content'
   - 'delete any webform'
   - 'delete any webform content'
   - 'delete any webform submission'
@@ -149,14 +204,32 @@ permissions:
   - 'delete webform revisions'
   - 'delete webform submissions any node'
   - 'delete webform submissions own node'
+  - 'edit any accordion block content'
   - 'edit any archive_page content'
   - 'edit any book content'
   - 'edit any builder_page content'
+  - 'edit any card block content'
+  - 'edit any contact_info block content'
+  - 'edit any content block content'
+  - 'edit any cta block content'
+  - 'edit any embed block content'
   - 'edit any file media'
+  - 'edit any hero block content'
+  - 'edit any icon_links block content'
   - 'edit any image media'
+  - 'edit any logo_cloud block content'
   - 'edit any news content'
+  - 'edit any node_include block content'
   - 'edit any person content'
+  - 'edit any photo_hero block content'
+  - 'edit any proofpoint block content'
   - 'edit any remote_video media'
+  - 'edit any simple_media block content'
+  - 'edit any slideshow block content'
+  - 'edit any social_media_links block content'
+  - 'edit any tabs block content'
+  - 'edit any tandem block content'
+  - 'edit any timeline block content'
   - 'edit any webform'
   - 'edit any webform content'
   - 'edit any webform submission'

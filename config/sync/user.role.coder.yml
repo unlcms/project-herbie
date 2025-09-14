@@ -8,6 +8,7 @@ dependencies:
   module:
     - asset_injector
     - block
+    - block_content
     - contextual
     - feeds
     - feeds_tamper
@@ -40,6 +41,7 @@ label: Developer
 weight: -5
 is_admin: null
 permissions:
+  - 'access block library'
   - 'access contextual links'
   - 'access css fields'
   - 'access feed overview'
@@ -48,6 +50,7 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
+  - 'administer block content'
   - 'administer blocks'
   - 'administer content types'
   - 'administer css assets injector'
