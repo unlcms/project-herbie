@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "178bdcbb3500aa9a70422315bc425b60",
+    "content-hash": "354711b376690e6ef9d39567f6aa826c",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -14903,21 +14903,21 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "1.7",
+            "version": "1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "0f7fece9091d562c1657adda6e1f03b19cde759d"
+                "reference": "c93b0fd6546ff70e3cc4b1f29428eb7d9f8b8e18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/0f7fece9091d562c1657adda6e1f03b19cde759d",
-                "reference": "0f7fece9091d562c1657adda6e1f03b19cde759d",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/c93b0fd6546ff70e3cc4b1f29428eb7d9f8b8e18",
+                "reference": "c93b0fd6546ff70e3cc4b1f29428eb7d9f8b8e18",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
-                "richardbporter/drush-users-commands": "^3.2.1"
+                "richardbporter/drush-users-commands": "^3.2.1 || ^4"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -14931,9 +14931,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/1.7"
+                "source": "https://github.com/unlcms/unl_multisite/tree/1.8"
             },
-            "time": "2025-06-05T13:57:03+00:00"
+            "time": "2025-09-15T00:20:00+00:00"
         },
         {
             "name": "unlcms/unl_six",
