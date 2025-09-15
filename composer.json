@@ -319,7 +319,6 @@
                 "3187258 - Allow '@' in CSS selectors for Views displays (CSS class validation too strict)": "patches/css_class_validation-3187258-27.patch",
                 "2916377 - Allow '@' in CSS selectors for Views displays (Html::cleanCssIdentifier Strips Valid Escaped Characters)": "patches/2916377-40.patch",
                 "2897377 - data-drupal-selector is set to random value": "patches/2897377-37.patch",
-                "Custom (gh#366) - ProxySQL bug sidestep: don't release savepoints during site install": "patches/unlcms-366-dont-release-savepoint-on-install.patch",
                 "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch",
                 "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch",
                 "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch",
