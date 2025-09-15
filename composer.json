@@ -138,9 +138,9 @@
         "drupal/config_ignore": "^2.4",
         "drupal/config_split": "^1.4",
         "drupal/config_update": "^2.0@alpha",
-        "drupal/core-composer-scaffold": "~10.2.1",
-        "drupal/core-project-message": "~10.2.1",
-        "drupal/core-recommended": "~10.2.1",
+        "drupal/core-composer-scaffold": "~10.2.0",
+        "drupal/core-project-message": "~10.2.0",
+        "drupal/core-recommended": "~10.2.0",
         "drupal/crop": "^2.1",
         "drupal/ctools": "^4.0",
         "drupal/default_content": "^2.0@alpha",
@@ -350,6 +350,9 @@
             },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"
+            },
+            "drupal/salesforce": {
+                "unlcms-1102 - Fix Salesforce core version requirement": "patches/unlcms-1106-fix-salesforce-core-version-req.patch"
             },
             "drush/drush": {
                 "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
