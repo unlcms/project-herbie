@@ -1,9 +1,9 @@
-diff --git a/src/Drupal/Commands/config/ConfigImportCommands.php b/src/Drupal/Commands/config/ConfigImportCommands.php
-index 9e6866bc4..b602d62e2 100644
---- a/src/Drupal/Commands/config/ConfigImportCommands.php
-+++ b/src/Drupal/Commands/config/ConfigImportCommands.php
-@@ -216,6 +216,10 @@ class ConfigImportCommands extends DrushCommands
-      */
+diff --git a/src/Commands/config/ConfigImportCommands.php b/src/Commands/config/ConfigImportCommands.php
+index 2d729e238..f0bff377d 100644
+--- a/src/Commands/config/ConfigImportCommands.php
++++ b/src/Commands/config/ConfigImportCommands.php
+@@ -175,6 +175,10 @@ class ConfigImportCommands extends DrushCommands
+     #[CLI\Topics(topics: [DocsCommands::DEPLOY])]
      public function import(array $options = ['source' => self::REQ, 'partial' => false, 'diff' => false])
      {
 +        // UNL project-herbie notice
@@ -12,4 +12,3 @@ index 9e6866bc4..b602d62e2 100644
 +
          // Determine source directory.
          $source_storage_dir = ConfigCommands::getDirectory($options['source']);
- 
