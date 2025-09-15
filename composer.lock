@@ -14963,16 +14963,16 @@
         },
         {
             "name": "unlcms/unl_breadcrumbs",
-            "version": "1.0.3",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_breadcrumbs.git",
-                "reference": "7dc63e08922fa7256d811c3aac98d908aade97bd"
+                "reference": "df86b93cd8e1bfe309454b5640f36b6f8a3d51e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/7dc63e08922fa7256d811c3aac98d908aade97bd",
-                "reference": "7dc63e08922fa7256d811c3aac98d908aade97bd",
+                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/df86b93cd8e1bfe309454b5640f36b6f8a3d51e6",
+                "reference": "df86b93cd8e1bfe309454b5640f36b6f8a3d51e6",
                 "shasum": ""
             },
             "require": {
@@ -14993,9 +14993,9 @@
             "description": "UNL breadcrumb implementation",
             "support": {
                 "issues": "https://github.com/unlcms/unl_breadcrumbs/issues",
-                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.0.3"
+                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.1"
             },
-            "time": "2023-02-23T16:09:35+00:00"
+            "time": "2024-02-16T21:45:36+00:00"
         },
         {
             "name": "unlcms/unl_cas",
