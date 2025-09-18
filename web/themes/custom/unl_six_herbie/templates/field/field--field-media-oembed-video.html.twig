@@ -47,24 +47,22 @@
   {% if media_type != 'rich' %}
     {# If 9/16 aspect ratio #}
     {% if aspect_ratio == 0.56 %}
-      {% set wrapper = ['dcf-ratio-9x16'] %}
+      {% set wrapper = ['dcf-9x16'] %}
     {# If 4/3 aspect ratio #}
     {% elseif aspect_ratio == 1.33 %}
-      {% set wrapper = ['dcf-ratio-4x3'] %}
+      {% set wrapper = ['dcf-4x3'] %}
     {# If 3/4 aspect ratio #}
     {% elseif aspect_ratio == 0.75 %}
-      {% set wrapper = ['dcf-ratio-3x4'] %}
+      {% set wrapper = ['dcf-3x4'] %}
     {# If 1/1 aspect ratio #}
     {% elseif aspect_ratio == 1.0 %}
-      {% set wrapper = ['dcf-ratio-1x1'] %}
+      {% set wrapper = ['dcf-1x1'] %}
     {% else %}
-      {% set wrapper = ['dcf-ratio-16x9'] %}
+      {% set wrapper = ['dcf-16x9'] %}
     {% endif %}
 
-    {% set wrapper = wrapper|merge(['dcf-ratio']) %}
-
     <div {{ attributes.addClass(wrapper) }}  >
-      <div class="dcf-ratio-child">
+      <div class="dcf-obj-fit-cover">
         {{ item.content }}
       </div>
     </div>

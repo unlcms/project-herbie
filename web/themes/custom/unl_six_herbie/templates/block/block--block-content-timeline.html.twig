@@ -1,7 +1,7 @@
 {{ attach_library('unl_six_herbie/timeline') }}
 
-{% set verticalListClass = ['dcf-list-bare', 'dcf-relative', 'dcf-mb-0', 'dcf-pt-6', 'dcf-pb-6', 'unlcms-timeline', 'unlcms-timeline-vertical'] %}
-{% set horizontalListClass = ['dcf-bleed', 'dcf-list-bare', 'dcf-d-flex', 'dcf-flex-no-wrap', 'dcf-gap-4' ,'dcf-mt-6' ,'dcf-mb-0' ,'dcf-pb-1' ,'dcf-bg-no-repeat', 'dcf-overflow-x-scroll' ,'unlcms-timeline' ,'unlcms-timeline-horizontal'] %}
+{% set verticalListClass = ['dcf-relative', 'dcf-mb-0', 'dcf-pt-6', 'dcf-pb-6', 'unlcms-timeline', 'unlcms-timeline-vertical'] %}
+{% set horizontalListClass = ['dcf-bleed', 'dcf-d-flex', 'dcf-flex-no-wrap', 'dcf-gap-4' ,'dcf-mt-6' ,'dcf-mb-0' ,'dcf-pb-1' ,'dcf-bg-no-repeat', 'dcf-overflow-x-scroll' ,'unlcms-timeline' ,'unlcms-timeline-horizontal'] %}
 
 {% if content.b_timeline_style[0]['#markup'] == 'horizontal' %}
 	{% set orderedListClass = horizontalListClass %}

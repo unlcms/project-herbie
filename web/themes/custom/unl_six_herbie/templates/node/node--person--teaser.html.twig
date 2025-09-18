@@ -3,9 +3,6 @@
 
 {{ attach_library('unl_six_herbie/person') }}
 
-{% set orderedListAttribute = create_attribute() %}
-{% set orderedListAttribute = orderedListAttribute.addClass('dcf-list-bare dcf-d-grid unlcms-teaser-person-list dcf-col-gap-vw dcf-row-gap-8 dcf-mb-9') %}
-
 <li {{ attributes.addClass(classes).remove('role') }} itemscope itemtype="https://schema.org/Person">
   <div {{ content_attributes.addClass(unlcms_teaser_person_classes) }} data-uid="{{ node.n_person_unldirectoryreference.entity.ee_unldir_uid.value }}" data-preferred-name="{{ label }}" itemscope itemtype="http://schema.org/Person">
     <!-- Image -->

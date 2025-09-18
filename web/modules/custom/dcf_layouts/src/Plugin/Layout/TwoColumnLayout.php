@@ -38,20 +38,20 @@ class TwoColumnLayout extends DcfLayoutBase {
         ];
 
         if ($column_width == "33-67") {
-          $build['first']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-4@md";
-          $build['second']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-8@md";
+          $build['first']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-4@md',];
+          $build['second']['#attributes']['class'] = ['dcf-col-span-12','dcf-col-span-8@md',];
         }
         if ($column_width == "67-33") {
-          $build['first']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-8@md";
-          $build['second']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-4@md";
+          $build['first']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-8@md'];
+          $build['second']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-4@md'];
         }
         if ($column_width == "25-75") {
-          $build['first']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-3@md";
-          $build['second']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-9@md";
+          $build['first']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-3@md'];
+          $build['second']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-9@md'];
         }
         if ($column_width == "75-25") {
-          $build['first']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-9@md";
-          $build['second']['#attributes']['class'][] = "dcf-col-span-12 dcf-col-span-3@md";
+          $build['first']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-9@md'];
+          $build['second']['#attributes']['class'] = ['dcf-col-span-12', 'dcf-col-span-3@md'];
         }
       }
     } else {

@@ -8,7 +8,7 @@
   {{ title_suffix }}
 
   <address>
-    <ul role="list" class="dcf-list-bare dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-jc-center dcf-col-gap-6 dcf-row-gap-5 dcf-txt-sm dcf-mb-0">
+    <ul role="list" class="dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-jc-center dcf-col-gap-6 dcf-row-gap-5 dcf-txt-sm dcf-mb-0">
       {% if content.b_social_media_links_facebook[0]['#context']['value'] %}
       <li class="dcf-mb-0">
         {% set filtered_username_input = content.b_social_media_links_facebook[0]['#context']['value']|url_encode %}
