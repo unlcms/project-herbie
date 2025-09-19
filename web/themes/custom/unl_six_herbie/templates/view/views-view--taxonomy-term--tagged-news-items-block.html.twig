@@ -1,43 +1,39 @@
 {%
   set classes = [
-  'view',
-  'view-' ~ id|clean_class,
-  'view-id-' ~ id,
-  'view-display-id-' ~ display_id,
-  dom_id ? 'js-view-dom-id-' ~ dom_id,
-  'dcf-mt-8'
-]
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'dcf-mt-8'
+  ]
 %}
-
-
 <div{{ attributes.addClass(classes).setAttribute('id', 'news-'~ dom_id) }}>
-
+  {{ title_prefix }}
   {{ title }}
-
+  {{ title_suffix }}
   {% if header %}
-    <header>
-      {{ header }}
-    </header>
+    {{ header }}
   {% endif %}
   {{ exposed }}
   {{ attachment_before }}
   {% if rows -%}
     <h3> News </h3>
-    <div class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
+    <div class="dcf-d-grid dcf-grid-cols-2@sm dcf-grid-cols-4@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
       {{ rows }}
     </div>
   {% elseif empty -%}
     {{ empty }}
   {% endif %}
+
   {{ pager }}
-
   {{ attachment_after }}
-
-  {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
+  {% if view.total_rows > 12 and more %}
+    <div class="dcf-d-flex dcf-jc-flex-end">
+      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{more['#url'].toString}}news">More news</a>
+    </div>
   {% endif %}
-
-  {{ feed_icons }}
+  {% if footer %}
+    {{ footer }}
+  {% endif %}
 </div>
