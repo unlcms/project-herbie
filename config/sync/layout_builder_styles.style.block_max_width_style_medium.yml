@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: block_max_width_style_medium
 label: 'Max Width - Medium'
-classes: "dcf-w-max-md\r\ndcf-flex-grow-1"
+classes: "dcf-max-w-md\r\ndcf-flex-grow-1"
 type: component
 group: max_width
 block_restrictions:
