@@ -32,8 +32,8 @@
 					</svg>
 				</div>
 				<div class="dcf-pl-1">
-			  {% if content.p_n_contact_phone['#items'] is not empty %}			
-              <a href="tel:+1{{ paragraph.p_n_contact_phone.value|replace({'-':''}) }}" aria-label="{{ paragraph.p_n_contact_phone.value|replace({'-': '.'})|split('')|join(' ') }}">{{ (content.p_n_contact_phone) }}</a>
+			  {% if content.p_n_contact_phone['#items'] is not empty %}
+              <a class='unl-cream' href="tel:+1{{ paragraph.p_n_contact_phone.value|replace({'-':''}) }}" aria-label="{{ paragraph.p_n_contact_phone.value|replace({'-': '.'})|split('')|join(' ') }}">{{ (content.p_n_contact_phone) }}</a>
 			  {% endif %}
 			  </div>
 				</dd>
