@@ -69,7 +69,7 @@ content:
       svg_render_as_image: false
     third_party_settings:
       image_class:
-        class: dcf-obj-fit-cover
+        class: 'dcf-obj-fit-cover dcf-ratio-child'
     weight: 2
     region: content
 hidden: {  }

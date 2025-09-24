@@ -32,7 +32,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: ''
+        class: dcf-ratio-child
     weight: 0
     region: content
   p_n_otc_link:

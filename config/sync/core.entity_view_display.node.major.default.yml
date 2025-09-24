@@ -152,7 +152,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-obj-fit-cover dcf-16x9 dcf-1x1@md'
+        class: 'dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-ratio-child'
     weight: 11
     region: content
   n_major_featured_faculty:
@@ -194,7 +194,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-obj-fit-cover dcf-absolute'
+        class: 'dcf-obj-fit-cover dcf-absolute dcf-ratio-child'
     weight: 1
     region: content
   n_major_heroimage_v_position:

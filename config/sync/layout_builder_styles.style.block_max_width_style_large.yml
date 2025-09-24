@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: block_max_width_style_large
 label: 'Max Width - Large'
-classes: "dcf-max-w-lg\r\ndcf-flex-grow-1"
+classes: "dcf-max-w-lg\r\ndcf-flex-grow-1\r\ndcf-w-max-lg"
 type: component
 group: max_width
 block_restrictions:
