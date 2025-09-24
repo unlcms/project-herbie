@@ -6,9 +6,9 @@ dependencies:
     - image.style.media_library
     - taxonomy.vocabulary.media_tags
   module:
-    - image
     - media
     - media_library
+    - svg_image
     - taxonomy
     - user
   enforced:
@@ -1173,6 +1173,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
       access:
         type: perm
         options:

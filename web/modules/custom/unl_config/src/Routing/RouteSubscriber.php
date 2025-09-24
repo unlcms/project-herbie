@@ -31,6 +31,15 @@ class RouteSubscriber extends RouteSubscriberBase {
       $permission = $route->getRequirement('_permission') . '+unl administer site configuration';
       $route->setRequirement('_permission', $permission);
     }
+
+    // Form: datalayer_settings_form.
+    // Route: datalayer.settings_form.
+    // Path: /admin/config/search/datalayer.
+    if ($route = $collection->get('datalayer.settings_form')) {
+      // Add custom permission for route.
+      $permission = $route->getRequirement('_permission') . '+unl administer site configuration';
+      $route->setRequirement('_permission', $permission);
+    }
   }
 
 }

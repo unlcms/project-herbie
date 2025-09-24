@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - external_entities
+    - file
     - honeypot
     - media
     - protected_pages
@@ -15,6 +16,7 @@ permissions:
   - 'access content'
   - 'access protected page password screen'
   - 'bypass honeypot protection'
+  - 'delete own files'
   - 'view media'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'

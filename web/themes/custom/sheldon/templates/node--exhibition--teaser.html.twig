@@ -7,7 +7,7 @@
       {{ title_prefix }}
       <h3{{ title_attributes.addClass('exhibition-heading') }}>
         <a href="{{ url }}">
-          {% if not is_in_date_range and node.ongoing.value != '1' %}
+          {% if is_upcoming and node.ongoing.value != '1' %}
             Upcoming:
           {% endif %}
           {{ label }}

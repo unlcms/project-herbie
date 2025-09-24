@@ -18,6 +18,7 @@ class TwoColumnLayout extends DcfLayoutBase {
   public function build(array $regions) {
     $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
     $build = parent::build($regions);
+    $configuration = $this->getConfiguration();
     $column_width = $this->configuration['column_widths'];
     $widths = explode('-', $this->configuration['column_widths']);
 
@@ -68,6 +69,17 @@ class TwoColumnLayout extends DcfLayoutBase {
       $build['second']['#attributes']['class'][] = 'dcf-col-' . $widths[1] . '%-end@md';
       $build['second']['#attributes']['class'][] = 'dcf-col-100%';
       $build['second']['#attributes']['class'][] = 'dcf-2nd@md';
+    }
+
+    // Loop through each region and set grid column classes.
+    foreach ($regions as $key => $value) {
+      if (isset($configuration['column_classes'])) {
+        foreach ((array) $configuration['column_classes'] as $class) {
+          if (!empty($class)) {
+            $build[$key]['#attributes']['class'][] = $class;
+          }
+        }
+      }
     }
 
     return $build;

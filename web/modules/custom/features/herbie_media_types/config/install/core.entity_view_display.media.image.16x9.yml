@@ -35,6 +35,8 @@ content:
         width: null
         height: null
       svg_render_as_image: false
+      image_loading:
+        attribute: eager
     third_party_settings:
       image_class:
         class: ''

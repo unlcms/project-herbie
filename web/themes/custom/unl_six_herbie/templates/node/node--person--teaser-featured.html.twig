@@ -41,13 +41,11 @@
 
         {% if node.n_person_bio.value is not empty or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable %}
           <div class="dcf-mt-4">
-            <p>
-              {% if node.n_person_bio.value is not empty %}
-                {{ content.n_person_bio }}
-              {% else %}
-                {{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value }}
-              {% endif %}
-            </p>
+            {% if node.n_person_bio.value is not empty %}
+              {{ content.n_person_bio }}
+            {% else %}
+              {{ node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value|raw }}
+            {% endif %}
           </div>
         {% endif %}
       </div>

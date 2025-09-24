@@ -33,6 +33,7 @@ third_party_settings:
           title_classes: {  }
           title_display: false
           section_element_id: ''
+          column_classes: ''
           layout_builder_styles_style:
             - ''
             - section_margin_standard_wrapper

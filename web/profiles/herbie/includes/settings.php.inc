@@ -61,16 +61,18 @@ if ($environment == 'production') {
   $config['config_split.config_split.development']['status'] = FALSE;
   $settings['file_temp_path'] = '/var/www/unl.edu/tmp/project-herbie';
 
-  // Advanced Varnish module config.
-  // The file settings-varnish.php is dynamically generated with the current
-  // addresses of the Varnish servers.
-  $config['adv_varnish.cache_settings']['available']['enable_cache'] = true;
-  $config['adv_varnish.cache_settings']['general']['varnish_purger'] = true;
-  if (!isset($conf)) {
-    // The settings-varnish.php file may have an unneeded $conf['varnish_control_terminal'] present from the previous Drupal 7 CMS.
-    $conf = [];
+  if (PHP_SAPI !== "cli") {
+    // Advanced Varnish module config.
+    // The file settings-varnish.php is dynamically generated with the current
+    // addresses of the Varnish servers.
+    $config['adv_varnish.cache_settings']['available']['enable_cache'] = TRUE;
+    $config['adv_varnish.cache_settings']['general']['varnish_purger'] = TRUE;
+    if (!isset($conf)) {
+      // The settings-varnish.php file may have an unneeded $conf['varnish_control_terminal'] present from the previous Drupal 7 CMS.
+      $conf = [];
+    }
+    include __DIR__ . '/settings-varnish.php';
   }
-  include __DIR__ . '/settings-varnish.php';
 
   // Memcache settings.
   $settings['memcache']['servers'] = [
@@ -139,7 +141,7 @@ else {
    * @see https://wiki.php.net/rfc/expectations
    */
   assert_options(ASSERT_ACTIVE, TRUE);
-  \Drupal\Component\Assertion\Handle::register();
+  assert_options(ASSERT_EXCEPTION, TRUE);
 
   // This will prevent Drupal from setting read-only permissions on sites/default.
   $settings['skip_permissions_hardening'] = TRUE;

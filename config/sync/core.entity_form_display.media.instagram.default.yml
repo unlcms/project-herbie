@@ -14,7 +14,7 @@ dependencies:
     - media.type.instagram
   module:
     - field_group
-    - image
+    - svg_image
 third_party_settings:
   field_group:
     group_attributes:
@@ -106,5 +106,9 @@ hidden:
   created: true
   name: true
   path: true
+  publish_on: true
+  publish_state: true
   status: true
   uid: true
+  unpublish_on: true
+  unpublish_state: true

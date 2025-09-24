@@ -33,12 +33,11 @@ function sheldon_preprocess_node(&$variables) {
   if (isset($variables['node']) && $variables['node']->hasField($field_name) && !$variables['node']->get($field_name)->isEmpty()) {
     $date_range = $variables['node']->get($field_name)->first();
     $start_value = $date_range->start_date->format('Y-m-d');
-    $end_value = $date_range->end_date->format('Y-m-d');
     $today = (new DrupalDateTime('now', new \DateTimeZone(date_default_timezone_get())))->format('Y-m-d');
-    $variables['is_in_date_range'] = ($today >= $start_value && $today <= $end_value);
+    $variables['is_upcoming'] = $today <= $start_value;
   }
   else {
-    $variables['is_in_date_range'] = FALSE;
+    $variables['is_upcoming'] = FALSE;
   }
 }
 

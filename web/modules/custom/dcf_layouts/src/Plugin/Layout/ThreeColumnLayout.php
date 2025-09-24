@@ -17,6 +17,7 @@ class ThreeColumnLayout extends DcfLayoutBase {
    */
   public function build(array $regions) {
     $build = parent::build($regions);
+    $configuration = $this->getConfiguration();
     $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
 
     if($active_theme == "unl_six_herbie") {
@@ -35,7 +36,16 @@ class ThreeColumnLayout extends DcfLayoutBase {
       ];
     }
 
-
+    // Loop through each region and set grid column classes.
+    foreach ($regions as $key => $value) {
+      if (isset($configuration['column_classes'])) {
+        foreach ((array) $configuration['column_classes'] as $class) {
+          if (!empty($class)) {
+            $build[$key]['#attributes']['class'][] = $class;
+          }
+        }
+      }
+    }
     return $build;
   }
 

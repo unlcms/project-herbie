@@ -5,8 +5,8 @@ core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'administerusersbyrole:administerusersbyrole'
   - 'asset_injector:asset_injector'
-  - 'block_content_permissions:block_content_permissions'
   - 'drupal:block'
+  - 'drupal:block_content'
   - 'drupal:book'
   - 'drupal:content_moderation'
   - 'drupal:contextual'
@@ -53,6 +53,7 @@ dependencies:
   - 'salesforce:salesforce'
   - 'salesforce:salesforce_mapping'
   - 'scanner:scanner'
+  - 'scheduler:scheduler'
   - 'twig_ui:twig_ui'
   - 'unl_access:unl_access'
   - 'unl_breadcrumbs:unl_breadcrumbs'
@@ -62,5 +63,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 1.7.4
+version: '2.1'
 package: Herbie

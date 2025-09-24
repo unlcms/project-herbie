@@ -14,7 +14,7 @@ dependencies:
   module:
     - dcf_lazyload
     - image_class
-    - responsive_image
+    - svg_image_responsive
 id: media.instagram.default
 targetEntityType: media
 bundle: instagram
@@ -26,6 +26,12 @@ content:
     settings:
       responsive_image_style: full__square
       image_link: ''
+      image_loading:
+        attribute: eager
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''

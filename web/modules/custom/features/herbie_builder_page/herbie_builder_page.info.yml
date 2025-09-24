@@ -6,7 +6,6 @@ dependencies:
   - 'allowed_formats:allowed_formats'
   - 'asset_injector:asset_injector'
   - 'auto_entitylabel:auto_entitylabel'
-  - 'block_content_permissions:block_content_permissions'
   - 'codemirror_editor:codemirror_editor'
   - 'config_split:config_split'
   - 'crop:crop'
@@ -71,11 +70,13 @@ dependencies:
   - 'queue_ui:queue_ui'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
+  - 'scheduler:scheduler'
+  - 'scheduler_content_moderation_integration:scheduler_content_moderation_integration'
   - 'select2:select2'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.9.6
+version: 1.12.1
 package: Herbie

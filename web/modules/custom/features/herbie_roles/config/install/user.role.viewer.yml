@@ -16,6 +16,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - scheduler
     - system
     - toolbar
     - unl_access
@@ -33,6 +34,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'bypass unl access grant'
+  - 'delete own files'
   - 'view any unpublished content'
   - 'view archive_page revisions'
   - 'view book revisions'
@@ -42,6 +44,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view person revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view webform revisions'
