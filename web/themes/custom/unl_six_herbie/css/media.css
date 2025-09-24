@@ -62,7 +62,7 @@
 }
 
 /* Add margin to bottom of media element */
-.media-entity {
+.media-entity:not(.dcf-mb-0) {
   margin-bottom: 1em;
 }
 

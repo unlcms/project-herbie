@@ -1,4 +1,3 @@
-<style>
 /*TYPOGRAPHY*/
 	@media only screen and (min-width: 56.12em) {
 		.unl .dcf-txt-xl-at-md {
@@ -24,7 +23,7 @@
 	}
 
 /*WIDTH HELPERS*/
-	.unl .dcf-w-max-3xl {
+	.unl .dcf-max-w-3xl {
 		max-width: 99.78rem;
 	}
 
@@ -141,9 +140,11 @@
 		z-index: -1;
 	}
 
-	.asem-ms-bg-block {
+
+
+	/* .asem-ms-bg-block {
 		width: calc(100% - 1.78em);
-	}
+	} */
 
 	.asem-ms-bg-block-lt {
 		transform: translate(-1.78em, -1.78em);

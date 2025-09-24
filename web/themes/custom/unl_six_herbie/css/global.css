@@ -534,3 +534,8 @@ div.unl-bg-lighter-gray.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead
 div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-basic p.unlcms-tandem-subhead {
   color: var(--darker-gray) !important;
 }
+
+
+.paragraph--type--contact-info-contact-point dd:last-child, .unl-footer-groups li {
+    margin-bottom: .42em;
+}

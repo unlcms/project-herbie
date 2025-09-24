@@ -85,19 +85,19 @@
 /*
  * Styles copied from unl/wdntemplates needed for Remote Video wrappers.
  */
-.ck-content .dcf-ratio {
+.ck-content .media-entity-bundle--remote_video > div:first-of-type {
     overflow: hidden !important;
     position: relative !important;
 }
-.ck-content .dcf-ratio-16x9::before {
+.ck-content .media-entity-bundle--remote_video .dcf-16x9::before {
     padding-top: 56.25% !important;
 }
-.ck-content .dcf-ratio::before {
+.ck-content .media-entity-bundle--remote_video  > div:first-of-type::before {
     content: "" !important;
     display: block !important;
     width: 100% !important;
 }
-.ck-content .media-entity-bundle--remote_video .dcf-ratio-child {
+.ck-content .media-entity-bundle--remote_video .dcf-obj-fit-cover {
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;

@@ -15,14 +15,14 @@
 		{{ title_suffix }}
 
 		<!--Intro-->
-		<div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-ai-start dcf-pt-4">
-			<div id="intro" class="dcf-col-100% dcf-col-67%-start@lg dcf-txt-lg dcf-w-max-xl">
+		<div class="dcf-w-100% dcf-max-w-3xl dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-5 dcf-ai-start dcf-pt-4">
+			<div id="intro" class="dcf-col-span-12 dcf-col-span-8@lg dcf-txt-lg dcf-max-w-xl">
 				<div class="dcf-txt-lg">{{ (content.n_major_option_lead_copy) }}</div>
 			</div>
 			<!--Option Meta Data-->
-			<div class="dcf-col-100% dcf-col-33%-end@lg">
+			<div class="dcf-col-span-12 dcf-col-span-4@lg">
 				<div class="unl-bg-lightest-gray dcf-p-5 dcf-pb-3 dcf-rounded">
-					<ul class="dcf-list-bare dcf-mb-0 dcf-txt-sm">
+					<ul role="list" class="dcf-mb-0 dcf-txt-sm">
 						<li>
 							{% if node.n_major_college|length > 1 %}
 								<h2 class="dcf-txt-md dcf-mb-1">Colleges</h2>
@@ -45,19 +45,19 @@
 		</div>
 
 		<div
-			class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-8 dcf-ai-start dcf-pt-8 dcf-pb-6">
+			class="dcf-w-100% dcf-max-w-3xl dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-8 dcf-ai-start dcf-pt-8 dcf-pb-6">
 			<!--Feature Image-->
-			<div class="dcf-col-100% dcf-col-33%-end@lg dcf-2nd@lg">
-				<div class="dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg dcf-overflow-visible">
+			<div class="dcf-col-span-12 dcf-col-span-4@lg dcf-2nd@lg">
+				<div class="dcf-16x9 dcf-relative dcf-3x4@lg dcf-overflow-visible">
 					{{ (content.n_major_option_features_image) }}
-					<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
-						<div class="dcf-ratio-child unl-bg-dots-gray"></div>
+					<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-16x9 dcf-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
+						<div class="dcf-obj-fit-cover unl-bg-dots-gray"></div>
 					</div>
 				</div>
 			</div>
 
 			<div
-				class="dcf-col-100% dcf-col-67%-start@lg dcf-1st@lg dcf-w-max-xl">
+				class="dcf-col-span-12 dcf-col-span-8@lg dcf-1st@lg dcf-max-w-xl">
 				<!--Feature Callout-->
 				<div id="features" class="dcf-pb-8">
 					<h2 class="dcf-txt-xl dcf-mb-1">
@@ -73,7 +73,7 @@
 					<h2 class="dcf-txt-xl dcf-mb-1">
 						Notable Courses
 					</h2>
-					<div class="dcf-w-max-lg dcf-mb-6">
+					<div class="dcf-max-w-lg dcf-mb-6">
 						{{ (content.n_major_notable_courses_intro) }}
 					</div>
 					{{ (content.n_major_notable_courses) }}
@@ -82,16 +82,16 @@
 		</div>
 
 		<!--RECENT PLACEMENTS-->
-		<div id="learning-outcomes" class="dcf-w-100% dcf-w-max-3xl dcf-pt-8 dcf-pb-8">
+		<div id="learning-outcomes" class="dcf-w-100% dcf-max-w-3xl dcf-pt-8 dcf-pb-8">
 			<h2 class="dcf-txt-xl dcf-mb-1">
 				Huskers Do
 				<span class="dcf-txt-nowrap">Big Things</span>
 			</h2>
-			<div class="dcf-w-max-lg dcf-mb-6">
+			<div class="dcf-max-w-lg dcf-mb-6">
 				<p>
 					{{ (content.n_major_option_huskers_do_intro) }}</p>
 			</div>
-			<div class="dcf-grid-halves@md dcf-grid-thirds@lg dcf-col-gap-vw dcf-row-gap-6">
+			<div class="dcf-d-grid dcf-grid-cols-2@md dcf-grid-cols-3@lg dcf-col-gap-vw dcf-row-gap-6">
 				<div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
 					<h3 class="dcf-txt-h4 dcf-bold">
 						{{ (content.n_major_option_internships_title.0['#context'].value) }}
@@ -121,7 +121,7 @@
 				Have Questions?
 				<span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span>
 			</h2>
-			<div class="dcf-w-max-lg dcf-mb-6">
+			<div class="dcf-max-w-lg dcf-mb-6">
 				<p>
 					If you have questions about the
 					{{ label.0['#context'].value}}, contact us.

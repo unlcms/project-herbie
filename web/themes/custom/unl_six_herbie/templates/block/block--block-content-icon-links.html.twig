@@ -2,7 +2,7 @@
 <div{{ attributes.addClass('unlcms-component-spacer').addClass('unlcms-iconlinks-component')}}>
   {{ title_prefix }}
   {{ title_suffix }}
-  <ul class="dcf-list-bare dcf-col-gap-vw dcf-row-gap-7 dcf-mb-0 dcf-lh-3 dcf-bold unlcms-ul-icon-links">
+  <ul role="list" class="dcf-col-gap-vw dcf-row-gap-7 dcf-mb-0 dcf-lh-3 dcf-bold unlcms-ul-icon-links" role="list">
     {% block content %}
       {{ content.b_icon_links_item }}
     {% endblock %}

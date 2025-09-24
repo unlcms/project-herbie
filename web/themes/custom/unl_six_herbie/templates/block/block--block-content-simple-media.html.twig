@@ -31,17 +31,17 @@
 
       <div {{ simple_media_image_attribute.addClass(basic_tadem_image_wrapper) }}>
         {% if content.b_simple_media_aspect_ratio.0['#markup'] == '1x1_ris' %}
-          {% set shadow_background_wrapper = ['dcf-ratio', 'dcf-ratio-1x1', 'dcf-z-0'] %}
-          {% set shadow_position_wrapper = ['dcf-ratio', 'dcf-ratio-1x1', 'dcf-z-1'] %}
+          {% set shadow_background_wrapper = ['dcf-1x1', 'dcf-z-0'] %}
+          {% set shadow_position_wrapper = ['dcf-1x1', 'dcf-z-1'] %}
         {% elseif content.b_simple_media_aspect_ratio.0['#markup'] == '4x3_ris' %}
-          {% set shadow_background_wrapper = ['dcf-ratio', 'dcf-ratio-4x3', 'dcf-z-0'] %}
-          {% set shadow_position_wrapper = ['dcf-ratio', 'dcf-ratio-4x3', 'dcf-z-1'] %}
+          {% set shadow_background_wrapper = ['dcf-4x3', 'dcf-z-0'] %}
+          {% set shadow_position_wrapper = ['dcf-4x3', 'dcf-z-1'] %}
         {% elseif content.b_simple_media_aspect_ratio.0['#markup'] == '16x9_ris' %}
-          {% set shadow_background_wrapper = ['dcf-ratio', 'dcf-ratio-16x9', 'dcf-z-0'] %}
-          {% set shadow_position_wrapper = ['dcf-ratio', 'dcf-ratio-16x9', 'dcf-z-1'] %}
+          {% set shadow_background_wrapper = ['dcf-16x9', 'dcf-z-0'] %}
+          {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-z-1'] %}
         {% else %}
-          {% set shadow_background_wrapper = ['dcf-ratio', 'dcf-ratio-16x9','dcf-z-0'] %}
-          {% set shadow_position_wrapper = ['dcf-ratio', 'dcf-ratio-16x9', 'dcf-z-1'] %}
+          {% set shadow_background_wrapper = ['dcf-16x9','dcf-z-0'] %}
+          {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-z-1'] %}
         {% endif %}
 
         {% set shadow_position_wrapper_attribute = create_attribute() %}

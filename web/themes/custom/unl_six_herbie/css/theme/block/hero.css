@@ -8,3 +8,8 @@
 .unl.page-node-type-builder-page .dcf-hero {
   margin-bottom: 0;
 }
+
+.dcf-hero .media-entity-bundle--image img,
+.dcf-hero .media-entity-bundle--image picture {
+  display: unset !important;
+}

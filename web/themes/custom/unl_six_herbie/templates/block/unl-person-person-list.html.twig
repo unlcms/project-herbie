@@ -9,7 +9,7 @@
     {% endfor %}
   </ul>
 {% elseif view_mode == 'teaser' %}
-  <ol {{ attributes.addClass(['dcf-list-bare', 'dcf-d-grid', 'unlcms-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-8', 'dcf-mb-9']) }} role="list">
+  <ol {{ attributes.addClass(['dcf-d-grid', 'unlcms-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-8', 'dcf-mb-9']) }} role="list">
     {% for nid in nodes %}
       {{ drupal_entity('node', nid, view_mode) }}
     {% endfor %}

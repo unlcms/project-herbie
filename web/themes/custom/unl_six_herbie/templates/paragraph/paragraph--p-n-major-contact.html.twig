@@ -5,16 +5,16 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'dcf-w-100%',
-    'dcf-w-max-sm'
+    'dcf-max-w-sm'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   <div class="content dcf-d-inline-flex dcf-jc-center dcf-ai-center dcf-col-gap-5 dcf-row-gap-5 dcf-mr-auto dcf-ml-auto">
-  	<div class="dcf-ratio dcf-ratio-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden" style="min-width: 7.49em;">
+  	<div class="dcf-1x1 dcf-w-11 dcf-circle dcf-overflow-hidden" style="min-width: 7.49em;">
       {{ (content.p_n_contact_image) }}
     </div>
     <div class="dcf-d-flex dcf-flex-col dcf-as-center dcf-txt-left">
-      <div class="dcf-media-body">
+      <div class="dcf-flex-1">
 				<dl class="dcf-mb-0">
 				<dt class="dcf-sr-only">Contact Name</dt>
 				<dd class="dcf-bold dcf-mb-0">{{ (content.p_n_contact_name) }}</dd>

@@ -14,7 +14,7 @@
 {{ attach_library('unl_six_herbie/news_teaser') }}
 
 <article{{ attributes.addClass(classes) }} itemscope itemtype="https://schema.org/NewsArticle">
-  <div class="dcf-ratio dcf-ratio-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
+  <div class="dcf-16x9 dcf-mb-2 unl-bg-light-gray unl-frame-quad">
     {{ content.n_news_image }}
   </div>
 
@@ -22,7 +22,7 @@
     <div class="dcf-mb-4 dcf-badge dcf-badge-pill">From {{ publication }}</div>
   {% endif %}
 
-  <div class="dcf-col-100% dcf-col-67%-end@md">
+  <div class="dcf-col-span-12 dcf-col-span-4@md">
     {{ title_prefix }}
     <h3{{ title_attributes.addClass("dcf-txt-h6 dcf-mb-0") }} itemprop="headline">
       <a href="{{ link }}" class="dcf-card-link dcf-txt-decor-hover" itemprop="url" rel="bookmark">
