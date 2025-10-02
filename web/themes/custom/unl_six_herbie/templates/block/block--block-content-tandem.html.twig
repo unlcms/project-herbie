@@ -29,7 +29,7 @@
         <div {{tandem_style_wrapper.addClass(stack_wrapper)}}>
           <div class="unlcms-tandem-stack-text-card unl-bg-cream">
             {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
-              <header>
+              <header class="dcf-mb-5">
               	{{content.b_tandem_overline}}
                 {% if content.b_tandem_overline.0  and not content.b_tandem_subhead.0  %}
                   <h2 class="dcf-mt-0 dcf-mb-2">{{content.b_tandem_heading.0["#text"]}}</h2>
@@ -81,7 +81,7 @@
             {% endif %}
           </div>
         </div>
-        <div class="unlcms-tandem-stack-img dcf-ratio dcf-ratio-16x9">
+        <div class="unlcms-tandem-stack-img dcf-relative dcf-16x9">
           {{content.b_tandem_image}}
         </div>
       </div>
@@ -102,7 +102,7 @@
         <div {{ tandem_style_wrapper.addClass(fade_wrapper) }}>
 
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead and content.b_tandem_overline.0) %}
-            <header>
+            <header class="dcf-mb-5">
               {{content.b_tandem_overline}}
               {% if content.b_tandem_overline.0  and not content.b_tandem_subhead.0  %}
                 <h2 class="dcf-mt-0 dcf-mb-2">{{content.b_tandem_heading.0["#text"]}}</h2>
@@ -136,7 +136,7 @@
             </ul>
           {% endif %}
         </div>
-        <div class="unlcms-tandem-fade-img dcf-ratio dcf-ratio-16x9 dcf-ratio-4x3@lg dcf-ratio-16x9@xl">
+        <div class="unlcms-tandem-fade-img dcf-relative dcf-16x9 dcf-4x3@lg dcf-16x9@xl">
           {{content.b_tandem_image}}
         </div>
       </div>
@@ -157,10 +157,10 @@
         {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
       {% endif %}
 
-      <div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-grid-halves@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
+      <div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-d-grid dcf-grid-cols-2@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
         <div {{ tandem_text_wrapper.addClass(basic_tandem_text_wrapper) }}>
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
-            <header>
+            <header class="dcf-mb-5">
               {{content.b_tandem_overline}}
               {% if content.b_tandem_overline.0  and not content.b_tandem_subhead.0 %}
                 <h2 class="dcf-mt-0 dcf-mb-1">
@@ -205,11 +205,11 @@
           {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-d-grid', 'unlcms-tandem-basic-img-grid']) %}
 
           <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper)}}>
-            {% set shadow_background_wrapper = ['dcf-ratio', 'dcf-ratio-16x9', 'dcf-ratio-1x1@md', 'dcf-ratio-4x3@lg', 'dcf-ratio-16x9@xl', 'dcf-z-0'] %}
+            {% set shadow_background_wrapper = ['dcf-relative','dcf-16x9','dcf-1x1@md','dcf-4x3@lg','dcf-16x9@xl','dcf-z-0'] %}
 
             {% set shadow_position_wrapper_attribute = create_attribute() %}
             {% set shadow_background_wrapper_attribute = create_attribute() %}
-            {% set shadow_position_wrapper = ['dcf-ratio', 'dcf-ratio-16x9', 'dcf-ratio-1x1@md', 'dcf-ratio-4x3@lg', 'dcf-ratio-16x9@xl', 'dcf-z-1'] %}
+            {% set shadow_position_wrapper = ['dcf-relative', 'dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-1'] %}
             {# set field to required if shadow color is selected in herbie theme. change field name and add radio button. shadow position syule need to be image_  #}
 
             {% set shadow_style =
@@ -243,7 +243,7 @@
             <div {{ shadow_position_wrapper_attribute.addClass(shadow_position_wrapper) }}>
         {% else %}
           <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper) }}>
-            <div class="dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md dcf-ratio-4x3@lg dcf-ratio-16x9@xl">
+            <div class="dcf-relative dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl">
         {% endif %}
           {{content.b_tandem_image}}
         </div>

@@ -9,9 +9,9 @@ dependencies:
     - field.field.paragraph.p_n_major_featured_faculty.p_n_portrait
     - paragraphs.paragraphs_type.p_n_major_featured_faculty
   module:
-    - image
     - image_class
     - link
+    - svg_image
 id: paragraph.p_n_major_featured_faculty.default
 targetEntityType: paragraph
 bundle: p_n_major_featured_faculty
@@ -60,9 +60,13 @@ content:
       image_style: ''
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
     third_party_settings:
       image_class:
-        class: dcf-ratio-child
+        class: 'dcf-obj-fit-cover dcf-ratio-child'
     weight: 2
     region: content
 hidden: {  }

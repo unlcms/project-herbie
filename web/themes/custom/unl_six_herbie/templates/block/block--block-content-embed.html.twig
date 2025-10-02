@@ -37,16 +37,18 @@
 
   {% block content %}
     {% set display_ratio = content.b_embed_display_ratio[0]["#markup"] %}
+    {% set display_ratio = display_ratio|slice(10) %}
+
     {% set title = content.b_embed_title.0['#context'].value %}
     {% set title_with_no_whitespace = title|replace({' ':'-'}) %}
     {% set url = content.b_embed_link.0['#url'].uri %}
     {% set parsed_url = parse_url(url) %}
 
     {% if parsed_url['host'] == 'maps.unl.edu'%}
-      <div class="dcf-ratio {{display_ratio}}">
+      <div class="dcf-{{display_ratio}}">
         <iframe
           id="maps_embed{{string_lowercase(title_with_no_whitespace)}}"
-          class="maps_embed dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray"
+          class="maps_embed dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray"
           title="{{title}} | UNL Map "
           src="{{url}}">
         </iframe>
@@ -58,20 +60,20 @@
       {% else %}
         {% set url_with_param = url ~"?:showVizHome=no&:embed=true" %}
       {% endif %}
-      <div class="dcf-ratio {{display_ratio}}">
+      <div class="dcf-{{display_ratio}}">
         <iframe
           id="tableau-embed-{{string_lowercase(title_with_no_whitespace)}}"
-          class="tableau-embed dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
+          class="tableau-embed dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
           title="{{title}} | Tableau Visualization"
           allow="fullscreen"
           src="{{url_with_param}}">
         </iframe>
       </div>
     {% else %}
-      <div class="dcf-ratio {{display_ratio}}">
+      <div class="dcf-{{display_ratio}}">
         <iframe
           id="embed-{{string_lowercase(title_with_no_whitespace)}}"
-          class="dcf-ratio-child dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
+          class="dcf-obj-fit-cover dcf-b-1 dcf-b-solid unl-b-light-gray dcf-bg-transparent"
           title="{{title}}"
           allow="fullscreen"
           src="{{url}}">
