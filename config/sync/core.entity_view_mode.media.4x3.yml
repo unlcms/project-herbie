@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.4x3
 label: 4x3
+description: ''
 targetEntityType: media
 cache: true
