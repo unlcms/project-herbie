@@ -1,11 +1,6 @@
 langcode: en
 status: false
 dependencies:
-  config:
-    - user.role.coder
-    - user.role.editor
-    - user.role.site_admin
-    - user.role.viewer
   module:
     - user
 id: user_admin_people
@@ -18,12 +13,62 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
       title: People
       fields:
+        user_bulk_form:
+          id: user_bulk_form
+          table: users
+          field: user_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          plugin_id: user_bulk_form
+          label: 'Bulk update'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
         name:
           id: name
           table: users_field_data
@@ -76,6 +121,62 @@ display:
           empty_zero: false
           hide_alter_empty: true
           type: user_name
+        status:
+          id: status
+          table: users_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: status
+          plugin_id: field
+          label: Status
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: boolean
+          settings:
+            format: custom
+            format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           id: roles_target_id
           table: user__roles
@@ -127,62 +228,6 @@ display:
           hide_alter_empty: true
           type: ul
           separator: ', '
-        access:
-          id: access
-          table: users_field_data
-          field: access
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: access
-          plugin_id: field
-          label: 'Last access'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: timestamp_ago
-          settings:
-            future_format: '@interval hence'
-            past_format: '@interval ago'
-            granularity: 2
         created:
           id: created
           table: users_field_data
@@ -238,6 +283,62 @@ display:
           settings:
             future_format: '@interval'
             past_format: '@interval'
+            granularity: 2
+        access:
+          id: access
+          table: users_field_data
+          field: access
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: access
+          plugin_id: field
+          label: 'Last access'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: timestamp_ago
+          settings:
+            future_format: '@interval hence'
+            past_format: '@interval ago'
             granularity: 2
         operations:
           id: operations
@@ -404,20 +505,20 @@ display:
           content: 'No people available.'
           tokenize: false
       sorts:
-        access:
-          id: access
+        created:
+          id: created
           table: users_field_data
-          field: access
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: user
-          entity_field: access
+          entity_field: created
           plugin_id: date
           order: DESC
           expose:
             label: ''
-            field_identifier: ''
+            field_identifier: created
           exposed: false
           granularity: second
       filters:
@@ -464,6 +565,56 @@ display:
           fields:
             name: name
             mail: mail
+        status:
+          id: status
+          table: users_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: status_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: true
+          group_info:
+            label: Status
+            description: ''
+            identifier: status
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Active
+                operator: '='
+                value: '1'
+              2:
+                title: Blocked
+                operator: '='
+                value: '0'
         roles_target_id:
           id: roles_target_id
           table: user__roles
@@ -473,12 +624,7 @@ display:
           admin_label: ''
           plugin_id: user_roles
           operator: or
-          value:
-            all: all
-            viewer: viewer
-            editor: editor
-            site_admin: site_admin
-            coder: coder
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -496,13 +642,50 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              viewer: '0'
-              editor: '0'
-              site_admin: '0'
-              coder: '0'
               administrator: '0'
-              super_administrator: '0'
-            reduce: true
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        permission:
+          id: permission
+          table: user__roles
+          field: permission
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: user_permissions
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: permission_op
+            label: Permission
+            description: ''
+            use_operator: false
+            operator: permission_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: permission
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -598,89 +781,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        name:
-          id: name
-          table: users_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: name
-          plugin_id: string
-          operator: '!='
-          value: admin
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        roles_target_id_1:
-          id: roles_target_id_1
-          table: user__roles
-          field: roles_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: roles
-          plugin_id: user_roles
-          operator: 'not empty'
-          value: {  }
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
       filter_groups:
         operator: AND
         groups:
@@ -692,14 +792,21 @@ display:
           row_class: ''
           default_row_class: true
           columns:
+            user_bulk_form: user_bulk_form
             name: name
-            roles_target_id: roles_target_id
+            status: status
+            rid: rid
             created: created
             access: access
-            operations: operations
-            mail: mail
-          default: access
+            edit_node: edit_node
+            dropbutton: dropbutton
+          default: created
           info:
+            user_bulk_form:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             name:
               sortable: true
               default_sort_order: asc
@@ -707,13 +814,20 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            roles_target_id:
+            status:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: priority-low
+            rid:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             created:
               sortable: true
               default_sort_order: desc
@@ -728,12 +842,12 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-            operations:
+            edit_node:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
-            mail:
+              responsive: priority-low
+            dropbutton:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -744,8 +858,6 @@ display:
           sticky: false
           summary: ''
           empty_table: true
-          caption: ''
-          description: ''
       row:
         type: fields
       query:
@@ -753,7 +865,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_tags: {  }
       css_class: ''
@@ -769,7 +881,7 @@ display:
       hide_attachment_summary: false
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -802,7 +914,7 @@ display:
         weight: 0
         menu_name: admin
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'

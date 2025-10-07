@@ -102,6 +102,18 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
+            'Custom block types':
+              - accordion
+              - card
+              - contact_info
+              - content
+              - cta
+              - embed
+              - html_code
+              - node_include
+              - proofpoint
+              - simple_media
+              - social_media_links
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
@@ -130,6 +142,24 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
+            'Custom block types':
+              - accordion
+              - contact_info
+              - content
+              - cta
+              - embed
+              - html_code
+              - icon_links
+              - logo_cloud
+              - node_include
+              - photo_hero
+              - proofpoint
+              - simple_media
+              - slideshow
+              - social_media_links
+              - tabs
+              - tandem
+              - timeline
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -163,6 +193,19 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
+            'Custom block types':
+              - accordion
+              - card
+              - contact_info
+              - content
+              - cta
+              - embed
+              - html_code
+              - node_include
+              - photo_hero
+              - proofpoint
+              - simple_media
+              - social_media_links
             Forms: {  }
             'Inline blocks':
               - 'inline_block:accordion'
@@ -191,6 +234,21 @@ third_party_settings:
               - 'field_block:node:builder_page:body'
             'Curated Lists':
               - unl_person_list
+            'Custom block types':
+              - accordion
+              - card
+              - contact_info
+              - content
+              - cta
+              - embed
+              - html_code
+              - logo_cloud
+              - node_include
+              - proofpoint
+              - simple_media
+              - slideshow
+              - social_media_links
+              - tabs
             Forms:
               - unl_webform_block
             'Inline blocks':
@@ -219,25 +277,23 @@ third_party_settings:
       restricted_categories:
         dcf_twocol_section:
           all_regions:
-            - 'Custom block types'
             - 'Custom blocks'
             - 'Group Menus'
         dcf_onecol_section:
           all_regions:
             - 'Chaos Tools'
-            - 'Custom block types'
+            - 'Content block'
             - 'Custom blocks'
         dcf_threecol_section:
           all_regions:
-            - 'Custom block types'
             - 'Custom blocks'
         dcf_fourcol_section:
           all_regions:
-            - 'Custom block types'
             - 'Custom blocks'
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
+      - 'Content block'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'

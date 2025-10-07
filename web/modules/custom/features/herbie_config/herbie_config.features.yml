@@ -10,6 +10,7 @@ required:
   - mathjax.settings
   - views.view.content
   - views.view.taxonomy_term
+  - views.view.block_content
   - system.action.draft_current
   - system.action.pin
   - system.action.publish_latest

@@ -11,6 +11,8 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\unl_utility\UNLUtilityTrait;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 
 /**
  * Implements hook_entity_type_alter().
@@ -147,5 +149,16 @@ function unl_blocks_block_view_alter(array &$build, BlockPluginInterface $block)
       $block->getDerivativeId() == '260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8' ||
       $block->getDerivativeId() == 'a8ccb1df-9c44-464b-be7a-b7960206dee1') {
     $build['#cache']['contexts'][] = 'route.group';
+  }
+}
+
+/**
+ * Implements hook_query_alter().
+ */
+function unl_blocks_query_alter(Drupal\Core\Database\Query\AlterableInterface $query) {
+if ($query->hasTag('block_content_access') && $query->getMetaData('entity_type') === 'block_content') {
+    // Exclude specific block types from showing on the list.
+    $excluded_types = ['hero'];
+    $query->condition('block_content_field_data.type', $excluded_types, 'NOT IN');
   }
 }

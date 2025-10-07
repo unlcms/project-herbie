@@ -14,6 +14,39 @@ name: Archive
 format: archive
 weight: 0
 filters:
+  codemirror_editor:
+    id: codemirror_editor
+    provider: codemirror_editor
+    status: false
+    weight: -44
+    settings:
+      lineWrapping: false
+      lineNumbers: true
+      foldGutter: false
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -42
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -50
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
   filter_dcfckeditor5:
     id: filter_dcfckeditor5
     provider: dcf_ckeditor5
@@ -30,6 +63,44 @@ filters:
       allowed_html: '<p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg"> <a class="dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary">'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -45
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -39
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -38
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -41
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -40
+    settings:
+      filter_url_length: 72
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -48
+    settings:
+      title: false
   media_embed:
     id: media_embed
     provider: media
@@ -45,68 +116,3 @@ filters:
         image: image
         instagram: instagram
         remote_video: remote_video
-  codemirror_editor:
-    id: codemirror_editor
-    provider: codemirror_editor
-    status: false
-    weight: -44
-    settings:
-      lineWrapping: false
-      lineNumbers: true
-      foldGutter: false
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: false
-    weight: -40
-    settings:
-      filter_url_length: 72
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: -48
-    settings:
-      title: false
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: -50
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: -49
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: false
-    weight: -42
-    settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: false
-    weight: -39
-    settings: {  }
-  filter_autop:
-    id: filter_autop
-    provider: filter
-    status: false
-    weight: -41
-    settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: false
-    weight: -38
-    settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: -45
-    settings: {  }
