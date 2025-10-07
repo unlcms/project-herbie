@@ -2,6 +2,8 @@ uuid: 9f86173a-2457-4fdb-97a5-df03a15a1f14
 langcode: en
 status: true
 dependencies:
+  config:
+    - block_content.type.hero
   module:
     - block_content
     - user
@@ -382,8 +384,9 @@ display:
           entity_type: block_content
           entity_field: type
           plugin_id: bundle
-          operator: in
-          value: {  }
+          operator: 'not in'
+          value:
+            hero: hero
           group: 1
           exposed: true
           expose:
@@ -401,7 +404,13 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              viewer: '0'
+              editor: '0'
+              site_admin: '0'
+              coder: '0'
               administrator: '0'
+              super_administrator: '0'
+              temporary_editor: '0'
             reduce: false
           is_grouped: false
           group_info:

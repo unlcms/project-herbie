@@ -14,13 +14,6 @@ filters:
     weight: 0
     settings:
       dcftable: '0'
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
@@ -30,3 +23,10 @@ filters:
       allowed_html: '<br> <p> <h2> <strong> <em> <sub> <sup> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol reversed start> <li>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72

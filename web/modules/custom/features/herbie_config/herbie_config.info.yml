@@ -2,7 +2,7 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^9.4 || ^10'
-version: 1.5.1
+version: 1.5.2
 package: Herbie
 dependencies:
   - 'cas:cas'
@@ -13,6 +13,7 @@ dependencies:
   - 'drupal:views'
   - 'entity_usage:entity_usage'
   - 'google_tag:google_tag'
+  - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_news:herbie_news'
   - 'linkit:linkit'
   - 'mathjax:mathjax'

@@ -12,6 +12,18 @@ name: 'Webform Email'
 format: webform_email
 weight: 0
 filters:
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
   filter_dcfckeditor5:
     id: filter_dcfckeditor5
     provider: dcf_ckeditor5
@@ -50,15 +62,3 @@ filters:
         file: file
         image: image
         remote_video: remote_video
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: 0
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: 0
-    settings: {  }
