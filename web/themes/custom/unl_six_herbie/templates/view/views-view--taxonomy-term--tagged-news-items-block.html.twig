@@ -5,7 +5,8 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'dcf-mt-8'
+    'dcf-mt-8',
+    'dcf-mb-8'
   ]
 %}
 <div{{ attributes.addClass(classes).setAttribute('id', 'news-'~ dom_id) }}>
@@ -28,10 +29,16 @@
 
   {{ pager }}
   {{ attachment_after }}
-  {% if view.total_rows > 12 and more %}
+
+  {% if preprocessed_total_rows > 12 and more %}
     <div class="dcf-d-flex dcf-jc-flex-end">
       <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{more['#url'].toString}}news">More news</a>
     </div>
+  {% elseif preprocessed_total_rows > 12 %}
+    <div class="dcf-d-flex dcf-jc-flex-end">
+      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{path('<current>')}}news">More news</a>
+    </div>
+
   {% endif %}
   {% if footer %}
     {{ footer }}
