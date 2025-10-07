@@ -10,6 +10,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class PrimaryBaseUrlSubscriber implements EventSubscriberInterface {
 
   public function checkBasePath(RequestEvent $event) {
+    // Skip processing if the domain is cms-staging.unl.edu.
+    if ($event->getRequest()->getHost() === 'cms-staging.unl.edu') {
+      return;
+    }
+
     $config_factory = \Drupal::service('config.factory');
     $config = $config_factory->get('unl_system.settings');
     $primary_base_url = $config->get('primary_base_url');
