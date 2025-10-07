@@ -528,8 +528,10 @@ div.unl-bg-dark-gray figure.figure--embedded-media figcaption {
 }
 
 
-/* CSS color overrides for Tandem Fade overline and subheads on lightest and lighter gray backgrounds to fix Axe color contrast issues in light mode*/
+/* CSS color overrides for Tandem Fade and Basic overline and subheads on lightest and lighter gray backgrounds to fix Axe color contrast issues in light mode*/
 div.unl-bg-lightest-gray div.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead,
-div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead {
+div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead,
+div.unl-bg-lighter-gray.unlcms-tandem.unlcms-tandem-fade p.unlcms-tandem-subhead,
+div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-basic p.unlcms-tandem-subhead {
   color: var(--darker-gray) !important;
 }

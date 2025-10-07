@@ -49,6 +49,11 @@ targetEntityType: node
 bundle: major
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -144,7 +149,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-ratio-child dcf-obj-fit-cover'
+        class: 'dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-ratio-child'
     weight: 11
     region: content
   n_major_featured_faculty:
@@ -186,7 +191,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-ratio-child dcf-obj-fit-cover'
+        class: 'dcf-obj-fit-cover dcf-absolute dcf-ratio-child'
     weight: 1
     region: content
   n_major_heroimage_v_position:

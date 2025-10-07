@@ -35,11 +35,7 @@
 {{ attach_library('unl_six_herbie/instagram') }}
 
 <div{{ attributes.addClass('media-entity-bundle--' ~ media.bundle()) }}>
-  {{ title_suffix.contextual_links }}
-
-  <div class="dcf-ratio dcf-ratio-1x1">
-    <figure class="dcf-ratio-child unlcms-scrim-bottom">
-
+    <figure class="dcf-1x1 dcf-relative unlcms-scrim-bottom">
        <picture>
         {{content.field_media_image_1}}
        </picture>
@@ -52,5 +48,4 @@
       </figcaption>
 
     </figure>
-  </div>
 </div>

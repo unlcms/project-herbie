@@ -4,12 +4,12 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-w-max-md dcf-bg-white dcf-rounded unl-box-shadow dcf-card-as-link'
+    'dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-max-w-md dcf-bg-white dcf-rounded unl-box-shadow dcf-card-as-link'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {% if content.p_n_otc_image['#items'] is not empty %}
-  <div class="dcf-1st dcf-ratio dcf-ratio-16x9">
+  <div class="dcf-1st dcf-16x9">
     {{ content.p_n_otc_image }}
   </div>
   {% endif %}

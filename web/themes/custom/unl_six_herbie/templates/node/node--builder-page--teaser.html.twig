@@ -7,19 +7,19 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'dcf-grid dcf-col-gap-vw dcf-row-gap-8 dcf-pb-4 dcf-pt-5 dcf-bb-dotted dcf-bb-1 unl-bb-lighter-gray',
+    'dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-8 dcf-pb-4 dcf-pt-5 dcf-bb-dotted dcf-bb-1 unl-bb-lighter-gray',
   ]
 %}
 
 <article{{ attributes.addClass(classes) }}>
   {% if node.s_n_hero.entity.b_hero_image.value %}
-    <div class="dcf-col-100% dcf-col-25%-start@md">
+    <div class="dcf-col-span-12 dcf-col-span-3@md">
       <div class="dcf-mb-2 unl-bg-light-gray unl-frame-quad">
         {{ node.s_n_hero.entity.b_hero_image|view }}
       </div>
     </div>
   {% endif %}
-  <div class="dcf-col-100%{% if node.s_n_hero.entity.b_hero_image.value %} dcf-col-75%-end@md{% endif %}">
+  <div class="dcf-col-span-12{% if node.s_n_hero.entity.b_hero_image.value %} dcf-col-span-9@md{% endif %}">
     <div class="dcf-mt-2 dcf-lh-3 dcf-txt-xs unl-dark-gray" itemprop="dateline">{{ createdDate }}</div>
     {{ title_prefix }}
     <h3 class="dcf-txt-h6" itemprop="headline">

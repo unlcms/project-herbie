@@ -1,11 +1,10 @@
 .unlcms-article-lead-img .media-entity-bundle--image {
   margin-bottom: 0;
-  /* .dcf-ratio-child */
-  bottom: 0 !important;
+  /* bottom: 0 !important;
   left: 0 !important;
   position: absolute !important;
   right: 0 !important;
-  top: 0 !important;
+  top: 0 !important; */
 }
 
 .unlcms-article-lead-img img {
@@ -14,7 +13,7 @@
   height: 100% !important;
   width: 100% !important;
   /* .dcf-d-block */
-  display: block !important;
+  /* display: block !important; */
 }
 
 /* CSS for the article lead image when there is no caption or credit filled out */
@@ -24,18 +23,17 @@
   height: 100% !important;
   width: 100% !important;
   /* .dcf-d-block */
-  display: block !important;
+  /* display: block !important; */
 }
 
 /* CSS for the article lead image when there is no caption or credit filled out */
 .unlcms-article-lead-img-only .media-entity-bundle--image {
   margin-bottom: 0;
-  /* .dcf-ratio-child */
-  bottom: 0 !important;
+  /* bottom: 0 !important;
   left: 0 !important;
   position: absolute !important;
   right: 0 !important;
-  top: 0 !important;
+  top: 0 !important; */
 }
 
 .unlcms-img-zoom-hover:hover img {
