@@ -8,6 +8,7 @@ required:
   - cas.settings
   - scheduler.settings
   - mathjax.settings
+  - twig_ui.settings
   - views.view.content
   - views.view.taxonomy_term
   - system.action.draft_current
