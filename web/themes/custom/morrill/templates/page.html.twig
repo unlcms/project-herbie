@@ -14,8 +14,9 @@
       </a>
     </div>
     <div class="nav-bot-row-mobile">
-      <a href="/" class="dcf-header-logo">
-        <img src="{{ path_to_theme }}/images/state-museum-logo4.png" style="position: absolute;
+      <a href="{{ group_homepage_route }}" class="dcf-header-logo">
+        <img src="{{ path_to_theme }}/images/state-museum-logo{{ group_id }}.png" alt="{{ group_name }} home"
+          style="position: absolute;
             top: 50%;
             left: 50%;
             width: 337px;
@@ -60,8 +61,8 @@
         </div>
       </div>
       <div class="dcf-d-block dcf-logo-lockup nav-block-logo mobile-logo-hide" id="dcf-logo-lockup" aria-hidden="false">
-        <a href="/" class="dcf-header-logo" id="dcf-header-logo">
-          <img src="{{ path_to_theme }}/images/state-museum-logo4.png" alt="State Museum: Morrill Hall" style="width: 100%;height:auto;">
+        <a href="{{ group_homepage_route }}" class="dcf-header-logo" id="dcf-header-logo">
+          <img src="{{ path_to_theme }}/images/state-museum-logo{{ group_id }}.png" alt="{{ group_name }} home" style="width: 100%;height:auto;">
         </a>
       </div>
 

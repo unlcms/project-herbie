@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Url;
 use Drupal\group\Entity\GroupRelationship;
 use Drupal\node\Entity\Node;
 
@@ -9,6 +10,7 @@ use Drupal\node\Entity\Node;
 function morrill_preprocess_html(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
 
+  $variables['group_id'] = null;
   $group = _morrill_get_current_group();
   if ($group) {
     $group_id = $group->id();
@@ -21,6 +23,20 @@ function morrill_preprocess_html(&$variables) {
  */
 function morrill_preprocess_page(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+
+  $variables['group_id'] = null;
+  $variables['group_name'] = 'Museums overview';
+  $variables['group_homepage_route'] = '/';
+  $group = _morrill_get_current_group();
+  if ($group) {
+    $group_id = $group->id();
+    $group_homepage_url = Url::fromRoute('entity.group.canonical', ['group' => $group_id]);
+    $string_url = $group_homepage_url->toString();
+
+    $variables['group_id'] = $group_id;
+    $variables['group_name'] = $group->label();
+    $variables['group_homepage_route'] = $string_url;
+  }
 }
 
 /**
