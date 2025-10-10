@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd9d87044125fd724b8795586ff86b30",
+    "content-hash": "0286f1710b45c1e71ff2150a01f7d3a7",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -15137,20 +15137,20 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "2.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "efca514b97fadc57e152b0c912736fc64a23b00e"
+                "reference": "fd79cfa643e75c793dc06f0dc9cdefb444ab134f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/efca514b97fadc57e152b0c912736fc64a23b00e",
-                "reference": "efca514b97fadc57e152b0c912736fc64a23b00e",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/fd79cfa643e75c793dc06f0dc9cdefb444ab134f",
+                "reference": "fd79cfa643e75c793dc06f0dc9cdefb444ab134f",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "richardbporter/drush-users-commands": "^4.0.0"
             },
             "type": "drupal-module",
@@ -15165,9 +15165,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/2.0"
+                "source": "https://github.com/unlcms/unl_multisite/tree/3.0.0"
             },
-            "time": "2025-09-15T00:56:07+00:00"
+            "time": "2025-10-10T20:51:07+00:00"
         },
         {
             "name": "unlcms/unl_six",
