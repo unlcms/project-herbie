@@ -15137,16 +15137,16 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "fd79cfa643e75c793dc06f0dc9cdefb444ab134f"
+                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/fd79cfa643e75c793dc06f0dc9cdefb444ab134f",
-                "reference": "fd79cfa643e75c793dc06f0dc9cdefb444ab134f",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
+                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
                 "shasum": ""
             },
             "require": {
@@ -15165,9 +15165,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/3.0.0"
+                "source": "https://github.com/unlcms/unl_multisite/tree/3.0.1"
             },
-            "time": "2025-10-10T20:51:07+00:00"
+            "time": "2025-10-10T21:39:58+00:00"
         },
         {
             "name": "unlcms/unl_six",
