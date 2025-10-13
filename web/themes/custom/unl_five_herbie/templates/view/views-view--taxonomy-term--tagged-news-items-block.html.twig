@@ -32,11 +32,11 @@
 
   {% if preprocessed_total_rows > 12 and more %}
     <div class="dcf-d-flex dcf-jc-flex-end">
-      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{more['#url'].toString}}news">More news</a>
+      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{more['#url'].toString}}news/">More news</a>
     </div>
   {% elseif preprocessed_total_rows > 12 %}
     <div class="dcf-d-flex dcf-jc-flex-end">
-      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{path('<current>')}}news">More news</a>
+      <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{path('<current>')}}news/">More news</a>
     </div>
 
   {% endif %}
