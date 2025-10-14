@@ -1,0 +1,22 @@
+{{ title_prefix }}
+<h3{{ title_attributes.addClass('title') }}>
+  <a href="{{ url }}">{{ title }}</a>
+</h3>
+{{ title_suffix }}
+<div class="search-snippet-info">
+  {% if snippet %}
+    <p{{ content_attributes.addClass('search-snippet') }}>{{ snippet }}</p>
+  {% endif %}
+  {% if info %}
+    <p>{{ info }}</p>
+  {% endif %}
+</div>
+
+<style>
+  #block-sheldon-content h2 {
+    margin-bottom: 1em;
+  }
+  #block-sheldon-content ol li {
+    list-style-type: none;
+  }
+</style>
