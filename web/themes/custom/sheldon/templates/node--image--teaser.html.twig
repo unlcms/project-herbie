@@ -1,0 +1,4 @@
+<figure data-node="node-{{ node.id }}">
+  {{ content.image_image|render|replace({ 'href=':'class="gallery art-image" href=' })|raw }}
+  <p>{{ content.body }}</p>
+</figure>
