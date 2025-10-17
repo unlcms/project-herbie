@@ -7,7 +7,7 @@ use Drupal\node\Entity\Node;
 /*
  * Implements template_preprocess_block().
  */
-function unl_five_herbie_preprocess_block(&$variables) {
+function morrill_preprocess_block(&$variables) {
   // Set $bundle var for custom block entities.
   $bundle = NULL;
   if (isset($variables['content']['#block_content'])) {
