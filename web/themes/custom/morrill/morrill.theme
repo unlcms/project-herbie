@@ -4,6 +4,33 @@ use Drupal\Core\Url;
 use Drupal\group\Entity\GroupRelationship;
 use Drupal\node\Entity\Node;
 
+/*
+ * Implements template_preprocess_block().
+ */
+function unl_five_herbie_preprocess_block(&$variables) {
+  // Set $bundle var for custom block entities.
+  $bundle = NULL;
+  if (isset($variables['content']['#block_content'])) {
+    $bundle = $variables['content']['#block_content']->bundle();
+  }
+
+  // If it's a group page, hide main site's Contact Us block.
+  if ($bundle == 'contact_info') {
+    $group = _morrill_get_current_group();
+    if ($group && $variables['elements']['#id'] == 'morrill_contactinfo') {
+      $variables['hide_block'] = TRUE;
+    }
+  }
+
+  // If it's a group page, hide main site's Related Links block.
+  if (isset($variables['elements']['#id']) && $variables['elements']['#id'] == 'morrill_relatedlinks') {
+    $group = _morrill_get_current_group();
+    if ($group) {
+      $variables['hide_related_links_block'] = TRUE;
+    }
+  }
+}
+
 /**
  * Implements template_preprocess_html().
  */
