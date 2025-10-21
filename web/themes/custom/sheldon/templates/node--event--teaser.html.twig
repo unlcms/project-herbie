@@ -2,7 +2,15 @@
   <a href="{{ url }}">{{ label }}</a>
 </h4>
 <span class="subhead">
-  <span class="event-date">{{ content.event_date_start }}
+  <span class="event-date">
+
+    {% if node.datetime_timemode.value != 'TBD' %}
+      {{ content.event_date_start }}
+    {% else %}
+      {% set date = node.event_date_start.value %}
+      {{ date|date('l, F j, Y') }} - Time To Be Determined
+    {% endif %}
+
     {% if content.event_date_end.0['#markup'] is not null and content.event_date_start.0['#markup'] != content.event_date_end.0['#markup'] %}
       to {{ content.event_date_end }}
     {% endif %}
