@@ -205,7 +205,6 @@ element:
     webform_term_checkboxes: webform_term_checkboxes
     webform_term_select: webform_term_select
     webform_terms_of_service: webform_terms_of_service
-    webform_time: webform_time
     webform_video_file: webform_video_file
 html_editor:
   disabled: false
