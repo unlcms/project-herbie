@@ -1,2 +1,4 @@
 bundle: herbie
+excluded:
+  - views.view.user_admin_people
 required: true
