@@ -6,7 +6,7 @@
   <div {{ content_attributes.addClass(center_classes) }}>
     <div class="unlcms-teaser-person-vip dcf-flex-grow-1 dcf-max-w-xl dcf-card-as-link dcf-d-grid dcf-col-gap-vw dcf-row-gap-3 unlcms-img-zoom-hover" itemscope itemtype="https://schema.org/Person">
       <div class="unlcms-teaser-person-vip-img">
-        <div class="unlcms-person-img dcf-1x1 unl-bg-light-gray unl-frame-quadg">
+        <div class="unlcms-person-img dcf-1x1 unl-bg-light-gray unl-frame-quad">
           {% if node.n_person_photo.value %}
             {{ content.n_person_photo }}
           {% elseif node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value %}
