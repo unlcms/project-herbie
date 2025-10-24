@@ -134,6 +134,7 @@ permissions:
   - 'administer taxonomy_term display'
   - 'administer taxonomy_term fields'
   - 'administer taxonomy_term form display'
+  - 'administer themes'
   - 'administer twig templates'
   - 'administer unl breadcrumbs'
   - 'administer unl news'
