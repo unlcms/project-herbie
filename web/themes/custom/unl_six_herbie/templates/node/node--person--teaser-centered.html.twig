@@ -7,7 +7,7 @@
   <div {{ content_attributes.addClass(unlcms_centered_teaser_person_classes)}}>
     <!-- Image -->
     <div class="unlcms-teaser-person-img dcf-flex-shrink-0">
-      <div class="unlcms-person-img dcf-1x1 dcf-circle unl-bg-light-gray dcf-circle">
+      <div class="unlcms-person-img dcf-1x1 dcf-circle unl-bg-light-gray dcf-overflow-clip">
         {% if node.n_person_photo.value %}
           {{ content.n_person_photo }}
         {% elseif node.n_person_unldirectoryreference.entity.ee_unldir_imageurl.value %}
