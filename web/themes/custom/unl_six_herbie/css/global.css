@@ -537,6 +537,6 @@ div.unl-bg-lighter-gray div.unlcms-tandem.unlcms-tandem-basic p.unlcms-tandem-su
 }
 
 
-.paragraph--type--contact-info-contact-point dd:last-child, .unl-footer-groups li {
+.paragraph--type--contact-info-contact-point dd:last-child {
     margin-bottom: .42em;
 }
