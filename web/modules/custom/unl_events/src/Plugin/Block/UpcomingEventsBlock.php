@@ -83,6 +83,8 @@ class UpcomingEventsBlock extends BlockBase {
           ],
         ],
       ),
+      '#calendar_limit' => $limit,
+      '#calendar_url' => $url,
       '#json_config_string' => json_encode($widget_config),
     ];
   }
