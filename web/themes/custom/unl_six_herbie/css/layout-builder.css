@@ -153,3 +153,11 @@
 .layout-builder-form .vertical-tabs {
     display: none;
 }
+
+/* Applied UNL background colors don't have enough specificity to override the defaults. */
+.layout-builder-block.unl-bg-cream {
+  background-color: var(--bg-body) !important;
+}
+.layout-builder-block.unl-bg-scarlet {
+  background-color: var(--bg-brand-alpha) !important;
+}
