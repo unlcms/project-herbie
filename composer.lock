@@ -15171,16 +15171,16 @@
         },
         {
             "name": "unlcms/unl_six",
-            "version": "6.0.11",
+            "version": "6.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_six.git",
-                "reference": "15a340f1186ec83f34e8140e4db81c5dbd78b8c6"
+                "reference": "45dfaa4140baa3c9acbc9d7036bab4ba2ffc5a21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/15a340f1186ec83f34e8140e4db81c5dbd78b8c6",
-                "reference": "15a340f1186ec83f34e8140e4db81c5dbd78b8c6",
+                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/45dfaa4140baa3c9acbc9d7036bab4ba2ffc5a21",
+                "reference": "45dfaa4140baa3c9acbc9d7036bab4ba2ffc5a21",
                 "shasum": ""
             },
             "require": {
@@ -15198,9 +15198,9 @@
             "description": "UNLedu Framework 6.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_six/issues",
-                "source": "https://github.com/unlcms/unl_six/tree/6.0.11"
+                "source": "https://github.com/unlcms/unl_six/tree/6.0.12"
             },
-            "time": "2025-10-28T16:41:34+00:00"
+            "time": "2025-10-28T21:20:43+00:00"
         },
         {
             "name": "unlcms/unl_user",
