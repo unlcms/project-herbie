@@ -241,11 +241,8 @@
   .unlcms-tandem-basic-img .media-entity-bundle--image,
   .unlcms-tandem-stack-img .media-entity-bundle--image {
     margin-bottom: 0;
-    bottom: 0 !important;
-    left: 0 !important;
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
+    height: 100%;
+    width: 100%;
   }
 
   .unlcms-tandem-fade-img img,
