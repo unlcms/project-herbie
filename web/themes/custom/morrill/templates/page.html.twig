@@ -43,8 +43,10 @@
             </a>
           </div>
           <div class="dcf-d-inline-flex dcf-ai-center dcf-pr-7">
-            <span class="dcf-txt-xs lato-bold">Visit Our Museums:</span>
             <ul class="Our-Family-Museums-nav dcf-d-inline-flex dcf-ai-center dcf-jc-center dcf-col-gap-3 dcf-list-bare dcf-m-0 lato-bold dcf-pr-2">
+              <li class="dcf-d-flex dcf-pl-2 dcf-m-0 dcf-txt-xs">
+                <a href="/university-nebraska-state-museum" class="morrill-color">UNSM Museum Overview</a></li>
+              <li class="dcf-d-flex dcf-m-0 dcf-txt-lg">|</li>
               <li class="dcf-d-flex dcf-pl-2 dcf-m-0 dcf-txt-xs">
                 <a href="/morrill/" class="morrill-color">Morrill Hall</a>
               </li>
@@ -87,7 +89,7 @@
               <span class="dcf-ml-3">Get Involved</span>
             </a>
           </li>
-          <li class="dcf-search dcf-header-global-child dcf-d-flex dcf-flex-row dcf-m-0 dcf-ai-center dcf-jc-center dcf-m-0 dcf-p-2">
+          <li class="dcf-header-global-child dcf-d-flex dcf-flex-row dcf-m-0 dcf-ai-center dcf-jc-center dcf-m-0 dcf-p-2">
             <a href="" class="dcf-txt-sm dcf-d-flex dcf-flex-row dcf-m-0 dcf-ai-center dcf-jc-center">
               <svg class="museum" aria-hidden="true" fill="currentcolor" height="20" width="20" viewBox="0 0 24 24" aria-labelledby="filled-search-content-edition-title"><path d="M9,18c2.131,0,4.089-0.749,5.633-1.992l7.658,7.697c0.389,0.392,1.021,0.393,1.414,0.003 c0.392-0.39,0.393-1.023,0.004-1.414l-7.668-7.706C17.264,13.052,18,11.111,18,9c0-4.963-4.037-9-9-9S0,4.037,0,9 C0,13.962,4.037,18,9,18z M9,2c3.859,0,7,3.14,7,7c0,3.859-3.141,7-7,7c-3.86,0-7-3.141-7-7C2,5.14,5.14,2,9,2z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg>
               <span class="dcf-ml-3">Search</span>
@@ -154,7 +156,6 @@
       </div>
       <!--  MOBILE BOTTOM MENU FOR  -->
 
-      {% include wdn.directory ~ "/includes/global/nav-toggle-group.html" %}
       <!--  DROPDOWN MENU START   -->
       {{ page.navlinks }}
       <!--  DROPDOWN MENU END   -->
@@ -172,14 +173,11 @@
   </div>
 </main>
 
-
-
 <footer class="dcf-footer museum dcf-wrapper" id="dcf-footer">
   <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
     <div class="dcf-col-100% dcf-col-25%-start@md dcf-d-flex dcf-flex-col dcf-pt-4">
 
       {{ page.contactinfo }}
-
       {{ page.leftcollinks }}
 
     </div>
@@ -201,23 +199,10 @@
 
     </div>
     <div class="dcf-col-100% dcf-col-25%-end@md dcf-d-flex dcf-flex-col dcf-pt-4 dcf-pb-4">
-      <form class="dcf-form" action="?" method="post">
-        <legend class="dcf-txt-h5 lato-regular">Sign up for E-news</legend>
-        <div class="dcf-form-group">
-          <label for="example-components-form-name" class="lato-regular">Name <small class="dcf-required museum">Required</small></label>
-          <input id="example-components-form-name" type="text" required=""  class="dcf-w-100%">
-        </div>
-        <div class="dcf-form-group">
-          <label for="example-components-form-email" class="lato-regular">Email <small class="dcf-required museum">Required</small></label>
-          <input id="example-components-form-email" type="email" required=""  class="dcf-w-100%">
-        </div>
-        <div class="dcf-form-group">
-          <label for="example-components-form-password" class="lato-regular">Password <small class="dcf-required museum">Required</small></label>
-          <input id="example-components-form-password" type="password" required="" aria-describedby="example-components-form-pwd-help" class="dcf-w-100%">
-        </div>
-        <input class="dcf-btn dcf-btn-primary lato-regular dcf-w-100% dcf-mt-4" name="submit" type="submit" value="Submit">
-      </form>
+      <p class="dcf-txt-h5">Don't miss a moment of discovery!</p>
+      <p>Sign up for the Morrill Hall Newsletter today to get the latest exhibit previews, behind-the-scenes content, and special event announcements delivered straight to your inbox.</p>
+      <a href="http://eepurl.com/iP7AWk" class="dcf-btn dcf-btn dcf-btn-primary">Sign up for E-news</a>
     </div>
   </div>
-  <p class="dcf-txt-center dcf-txt-sm dcf-pb-2">The University of Nebraska–Lincoln does not discriminate based upon protected status. Visit <a href="https://go.unl.edu/nondiscrimination">go.unl.edu/nondiscrimination</a></p>
+  <p class="dcf-txt-center dcf-txt-sm dcf-pb-2">The University of Nebraska–Lincoln does not discriminate based upon any protected status. Visit <a href="https://go.unl.edu/nondiscrimination" target="_blank">go.unl.edu/nondiscrimination</a></p>
 </footer>

@@ -1,1 +1,60 @@
+/**
+ * The theme was built with 5.3 and its version of DCF as the base.
+ * It has been upgraded to use 6.0 (unl_six) as the base without
+ * an upgrade to css/dcf/main.css.  These styles are added on to make 6.0 things work.
+ */
 
+.dcf-nav {
+  width: 69vw;
+  max-width: 1282px;
+  display: inline-flex !important;
+  padding: 0;
+}
+
+dialog#dcf-nav-dialog {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  max-height: 100% !important;
+}
+.dcf-dialog {
+  background-color: var(--bg-body);
+  color: var(--body);
+  max-height: calc(100vh - 2em);
+  width: calc(100% - 11.24vw);
+}
+.dcf-nav-menu-content {
+  background-color: var(--bg-brand-alpha);
+}
+@media only screen and (min-width: 56.12em) {
+  .dcf-nav-dialog {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  .dcf-nav-menu {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    position: relative;
+    top: 0;
+    transition: opacity .4s cubic-bezier(.25,.46,.45,.94);
+    width: 100%;
+    z-index: 998;
+    background-color: #d00000;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .dcf-nav-menu-content {
+    overflow-y: auto;
+    position: fixed;
+  }
+  .dcf-nav-menu-content-child {
+    display: grid;
+    grid-template-columns: 4.21em 1fr;
+    grid-template-rows: auto 1fr;
+    overflow-y: auto;
+    padding: 0 5.62vw 1.78em;
+  }
+}
