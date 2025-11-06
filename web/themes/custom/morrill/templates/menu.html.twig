@@ -15,8 +15,13 @@
       <ul>
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes.addClass('dcf-m-0 dcf-p-2') }}>
-        {{ link(item.title, item.url, create_attribute({'class': ['lato-bold', 'museum']})) }}
+      {% if menu_level == 0 %}
+        <li{{ item.attributes.addClass('dcf-m-0 dcf-p-2') }}>
+          {{ link(item.title, item.url, create_attribute({'class': ['lato-bold', 'museum']})) }}
+      {% else %}
+        <li{{ item.attributes }}>
+          {{ link(item.title, item.url) }}
+      {% endif %}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
