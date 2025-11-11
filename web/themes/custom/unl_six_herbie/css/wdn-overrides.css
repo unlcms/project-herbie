@@ -5,7 +5,7 @@ p:last-child {
 
 /* Hide the 'Upcoming Events' header from the events widget */
 .unl-upcoming-events .unl-event-list h2 {
-  display: none;
+  display: none !important;
 }
 
 
