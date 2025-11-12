@@ -606,43 +606,43 @@ function unl_six_herbie_preprocess_media(&$variables) {
 
         if($parent_block->__get('b_simple_media_frame_or_shadow')->getValue()[0]['value'] == 'shadow') {
         $file = $media->field_media_image->entity;
-        if ($file && $file->getMimeType() === 'image/svg+xml') {
-          if (isset($variables['content']['field_media_image'][0]['#markup'])) {
-            $svg_markup = $variables['content']['field_media_image'][0]['#markup'];
-            $svg_markup = $svg_markup->__toString();
+          if ($file && $file->getMimeType() === 'image/svg+xml') {
+            if (isset($variables['content']['field_media_image'][0]['#markup'])) {
+              $svg_markup = $variables['content']['field_media_image'][0]['#markup'];
+              $svg_markup = $svg_markup->__toString();
 
-            // Load SVG string into DOMDocument
-            $doc = new \DOMDocument();
-            // Suppress warnings for malformed SVG
-            libxml_use_internal_errors(TRUE);
-            $doc->loadHTML($svg_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            libxml_clear_errors();
+              // Load SVG string into DOMDocument
+              $doc = new \DOMDocument();
+              // Suppress warnings for malformed SVG
+              libxml_use_internal_errors(TRUE);
+              $doc->loadHTML($svg_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+              libxml_clear_errors();
 
-            // Get the <svg> element
-            $svg_elements = $doc->getElementsByTagName('svg');
-            if ($svg_elements->length > 0) {
-              $svg_element = $svg_elements->item(0);
+              // Get the <svg> element
+              $svg_elements = $doc->getElementsByTagName('svg');
+              if ($svg_elements->length > 0) {
+                $svg_element = $svg_elements->item(0);
 
-              // Add or update class attribute
-              $existing_class = $svg_element->getAttribute('class');
-              if($view_mode == '1x1') {
-                $new_class = 'dcf-1x1';
+                // Add or update class attribute
+                $existing_class = $svg_element->getAttribute('class');
+                if($view_mode == '1x1') {
+                  $new_class = 'dcf-1x1';
+                }
+                elseif($view_mode == '4x3') {
+                  $new_class = 'dcf-4x3';
+                }
+                else {
+                  $new_class = 'dcf-16x9';
+                }
+                $classes = $existing_class ? "$existing_class $new_class" : $new_class;
+                $svg_element->setAttribute('class', trim($classes));
+                $modified_svg = $doc->saveHTML($svg_element);
+
+                // Replace the original #markup with the modified SVG;
+                $variables['content']['field_media_image'][0]['#markup'] = $variables['content']['field_media_image'][0]['#markup']->create($modified_svg);
               }
-              elseif($view_mode == '4x3') {
-                $new_class = 'dcf-4x3';
-              }
-              else {
-                $new_class = 'dcf-16x9';
-              }
-              $classes = $existing_class ? "$existing_class $new_class" : $new_class;
-              $svg_element->setAttribute('class', trim($classes));
-              $modified_svg = $doc->saveHTML($svg_element);
-
-              // Replace the original #markup with the modified SVG;
-              $variables['content']['field_media_image'][0]['#markup'] = $variables['content']['field_media_image'][0]['#markup']->create($modified_svg);
             }
           }
-        }
         }
       }
     }
