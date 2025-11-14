@@ -1,3 +1,9 @@
+global:
+  js:
+    js/morrill.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
 global-styling:
   version: VERSION
   css:

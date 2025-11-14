@@ -37,6 +37,12 @@ function morrill_preprocess_block(&$variables) {
 function morrill_preprocess_html(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
 
+  // Full path to theme for the search javascript.
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('morrill');
+  $full_url = Url::fromUri('base:' . $theme_path, ['absolute' => TRUE])->toString();
+  $variables['#attached']['drupalSettings']['path_to_theme']['path'] = $full_url;
+
+  // Add Group ID.
   $variables['group_id'] = null;
   $group = _morrill_get_current_group();
   if ($group) {
