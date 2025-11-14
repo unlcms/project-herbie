@@ -16,7 +16,7 @@
   %}
   {# Always wrap fieldset legends in a <span> for CSS positioning. #}
   <legend{{ legend.attributes }}>
-    <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
+    <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}{% if required %} <small class="dcf-required dcf-regular">Required</small>{% endif %}</span>
   </legend>
   <div class="fieldset-wrapper">
     {% if description_display == 'before' and description.content %}
