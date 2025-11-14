@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0286f1710b45c1e71ff2150a01f7d3a7",
+    "content-hash": "b0ec363c9b71df0bb3ef76d8a12285c2",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -5374,26 +5374,26 @@
         },
         {
             "name": "drupal/layout_builder_iframe_modal",
-            "version": "1.3.0",
+            "version": "1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_builder_iframe_modal.git",
-                "reference": "1.3.0"
+                "reference": "1.3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_builder_iframe_modal-1.3.0.zip",
-                "reference": "1.3.0",
-                "shasum": "c52c7c0ed91e747b49183dae911f6b640344fded"
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_iframe_modal-1.3.7.zip",
+                "reference": "1.3.7",
+                "shasum": "45a636baf3cf5d9324b51b3f979c7dbdc0e6b97a"
             },
             "require": {
-                "drupal/core": "^8.8.0 || ^9.0 || ^10"
+                "drupal/core": "^10.1.3 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.3.0",
-                    "datestamp": "1671889303",
+                    "version": "1.3.7",
+                    "datestamp": "1756284869",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5413,6 +5413,10 @@
                 {
                     "name": "dulnan",
                     "homepage": "https://www.drupal.org/user/3652792"
+                },
+                {
+                    "name": "svendecabooter",
+                    "homepage": "https://www.drupal.org/user/35369"
                 }
             ],
             "description": "Render Laybout Builder block edit forms in an iframe, using the admin theme.",
