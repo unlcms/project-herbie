@@ -7,7 +7,7 @@
 .unl .dcf-nav {
   width: 69vw;
   max-width: 1282px;
-  display: inline-flex !important;
+  display: inline-flex;
   padding: 0;
 }
 
