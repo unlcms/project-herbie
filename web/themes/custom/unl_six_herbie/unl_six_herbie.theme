@@ -63,7 +63,7 @@ function unl_six_herbie_preprocess_region(&$variables) {
     // Check if page is a group homepage
     $group_homepage = $current_route->getParameter('group');
     if ($group_homepage) {
-        $variables['group_homepage'] = true;
+      $variables['group_homepage'] = true;
     }
   }
 }
@@ -86,7 +86,7 @@ function unl_six_herbie_preprocess_block(&$variables) {
     $bundle = $variables['content']['#block_content']->bundle();
   }
 
-  if($variables['plugin_id'] == 'menu_block:main') {
+  if ($variables['plugin_id'] == 'menu_block:main') {
     // Generate a unique ID for the block.
     $unique_id = uniqid('menu-block-main-', FALSE);
     $variables['attributes']['id'] = $unique_id;
@@ -132,7 +132,7 @@ function unl_six_herbie_preprocess_block(&$variables) {
   if (isset($variables['elements']['#layout_builder_style']) && !empty($variables['elements']['#layout_builder_style'])) {
     $layout_builder_styles = $variables['elements']['#layout_builder_style'];
     // Replace numeric keys with the value.
-    foreach($layout_builder_styles as $value) {
+    foreach ($layout_builder_styles as $value) {
       $block_layout_builder_styles[$value] = $value;
     }
   }
@@ -148,7 +148,7 @@ function unl_six_herbie_preprocess_node__person(&$variables) {
   $node = $variables["node"];
 
   //Adds alt text for uploaded images
-  if (!$node->get('n_person_photo')->isEmpty() ) {
+  if (!$node->get('n_person_photo')->isEmpty()) {
     $node->n_person_photo->alt = "Avatar for " . $node->getTitle();
   }
 }
@@ -274,7 +274,7 @@ function unl_six_herbie_preprocess_field(&$variables) {
   /*
    * Timeline Block Fields
    */
-  $timelineFields = array('b_timeline_style', 'b_timeline_item', );
+  $timelineFields = array('b_timeline_style', 'b_timeline_item');
 
   if (in_array($field_name, $timelineFields)) {
 
@@ -320,7 +320,6 @@ function unl_six_herbie_preprocess_field(&$variables) {
           $variables['items'][$key]['content']['#attributes']['allowtransparency'] = null;
           // Add the 'm_rv_resource_type' field value to the 'field_media_oembed_video' field for access in the 'field_media_oembed_video' Twig template.
           $variables['items'][$key]['media_type'] = isset($media_type[0]['value']) ? strval($media_type[0]['value']) : '';
-
         }
         break;
     }
@@ -370,7 +369,7 @@ function unl_six_herbie_preprocess_field(&$variables) {
   /*
    * Tandem links Block Fields
    */
-  $fields = array('b_tandem_buttons','b_tandem_style','b_tandem_stack','b_tandem_overline','b_tandem_links','p_b_tandem_button_link');
+  $fields = array('b_tandem_buttons', 'b_tandem_style', 'b_tandem_stack', 'b_tandem_overline', 'b_tandem_links', 'p_b_tandem_button_link');
   if (in_array($field_name, $fields)) {
     $primary_button = 'dcf-btn dcf-btn-primary';
     $secondary_button = 'dcf-btn dcf-btn-secondary';
@@ -385,7 +384,7 @@ function unl_six_herbie_preprocess_field(&$variables) {
         $tandem_block = $variables['element']['#object']->_referringItem->getEntity();
         $tandem_buttons = $tandem_block->toArray()['b_tandem_buttons'];
 
-        if(count($tandem_buttons) == 1) {
+        if (count($tandem_buttons) == 1) {
           $primary_button = 'dcf-btn dcf-btn-primary dcf-mt-5';
           $secondary_button = 'dcf-btn dcf-btn-secondary dcf-mt-5';
           $tertiary_button = 'dcf-btn dcf-btn-tertiary dcf-mt-5';
@@ -408,6 +407,7 @@ function unl_six_herbie_preprocess_field(&$variables) {
     }
   }
 }
+
 
 /**
  * Implements template_preprocess_layout().
@@ -440,7 +440,7 @@ function unl_six_herbie_preprocess_layout(&$variables) {
   if (isset($variables['settings']['layout_builder_styles_style']) && !empty($variables['settings']['layout_builder_styles_style'])) {
     $layout_builder_styles = $variables['settings']['layout_builder_styles_style'];
     // Replace numeric keys with the value.
-    foreach($layout_builder_styles as $value) {
+    foreach ($layout_builder_styles as $value) {
       $section_layout_builder_styles[$value] = $value;
     }
   }
@@ -518,7 +518,7 @@ function unl_six_herbie_preprocess_views_view(&$variables) {
   // Add preprocessed total rows to taxonomy_term view (tagged_news_items_block)
   // since total rows only counts current page, not total tagged items.
   if ($variables['view']->id() === 'taxonomy_term' && $variables['view']->current_display === 'tagged_news_items_block') {
-   try {
+    try {
       // Load a fresh instance of the view.
       $full_view = Views::getView('taxonomy_term');
       if (!$full_view) {
@@ -536,7 +536,6 @@ function unl_six_herbie_preprocess_views_view(&$variables) {
       $full_view->execute();
       // Add results to template variables to be used in Twig.
       $variables['preprocessed_total_rows'] = $full_view->total_rows ?: count($full_view->result);
-
     } catch (\Exception $e) {
       \Drupal::logger('unl_six_herbie_preprocess_views_view')->error('Error processing view: @message', ['@message' => $e->getMessage()]);
     }
@@ -591,18 +590,12 @@ function unl_six_herbie_preprocess_media(&$variables) {
 
       if ($field_name == "b_simple_media_media" && $variables['media']->hasField('field_media_image')) {
         $responsive_image_style = $parent_block->__get('b_simple_media_aspect_ratio')->getValue()[0]['value'];
+        $view_mode = str_replace("_ris", "", $responsive_image_style);
+        $variables['elements']['#view_mode'] = $view_mode;
+        $variables['elements']['field_media_image']['#view_mode'] = $view_mode;
 
-        $variables['elements']['field_media_image']['#view_mode'] = $responsive_image_style;
-        $variables['elements']['#view_mode'] = $responsive_image_style;
-        $image_item = $variables['media']->get('field_media_image')->first();
-
-        //Render image field using the responsive image style selected by user.
-        $variables['content']['field_media_image'] = $image_item->view([
-          'type' => 'responsive_image',
-          'settings' => [
-            'responsive_image_style' => $responsive_image_style,
-          ]
-        ]);
+        // Render the image field using the responsive image style and view mode selected by the user.
+        $variables['content']['field_media_image'] = $variables['media']->field_media_image->view($view_mode);
 
         $variables['attributes']['class'] = array_filter($variables['attributes']['class'], function ($class) {
           return strpos($class, 'view-mode') !== 0;
@@ -610,6 +603,47 @@ function unl_six_herbie_preprocess_media(&$variables) {
 
         $variables['attributes']['class'][] = "view-mode--" . $responsive_image_style;
         $variables['attributes']['class'][] = "simple-media-media-entity";
+
+        if($parent_block->__get('b_simple_media_frame_or_shadow')->getValue()[0]['value'] == 'shadow') {
+        $file = $media->field_media_image->entity;
+          if ($file && $file->getMimeType() === 'image/svg+xml') {
+            if (isset($variables['content']['field_media_image'][0]['#markup'])) {
+              $svg_markup = $variables['content']['field_media_image'][0]['#markup'];
+              $svg_markup = $svg_markup->__toString();
+
+              // Load SVG string into DOMDocument
+              $doc = new \DOMDocument();
+              // Suppress warnings for malformed SVG
+              libxml_use_internal_errors(TRUE);
+              $doc->loadHTML($svg_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+              libxml_clear_errors();
+
+              // Get the <svg> element
+              $svg_elements = $doc->getElementsByTagName('svg');
+              if ($svg_elements->length > 0) {
+                $svg_element = $svg_elements->item(0);
+
+                // Add or update class attribute
+                $existing_class = $svg_element->getAttribute('class');
+                if($view_mode == '1x1') {
+                  $new_class = 'dcf-1x1';
+                }
+                elseif($view_mode == '4x3') {
+                  $new_class = 'dcf-4x3';
+                }
+                else {
+                  $new_class = 'dcf-16x9';
+                }
+                $classes = $existing_class ? "$existing_class $new_class" : $new_class;
+                $svg_element->setAttribute('class', trim($classes));
+                $modified_svg = $doc->saveHTML($svg_element);
+
+                // Replace the original #markup with the modified SVG;
+                $variables['content']['field_media_image'][0]['#markup'] = $variables['content']['field_media_image'][0]['#markup']->create($modified_svg);
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -638,8 +672,7 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
         if ($field_name == 'b_hero_image') {
           $hero_image_classes = ['dcf-obj-fit-cover'];
           $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
-        }
-        else if ($field_name == 'b_photohero_image') {
+        } else if ($field_name == 'b_photohero_image') {
           $hero_image_classes = ['dcf-obj-fit-cover', 'dcf-absolute'];
           array_push($hero_image_classes, "unlcms-slow-zoom-in");
           $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
@@ -736,9 +769,8 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
 
 
     if ($bundle == 'slideshow_item') {
-          $variables['responsive_image']['#attributes']['class'][] = "dcf-16x9";
+      $variables['responsive_image']['#attributes']['class'][] = "dcf-16x9";
     }
-
   }
 }
 

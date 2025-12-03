@@ -70,7 +70,7 @@
       {% endif %}
 
       <div class="unlcms-article-share dcf-bt-1 dcf-bt-solid unl-bt-light-gray">
-        <aside class="dcf-sticky dcf-top-0 dcf-pt-3">
+        <div class="dcf-sticky dcf-top-0 dcf-pt-3">
           <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">
             Share <span class="dcf-sr-only">This Article</span>
           </h2>
@@ -98,11 +98,11 @@
               </a>
             </li>
           </ul>
-        </aside>
+        </div>
       </div>
 
       {% if content.n_person_reference.0 or content.n_news_related_links.0 %}
-        <aside class="unlcms-article-sidebar dcf-d-grid dcf-grid-cols-1@md  dcf-grid-cols-2@sm dcf-col-gap-vw dcf-row-gap-7">
+        <div class="unlcms-article-sidebar dcf-d-grid dcf-grid-cols-1@md  dcf-grid-cols-2@sm dcf-col-gap-vw dcf-row-gap-7">
           {% if content.n_person_reference.0 %}
             <div class="dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
               <h2 class="dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Contacts</h2>
@@ -221,7 +221,7 @@
               </ul>
            </div>
          {% endif %}
-       </aside>
+       </div>
       {% endif %}
     </div>
   </div>
