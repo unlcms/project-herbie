@@ -182,6 +182,8 @@ function unl_blocks_preprocess_block_content_add_list(array &$variables) {
  */
 function unl_blocks_query_entity_query_alter(AlterableInterface $query) {
   // Exclude content of specific block types from showing on /admin/content/block.
+  // (This is only needed when /admin/content/block is NOT using the block_content
+  // view and is showing the default entity list.)
   $excluded_types = ['hero'];
   if (\Drupal::routeMatch()->getRouteName() === 'entity.block_content.collection') {
     $query->condition('block_content_field_data.type', $excluded_types, 'NOT IN');
