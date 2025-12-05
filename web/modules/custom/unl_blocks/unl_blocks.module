@@ -177,12 +177,13 @@ function unl_blocks_preprocess_block_content_add_list(array &$variables) {
 }
 
 /**
- * Implements hook_query_alter().
+ * Implements hook_query_TAG_alter().
  */
-function unl_blocks_query_alter(Drupal\Core\Database\Query\AlterableInterface $query) {
+function unl_blocks_query_entity_query_alter(AlterableInterface $query) {
   // Exclude content of specific block types from showing on /admin/content/block.
   $excluded_types = ['hero'];
-  if ($query->hasTag('block_content_access') && $query->getMetaData('entity_type') === 'block_content') {
+  if (\Drupal::routeMatch()->getRouteName() === 'entity.block_content.collection') {
     $query->condition('block_content_field_data.type', $excluded_types, 'NOT IN');
   }
 }
+
