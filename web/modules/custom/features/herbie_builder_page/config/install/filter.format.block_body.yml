@@ -19,19 +19,31 @@ filters:
     status: false
     weight: -46
     settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
+  filter_align:
+    id: filter_align
     provider: filter
-    status: false
-    weight: -42
+    status: true
+    weight: -45
     settings: {  }
-  filter_url:
-    id: filter_url
+  filter_autop:
+    id: filter_autop
     provider: filter
     status: false
-    weight: -50
+    weight: -49
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -44
+    settings: {  }
+  filter_dcfckeditor5:
+    id: filter_dcfckeditor5
+    provider: dcf_ckeditor5
+    status: false
+    weight: 0
     settings:
-      filter_url_length: 72
+      dcftable: '0'
   filter_html:
     id: filter_html
     provider: filter
@@ -41,23 +53,17 @@ filters:
       allowed_html: '<a id target rel class="ck-anchor dcf-btn dcf-btn-primary dcf-btn-secondary dcf-btn-tertiary dcf-btn-inverse-primary dcf-btn-inverse-secondary dcf-btn-inverse-tertiary" href data-entity-type data-entity-uuid data-entity-substitution> <br> <p class="dcf-txt-xs dcf-txt-sm dcf-txt-lg"> <h2> <h3> <strong> <em> <s> <sub> <sup> <ul> <ol start> <li> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_autop:
-    id: filter_autop
+  filter_html_escape:
+    id: filter_html_escape
     provider: filter
     status: false
-    weight: -49
+    weight: -47
     settings: {  }
-  filter_align:
-    id: filter_align
+  filter_html_image_secure:
+    id: filter_html_image_secure
     provider: filter
-    status: true
-    weight: -45
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: -44
+    status: false
+    weight: -42
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -65,12 +71,19 @@ filters:
     status: false
     weight: -41
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -45
+    settings: {  }
+  filter_url:
+    id: filter_url
     provider: filter
     status: false
-    weight: -47
-    settings: {  }
+    weight: -50
+    settings:
+      filter_url_length: 72
   linkit:
     id: linkit
     provider: linkit
@@ -93,16 +106,3 @@ filters:
         image: image
         instagram: instagram
         remote_video: remote_video
-  filter_dcfckeditor5:
-    id: filter_dcfckeditor5
-    provider: dcf_ckeditor5
-    status: false
-    weight: 0
-    settings:
-      dcftable: '0'
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: -45
-    settings: {  }

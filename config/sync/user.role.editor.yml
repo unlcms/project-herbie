@@ -76,6 +76,7 @@ weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'

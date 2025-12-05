@@ -13,6 +13,18 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\unl_utility\UNLUtilityTrait;
 
 /**
+ * Implements hook_block_alter().
+ */
+function unl_blocks_block_alter(array &$definitions) {
+  // Change the block_content category label. (Defined in web/core/modules/block_content/src/Plugin/Block/BlockContentBlock.php)
+  foreach ($definitions as $plugin_id => &$definition) {
+    if ($definition['provider'] === 'block_content') {
+      $definition['category'] = t('Reusable components');
+    }
+  }
+}
+
+/**
  * Implements hook_entity_type_alter().
  */
 function unl_blocks_entity_type_alter(array &$entity_types) {
@@ -102,7 +114,8 @@ function unl_blocks_form_block_form_alter(array &$form, FormStateInterface &$for
   $plugin_id = explode(':', $plugin_id);
   if (isset($plugin_id[0]) && $plugin_id[0] == 'block_content') {
     /** @var \Drupal\block_content\Entity\BlockContent */
-    $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $plugin_id[1]);
+    $block_content = \Drupal::service('entity.repository')
+      ->loadEntityByUuid('block_content', $plugin_id[1]);
     if ($block_content) {
       $bundle = $block_content->bundle();
 
@@ -117,24 +130,23 @@ function unl_blocks_form_block_form_alter(array &$form, FormStateInterface &$for
       }
     }
   }
+}
 
-  /**
-   * Validation callback function for Contact Info core block config form.
-   *
-   * @param array $form
-   *   Nested array of form elements that comprise the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The form state.
-   */
-  function _unl_blocks_contact_info_block_form_validate(array &$form, FormStateInterface $form_state) {
-    $values = $form_state->getValues();
-    // FAPI doesn't enforce disabled elements, so we override any
-    // user tampering here.
-    if ($values['settings']['label_display'] !== 'visible') {
-      $form_state->setValue(['settings', 'label_display'], 'visible');
-    }
+/**
+ * Validation callback function for Contact Info core block config form.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function _unl_blocks_contact_info_block_form_validate(array &$form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  // FAPI doesn't enforce disabled elements, so we override any
+  // user tampering here.
+  if ($values['settings']['label_display'] !== 'visible') {
+    $form_state->setValue(['settings', 'label_display'], 'visible');
   }
-
 }
 
 /**
@@ -147,5 +159,30 @@ function unl_blocks_block_view_alter(array &$build, BlockPluginInterface $block)
       $block->getDerivativeId() == '260cb27e-bdaf-4d0f-969c-1a8bc0fd01d8' ||
       $block->getDerivativeId() == 'a8ccb1df-9c44-464b-be7a-b7960206dee1') {
     $build['#cache']['contexts'][] = 'route.group';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function unl_blocks_preprocess_block_content_add_list(array &$variables) {
+  // Hide certain block types on /block/add. (Access is not restricted so that they
+  // are still available to create in other contexts, such as Inline Entity Form.)
+  $excluded_types = ['hero'];
+  if (!empty($variables['content'])) {
+    foreach ($excluded_types as $bundle) {
+      unset($variables['content'][$bundle]);
+    }
+  }
+}
+
+/**
+ * Implements hook_query_alter().
+ */
+function unl_blocks_query_alter(Drupal\Core\Database\Query\AlterableInterface $query) {
+  // Exclude content of specific block types from showing on /admin/content/block.
+  $excluded_types = ['hero'];
+  if ($query->hasTag('block_content_access') && $query->getMetaData('entity_type') === 'block_content') {
+    $query->condition('block_content_field_data.type', $excluded_types, 'NOT IN');
   }
 }
