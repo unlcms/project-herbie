@@ -2,7 +2,9 @@
 
 namespace Drupal\unl_system\EventSubscriber;
 
+use Drupal\Core\DrupalKernel;
 use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Url;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -10,8 +12,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class PrimaryBaseUrlSubscriber implements EventSubscriberInterface {
 
   public function checkBasePath(RequestEvent $event) {
-    // Skip processing if the domain is cms-staging.unl.edu.
-    if ($event->getRequest()->getHost() === 'cms-staging.unl.edu') {
+    // Skip processing if not on Production or on command line.
+    if (getenv('UNLCMSENV') !== 'production' ||
+      PHP_SAPI === 'cli') {
       return;
     }
 
@@ -19,7 +22,10 @@ class PrimaryBaseUrlSubscriber implements EventSubscriberInterface {
     $config = $config_factory->get('unl_system.settings');
     $primary_base_url = $config->get('primary_base_url');
 
-    if ($primary_base_url && PHP_SAPI != 'cli') {
+    $site_path = DrupalKernel::findSitePath(\Drupal::request());
+    $is_default_site = ($site_path === 'sites/default');
+
+    if ($primary_base_url) {
       if (substr($primary_base_url, -1) != '/') {
         $primary_base_url .= '/';
       }
@@ -39,13 +45,27 @@ class PrimaryBaseUrlSubscriber implements EventSubscriberInterface {
         if ($query) {
           $redirect_url = $redirect_url . '?' . $query;
         }
-
-        $response = new TrustedRedirectResponse($redirect_url, '301');
-        // Fire the response immediately rather than using $event->setResponse($response)
-        // and letting other modules like Redirect mess with it.
-        $response->send();
-        exit;
       }
+    }
+    elseif (!$is_default_site && $event->getRequest()->getHost() === 'cms.unl.edu') {
+      // Redirect non-default sites from cms.unl.edu to cms-wip.unl.edu so that
+      // noindex/nofollow headers can be sent on the cms-wip.unl.edu domain.
+      $request = \Drupal::request();
+      $uri = $request->getUri();
+      $parsed = parse_url($uri);
+      $new_uri = $parsed['scheme'] . '://cms-wip.unl.edu' . $parsed['path'];
+      if (!empty($parsed['query'])) {
+        $new_uri .= '?' . $parsed['query'];
+      }
+      $redirect_url = Url::fromUri($new_uri, ['absolute' => TRUE])->toString();
+    }
+
+    if ($redirect_url !== NULL) {
+      $response = new TrustedRedirectResponse($redirect_url, '301');
+      // Fire the response immediately rather than using $event->setResponse($response)
+      // and letting other modules like Redirect mess with it.
+      $response->send();
+      exit;
     }
   }
 
