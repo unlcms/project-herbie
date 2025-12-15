@@ -5,6 +5,11 @@
     background: transparent;
 }
 
+/* .unl .dcf-nav-local sets a z-index of 998 that conflicts with the module's setting of 501. */
+div.ui-dialog[aria-describedby="drupal-lbim-modal"] {
+  z-index: 1001;
+}
+
 /* Contextual links will be covered up if a block is too short. */
 .layout-builder-block.contextual-region {
     min-height: 150px;
