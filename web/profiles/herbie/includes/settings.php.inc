@@ -42,7 +42,7 @@ $config['adv_varnish.cache_settings']['general']['grace'] = '10';
 /**
  * Honeypot time limit.
  */
-$config['honeypot.settings']['time_limit'] = 20;
+$config['honeypot.settings']['time_limit'] = 5;
 
 
 
