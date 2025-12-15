@@ -60,7 +60,7 @@ class PrimaryBaseUrlSubscriber implements EventSubscriberInterface {
       $redirect_url = Url::fromUri($new_uri, ['absolute' => TRUE])->toString();
     }
 
-    if ($redirect_url !== NULL) {
+    if (isset($redirect_url)) {
       $response = new TrustedRedirectResponse($redirect_url, '301');
       // Fire the response immediately rather than using $event->setResponse($response)
       // and letting other modules like Redirect mess with it.
