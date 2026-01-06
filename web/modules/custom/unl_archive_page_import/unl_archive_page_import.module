@@ -1,7 +1,28 @@
 <?php
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_access().
+ */
+function unl_archive_page_import_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  // Do not allow editing of Temporary Transition Pages.
+  if ($entity->getEntityTypeId() !== 'node') {
+    return AccessResult::neutral();
+  }
+  if ($entity->bundle() !== 'archive_page') {
+    return AccessResult::neutral();
+  }
+  if ($operation === 'update') {
+    return AccessResult::forbidden();
+  }
+
+  return AccessResult::neutral();
+}
 
 /**
  * Implements hook_preprocess_node().
