@@ -205,7 +205,6 @@ element:
     webform_term_checkboxes: webform_term_checkboxes
     webform_term_select: webform_term_select
     webform_terms_of_service: webform_terms_of_service
-    webform_time: webform_time
     webform_video_file: webform_video_file
 html_editor:
   disabled: false
@@ -218,10 +217,10 @@ file:
   file_private_redirect: true
   file_private_redirect_message: '<p>Please login to access the uploaded file.</p>'
   default_max_filesize: '20 MB'
-  default_managed_file_extensions: 'gif jpg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 ogg wav bz2 dmg gz jar rar sit svg tar zip'
+  default_managed_file_extensions: 'gif jpg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 m4a ogg wav bz2 dmg gz jar rar sit svg tar zip'
   default_image_file_extensions: 'gif jpg jpeg png'
   default_video_file_extensions: 'avi mov mp4 ogg wav webm'
-  default_audio_file_extensions: 'mp3 ogg wav'
+  default_audio_file_extensions: 'mp3 m4a ogg wav'
   default_document_file_extensions: 'txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods'
   make_unused_managed_files_temporary: true
   delete_temporary_managed_files: true

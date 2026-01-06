@@ -1,7 +1,35 @@
 <?php
 
+use Drupal\Core\Url;
 use Drupal\group\Entity\GroupRelationship;
 use Drupal\node\Entity\Node;
+
+/*
+ * Implements template_preprocess_block().
+ */
+function morrill_preprocess_block(&$variables) {
+  // Set $bundle var for custom block entities.
+  $bundle = NULL;
+  if (isset($variables['content']['#block_content'])) {
+    $bundle = $variables['content']['#block_content']->bundle();
+  }
+
+  // If it's a group page, hide main site's Contact Us block.
+  if ($bundle == 'contact_info') {
+    $group = _morrill_get_current_group();
+    if ($group && $variables['elements']['#id'] == 'morrill_contactinfo') {
+      $variables['hide_block'] = TRUE;
+    }
+  }
+
+  // If it's a group page, hide main site's Related Links block.
+  if (isset($variables['elements']['#id']) && $variables['elements']['#id'] == 'morrill_relatedlinks') {
+    $group = _morrill_get_current_group();
+    if ($group) {
+      $variables['hide_related_links_block'] = TRUE;
+    }
+  }
+}
 
 /**
  * Implements template_preprocess_html().
@@ -9,6 +37,13 @@ use Drupal\node\Entity\Node;
 function morrill_preprocess_html(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
 
+  // Full path to theme for the search javascript.
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('morrill');
+  $full_url = Url::fromUri('base:' . $theme_path, ['absolute' => TRUE])->toString();
+  $variables['#attached']['drupalSettings']['path_to_theme']['path'] = $full_url;
+
+  // Add Group ID.
+  $variables['group_id'] = null;
   $group = _morrill_get_current_group();
   if ($group) {
     $group_id = $group->id();
@@ -21,6 +56,20 @@ function morrill_preprocess_html(&$variables) {
  */
 function morrill_preprocess_page(&$variables) {
   $variables['path_to_theme'] = base_path() . \Drupal::service('extension.list.theme')->getPath('morrill');
+
+  $variables['group_id'] = null;
+  $variables['group_name'] = 'Museums overview';
+  $variables['group_homepage_route'] = '/';
+  $group = _morrill_get_current_group();
+  if ($group) {
+    $group_id = $group->id();
+    $group_homepage_url = Url::fromRoute('entity.group.canonical', ['group' => $group_id]);
+    $string_url = $group_homepage_url->toString();
+
+    $variables['group_id'] = $group_id;
+    $variables['group_name'] = $group->label();
+    $variables['group_homepage_route'] = $string_url;
+  }
 }
 
 /**

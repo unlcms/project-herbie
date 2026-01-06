@@ -1,0 +1,18 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<!-- !Search -->
+<aside id="sheldon_search" role="search" aria-labelledby="search_desc"{{ attributes.addClass(classes) }}>
+  <div class="page-padding">
+    <div class="wrapper content">
+      <h2 id="search_desc" class="text-hidden">Search this site</h2>
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+</aside>

@@ -85,7 +85,7 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'dcf-ratio-child dcf-obj-fit-cover'
+        class: 'dcf-16x9 dcf-3x4@lg dcf-obj-fit-cover dcf-ratio-child'
     weight: 5
     region: content
   n_major_option_grad_school_title:

@@ -172,7 +172,7 @@
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/layout_builder_component_attributes": "^2.1",
-        "drupal/layout_builder_iframe_modal": "^1.3",
+        "drupal/layout_builder_iframe_modal": "1.3.5",
         "drupal/layout_builder_modal": "^1.2",
         "drupal/layout_builder_operation_link": "^2.0",
         "drupal/layout_builder_restrictions": "^2.0",
@@ -234,7 +234,7 @@
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^2",
         "unlcms/unl_five": "^10",
-        "unlcms/unl_multisite": "^2.0",
+        "unlcms/unl_multisite": "^3.0",
         "unlcms/unl_six": "^6.0",
         "unlcms/unl_user": "^1.1",
         "vlucas/phpdotenv": "^2.4",
@@ -280,6 +280,7 @@
             "cd web && patch -p1 < ../patches/custom-htaccess.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-maxsize.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-noindex-test-domain.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
@@ -346,9 +347,6 @@
             },
             "drupal/heading": {
                 "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
-            },
-            "drupal/layout_builder_iframe_modal": {
-                "3316931 - Add config schema for custom routes": "patches/layout_builder_iframe_modal-add_config_schema_custom_routes-3316931-3.patch"
             },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"

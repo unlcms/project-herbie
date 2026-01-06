@@ -12,6 +12,8 @@ function unl_events_theme($existing, $type, $theme, $path) {
   return [
     'unl_events_upcoming_events_block' => [
       'variables' => [
+        'calendar_limit' => '',
+        'calendar_url' => '',
         'json_config_string' => '',
       ],
     ],

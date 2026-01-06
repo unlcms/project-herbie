@@ -1,0 +1,18 @@
+{% extends "block.html.twig" %}
+{% block content %}
+  {% include wdn.directory ~ "/includes/global/nav-container-1.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-toggle-group.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-menu-1.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-local-1.html" %}
+
+  <!-- InstanceBeginEditable name="navlinks" -->
+  {{ content }}
+  <!-- InstanceEndEditable -->
+
+  {% include wdn.directory ~ "/includes/global/nav-local-2.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-menu-2.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-dialog-1.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-local-copy-dialog.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-dialog-2.html" %}
+  {% include wdn.directory ~ "/includes/global/nav-container-2.html" %}
+{% endblock %}

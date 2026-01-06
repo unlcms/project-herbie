@@ -9,7 +9,7 @@ https://twig.symfony.com/doc/3.x/tags/macro.html
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
-    <ul class="dcf-list-bare dcf-m-0">
+    <ul role="list" class="dcf-m-0">
     {% for item in items %}
       {%
         set classes = [

@@ -31,6 +31,7 @@ module:
   crop: 0
   csv_serialization: 0
   ctools: 0
+  datalayer: 0
   datetime: 0
   datetime_range: 0
   dblog: 0

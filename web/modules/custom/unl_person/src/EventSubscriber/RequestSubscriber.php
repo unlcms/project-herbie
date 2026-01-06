@@ -52,9 +52,6 @@ class RequestSubscriber implements EventSubscriberInterface {
   public function onRequest(Event $event) {
     $user = User::load($this->currentUser->id());
     $current_user_roles = $user->getRoles();
-    $block_id = 'unl_five_herbie_local_tasks';
-    $block = \Drupal\block\Entity\Block::load($block_id);
-    $visibility = $block->getVisibility();
     $request = $event->getRequest();
     $session = $request->getSession();
     $route_name = $request->attributes->get('_route');
@@ -86,7 +83,13 @@ class RequestSubscriber implements EventSubscriberInterface {
 
     // Display the edit/view tabs for all roles as defined in the configuration file (except Authenticated).
     // This restores the default block configuration if there were any changes made to it.
-    if (isset($visibility['user_role']['roles']['authenticated'])) {
+    $block_id = 'unl_five_herbie_local_tasks';
+    $block = \Drupal\block\Entity\Block::load($block_id);
+    if($block) {
+      $visibility = $block->getVisibility();
+    }
+
+    if (isset($visibility) && isset($visibility['user_role']['roles']['authenticated'])) {
       unset($visibility['user_role']['roles']['authenticated']);
       $block->setVisibilityConfig('user_role', $visibility['user_role']);
       $block->save();

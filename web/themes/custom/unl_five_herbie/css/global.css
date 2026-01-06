@@ -1,4 +1,5 @@
-#block-unl-five-herbie-local-tasks--2 {
+/* Ensure the View/Edit tabs is correctly positioned even if user doesn't have contextual links */
+.region-navlinks > div {
   position: relative;
 }
 

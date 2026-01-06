@@ -21,7 +21,7 @@
 			<div class="dcf-hero-majors unl-bg-darkest-gray">
 				<!-- InstanceEndEditable -->
 				<div class="dcf-hero-majors-group-1 dcf-z-2 dcf-d-flex dcf-flex-col dcf-jc-end">
-					<div class="dcf-hero-mod-group-1-wrapper dcf-wrapper dcf-pt-6 dcf-pb-6 unl-bg-darkest-gray unl-bg-grit">
+					<div class=" dcf-relative dcf-hero-mod-group-1-wrapper dcf-wrapper dcf-pt-6 dcf-pb-6 unl-bg-darkest-gray unl-bg-grit">
 						<header id="major-page-title" class="dcf-page-title dcf-hero-majors-title">
 							<!-- InstanceBeginEditable name="pagetitle" -->
 							<h1 class="dcf-txt-xl-at-md unl-cream">{{ label }}</h1>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <!-- InstanceBeginEditable name="herogroup2" -->
-        <div class="dcf-hero-majors-group-2 dcf-z-1 dcf-ratio dcf-ratio-4x3 dcf-ratio-16x9@md">
+        <div class="dcf-hero-majors-group-2 dcf-z-1 dcf-relative dcf-overflow-hidden dcf-w-100% dcf-4x3 dcf-16x9@md">
           {{ (content.n_major_hero_image) }}
         </div>
         <!-- InstanceEndEditable -->
@@ -45,15 +45,15 @@
 
     <!--Intro-->
       <div id="intro" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
-			  <div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-5 dcf-ai-center">
-				  <div class="dcf-col-100% dcf-col-67%-start@lg dcf-txt-lg dcf-w-max-xl">
+			  <div class="dcf-w-100% dcf-max-w-3xl dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-5 dcf-ai-center">
+				  <div class="dcf-col-span-12 dcf-col-span-8@lg dcf-txt-lg dcf-max-w-xl">
             {{ (content.n_major_intro_video) }}
             <div class="dcf-txt-lg">{{ (content.n_major_lead_copy) }}
             </div>
           </div>
-          <div class="dcf-col-100% dcf-col-33%-end@lg">
+          <div class="dcf-col-span-12 dcf-col-span-4@lg">
             <div class="unl-bg-lightest-gray dcf-p-5 dcf-pb-3 dcf-rounded">
-            <ul class="dcf-list-bare dcf-mb-0 dcf-txt-sm">
+            <ul role="list" class="dcf-mb-0 dcf-txt-sm">
 							<li>
                 {% if node.n_major_college|length > 1 %}
 								<h2 class="dcf-txt-md dcf-mb-1">Colleges</h2>
@@ -87,39 +87,56 @@
       </div>
 
     <!--Proof Points-->
-    <div id="points-of-pride" class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6">
-      <h2 class="unl-section-headline dcf-txt-center dcf-mb-5">The Nebraska Difference</h2>
-      {% if node.n_major_point_pride|length == 3 %}
-        <div class="dcf-d-flex dcf-jc-center">
-          <div class="dcf-w-max-xl">
-            <div class="dcf-grid-thirds@md dcf-col-gap-vw dcf-row-gap-6">
-              {{ (content.n_major_point_pride) }}
+    {% if node.n_major_point_pride|length == 3 or node.n_major_point_pride|length == 4 %}
+      <div id="points-of-pride" class="dcf-bleed dcf-wrapper dcf-pt-8 dcf-pb-6">
+        <h2 class="unl-section-headline dcf-txt-center dcf-mb-5">The Nebraska Difference</h2>
+        {% if node.n_major_point_pride|length == 3 %}
+          <div class="dcf-d-flex dcf-jc-center">
+            <div class="dcf-max-w-xl">
+              <div class="dcf-d-grid dcf-grid-cols-3@md dcf-col-gap-vw dcf-row-gap-6">
+                {{ (content.n_major_point_pride) }}
+              </div>
             </div>
           </div>
-        </div>
-      {% elseif node.n_major_point_pride|length == 4 %}
-        <div class="dcf-grid-halves@sm dcf-grid-fourths@md dcf-col-gap-vw dcf-row-gap-6">
-          {{ (content.n_major_point_pride) }}
-        </div>
-      {% endif %}
-    </div>
+        {% elseif node.n_major_point_pride|length == 4 %}
+          <div class="dcf-d-grid dcf-grid-cols-2@sm dcf-grid-cols-4@md dcf-col-gap-vw dcf-row-gap-6">
+            {{ (content.n_major_point_pride) }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
 
     <!--Optional Pathways-->
      {% if node.n_major_pathways|length > 1 %}
       <div id="pathways" class="dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-8 dcf-pb-8">
         <h2 class="unl-section-headline dcf-mb-1">
-		      {% if node.n_major_pathways|length == 2 %}Two{% elseif node.n_major_pathways|length == 3 %}Three{% elseif node.n_major_pathways|length == 4 %}Four{% endif %} Pathways For {{ label }}
+		      {% if node.n_major_pathways|length == 2 %}
+            Two
+          {% elseif node.n_major_pathways|length == 3 %}
+            Three
+          {% elseif node.n_major_pathways|length == 4 %}
+            Four
+          {% endif %}
+            Pathways For {{ label }}
 	      </h2>
-        <div class="dcf-w-max-lg dcf-mb-6">
+        <div class="dcf-max-w-lg dcf-mb-6">
 						{{ (content.n_major_pathways_intro) }}
 				</div>
-          <div class="dcf-grid-{% if node.n_major_pathways|length == 2 %}halves{% elseif node.n_major_pathways|length == 3 %}thirds{% elseif node.n_major_pathways|length == 4 %}halves{% endif %}@md dcf-col-gap-vw dcf-row-gap-6">
+          <div class="dcf-d-grid 
+            {% if node.n_major_pathways|length == 2 %}
+              dcf-grid-cols-2@md
+            {% elseif node.n_major_pathways|length == 3 %}
+              dcf-grid-cols-3@md
+            {% elseif node.n_major_pathways|length == 4 %}
+              dcf-grid-cols-4@md
+            {% endif %}
+            dcf-col-gap-6 dcf-row-gap-6">
             {% for key,college in content.n_major_college %}
              {% if key matches '/^\\d+$/' %}
             <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow dcf-card-as-link">
 			        <h3 class="dcf-txt-h6">{{college['#markup']}}</h3>
                 <div class="dcf-txt-sm">
-				          <p>{{ content.n_major_pathways[key]['#text']|raw }}</p>
+				          {{ content.n_major_pathways[key]['#text']|raw }}
                 </div>
             </div>
             {% endif %}
@@ -130,16 +147,16 @@
 
     <!--Feature Callout-->
 		<div id="features" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
-      <div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-ai-center">
-				<div class="dcf-col-100% dcf-col-33%-end@lg dcf-2nd@lg">
-					<div class="dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg dcf-overflow-visible">
+      <div class="dcf-w-100% dcf-max-w-3xl dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-ai-center">
+				<div class="dcf-col-span-12 dcf-col-span-4@lg dcf-2nd@lg">
+					<div class="dcf-16x9 dcf-relative dcf-3x4@lg dcf-overflow-visible">
 						{{ (content.n_major_program_features_image) }}
-						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
-							<div class="dcf-ratio-child unl-bg-scarlet unl-bg-grit"></div>
+						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-16x9 dcf-3x4@lg asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-rb">
+							<div class="dcf-obj-fit-cover unl-bg-scarlet unl-bg-grit"></div>
 						</div>
 					</div>
 				</div>
-				<div class="dcf-col-100% dcf-col-67%-start@lg dcf-1st@lg dcf-w-max-xl">
+				<div class="dcf-col-span-12 dcf-col-span-8@lg dcf-1st@lg dcf-max-w-xl">
 					<h2 class="unl-section-headline dcf-mb-2">Program Features</h2>
 			      {{ (content.n_major_program_features) }}
 				</div>
@@ -148,18 +165,18 @@
 
     <!--Notable Courses-->
     <div id="notable-courses" class="dcf-bleed dcf-wrapper dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-pt-8 dcf-pb-6">
-			<div class="dcf-w-100% dcf-w-max-3xl dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-ai-start">
-				<div class="dcf-col-100% dcf-col-25%-start@md dcf-col-33%-start@lg">
-					<div class="dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md dcf-overflow-visible">
+			<div class="dcf-max-w-3xl dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-ai-start">
+				<div class=" dcf-col-span-12 dcf-col-span-3@md dcf-col-span-4@lg">
+					<div class=" dcf-16x9 dcf-relative dcf-1x1@md dcf-overflow-visible">
 						{{ (content.n_major_courses_image) }}
-						<div class="dcf-absolute dcf-pin-top dcf-pin-right dcf-w-100% dcf-ratio dcf-ratio-16x9 dcf-ratio-1x1@md asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt">
-							<div class="dcf-ratio-child unl-bg-dots-gray"></div>
+						<div class="dcf-w-100% dcf-pin-top dcf-pin-right dcf-absolute dcf-16x9 dcf-1x1@md  asem-ms-z-neg1 asem-ms-bg-block asem-ms-bg-block-lt">
+							<div class="dcf-obj-fit-cover unl-bg-dots-gray"></div>
 						</div>
 					</div>
 				</div>
-				<div class="dcf-col-100% dcf-col-75%-end@md dcf-col-67%-end@lg">
+				<div class=" dcf-col-span-12 dcf-col-span-9@md dcf-col-span-8@lg">
 					<h2 class="unl-section-headline dcf-mb-1">Notable Courses</h2>
-					<div class="dcf-w-max-lg dcf-mb-6">
+					<div class="dcf-max-w-lg dcf-mb-6">
 						{{ (content.n_major_notable_courses_intro) }}
 					</div>
           {{ (content.n_major_notable_courses) }}
@@ -190,10 +207,10 @@
     <!--RECENT PLACEMENTS-->
 		<div id="learning-outcomes" class="dcf-bleed dcf-wrapper unl-bg-cream dcf-pt-8 dcf-pb-8">
 			<h2 class="unl-section-headline dcf-mb-1">Huskers Do Big Things</h2>
-			<div class="dcf-w-max-lg dcf-mb-6">
+			<div class="dcf-max-w-lg dcf-mb-6">
 						{{ (content.n_major_huskers_do_intro) }}
 					</div>
-      <div class="dcf-grid-thirds@md dcf-col-gap-vw dcf-row-gap-6">
+      <div class="dcf-d-grid dcf-grid-cols-1 dcf-grid-cols-3@md dcf-col-gap-vw dcf-row-gap-6">
         <div class="dcf-bt-solid dcf-bt-3 unl-bt-scarlet dcf-p-5 dcf-bg-white dcf-rounded-bottom unl-box-shadow">
           <h3 class="dcf-txt-h4 dcf-bold">{{ (content.n_major_internships_title.0['#context'].value) }}
           </h3>
@@ -219,10 +236,10 @@
 		<div id="learning-experiences" class="dcf-bleed unl-bg-cream">
       <div class="dcf-wrapper dcf-pt-8 dcf-pb-6 dcf-relative dcf-z-1">
         <h2 class="unl-section-headline dcf-mb-1">Outside the Classroom</h2>
-        <div class="dcf-w-max-lg dcf-mb-6">
+        <div class="dcf-max-w-lg dcf-mb-6">
 						{{ (content.n_major_otc_intro) }}
 					</div>
-        <div class="dcf-grid-halves@sm dcf-grid-fourths@xl dcf-col-gap-vw dcf-row-gap-6 dcf-pb-7">
+        <div class="dcf-d-grid dcf-grid-cols-4@xl dcf-grid-cols-2@sm dcf-col-gap-vw dcf-row-gap-6 dcf-pb-7">
           {{ (content.n_major_outside_the_classroom) }}
         </div>
       </div>
@@ -247,8 +264,8 @@
       <div class="dcf-relative dcf-z-1 dcf-wrapper dcf-pb-6">
 
         <div class="dcf-d-flex dcf-flex-col dcf-flex-nowrap dcf-ai-center dcf-gap-6">
-          <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-w-max-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
-            <div class="dcf-col-100% dev-grid-20start-at-sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
+          <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-max-w-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
+            <div class="dcf-col-span-12 dcf-col-span-2@sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                    aria-labelledby="outline-science-lightbulb-school-science-title"
                    class="dcf-fill-current unl-scarlet dcf-w-10 dcf-h-auto">
@@ -261,15 +278,15 @@
                   <path fill="none" d="M0 0H24V24H0z"></path>
                 </g>
               </svg>
-              </div>
-              <div class="dcf-col-100% dev-grid-80end-at-sm">
-                <h3 class="dcf-txt-h5 dcf-lh-3 dcf-mb-2 dcf-txt-center dcf-txt-left-at-sm">Academics &amp; Experiential Learning </h3>
-                {{ (content.n_major_academics_experiential) }}
-              </div>
             </div>
+            <div class="dcf-col-span-12 dcf-col-span-10@sm">
+              <h3 class="dcf-txt-h5 dcf-lh-3 dcf-mb-2 dcf-txt-center dcf-txt-left-at-sm">Academics &amp; Experiential Learning </h3>
+              {{ (content.n_major_academics_experiential) }}
+            </div>
+          </div>
 
-          <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-w-max-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
-            <div class="dcf-col-100% dev-grid-20start-at-sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
+          <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-max-w-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
+            <div class="dcf-col-span-12 dcf-col-span-2@sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                    aria-labelledby="outline-certificate-2-vote-rewards-title" class="dcf-fill-current unl-scarlet dcf-w-10 dcf-h-auto">
                 <title id="outline-certificate-2-vote-rewards-title">certificate-2(vote-rewards)</title>
@@ -289,15 +306,15 @@
                   <path fill="none" d="M0 0H24V24H0z"></path>
                 </g>
               </svg>
-              </div>
-              <div class="dcf-col-100% dev-grid-80end-at-sm">
-                <h3 class="dcf-txt-h5 dcf-lh-3 dcf-mb-2 dcf-txt-center dcf-txt-left-at-sm">Career Preparedness</h3>
+            </div>
+            <div class="dcf-col-span-12 dcf-col-span-10@sm">
+              <h3 class="dcf-txt-h5 dcf-lh-3 dcf-mb-2 dcf-txt-center dcf-txt-left-at-sm">Career Preparedness</h3>
                 {{ (content.n_major_career_prep) }}
-              </div>
+            </div>
             </div>
 
-          <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6 dcf-w-max-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
-            <div class="dcf-col-100% dev-grid-20start-at-sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
+          <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-max-w-xl dcf-p-5 dcf-w-100% dcf-bg-white dcf-rounded unl-box-shadow">
+            <div class="dcf-col-span-12 dcf-col-span-2@sm dcf-d-flex dcf-flex-row dcf-ai-start dcf-jc-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                    aria-labelledby="outline-network-people-business-title" class="dcf-fill-current unl-scarlet dcf-w-10 dcf-h-auto">
                 <title id="outline-network-people-business-title">network-people(business)</title>
@@ -309,7 +326,7 @@
                 </g>
               </svg>
               </div>
-              <div class="dcf-col-100% dev-grid-80end-at-sm">
+              <div class="dcf-col-span-12 dcf-col-span-10@sm">
                 <h3 class="dcf-txt-h5 dcf-lh-3 dcf-mb-2 dcf-txt-center dcf-txt-left-at-sm">Community</h3>
                 {{ (content.n_major_community) }}
               </div>
@@ -327,7 +344,7 @@
 	<div class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-txt-center">
 		<h2 class="dcf-txt-h3 dcf-mb-1 unl-cream">Have Questions? <span class="dcf-txt-nowrap dcf-regular">We're Here to Help</span>
 		</h2>
-        <p class="dcf-w-100% dcf-w-max-md dcf-mb-6 dcf-txt-sm">If you have questions about the {{ label.0['#context'].value}} major or navigating the application process, contact us.</p>
+        <p class="dcf-w-100% dcf-max-w-md dcf-pb-6 dcf-txt-sm">If you have questions about the {{ label.0['#context'].value}} major or navigating the application process, contact us.</p>
       </div>
       <div class="dcf-w-100%">
 		   <div class="dcf-d-flex dcf-flex-row dcf-flex-wrap dcf-jc-center dcf-ai-start dcf-col-gap-8 dcf-row-gap-7">

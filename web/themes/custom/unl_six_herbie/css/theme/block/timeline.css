@@ -131,8 +131,15 @@
 
 /* HORIZONTAL */
 .unlcms-timeline-horizontal {
-  background: linear-gradient(90deg, transparent, var(--dark-gray) 7.49em, var(--dark-gray) calc(100% - 7.49em), transparent) 0 calc(calc(var(--timeline-point-size) / 2) - calc(var(--timeline-line-size) / 2)) / 100% var(--timeline-line-size);
-  scroll-snap-type: x mandatory;
+
+background-size: 100% 4px;
+
+background-image: linear-gradient(90deg, transparent, var(--dark-gray) 7.49em, var(--dark-gray) calc(100% - 7.49em), transparent);
+
+background-position-y: calc(calc(var(--timeline-point-size) / 2) - calc(var(--timeline-line-size) / 2));
+
+scroll-snap-type: x mandatory;
+
 }
 
 .unlcms-timeline-horizontal li {

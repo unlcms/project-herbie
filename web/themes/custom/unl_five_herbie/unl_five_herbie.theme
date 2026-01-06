@@ -512,6 +512,38 @@ function unl_five_herbie_preprocess_layout(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_views_view.
+ */
+function unl_five_herbie_preprocess_views_view(&$variables) {
+  // Add preprocessed total rows to taxonomy_term view (tagged_news_items_block)
+  // since total rows only counts current page, not total tagged items.
+  if ($variables['view']->id() === 'taxonomy_term' && $variables['view']->current_display === 'tagged_news_items_block') {
+   try {
+      // Load a fresh instance of the view.
+      $full_view = Views::getView('taxonomy_term');
+      if (!$full_view) {
+        return;
+      }
+      // Set the display and remove pagination limit.
+      $full_view->setDisplay('tagged_news_items_block');
+      $full_view->setItemsPerPage(0);
+      // Pass any contextual arguments from the original view.
+      if (!empty($variables['view']->args)) {
+        $full_view->setArguments($variables['view']->args);
+      }
+      // Execute the view.
+      $full_view->preExecute();
+      $full_view->execute();
+      // Add results to template variables to be used in Twig.
+      $variables['preprocessed_total_rows'] = $full_view->total_rows ?: count($full_view->result);
+
+    } catch (\Exception $e) {
+      \Drupal::logger('unl_six_herbie_preprocess_views_view')->error('Error processing view: @message', ['@message' => $e->getMessage()]);
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_views_view_fields().
  */
 function unl_five_herbie_preprocess_views_view_fields(&$variables) {
@@ -560,17 +592,12 @@ function unl_five_herbie_preprocess_media(&$variables) {
       if ($field_name == "b_simple_media_media" && $variables['media']->hasField('field_media_image')) {
         $responsive_image_style = $parent_block->__get('b_simple_media_aspect_ratio')->getValue()[0]['value'];
 
-        $variables['elements']['field_media_image']['#view_mode'] = $responsive_image_style;
-        $variables['elements']['#view_mode'] = $responsive_image_style;
-        $image_item = $variables['media']->get('field_media_image')->first();
+        $view_mode = str_replace("_ris", "", $responsive_image_style);
+        $variables['elements']['#view_mode'] = $view_mode;
+        $variables['elements']['field_media_image']['#view_mode'] = $view_mode;
 
-        //Render image field using the responsive image style selected by user.
-        $variables['content']['field_media_image'] = $image_item->view([
-          'type' => 'responsive_image',
-          'settings' => [
-            'responsive_image_style' => $responsive_image_style,
-          ]
-        ]);
+        // Render the image field using the responsive image style and view mode selected by the user.
+        $variables['content']['field_media_image'] = $variables['media']->field_media_image->view($view_mode);
 
         $variables['attributes']['class'] = array_filter($variables['attributes']['class'], function ($class) {
           return strpos($class, 'view-mode') !== 0;
@@ -578,6 +605,47 @@ function unl_five_herbie_preprocess_media(&$variables) {
 
         $variables['attributes']['class'][] = "view-mode--" . $responsive_image_style;
         $variables['attributes']['class'][] = "simple-media-media-entity";
+
+        if($parent_block->__get('b_simple_media_frame_or_shadow')->getValue()[0]['value'] == 'shadow') {
+          $file = $media->field_media_image->entity;
+          if ($file && $file->getMimeType() === 'image/svg+xml') {
+            if (isset($variables['content']['field_media_image'][0]['#markup'])) {
+              $svg_markup = $variables['content']['field_media_image'][0]['#markup'];
+              $svg_markup = $svg_markup->__toString();
+
+              // Load SVG string into DOMDocument
+              $doc = new \DOMDocument();
+              // Suppress warnings for malformed SVG
+              libxml_use_internal_errors(TRUE);
+              $doc->loadHTML($svg_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+              libxml_clear_errors();
+
+              // Get the <svg> element
+              $svg_elements = $doc->getElementsByTagName('svg');
+              if ($svg_elements->length > 0) {
+                $svg_element = $svg_elements->item(0);
+
+                // Add or update class attribute
+                $existing_class = $svg_element->getAttribute('class');
+                if($view_mode == '1x1') {
+                  $new_class = 'dcf-1x1';
+                }
+                elseif($view_mode == '4x3') {
+                  $new_class = 'dcf-4x3';
+                }
+                else {
+                  $new_class = 'dcf-16x9';
+                }
+                $classes = $existing_class ? "$existing_class $new_class" : $new_class;
+                $svg_element->setAttribute('class', trim($classes));
+                $modified_svg = $doc->saveHTML($svg_element);
+
+                // Replace the original #markup with the modified SVG;
+                $variables['content']['field_media_image'][0]['#markup'] = $variables['content']['field_media_image'][0]['#markup']->create($modified_svg);
+              }
+            }
+          }
+        }
       }
     }
   }

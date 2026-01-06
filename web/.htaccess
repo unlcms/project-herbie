@@ -195,6 +195,9 @@ AddEncoding gzip svgz
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
     </FilesMatch>
+
+    # Tell search engines not to crawl sites on the cms-wip.unl.edu domain.
+    Header always set X-Robots-Tag "noindex, nofollow" "expr=%{HTTP_HOST} == 'cms-wip.unl.edu'"
   </IfModule>
 </IfModule>
 

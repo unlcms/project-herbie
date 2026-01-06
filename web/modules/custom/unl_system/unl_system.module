@@ -277,21 +277,30 @@ function _unl_system_node_type_add_form_submit(array $form, FormStateInterface $
 /**
  * Implements hook_preprocess_block().
  */
-function unl_system_preprocess_block(&$vars) {
-  if ($vars['plugin_id'] == 'system_branding_block') {
+function unl_system_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
     $config_factory = \Drupal::service('config.factory');
     $config = $config_factory->get('unl_system.settings');
 
-    $vars['affiliation_name'] = $config->get('affiliation_name');
-    $vars['affiliation_url'] = $config->get('affiliation_url');
+    $variables['affiliation_name'] = $config->get('affiliation_name');
+    $variables['affiliation_url'] = $config->get('affiliation_url');
   }
-}
 
-function unl_system_preprocess_region(&$variables) {
+  // Pass visit_apply_give_nav_data to block--system-menu-block--main.html.twig,
+  // block--menu-block--main.html.twig, and block--group-content-menu.html.twig
+  // to support unl_six.
   $config_factory = \Drupal::service('config.factory');
   $config = $config_factory->get('unl_system.settings');
+  $variables['visit_apply_give_nav_data'] = $config->get('unl_visit_apply_give_nav');
+}
 
-  // Pass visit_apply_give_nav_data to region--header.html.twig
+/**
+ * Implements hook_preprocess_region().
+ */
+function unl_system_preprocess_region(&$variables) {
+  // Pass visit_apply_give_nav_data to region--header.html.twig to support unl_five.
+  $config_factory = \Drupal::service('config.factory');
+  $config = $config_factory->get('unl_system.settings');
   $variables['visit_apply_give_nav_data'] = $config->get('unl_visit_apply_give_nav');
 }
 

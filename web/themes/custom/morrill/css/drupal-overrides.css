@@ -1,1 +1,63 @@
+/**
+ * The theme was built with 5.3 and its version of DCF as the base.
+ * It has been upgraded to use 6.0 (unl_six) as the base without
+ * an upgrade to css/dcf/main.css.  These styles are added on to make 6.0 things work.
+ */
 
+.unl .dcf-nav {
+  width: 69vw;
+  max-width: 1282px;
+  display: inline-flex;
+  padding: 0;
+}
+
+
+.unl .dcf-nav-local > ul > li > a, .unl .dcf-nav-local > ul > li > button {
+  padding-block: unset !important;
+  font-size: unset !important;
+}
+
+
+@layer components {
+  @media only screen and (min-width: 56.12em) {
+    .unl .dcf-nav ul:first-child > li > a, .unl .dcf-nav ul:first-child > li > button {
+      font-size: 1rem !important;
+    }
+    .unl .dcf-nav ul a, .unl .dcf-nav ul button {
+      padding-inline: unset !important;
+    }
+    .unl .dcf-nav-menu ul > li > ul > li > a, .unl .dcf-nav-menu ul > li > ul > li > button {
+      font-size: unset !important;
+    }
+
+    .unl .dcf-nav-dialog {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+    .unl .dcf-nav-menu {
+      height: 10vh;
+    }
+    .unl .dcf-nav-menu-content {
+      overflow-y: auto;
+      position: fixed;
+    }
+    .unl .dcf-nav-menu-content-child {
+      display: grid;
+      grid-template-columns: 3.27em 1fr;
+      grid-template-rows: auto 1fr;
+      overflow-y: auto;
+      padding: unset;
+    }
+
+    .theme .dcf-nav-local {
+      position: unset;
+      grid-area: unset !important;
+    }
+    .unl .dcf-header-global {
+      padding-top: 0 !important;
+      border-bottom: none !important;
+      height: unset !important;
+    }
+  }
+}

@@ -1,10 +1,11 @@
 name: Morrill
 type: theme
-base theme: unl_five_herbie
+base theme: unl_six_herbie
 description: 'Subtheme for UNLedu 5.3 Project Herbie. Custom theme for the State Museum.'
 core_version_requirement: ^10 || ^11
 
 libraries:
+  - morrill/global
   - morrill/global-styling
 
 libraries-override:

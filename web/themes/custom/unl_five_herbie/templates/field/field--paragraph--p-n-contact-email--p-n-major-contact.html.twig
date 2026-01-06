@@ -1,0 +1,13 @@
+{% set current_path = url('<current>')['#markup'] %}
+
+  {% for item in items %}
+    {% if '/option/' in current_path %}
+      <a href="mailto:{{ item.content }}">
+        {{ item.content }}
+      </a>
+    {% else %}
+      <a class='unl-cream' href="mailto:{{ item.content }}">
+        {{ item.content }}
+      </a>
+    {% endif %}
+  {% endfor %}

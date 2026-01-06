@@ -38,8 +38,10 @@ settings:
         - heading2
         - heading3
     ckeditor5_list:
-      reversed: false
-      startIndex: true
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
     ckeditor5_style:
       styles:
         -

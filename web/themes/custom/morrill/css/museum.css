@@ -1,23 +1,23 @@
 
-    :root {
-      font-size: 1em;
-    }
-    .dcf-header, #main-museum-nav {
-      z-index: 998;
-      background-color: transparent;
-    }
-    .unl-sm-logo {
-      width: 345px !important;
-      height: auto;
-      position: absolute;
-      top: 0;
-      z-index: 998;
-    }
-    .museum, .morrill .museum {
-      color:#fff ;
-      text-decoration: none;
-      position: relative;
-    }
+:root {
+  font-size: 1em;
+}
+.dcf-header, #main-museum-nav {
+  z-index: 998;
+  background-color: transparent;
+}
+.unl-sm-logo {
+  width: 345px !important;
+  height: auto;
+  position: absolute;
+  top: 0;
+  z-index: 998;
+}
+.museum, .group-2 .museum {
+  color:#fff ;
+  text-decoration: none;
+  position: relative;
+}
 
 .background-morrill {
   background-color: #700949;
@@ -54,9 +54,9 @@ a.morrill-card:hover::after {
   opacity: 1;
 }
 a.morrill-card .museum {
-      text-decoration: none;
-      position: relative;
-    }
+  text-decoration: none;
+  position: relative;
+}
 a.morrill-card .museum::after {
   content: "";
   position: absolute; /* Position relative to the parent */
@@ -70,7 +70,7 @@ a.morrill-card .museum::after {
 /* Animate the underline on hover */
 a.morrill-card .museum:hover::after {
   width: 100%; /* Expand to full width on hover */
-} 
+}
 
 .background-ashfall {
   background-color: #99031e;
@@ -104,9 +104,9 @@ a.ashfall-card:hover::after {
   opacity: 1;
 }
 a.ashfall-card .museum {
-      text-decoration: none;
-      position: relative;
-    }
+  text-decoration: none;
+  position: relative;
+}
 a.ashfall-card .museum::after {
   content: "";
   position: absolute; /* Position relative to the parent */
@@ -120,7 +120,7 @@ a.ashfall-card .museum::after {
 /* Animate the underline on hover */
 a.ashfall-card .museum:hover::after {
   width: 100%; /* Expand to full width on hover */
-} 
+}
 
 .background-trailside {
   background-color: #09406c;
@@ -155,9 +155,9 @@ a.trailside-card:hover::after {
 }
 
 a.trailside-card .museum {
-      text-decoration: none;
-      position: relative;
-    }
+  text-decoration: none;
+  position: relative;
+}
 a.trailside-card .museum::after {
   content: "";
   position: absolute; /* Position relative to the parent */
@@ -171,27 +171,27 @@ a.trailside-card .museum::after {
 /* Animate the underline on hover */
 a.trailside-card .museum:hover::after {
   width: 100%; /* Expand to full width on hover */
-} 
-.Our-Family-Museums-nav {
- 
 }
-.Our-Family-Museums-nav a.morrill-color {
+.Our-Family-Museums-nav {
+
+}
+.Our-Family-Museums-nav a.group-2-color {
   color:#700949;
   text-decoration: none;
   position: relative;
 }
-.Our-Family-Museums-nav a.ashfall-color {
+.Our-Family-Museums-nav a.group-12-color {
   color:#99031e;
   text-decoration: none;
   position: relative;
 }
-.Our-Family-Museums-nav a.trailside-color {
+.Our-Family-Museums-nav a.group-7-color {
   color:#09406c;
   text-decoration: none;
   position: relative;
 }
 
-.Our-Family-Museums-nav a.morrill-color::after {
+.Our-Family-Museums-nav a.group-2-color::after {
   content: "";
   position: absolute; /* Position relative to the parent */
   width: 0; /* Initially invisible */
@@ -202,10 +202,10 @@ a.trailside-card .museum:hover::after {
   transition: width 0.3s ease; /* Smooth animation */
 }
 /* Animate the underline on hover */
-.Our-Family-Museums-nav a.morrill-color:hover::after {
+.Our-Family-Museums-nav a.group-2-color:hover::after {
   width: 100%; /* Expand to full width on hover */
 }
-.Our-Family-Museums-nav a.ashfall-color::after {
+.Our-Family-Museums-nav a.group-12-color::after {
   content: "";
   position: absolute; /* Position relative to the parent */
   width: 0; /* Initially invisible */
@@ -217,10 +217,10 @@ a.trailside-card .museum:hover::after {
 }
 
 /* Animate the underline on hover */
-.Our-Family-Museums-nav a.ashfall-color:hover::after {
+.Our-Family-Museums-nav a.group-12-color:hover::after {
   width: 100%; /* Expand to full width on hover */
 }
-.Our-Family-Museums-nav a.trailside-color::after {
+.Our-Family-Museums-nav a.group-7-color::after {
   content: "";
   position: absolute; /* Position relative to the parent */
   width: 0; /* Initially invisible */
@@ -232,14 +232,15 @@ a.trailside-card .museum:hover::after {
 }
 
 /* Animate the underline on hover */
-.Our-Family-Museums-nav a.trailside-color:hover::after {
+.Our-Family-Museums-nav a.group-7-color:hover::after {
   width: 100%; /* Expand to full width on hover test */
 }
- 
+
 .top-nav-left {
   z-index: 998;
 }
-/* .top-level .top-nav-right::before {
+/* */
+.top-level .top-nav-right::before {
   content: "";
   background-image: url("images/state-museum-logo4.png");
   z-index: 999;
@@ -252,22 +253,25 @@ a.trailside-card .museum:hover::after {
   top:0;
   right: 69%;
   background-size: contain;
-} */
-/* .morrill .top-nav-right::before {
-  content: "";
-  background-image: url("images/state-museum-logo5.png");
-  z-index: 999;
-  height: 164px;
-  width: 27%;
-  max-width:337px;
-  display: block;
-  background-repeat: no-repeat;
-  position: absolute;
-  top:0;
-  right: 69%;
-  background-size: contain;
-} */
-/* .trailside .top-nav-right::before {
+}
+/* */
+/* */.group-2 .top-nav-right::before {
+       content: "";
+       background-image: url("images/state-museum-logo5.png");
+       z-index: 999;
+       height: 164px;
+       width: 27%;
+       max-width:337px;
+       display: block;
+       background-repeat: no-repeat;
+       position: absolute;
+       top:0;
+       right: 69%;
+       background-size: contain;
+     }
+/* */
+/* */
+.group-12 .top-nav-right::before {
   content: "";
   background-image: url("images/state-museum-logo3.png");
   z-index: 999;
@@ -281,7 +285,7 @@ a.trailside-card .museum:hover::after {
   right: 69%;
   background-size: contain;
 }
-.ashfall .top-nav-right::before {
+.group-12 .top-nav-right::before {
   content: "";
   background-image: url("images/state-museum-logo6.png");
   z-index: 999;
@@ -294,16 +298,18 @@ a.trailside-card .museum:hover::after {
   top:0;
   right: 69%;
   background-size: contain;
-} */
+}
+
+/*  */
 .nav-block-logo {
-    position: absolute;
-    right: calc(69vw);
-    top: 0;
-    width: auto;
-    max-width: 337px;
-    height: auto;
-    max-height: 164px;
-    z-index: 999;
+  position: absolute;
+  right: calc(69vw);
+  top: 0;
+  width: auto;
+  max-width: 337px;
+  height: auto;
+  max-height: 164px;
+  z-index: 999;
 }
 .nav-top-row {
   background-color:#e5e5e5 ;
@@ -333,21 +339,21 @@ a.trailside-card .museum:hover::after {
   justify-content: flex-end;
   width: inherit;
 }
-.morrill .nav-bot-row {
+.group-2 .nav-bot-row {
   background-color:#700949 ;
   display: inline-flex;
   align-items: flex-end;
   justify-content: flex-end;
   width: inherit;
 }
-.trailside .nav-bot-row {
+.group-7 .nav-bot-row {
   background-color:#08406b ;
   display: inline-flex;
   align-items: flex-end;
   justify-content: flex-end;
   width: inherit;
 }
-.ashfall .nav-bot-row {
+.group-12 .nav-bot-row {
   background-color:#9a031e ;
   display: inline-flex;
   align-items: flex-end;
@@ -364,15 +370,15 @@ a.trailside-card .museum:hover::after {
   border-bottom: 1px solid transparent;
   transition: 0.3s;
 }
-.nav-mid-row .middle-nav li a:hover {   
+.nav-mid-row .middle-nav li a:hover {
   text-decoration: underline;
 }
 .nav-bot-row .bottom-nav li a:hover {
-  text-decoration: underline;  
+  text-decoration: underline;
 }
 a .UNL-logo {
   transition: 0.3s;
- }
+}
 a .UNL-logo:hover {
   text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.95);
 }
@@ -450,135 +456,135 @@ p, ul {
   font-style: normal;
 }
 .visuallyHidden {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px; width: 1px;
-    margin: -1px; padding: 0; border: 0;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
 }
 .hamburger {
-    margin: 0 auto;
-    width: 30px;
-    height: 20px;
-    position: relative;
-    line-height: 1px;
+  margin: 0 auto;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  line-height: 1px;
 }
 .hamburger .bar {
-    padding: 0;
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-    display: block;
-    border-radius: 1px;
-    transition: all 0.4s ease-in-out;
-    position: absolute;
+  padding: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  border-radius: 1px;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
 }
 .bar1 {
-    top: 5px;
+  top: 5px;
 }
 .bar2,
 .bar3 {
-    top: 12px;
+  top: 12px;
 }
 .bar3 {
-    right: 0;
+  right: 0;
 }
 .bar4 {
-    bottom: 0px;
+  bottom: 0px;
 }
 /* HAMBURGER 1 */
 .checkbox1:checked + label > .hamburger1 > .bar1 {
-    transform: rotate(45deg);
-    transform-origin: 20%;
-    width: 30px;
-    height: 2px;
-    line-height: 1;
+  transform: rotate(45deg);
+  transform-origin: 20%;
+  width: 30px;
+  height: 2px;
+  line-height: 1;
 }
 .checkbox1:checked + label > .hamburger1 > .bar2 {
-    transform: translateX(-30px);
-    background-color: transparent;
+  transform: translateX(-30px);
+  background-color: transparent;
 }
 .checkbox1:checked + label > .hamburger1 > .bar3 {
-    transform: translateX(30px);
-    background-color: transparent;
+  transform: translateX(30px);
+  background-color: transparent;
 }
 .checkbox1:checked + label > .hamburger1 > .bar4 {
-    transform-origin: 20%;
-    transform: rotate(-45deg);
-    width: 30px;
+  transform-origin: 20%;
+  transform: rotate(-45deg);
+  width: 30px;
 }
 @supports (display:grid) {
+  .unl-grid-cols {
+    grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
+  }
+}
+@supports (display:grid) {
+  @media only screen and (min-width: 42.09em) {
     .unl-grid-cols {
-        grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
+      grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 3.160493824vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
     }
+  }
 }
 @supports (display:grid) {
-    @media only screen and (min-width: 42.09em) {
-        .unl-grid-cols {
-            grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 1fr 1fr 3.160493824vw 3.160493824rem 1rem 1fr 1fr 5.6186556843vw;
-        }
+  @media only screen and (min-width: 74.83em) {
+    .unl-grid-cols {
+      grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 2fr 1fr 3.160493824rem 1rem 3.160493824vw 3.160493824rem 1rem 1fr 2fr 3.160493824rem 1rem 5.6186556843vw;
     }
-}
-@supports (display:grid) {
-    @media only screen and (min-width: 74.83em) {
-        .unl-grid-cols {
-            grid-template-columns: 5.6186556843vw 3.160493824rem 1rem 2fr 1fr 3.160493824rem 1rem 3.160493824vw 3.160493824rem 1rem 1fr 2fr 3.160493824rem 1rem 5.6186556843vw;
-        }
-    }
+  }
 }
 .unlcms-display-banner {
   z-index: 1;
   position: relative;
 }
 @media (min-width: 42.09em) {
-    .unlcms-display-banner {
-        grid-template-rows: 1fr auto auto .78rem;
-        height: 63vh;
-        max-height: 31.57em;
-    }
+  .unlcms-display-banner {
+    grid-template-rows: 1fr auto auto .78rem;
+    height: 63vh;
+    max-height: 31.57em;
+  }
 }
 @media (max-width: 42.09em) {
-    .unlcms-display-banner {
-        grid-template-rows: auto auto auto;
-        padding-bottom: 2.37em;
-    }
+  .unlcms-display-banner {
+    grid-template-rows: auto auto auto;
+    padding-bottom: 2.37em;
+  }
 }
 @media (min-width: 42.09em) {
-    .unlcms-display-banner-text-c {
-        align-items: center;
-        display: flex
-;
-        flex-direction: column;
-        grid-area: 2 / 2 / 3 / -2;
-        text-align: center;
-    }
+  .unlcms-display-banner-text-c {
+    align-items: center;
+    display: flex
+  ;
+    flex-direction: column;
+    grid-area: 2 / 2 / 3 / -2;
+    text-align: center;
+  }
 }
 @media (max-width: 42.09em) {
-    .unlcms-display-banner-text {
-        grid-area: 2 / 2 / 3 / -2;
-        padding-top: 1em;
-    }
+  .unlcms-display-banner-text {
+    grid-area: 2 / 2 / 3 / -2;
+    padding-top: 1em;
+  }
 }
 @media (min-width: 42.09em) {
-    .unlcms-display-banner-img {
-        grid-area: 1 / 1 / -1 / -1;
-    }
+  .unlcms-display-banner-img {
+    grid-area: 1 / 1 / -1 / -1;
+  }
 }
 @media (max-width: 42.09em) {
-    .unlcms-display-banner-img {
-        grid-area: 1 / 1 / 2 / -1;
-    }
+  .unlcms-display-banner-img {
+    grid-area: 1 / 1 / 2 / -1;
+  }
 }
 .media-entity {
-    display: grid;
+  display: grid;
 }
 .dropshadow {
   -webkit-box-shadow: 0px 4px 2px -2px rgba(75, 75, 75, 0.25);
   box-shadow: 0px 4px 2px -2px rgba(75, 75, 75, 0.25);
 }
 .nav-wrapper {
-    width: 69vw;
-    max-width: 1282px;
+  width: 69vw;
+  max-width: 1282px;
 }
 .museum-bg {
   background-image: url("/images/bg-wavy-01.jpg");
@@ -623,10 +629,10 @@ p, ul {
 .research-overlay {
   background-color: rgba(0, 0, 0, .45);
   transition-behavior: normal;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    transition-delay: 0s;
-    transition-property: background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  transition-property: background-color;
 }
 .hero-overlay {
   background-color: rgba(0, 0, 0, .45);
@@ -656,14 +662,14 @@ a .research-overlay h4:hover::after {
 }
 /* //////Menu banner/flag shape END////// */
 
-.dcf-btn .dcf-btn-secondary:hover {
+/* .dcf-btn .dcf-btn-secondary:hover {
   background-color: #3d3a3a;
   color:#fff;
-} 
+}
 .theme .dcf-btn-secondary:not(:disabled):hover, .theme .dcf-btn-secondary:not(:disabled):active, .theme .dcf-btn-tertiary:not(:disabled):hover, .theme .dcf-btn-tertiary:not(:disabled):active {
     background-color: var(--bg-btn-secondary-tertiary-hover);
     color: #fff;
-}
+} */
 .edu-block {
   background-color: transparent;
 }
@@ -718,14 +724,14 @@ a .research-overlay h4:hover::after {
     width: 100%;
   }
   .mus-flex {
-  flex-direction: column;
-}
-.mag-bleed {
-  height:48vw;
-  max-height:750px;
-  min-height:350px;
-  width: 100%;
-}
+    flex-direction: column;
+  }
+  .mag-bleed {
+    height:48vw;
+    max-height:750px;
+    min-height:350px;
+    width: 100%;
+  }
 }
 .event-date {
   background-color:  #454545;
@@ -747,7 +753,7 @@ a .research-overlay h4:hover::after {
   background-color: #454545;
 }
 @media screen {
-  
+
 }
 .icon-membership::before {
   content: '';
@@ -759,7 +765,7 @@ a .research-overlay h4:hover::after {
   height: 100%;
   box-shadow: 0px 0px 0px 0px #99031e;
   opacity: 0;
-  transition: 0.3s ease-in-out; 
+  transition: 0.3s ease-in-out;
 
 }
 .icon-donate {
@@ -775,182 +781,182 @@ a .research-overlay h4:hover::after {
 
 
 /* Media Carousel */
-      .lincoln-slide {
-        display: grid;
-        grid-template-rows: 1fr auto;
-        position: relative;
-        right: -5.62vw;
-        left: 0;   
-        max-width: calc(100% + 5.62vw);
-        width: calc(100% + 5.62vw);
-      }
-      .lincoln-slide[data-start="right"] {
-        right: 0;
-        left: -5.62vw;
-      }
+.lincoln-slide {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+  right: -5.62vw;
+  left: 0;
+  max-width: calc(100% + 5.62vw);
+  width: calc(100% + 5.62vw);
+}
+.lincoln-slide[data-start="right"] {
+  right: 0;
+  left: -5.62vw;
+}
 
 /* Media Carousel Slide List */
 
-   .lincoln-slide ul {
-    position: relative;
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;                    /* This is the column gap between slides */
-    max-width: 100%;
-    overflow-x: scroll;           /* This is for when JS fails */
-    overflow-y: hidden;
-    height: auto;                /* This is the height of the slides */
-    padding: 0;
-    overflow-x: hidden;
-    }
-      
-      
-      .lincoln-slide[data-start="right"] ul {
-        flex-direction: row-reverse;
-      }
-      .lincoln-slide li {
-        flex: 0 0 auto;
-        height: 100%;
-        min-width: 300px;   /* This is the min width of the slides */
-        max-width: 100%;    /* This is the max width of the slides, this should probably stay at 100% for mobile use */
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      .lincoln-slide li.lincoln-half-height {
-          width: 29%;
-       }
+.lincoln-slide ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;                    /* This is the column gap between slides */
+  max-width: 100%;
+  overflow-x: scroll;           /* This is for when JS fails */
+  overflow-y: hidden;
+  height: auto;                /* This is the height of the slides */
+  padding: 0;
+  overflow-x: hidden;
+}
 
-      /* This is to section the slides internals vertically */
-      .lincoln-slide .lincoln-full-height>*{
-        width: auto;
-        height: 100%;
-      }
-    
-      .lincoln-slide li.lincoln-full-height>*{
-        min-width: 250px;
 
-      }
-      
-      .lincoln-slide .lincoln-half-height>*{
-        width: auto;
-        height: calc(50% - 0.5rem);       /* This has 0.5rem because it is half the row gap */
-        margin-bottom: 1rem;              /* This is the row gap inside the slide */
-      }
+.lincoln-slide[data-start="right"] ul {
+  flex-direction: row-reverse;
+}
+.lincoln-slide li {
+  flex: 0 0 auto;
+  height: 100%;
+  min-width: 300px;   /* This is the min width of the slides */
+  max-width: 100%;    /* This is the max width of the slides, this should probably stay at 100% for mobile use */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.lincoln-slide li.lincoln-half-height {
+  width: 29%;
+}
 
-       /* Media Carousel Controls */
-      .lincoln-slide-controls {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: 1rem;                 /* This is the column gap between the buttons and the progress bar */
-        position: relative;
-        max-width: calc(100% - 5.62vw);
-      }
-      .lincoln-slide[data-start="right"] .lincoln-slide-controls {
-       left: 5.62vw;
-       }
-       .lincoln-slide[data-start="left"] .lincoln-slide-controls {
-       left: 5.62vw;
-       }
-      /* The control buttons */
-      .lincoln-slide-controls button {
-        padding: 0;
-        font-size: 0;
-        line-height: 0;
-        width: 2.5rem;
-        height: 2.5rem;
-        cursor: pointer;
-        border-radius: 50%;
-        background-color: transparent !important;
-        box-shadow: none;
-        z-index: 2;
-        text-align: center;
-        transition: opacity 0.2s linear;
-        border-style: solid;
-        border-width: 2px;                /* The button border width */
-        touch-action: manipulation;
-      }
-       .lincoln-slide-controls button:disabled {
-        opacity: 0.35;
-      }
-     @media (hover: hover) and (pointer: fine) {
-        .lincoln-slide-controls button:hover {
-          opacity: 0.5;
-        }
-      }
-      .lincoln-progress-container {
-        display: grid;
-        align-items: center;
-      }
+/* This is to section the slides internals vertically */
+.lincoln-slide .lincoln-full-height>*{
+  width: auto;
+  height: 100%;
+}
 
-      /* The progress bar */
-      .lincoln-progress-base {
-        grid-row: 1;
-        grid-column: 1;
-        height: 4px;       /* The vertical size of the bar base */
-        width: calc(100% - 3em);
-      }
-      .lincoln-progress-progression{
-        grid-row: 1;
-        grid-column: 1;
-        height: 10px;       /* The vertical size of the bar */
-        width: 0%;
-      }
-      .lincoln-slide[data-start="right"] .lincoln-progress-progression {
-        justify-self: end;
-      }
+.lincoln-slide li.lincoln-full-height>*{
+  min-width: 250px;
 
-      /* The styles for the color of the controls */
-      .lincoln-slide-controls-scarlet .lincoln-progress-progression,
-      .lincoln-slide-controls-scarlet .lincoln-progress-base,
-      .lincoln-slide-controls-scarlet .lincoln-slide-controls button
-      {
-        background-color: var(--bg-overlay-dark);
-        color: var(--bg-overlay-dark);
-        border-color: var(--bg-overlay-dark);
-      }
-      .lincoln-slide-controls-cream .lincoln-progress-progression,
-      .lincoln-slide-controls-cream .lincoln-progress-base,
-      .lincoln-slide-controls-cream .lincoln-slide-controls button
-      {
-        background-color: var(--bg-overlay-dark);
-        color: var(--bg-overlay-dark);
-        border-color: var(--bg-overlay-dark);
-      }
-    .mobile-hide {
-            display: grid;
-    }
-    .mobile-show {
-        display: none;
-    }
-@media (max-width:736px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
-   .mobile-hide {
-        display: none!important;
-    }
-    .mobile-show {
-        display: inherit;
-    }
+}
+
+.lincoln-slide .lincoln-half-height>*{
+  width: auto;
+  height: calc(50% - 0.5rem);       /* This has 0.5rem because it is half the row gap */
+  margin-bottom: 1rem;              /* This is the row gap inside the slide */
+}
+
+/* Media Carousel Controls */
+.lincoln-slide-controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;                 /* This is the column gap between the buttons and the progress bar */
+  position: relative;
+  max-width: calc(100% - 5.62vw);
+}
+.lincoln-slide[data-start="right"] .lincoln-slide-controls {
+  left: 5.62vw;
+}
+.lincoln-slide[data-start="left"] .lincoln-slide-controls {
+  left: 5.62vw;
+}
+/* The control buttons */
+.lincoln-slide-controls button {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: transparent !important;
+  box-shadow: none;
+  z-index: 2;
+  text-align: center;
+  transition: opacity 0.2s linear;
+  border-style: solid;
+  border-width: 2px;                /* The button border width */
+  touch-action: manipulation;
+}
+.lincoln-slide-controls button:disabled {
+  opacity: 0.35;
+}
+@media (hover: hover) and (pointer: fine) {
+  .lincoln-slide-controls button:hover {
+    opacity: 0.5;
+  }
+}
+.lincoln-progress-container {
+  display: grid;
+  align-items: center;
+}
+
+/* The progress bar */
+.lincoln-progress-base {
+  grid-row: 1;
+  grid-column: 1;
+  height: 4px;       /* The vertical size of the bar base */
+  width: calc(100% - 3em);
+}
+.lincoln-progress-progression{
+  grid-row: 1;
+  grid-column: 1;
+  height: 10px;       /* The vertical size of the bar */
+  width: 0%;
+}
+.lincoln-slide[data-start="right"] .lincoln-progress-progression {
+  justify-self: end;
+}
+
+/* The styles for the color of the controls */
+.lincoln-slide-controls-scarlet .lincoln-progress-progression,
+.lincoln-slide-controls-scarlet .lincoln-progress-base,
+.lincoln-slide-controls-scarlet .lincoln-slide-controls button
+{
+  background-color: var(--bg-overlay-dark);
+  color: var(--bg-overlay-dark);
+  border-color: var(--bg-overlay-dark);
+}
+.lincoln-slide-controls-cream .lincoln-progress-progression,
+.lincoln-slide-controls-cream .lincoln-progress-base,
+.lincoln-slide-controls-cream .lincoln-slide-controls button
+{
+  background-color: var(--bg-overlay-dark);
+  color: var(--bg-overlay-dark);
+  border-color: var(--bg-overlay-dark);
+}
+.mobile-hide {
+  display: grid;
+}
+.mobile-show {
+  display: none;
+}
+@media (max-width:736px)  { /* smartphones, iPhone, portrait 480x320 phones */
+  .mobile-hide {
+    display: none!important;
+  }
+  .mobile-show {
+    display: inherit;
+  }
 }
 @media only screen and (max-width: 897px) and (orientation: landscape) {
-   .mobile-hide {
-        display: none!important;
-    }
-    .mobile-show {
-        display: inherit;
-    }
+  .mobile-hide {
+    display: none!important;
+  }
+  .mobile-show {
+    display: inherit;
+  }
 }
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
-   figure.dcf-relative .dcf-btn {
-        display: none!important;
-    }
-    }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  figure.dcf-relative .dcf-btn {
+    display: none!important;
+  }
+}
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
-.morrill-planetarium {
+.group-2-planetarium {
   background-image: url("/images/planetarium_bg_01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -960,38 +966,38 @@ a .research-overlay h4:hover::after {
   color:#99031e;
 }
 .research-btn {
-    display: block;
-    background-color: rgba(0, 0, 0, .65);
-    transition-behavior: normal;
-      transition-duration: 0.4s;
-      transition-timing-function: ease-out;
-      transition-delay: 0s;
-      transition-property: background-color;
-  }
+  display: block;
+  background-color: rgba(0, 0, 0, .65);
+  transition-behavior: normal;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  transition-property: background-color;
+}
 
 .research-btn:hover {
-    background-color: rgba(0, 0, 0, 1)
+  background-color: rgba(0, 0, 0, 1)
+}
+@media only screen and (min-width: 56.12em) {
+  .dcf-header-global-child {
+    margin-left:0;
   }
-@media only screen and (min-width: 56.12em) {
-    .dcf-header-global-child {
-        margin-left:0;
-    }
 }
 @media only screen and (min-width: 56.12em) {
-    .dcf-nav-menu {
-        display: inherit;
-        /* flex-wrap: nowrap; */
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .dcf-nav-menu {
+    display: inherit;
+    /* flex-wrap: nowrap; */
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
-.morrill .nav-bot-row .dcf-nav-menu {
+.group-2 .nav-bot-row .dcf-nav-menu {
   background-color:#700949 ;
 }
-.ashfall .nav-bot-row .dcf-nav-menu {
+.group-12 .nav-bot-row .dcf-nav-menu {
   background-color:#9a031e ;
 }
-.trailside .nav-bot-row .dcf-nav-menu {
+.group-7 .nav-bot-row .dcf-nav-menu {
   background-color:#08406b ;
 }
 
@@ -1000,13 +1006,13 @@ a .research-overlay h4:hover::after {
   display: inherit;
   padding: 0;
 }
-.morrill .dcf-nav-menu-child .dcf-nav-local ul {
+.group-2 .dcf-nav-menu-child .dcf-nav-local ul {
   background-color:#700949 ;
 }
-.ashfall .dcf-nav-menu-child .dcf-nav-local ul {
+.group-12 .dcf-nav-menu-child .dcf-nav-local ul {
   background-color:#9a031e ;
 }
-.trailside .dcf-nav-menu-child .dcf-nav-local ul {
+.group-7 .dcf-nav-menu-child .dcf-nav-local ul {
   background-color:#08406b ;
 }
 .dcf-nav-local ul ul {
@@ -1022,15 +1028,15 @@ a .research-overlay h4:hover::after {
 .theme .dcf-nav-toggle-btn {
   flex-basis: inherit;
 }
-.theme.morrill .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+.theme.group-2 .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
   background-color:#700949 ;
 }
-.theme.trailside .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+.theme.group-7 .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
   background-color:#08406b ;
 }
-.theme.ashfall .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
+.theme.group-12 .dcf-nav-toggle-btn-menu ~ .dcf-nav-local {
   background-color:#9a031e ;
-}  
+}
 .dcf-nav-local>ul:first-child {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1064,7 +1070,7 @@ a .research-overlay h4:hover::after {
     grid-template-columns: repeat(5, 1fr);
     overflow: hidden;
     width: 100%;
-}
+  }
   .theme .dcf-nav-local>ul>li {
     position: relative;
     width: 100%;
@@ -1081,19 +1087,19 @@ a .research-overlay h4:hover::after {
     width: 200vw;
     z-index: -1;
   }
-  .morrill .dcf-nav-local ul ul:before {
-      background-color: #700949;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      width: 200vw;
-      z-index: -1;
+  .group-2 .dcf-nav-local ul ul:before {
+    background-color: #700949;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 200vw;
+    z-index: -1;
   }
-  .ashfall .dcf-nav-local ul ul:before {
+  .group-12 .dcf-nav-local ul ul:before {
     background-color: #9a031e;
     content: "";
     height: 100%;
@@ -1105,7 +1111,7 @@ a .research-overlay h4:hover::after {
     width: 200vw;
     z-index: -1;
   }
-  .trailside .dcf-nav-local ul ul:before {
+  .group-7 .dcf-nav-local ul ul:before {
     background-color: #08406b;
     content: "";
     height: 100%;
@@ -1117,7 +1123,7 @@ a .research-overlay h4:hover::after {
     width: 200vw;
     z-index: -1;
   }
-.umbrella .nav-top-row-mobile, .morrill .nav-bot-row-mobile, .ashfall .nav-bot-row-mobile, .trailside .nav-bot-row-mobile, .museum-mobile-menu {
+  .group-20 .nav-top-row-mobile, .group-2 .nav-bot-row-mobile, .group-12 .nav-bot-row-mobile, .group-7 .nav-bot-row-mobile, .museum-mobile-menu {
     display: none;
   }
 }
@@ -1125,9 +1131,9 @@ a .research-overlay h4:hover::after {
 @media only screen and (max-width: 56.12em) {
   .dcf-nav-menu a, .dcf-nav-menu button {
     margin-left: 0;
-}
+  }
 
-  .top-level .nav-bot-row, .morrill .nav-bot-row {
+  .top-level .nav-bot-row, .group-2 .nav-bot-row {
     justify-content: flex-start;
     width: 100%;
     /* opacity: 1;
@@ -1136,8 +1142,8 @@ a .research-overlay h4:hover::after {
   .nav-wrapper {
     width: 100vw;
     max-width: 1282px;
-}
-.mobile-logo-hide, .nav-block-logo, .nav-bot-row, .museum-button-catch, .Button-menu-holder, .top-level .top-nav-right::before, .morrill .top-nav-right::before, .ashfall .top-nav-right::before, .trailside .top-nav-right::before, .top-level .nav-top-row, .top-level .nav-mid-row  {
+  }
+  .mobile-logo-hide, .nav-block-logo, .nav-bot-row, .museum-button-catch, .Button-menu-holder, .top-level .top-nav-right::before, .group-2 .top-nav-right::before, .group-12 .top-nav-right::before, .group-7 .top-nav-right::before, .top-level .nav-top-row, .top-level .nav-mid-row  {
     opacity: 0;
     visibility: hidden;
     display: none!important;
@@ -1146,40 +1152,40 @@ a .research-overlay h4:hover::after {
     flex-basis: 25%;
   }
 
-  .umbrella .nav-top-row-mobile, .morrill .nav-top-row-mobile, .ashfall .nav-top-row-mobile, .trailside .nav-top-row-mobile {
-  background-color: #e5e5e5;
-  box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.333);
-  z-index: 998;
-  display: flex;
-  justify-content: center;
-  position: relative;
+  .group-20 .nav-top-row-mobile, .group-2 .nav-top-row-mobile, .group-12 .nav-top-row-mobile, .group-7 .nav-top-row-mobile {
+    background-color: #e5e5e5;
+    box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.333);
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    position: relative;
   }
-.umbrella .nav-bot-row-mobile {
+  .group-20 .nav-bot-row-mobile {
     background-color: #d00000;
-      display: flex;
-      justify-content: center;
-      overflow: visible;
-      height: 134px;
-      position: relative;
-    }
-.morrill .nav-bot-row-mobile {
-  background-color: #700949;
     display: flex;
     justify-content: center;
     overflow: visible;
     height: 134px;
     position: relative;
   }
-.trailside .nav-bot-row-mobile {
-  background-color: #08406B;
+  .group-2 .nav-bot-row-mobile {
+    background-color: #700949;
     display: flex;
     justify-content: center;
     overflow: visible;
     height: 134px;
     position: relative;
   }
-  .ashfall .nav-bot-row-mobile {
-  background-color: #9A041E;
+  .group-7 .nav-bot-row-mobile {
+    background-color: #08406B;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    height: 134px;
+    position: relative;
+  }
+  .group-12 .nav-bot-row-mobile {
+    background-color: #9A041E;
     display: flex;
     justify-content: center;
     overflow: visible;
@@ -1195,8 +1201,8 @@ a .research-overlay h4:hover::after {
     visibility: hidden;
     width: 100%;
     z-index: 998;
-}
-  .morrill .dcf-nav-menu-child {
+  }
+  .group-2 .dcf-nav-menu-child {
     -webkit-overflow-scrolling: touch;
     background-color: var(--bg-brand-alpha);
     bottom: 4.2139917643em;
@@ -1206,6 +1212,6 @@ a .research-overlay h4:hover::after {
     padding-right: 5.6186556843vw;
     position: fixed;
     padding-top: 1em;;
-}
+  }
 }
 

@@ -2,7 +2,7 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^9.4 || ^10'
-version: 1.5.1
+version: 1.6.0
 package: Herbie
 dependencies:
   - 'cas:cas'
@@ -20,3 +20,4 @@ dependencies:
   - 'replicate_ui:replicate_ui'
   - 'scheduler:scheduler'
   - 'theme_per_user:theme_per_user'
+  - 'twig_ui:twig_ui'

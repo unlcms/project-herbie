@@ -4,6 +4,7 @@ dependencies:
   config:
     - block_content.type.node_include
     - field.storage.block_content.b_nodeinclude_node
+    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.major
@@ -28,6 +29,7 @@ settings:
       major: major
       news: news
       person: person
+      archive_page: archive_page
     sort:
       field: _none
       direction: ASC
