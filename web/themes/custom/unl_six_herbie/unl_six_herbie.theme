@@ -553,6 +553,19 @@ function unl_six_herbie_preprocess_media(&$variables) {
       }
     }
 
+    if ($bundle == 'tandem') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+
+      if ($field_name == "b_tandem_image") {
+        $tandem_style = $parent_block->__get('b_tandem_style')->getValue()[0]['value'];
+        // If style is Fade or Stack
+        if ($tandem_style == 1 || $tandem_style == 2) {
+          $variables['attributes']['class'][] = "dcf-w-100% dcf-h-100% dcf-16x9";
+        }
+      }
+    }
+
     if ($bundle == 'simple_media') {
       $referring_field = $referring_item->getParent();
       $field_name = $referring_field->getName();
@@ -686,6 +699,21 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
           if ($style_name == $list_style_key['value']) {
             $variables['responsive_image']['#attributes']['class'][] = $class_values;
           }
+        }
+      }
+    }
+
+    if($bundle == 'tandem') {
+      $referring_field = $referring_item->getParent();
+      $field_name = $referring_field->getName();
+      if ($field_name == "b_tandem_image") {
+        $shadow_value = $parent_block->__get('b_tandem_add_image_shadow')->getValue()[0]['value'];
+        $tandem_style = $parent_block->__get('b_tandem_style')->getValue()[0]['value'];
+        // If style is Basic
+        if($tandem_style == 3) {
+          $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl";
+        } else{
+          $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover";
         }
       }
     }
