@@ -25,7 +25,7 @@
 
 {############### Tandem Stack ###############}
     {% if content.b_tandem_style.0['#markup'] == '2' %}
-      <div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-stack">
+      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-stack">
         <div {{tandem_style_wrapper.addClass(stack_wrapper)}}>
           <div class="unlcms-tandem-stack-text-card unl-bg-cream">
             {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
@@ -92,7 +92,7 @@
         {% set fade_wrapper = fade_wrapper|merge(['unlcms-tandem-fade-text-r']) %}
       {% endif %}
 
-      <div class="dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray" style="--bg-color: var(--bg-lighter-gray);">
+      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray" style="--bg-color: var(--bg-lighter-gray);">
         <div {{ tandem_style_wrapper.addClass(fade_wrapper) }}>
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
             <header class="dcf-mb-4">
@@ -144,7 +144,7 @@
         {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
       {% endif %}
 
-      <div class="dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-d-grid dcf-grid-cols-2@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
+      <div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-d-grid dcf-grid-cols-2@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
         <div {{ tandem_text_wrapper.addClass(basic_tandem_text_wrapper) }}>
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
             <header class="dcf-mb-4">
