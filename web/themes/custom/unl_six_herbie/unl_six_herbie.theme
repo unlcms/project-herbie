@@ -793,6 +793,7 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
           $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover";
         }
       }
+    }
 
     if ($bundle == 'slideshow_item') {
       $variables['responsive_image']['#attributes']['class'][] = "dcf-16x9";
