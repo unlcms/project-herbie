@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b95ab7a32b3842469fcb245ddbac322",
+    "content-hash": "6c098b0be379af3a0d2385c9a50ce1ff",
     "packages": [
         {
             "name": "arthurkushman/query-path",
@@ -8246,6 +8246,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/variationcache",
                 "issues": "https://drupal.org/project/issues/variationcache"
+            }
+        },
+        {
+            "name": "drupal/views_block_placement_exposed_form_defaults",
+            "version": "1.0.0-rc5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_block_placement_exposed_form_defaults.git",
+                "reference": "8.x-1.0-rc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_block_placement_exposed_form_defaults-8.x-1.0-rc5.zip",
+                "reference": "8.x-1.0-rc5",
+                "shasum": "cd2010c7d1d2f04d1bde1220f934de1c0ab8b9fd"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc5",
+                    "datestamp": "1765535438",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "mohit_aghera",
+                    "homepage": "https://www.drupal.org/user/639098"
+                },
+                {
+                    "name": "sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "Set default values of the views exposed form when placing views blocks into a page or layouts.",
+            "homepage": "https://www.drupal.org/project/views_block_placement_exposed_form_defaults",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_block_placement_exposed_form_defaults"
             }
         },
         {
@@ -21242,6 +21294,7 @@
         "drupal/rabbit_hole": 10,
         "drupal/scanner": 5,
         "drupal/seven": 15,
+        "drupal/views_block_placement_exposed_form_defaults": 5,
         "drupal/webform": 10,
         "unlcms/features_readonly": 20,
         "unlcms/unl_access": 15
