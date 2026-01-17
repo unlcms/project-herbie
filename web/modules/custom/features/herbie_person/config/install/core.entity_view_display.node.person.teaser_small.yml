@@ -88,6 +88,12 @@ content:
     settings:
       responsive_image_style: medium__square
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: eager
     third_party_settings:
       image_class:
         class: ''
