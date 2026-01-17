@@ -1,0 +1,19 @@
+uuid: 0717c748-c5ba-4354-adeb-ec6008fe2572
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.video_file_size
+    - media.type.video
+id: media.video.video_file_size
+field_name: video_file_size
+entity_type: media
+bundle: video
+label: 'Video File Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

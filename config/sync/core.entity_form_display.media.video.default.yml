@@ -1,0 +1,51 @@
+uuid: 7cb8f737-5ba4-432f-8697-051cdc06411c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video.media_video_file
+    - field.field.media.video.video_file_size
+    - field.field.media.video.video_mime_type
+    - field.field.media.video.video_poster_image
+    - image.style.thumbnail
+    - media.type.video
+  module:
+    - file
+    - svg_image
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  media_video_file:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  replace_file:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  video_poster_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  publish_on: true
+  publish_state: true
+  status: true
+  uid: true
+  unpublish_on: true
+  unpublish_state: true
+  video_file_size: true
+  video_mime_type: true
