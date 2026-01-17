@@ -215,6 +215,7 @@
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_ui": "^2.0",
+        "drupal/views_block_placement_exposed_form_defaults": "^1.0@RC",
         "drupal/views_data_export": "^1.4",
         "drupal/webform": "^6.2@beta",
         "drush/drush": "^12.5",

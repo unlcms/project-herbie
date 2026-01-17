@@ -125,7 +125,6 @@ third_party_settings:
               - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
-            'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'
             System: {  }
@@ -176,7 +175,6 @@ third_party_settings:
               - 'inline_block:tandem'
               - 'inline_block:content'
               - 'inline_block:timeline'
-            'Lists (Views)': {  }
             Menus: {  }
             System: {  }
             Webform:
@@ -215,7 +213,6 @@ third_party_settings:
               - 'inline_block:simple_media'
               - 'inline_block:social_media_links'
               - 'inline_block:content'
-            'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'
             System: {  }
@@ -262,37 +259,79 @@ third_party_settings:
               - 'inline_block:social_media_links'
               - 'inline_block:tabs'
               - 'inline_block:content'
-            'Lists (Views)': {  }
             Menus:
               - 'menu_block:main'
             System: {  }
             Webform:
               - webform_block
             core: {  }
-      denylisted_blocks: {  }
+      denylisted_blocks:
+        dcf_fourcol_section:
+          all_regions:
+            'Lists (Views)':
+              - 'views_block:group_contact_info_block-block_1'
+              - 'views_block:group_related_links_block-block_1'
+              - 'views_block:media_metadata-file'
+              - 'views_block:media_metadata-image'
+              - 'views_block:media_metadata-remote_video'
+              - 'views_block:content_recent-block_1'
+              - 'views_block:news_recent-block_1'
+              - 'views_block:taxonomy_term-tagged_news_items_block'
+        dcf_onecol_section:
+          all_regions:
+            'Lists (Views)':
+              - 'views_block:group_contact_info_block-block_1'
+              - 'views_block:group_related_links_block-block_1'
+              - 'views_block:media_metadata-file'
+              - 'views_block:media_metadata-image'
+              - 'views_block:media_metadata-remote_video'
+              - 'views_block:content_recent-block_1'
+              - 'views_block:news_recent-block_1'
+              - 'views_block:taxonomy_term-tagged_news_items_block'
+        dcf_threecol_section:
+          all_regions:
+            'Lists (Views)':
+              - 'views_block:group_contact_info_block-block_1'
+              - 'views_block:group_related_links_block-block_1'
+              - 'views_block:media_metadata-file'
+              - 'views_block:media_metadata-image'
+              - 'views_block:media_metadata-remote_video'
+              - 'views_block:content_recent-block_1'
+              - 'views_block:news_recent-block_1'
+              - 'views_block:taxonomy_term-tagged_news_items_block'
+        dcf_twocol_section:
+          all_regions:
+            'Lists (Views)':
+              - 'views_block:group_contact_info_block-block_1'
+              - 'views_block:group_related_links_block-block_1'
+              - 'views_block:media_metadata-file'
+              - 'views_block:media_metadata-image'
+              - 'views_block:media_metadata-remote_video'
+              - 'views_block:content_recent-block_1'
+              - 'views_block:news_recent-block_1'
+              - 'views_block:taxonomy_term-tagged_news_items_block'
       restricted_categories:
         dcf_twocol_section:
           all_regions:
-            - 'Content block'
             - 'Custom blocks'
             - 'Group Menus'
+            - 'Reusable components'
         dcf_onecol_section:
           all_regions:
             - 'Chaos Tools'
-            - 'Content block'
             - 'Custom blocks'
+            - 'Reusable components'
         dcf_threecol_section:
           all_regions:
-            - 'Content block'
             - 'Custom blocks'
+            - 'Reusable components'
         dcf_fourcol_section:
           all_regions:
-            - 'Content block'
             - 'Custom blocks'
+            - 'Reusable components'
     allowed_block_categories:
       - 'Aggregated Content'
       - 'Chaos Tools'
-      - 'Content block'
       - 'Content fields'
       - 'Curated Lists'
       - 'Custom block types'
@@ -302,6 +341,7 @@ third_party_settings:
       - 'Inline blocks'
       - 'Lists (Views)'
       - Menus
+      - 'Reusable components'
       - System
       - Webform
       - core

@@ -7,6 +7,7 @@
 
 use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
 use DrupalFinder\DrupalFinder;
 
 /**
@@ -322,3 +323,57 @@ function unl_system_menu_local_tasks_alter(&$data, $route_name) {
   }
 }
 
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function unl_system_page_attachments_alter(array &$attachments) {
+  // Remove the Google Tag script inclusion if a user has any role on the site.
+  // This is done in code rather than on /admin/config/services/google-tag because the
+  // google_tag config container settings are managed in a file with a name that includes the
+  // Google Tag ID (example: google_tag.container.G-9L3UNL1869.696567999acd52.95801012.yml)
+  // which cannot be deployed in a multisite setup.
+  $account = \Drupal::currentUser();
+
+  // Anonymous users are allowed.
+  if ($account->isAnonymous()) {
+    return;
+  }
+
+  // Only allow users with *only* the authenticated role.
+  $roles = $account->getRoles();
+  if (count(array_diff($roles, [AccountInterface::AUTHENTICATED_ROLE])) === 0) {
+    return;
+  }
+
+  // Remove google_tag libraries.
+  if (!empty($attachments['#attached']['library'])) {
+    $attachments['#attached']['library'] = array_values(array_filter(
+      $attachments['#attached']['library'],
+      static function ($library) {
+        return !str_starts_with($library, 'google_tag/');
+      }
+    ));
+  }
+
+  // Remove any raw head attachments added by google_tag.
+  if (!empty($attachments['#attached']['html_head'])) {
+    $attachments['#attached']['html_head'] = array_filter(
+      $attachments['#attached']['html_head'],
+      static function ($element) {
+        return empty($element[1]) || !str_contains($element[1], 'google_tag');
+      }
+    );
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unl_system_form_google_tag_container_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Remove the "User Role" tab from the Conditions section on the
+  // google_tag_container_form from at /admin/config/services/google-tag.
+  // It is handled globally with unl_system_page_attachments_alter().
+  if (isset($form['conditions']['user_role'])) {
+    unset($form['conditions']['user_role']);
+  }
+}

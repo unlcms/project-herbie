@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.archive_page
     - node.type.book
     - node.type.builder_page
     - node.type.major
@@ -57,7 +56,6 @@ type_settings:
       weight: 2
   entity_types:
     node:
-      - archive_page
       - book
       - builder_page
       - major

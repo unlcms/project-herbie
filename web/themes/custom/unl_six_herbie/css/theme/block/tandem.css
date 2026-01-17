@@ -77,8 +77,6 @@
 
     .unlcms-tandem-stack-text-card {
       background-color: var(--bg-card);
-      -webkit-clip-path: polygon(0 0,0 100%,2px 100%,2px 2px,calc(100% - 2px) 2px,calc(100% - 2px) calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 5px,5px 5px,5px calc(100% - 5px),2px calc(100% - 5px),2px 100%,100% 100%,100% 0);
-      clip-path: polygon(0 0,0 100%,2px 100%,2px 2px,calc(100% - 2px) 2px,calc(100% - 2px) calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 5px,5px 5px,5px calc(100% - 5px),2px calc(100% - 5px),2px 100%,100% 100%,100% 0);
       padding: 3.16em 2.37em;
     }
 
@@ -96,6 +94,14 @@
 
     .unlcms-tandem-stack-text-r {
       grid-area: 2 / 6 / 3 / -2;
+    }
+
+    .unlcms-tandem-stack-img > div:first-of-type {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
 
   }
@@ -130,7 +136,6 @@
   @media only screen and (min-width: 99.78em) {
 
     .unlcms-tandem-stack {
-      max-height: 42.09em;
       overflow-y: hidden;
     }
 
@@ -185,76 +190,35 @@
       grid-template-rows: minmax(4.21em, 1fr) auto minmax(4.21em, 1fr);
     }
 
-    .unlcms-tandem-fade-img::after {
-      background-image: linear-gradient(var(--direction), var(--bg-color), transparent);
-      content: '';
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 33%;
-      z-index: 1;
-    }
 
     .unlcms-tandem-fade-text-l {
       grid-area: 2 / 2 / 3 / 8;
     }
 
-    .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img::after {
-      --direction: 90deg;
-    }
 
     .unlcms-tandem-fade-text-r {
-      grid-area: 2 / 12 / 3 / -2;
+      grid-area: 2 / 14 / 3 / -2;
     }
 
-    .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img::after {
-      --direction: 270deg;
-      right: 0;
-    }
 
     .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img {
       grid-area: 1 / 10 / -1 / -1;
+      mask-image: linear-gradient(90deg,rgba(0,0,0,0),rgb(0,0,0) 33%);
+
     }
 
     .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img {
-      grid-area: 1 / 1 / -1 / 8;
+      grid-area: 1 / 1 / -1 / 12;
+      mask-image: linear-gradient(90deg,rgb(0,0,0) calc(100% - 33%),rgba(0,0,0,0));
+
     }
 
   }
 
   /* lg 1197 */
-  @media only screen and (min-width: 74.83em) {
-
-    .unlcms-tandem-fade-text-l ~ .unlcms-tandem-fade-img {
-      grid-column-start: 11;
-    }
-
-    .unlcms-tandem-fade-text-r ~ .unlcms-tandem-fade-img {
-      grid-column-end: 8;
-    }
-
-  }
 
 
 /**************** Other changes ******************************/
-  .unlcms-tandem-fade-img .media-entity-bundle--image,
-  .unlcms-tandem-basic-img .media-entity-bundle--image,
-  .unlcms-tandem-stack-img .media-entity-bundle--image {
-    margin-bottom: 0;
-    height: 100%;
-    width: 100%;
-  }
-
-  .unlcms-tandem-fade-img img,
-  .unlcms-tandem-basic-img img,
-  .unlcms-tandem-stack-img img {
-    /* .dcf-obj-fit-cover */
-    object-fit: cover !important;
-    height: 100% !important;
-    width: 100% !important;
-      /* .dcf-d-block */
-  /* display: block !important; */
-  }
 
   .unlcms-tandem-stack-text-card h2 {
     /* .dcf-txt-h3 */

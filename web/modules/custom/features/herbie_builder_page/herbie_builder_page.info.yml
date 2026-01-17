@@ -39,6 +39,7 @@ dependencies:
   - 'drupal:text'
   - 'drupal:toolbar'
   - 'drupal:user'
+  - 'drupal:views'
   - 'drupal:views_ui'
   - 'drupal:workflows'
   - 'entity_reference_revisions:entity_reference_revisions'
@@ -78,5 +79,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.13.3
+version: 1.14.2
 package: Herbie
