@@ -22,6 +22,6 @@ settings:
   handler_settings: {  }
   file_directory: media/video
   file_extensions: mp4
-  max_filesize: '40 MB'
+  max_filesize: '10 MB'
   description_field: true
 field_type: file
