@@ -55,13 +55,3 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/docs/getting-started/multisite-drupal
  */
-
-/**
- * Stub for the unl_multisite module to generate site aliases.
- */
-# THIS SECTION IS AUTOMATICALLY GENERATED
-# DO NOT EDIT!!!!
-
-# %UNL_CREATION_TOOL_STUB%
-
-# END OF AUTOMATICALLY GENERATED AREA
