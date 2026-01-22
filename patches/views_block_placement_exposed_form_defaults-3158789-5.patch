@@ -1,0 +1,30 @@
+diff --git a/src/ExposedFormBlockDisplay.php b/src/ExposedFormBlockDisplay.php
+index c9fdcb6..ccfbaf4 100644
+--- a/src/ExposedFormBlockDisplay.php
++++ b/src/ExposedFormBlockDisplay.php
+@@ -2,6 +2,7 @@
+ 
+ namespace Drupal\views_block_placement_exposed_form_defaults;
+ 
++use Drupal\Core\Entity\Element\EntityAutocomplete;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Form\SubformState;
+ use Drupal\Core\Render\Element\Checkboxes;
+@@ -95,7 +96,16 @@ class ExposedFormBlockDisplay extends Block {
+       // block configuration.
+       $exposed_info = $filter->exposedInfo();
+       $form['exposed_filters'][$exposed_info['value']]['#title'] = $exposed_info['label'];
+-      $form['exposed_filters'][$exposed_info['value']]['#default_value'] = !empty($exposed_filter_values[$exposed_info['value']]) ? $exposed_filter_values[$exposed_info['value']] : [];
++      if (!empty($exposed_filter_values[$exposed_info['value']]) && $form['exposed_filters'][$exposed_info['value']]['#type'] == 'entity_autocomplete') {
++        $form['exposed_filters'][$exposed_info['value']]['#default_value'] = EntityAutocomplete::valueCallback(
++          $form['exposed_filters'][$exposed_info['value']],
++          $exposed_filter_values[$exposed_info['value']],
++          $form_state
++        );
++      }
++      else {
++        $form['exposed_filters'][$exposed_info['value']]['#default_value'] = !empty($exposed_filter_values[$exposed_info['value']]) ? $exposed_filter_values[$exposed_info['value']] : [];
++      }
+     }
+ 
+     return $form;
