@@ -48,6 +48,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $form['title'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Section heading'),
+      '#description' => $this->t('Notice: If this field is filled but "Show Section heading" is unchecked, a visually hidden heading is added for screen readers. Leave blank to add no heading.'),
       '#default_value' => $configuration['title'],
     ];
 
@@ -159,10 +160,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
     $build['#settings']['grid_wrapper_attributes'] = new Attribute();
     $build['#settings']['title_attributes'] = new Attribute();
 
-    // Don't display title unless 'title_display' is checked.
-    if (isset($configuration['title_display']) && $configuration['title_display'] == FALSE) {
-      unset($build['#settings']['title']);
-    }
 
     // Add classes to section title.
     if (!empty($configuration['title_classes'])) {
