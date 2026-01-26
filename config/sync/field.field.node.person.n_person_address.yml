@@ -12,7 +12,7 @@ field_name: n_person_address
 entity_type: node
 bundle: person
 label: Address
-description: "<b>Format:</b><br> \r\nBuilding Abbreviation Room Number<br> \r\nCity<br> \r\nState<br> \r\nZip Code<br> "
+description: "<b>Format:</b><br> \r\nBuilding Abbreviation Room Number<br> \r\nCity<br> \r\nState<br> \r\nZip Code<br> <br>\r\n<b> Note:</b> To override an address, fill out all address fields. Alternatively, leave all fields empty to use the address pulled directly from Directory.\r\n"
 required: false
 translatable: false
 default_value: {  }
