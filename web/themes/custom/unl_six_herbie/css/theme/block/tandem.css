@@ -1,5 +1,5 @@
   /* TANDEM */
-/* Resolves image overflowing from it's container */
+/* Resolves image overflowing from its container */
 div.unlcms-tandem div.media-entity {
   display: block;
 }
