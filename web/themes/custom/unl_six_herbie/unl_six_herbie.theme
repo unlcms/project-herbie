@@ -789,7 +789,7 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
         // If style is Basic
         if($tandem_style == 3) {
           $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl";
-        } else{
+        } else {
           $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover";
         }
       }
