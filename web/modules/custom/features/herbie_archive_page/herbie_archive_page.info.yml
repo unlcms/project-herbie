@@ -23,6 +23,6 @@ dependencies:
   - 'herbie_media_types:herbie_media_types'
   - 'linkit:linkit'
   - 'pathauto:pathauto'
-version: 1.2.2
+version: 1.2.3
 package: Herbie
 description: 'Provides Temporary transition page (Archive page) content type and related configuration. '

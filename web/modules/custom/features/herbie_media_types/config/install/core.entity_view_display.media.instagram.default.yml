@@ -26,12 +26,12 @@ content:
     settings:
       responsive_image_style: full__square
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: eager
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings:
       image_class:
         class: ''

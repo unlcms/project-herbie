@@ -5,11 +5,7 @@ dependencies:
     - field.storage.node.n_major_pathways
     - node.type.major
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: node.major.n_major_pathways
 field_name: n_major_pathways
 entity_type: node
@@ -20,5 +16,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long
