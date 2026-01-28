@@ -1,4 +1,9 @@
   /* TANDEM */
+/* Resolves image overflowing from its container */
+div.unlcms-tandem div.media-entity {
+  display: block;
+}
+
   .unlcms-tandem-text p:last-child,
   .unlcms-tandem-text ol:last-child,
   .unlcms-tandem-text ul:last-child,

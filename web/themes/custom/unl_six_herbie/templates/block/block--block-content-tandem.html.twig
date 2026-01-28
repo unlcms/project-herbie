@@ -34,7 +34,9 @@
                 <h2 class="dcf-mt-0 dcf-mb-0"> {{content.b_tandem_heading.0["#text"]}}</h2>
                 {{content.b_tandem_subhead}}
               </header>
-           {% endif %}
+            {% else %}
+              <h2 class="dcf-mt-0 dcf-mb-4"> {{content.b_tandem_heading.0["#text"]}}</h2>
+            {% endif %}
 
             {{content.b_tandem_body}}
 
@@ -100,6 +102,8 @@
               <h2 class="dcf-mt-0 dcf-mb-0"> {{content.b_tandem_heading.0["#text"]}}</h2>
               {{content.b_tandem_subhead}}
             </header>
+          {% else %}
+            <h2 class="dcf-mt-0 dcf-mb-4"> {{content.b_tandem_heading.0["#text"]}}</h2>
           {% endif %}
 
           {{content.b_tandem_body}}
@@ -152,6 +156,8 @@
               <h2 class="dcf-mt-0 dcf-mb-0"> {{content.b_tandem_heading.0["#text"]}}</h2>
               {{content.b_tandem_subhead}}
             </header>
+          {% else %}
+            <h2 class="dcf-mt-0 dcf-mb-4"> {{content.b_tandem_heading.0["#text"]}}</h2>
           {% endif %}
 
           {{content.b_tandem_body}}

@@ -39,11 +39,13 @@
     <div{{ attributes }}>
   {% endif %}
 
-      {% if settings.title %}
+      {% if settings.title and settings.title_display == TRUE %}
         {% if attributes.hasClass('dcf-wrapper') %}
           {% set title_attributes = title_attributes.removeClass('dcf-wrapper') %}
         {% endif %}
         <h2{{ title_attributes }}>{{ settings.title }}</h2>
+      {% elseif settings.title and settings.title_display == FALSE %}
+        <h2 class="dcf-sr-only">{{settings.title}}</h2>
       {% endif %}
 
       <div{{ grid_wrapper_attributes }}>

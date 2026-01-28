@@ -24,18 +24,24 @@
     {{ attachment_before }}
 
     {% if rows -%}
+      {% if display_id == 'page_1' %}
+        {# H2 is only visible only on /news page #}
+        <h2 class="unlcms-teaser-news-heading dcf-mb-6 dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Latest News</h2>
+      {% endif %}
+
       {% if display_id == 'block_1' %}
         <div class="unlcms-teaser-news-border dcf-bt-1 dcf-bt-solid unl-bt-light-gray dcf-pt-3">
+          {# H2 is hidden using css for the news aggregation component display. It's visible for node--news--full page #}
           <h2 class="unlcms-teaser-news-heading dcf-mb-6 dcf-txt-xs dcf-uppercase unl-ls-2 unl-dark-gray">Latest News</h2>
-        {% endif %}
+      {% endif %}
         <div class="dcf-d-grid dcf-grid-cols-2@sm dcf-grid-cols-4@lg dcf-col-gap-vw dcf-row-gap-6 dcf-mb-6 unl-scroll-fx-children-fade-in" data-fx-duration=".4">
           {{ rows }}
         </div>
-        {% if display_id == 'block_1' %}
-          <div class="dcf-d-flex dcf-jc-flex-end">
-            <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{file_url('news')}}/">More news</a>
-          </div>
+      {% if display_id == 'block_1' %}
+        <div class="dcf-d-flex dcf-jc-flex-end">
+          <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{file_url('news')}}/">More news</a>
         </div>
+      </div>
       {% endif %}
     {% elseif empty -%}
       {{ empty }}

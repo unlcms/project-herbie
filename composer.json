@@ -355,6 +355,9 @@
             "drupal/salesforce": {
                 "unlcms-1102 - Fix Salesforce core version requirement": "patches/unlcms-1106-fix-salesforce-core-version-req.patch"
             },
+            "drupal/views_block_placement_exposed_form_defaults": {
+                "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"
+            },
             "drush/drush": {
                 "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }

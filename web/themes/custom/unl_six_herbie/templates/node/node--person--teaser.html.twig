@@ -93,22 +93,17 @@
                       <br/>
                     {% endif %}
                     {% if i == 1 %}
-                      <span itemprop="addressLocality">
-                        {{ node.n_person_address[i].value }}
-                      </span>
-                      ,
+                      <span itemprop="addressLocality">{{node.n_person_address[i].value}}</span>,
                     {% endif %}
                     {% if i == 2 %}
                       <abbr title="Nebraska" itemprop="addressRegion">
                         {{ node.n_person_address[i].value }}
                       </abbr>
-                      ,
                     {% endif %}
                     {% if i == 3 %}
                       <span itemprop="postalCode">
                         {{ node.n_person_address[i].value }}
                       </span>
-                      ,
                     {% endif %}
 
                     {% if i == 4 %}
@@ -128,7 +123,7 @@
                     {% if i == 'locality' %}
                       <span itemprop="addressLocality">
                         {{ addressFields.value }}
-                      </span>
+                      </span>,
                     {% endif %}
                     {% if i == 'region' %}
                       <abbr title="Nebraska" itemprop="addressRegion">
