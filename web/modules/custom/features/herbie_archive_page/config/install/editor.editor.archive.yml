@@ -48,10 +48,8 @@ settings:
         - heading5
         - heading6
     ckeditor5_list:
-      properties:
-        reversed: false
-        startIndex: true
-      multiBlock: true
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
     ckeditor5_style:

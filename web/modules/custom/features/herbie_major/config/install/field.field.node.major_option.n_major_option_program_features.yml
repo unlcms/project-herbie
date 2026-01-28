@@ -5,7 +5,11 @@ dependencies:
     - field.storage.node.n_major_option_program_features
     - node.type.major_option
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
 id: node.major_option.n_major_option_program_features
 field_name: n_major_option_program_features
 entity_type: node
@@ -16,6 +20,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_formats: {  }
+settings: {  }
 field_type: text_long

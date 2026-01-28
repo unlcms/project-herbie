@@ -5,7 +5,6 @@ dependencies:
     - field.field.node.archive_page.archive_page_body
     - field.field.node.archive_page.s_n_page_options
     - node.type.archive_page
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - entitygroupfield
@@ -123,8 +122,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  publish_on: true
-  publish_state: true
-  unpublish_on: true
-  unpublish_state: true
+hidden: {  }

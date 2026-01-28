@@ -5,6 +5,5 @@ dependencies:
     - node
 id: node.teaser_centered
 label: 'Teaser Centered'
-description: ''
 targetEntityType: node
 cache: true

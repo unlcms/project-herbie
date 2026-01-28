@@ -3,10 +3,14 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - filter.format.standard
     - node.type.book
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - standard
 id: node.book.body
 field_name: body
 entity_type: node
@@ -20,6 +24,4 @@ default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
-  allowed_formats:
-    - standard
 field_type: text_with_summary

@@ -22,5 +22,5 @@ dependencies:
   - 'herbie_person:herbie_person'
   - 'herbie_roles:herbie_roles'
   - 'inline_entity_form:inline_entity_form'
-version: 1.1.3
+version: 1.1.2
 package: Herbie

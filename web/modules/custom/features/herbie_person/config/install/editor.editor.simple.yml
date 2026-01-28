@@ -25,10 +25,8 @@ settings:
       enabled_headings:
         - heading2
     ckeditor5_list:
-      properties:
-        reversed: true
-        startIndex: true
-      multiBlock: true
+      reversed: true
+      startIndex: true
     linkit_extension:
       linkit_enabled: false
 image_upload: {  }
