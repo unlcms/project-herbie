@@ -73,6 +73,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       'dcf-capitalize' => 'dcf-capitalize',
       'dcf-lowercase' => 'dcf-lowercase',
       'dcf-uppercase' => 'dcf-uppercase',
+      'dcf-txt-center' => 'dcf-txt-center',
     ];
 
     $form['title_classes'] = [
