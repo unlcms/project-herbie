@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.group_relationship.group_roles
   module:
     - group
     - user
