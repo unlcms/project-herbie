@@ -67,6 +67,7 @@ hidden:
   publish_state: true
   s_m_height: true
   s_m_width: true
+  scheduler_settings: true
   status: true
   uid: true
   unpublish_on: true

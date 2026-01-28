@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.video.media_video_file
+    - field.field.media.video.video_file_size
+    - field.field.media.video.video_mime_type
+    - field.field.media.video.video_poster_image
+    - image.style.media_library
+    - media.type.video
+  module:
+    - file
+    - svg_image
+id: media.video.media_library
+targetEntityType: media
+bundle: video
+mode: media_library
+content:
+  media_video_file:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  video_poster_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: media_library
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  publish_on: true
+  publish_state: true
+  replace_file: true
+  scheduler_settings: true
+  status: true
+  uid: true
+  unpublish_on: true
+  unpublish_state: true
+  video_file_size: true
+  video_mime_type: true

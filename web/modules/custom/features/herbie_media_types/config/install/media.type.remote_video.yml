@@ -6,11 +6,25 @@ dependencies:
   module:
     - crop
     - oembed_providers
+    - scheduler
 third_party_settings:
   crop:
     image_field: null
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
 id: remote_video
-label: 'Remote Video'
+label: 'Remote Audio/Video'
 description: 'A remotely hosted video from <a href="https://mediahub.unl.edu/">mediahub.unl.edu</a>.'
 source: 'oembed:video'
 queue_thumbnail_downloads: false
