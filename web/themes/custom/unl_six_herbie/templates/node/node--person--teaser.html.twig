@@ -87,25 +87,19 @@
                 {% if node.n_person_address.value %}
                   {% for i, value in node.n_person_address %}
                     {% if i == 0 %}
-                      <span itemprop="streetAddress">
-                        {{ node.n_person_address[i].value }}
-                      </span>
+                      {# Keep all span tags on a single line in the code for correct spacing. #}
+                      <span itemprop="streetAddress">{{node.n_person_address[i].value}}</span>
                       <br/>
                     {% endif %}
                     {% if i == 1 %}
-                      <span itemprop="addressLocality">{{node.n_person_address[i].value}}</span>,
+                      <span itemprop="addressLocality">{{node.n_person_address[i].value}},</span>
                     {% endif %}
                     {% if i == 2 %}
-                      <abbr title="Nebraska" itemprop="addressRegion">
-                        {{ node.n_person_address[i].value }}
-                      </abbr>
+                      <abbr title="Nebraska" itemprop="addressRegion">{{node.n_person_address[i].value}}</abbr>
                     {% endif %}
                     {% if i == 3 %}
-                      <span itemprop="postalCode">
-                        {{ node.n_person_address[i].value }}
-                      </span>
+                      <span itemprop="postalCode">{{node.n_person_address[i].value}}</span>
                     {% endif %}
-
                     {% if i == 4 %}
                       <abbr class="dcf-d-none" itemprop="addressCountry">
                         {{ node.n_person_address[i].value }}
@@ -115,25 +109,17 @@
                 {% else %}
                   {% for i, addressFields in node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress.value[0] %}
                     {% if i == 'street-address' %}
-                      <span itemprop="streetAddress">
-                        {{ addressFields.value }}
-                      </span>
+                      <span itemprop="streetAddress">{{addressFields.value}}</span>
                       <br/>
                     {% endif %}
                     {% if i == 'locality' %}
-                      <span itemprop="addressLocality">
-                        {{ addressFields.value }}
-                      </span>,
+                      <span itemprop="addressLocality">{{addressFields.value}},</span>
                     {% endif %}
                     {% if i == 'region' %}
-                      <abbr title="Nebraska" itemprop="addressRegion">
-                        {{ addressFields.value }}
-                      </abbr>
+                      <abbr title="Nebraska" itemprop="addressRegion">{{addressFields.value}}</abbr>
                     {% endif %}
                     {% if i == 'postal-code' %}
-                      <span itemprop="postalCode">
-                        {{ addressFields.value }}
-                      </span>
+                      <span itemprop="postalCode">{{addressFields.value}}</span>
                     {% endif %}
                   {% endfor %}
                 {% endif %}
