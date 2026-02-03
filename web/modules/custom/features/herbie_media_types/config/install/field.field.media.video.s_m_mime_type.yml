@@ -1,15 +1,14 @@
-uuid: f01f3241-f978-4c62-93ed-dc0a9b40baa2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.video_mime_type
+    - field.storage.media.s_m_mime_type
     - media.type.video
-id: media.video.video_mime_type
-field_name: video_mime_type
+id: media.video.s_m_mime_type
+field_name: s_m_mime_type
 entity_type: media
 bundle: video
-label: 'Video MIME type'
+label: 'MIME type'
 description: ''
 required: false
 translatable: false

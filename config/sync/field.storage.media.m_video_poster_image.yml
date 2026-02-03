@@ -1,4 +1,4 @@
-uuid: 2f330f7d-7c6e-4977-9c5e-028e7a389f09
+uuid: 29f27804-6d67-4092-af17-285462964537
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - media
-id: media.video_poster_image
-field_name: video_poster_image
+id: media.m_video_poster_image
+field_name: m_video_poster_image
 entity_type: media
 type: image
 settings:

@@ -1,18 +1,19 @@
+uuid: 1a484773-aa92-4e3e-9e16-295b2d846a4b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.video_poster_image
+    - field.storage.media.m_video_poster_image
     - media.type.video
   module:
     - image
-id: media.video.video_poster_image
-field_name: video_poster_image
+id: media.video.m_video_poster_image
+field_name: m_video_poster_image
 entity_type: media
 bundle: video
 label: 'Video Poster Image'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -21,11 +22,11 @@ settings:
   handler_settings: {  }
   file_directory: media/image
   file_extensions: 'gif jpg jpeg png svg'
-  max_filesize: ''
+  max_filesize: '40 MB'
   max_resolution: 5000x5000
   min_resolution: 40x40
   alt_field: false
-  alt_field_required: true
+  alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:

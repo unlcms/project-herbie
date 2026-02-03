@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.video.m_video_poster_image
     - field.field.media.video.media_video_file
-    - field.field.media.video.video_file_size
-    - field.field.media.video.video_mime_type
-    - field.field.media.video.video_poster_image
+    - field.field.media.video.s_m_file_size
+    - field.field.media.video.s_m_mime_type
     - image.style.thumbnail
     - media.type.video
   module:
@@ -16,6 +16,14 @@ targetEntityType: media
 bundle: video
 mode: default
 content:
+  m_video_poster_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   media_video_file:
     type: file_generic
     weight: 0
@@ -24,17 +32,25 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
   replace_file:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  video_poster_image:
-    type: image_image
-    weight: 1
+  s_m_file_size:
+    type: string_textfield
+    weight: 8
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  s_m_mime_type:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true
@@ -46,5 +62,3 @@ hidden:
   uid: true
   unpublish_on: true
   unpublish_state: true
-  video_file_size: true
-  video_mime_type: true

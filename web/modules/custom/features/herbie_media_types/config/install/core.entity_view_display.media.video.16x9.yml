@@ -3,10 +3,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.16x9
+    - field.field.media.video.m_video_poster_image
     - field.field.media.video.media_video_file
-    - field.field.media.video.video_file_size
-    - field.field.media.video.video_mime_type
-    - field.field.media.video.video_poster_image
+    - field.field.media.video.s_m_file_size
+    - field.field.media.video.s_m_mime_type
     - media.type.video
   module:
     - file
@@ -36,9 +36,9 @@ content:
     region: content
 hidden:
   created: true
+  m_video_poster_image: true
   name: true
+  s_m_file_size: true
+  s_m_mime_type: true
   thumbnail: true
   uid: true
-  video_file_size: true
-  video_mime_type: true
-  video_poster_image: true

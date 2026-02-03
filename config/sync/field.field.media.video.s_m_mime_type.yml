@@ -1,15 +1,15 @@
-uuid: 0717c748-c5ba-4354-adeb-ec6008fe2572
+uuid: 92a7b97c-13fb-49e1-a7c4-be9ac674d192
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.video_file_size
+    - field.storage.media.s_m_mime_type
     - media.type.video
-id: media.video.video_file_size
-field_name: video_file_size
+id: media.video.s_m_mime_type
+field_name: s_m_mime_type
 entity_type: media
 bundle: video
-label: 'Video File Size'
+label: 'MIME type'
 description: ''
 required: false
 translatable: false

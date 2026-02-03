@@ -1,14 +1,15 @@
+uuid: 40b54096-7372-4ff3-a611-6bdb0a001a86
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.video_mime_type
+    - field.storage.media.s_m_file_size
     - media.type.video
-id: media.video.video_mime_type
-field_name: video_mime_type
+id: media.video.s_m_file_size
+field_name: s_m_file_size
 entity_type: media
 bundle: video
-label: 'Video MIME type'
+label: 'File size'
 description: ''
 required: false
 translatable: false

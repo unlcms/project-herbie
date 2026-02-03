@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.video_file_size
+    - field.storage.media.s_m_file_size
     - media.type.video
-id: media.video.video_file_size
-field_name: video_file_size
+id: media.video.s_m_file_size
+field_name: s_m_file_size
 entity_type: media
 bundle: video
-label: 'Video File Size'
+label: 'File size'
 description: ''
 required: false
 translatable: false

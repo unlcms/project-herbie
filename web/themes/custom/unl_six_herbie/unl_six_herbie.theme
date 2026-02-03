@@ -637,8 +637,8 @@ function unl_six_herbie_preprocess_media(&$variables) {
         $variables['content']['media_video_file'][0]['#attributes']->removeAttribute('controls', TRUE);
 
         // Adding poster attribute to the video tag.
-        if ($media->video_poster_image) {
-          $file = $media->video_poster_image->entity;
+        if ($media->m_video_poster_image) {
+          $file = $media->m_video_poster_image->entity;
           $poster_url = $file->createFileUrl();
           if($poster_url) {
             $variables['content']['media_video_file'][0]['#attributes']->setAttribute('poster', $poster_url);

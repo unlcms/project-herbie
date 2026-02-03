@@ -5,8 +5,8 @@ dependencies:
     - file
     - image
     - media
-id: media.video_poster_image
-field_name: video_poster_image
+id: media.m_video_poster_image
+field_name: m_video_poster_image
 entity_type: media
 type: image
 settings:
