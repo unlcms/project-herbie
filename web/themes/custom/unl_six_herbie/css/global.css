@@ -1,3 +1,8 @@
+/* Prevent screen reader from focusing on the breadcrumbs if "Visually hide page title" is selected. */
+.dcf-hero.dcf-sr-only #dcf-breadcrumbs {
+  display: none;
+}
+
 /* Ensure the View/Edit tabs is correctly positioned even if user doesn't have contextual links */
 .region-navlinks > div {
   position: relative;
