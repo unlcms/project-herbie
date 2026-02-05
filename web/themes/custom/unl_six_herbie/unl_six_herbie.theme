@@ -86,6 +86,26 @@ function unl_six_herbie_preprocess_block(&$variables) {
     $bundle = $variables['content']['#block_content']->bundle();
   }
 
+  if (isset($variables["elements"]["#base_plugin_id"])) {
+    if ($variables["elements"]["#base_plugin_id"] == 'block_content' || $variables["elements"]["#base_plugin_id"] == 'inline_block') {
+      if(!isset($variables['attributes']['id'])){
+          if(!isset($variables['elements']['#configuration']['label'])) {
+            if(isset($variables['elements']['#configuration']['id'])) {
+              $component_id = $variables['elements']['#configuration']['id'];
+            }
+          } else {
+              $component_id = $variables['elements']['#configuration']['label'];
+          }
+          // Use the region block ID to ensure unique IDs for reused custom blocks in Layout Builder.
+          $region_block_id = $variables['content']['#block_content']->__get('#region_block_id') ?? '';
+          $component_id = $component_id . "_" . $variables['content']['#block_content']->id() . "_" . $region_block_id;
+          $component_id = str_replace( [' ', ':', '#', '.'], '-', $component_id);
+          $component_id = str_replace('"', '', $component_id);
+          $variables['attributes']['id'] = strtolower($component_id);
+      }
+    }
+  }
+
   if ($variables['plugin_id'] == 'menu_block:main') {
     // Generate a unique ID for the block.
     $unique_id = uniqid('menu-block-main-', FALSE);
@@ -452,6 +472,7 @@ function unl_six_herbie_preprocess_layout(&$variables) {
         foreach ($region as $block_id => $block) {
           if (substr($block_id, 0, 1) !== '#') {
             if (isset($variables['content'][$region_id][$block_id]['content']['#block_content'])) {
+              $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#region_block_id', $block_id);
               $variables['content'][$region_id][$block_id]['content']['#block_content']->__set('#section_lbs', $section_layout_builder_styles);
             }
             elseif (isset($variables['content'][$region_id][$block_id]['content']['#view'])) {
