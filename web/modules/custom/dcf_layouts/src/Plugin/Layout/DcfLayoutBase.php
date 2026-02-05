@@ -61,6 +61,7 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
 
     // Allow editors to add classes to the title.
     $options = [
+      'dcf-txt-center' => 'dcf-txt-center',
       'dcf-regular' => 'dcf-regular',
       'dcf-txt-h1' => 'dcf-txt-h1',
       'dcf-txt-h2' => 'dcf-txt-h2',
@@ -73,7 +74,6 @@ abstract class DcfLayoutBase extends LayoutDefault implements PluginFormInterfac
       'dcf-capitalize' => 'dcf-capitalize',
       'dcf-lowercase' => 'dcf-lowercase',
       'dcf-uppercase' => 'dcf-uppercase',
-      'dcf-txt-center' => 'dcf-txt-center',
     ];
 
     $form['title_classes'] = [
