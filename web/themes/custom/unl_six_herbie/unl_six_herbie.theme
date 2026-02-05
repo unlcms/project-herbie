@@ -578,9 +578,78 @@ function unl_six_herbie_preprocess_media(&$variables) {
     if ($bundle == 'photo_hero') {
       $referring_field = $referring_item->getParent();
       $field_name = $referring_field->getName();
+      $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
 
-      if ($field_name == "b_photohero_image") {
-        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-relative dcf-16x9 dcf-mb-0 dcf-overflow-hidden dcf-w-100% dcf-h-100% ";
+      if ($field_name == "b_photohero_image" && $media->bundle() == 'image') {
+        // This for the div that wraps the  responsive image tag.
+        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-relative dcf-16x9 dcf-mb-0 dcf-overflow-hidden dcf-w-100% dcf-h-100%";
+      }
+      elseif ($field_name == "b_photohero_image" && $media->bundle() == 'video') {
+       $video_tag_classes = ['dcf-16x9', 'dcf-obj-fit-cover'];
+
+       if ($object_position_field) {
+          $object_position_field_value = $parent_block->__get('b_photohero_img_obj_pos')->getValue()[0]['value'];
+          switch ($object_position_field_value) {
+              case 'unlcms_hero_obj_pos_50_0':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-0");
+                break;
+              case 'unlcms_hero_obj_pos_50_20':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-20");
+                break;
+              case 'unlcms_hero_obj_pos_50_40':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-40");
+                break;
+              case 'unlcms_hero_obj_pos_50_60':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-60");
+                break;
+              case 'unlcms_hero_obj_pos_50_80':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-80");
+                break;
+              case 'unlcms_hero_obj_pos_50_100':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-50-100");
+                break;
+              case 'unlcms_hero_obj_pos_0_50':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-0-50");
+                break;
+              case 'unlcms_hero_obj_pos_20_50':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-20-50");
+                break;
+              case 'unlcms_hero_obj_pos_40_50':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-40-50");
+                break;
+              case 'unlcms_hero_obj_pos_60_50':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-60-50");
+                break;
+              case 'unlcms_hero_obj_pos_80_50':
+                array_push($video_tag_classes, "unlcms-hero-obj-pos-80-50");
+                break;
+              case 'unlcms_hero_obj_pos_100_50':
+                array_push($video_tag_classes, "unlcms_hero_obj_pos_100_50");
+                break;
+            }
+        }
+
+        // Set video attributes for autoplaying banner video.
+        $variables['content']['media_video_file'][0]['#attributes']->setAttribute('autoplay', TRUE);
+        $variables['content']['media_video_file'][0]['#attributes']->setAttribute('loop', TRUE);
+        $variables['content']['media_video_file'][0]['#attributes']->setAttribute('muted', TRUE);
+        $variables['content']['media_video_file'][0]['#attributes']->setAttribute('playsinline', TRUE);
+        $variables['content']['media_video_file'][0]['#attributes']->removeAttribute('controls', TRUE);
+
+        // Adding poster attribute to the video tag.
+        if ($media->m_video_poster_image) {
+          $file = $media->m_video_poster_image->entity;
+          $poster_url = $file->createFileUrl();
+          if($poster_url) {
+            $variables['content']['media_video_file'][0]['#attributes']->setAttribute('poster', $poster_url);
+          }
+        }
+
+        // Adding class for the video tag.
+        $variables['content']['media_video_file'][0]['#attributes']->addClass($video_tag_classes);
+
+        // Adding class for the div that wraps the video tag.
+        $variables['attributes']['class'][] = "unlcms-display-banner-video dcf-autoplay-video dcf-16x9 dcf-w-100% dcf-h-100% dcf-relative dcf-overflow-hidden";
       }
     }
 
@@ -686,7 +755,7 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
           $hero_image_classes = ['dcf-obj-fit-cover'];
           $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
         } else if ($field_name == 'b_photohero_image') {
-          $hero_image_classes = ['dcf-obj-fit-cover', 'dcf-absolute'];
+          $hero_image_classes = ['dcf-16x9', 'dcf-obj-fit-cover'];
           array_push($hero_image_classes, "unlcms-slow-zoom-in");
           $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
         }

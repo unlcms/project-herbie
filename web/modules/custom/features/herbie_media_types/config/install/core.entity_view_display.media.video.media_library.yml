@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.video.m_video_poster_image
+    - field.field.media.video.media_video_file
+    - field.field.media.video.s_m_file_size
+    - field.field.media.video.s_m_mime_type
+    - image.style.medium
+    - media.type.video
+  module:
+    - image_class
+    - svg_image
+id: media.video.media_library
+targetEntityType: media
+bundle: video
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  m_video_poster_image: true
+  media_video_file: true
+  name: true
+  s_m_file_size: true
+  s_m_mime_type: true
+  uid: true

@@ -1,0 +1,14 @@
+uuid: 4235d93e-e022-473e-850e-a21d3f64b125
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+id: media_type_video
+entity_type_id: media_type
+entity_id: video
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

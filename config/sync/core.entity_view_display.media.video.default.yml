@@ -1,0 +1,77 @@
+uuid: 6dcdf54b-c528-4bfb-8214-5458caa21929
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video.m_video_poster_image
+    - field.field.media.video.media_video_file
+    - field.field.media.video.s_m_file_size
+    - field.field.media.video.s_m_mime_type
+    - media.type.video
+  module:
+    - file
+    - svg_image
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  m_video_poster_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 1
+    region: content
+  media_video_file:
+    type: file_video
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+      muted: false
+      width: 640
+      height: 480
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  s_m_file_size:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  thumbnail:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  created: true
+  name: true
+  s_m_mime_type: true
+  uid: true
