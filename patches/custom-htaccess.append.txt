@@ -225,10 +225,6 @@
   RewriteCond %{HTTP_HOST} ^era\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/era/$1 [R=301,L]
 
-  # eweek
-  RewriteCond %{HTTP_HOST} ^eweek\.unl\.edu$
-  RewriteRule ^(.*)$ https://cms.unl.edu/engineering/e-week/$1 [R=301,L]
-
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/mem/$1 [R=301,L]
