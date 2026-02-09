@@ -94,7 +94,8 @@ function unl_six_herbie_preprocess_block(&$variables) {
           if (isset($variables['elements']['#configuration']['id'])) {
             $component_id_prefix = $variables['elements']['#configuration']['id'];
           }
-        } else {
+        }
+        else {
           $component_id_prefix = $variables['elements']['#configuration']['label'];
         }
         // Use the region block ID to ensure unique IDs for reused custom blocks in Layout Builder.
