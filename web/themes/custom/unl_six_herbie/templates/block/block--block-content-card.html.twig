@@ -6,7 +6,7 @@
 {% set cardblock_wrapper_attributes = create_attribute() %}
 {% set cardblock_wrapper_attributes = cardblock_wrapper_attributes.addClass('dcf-card-block dcf-2nd') %}
 {% set image_wrapper_attributes = create_attribute() %}
-{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-4x3 dcf-w-100') %}
+{% set image_wrapper_attributes = image_wrapper_attributes.addClass('dcf-1st dcf-4x3 dcf-w-100%') %}
 
 {% if content.b_card_headline_link[0]['#url']%}
   <div{{ attributes.addclass(card_classes, 'dcf-card-as-link', 'unlcms-component-spacer') }}>
