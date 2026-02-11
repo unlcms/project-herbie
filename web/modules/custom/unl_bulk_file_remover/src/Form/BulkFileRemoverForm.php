@@ -39,7 +39,7 @@ class BulkFileRemoverForm extends FormBase {
       ],
     ];
 
-    // Add a submit button with the value "Yes".
+    // Delete button that wil start the process.
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -93,6 +93,7 @@ class BulkFileRemoverForm extends FormBase {
       $files = \Drupal\file\Entity\File::loadMultiple($fids);
       foreach ($files as $file) {
         $usage = \Drupal::service('file.usage')->listUsage($file);
+        // If the file is associated with a media entity, then it is considered "used" and will not be deleted.
         if (empty($usage)) {
           $file->delete();
           $count_deleted++;
