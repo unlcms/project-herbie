@@ -1,0 +1,7 @@
+unl_bulk_file_remover.unl_bulk_file_remover_form:
+  path: '/admin/config/media/unl_bulk_file_remover'
+  defaults:
+    _form: '\Drupal\unl_bulk_file_remover\Form\BulkFileRemoverForm'
+    _title: 'UNL Bulk File Remover'
+  requirements:
+    _role: 'administrator+super_administrator'
