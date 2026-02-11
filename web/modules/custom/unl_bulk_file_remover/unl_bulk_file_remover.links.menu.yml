@@ -1,0 +1,6 @@
+unl_bulk_file_remover.unl_bulk_file_remover_form_link:
+  title: 'UNL Bulk File Remover'
+  description: 'Remove unused files uploaded on or after a selected date.'
+  parent: system.admin_config_media
+  route_name: unl_bulk_file_remover.unl_bulk_file_remover_form
+  weight: 11

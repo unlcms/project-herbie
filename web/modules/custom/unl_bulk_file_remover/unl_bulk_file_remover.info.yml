@@ -1,0 +1,8 @@
+name: 'UNL Bulk File Remover'
+description: 'Removes unused files beginning a certain date.'
+package: UNL
+
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+
+version: 1.x
