@@ -221,6 +221,7 @@
         "drush/drush": "^12.5",
         "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
+        "league/csv": "^9.16",
         "nigelotoole/progress-tracker": "^2.0",
         "northernco/ckeditor5-anchor-drupal": "^0.3.0",
         "npm-asset/select2": "^4.0",
