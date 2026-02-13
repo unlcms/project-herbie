@@ -2,12 +2,9 @@ uuid: 09882158-4347-4129-87bd-ab21d0ee9271
 langcode: en
 status: true
 dependencies:
-  config:
-    - oembed_providers.bucket.video
   module:
-    - crop
-    - oembed_providers
-    - scheduler
+    0: crop
+    2: scheduler
 third_party_settings:
   crop:
     image_field: null
