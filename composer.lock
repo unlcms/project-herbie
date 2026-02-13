@@ -8168,23 +8168,23 @@
         },
         {
             "name": "drupal/twig_ui",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/twig_ui.git",
-                "reference": "2.0.1"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/twig_ui-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "d4aefe6ab51847b5598d883d92dc9992d5b27497"
+                "url": "https://ftp.drupal.org/files/projects/twig_ui-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "fe2c3e13fb840dff5d8ebd8dbf19ba2cf0aca4f5"
             },
             "require": {
-                "drupal/core": "^9.3|^10"
+                "drupal/core": "^10|^11"
             },
             "require-dev": {
-                "drupal/codemirror_editor": "^1.0"
+                "drupal/codemirror_editor": "^2.0"
             },
             "suggest": {
                 "drupal/codemirror_editor": "Allows for template code fields to be rendered with the CodeMirror editor"
@@ -8192,8 +8192,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1676415997",
+                    "version": "2.1.0",
+                    "datestamp": "1724697371",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8206,7 +8206,7 @@
             ],
             "authors": [
                 {
-                    "name": "Chris Burge",
+                    "name": "chris burge",
                     "homepage": "https://www.drupal.org/user/1826152"
                 }
             ],
