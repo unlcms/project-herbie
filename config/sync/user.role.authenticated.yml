@@ -2,9 +2,12 @@ uuid: 7e5e6587-46de-4143-890c-228d7627f7d5
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.webform_default
   module:
     - external_entities
     - file
+    - filter
     - honeypot
     - media
     - protected_pages
@@ -20,6 +23,7 @@ permissions:
   - 'access protected page password screen'
   - 'bypass honeypot protection'
   - 'delete own files'
+  - 'use text format webform_default'
   - 'view media'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity'
