@@ -4641,27 +4641,27 @@
         },
         {
             "name": "drupal/group_content_menu",
-            "version": "3.0.2",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/group_content_menu.git",
-                "reference": "3.0.2"
+                "reference": "3.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/group_content_menu-3.0.2.zip",
-                "reference": "3.0.2",
-                "shasum": "542c84b0031ba049713e67ca3781c21047f3a541"
+                "url": "https://ftp.drupal.org/files/projects/group_content_menu-3.0.5.zip",
+                "reference": "3.0.5",
+                "shasum": "aea0039a25624f437d60c9736f76a6dae9f5dcea"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10",
+                "drupal/core": "^9.3 || ^10 || ^11",
                 "drupal/group": "^3.0@beta"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.2",
-                    "datestamp": "1717168696",
+                    "version": "3.0.5",
+                    "datestamp": "1732119135",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4679,7 +4679,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Ghost of Drupal Past",
+                    "name": "ghost of drupal past",
                     "homepage": "https://www.drupal.org/user/3619592"
                 },
                 {
