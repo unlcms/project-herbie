@@ -4515,25 +4515,25 @@
         },
         {
             "name": "drupal/google_tag",
-            "version": "2.0.6",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/google_tag.git",
-                "reference": "2.0.6"
+                "reference": "2.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.6.zip",
-                "reference": "2.0.6",
-                "shasum": "c8f2895a81a7898ac909bdc693fcd25ffe6f62be"
+                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.9.zip",
+                "reference": "2.0.9",
+                "shasum": "78749a4520f6d89ca374061ac4f85f561118b3f1"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11"
             },
             "require-dev": {
-                "drupal/commerce": "^2.0",
+                "drupal/commerce": "^2.0 || ^3.0",
                 "drupal/commerce_wishlist": "^3.0@beta",
-                "drupal/csp": "^1.0",
+                "drupal/csp": "^1.0 || ~2.1.1",
                 "drupal/google_analytics": "^4.0",
                 "drupal/search_api": "^1.28.0",
                 "drupal/token": "^1.11.0",
@@ -4542,8 +4542,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.6",
-                    "datestamp": "1721948116",
+                    "version": "2.0.9",
+                    "datestamp": "1756130983",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
