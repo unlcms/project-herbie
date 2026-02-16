@@ -1,0 +1,15 @@
+diff --git a/src/EventSubscriber/ProtectedPagesSubscriber.php b/src/EventSubscriber/ProtectedPagesSubscriber.php
+index 28d935745a..2dfe01d68d 100644
+--- a/src/EventSubscriber/ProtectedPagesSubscriber.php
++++ b/src/EventSubscriber/ProtectedPagesSubscriber.php
+@@ -182,6 +182,10 @@ public function sendAccessDenied($pid) {
+    */
+   public function protectedPagesIsPageLocked(string $current_path, string $normal_path) {
+     $pid = NULL;
++    // Don't run checks on JSONAPI routes.
++    if (str_contains($this->currentPath->getPath(), 'jsonapi')) {
++      return NULL;
++    }
+
+     // Check all protected pages entries for path match including wildcards.
+     $all_protected_pages = $this->protectedPagesStorage->loadAllProtectedPages();
