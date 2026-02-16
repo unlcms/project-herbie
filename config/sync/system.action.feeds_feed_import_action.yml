@@ -1,0 +1,11 @@
+uuid: 2d5d99cb-2017-4e3b-bdd6-0bd132939ec0
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+id: feeds_feed_import_action
+label: 'Import selected feeds'
+type: feeds_feed
+plugin: feeds_feed_import_action
+configuration: {  }

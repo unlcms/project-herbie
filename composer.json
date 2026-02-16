@@ -160,14 +160,15 @@
         "drupal/field_css": "^2.0@RC",
         "drupal/field_group": "^3.0",
         "drupal/file_delete": "^2.0",
+        "drupal/file_mdm": "^3.0",
         "drupal/google_tag": "^2.0",
         "drupal/group": "^3.2",
         "drupal/group_content_menu": "^3.0",
-        "drupal/heading": "^1.7",
+        "drupal/heading": "^2.0",
         "drupal/honeypot": "^2.1",
         "drupal/image_class": "^2.0",
-        "drupal/image_effects": "^3.3",
-        "drupal/imagemagick": "^3.3",
+        "drupal/image_effects": "^3.6",
+        "drupal/imagemagick": "^3.7",
         "drupal/inline_block_title_automatic": "^1.1",
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi_image_styles": "^3.0",
@@ -213,7 +214,7 @@
         "drupal/svg_image": "^3.0",
         "drupal/theme_per_user": "^1.0",
         "drupal/token": "^1.0",
-        "drupal/twig_tweak": "^3.2",
+        "drupal/twig_tweak": "^3.3",
         "drupal/twig_ui": "^2.0",
         "drupal/views_block_placement_exposed_form_defaults": "^1.0@RC",
         "drupal/views_data_export": "^1.4",
@@ -221,6 +222,7 @@
         "drush/drush": "^12.5",
         "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
+        "league/csv": "^9.16",
         "nigelotoole/progress-tracker": "^2.0",
         "northernco/ckeditor5-anchor-drupal": "^0.3.0",
         "npm-asset/select2": "^4.0",
@@ -346,14 +348,8 @@
                 "2815971 - More contexts needed": "patches/group-context-2815971-52.patch",
                 "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"
             },
-            "drupal/heading": {
-                "3354814 - Configuration schema is not complete": "patches/3354814-heading-config-schema.patch"
-            },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"
-            },
-            "drupal/salesforce": {
-                "unlcms-1102 - Fix Salesforce core version requirement": "patches/unlcms-1106-fix-salesforce-core-version-req.patch"
             },
             "drupal/views_block_placement_exposed_form_defaults": {
                 "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"
