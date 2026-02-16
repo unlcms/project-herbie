@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5f4cc6b2dfd33b42ab4d19d94f6b0be",
+    "content-hash": "8588d79b2ab81ecf9b9ecc7572c8df07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15270,16 +15270,16 @@
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "2.4",
+            "version": "2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "e3033f74264419f2b11050ccf265fb804c015885"
+                "reference": "ce8d2118e7d548289714f4a41142fcca62b55848"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/e3033f74264419f2b11050ccf265fb804c015885",
-                "reference": "e3033f74264419f2b11050ccf265fb804c015885",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/ce8d2118e7d548289714f4a41142fcca62b55848",
+                "reference": "ce8d2118e7d548289714f4a41142fcca62b55848",
                 "shasum": ""
             },
             "require": {
@@ -15299,9 +15299,9 @@
             "description": "UNL customizations for use with the CAS and UNL User modules.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/2.4"
+                "source": "https://github.com/unlcms/unl_cas/tree/2.7"
             },
-            "time": "2023-06-20T19:08:03+00:00"
+            "time": "2026-02-16T22:17:31+00:00"
         },
         {
             "name": "unlcms/unl_five",
