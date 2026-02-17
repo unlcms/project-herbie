@@ -97,6 +97,7 @@ module:
   infotext: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
+  js_cookie: 0
   jsonapi: 0
   jsonapi_image_styles: 0
   key: 0
