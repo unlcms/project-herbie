@@ -8775,15 +8775,15 @@
         },
         {
             "name": "dxg/icon-library",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "git",
                 "url": "https://git.unl.edu/dxg/icon-library.git",
-                "reference": "5057be47d4972d11747ed90d998226d7971eb907"
+                "reference": "3e4af682bbf8a0ce3d14173f4a5692e1e8904268"
             },
             "type": "drupal-library",
             "description": "UNL's icon library.",
-            "time": "2026-02-02T19:11:54+00:00"
+            "time": "2026-02-17T19:00:34+00:00"
         },
         {
             "name": "egulias/email-validator",
