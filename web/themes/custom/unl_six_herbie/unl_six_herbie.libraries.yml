@@ -22,8 +22,6 @@ person:
   css:
     theme:
       css/theme/person.css: {}
-  js:
-    js/theme/person.js: {}
 
 hero:
   version: VERSION
@@ -36,32 +34,24 @@ photo_hero:
   css:
     theme:
       css/theme/photo_hero.css: {}
-  # js:
-  #   js/theme/photo_hero.js: {}
 
 card:
   version: VERSION
   css:
     theme:
       css/theme/block/card.css: {}
-  js:
-    js/theme/card.js: {}
 
 news_teaser:
   version: VERSION
   css:
     theme:
       css/theme/news_teaser.css: {}
-  # js:
-  #   js/theme/news_teaser.js: {}
 
 news_article:
   version: VERSION
   css:
     theme:
       css/theme/news_article.css: {}
-  js:
-    js/theme/news_article.js: {}
 
 logo_cloud:
   version: VERSION
@@ -80,8 +70,6 @@ slideshow:
   css:
     theme:
       css/theme/block/slideshow.css: {}
-  js:
-    js/theme/slideshow.js: {}
 
 timeline:
   version: VERSION
@@ -100,8 +88,6 @@ tabs:
   css:
     theme:
       css/theme/block/tabs.css: {}
-  js:
-    js/theme/tabs.js: {}
 
 cta:
   version: VERSION
