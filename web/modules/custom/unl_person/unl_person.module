@@ -68,9 +68,11 @@ function unl_person_form_alter(&$form, $form_state, $form_id) {
     $allowed_roles = ['authenticated', 'viewer', 'temporary_editor'];
 
     // Disable entitygroup and unldirectoryreference fields
-    if (array_diff($current_user_roles, $allowed_roles) === [] && count($current_user_roles) <= count($allowed_roles)) {
+    if (array_diff($current_user_roles, $allowed_roles) === [] && count($current_user_roles) <= count($allowed_roles) && in_array('temporary_editor', $current_user_roles)) {
       $form['n_person_unldirectoryreference']['widget']['#disabled'] = TRUE;
       $form['entitygroupfield']['#disabled'] = TRUE;
+      $form['unl_access']['#access'] = FALSE;
+      $form['unl_access']['#disabled'] = TRUE;
     }
   }
 }
@@ -102,7 +104,7 @@ function unl_person_node_access(NodeInterface $node, $operation, AccountInterfac
       if (($operation === 'update') &&  (array_intersect(['temporary_editor'], $account->getRoles())) && (__unl_person_user_has_edit_access($account, $current_node) === false)) {
         $is_group = $node->get('entitygroupfield')->getValue()[0]['target_id'];
         if (!empty($is_group)) {
-            return \Drupal\Core\Access\AccessResult::forbidden();
+          return \Drupal\Core\Access\AccessResult::forbidden();
         }
       }
       return \Drupal\Core\Access\AccessResult::neutral();
@@ -116,12 +118,8 @@ function unl_person_node_access(NodeInterface $node, $operation, AccountInterfac
  */
 
 function __unl_person_user_has_edit_access(AccountInterface $account, NodeInterface $node) {
-  $request = \Drupal::request();
-  $session = $request->getSession();
   $current_user_roles = $account->getRoles();
   $roles_to_check = ['authenticated', 'temporary_editor', 'viewer'];
-  $user = User::load($account->id());
-  $role_name = 'temporary_editor';
 
   $current_user_roles_check = empty(array_diff(array_values($current_user_roles), $roles_to_check,));
   if ($current_user_roles === ['authenticated'] ||  $current_user_roles_check) {
@@ -167,9 +165,45 @@ function unl_person_form_views_exposed_form_alter(&$form, FormStateInterface $fo
   // Remove certain roles from the views exposed filter on /admin/people.
   $view = $form_state->get('view');
   if ($view && $view->id() === 'administerusersbyrole_people') {
-    if (!User::load(\Drupal::currentUser()->id())->hasRole('administrator') &&
-      !User::load(\Drupal::currentUser()->id())->hasRole('super_administrator')) {
+    if (
+      !User::load(\Drupal::currentUser()->id())->hasRole('administrator') &&
+      !User::load(\Drupal::currentUser()->id())->hasRole('super_administrator')
+    ) {
       unset($form['role']['#options']['temporary_editor']);
+    }
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function unl_person_editor_js_settings_alter(array &$settings) {
+  $user = \Drupal::currentUser();
+  $current_user_roles = $user->getRoles();
+  $allowed_roles = ['authenticated', 'viewer', 'temporary_editor'];
+  $current_format = 'standard';
+  $route_match = \Drupal::routeMatch();
+
+  if (array_diff($current_user_roles, $allowed_roles) === [] && count($current_user_roles) <= count($allowed_roles) && in_array('temporary_editor', $current_user_roles)) {
+    $node = $route_match->getParameter('node');
+    if ($node && $node->getType() === 'person') {
+      if ($route_match->getRouteName() == 'entity.node.edit_form') {
+        if (isset($settings['editor']['formats'][$current_format])) {
+          // Loop through all the available formats on the node.
+          foreach ($settings['editor']['formats'] as $format_name => &$format_settings) {
+            if ($format_name == $current_format) {
+              $buttons_to_remove = ['drupalMedia', 'link'];
+              // Filter toolbar items to exclude drupalMedia and linkit buttons.
+              $format_settings['editorSettings']['toolbar']['items'] = array_values(
+                array_filter(
+                  $format_settings['editorSettings']['toolbar']['items'],
+                  fn($item) => !in_array($item, $buttons_to_remove)
+                )
+              );
+            }
+          }
+        }
+      }
     }
   }
 }
