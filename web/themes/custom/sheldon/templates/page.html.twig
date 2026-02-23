@@ -269,7 +269,7 @@
             } else if (day == 4 && (hours >= 10 && hours < 19)) {
                 document.getElementById('open-status').innerHTML = 'Open Now';
                 return false;
-            } else if (hours >= 10 && hours < 17) {
+            } else if ((day == 2 || day == 3 || day == 5 || day == 6) && (hours >= 10 && hours < 17)) {
                 document.getElementById('open-status').innerHTML = 'Open Now';
                 return false;
             } else {
