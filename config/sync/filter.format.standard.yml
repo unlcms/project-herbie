@@ -94,7 +94,7 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: false
+    status: true
     weight: -49
     settings:
       filter_url_length: 72
@@ -117,6 +117,6 @@ filters:
         narrow: narrow
         wide: wide
       allowed_media_types:
+        remote_video: remote_video
         image: image
         instagram: instagram
-        remote_video: remote_video

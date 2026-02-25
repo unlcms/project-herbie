@@ -83,7 +83,7 @@ class RequestSubscriber implements EventSubscriberInterface {
 
     // Display the edit/view tabs for all roles as defined in the configuration file (except Authenticated).
     // This restores the default block configuration if there were any changes made to it.
-    $block_id = 'unl_five_herbie_local_tasks';
+    $block_id = \Drupal::config('system.theme')->get('default') . '_local_tasks';
     $block = \Drupal\block\Entity\Block::load($block_id);
     if($block) {
       $visibility = $block->getVisibility();
