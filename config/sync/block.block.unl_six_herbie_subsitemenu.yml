@@ -24,4 +24,6 @@ settings:
   level: 1
   depth: 0
   expand_all_items: true
+  relative_visibility: false
+  theme_hook_suggestion: ''
 visibility: {  }

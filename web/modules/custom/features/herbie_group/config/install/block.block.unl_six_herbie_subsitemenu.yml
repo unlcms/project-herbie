@@ -1,4 +1,3 @@
-uuid: 393f755f-a83c-4d6a-b696-c9049d4c0b38
 langcode: en
 status: true
 dependencies:
@@ -7,9 +6,9 @@ dependencies:
   module:
     - group_content_menu
   theme:
-    - unl_five_herbie
-id: subsitemenu
-theme: unl_five_herbie
+    - unl_six_herbie
+id: unl_six_herbie_subsitemenu
+theme: unl_six_herbie
 region: navlinks
 weight: -4
 provider: null
