@@ -136,8 +136,9 @@
         "drupal/cas": "^2.0",
         "drupal/codemirror_editor": "^1.5",
         "drupal/config_filter": "^1.0",
-        "drupal/config_ignore": "^2.4",
-        "drupal/config_split": "^1.4",
+        "drupal/config_ignore": "^3.3",
+        "drupal/config_inspector": "^2.1",
+        "drupal/config_split": "^1.10",
         "drupal/config_update": "^2.0@alpha",
         "drupal/core-composer-scaffold": "~10.2.0",
         "drupal/core-project-message": "~10.2.0",
@@ -246,7 +247,6 @@
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "require-dev": {
-        "drupal/config_inspector": "^2.1",
         "drupal/core-dev": "^10"
     },
     "conflict": {
@@ -335,9 +335,6 @@
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
-            },
-            "drupal/config_ignore": {
-                "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             },
             "drupal/feeds": {
                 "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
