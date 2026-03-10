@@ -164,7 +164,7 @@
         "drupal/file_delete": "^2.0",
         "drupal/file_mdm": "^3.0",
         "drupal/google_tag": "^2.0",
-        "drupal/group": "^3.2",
+        "drupal/group": "^3.3",
         "drupal/group_content_menu": "^3.0",
         "drupal/heading": "^2.0",
         "drupal/honeypot": "^2.1",
@@ -219,6 +219,7 @@
         "drupal/twig_tweak": "^3.3",
         "drupal/twig_ui": "^2.0",
         "drupal/typed_data": "^2.1",
+        "drupal/variationcache": "^1.5",
         "drupal/views_block_placement_exposed_form_defaults": "^1.0@RC",
         "drupal/views_data_export": "^1.4",
         "drupal/webform": "^6.2@beta",
@@ -343,7 +344,7 @@
                 "Custom (gh#938) - Remove gtag.ajax to avoid jQuery dependency moving jQuery to the head": "patches/3213116-googe_tag-remove_jquery.patch"
             },
             "drupal/group": {
-                "2815971 - More contexts needed": "patches/group-context-2815971-52.patch",
+                "2815971 - More contexts needed": "patches/2815971-merge-request-159.diff",
                 "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"
             },
             "drupal/paragraphs": {
