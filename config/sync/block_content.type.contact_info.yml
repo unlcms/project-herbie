@@ -6,5 +6,5 @@ _core:
   default_config_hash: YI8f0mcnKRGk5bEP11lpwoWp-MB2SxsMLjvHsLehYw0
 id: contact_info
 label: 'Contact Info'
-revision: 0
+revision: false
 description: 'A block containing contact information for the website owner (e.g. locations, addresses, phone numbers)'

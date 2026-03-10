@@ -6,3 +6,4 @@ name: 'Media tags'
 vid: media_tags
 description: 'Non-public tags for file organization and filtering.'
 weight: 0
+new_revision: false

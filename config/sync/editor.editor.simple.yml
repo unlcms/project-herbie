@@ -32,4 +32,5 @@ settings:
       multiBlock: true
     linkit_extension:
       linkit_enabled: false
-image_upload: {  }
+image_upload:
+  status: false

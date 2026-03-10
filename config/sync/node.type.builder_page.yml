@@ -28,7 +28,7 @@ _core:
 name: 'Builder page'
 type: builder_page
 description: 'The standard type of page that can be augmented with grids and blocks through the <em>Layout</em> tab after page creation.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

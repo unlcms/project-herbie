@@ -6,5 +6,5 @@ _core:
   default_config_hash: LURMyibzkyH1jfYoR7FAoQpqJiMoRefpe_7EVdoNoMc
 id: hero
 label: Hero
-revision: 1
+revision: true
 description: 'Hero banner that appears at the top of a page.'
