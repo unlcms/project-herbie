@@ -41,6 +41,14 @@
   RewriteCond %{HTTP_HOST} ^isso\.unl\.edu$
   RewriteRule ^(.*)$ https://global.unl.edu/isso/ [R=301,L]
 
+  # museum
+  RewriteCond %{HTTP_HOST} ^ashfall\.unl\.edu$
+  RewriteRule ^(.*)$ https://museum.unl.edu/ashfall/ [R=301,L]
+  RewriteCond %{HTTP_HOST} ^morrillhall\.unl\.edu$
+  RewriteRule ^(.*)$ https://museum.unl.edu/morrill/ [R=301,L]
+  RewriteCond %{HTTP_HOST} ^trailside\.unl\.edu$
+  RewriteRule ^(.*)$ https://museum.unl.edu/trailside/ [R=301,L]
+
   # my
   RewriteCond %{HTTP_HOST} ^my\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^myplan\.unl\.edu$
