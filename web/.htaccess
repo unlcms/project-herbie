@@ -265,6 +265,8 @@ AddEncoding gzip svgz
   RewriteRule ^(.*)$ https://museum.unl.edu/morrill/ [R=301,L]
   RewriteCond %{HTTP_HOST} ^trailside\.unl\.edu$
   RewriteRule ^(.*)$ https://museum.unl.edu/trailside/ [R=301,L]
+  RewriteCond %{HTTP_HOST} ^unsmcollections\.unl\.edu$
+  RewriteRule ^(.*)$ https://museum.unl.edu/research-collections/ [R=301,L]
 
   # my
   RewriteCond %{HTTP_HOST} ^my\.unl\.edu$ [OR]
