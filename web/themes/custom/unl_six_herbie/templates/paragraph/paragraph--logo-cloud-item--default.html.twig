@@ -31,15 +31,11 @@
   <li{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}
-        <a class="dcf-d-flex dcf-ai-center dcf-p-3" href="{{url}}" {{ rel_attribute ? rel_attribute : '' }}>
-      {% else %}
-        <div class="dcf-d-flex dcf-ai-center dcf-p-3">
+        <a href="{{url}}" {{ rel_attribute ? rel_attribute : '' }}>
       {% endif %}
         {{ content.p_b_logo_cloud_image }}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}
         </a>
-      {% else %}
-        </div>
       {% endif %}
     {% endblock %}
   </li>
