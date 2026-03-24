@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19b1067bce561e6b51ae8e1d4ec36c34",
+    "content-hash": "fe74735a6b1c50f4a42a5276433ce099",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15496,16 +15496,16 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc"
+                "reference": "e7474d3337fd140b8a05b003d26e4e3e0e59bf6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
-                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/e7474d3337fd140b8a05b003d26e4e3e0e59bf6f",
+                "reference": "e7474d3337fd140b8a05b003d26e4e3e0e59bf6f",
                 "shasum": ""
             },
             "require": {
@@ -15524,9 +15524,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/3.0.1"
+                "source": "https://github.com/unlcms/unl_multisite/tree/3.1.0"
             },
-            "time": "2025-10-10T21:39:58+00:00"
+            "time": "2026-03-24T19:40:38+00:00"
         },
         {
             "name": "unlcms/unl_six",
