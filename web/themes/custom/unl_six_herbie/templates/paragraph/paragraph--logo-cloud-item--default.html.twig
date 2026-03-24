@@ -7,19 +7,35 @@
     'dcf-mb-0 unl-bg-cream@dark unlcms-li-logo',
   ]
 %}
+{% set url_obj = content.p_b_logo_cloud_link[0]['#url'] %}
+
+{% if url_obj.isRouted() %}
+ {% set url_obj = url(paragraph.p_b_logo_cloud_link.0.url.routeName, paragraph.p_b_logo_cloud_link.0.url.routeParameters, {absolute: true}) %}
+ {% if url_obj %}
+{% set url = url_obj['#markup'] %}
+  {% endif %}
+{% else %}
+  {% set url = url_obj.toString() %}
+{% endif %}
+
+{% set parsed_url =  parse_url(url)%}
+{% set host = parsed_url['host'] %}
+{% set parts = host|split('.') %}
+{% set base_domain = parts|last %}
+
+{% if base_domain not in ['edu', 'gov'] %}
+  {% set rel_attribute = "rel=nofollow" %}
+{% endif %}
+
 {% block paragraph %}
   <li{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}
-        <a class="dcf-d-flex dcf-ai-center dcf-p-3" href="{{ content.p_b_logo_cloud_link[0]['#url'] }}">
-      {% else %}
-        <div class="dcf-d-flex dcf-ai-center dcf-p-3">
+        <a href="{{url}}" {{ rel_attribute ? rel_attribute : '' }}>
       {% endif %}
         {{ content.p_b_logo_cloud_image }}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}
         </a>
-      {% else %}
-        </div>
       {% endif %}
     {% endblock %}
   </li>
