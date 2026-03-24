@@ -1,0 +1,18 @@
+diff --git a/src/Plugin/WebformExporterBase.php b/src/Plugin/WebformExporterBase.php
+index 1a366260b..0a152b773 100644
+--- a/src/Plugin/WebformExporterBase.php
++++ b/src/Plugin/WebformExporterBase.php
+@@ -420,6 +420,13 @@ abstract class WebformExporterBase extends PluginBase implements WebformExporter
+       $this->archive->close();
+       $this->archive = NULL;
+     }
++
++    // Reopen the file, to flush the file and clear up memory usage.
++    else {
++      $this->archive->close();
++      $this->archive = new \ZipArchive();
++      $this->archive->open($this->getArchiveFilePath());
++    }
+   }
+ 
+ }
