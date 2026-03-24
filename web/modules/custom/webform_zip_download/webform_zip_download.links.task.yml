@@ -1,0 +1,5 @@
+webform_zip_download.download_zip:
+  title: 'Download all uploaded files (ZIP)'
+  route_name: webform_zip_download.download_zip
+  parent_id: entity.webform.results
+  weight: 15

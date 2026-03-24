@@ -1,0 +1,13 @@
+webform_zip_download.download_zip:
+  path: '/admin/structure/webform/manage/{webform}/results/download-zip'
+  defaults:
+    _form: '\Drupal\webform_zip_download\Form\WebformFilesZipForm'
+    _title: 'Download all uploaded files (ZIP)'
+  requirements:
+    _permission: 'view any webform submission'
+    _roles: 'administrator+site_admin'
+    _entity_access: 'webform.view results'
+  options:
+    parameters:
+      webform:
+        type: entity:webform
