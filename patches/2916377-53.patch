@@ -1,16 +1,16 @@
 diff --git a/core/lib/Drupal/Component/Utility/Html.php b/core/lib/Drupal/Component/Utility/Html.php
-index 8c7d3888cd..e9e57e433a 100644
+index f20ed330f1..b58f7c6ee4 100644
 --- a/core/lib/Drupal/Component/Utility/Html.php
 +++ b/core/lib/Drupal/Component/Utility/Html.php
-@@ -95,7 +95,6 @@ public static function getClass($class) {
-   public static function cleanCssIdentifier($identifier, array $filter = [
-     ' ' => '-',
-     '_' => '-',
--    '/' => '-',
-     '[' => '-',
-     ']' => '',
-   ]) {
-@@ -115,13 +114,17 @@ public static function cleanCssIdentifier($identifier, array $filter = [
+@@ -100,7 +100,6 @@ public static function cleanCssIdentifier(
+     array $filter = [
+       ' ' => '-',
+       '_' => '-',
+-      '/' => '-',
+       '[' => '-',
+       ']' => '',
+     ],
+@@ -121,13 +120,17 @@ public static function cleanCssIdentifier(
  
      // Valid characters in a CSS identifier are:
      // - the hyphen (U+002D)
@@ -25,7 +25,7 @@ index 8c7d3888cd..e9e57e433a 100644
      // - ISO 10646 characters U+00A1 and higher
      // We strip out any character not in the above list.
 -    $identifier = preg_replace('/[^\x{002D}\x{0030}-\x{0039}\x{0041}-\x{005A}\x{005F}\x{0061}-\x{007A}\x{00A1}-\x{FFFF}]/u', '', $identifier);
-+    $identifier = preg_replace('/[^\x{002D}\x{002E}\x{002F}\x{003A}\x{0030}-\x{005A}\x{005F}\x{0061}-\x{007A}\x{00A1}-\x{FFFF}]/u', '', $identifier);
++    $identifier = preg_replace('/[^\x{002D}\x{002E}\x{002F}\x{0030}-\x{0039}\x{003A}\x{0040}\x{0041}-\x{005A}\x{005F}\x{0061}-\x{007A}\x{00A1}-\x{FFFF}]/u', '', $identifier);
      // Identifiers cannot start with a digit, two hyphens, or a hyphen followed by a digit.
      $identifier = preg_replace([
        '/^[0-9]/',

@@ -1,5 +1,6 @@
 _core:
   default_config_hash: Qojs5PTH_nF-5JqOGat0BjDMIblBcqVVCKqtIkTL6VI
+langcode: en
 login_link_enabled: true
 login_link_label: 'CAS Login'
 login_success_message: ''

@@ -91,4 +91,5 @@ settings:
       linkit_profile: standard
     media_media:
       allow_view_mode_override: true
-image_upload: {  }
+image_upload:
+  status: false

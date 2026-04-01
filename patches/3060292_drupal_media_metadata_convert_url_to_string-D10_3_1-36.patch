@@ -1,16 +1,8 @@
 diff --git a/core/modules/media/src/Entity/Media.php b/core/modules/media/src/Entity/Media.php
-index 76739dbe48..6e8a0288c4 100644
+index 7fcf32b..6e7866a 100644
 --- a/core/modules/media/src/Entity/Media.php
 +++ b/core/modules/media/src/Entity/Media.php
-@@ -7,6 +7,7 @@
- use Drupal\Core\Entity\EntityTypeInterface;
- use Drupal\Core\Field\BaseFieldDefinition;
- use Drupal\Core\StringTranslation\StringTranslationTrait;
-+use Drupal\Core\Url;
- use Drupal\media\MediaInterface;
- use Drupal\media\MediaSourceEntityConstraintsInterface;
- use Drupal\media\MediaSourceFieldConstraintsInterface;
-@@ -375,10 +376,15 @@ public function prepareSave() {
+@@ -432,10 +432,15 @@ public function prepareSave() {
          // Try to set fields provided by the media source and mapped in
          // media type config.
          foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
@@ -28,19 +20,19 @@ index 76739dbe48..6e8a0288c4 100644
          }
  
 diff --git a/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php b/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
-index b6a8fff68b..92c0b64065 100644
+index 2397324..bb40f7b 100644
 --- a/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
 +++ b/core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
-@@ -20,7 +20,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
+@@ -26,7 +26,7 @@ class MediaSourceOEmbedVideoTest extends MediaSourceTestBase {
    /**
     * {@inheritdoc}
     */
--  protected static $modules = ['media_test_oembed'];
-+  protected static $modules = ['media_test_oembed', 'link'];
+-  protected static $modules = ['media_test_oembed', 'dblog'];
++  protected static $modules = ['media_test_oembed', 'dblog', 'link'];
  
    /**
     * {@inheritdoc}
-@@ -83,6 +83,8 @@ public function testMediaOEmbedVideoSource() {
+@@ -89,6 +89,8 @@ public function testMediaOEmbedVideoSource(): void {
        'field_string_width' => 'string',
        'field_string_height' => 'string',
        'field_string_author_name' => 'string',
@@ -49,7 +41,7 @@ index b6a8fff68b..92c0b64065 100644
      ];
      $this->createMediaTypeFields($fields, $media_type_id);
  
-@@ -95,6 +97,7 @@ public function testMediaOEmbedVideoSource() {
+@@ -101,6 +103,7 @@ public function testMediaOEmbedVideoSource(): void {
      $assert_session->selectExists('field_map[width]')->setValue('field_string_width');
      $assert_session->selectExists('field_map[height]')->setValue('field_string_height');
      $assert_session->selectExists('field_map[author_name]')->setValue('field_string_author_name');
@@ -57,7 +49,7 @@ index b6a8fff68b..92c0b64065 100644
      $assert_session->buttonExists('Save')->press();
  
      // Configure the iframe to be narrower than the actual video, so we can
-@@ -118,6 +121,22 @@ public function testMediaOEmbedVideoSource() {
+@@ -124,6 +127,22 @@ public function testMediaOEmbedVideoSource(): void {
  
      $assert_session->addressEquals('admin/content/media');
  
@@ -74,7 +66,7 @@ index b6a8fff68b..92c0b64065 100644
 +    $this->drupalGet("media/add/$media_type_id");
 +    $assert_session->fieldExists('Remote video URL')->setValue($video_url);
 +    $assert_session->buttonExists('Save')->press();
-+
++    
 +    $assert_session->addressEquals('admin/content/media');
 +
      // Get the media entity view URL from the creation message.

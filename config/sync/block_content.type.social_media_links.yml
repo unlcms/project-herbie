@@ -6,5 +6,5 @@ _core:
   default_config_hash: cpz3-B_SXFqedKelrsf4hjOVkV2G-36j6PA7nZsS358
 id: social_media_links
 label: 'Social media links'
-revision: 0
+revision: false
 description: 'Links to your social media outposts.'

@@ -6,5 +6,5 @@ _core:
   default_config_hash: JDCAYAbo15Bza_YD_oGrCL90Sr4PYQ549gn2ilS1C2M
 id: html_code
 label: 'HTML Code'
-revision: 1
+revision: true
 description: 'A block that allows for direct HTML and CSS editing'

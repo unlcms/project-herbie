@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: timeline
 label: Timeline
-revision: 0
+revision: false
 description: 'A rectangular display of a list of events in chronological order along a line.'

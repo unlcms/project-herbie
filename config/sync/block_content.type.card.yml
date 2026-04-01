@@ -6,5 +6,5 @@ _core:
   default_config_hash: vC7nALbDbyaQAox_zUMfevK1uCChQrihkatgrqKj804
 id: card
 label: Card
-revision: 0
+revision: false
 description: 'A styled content block with a headline and body that optionally includes a picture, overline, subhead, and call-to-action button'
