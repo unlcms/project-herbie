@@ -12,7 +12,8 @@
   mix-blend-mode: multiply;
 }
 /* Duplicate .dcf-obj-fit-contain since it is difficult to apply classes to image tags. */
-.unlcms-li-logo img {
+.unlcms-li-logo img,
+.unlcms-li-logo svg {
   object-fit: contain !important;
   height: 100% !important;
   width: 100% !important;
@@ -24,5 +25,8 @@
 
 .unlcms-li-logo .media-entity {
   margin-bottom: unset;
-  display: unset;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: .75em;
 }

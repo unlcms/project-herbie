@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15e230cf64b6a7650ebae83e5b6cefdc",
+    "content-hash": "fe74735a6b1c50f4a42a5276433ce099",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9059,26 +9059,25 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.16.0",
+            "version": "0.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "239e257605e2141265b429e40987b2ee51bba4b4"
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/239e257605e2141265b429e40987b2ee51bba4b4",
-                "reference": "239e257605e2141265b429e40987b2ee51bba4b4",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/0afa95ea74be155a7bcd6c6fb60c276c39984500",
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "ezyang/htmlpurifier": "^4.16",
-                "php": "^5.6 || ^7.0 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^8.5"
+                "phpunit/phpunit": "^6.5 || ^8.5"
             },
             "type": "library",
             "autoload": {
@@ -9099,26 +9098,26 @@
             "description": "An SVG sanitizer for PHP",
             "support": {
                 "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
-                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.16.0"
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.22.0"
             },
-            "time": "2023-03-20T10:51:12+00:00"
+            "time": "2025-08-12T10:13:48+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.16.0",
+            "version": "v4.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8"
+                "reference": "b287d2a16aceffbf6e0295559b39662612b77fcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/523407fb06eb9e5f3d59889b3978d5bfe94299c8",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/b287d2a16aceffbf6e0295559b39662612b77fcf",
+                "reference": "b287d2a16aceffbf6e0295559b39662612b77fcf",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0"
+                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
             },
             "require-dev": {
                 "cerdic/css-tidy": "^1.7 || ^2.0",
@@ -9160,9 +9159,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ezyang/htmlpurifier/issues",
-                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.16.0"
+                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.19.0"
             },
-            "time": "2022-09-18T07:06:19+00:00"
+            "time": "2025-10-17T16:34:55+00:00"
         },
         {
             "name": "fileeye/mimemap",
@@ -15473,16 +15472,16 @@
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "3.0.1",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc"
+                "reference": "db8dd0657f3b0367df98876b51e38050f412174b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
-                "reference": "fb40937ebef4e1c7d3a5c73d27fc0a5222a961dc",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/db8dd0657f3b0367df98876b51e38050f412174b",
+                "reference": "db8dd0657f3b0367df98876b51e38050f412174b",
                 "shasum": ""
             },
             "require": {
@@ -15501,22 +15500,22 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/3.0.1"
+                "source": "https://github.com/unlcms/unl_multisite/tree/3.1.1"
             },
-            "time": "2025-10-10T21:39:58+00:00"
+            "time": "2026-03-26T14:19:50+00:00"
         },
         {
             "name": "unlcms/unl_six",
-            "version": "6.0.16",
+            "version": "6.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_six.git",
-                "reference": "e583428e42abec15e93e2da304b08ee9f8a1242b"
+                "reference": "45d1dbe5bfcbc877f61c9531d7e4c2ee5256bddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/e583428e42abec15e93e2da304b08ee9f8a1242b",
-                "reference": "e583428e42abec15e93e2da304b08ee9f8a1242b",
+                "url": "https://api.github.com/repos/unlcms/unl_six/zipball/45d1dbe5bfcbc877f61c9531d7e4c2ee5256bddc",
+                "reference": "45d1dbe5bfcbc877f61c9531d7e4c2ee5256bddc",
                 "shasum": ""
             },
             "require": {
@@ -15534,9 +15533,9 @@
             "description": "UNLedu Framework 6.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_six/issues",
-                "source": "https://github.com/unlcms/unl_six/tree/6.0.16"
+                "source": "https://github.com/unlcms/unl_six/tree/6.0.17"
             },
-            "time": "2026-02-13T21:47:16+00:00"
+            "time": "2026-03-10T21:29:53+00:00"
         },
         {
             "name": "unlcms/unl_user",
@@ -18316,16 +18315,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.6",
+            "version": "5.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "5cee1d3dfc2d2aa6599834520911d246f656bcb8"
+                "reference": "31a105931bc8ffa3a123383829772e832fd8d903"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/5cee1d3dfc2d2aa6599834520911d246f656bcb8",
-                "reference": "5cee1d3dfc2d2aa6599834520911d246f656bcb8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/31a105931bc8ffa3a123383829772e832fd8d903",
+                "reference": "31a105931bc8ffa3a123383829772e832fd8d903",
                 "shasum": ""
             },
             "require": {
@@ -18374,9 +18373,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.6"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.7"
             },
-            "time": "2025-12-22T21:13:58+00:00"
+            "time": "2026-03-18T20:47:46+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",

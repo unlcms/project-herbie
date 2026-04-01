@@ -143,8 +143,16 @@
                             {% endif %}
                           </a>
                         {% else %}
-                          <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
-                            <span class="dcf-txt-nowrap">{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
+                          <a class="dcf-txt-decor-hover" href="tel:{{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''}) }}" itemprop="telephone">
+                            <span class="dcf-txt-nowrap">
+                              {% if node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({' ':''})|length == 10 %}
+                                {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0,3) ~ '-' ~
+                                   node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(3,3) ~ '-' ~
+                                   node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(6,4) }}
+                              {% else %}
+                                {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value }}
+                              {% endif %}
+                            </span>
                             {% if (node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|slice(0, 6)) == '402472' %}
                               <small class="on-campus-dialing dcf-txt-xs dcf-txt-nowrap" title="For on-campus dialing only. Off-campus, dial {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '402-472-' }) }}">On-campus
                                 {{ node.n_person_unldirectoryreference.entity.ee_unldir_telephonenumber.value|replace({ '402472': '2-' }) }}

@@ -45,6 +45,7 @@ dependencies:
     - group
     - key
     - layout_builder
+    - lb_direct_add
     - media
     - menu_admin_per_menu
     - metatag
@@ -89,6 +90,7 @@ permissions:
   - 'access feed overview'
   - 'access files overview'
   - 'access group overview'
+  - 'access layout builder direct add more options'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access protected page password screen'

@@ -357,6 +357,9 @@
             "drupal/views_block_placement_exposed_form_defaults": {
                 "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"
             },
+            "drupal/webform": {
+                "3369136 - Downloading submission csv and .zip file archive incomplete": "patches/webform-n3369136-15-b.patch"
+            },
             "drush/drush": {
                 "Custom - Do not allow config:import to be run": "patches/drush-config-import-message.patch"
             }
