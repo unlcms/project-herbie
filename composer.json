@@ -208,7 +208,7 @@
         "drupal/salesforce_mapping_ui": "^5.1",
         "drupal/salesforce_pull": "^5.1",
         "drupal/salesforce_push": "^5.1",
-        "drupal/scanner": "^1.0@RC",
+        "drupal/scanner": "^2.0@beta",
         "drupal/scheduler_content_moderation_integration": "^2.0",
         "drupal/select2": "^1.13",
         "drupal/seven": "^1.0@alpha",
@@ -353,6 +353,9 @@
             },
             "drupal/protected_pages": {
                 "3559079 - Protected Pages 8.x-1.9 breaks all paginated jsonapi URLs": "patches/3559079-jsonapi_protected_pages.patch"
+            },
+            "drupal/scanner": {
+                "3196119 - Errors on search-only for deep-nested paragraphs": "patches/nestedParagraphFix-3196119-39.patch"
             },
             "drupal/views_block_placement_exposed_form_defaults": {
                 "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"

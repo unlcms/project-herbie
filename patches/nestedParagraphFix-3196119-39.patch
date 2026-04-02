@@ -1,0 +1,191 @@
+diff --git a/src/Plugin/Scanner/Paragraph.php b/src/Plugin/Scanner/Paragraph.php
+index f2ef46f..405d40f 100644
+--- a/src/Plugin/Scanner/Paragraph.php
++++ b/src/Plugin/Scanner/Paragraph.php
+@@ -7,6 +7,7 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+ use Drupal\Core\Entity\EntityStorageException;
+ use Drupal\Core\Logger\LoggerChannelTrait;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\paragraphs\Entity\Paragraph as ParagraphEntity;
+ 
+ /**
+  * A Scanner plugin for handling Paragraph entities.
+@@ -48,73 +49,55 @@ class Paragraph extends Entity {
+           ->loadMultiple($entities);
+         // Iterate over matched paragraphs to extract information that will be
+         // rendered in the results.
+-        foreach ($paragraphs as $paragraph) {
+-          if (!empty($paragraph)) {
+-            // Load the entity the paragraph is referenced in.
+-            $parentEntity = $paragraph->getParentEntity();
+-
+-            if (!empty($parentEntity)) {
+-              $parentEntityType = $parentEntity->getEntityTypeId();
+-              // In the case of nested relationships we need to find the base
+-              // entity.
+-              if ($parentEntityType != 'node') {
+-                // If child is only nested one level deep.
+-                if ($parentEntity->getParentEntity()->getEntityTypeId() == 'node') {
+-                  $parentEntity = $parentEntity->getParentEntity();
+-                }
+-                // Two or more levels of nesting.
+-                else {
+-                  while ($parentEntity->getParentEntity()->getEntityTypeId() != 'node') {
+-                    $parentEntity = $parentEntity->getParentEntity();
+-                  }
+-                }
+-              }
+-              $id = $parentEntity->id();
+-              // Get the value of the specified field.
+-              $paraField = $paragraph->get($fieldname);
+-              $fieldType = $paraField->getFieldDefinition()->getType();
+-              if (in_array($fieldType, [
+-                'text_with_summary',
+-                'text',
+-                'text_long',
+-              ])) {
+-                // Get the value of the field.
+-                $fieldValue = $paraField->getValue()[0];
+-                // Get the parent entity's title.
+-                $title_collect[$id]['title'] = $parentEntity->getTitle();
+-                // Find all instances of the term we're looking for.
+-                preg_match_all($conditionVals['phpRegex'], $fieldValue['value'], $matches, PREG_OFFSET_CAPTURE);
+-                $newValues = [];
+-                // Build an array of strings which are displayed in the results
+-                // with the searched term bolded.
+-                foreach ($matches[0] as $v) {
+-                  // The offset of the matched term(s) in the field's text.
+-                  $start = $v[1];
+-                  if ($values['preceded'] !== '') {
+-                    // Bolding won't work if starting position is in the middle
+-                    // of a word (non-word bounded searches), therefore we move
+-                    // the start position back as many character as there are in
+-                    // the 'preceded' text.
+-                    $start -= strlen($values['preceded']);
+-                  }
+-                  $replaced = preg_replace($conditionVals['phpRegex'], "<strong>$v[0]</strong>", preg_split("/\s+/", substr($fieldValue['value'], $start), 6));
+-                  if (count($replaced) > 1) {
+-                    // The final index contains the remainder of the text, which
+-                    // we don't care about, so we discard it.
+-                    array_pop($replaced);
+-                  }
+-                  $newValues[] = implode(' ', $replaced);
+-                }
+-                $title_collect[$id]['field'] = $newValues;
++        foreach ($paragraphs as $pid => $paragraph) {
++          $parentEntity = $this->getRootParentEntity($paragraph);
++          if (empty($parentEntity)) {
++            continue;
++          }
++          $id = $parentEntity->id();
++          // Get the value of the specified field.
++          $paraField = $paragraph->get($fieldname);
++          $fieldType = $paraField->getFieldDefinition()->getType();
++          if (in_array($fieldType, ['text_with_summary','text','text_long'])) {
++            // Get the value of the field.
++            $fieldValue = $paraField->getValue()[0];
++            // Get the parent entity's title if it exists
++            if (method_exists($parentEntity, 'getTitle')) {
++              $title_collect[$id]['title'] = $parentEntity->getTitle();
++            }
++            // Find all instances of the term we're looking for.
++            preg_match_all($conditionVals['phpRegex'], $fieldValue['value'], $matches, PREG_OFFSET_CAPTURE);
++            $newValues = [];
++            // Build an array of strings which are displayed in the results
++            // with the searched term bolded.
++            foreach ($matches[0] as $k => $v) {
++              // The offset of the matched term(s) in the field's text.
++              $start = $v[1];
++              if ($values['preceded'] !== '') {
++                // Bolding won't work if starting position is in the middle
++                // of a word (non-word bounded searches), therefore we move
++                // the start position back as many character as there are in
++                // the 'preceded' text.
++                $start -= strlen($values['preceded']);
+               }
+-              elseif ($fieldType == 'string') {
+-                $title_collect[$id]['title'] = $parentEntity->getTitle();
+-                preg_match($conditionVals['phpRegex'], $paraField->getString(), $matches, PREG_OFFSET_CAPTURE);
+-                $match = $matches[0][0];
+-                $replaced = preg_replace($conditionVals['phpRegex'], "<strong>$match</strong>", $paraField->getString());
+-                $title_collect[$id]['field'] = [$replaced];
++              $replaced = preg_replace($conditionVals['phpRegex'], "<strong>$v[0]</strong>", preg_split("/\s+/", substr($fieldValue['value'], $start), 6));
++              if (count($replaced) > 1) {
++                // The final index contains the remainder of the text, which
++                // we don't care about so we discard it.
++                array_pop($replaced);
+               }
++              $newValues[] = implode(' ', $replaced);
+             }
++            $title_collect[$id]['field'] = $newValues;
++          }
++          elseif ($fieldType == 'string') {
++            if (method_exists($parentEntity, 'getTitle')) {
++              $title_collect[$id]['title'] = $parentEntity->getTitle();
++            }
++            preg_match($conditionVals['phpRegex'], $paraField->getString(), $matches, PREG_OFFSET_CAPTURE);
++            $match = $matches[0][0];
++            $replaced = preg_replace($conditionVals['phpRegex'], "<strong>$match</strong>", $paraField->getString());
++            $title_collect[$id]['field'] = [$replaced];
+           }
+         }
+       }
+@@ -326,4 +309,58 @@ class Paragraph extends Entity {
+     return -1;
+   }
+ 
++  /**
++   * Helper function to validate that a paragraph is not orphaned.
++   *
++   * @param ParagraphEntity $paragraph
++   *   The paragraph.
++   *
++   * @return bool|ContentEntityInterface
++   *   The parent entity, or FALSE if none.
++   */
++  protected function getValidParent(ParagraphEntity $paragraph) {
++    $pid = $paragraph->id();
++    $parentEntity = $paragraph->getParentEntity();
++    if (empty($parentEntity)) {
++      return FALSE;
++    }
++    $parentField = $paragraph->get('parent_field_name')->getString();
++    $index = $this->getMultiValueIndex($parentEntity->$parentField->getValue(), $pid);
++    // If this paragraph isn't found in this parent's field, skip.
++    if ($index < 0) {
++      return FALSE;
++    }
++
++    return $parentEntity;
++
++  }
++
++  /**
++   * Helper function to get the root of a paragraph.
++   *
++   * @param ParagraphEntity $paragraph
++   *   The paragraph.
++   *
++   * @return bool|ContentEntityInterface
++   *   The parent entity, or FALSE if none.
++   */
++  protected function getRootParentEntity(ParagraphEntity $paragraph) {
++    $currentEntity = FALSE;
++    // First time through, we don't actually know what the parent is, but
++    // we do want to enter the while loop at least once.
++    $currentEntityType = 'paragraph';
++    $childEntity = $paragraph;
++    while ($currentEntityType == 'paragraph') {
++      $currentEntity = $this->getValidParent($childEntity);
++      if ($currentEntity && method_exists($currentEntity, 'getEntityTypeId')) {
++        $currentEntityType = $currentEntity->getEntityTypeId();
++        $childEntity = $currentEntity;
++      }
++      else {
++        $currentEntityType = FALSE;
++      }
++    }
++
++    return $currentEntity;
++  }
+ }
