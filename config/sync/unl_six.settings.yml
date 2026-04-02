@@ -3,4 +3,12 @@ _core:
 features:
   logo: false
   slogan: true
-  favicon: false
+  favicon: 0
+  node_user_picture: false
+  comment_user_picture: true
+  comment_user_verification: true
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+big_footer: 0
