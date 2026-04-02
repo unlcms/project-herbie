@@ -5,7 +5,6 @@ description: 'Custom theme for Nebraska Innovation Campus.'
 core_version_requirement: ^10 || ^11
 
 libraries:
-  - nic/global-styling
   - nic/nic.js
 
 libraries-override:
