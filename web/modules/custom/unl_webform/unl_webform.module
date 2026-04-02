@@ -135,7 +135,7 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
   $element_type = $element['#type'];
   // Add element type to $form array to make it available to
   // validate function(s).
-  $form['element_type'] = $element_type;
+  $form['#element_type'] = $element_type;
 
   // Get Webform settings.
   $config = \Drupal::service('config.factory')->get('webform.settings');
@@ -343,7 +343,7 @@ function unl_webform_form_webform_ui_element_form_alter(&$form, FormStateInterfa
  * Validation function for unl_webform_form_webform_ui_element_form_alter().
  */
 function unl_webform_webform_ui_element_form_validate($form, FormStateInterface &$form_state) {
-  $element_type = $form['element_type'];
+  $element_type = $form['#element_type'];
 
   // Get Webform settings.
   $config = \Drupal::service('config.factory')->get('webform.settings');
