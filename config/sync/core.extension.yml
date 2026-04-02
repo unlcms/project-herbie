@@ -3,7 +3,6 @@ _core:
 module:
   auto_entitylabel: -100
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   administerusersbyrole: 0
   adv_varnish: 0
@@ -103,7 +102,6 @@ module:
   key: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
-  layout_builder_expose_all_field_blocks: 0
   layout_builder_iframe_modal: 0
   layout_builder_operation_link: 0
   layout_builder_restrictions: 0
