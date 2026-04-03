@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a316661356979494c90f3e4b0041330a",
+    "content-hash": "10519d96da0d00cbc0321d70ca4896fd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8217,50 +8217,62 @@
         },
         {
             "name": "drupal/theme_per_user",
-            "version": "1.0.1",
+            "version": "dev-1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/theme_per_user.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/theme_per_user-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "b6aa6d835298210f2a0c8cf0e282e8b9ce49715f"
+                "reference": "30ed362d1bfafcfdb8a2201a179494cfdfc117dd"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
                 "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1680626526",
+                    "version": "1.0.1+26-dev",
+                    "datestamp": "1720247530",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
                 }
             },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\theme_per_user\\": "src/"
+                }
+            },
             "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "test": [
+                    "phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,js,info,txt,md,yml,twig ."
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "bhavanasisarath",
-                    "homepage": "https://www.drupal.org/user/2909833"
+                    "name": "Koala Yeung",
+                    "homepage": "https://www.drupal.org/u/yookoala",
+                    "email": "koalay@gmail.com",
+                    "role": "Developer"
                 },
                 {
-                    "name": "yookoala",
-                    "homepage": "https://www.drupal.org/user/83549"
+                    "name": "Sarath Bhavanasi",
+                    "homepage": "https://www.drupal.org/u/bhavanasisarath",
+                    "email": "bhavanasisarath@gmail.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Select a theme per User wise.",
+            "description": "Theme per User module allow end users to choose the site's theme to their liking.",
             "homepage": "https://www.drupal.org/project/theme_per_user",
             "support": {
-                "source": "https://git.drupalcode.org/project/theme_per_user"
+                "source": "https://git.drupalcode.org/project/theme_per_user",
+                "issues": "https://www.drupal.org/project/issues/theme_per_user"
             }
         },
         {
@@ -21539,6 +21551,7 @@
         "drupal/rabbit_hole": 10,
         "drupal/scanner": 10,
         "drupal/seven": 15,
+        "drupal/theme_per_user": 20,
         "drupal/views_block_placement_exposed_form_defaults": 5,
         "drupal/webform": 10,
         "unlcms/unl_access": 15

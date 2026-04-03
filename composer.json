@@ -214,7 +214,7 @@
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",
         "drupal/svg_image": "^3.0",
-        "drupal/theme_per_user": "^1.0",
+        "drupal/theme_per_user": "1.0.x-dev@dev",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.4",
         "drupal/twig_ui": "^2.0",
