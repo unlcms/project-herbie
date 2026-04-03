@@ -118,8 +118,6 @@ elseif ($environment == 'stage') {
 }
 // If not production or stage, then assumed to be development.
 else {
-
-
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = TRUE;
@@ -134,14 +132,10 @@ else {
    * @see http://php.net/assert
    * @see https://www.drupal.org/node/2492225
    *
-   * If you are using PHP 7.0 it is strongly recommended that you set
-   * zend.assertions=1 in the PHP.ini file (It cannot be changed from .htaccess
-   * or runtime) on development machines and to 0 in production.
-   *
-   * @see https://wiki.php.net/rfc/expectations
+   * It is strongly recommended that you set zend.assertions=1 in the PHP.ini file
+   * (It cannot be changed from .htaccess or runtime) on development machines and
+   * to 0 or -1 in production.
    */
-  assert_options(ASSERT_ACTIVE, TRUE);
-  assert_options(ASSERT_EXCEPTION, TRUE);
 
   // This will prevent Drupal from setting read-only permissions on sites/default.
   $settings['skip_permissions_hardening'] = TRUE;
