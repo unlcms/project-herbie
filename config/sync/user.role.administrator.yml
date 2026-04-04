@@ -15,6 +15,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - media.type.video
     - node.type.archive_page
     - node.type.book
     - node.type.builder_page
@@ -169,6 +170,7 @@ permissions:
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
   - 'create users'
+  - 'create video media'
   - 'create webform'
   - 'create webform content'
   - 'delete any archive_page content'
