@@ -191,14 +191,19 @@ function unl_news_link_alter(&$variables) {
  * 'Bypass content access control' permission.
  */
 function unl_news_node_access(NodeInterface $node, $op, AccountInterface $account) {
-  // Deny access to update & delete operations for news nodes.
-  if ($node->bundle() == 'news' && !$node->isNew() && in_array($op, ['delete'])) {
-    if ($node->get('n_news_foreign_key')->getString()) {
+  // Deny access to delete operation and node edit page for news nodes
+  // that are imported from Nebraska Today. (Updates made from /admin/content
+  // using moderated_content_bulk_publish still need access to 'update' so this
+  // restriction only applies to the /node/*/edit route.)
+  if ($node->bundle() == 'news' && !$node->isNew() && $node->get('n_news_foreign_key')->getString()) {
+    if ($op == 'delete' || ($op == 'update' && \Drupal::routeMatch()->getRouteName() == 'entity.node.edit_form')) {
       return AccessResult::forbidden()
         ->cachePerUser()
         ->addCacheableDependency($node);
     }
   }
+
+  return AccessResult::neutral();
 }
 
 /**
