@@ -357,6 +357,9 @@
             "drupal/scanner": {
                 "3196119 - Errors on search-only for deep-nested paragraphs": "patches/nestedParagraphFix-3196119-39.patch"
             },
+            "drupal/theme_per_user": {
+                "Custom - Remove permission assignment": "patches/theme_per_user-remove-permission-assignment.diff"
+            },
             "drupal/views_block_placement_exposed_form_defaults": {
                 "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"
             },
