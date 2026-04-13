@@ -15,7 +15,6 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
-    - media.type.video
     - node.type.archive_page
     - node.type.book
     - node.type.builder_page
@@ -27,6 +26,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - ai_image_alt_text
     - asset_injector
     - block
     - block_content
@@ -170,7 +170,6 @@ permissions:
   - 'create unl_directory_entry external entity'
   - 'create url aliases'
   - 'create users'
-  - 'create video media'
   - 'create webform'
   - 'create webform content'
   - 'delete any archive_page content'
@@ -239,6 +238,7 @@ permissions:
   - 'edit webform submissions own node'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'generate ai alt tags'
   - 'load twig templates from file system'
   - 'moderated content bulk draft'
   - 'moderated content bulk pin'

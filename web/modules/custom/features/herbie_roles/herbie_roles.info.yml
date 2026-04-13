@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^10 || ^11'
 dependencies:
   - 'administerusersbyrole:administerusersbyrole'
+  - 'ai_image_alt_text:ai_image_alt_text'
   - 'asset_injector:asset_injector'
   - 'drupal:block'
   - 'drupal:block_content'
@@ -65,5 +66,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 2.3.3
+version: 2.4.0
 package: Herbie
