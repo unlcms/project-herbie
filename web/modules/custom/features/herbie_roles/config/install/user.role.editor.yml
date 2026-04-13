@@ -42,6 +42,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - ai_image_alt_text
     - block_content
     - book
     - content_moderation
@@ -209,6 +210,7 @@ permissions:
   - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'generate ai alt tags'
   - 'moderated content bulk draft'
   - 'moderated content bulk pin'
   - 'moderated content bulk publish'
@@ -236,7 +238,6 @@ permissions:
   - 'use text format standard'
   - 'use text format webform'
   - 'view any unpublished content'
-  - 'view any video media revisions'
   - 'view any webform submission'
   - 'view archive_page revisions'
   - 'view book revisions'

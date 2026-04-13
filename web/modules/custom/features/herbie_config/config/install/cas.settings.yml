@@ -1,3 +1,4 @@
+langcode: en
 login_link_enabled: true
 login_link_label: 'CAS Login'
 login_success_message: ''
@@ -26,6 +27,7 @@ forced_login:
 user_accounts:
   prevent_normal_login: true
   auto_register: true
+  auto_register_follow_registration_policy: false
   email_assignment_strategy: 1
   email_hostname: unl.edu
   email_attribute: email

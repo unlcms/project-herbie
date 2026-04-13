@@ -1,0 +1,22 @@
+diff --git a/ai_image_alt_text.module b/ai_image_alt_text.module
+index 63468c1..b39843a 100644
+--- a/ai_image_alt_text.module
++++ b/ai_image_alt_text.module
+@@ -8,7 +8,7 @@
+ declare(strict_types=1);
+ 
+ use Drupal\Core\Link;
+-use Drupal\image\Plugin\Field\FieldWidget\ImageWidget;
++use Drupal\file\Plugin\Field\FieldWidget\FileWidget;
+ 
+ /**
+  * Implements hook_field_widget_single_element_form_alter().
+@@ -21,7 +21,7 @@ function ai_image_alt_text_field_widget_single_element_form_alter(
+   $context,
+ ) {
+   // Only image based field widgets are supported.
+-  if ($context['widget'] instanceof ImageWidget) {
++  if ($context['widget'] instanceof FileWidget && in_array('image', (array) ($context['widget']->getPluginDefinition()['field_types'] ?? []), TRUE)) {
+     // Only run if alt text field is enabled.
+     if (empty($element['#alt_field'])) {
+       return;

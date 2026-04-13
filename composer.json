@@ -126,6 +126,8 @@
         "drupal/admin_toolbar": "^3.0",
         "drupal/administerusersbyrole": "^3.4",
         "drupal/adv_varnish": "^4.0",
+        "drupal/ai_image_alt_text": "^1.0",
+        "drupal/ai_provider_azure": "^1.1@beta",
         "drupal/allowed_formats": "^3.0",
         "drupal/anchor_link": "3.0.x-dev@dev",
         "drupal/asset_injector": "^2.7",
@@ -334,6 +336,9 @@
                 "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch",
                 "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch",
                 "3412420 - BlockContentAccessControlHandler requires access block library permission for create": "patches/3412420-BlockContentAccessControlHandler-remove-perm.patch"
+            },
+            "drupal/ai_image_alt_text": {
+                "3476380 - Add support for other image based widgets": "patches/3476380-support-other-image-widgets.diff"
             },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
