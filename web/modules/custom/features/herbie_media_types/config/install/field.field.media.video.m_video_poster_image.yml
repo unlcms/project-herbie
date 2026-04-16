@@ -12,7 +12,7 @@ entity_type: media
 bundle: video
 label: 'Video Poster Image'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
