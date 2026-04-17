@@ -1,0 +1,29 @@
+uuid: 96d4186f-9180-4783-bcf9-7e94bf5a0292
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.s_n_nebraska_today_tags
+    - node.type.news
+    - taxonomy.vocabulary.nebraska_today_tags
+id: node.news.s_n_nebraska_today_tags
+field_name: s_n_nebraska_today_tags
+entity_type: node
+bundle: news
+label: 'Nebraska Today Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nebraska_today_tags: nebraska_today_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

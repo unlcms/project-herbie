@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^9.4 || ^10'
 dependencies:
   - 'allowed_formats:allowed_formats'
+  - 'codemirror_editor:codemirror_editor'
   - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:content_moderation'
   - 'drupal:field'
@@ -16,6 +17,7 @@ dependencies:
   - 'drupal:node'
   - 'drupal:path'
   - 'drupal:responsive_image'
+  - 'drupal:taxonomy'
   - 'drupal:text'
   - 'drupal:user'
   - 'drupal:views'
@@ -30,5 +32,5 @@ dependencies:
   - 'scheduler:scheduler'
   - 'scheduler_content_moderation_integration:scheduler_content_moderation_integration'
   - 'select2:select2'
-version: 1.5.0
+version: 1.5.1
 package: Herbie
