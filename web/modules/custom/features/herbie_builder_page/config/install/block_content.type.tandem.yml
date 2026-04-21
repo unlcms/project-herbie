@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: tandem
 label: Tandem
-revision: 0
+revision: false
 description: 'A block that displays a photo and text side by side or a background photo with text stacked on top. '

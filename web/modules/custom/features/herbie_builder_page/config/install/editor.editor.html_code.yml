@@ -18,4 +18,5 @@ settings:
   autoCloseTags: true
   styleActiveLine: true
   mode: text/html
-image_upload: {  }
+image_upload:
+  status: false

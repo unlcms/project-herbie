@@ -212,7 +212,6 @@ module:
   webform_submission_log: 0
   webform_ui: 0
   workflows: 0
-  dcf_lazyload: 1
   menu_admin_per_menu: 1
   pathauto: 1
   externalauth: 10
