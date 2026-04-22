@@ -30,6 +30,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - media.type.video
     - node.type.archive_page
     - node.type.book
     - node.type.builder_page
@@ -41,6 +42,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - ai_image_alt_text
     - block_content
     - book
     - content_moderation
@@ -123,6 +125,7 @@ permissions:
   - 'create terms in site_organization_tags'
   - 'create timeline block content'
   - 'create unl_directory_entry external entity'
+  - 'create video media'
   - 'create webform'
   - 'create webform content'
   - 'delete any accordion block content'
@@ -146,6 +149,7 @@ permissions:
   - 'delete any tabs block content'
   - 'delete any tandem block content'
   - 'delete any timeline block content'
+  - 'delete any video media'
   - 'delete archive_page revisions'
   - 'delete book revisions'
   - 'delete builder_page revisions'
@@ -159,6 +163,7 @@ permissions:
   - 'delete own news content'
   - 'delete own person content'
   - 'delete own remote_video media'
+  - 'delete own video media'
   - 'delete own webform content'
   - 'delete person revisions'
   - 'delete unl_directory_entry external entity'
@@ -189,6 +194,7 @@ permissions:
   - 'edit any tabs block content'
   - 'edit any tandem block content'
   - 'edit any timeline block content'
+  - 'edit any video media'
   - 'edit any webform'
   - 'edit any webform content'
   - 'edit own archive_page content'
@@ -199,10 +205,12 @@ permissions:
   - 'edit own news content'
   - 'edit own person content'
   - 'edit own remote_video media'
+  - 'edit own video media'
   - 'edit own webform'
   - 'edit own webform content'
   - entity_share_client_display_errors
   - entity_share_client_pull_content
+  - 'generate ai alt tags'
   - 'moderated content bulk draft'
   - 'moderated content bulk pin'
   - 'moderated content bulk publish'

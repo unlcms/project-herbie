@@ -25,7 +25,6 @@ dependencies:
     - node.type.person
     - responsive_image.styles.medium__square
   module:
-    - dcf_lazyload
     - image_class
     - link
     - svg_image_responsive
@@ -101,11 +100,11 @@ content:
         width: null
         height: null
       svg_render_as_image: true
+      image_loading:
+        attribute: eager
     third_party_settings:
       image_class:
         class: ''
-      dcf_lazyload:
-        dcf_lazyload_enable: false
     weight: 7
     region: content
   n_person_position:

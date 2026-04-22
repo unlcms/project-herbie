@@ -1,0 +1,28 @@
+diff --git a/theme_per_user.install b/theme_per_user.install
+index 707e150..c1b8ecc 100644
+--- a/theme_per_user.install
++++ b/theme_per_user.install
+@@ -17,9 +17,9 @@ function theme_per_user_install() {
+    * own theme. Which is differ from before when all users
+    * can select own theme.
+    */
+-  Role::load('authenticated')
+-    ->grantPermission('select own theme')
+-    ->save();
++//  Role::load('authenticated')
++//    ->grantPermission('select own theme')
++//    ->save();
+ }
+ 
+ /**
+@@ -71,7 +71,7 @@ function theme_per_user_schema() {
+  * can select own theme.
+  */
+ function theme_per_user_update_10001(&$sandbox) {
+-  Role::load('authenticated')
+-    ->grantPermissions('select own theme')
+-    ->save();
++//  Role::load('authenticated')
++//    ->grantPermissions('select own theme')
++//    ->save();
+ }

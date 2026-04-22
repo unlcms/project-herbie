@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: tabs
 label: Tabs
-revision: 0
+revision: false
 description: 'A list of horizontal "tabbed" links that are used to open associated content on the same page.'
