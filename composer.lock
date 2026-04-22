@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< core-10.4-upgrade
     "content-hash": "835a00ec1e349f4a97cf611817293848",
-=======
-    "content-hash": "d2cdf3f98c43c702a100e4e98e734ecd",
->>>>>>> master
     "packages": [
         {
             "name": "asm89/stack-cors",
