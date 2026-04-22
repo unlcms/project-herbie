@@ -8,6 +8,12 @@
   position: relative;
 }
 
+/* Adding more than one <details> element to a webform adds an "Expand all" button with bad color contrast that we don't find useful */
+.webform-details-toggle-state-wrapper,
+.webform-details-toggle-state {
+  display: none;
+}
+
 @media only screen and (max-width: 42.09em) {
 
   .unlcms-grid-cols {

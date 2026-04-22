@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: proofpoint
 label: 'Proof point'
-revision: 0
+revision: false
 description: 'Display statistic with headers. '

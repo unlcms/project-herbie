@@ -5,3 +5,4 @@ name: 'Site organization tags'
 vid: site_organization_tags
 description: 'Used for aggregate page listings at /tag/TAG-NAME.'
 weight: 0
+new_revision: false

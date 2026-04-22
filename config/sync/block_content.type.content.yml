@@ -6,5 +6,5 @@ _core:
   default_config_hash: 6otFtrsyjbAhtHv_oaIBJHFA3w0qkdf3BOhUR5g8l4k
 id: content
 label: 'Text area'
-revision: 0
+revision: false
 description: 'A generic content block with a WYSIWYG editor.'

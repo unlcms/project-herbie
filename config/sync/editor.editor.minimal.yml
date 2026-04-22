@@ -17,4 +17,5 @@ settings:
       - subscript
       - superscript
   plugins: {  }
-image_upload: {  }
+image_upload:
+  status: false

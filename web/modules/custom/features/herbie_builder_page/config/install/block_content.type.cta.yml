@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: cta
 label: 'Call to action'
-revision: 0
+revision: false
 description: 'Combines a bold headline, optional text, and a button link.'

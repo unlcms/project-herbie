@@ -1,7 +1,7 @@
 name: 'Builder page'
 description: 'Provides Builder page content type and related configuration. Choose custom grid layouts for one-off <em>builder pages</em>.'
 type: module
-core_version_requirement: '^9.4 || ^10'
+core_version_requirement: '^10 || ^11'
 dependencies:
   - 'allowed_formats:allowed_formats'
   - 'asset_injector:asset_injector'
@@ -11,7 +11,6 @@ dependencies:
   - 'crop:crop'
   - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'dcf_layouts:dcf_layouts'
-  - 'dcf_lazyload:dcf_lazyload'
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:book'
@@ -79,5 +78,5 @@ dependencies:
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.14.3
+version: 1.15.0
 package: Herbie

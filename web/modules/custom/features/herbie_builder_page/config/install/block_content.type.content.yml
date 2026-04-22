@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: content
 label: 'Text area'
-revision: 0
+revision: false
 description: 'A generic content block with a WYSIWYG editor.'
