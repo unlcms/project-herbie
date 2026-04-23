@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: photo_hero
 label: 'Display banner'
-revision: 0
+revision: false
 description: 'Hero-type banner with title and buttons.'

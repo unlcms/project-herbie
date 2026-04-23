@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: logo_cloud
 label: 'Logo cloud'
-revision: 0
+revision: false
 description: 'A grouping of logos typically used to showcase affiliates.'

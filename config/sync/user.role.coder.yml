@@ -30,6 +30,7 @@ dependencies:
     - scheduler
     - system
     - taxonomy
+    - theme_per_user
     - twig_ui
     - unl_webform
     - views_ui
@@ -92,6 +93,7 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'replicate entities'
   - 'schedule publishing of nodes'
+  - 'select own theme'
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'

@@ -1,9 +1,10 @@
 name: 'Roles and Permissions'
 description: 'Provides all the role (with permissions included) config objects.'
 type: module
-core_version_requirement: '^9.4 || ^10'
+core_version_requirement: '^10 || ^11'
 dependencies:
   - 'administerusersbyrole:administerusersbyrole'
+  - 'ai_image_alt_text:ai_image_alt_text'
   - 'asset_injector:asset_injector'
   - 'drupal:block'
   - 'drupal:block_content'
@@ -55,6 +56,7 @@ dependencies:
   - 'salesforce:salesforce_mapping'
   - 'scanner:scanner'
   - 'scheduler:scheduler'
+  - 'theme_per_user:theme_per_user'
   - 'twig_ui:twig_ui'
   - 'unl_access:unl_access'
   - 'unl_breadcrumbs:unl_breadcrumbs'
@@ -64,5 +66,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 2.3.1
+version: 2.4.0
 package: Herbie

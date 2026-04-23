@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: accordion
 label: Accordion
-revision: 0
+revision: false
 description: 'A list of accordion items that can be expanded and collapsed'

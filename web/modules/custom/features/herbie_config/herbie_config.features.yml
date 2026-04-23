@@ -9,6 +9,9 @@ required:
   - scheduler.settings
   - mathjax.settings
   - twig_ui.settings
+  - ai.settings
+  - ai_image_alt_text.settings
+  - ai_provider_azure.settings
   - views.view.content
   - views.view.taxonomy_term
   - system.action.draft_current
@@ -17,3 +20,5 @@ required:
   - system.action.unpin
   - system.action.unpublish_current
   - linkit.linkit_profile.content_linkit_profile
+  - image.style.ai_image_alt_text
+  - key.key.azure_key

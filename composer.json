@@ -126,6 +126,8 @@
         "drupal/admin_toolbar": "^3.0",
         "drupal/administerusersbyrole": "^3.4",
         "drupal/adv_varnish": "^4.0",
+        "drupal/ai_image_alt_text": "^1.0",
+        "drupal/ai_provider_azure": "^1.1@beta",
         "drupal/allowed_formats": "^3.0",
         "drupal/anchor_link": "^3.0",
         "drupal/asset_injector": "^2.7",
@@ -155,7 +157,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/entitygroupfield": "^2.0@alpha",
         "drupal/external_entities": "2.x-dev@dev",
-        "drupal/features": "5.0.x-dev@dev",
+        "drupal/features": "^3.16",
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/feeds_tamper": "^2.0@beta",
@@ -214,7 +216,7 @@
         "drupal/seven": "^1.0@alpha",
         "drupal/stable": "^2.0",
         "drupal/svg_image": "^3.0",
-        "drupal/theme_per_user": "^1.0",
+        "drupal/theme_per_user": "1.0.x-dev@dev",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.4",
         "drupal/twig_ui": "^2.0",
@@ -235,7 +237,7 @@
         "robinherbots/jquery.inputmask": "5.0.5",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
-        "unlcms/features_readonly": "^1.0@dev",
+        "unlcms/features_readonly": "^1.0-alpha3",
         "unlcms/project-herbie-composer-plugin": "^1.0",
         "unlcms/unl_access": "^1.0@alpha",
         "unlcms/unl_breadcrumbs": "^1.0",
@@ -334,6 +336,9 @@
                 "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch",
                 "3412420 - BlockContentAccessControlHandler requires access block library permission for create": "patches/3412420-BlockContentAccessControlHandler-remove-perm.patch"
             },
+            "drupal/ai_image_alt_text": {
+                "3476380 - Add support for other image based widgets": "patches/3476380-support-other-image-widgets.diff"
+            },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
             },
@@ -355,6 +360,9 @@
             },
             "drupal/scanner": {
                 "3196119 - Errors on search-only for deep-nested paragraphs": "patches/nestedParagraphFix-3196119-39.patch"
+            },
+            "drupal/theme_per_user": {
+                "Custom - Remove permission assignment": "patches/theme_per_user-remove-permission-assignment.diff"
             },
             "drupal/views_block_placement_exposed_form_defaults": {
                 "3158789 - Default values not set on entity autocomplete filter": "patches/views_block_placement_exposed_form_defaults-3158789-5.patch"

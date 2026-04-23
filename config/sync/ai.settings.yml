@@ -1,0 +1,34 @@
+_core:
+  default_config_hash: kzaY3K5U39bbRU-PdiFv2cuWUqKboxYricHoyjJ9gGM
+prompt_logging: false
+prompt_logging_tags: ''
+default_providers:
+  chat_with_image_vision:
+    provider_id: azure
+    model_id: openai-gpt-4o
+models:
+  azure:
+    chat:
+      openai-gpt-4o:
+        operation_type: chat
+        model_id: openai-gpt-4o
+        label: 'OpenAI GPT-4o'
+        chat_with_image_vision: 1
+        chat_with_audio: 0
+        chat_with_video: 0
+        chat_system_role: 1
+        chat_json_output: 1
+        chat_structured_response: 0
+        chat_tools: 0
+        max_input_tokens: '2000'
+        max_output_tokens: '2000'
+        endpoint: 'https://unlcms-er-3816-resource.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview'
+        api_key: azure_key
+        connect_header: authorization
+        custom_key_header: ''
+        custom_consumer: ''
+        extra_headers: ''
+        token_help: ''
+        provider: azure
+allowed_hosts: {  }
+allowed_hosts_rewrite_links: false
