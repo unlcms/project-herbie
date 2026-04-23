@@ -129,7 +129,7 @@
         "drupal/ai_image_alt_text": "^1.0",
         "drupal/ai_provider_azure": "^1.1@beta",
         "drupal/allowed_formats": "^3.0",
-        "drupal/anchor_link": "^3.0",
+        "drupal/anchor_link": "3.0.x-dev@dev",
         "drupal/asset_injector": "^2.7",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.11",
@@ -142,9 +142,9 @@
         "drupal/config_inspector": "^2.1",
         "drupal/config_split": "^1.10",
         "drupal/config_update": "^2.0@alpha",
-        "drupal/core-composer-scaffold": "~10.6.0",
-        "drupal/core-project-message": "~10.6.0",
-        "drupal/core-recommended": "~10.6.0",
+        "drupal/core-composer-scaffold": "~10.4.0",
+        "drupal/core-project-message": "~10.4.0",
+        "drupal/core-recommended": "~10.4.0",
         "drupal/crop": "^2.1",
         "drupal/ctools": "^4.0",
         "drupal/datalayer": "^2.1",
@@ -231,6 +231,7 @@
         "jackocnr/intl-tel-input": "16.1.0",
         "league/csv": "^9.16",
         "nigelotoole/progress-tracker": "^2.0",
+        "northernco/ckeditor5-anchor-drupal": "^0.3.0",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "ractoon/jquery-text-counter": "0.9.0",
@@ -251,7 +252,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "require-dev": {
-        "drupal/core-dev": "~10.6.0"
+        "drupal/core-dev": "~10.4.0"
     },
     "conflict": {
         "drupal/drupal": "*"
