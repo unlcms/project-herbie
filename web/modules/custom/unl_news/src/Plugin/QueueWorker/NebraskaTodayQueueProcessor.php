@@ -262,14 +262,13 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
           if (isset($tag_item->id) && isset($tag_item->label)) {
             $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
             $vid = 'nebraska_today_tags';
-
             $terms = \Drupal::entityTypeManager()
               ->getStorage('taxonomy_term')
               ->loadByProperties([
-                'name' => $tag_item->label,
                 'vid'  => $vid,
                 'imported_nebraska_today_tag_id' => $tag_item->id, // Check if a term with the same Nebraska Today tag ID already exists.
               ]);
+
             if (empty($terms)) {
               $term = Term::create([
                 'imported_nebraska_today_tag_id' => $tag_item->id, // Store the original Nebraska Today tag ID in a separate field.
@@ -281,6 +280,11 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
             }
             else {
               foreach ($terms as $term) {
+                if($term->get('name')->value !== $tag_item->label) {
+                  // If the term exists but the name is different, update the name to match the latest from Nebraska Today.
+                  $term->set('name', $tag_item->label);
+                  $term->save();
+                }
                 $tags_for_node[] = ['target_id' => $term->id()];
               }
             }
