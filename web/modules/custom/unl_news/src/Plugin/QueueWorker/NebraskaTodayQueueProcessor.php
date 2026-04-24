@@ -255,6 +255,45 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
           }
         }
       }
+
+      if (isset($item->tags)) {
+        $tags_for_node = [];
+        foreach ($item->tags as $tag_item) {
+          if (isset($tag_item->id) && isset($tag_item->label)) {
+            $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+            $vid = 'nebraska_today_tags';
+            $terms = \Drupal::entityTypeManager()
+              ->getStorage('taxonomy_term')
+              ->loadByProperties([
+                'vid'  => $vid,
+                'imported_nebraska_today_tag_id' => $tag_item->id, // Check if a term with the same Nebraska Today tag ID already exists.
+              ]);
+
+            if (empty($terms)) {
+              $term = Term::create([
+                'imported_nebraska_today_tag_id' => $tag_item->id, // Store the original Nebraska Today tag ID in a separate field.
+                'vid' => $vid,
+                'name' => $tag_item->label,
+              ]);
+              $term->save();
+              $tags_for_node[] = ['target_id' => $term->id()];
+            }
+            else {
+              foreach ($terms as $term) {
+                if($term->get('name')->value !== $tag_item->label) {
+                  // If the term exists but the name is different, update the name to match the latest from Nebraska Today.
+                  $term->set('name', $tag_item->label);
+                  $term->save();
+                }
+                $tags_for_node[] = ['target_id' => $term->id()];
+              }
+            }
+          }
+        }
+        if (!empty($tags_for_node)) {
+          $node->set('s_n_nebraska_today_tags', $tags_for_node);
+        }
+      }
       $node->save();
     }
 
@@ -269,5 +308,4 @@ class NebraskaTodayQueueProcessor extends QueueWorkerBase implements ContainerFa
     unset($queued_items[$item->id]);
     $queued_items = $this->state->set($queue, $queued_items);
   }
-
 }

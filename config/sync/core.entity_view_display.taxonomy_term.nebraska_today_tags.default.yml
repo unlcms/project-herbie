@@ -1,0 +1,23 @@
+uuid: 212dc011-dd7d-4464-84de-d76a97c59f21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nebraska_today_tags.imported_nebraska_today_tag_id
+    - taxonomy.vocabulary.nebraska_today_tags
+  module:
+    - text
+id: taxonomy_term.nebraska_today_tags.default
+targetEntityType: taxonomy_term
+bundle: nebraska_today_tags
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  imported_nebraska_today_tag_id: true

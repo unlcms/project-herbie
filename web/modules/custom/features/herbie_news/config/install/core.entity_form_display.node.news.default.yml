@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_nebraska_today_tags
     - field.field.node.news.s_n_site_organization_tags
     - node.type.news
     - workflows.workflow.editorial
@@ -63,6 +64,7 @@ third_party_settings:
     group_page_options:
       children:
         - s_n_site_organization_tags
+        - s_n_nebraska_today_tags
       label: 'Page options'
       region: content
       parent_name: ''
@@ -201,6 +203,16 @@ content:
     weight: 53
     region: content
     settings: {  }
+    third_party_settings: {  }
+  s_n_nebraska_today_tags:
+    type: select2_entity_reference
+    weight: 31
+    region: content
+    settings:
+      width: 100%
+      autocomplete: true
+      match_operator: CONTAINS
+      match_limit: 10
     third_party_settings: {  }
   s_n_site_organization_tags:
     type: select2_entity_reference

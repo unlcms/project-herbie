@@ -63,6 +63,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     return [
       'quantity' => 8,
       'tag' => [],
+      'nebraska_today_tag' => [],
     ];
   }
 
@@ -99,6 +100,20 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       '#autocomplete' => TRUE,
       '#default_value' => $this->configuration['tag'],
     ];
+    $form['nebraska_today_tags'] = [
+      '#type' => 'select2',
+      '#target_type' => 'taxonomy_term',
+      '#title' => $this->t('Nebraska Today Tag'),
+      '#description' => $this->t('For imported Nebraska Today tag, optionally filters the displayed news items.'),
+      '#tags' => TRUE,
+      '#selection_handler' => 'default',
+      '#selection_settings' => [
+        'target_bundles' => ['nebraska_today_tags'],
+      ],
+      '#multiple' => TRUE,
+      '#autocomplete' => TRUE,
+      '#default_value' => $this->configuration['nebraska_today_tag'],
+    ];
 
     return $form;
   }
@@ -109,6 +124,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
     $this->configuration['tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['tag'];
+    $this->configuration['nebraska_today_tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['nebraska_today_tags'];
   }
 
   /**
@@ -120,8 +136,11 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     if (!$view) {
       return [];
     }
-    $selected_tags = $this->configuration['tag'] ?? [];
-    $view->selected_tags = $this->configuration['tag'] ?? NULL;
+    $selected_tags = array_filter(array_merge(
+      (array) ($this->configuration['tag'] ?? []),
+      (array) ($this->configuration['nebraska_today_tag'] ?? [])
+    ));
+    $view->selected_tags = $selected_tags ?: NULL;
 
     // Set the display ID.
     $display_id = 'block_1';
