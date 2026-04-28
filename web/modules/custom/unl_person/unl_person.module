@@ -73,6 +73,15 @@ function unl_person_form_alter(&$form, $form_state, $form_id) {
       $form['entitygroupfield']['#disabled'] = TRUE;
       $form['unl_access']['#access'] = FALSE;
       $form['unl_access']['#disabled'] = TRUE;
+
+      if (isset($form['n_person_website'])) {
+        foreach (array_keys($form['n_person_website']['widget']) as $key) {
+          if (is_numeric($key) && isset($form['n_person_website']['widget'][$key]['uri'])) {
+            // Change the field type to 'url' from 'entity_autocomplete' field to restrict unwanted internal entity access/linking.
+            $form['n_person_website']['widget'][$key]['uri']['#type'] = 'url';
+          }
+        }
+      }
     }
   }
 }
