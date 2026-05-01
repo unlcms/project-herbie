@@ -5,6 +5,8 @@ global-styling:
       css/global.css: {}
       css/media.css: {}
       css/wdn-overrides.css: {}
+  js:
+      js/remove_redundant_aria_required.js: {}
 
 layout-builder:
   css:
