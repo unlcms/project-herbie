@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.imported_nebraska_today_tag_id
+    - taxonomy.vocabulary.nebraska_today_tags
+id: taxonomy_term.nebraska_today_tags.imported_nebraska_today_tag_id
+field_name: imported_nebraska_today_tag_id
+entity_type: taxonomy_term
+bundle: nebraska_today_tags
+label: 'Imported Nebraska Today Tag ID'
+description: 'DO NOT EDIT or DELETE'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

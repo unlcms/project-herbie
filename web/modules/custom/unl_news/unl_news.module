@@ -10,6 +10,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Implements hook_theme().
@@ -226,8 +228,10 @@ function unl_news_preprocess_views_view_field(&$variables) {
  * Implements hook_form_alter().
  */
 function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
+  $restricted_vid = 'nebraska_today_tags';
+  $current_user = \Drupal::currentUser();
 
+  if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
     // Only users with the 'bypass content access control' permission can
     // see Nebraska Today-related fields.
     /** @var \Drupal\Core\Session\AccountProxyInterface */
@@ -236,11 +240,134 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       // Nebraska Today import-related fields are always disabled.
       $form['n_news_canonical_url']['widget']['#disabled'] = TRUE;
       $form['n_news_foreign_key']['widget']['#disabled'] = TRUE;
-    }
-    else {
+      $form['s_n_nebraska_today_tags']['widget']['#disabled'] = TRUE;
+    } else {
       unset($form['#fieldgroups']['group_nebraska_today']);
       unset($form['n_news_canonical_url']);
       unset($form['n_news_foreign_key']);
+      $form['s_n_nebraska_today_tags']['widget']['#disabled'] = TRUE;
+    }
+  } else if ($form_id == "taxonomy_overview_vocabularies") {
+    if (!empty($form['vocabularies'])) {
+      foreach ($form['vocabularies'] as $vid => $row) {
+        if ($vid === $restricted_vid) {
+          if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
+            unset($form['vocabularies'][$vid]);
+          }
+          break;
+        }
+      }
+    }
+  } else if (in_array($form_id, ["field_group_add_form", "taxonomy_term_form", "taxonomy_term_add_form", "taxonomy_overview_terms", "entity_form_display_edit_form", "entity_view_display_edit_form"])) {
+    $vocabulary = \Drupal::routeMatch()->getParameter('taxonomy_vocabulary');
+    if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
+      if ($vocabulary && $vocabulary->id() === $restricted_vid) {
+        $form['imported_nebraska_today_tag_id']['widget']['#disabled'] = TRUE;
+        $form['#access'] = FALSE;   // This gives a clean 403 Access Denied
+      }
+    }
+  } else if (in_array($form_id, ["taxonomy_term_nebraska_today_tags_delete_form"])) {
+    if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
+      $form['#access'] = FALSE;
+    }
+  } else if ($form_id == "taxonomy_term_nebraska_today_tags_form") {
+    if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
+      $form['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function unl_news_preprocess_block(&$variables) {
+  // Restrict access to  "Manage fields" overview for the Nebraska Today Vocabulary
+  if (!isset($variables['plugin_id']) || $variables['plugin_id'] !== 'local_actions_block') {
+    return;
+  }
+
+  $vocabulary = \Drupal::routeMatch()->getParameter('taxonomy_vocabulary');
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if ($route_name === 'entity.taxonomy_term.field_ui_fields') {
+    // Get the current vocabulary from the route parameters.
+    $vocabulary = \Drupal::routeMatch()->getParameter('taxonomy_vocabulary');
+    if ($vocabulary) {
+      $vocabulary_id = $vocabulary->id();
+      if ($vocabulary_id === 'nebraska_today_tags') {
+        $user = \Drupal::currentUser();
+        // Restrict to all except Administrator and Super Administrator only.
+        if (!$user->hasRole('administrator') && !$user->hasRole('super_administrator')) {
+          throw new AccessDeniedHttpException('You do not have permission to access the Manage fields page for this vocabulary.');
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function unl_news_menu_links_discovered_alter(&$links) {
+  // Hide the Nebraska Today taxonomy from appearing under the admin tool bar "Structure" menu for all users except administrators.
+  $plugin_id = 'admin_toolbar_tools.extra_links:entity.taxonomy_vocabulary.overview_form.nebraska_today_tags';
+  if (isset($links[$plugin_id])) {
+    $current_user = \Drupal::currentUser();
+    // Hide from everyone except administrators
+    if (!$current_user->hasRole('administrator') && !$current_user->hasRole('super_administrator')) {
+      unset($links[$plugin_id]);
+    }
+  }
+}
+
+
+function unl_news_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  $current_user = \Drupal::currentUser();
+
+  if ($current_user->hasRole('administrator') || $current_user->hasRole('super_administrator')) {
+    return AccessResult::neutral();
+  }
+  if ($entity->getEntityTypeId() === 'taxonomy_vocabulary' &&
+      $entity->id() === 'nebraska_today_tags' &&
+      in_array($operation, ['create', 'update', 'delete', 'view', 'add', 'access taxonomy overview'])) {
+
+    return \Drupal\Core\Access\AccessResult::forbidden()
+      ->addCacheableDependency($entity)
+      ->addCacheContexts(['user']);
+  }
+  return \Drupal\Core\Access\AccessResult::neutral();
+}
+
+/**
+ * Implements hook_form_taxonomy_overview_terms_alter().
+ *
+ * Hide the "Add term" button on the term overview page for this vocabulary.
+ */
+function unl_news_form_taxonomy_overview_terms_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $current_user = \Drupal::currentUser();
+  $restricted_vid = 'nebraska_today_tags';
+
+  $form_object = $form_state->getFormObject();
+  $vocabulary = $form_object->entity ?? NULL;
+
+  if (!$vocabulary || $vocabulary->id() !== $restricted_vid) {
+    return;
+  }
+  if($current_user->hasRole('administrator') || $current_user->hasRole('super_administrator')) {
+    return;
+  }
+
+  // Hide the main "Add term" button at the top
+  if (isset($form['add_term'])) {
+    $form['add_term']['#access'] = FALSE;
+  }
+
+  // Hide any local action / operation links for "Add term" and other related operations
+  if (isset($form['#local_actions'])) {
+    foreach ($form['#local_actions'] as $key => $action) {
+      if (strpos($key, 'add') !== FALSE || strpos($key, 'term') !== FALSE) {
+        $form['#local_actions'][$key]['#access'] = FALSE;
+      }
     }
   }
 }

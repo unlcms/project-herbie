@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nebraska_today_tags.imported_nebraska_today_tag_id
+    - taxonomy.vocabulary.nebraska_today_tags
+  module:
+    - codemirror_editor
+    - path
+id: taxonomy_term.nebraska_today_tags.default
+targetEntityType: taxonomy_term
+bundle: nebraska_today_tags
+mode: default
+content:
+  description:
+    type: codemirror_editor
+    weight: 1
+    region: content
+    settings:
+      toolbar: true
+      buttons:
+        - bold
+        - italic
+        - underline
+        - strike-through
+        - list-numbered
+        - list-bullet
+        - link
+        - horizontal-rule
+        - undo
+        - redo
+        - clear-formatting
+        - enlarge
+        - shrink
+      lineWrapping: false
+      lineNumbers: false
+      foldGutter: false
+      autoCloseTags: true
+      styleActiveLine: false
+      mode: text/html
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  imported_nebraska_today_tag_id:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true
