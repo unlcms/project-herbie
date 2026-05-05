@@ -133,7 +133,6 @@
         "drupal/asset_injector": "^2.7",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_form_alter": "^2.0",
-        "drupal/block_type_templates": "^1.0",
         "drupal/book": "^2.0",
         "drupal/cas": "^3.0",
         "drupal/codemirror_editor": "^2.0",
