@@ -156,7 +156,7 @@
         "drupal/entity_share_cron": "^3.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/entitygroupfield": "^2.0@alpha",
-        "drupal/external_entities": "2.x-dev@dev",
+        "drupal/external_entities": "^3.0@RC",
         "drupal/features": "^3.16",
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
