@@ -213,8 +213,6 @@
         "drupal/scanner": "^2.0@beta",
         "drupal/scheduler_content_moderation_integration": "^3.0",
         "drupal/select2": "^2.0",
-        "drupal/seven": "^1.0@alpha",
-        "drupal/stable": "^2.0",
         "drupal/svg_image": "^3.0",
         "drupal/theme_per_user": "1.0.x-dev@dev",
         "drupal/token": "^1.0",
