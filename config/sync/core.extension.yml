@@ -200,6 +200,7 @@ module:
   unl_utility: 0
   unl_views: 0
   unl_webform: 0
+  upgrade_status: 0
   user: 0
   variationcache: 0
   views_block_placement_exposed_form_defaults: 0

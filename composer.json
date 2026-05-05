@@ -221,12 +221,13 @@
         "drupal/twig_tweak": "^3.4",
         "drupal/twig_ui": "^2.0",
         "drupal/typed_data": "^2.1",
+        "drupal/upgrade_status": "^4.3",
         "drupal/variationcache": "^1.5",
         "drupal/views_block_placement_exposed_form_defaults": "^1.0@RC",
         "drupal/views_bulk_operations": "^4.4",
         "drupal/views_data_export": "^1.4",
         "drupal/webform": "^6.2@beta",
-        "drush/drush": "^12.5",
+        "drush/drush": "^13.7",
         "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
         "league/csv": "^9.16",
@@ -243,7 +244,7 @@
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_cas": "^2",
         "unlcms/unl_five": "^10",
-        "unlcms/unl_multisite": "^3.0",
+        "unlcms/unl_multisite": "^3.2",
         "unlcms/unl_six": "^6.0",
         "unlcms/unl_user": "^1.9",
         "vlucas/phpdotenv": "^2.4",
@@ -251,7 +252,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "require-dev": {
-        "drupal/core-dev": "~10.6.0"
+        "drupal/core-dev": "10.6.7"
     },
     "conflict": {
         "drupal/drupal": "*"
