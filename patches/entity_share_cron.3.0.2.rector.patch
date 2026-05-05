@@ -1,0 +1,26 @@
+diff --git a/entity_share_cron.info.yml b/entity_share_cron.info.yml
+index 6d6997e..8582b43 100644
+--- a/entity_share_cron.info.yml
++++ b/entity_share_cron.info.yml
+@@ -1,7 +1,7 @@
+ name: 'Entity Share Cron'
+ type: module
+ description: 'Synchronizes entities on Cron execution.'
+-core_version_requirement: ^9 || ^10
++core_version_requirement: ^10.1 || ^11
+ package: 'Web services'
+ configure: entity_share_cron.settings
+ dependencies:
+diff --git a/src/Form/SettingsForm.php b/src/Form/SettingsForm.php
+index 4ea239f..3fc87e8 100644
+--- a/src/Form/SettingsForm.php
++++ b/src/Form/SettingsForm.php
+@@ -133,7 +133,7 @@ class SettingsForm extends ConfigFormBase {
+         }
+         catch (ClientException $exception) {
+           $channels = [];
+-          \watchdog_exception('entity_share_cron', $exception);
++          \Drupal\Component\Utility\DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '10.1.0', fn() => \Drupal\Core\Utility\Error::logException(\Drupal::logger('entity_share_cron'), $exception), fn() => \watchdog_exception('entity_share_cron', $exception));
+           $this->messenger()->addError($this->t('Could not get channels from remote %remote.', [
+             '%remote' => $remote->label(),
+           ]));

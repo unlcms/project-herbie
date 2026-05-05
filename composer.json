@@ -339,6 +339,9 @@
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission": "patches/2920739-55.access_listing_page.patch"
             },
+            "drupal/entity_share_cron": {
+                "3430244 - Automated Drupal 11 compatibility fixes for entity_share_cron": "patches/entity_share_cron.3.0.2.rector.patch"
+            },
             "drupal/feeds": {
                 "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
             },
