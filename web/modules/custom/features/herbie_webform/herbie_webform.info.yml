@@ -1,7 +1,7 @@
 name: Webform
 description: 'Config related to the webform module.'
 type: module
-core_version_requirement: '^9.4 || ^10 || ^11'
+core_version_requirement: '^10 || ^11'
 dependencies:
   - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'drupal:ckeditor5'
@@ -17,5 +17,5 @@ dependencies:
   - 'linkit:linkit'
   - 'pathauto:pathauto'
   - 'webform:webform'
-version: 1.4.3
+version: 1.5.0
 package: Herbie

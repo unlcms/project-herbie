@@ -224,7 +224,7 @@
         "drupal/views_block_placement_exposed_form_defaults": "^1.0@RC",
         "drupal/views_bulk_operations": "^4.4",
         "drupal/views_data_export": "^1.4",
-        "drupal/webform": "^6.2@beta",
+        "drupal/webform": "^6.3@beta",
         "drush/drush": "^13.7",
         "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
