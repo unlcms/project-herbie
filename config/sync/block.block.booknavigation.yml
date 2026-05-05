@@ -18,5 +18,6 @@ settings:
   label_display: '0'
   provider: book
   block_mode: 'book pages'
-  show_top_item: true
+  show_top_item: false
+  use_top_level_title: false
 visibility: {  }
