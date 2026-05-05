@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dd7606258e24dbf18c5dc0cec1d053c",
+    "content-hash": "d7aeabc04de6233dd5f9c0bd94f0d0ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2314,38 +2314,37 @@
         },
         {
             "name": "drupal/cas",
-            "version": "2.3.2",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/cas.git",
-                "reference": "2.3.2"
+                "reference": "3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cas-2.3.2.zip",
-                "reference": "2.3.2",
-                "shasum": "b2f908a554f7a90217f7f70ed00f646982433a45"
+                "url": "https://ftp.drupal.org/files/projects/cas-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "9481ea65becca8702105f2acac6f45b49dfd820a"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
-                "drupal/externalauth": "^2.0"
+                "drupal/core": "^10.3 || ^11",
+                "drupal/externalauth": "~2.0.6",
+                "drupal/js_cookie": "^1.0",
+                "ext-dom": "*"
             },
             "require-dev": {
-                "drupal/cas_mock_server": "^2.0"
+                "drupal/cas_mock_server": "^2.0",
+                "drupal/http_request_mock": "^1.1",
+                "drush/drush": "^12 || ^13"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.3.2",
-                    "datestamp": "1717055658",
+                    "version": "3.0.1",
+                    "datestamp": "1772303146",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^11"
                     }
                 }
             },

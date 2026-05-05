@@ -135,7 +135,7 @@
         "drupal/block_form_alter": "^2.0",
         "drupal/block_type_templates": "^1.0",
         "drupal/book": "^2.0",
-        "drupal/cas": "^2.0",
+        "drupal/cas": "^3.0",
         "drupal/codemirror_editor": "^2.0",
         "drupal/config_filter": "^1.0",
         "drupal/config_ignore": "^3.3",
