@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "094a6250d36268aafedc573150ce57b9",
+    "content-hash": "e8bf2616db7f542877e056439cd09039",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2055,26 +2055,30 @@
         },
         {
             "name": "drupal/anchor_link",
-            "version": "dev-3.0.x",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/anchor_link.git",
-                "reference": "1496136c033ea509f11fc4f48825132e7227e19f"
+                "reference": "3.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/anchor_link-3.0.4.zip",
+                "reference": "3.0.4",
+                "shasum": "e46e48235915d46c0428e8dbee4b7a3eba21cd44"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11",
+                "vardot/ckeditor5-anchor-drupal": "^1.0.3 || ^2.0.4"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.0.x": "3.0.x-dev"
-                },
                 "drupal": {
-                    "version": "3.0.x-dev",
-                    "datestamp": "1696269176",
+                    "version": "3.0.4",
+                    "datestamp": "1770468477",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -2089,15 +2093,16 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Mohammed J. Razem",
-                    "homepage": "https://www.drupal.org/user/255384"
+                    "name": "Northern Commerce",
+                    "homepage": "https://www.drupal.org/northern-commerce",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "Rajab Natshah",
+                    "name": "rajab natshah",
                     "homepage": "https://www.drupal.org/user/1414312"
                 }
             ],
-            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal 9.",
+            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal.",
             "homepage": "https://www.drupal.org/project/anchor_link",
             "support": {
                 "source": "http://cgit.drupalcode.org/anchor_link",
@@ -11197,15 +11202,6 @@
             "time": "2025-12-06T11:56:16+00:00"
         },
         {
-            "name": "northernco/ckeditor5-anchor-drupal",
-            "version": "0.3.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@northernco/ckeditor5-anchor-drupal/-/ckeditor5-anchor-drupal-0.3.0.tgz"
-            },
-            "type": "drupal-library"
-        },
-        {
             "name": "npm-asset/select2",
             "version": "4.0.13",
             "dist": {
@@ -16014,6 +16010,48 @@
                 "source": "https://github.com/unlcms/unl_user/tree/1.10"
             },
             "time": "2026-05-05T18:15:07+00:00"
+        },
+        {
+            "name": "vardot/ckeditor5-anchor-drupal",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vardot/ckeditor5-anchor-drupal.git",
+                "reference": "6853b37ba98f04cc313537ef616e989c09ada92d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vardot/ckeditor5-anchor-drupal/zipball/6853b37ba98f04cc313537ef616e989c09ada92d",
+                "reference": "6853b37ba98f04cc313537ef616e989c09ada92d",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9 || <=10.4 || <=11.1"
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vardot",
+                    "homepage": "https://github.com/vardot",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Anchor feature for CKEditor 5, adapted for Drupal",
+            "homepage": "https://github.com/vardot/ckeditor5-anchor-drupal",
+            "keywords": [
+                "ckeditor5",
+                "drupal",
+                "plugin"
+            ],
+            "support": {
+                "issues": "http://drupal.org/project/issues/anchor_link",
+                "source": "http://cgit.drupalcode.org/anchor_link"
+            },
+            "time": "2025-07-04T22:14:17+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -21913,7 +21951,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/ai_provider_azure": 10,
-        "drupal/anchor_link": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/config_update": 15,
         "drupal/default_content": 15,
