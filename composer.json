@@ -246,7 +246,7 @@
         "unlcms/unl_five": "^10",
         "unlcms/unl_multisite": "^3.0",
         "unlcms/unl_six": "^6.0",
-        "unlcms/unl_user": "^1.1",
+        "unlcms/unl_user": "^1.9",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "zaporylie/composer-drupal-optimizations": "^1.1"
