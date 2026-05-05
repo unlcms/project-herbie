@@ -1,7 +1,7 @@
 name: Webform
 description: 'Config related to the webform module.'
 type: module
-core_version_requirement: '^9.4 || ^10'
+core_version_requirement: '^9.4 || ^10 || ^11'
 dependencies:
   - 'dcf_ckeditor5:dcf_ckeditor5'
   - 'drupal:ckeditor5'

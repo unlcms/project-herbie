@@ -1,6 +1,6 @@
 name: 'Entity share'
 type: module
-core_version_requirement: '^9.4 || ^10'
+core_version_requirement: '^9.4 || ^10 || ^11'
 dependencies:
   - 'entity_share:entity_share_client'
   - 'entity_share_cron:entity_share_cron'
