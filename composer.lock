@@ -15855,16 +15855,16 @@
         },
         {
             "name": "unlcms/unl_user",
-            "version": "1.10",
+            "version": "1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_user.git",
-                "reference": "49f3a2172df6cae66c98cf00f8f72c49a9adac35"
+                "reference": "184e4313542b8f705ea4b57d5a48d0d8e4095652"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/49f3a2172df6cae66c98cf00f8f72c49a9adac35",
-                "reference": "49f3a2172df6cae66c98cf00f8f72c49a9adac35",
+                "url": "https://api.github.com/repos/unlcms/unl_user/zipball/184e4313542b8f705ea4b57d5a48d0d8e4095652",
+                "reference": "184e4313542b8f705ea4b57d5a48d0d8e4095652",
                 "shasum": ""
             },
             "require": {
@@ -15888,9 +15888,9 @@
             "description": "Populate user data with values from LDAP & allow searching for users to add.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_user/issues",
-                "source": "https://github.com/unlcms/unl_user/tree/1.10"
+                "source": "https://github.com/unlcms/unl_user/tree/1.11"
             },
-            "time": "2026-05-05T18:15:07+00:00"
+            "time": "2026-05-05T20:17:39+00:00"
         },
         {
             "name": "vardot/ckeditor5-anchor-drupal",
