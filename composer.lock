@@ -15561,16 +15561,16 @@
         },
         {
             "name": "unlcms/features_readonly",
-            "version": "1.0-alpha3",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/features_readonly.git",
-                "reference": "3f018777fb7960887a1bc5dae4cb102757114b61"
+                "reference": "2764ffdcf9c612f55bddf86dc124675136f60be3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/3f018777fb7960887a1bc5dae4cb102757114b61",
-                "reference": "3f018777fb7960887a1bc5dae4cb102757114b61",
+                "url": "https://api.github.com/repos/unlcms/features_readonly/zipball/2764ffdcf9c612f55bddf86dc124675136f60be3",
+                "reference": "2764ffdcf9c612f55bddf86dc124675136f60be3",
                 "shasum": ""
             },
             "require": {
@@ -15589,9 +15589,9 @@
             "description": "Enables making configuration managed by Features read-only to prevent changes.",
             "support": {
                 "issues": "https://github.com/unlcms/features_readonly/issues",
-                "source": "https://github.com/unlcms/features_readonly/tree/1.0-alpha3"
+                "source": "https://github.com/unlcms/features_readonly/tree/1.0"
             },
-            "time": "2026-04-03T21:46:56+00:00"
+            "time": "2026-05-05T19:04:54+00:00"
         },
         {
             "name": "unlcms/project-herbie-composer-plugin",
@@ -15639,20 +15639,20 @@
         },
         {
             "name": "unlcms/unl_access",
-            "version": "1.0.1",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_access.git",
-                "reference": "d6d65de18490c96fe4c9e503ea72e86078c8c3c9"
+                "reference": "b614a50dc0e9dfe55bda832a49d7237a9e7f609a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_access/zipball/d6d65de18490c96fe4c9e503ea72e86078c8c3c9",
-                "reference": "d6d65de18490c96fe4c9e503ea72e86078c8c3c9",
+                "url": "https://api.github.com/repos/unlcms/unl_access/zipball/b614a50dc0e9dfe55bda832a49d7237a9e7f609a",
+                "reference": "b614a50dc0e9dfe55bda832a49d7237a9e7f609a",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^9 || ^10 || ^11",
                 "unlcms/unl_cas": "^2.0"
             },
             "type": "drupal-module",
@@ -15672,26 +15672,26 @@
             "description": "Allows content viewing restriction based on UNL affiliations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_access/issues",
-                "source": "https://github.com/unlcms/unl_access/tree/1.0.1"
+                "source": "https://github.com/unlcms/unl_access/tree/1.1"
             },
-            "time": "2025-07-30T21:49:38+00:00"
+            "time": "2026-05-05T19:08:42+00:00"
         },
         {
             "name": "unlcms/unl_breadcrumbs",
-            "version": "1.2",
+            "version": "1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_breadcrumbs.git",
-                "reference": "23c572ea6366672c54941a28015d16b7d7239190"
+                "reference": "730e07cfd858b8517cf467d96493d6b7d73555c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/23c572ea6366672c54941a28015d16b7d7239190",
-                "reference": "23c572ea6366672c54941a28015d16b7d7239190",
+                "url": "https://api.github.com/repos/unlcms/unl_breadcrumbs/zipball/730e07cfd858b8517cf467d96493d6b7d73555c1",
+                "reference": "730e07cfd858b8517cf467d96493d6b7d73555c1",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -15708,28 +15708,28 @@
             "description": "UNL breadcrumb implementation",
             "support": {
                 "issues": "https://github.com/unlcms/unl_breadcrumbs/issues",
-                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.2"
+                "source": "https://github.com/unlcms/unl_breadcrumbs/tree/1.3"
             },
-            "time": "2025-09-15T22:23:41+00:00"
+            "time": "2026-05-05T19:10:09+00:00"
         },
         {
             "name": "unlcms/unl_cas",
-            "version": "2.8",
+            "version": "2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_cas.git",
-                "reference": "4b897c422235b23895eb46b44f7f8848cd626d92"
+                "reference": "20d9da474add0ef9a1a49ee309b6d1d9748813fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/4b897c422235b23895eb46b44f7f8848cd626d92",
-                "reference": "4b897c422235b23895eb46b44f7f8848cd626d92",
+                "url": "https://api.github.com/repos/unlcms/unl_cas/zipball/20d9da474add0ef9a1a49ee309b6d1d9748813fe",
+                "reference": "20d9da474add0ef9a1a49ee309b6d1d9748813fe",
                 "shasum": ""
             },
             "require": {
-                "drupal/cas": "^2.0",
-                "drupal/core": "^8 || ^9 || ^10",
-                "unlcms/unl_user": "^1.0.0"
+                "drupal/cas": "^2.0 || ^3.0",
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "unlcms/unl_user": "^1.0"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -15743,26 +15743,26 @@
             "description": "UNL customizations for use with the CAS and UNL User modules.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_cas/issues",
-                "source": "https://github.com/unlcms/unl_cas/tree/2.8"
+                "source": "https://github.com/unlcms/unl_cas/tree/2.9"
             },
-            "time": "2026-02-26T21:17:29+00:00"
+            "time": "2026-05-05T19:12:08+00:00"
         },
         {
             "name": "unlcms/unl_five",
-            "version": "10.5.3.38",
+            "version": "10.5.3.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_five.git",
-                "reference": "7a78176fdd6064fc838ca96aac90d303b0ac331e"
+                "reference": "efb7876a496b9298458d08e1f459b6cd2a174246"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/7a78176fdd6064fc838ca96aac90d303b0ac331e",
-                "reference": "7a78176fdd6064fc838ca96aac90d303b0ac331e",
+                "url": "https://api.github.com/repos/unlcms/unl_five/zipball/efb7876a496b9298458d08e1f459b6cd2a174246",
+                "reference": "efb7876a496b9298458d08e1f459b6cd2a174246",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11"
             },
             "type": "drupal-theme",
             "notification-url": "https://packagist.org/downloads/",
@@ -15776,26 +15776,26 @@
             "description": "UNLedu Framework 5.x theme.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_five/issues",
-                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.38"
+                "source": "https://github.com/unlcms/unl_five/tree/10.5.3.40"
             },
-            "time": "2026-02-13T21:53:09+00:00"
+            "time": "2026-05-05T19:13:28+00:00"
         },
         {
             "name": "unlcms/unl_multisite",
-            "version": "3.1.1",
+            "version": "3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_multisite.git",
-                "reference": "db8dd0657f3b0367df98876b51e38050f412174b"
+                "reference": "6eceb29de6a63901b66c986372fa6144c388bfdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/db8dd0657f3b0367df98876b51e38050f412174b",
-                "reference": "db8dd0657f3b0367df98876b51e38050f412174b",
+                "url": "https://api.github.com/repos/unlcms/unl_multisite/zipball/6eceb29de6a63901b66c986372fa6144c388bfdb",
+                "reference": "6eceb29de6a63901b66c986372fa6144c388bfdb",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^10",
+                "drupal/core": "^10 || ^11",
                 "richardbporter/drush-users-commands": "^4.0.0"
             },
             "type": "drupal-module",
@@ -15810,9 +15810,9 @@
             "description": "Admin interface to create and manage multiple site installations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_multisite/issues",
-                "source": "https://github.com/unlcms/unl_multisite/tree/3.1.1"
+                "source": "https://github.com/unlcms/unl_multisite/tree/3.2"
             },
-            "time": "2026-03-26T14:19:50+00:00"
+            "time": "2026-05-05T19:15:19+00:00"
         },
         {
             "name": "unlcms/unl_six",
