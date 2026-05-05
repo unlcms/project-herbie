@@ -21,3 +21,4 @@ name: 'Nebraska Today Tags'
 vid: nebraska_today_tags
 description: 'Tags imported from Nebraska Today.'
 weight: 0
+new_revision: false
