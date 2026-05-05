@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df39bd599962f0612e36cc94fb822cb2",
+    "content-hash": "7a134dc2061f04ec82b78e2d1db64dfb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3782,20 +3782,20 @@
         },
         {
             "name": "drupal/entity_share",
-            "version": "3.0.0-rc5",
+            "version": "3.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_share.git",
-                "reference": "8.x-3.0-rc5"
+                "reference": "8.x-3.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_share-8.x-3.0-rc5.zip",
-                "reference": "8.x-3.0-rc5",
-                "shasum": "dea108e5a98bb8f1fbe58f245d08021031818a34"
+                "url": "https://ftp.drupal.org/files/projects/entity_share-8.x-3.13.zip",
+                "reference": "8.x-3.13",
+                "shasum": "94eb998f186a86b4c31a8112d1e9535f4c32fa6f"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^10.3 || ^11",
                 "league/oauth2-client": "^2.4"
             },
             "conflict": {
@@ -3811,7 +3811,9 @@
                 "drupal/key": "~1.14",
                 "drupal/metatag": "~1.0",
                 "drupal/paragraphs": "~1.0",
-                "drupal/pathauto": "~1.0"
+                "drupal/pathauto": "~1.0",
+                "drupal/redirect": "~1.11",
+                "drupal/simple_oauth": "~5.2"
             },
             "suggest": {
                 "drupal/key": "Provides ability to manage keys for Authentication plugins.",
@@ -3820,11 +3822,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0-rc5",
-                    "datestamp": "1679585733",
+                    "version": "8.x-3.13",
+                    "datestamp": "1764787561",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -3834,7 +3836,7 @@
             ],
             "authors": [
                 {
-                    "name": "Grimreaper",
+                    "name": "grimreaper",
                     "homepage": "https://www.drupal.org/user/2388214"
                 },
                 {
@@ -3844,6 +3846,10 @@
                 {
                     "name": "ivan.vujovic",
                     "homepage": "https://www.drupal.org/user/382945"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
                 },
                 {
                     "name": "yarik.lutsiuk",
@@ -21907,7 +21913,6 @@
         "drupal/auto_entitylabel": 10,
         "drupal/config_update": 15,
         "drupal/default_content": 15,
-        "drupal/entity_share": 5,
         "drupal/entity_usage": 10,
         "drupal/entitygroupfield": 15,
         "drupal/external_entities": 20,

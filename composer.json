@@ -152,7 +152,7 @@
         "drupal/diff": "^1.0",
         "drupal/dynamic_entity_reference": "^3.2",
         "drupal/entity_reference_revisions": "^1.0",
-        "drupal/entity_share": "^3.0@RC",
+        "drupal/entity_share": "^3.13",
         "drupal/entity_share_cron": "^3.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/entitygroupfield": "^2.0@alpha",
