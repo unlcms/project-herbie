@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a482c7ce37cccf38be7d0efec00536d8",
+    "content-hash": "df39bd599962f0612e36cc94fb822cb2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7998,30 +7998,30 @@
         },
         {
             "name": "drupal/scheduler_content_moderation_integration",
-            "version": "2.0.0",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduler_content_moderation_integration.git",
-                "reference": "2.0.0"
+                "reference": "3.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduler_content_moderation_integration-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "74d4dd546b7ce6fd5c68312d50f20c366ee8772c"
+                "url": "https://ftp.drupal.org/files/projects/scheduler_content_moderation_integration-3.0.5.zip",
+                "reference": "3.0.5",
+                "shasum": "acb65075207d51b4ef5fcf260aa8ef6b9395f8d8"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
-                "drupal/scheduler": "^2"
+                "drupal/core": "^10.3 || ^11",
+                "drupal/scheduler": "^2.1"
             },
             "require-dev": {
-                "drupal/commerce": "*"
+                "drupal/commerce": "^3.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1738678266",
+                    "version": "3.0.5",
+                    "datestamp": "1776807091",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
