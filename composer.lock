@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfa91bcab3797f9867387fa6e9058e96",
+    "content-hash": "372942ccc8994a306c9e8934512d3089",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5420,26 +5420,37 @@
         },
         {
             "name": "drupal/inline_block_title_automatic",
-            "version": "1.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_block_title_automatic.git",
-                "reference": "8.x-1.1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_block_title_automatic-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "f9464928b97c84d625334c177c5f6b9cee05e6a1"
+                "url": "https://ftp.drupal.org/files/projects/inline_block_title_automatic-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "89d8fc3ce16a946ed1f62915fbeb377d6ed20ac9"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^10.2 || ^11",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "jangregor/phpstan-prophecy": "dev-master",
+                "mglaman/phpstan-drupal": "^1.2.10",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-deprecation-rules": "*",
+                "phpstan/phpstan-phpunit": "1.4.x-dev",
+                "phpstan/phpstan-strict-rules": "^1@stable",
+                "previousnext/coding-standard": "1.1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1675388345",
+                    "version": "2.0.0",
+                    "datestamp": "1724286244",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5452,36 +5463,42 @@
             ],
             "authors": [
                 {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
                     "name": "fenstrat",
                     "homepage": "https://www.drupal.org/user/362649"
                 },
                 {
-                    "name": "Sam152",
+                    "name": "sam152",
                     "homepage": "https://www.drupal.org/user/1485048"
                 }
             ],
-            "description": "Remove the choice to define titles for block_content entities in layout builder.",
+            "description": "Automatically add titles to inline blocks.",
             "homepage": "https://www.drupal.org/project/inline_block_title_automatic",
             "support": {
-                "source": "https://git.drupalcode.org/project/inline_block_title_automatic"
+                "source": "https://git.drupalcode.org/project/inline_block_title_automatic",
+                "issues": "https://www.drupal.org/project/issues/inline_block_title_automatic"
             }
         },
         {
             "name": "drupal/inline_entity_form",
-            "version": "1.0.0-rc17",
+            "version": "3.0.0-rc21",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "8.x-1.0-rc17"
+                "reference": "3.0.0-rc21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc17.zip",
-                "reference": "8.x-1.0-rc17",
-                "shasum": "626622e01cf7a2d2977fdc06ae09afd5a814e09b"
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-3.0.0-rc21.zip",
+                "reference": "3.0.0-rc21",
+                "shasum": "bbfb99be0ee35ad197556b2aa02f6e181e34ff1f"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10",
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11",
+                "drupal/rat": "^1.0.0@stable",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -5490,8 +5507,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc17",
-                    "datestamp": "1703020130",
+                    "version": "3.0.0-rc21",
+                    "datestamp": "1746459780",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -5989,31 +6006,26 @@
         },
         {
             "name": "drupal/layout_builder_restrictions",
-            "version": "2.20.0",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_builder_restrictions.git",
-                "reference": "8.x-2.20"
+                "reference": "3.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_builder_restrictions-8.x-2.20.zip",
-                "reference": "8.x-2.20",
-                "shasum": "cd5c87869a0843f91fae0600f74b6c2ed102e398"
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_restrictions-3.0.4.zip",
+                "reference": "3.0.4",
+                "shasum": "826edbab8ed665bccfb668092b155a60ec6da296"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "require-dev": {
-                "drupal/dashboards": "^2",
-                "drupal/layout_library": "dev-1.x",
-                "drupal/mini_layouts": "dev-2.0.x"
+                "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.20",
-                    "datestamp": "1715895237",
+                    "version": "3.0.4",
+                    "datestamp": "1752762015",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7269,6 +7281,48 @@
             }
         },
         {
+            "name": "drupal/rat",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/rat.git",
+                "reference": "f13fcfb83445e505ffa84d2137231d91cd8c8146"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.drupalcode.org/api/v4/projects/project%2Frat/repository/archive.zip?sha=f13fcfb83445e505ffa84d2137231d91cd8c8146",
+                "reference": "f13fcfb83445e505ffa84d2137231d91cd8c8146",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "drupal/core": "^9.4",
+                "drupal/core-dev": "^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\rat\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "gpl-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Merlin",
+                    "email": "merlin@geeks4change.net"
+                }
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/rat/-/tree/1.0.1"
+            },
+            "time": "2025-12-29T15:30:47+00:00"
+        },
+        {
             "name": "drupal/redirect",
             "version": "1.12.0",
             "source": {
@@ -8176,27 +8230,27 @@
         },
         {
             "name": "drupal/svg_image",
-            "version": "3.0.2",
+            "version": "3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/svg_image.git",
-                "reference": "3.0.2"
+                "reference": "3.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/svg_image-3.0.2.zip",
-                "reference": "3.0.2",
-                "shasum": "77906ae731878b68a181f82b073617b798e5f110"
+                "url": "https://ftp.drupal.org/files/projects/svg_image-3.2.2.zip",
+                "reference": "3.2.2",
+                "shasum": "ce7226257ce332d82dedc21269bc73d12c29d6b2"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
-                "enshrined/svg-sanitize": ">=0.15 <1.0"
+                "drupal/core": "^10.3 || ^11",
+                "enshrined/svg-sanitize": ">=0.22 <1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.2",
-                    "datestamp": "1698471266",
+                    "version": "3.2.2",
+                    "datestamp": "1756292430",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8205,12 +8259,12 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Yaroslav Lushnikov",
-                    "homepage": "https://www.drupal.org/user/2870933",
+                    "homepage": "https://www.drupal.org/u/imyaro",
                     "role": "Maintainer"
                 },
                 {
@@ -8231,10 +8285,10 @@
                 }
             ],
             "description": "Overrides the standard image formatter and widget to support SVG files.",
-            "homepage": "http://drupal.org/project/svg_image",
+            "homepage": "https://drupal.org/project/svg_image",
             "support": {
-                "source": "http://cgit.drupalcode.org/svg_image",
-                "issues": "http://drupal.org/project/svg_image"
+                "source": "https://git.drupalcode.org/project/svg_image",
+                "issues": "https://www.drupal.org/project/issues/svg_image"
             }
         },
         {
@@ -21927,6 +21981,7 @@
         "drupal/feeds_ex": 10,
         "drupal/feeds_tamper": 10,
         "drupal/field_css": 5,
+        "drupal/inline_entity_form": 5,
         "drupal/markup": 10,
         "drupal/rabbit_hole": 10,
         "drupal/scanner": 10,
