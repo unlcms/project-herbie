@@ -7,6 +7,7 @@ dependencies:
   module:
     - external_entities
     - file
+    - file_delete
     - filter
     - honeypot
     - media
@@ -22,6 +23,8 @@ permissions:
   - 'access content'
   - 'access protected page password screen'
   - 'bypass honeypot protection'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'use text format webform_default'
   - 'view media'

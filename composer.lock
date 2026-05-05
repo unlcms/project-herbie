@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f74f3a39b51ff68078a7b2ae6f1cd67b",
+    "content-hash": "bfa91bcab3797f9867387fa6e9058e96",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4684,29 +4684,26 @@
         },
         {
             "name": "drupal/file_delete",
-            "version": "2.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/file_delete.git",
-                "reference": "2.0.0"
+                "reference": "3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_delete-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "39933b698ed2f6500f1d94a681172b2c4cc94feb"
+                "url": "https://ftp.drupal.org/files/projects/file_delete-3.0.2.zip",
+                "reference": "3.0.2",
+                "shasum": "a325dc7de55f09b3026fba7a8c58be99e2a42fb5"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "require-dev": {
-                "drupal/coder": "^8.3"
+                "drupal/core": "^10.3 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1664902819",
+                    "version": "3.0.2",
+                    "datestamp": "1769620250",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4715,13 +4712,17 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Jonathan Eom",
                     "homepage": "https://www.drupal.org/user/3458427",
                     "email": "jonnyeom@gmail.com"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
                 }
             ],
             "description": "Provides the ability to easily delete files within Drupal administration.",
@@ -4731,7 +4732,7 @@
                 "File"
             ],
             "support": {
-                "source": "http://cgit.drupalcode.org/file_delete",
+                "source": "https://git.drupalcode.org/project/file_delete",
                 "issues": "https://www.drupal.org/project/issues/file_delete"
             }
         },
