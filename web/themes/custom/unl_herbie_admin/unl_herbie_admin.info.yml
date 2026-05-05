@@ -2,7 +2,7 @@ name: Herbie Admin
 type: theme
 base theme: claro
 description: 'Subtheme for Claro.'
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 
 libraries:
   - unl_herbie_admin/global-styling

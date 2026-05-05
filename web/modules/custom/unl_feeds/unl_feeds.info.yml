@@ -3,7 +3,7 @@ description: 'Provides the capability to integrate custom plugins with the Feeds
 package: UNL
 
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 
 version: 1.x
 

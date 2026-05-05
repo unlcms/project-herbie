@@ -2,7 +2,7 @@ name: 'Archive page importer'
 package: UNL
 type: module
 description: 'Import pages from a Drupal 7 site into Temporary transition page type.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 dependencies:
   - drupal:media
   - drupal:node
