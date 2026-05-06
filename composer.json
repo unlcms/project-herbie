@@ -215,6 +215,7 @@
         "dxg/icon-library": "^1.5",
         "jackocnr/intl-tel-input": "16.1.0",
         "league/csv": "^9.16",
+        "mglaman/composer-drupal-lenient": "^2.0",
         "nigelotoole/progress-tracker": "^2.0",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -252,6 +253,7 @@
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
+            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
@@ -378,6 +380,9 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/entity_share_cron"]
         }
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "597c6bf1c29817537f64afafd424fe7d",
+    "content-hash": "1a2cd4a2e4e736ca96ba98e529e82bb5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10866,6 +10866,68 @@
                 "source": "https://github.com/messageagency/Forcecom-Toolkit-for-PHP/tree/1.0.2"
             },
             "time": "2022-05-05T15:39:51+00:00"
+        },
+        {
+            "name": "mglaman/composer-drupal-lenient",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mglaman/composer-drupal-lenient.git",
+                "reference": "7bfe79bfcccf1b0f3dafee7e36468dccfc2e56bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mglaman/composer-drupal-lenient/zipball/7bfe79bfcccf1b0f3dafee7e36468dccfc2e56bb",
+                "reference": "7bfe79bfcccf1b0f3dafee7e36468dccfc2e56bb",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": ">=8.3"
+            },
+            "require-dev": {
+                "composer/composer": "^2.3",
+                "drupal/core": "^11 || ^12",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.6",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.2",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ComposerDrupalLenient\\Plugin"
+            },
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
+                "psr-4": {
+                    "ComposerDrupalLenient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Glaman",
+                    "email": "nmd.matt@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/mglaman/composer-drupal-lenient/issues",
+                "source": "https://github.com/mglaman/composer-drupal-lenient/tree/2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mglaman",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-20T20:28:20+00:00"
         },
         {
             "name": "mglaman/phpstan-drupal",
