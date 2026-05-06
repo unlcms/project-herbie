@@ -102,18 +102,6 @@
                     "url": "https://github.com/NigelOToole/progress-tracker/archive/refs/tags/2.0.6.zip"
                 }
             }
-        },
-        {
-            "type": "package",
-            "package": {
-              "name": "northernco/ckeditor5-anchor-drupal",
-              "version": "0.3.0",
-              "type": "drupal-library",
-              "dist": {
-                "url": "https://registry.npmjs.org/@northernco/ckeditor5-anchor-drupal/-/ckeditor5-anchor-drupal-0.3.0.tgz",
-                "type": "tar"
-              }
-            }
         }
     ],
     "require": {
