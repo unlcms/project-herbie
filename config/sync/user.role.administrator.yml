@@ -257,6 +257,7 @@ permissions:
   - 'perform search and replace'
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'rebuild node access permissions'
   - 'reorder book pages'
   - 'replicate entities'
   - 'revert archive_page revisions'

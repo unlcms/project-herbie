@@ -1,0 +1,14 @@
+diff --git a/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php b/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
+index 338c5fe7..56b122d8 100644
+--- a/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
++++ b/core/modules/views/src/Plugin/views/display/DisplayPluginBase.php
+@@ -1886,8 +1886,8 @@ public function validateOptionsForm(&$form, FormStateInterface $form_state) {
+
+       case 'css_class':
+         $css_class = $form_state->getValue('css_class');
+-        if (preg_match('/[^a-zA-Z0-9-_ ]/', $css_class)) {
+-          $form_state->setError($form['css_class'], $this->t('CSS classes must be alphanumeric or dashes only.'));
++        if (preg_match('/[^\x{0020}\x{002D}\x{002E}\x{002F}\x{003A}\x{0030}-\x{005A}\x{005F}\x{0061}-\x{007A}\x{00A1}-\x{FFFF}]/u', $css_class)) {
++          $form_state->setError($form['css_class'], $this->t('This value contains characters that are not valid in CSS classes.'));
+         }
+         break;

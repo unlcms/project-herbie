@@ -31,6 +31,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: false
       multiBlock: true
     linkit_extension:
       linkit_enabled: false

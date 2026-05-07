@@ -226,6 +226,7 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'rebuild node access permissions'
   - 'reorder book pages'
   - 'replicate entities'
   - 'revert archive_page revisions'
