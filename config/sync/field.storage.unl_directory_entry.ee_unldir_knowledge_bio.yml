@@ -2,6 +2,8 @@ uuid: 941c969f-ab26-4e5d-90da-6250fdfce43e
 langcode: en
 status: true
 dependencies:
+  config:
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
     - text

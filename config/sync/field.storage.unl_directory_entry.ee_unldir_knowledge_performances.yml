@@ -2,6 +2,8 @@ uuid: 569bc227-1330-47ff-8386-adbefbcbb804
 langcode: en
 status: true
 dependencies:
+  config:
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
 id: unl_directory_entry.ee_unldir_knowledge_performances

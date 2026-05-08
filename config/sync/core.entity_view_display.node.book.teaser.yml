@@ -33,4 +33,5 @@ content:
     weight: 101
     region: content
 hidden:
+  book_navigation: true
   entitygroupfield: true

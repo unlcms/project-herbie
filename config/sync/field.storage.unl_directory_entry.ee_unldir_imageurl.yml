@@ -2,6 +2,8 @@ uuid: 867e1c5c-6dc5-4d3e-995d-d916f71857b4
 langcode: en
 status: true
 dependencies:
+  config:
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
 id: unl_directory_entry.ee_unldir_imageurl

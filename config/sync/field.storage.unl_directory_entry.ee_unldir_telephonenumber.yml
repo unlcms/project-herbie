@@ -2,6 +2,8 @@ uuid: 50617bb7-57a9-48ba-84ef-9496b091c261
 langcode: en
 status: true
 dependencies:
+  config:
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
     - telephone

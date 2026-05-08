@@ -7,7 +7,9 @@ label: 'UNL Directory Entry'
 label_plural: 'UNL Directory Entries'
 base_path: unl_directory_entry
 description: 'Data from directory.unl.edu.'
+content_class: Drupal\external_entities\Entity\ExternalEntity
 read_only: true
+debug_level: null
 field_mappers:
   ee_unldir_imageurl:
     id: generic
@@ -261,6 +263,8 @@ field_mappers:
               -
                 id: default
                 config: {  }
+field_save_order: null
+field_mapping_notes: ''
 data_aggregator:
   id: single
   config:
@@ -282,9 +286,11 @@ data_aggregator:
           parameters:
             list: {  }
             single: {  }
+data_aggregator_notes: ''
+language_settings: {  }
 persistent_cache_max_age: 3600
 annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null
 annotation_inherited_fields: {  }
-generate_aliases: null
+locks: {  }

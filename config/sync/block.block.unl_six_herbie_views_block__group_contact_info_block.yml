@@ -19,7 +19,7 @@ settings:
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: null
-  context_mapping: {  }
 visibility: {  }
