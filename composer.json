@@ -344,6 +344,9 @@
             "drupal/protected_pages": {
                 "3559079 - Protected Pages 8.x-1.9 breaks all paginated jsonapi URLs": "patches/3559079-jsonapi_protected_pages.patch"
             },
+            "drupal/select2": {
+                "3509122 - jQuery 4 compatibility": "patches/3509122-jquery4-compatibility-1.patch"
+            },
             "drupal/scanner": {
                 "3196119 - Errors on search-only for deep-nested paragraphs": "patches/nestedParagraphFix-3196119-39.patch"
             },
