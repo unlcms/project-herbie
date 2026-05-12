@@ -14,9 +14,13 @@
   display: none;
 }
 
-/* The JQuery UI modal switched from a span to an h1 and the font size is too large. */
-.ui-dialog .ui-dialog-title {
+/* The JQuery UI modal and drawer switched from a span to an h1/h2 and the font size is too large. */
+.ui-dialog .ui-dialog-title,
+#drupal-off-canvas-wrapper.ui-dialog .ui-dialog-title {
   font-size: inherit;
+}
+#drupal-off-canvas-wrapper.ui-dialog .ui-dialog-title {
+  margin: 0;
 }
 
 
