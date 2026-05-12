@@ -14,6 +14,14 @@
   display: none;
 }
 
+/* The JQuery UI modal switched from a span to an h1 and the font size is too large. */
+.ui-dialog .ui-dialog-title {
+  font-size: inherit;
+}
+
+
+
+
 @media only screen and (max-width: 42.09em) {
 
   .unlcms-grid-cols {
