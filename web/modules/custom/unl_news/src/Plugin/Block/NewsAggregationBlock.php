@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
+use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -131,8 +132,8 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function build() {
-    // Load the view.
-    $view = \Drupal\views\Views::getView('news_recent');
+    // Load the news_recent view which will be augmented with items from the selected tags.
+    $view = Views::getView('news_recent');
     if (!$view) {
       return [];
     }
@@ -150,19 +151,19 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     if ($selected_tags) {
       $node_storage = $this->entityTypeManager->getStorage('node');
       if ($node_storage) {
-      $query = $node_storage->getQuery();
-      $query = $view->getQuery();
-      $join = $this->getViewsPluginManager('join')->createInstance('standard', [
-        'table' => 'taxonomy_index',
-        'left_table' => 'node_field_data',
-        'left_field' => 'nid',
-        'field' => 'nid',
-        'type' => 'INNER',
-      ]);
+        $query = $view->getQuery();
+        $join = $this->getViewsPluginManager('join')->createInstance('standard', [
+          'table' => 'taxonomy_index',
+          'left_table' => 'node_field_data',
+          'left_field' => 'nid',
+          'field' => 'nid',
+          'type' => 'INNER',
+        ]);
 
-      $query->addTable('taxonomy_index', 'node_field_data', $join);
-      $query->addWhere('taxonomy_filter_group', 'taxonomy_index.tid', $selected_tags, 'IN');
-     }
+        $query->addTable('taxonomy_index', 'node_field_data', $join);
+        $query->addWhere('taxonomy_filter_group', 'taxonomy_index.tid', $selected_tags, 'IN');
+        $query->distinct = TRUE;
+      }
     }
 
     // Set items per page from configuration.
