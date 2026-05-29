@@ -1,7 +1,7 @@
 name: Major
 description: 'A program of study content type.'
 type: module
-core_version_requirement: '^9.4 || ^10 || ^11'
+core_version_requirement: '^10 || ^11'
 dependencies:
   - 'allowed_formats:allowed_formats'
   - 'drupal:content_moderation'
@@ -27,5 +27,5 @@ dependencies:
   - 'pathauto:pathauto'
   - 'svg_image:svg_image'
   - 'twig_ui:twig_ui'
-version: '1.7'
+version: '1.8'
 package: Herbie

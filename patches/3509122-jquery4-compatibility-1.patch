@@ -1,0 +1,25 @@
+diff --git a/js/select2.js b/js/select2.js
+index fd2ac40..e81655a 100644
+--- a/js/select2.js
++++ b/js/select2.js
+@@ -2,6 +2,20 @@
+  * @file
+  * Select2 integration.
+  */
++
++// Support for jQuery 4 #6298
++// @see https://github.com/select2/select2/issues/6298
++if (!jQuery.isArray) {
++  jQuery.isArray = Array.isArray || function (value) {
++    return Object.prototype.toString.call(value) === '[object Array]';
++  };
++}
++if (!jQuery.trim) {
++  jQuery.trim = function (text) {
++    return text == null ? "" : text.trim();
++  };
++}
++
+ (function ($, drupalSettings, Sortable, once) {
+   'use strict';
+ 

@@ -2,6 +2,8 @@ uuid: e6955837-be13-4dd2-954a-28e489eda460
 langcode: en
 status: true
 dependencies:
+  config:
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
 id: unl_directory_entry.ee_unldir_knowledge_honors

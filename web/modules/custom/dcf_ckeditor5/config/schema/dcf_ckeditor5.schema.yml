@@ -1,0 +1,10 @@
+filter_settings.filter_dcfckeditor5:
+  type: mapping
+  label: 'DCF CKEditor5 filter settings'
+  mapping:
+    dcftable:
+      type: boolean
+      label: 'Add DCF table classes'
+    dcfblockquote:
+      type: boolean
+      label: 'Add DCF blockquote classes'

@@ -42,7 +42,9 @@ settings:
       properties:
         reversed: true
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
-image_upload: {  }
+image_upload:
+  status: false

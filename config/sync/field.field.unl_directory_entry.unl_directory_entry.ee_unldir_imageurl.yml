@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.unl_directory_entry.ee_unldir_imageurl
+    - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
 id: unl_directory_entry.unl_directory_entry.ee_unldir_imageurl

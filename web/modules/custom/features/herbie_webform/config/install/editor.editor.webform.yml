@@ -28,14 +28,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: false
       multiBlock: true
-    linkit_extension:
-      linkit_enabled: false
 image_upload:
   status: false
-  scheme: public
-  directory: inline-images
-  max_size: ''
-  max_dimensions:
-    width: null
-    height: null

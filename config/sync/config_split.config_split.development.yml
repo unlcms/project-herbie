@@ -6,13 +6,14 @@ id: development
 label: Development
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/development
 module:
   config_inspector: 0
   update: 0
 theme: {  }
-blacklist:
+complete_list:
   - update.settings
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: true
+partial_list: {  }

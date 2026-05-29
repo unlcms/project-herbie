@@ -51,6 +51,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: false
       multiBlock: true
     ckeditor5_style:
       styles:
@@ -81,6 +82,12 @@ settings:
         -
           label: 'Inverse Tertiary Button'
           element: '<a class="dcf-btn dcf-btn-inverse-tertiary">'
+        -
+          label: 'Striped Table'
+          element: '<table class="dcf-table-striped">'
+        -
+          label: 'Responsive Table'
+          element: '<table class="dcf-table-responsive">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: standard

@@ -11,7 +11,7 @@ third_party_settings:
 name: 'Temporary transition page'
 type: archive_page
 description: 'A page of HTML markup that has been imported from a Drupal 7 site.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

@@ -9,12 +9,15 @@ dependencies:
   module:
     - content_moderation
     - file
+    - file_delete
     - filter
 id: temporary_editor
 label: 'Temporary Editor'
 weight: -2
 is_admin: null
 permissions:
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'use editorial transition publish'
   - 'use text format simple'

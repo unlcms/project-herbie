@@ -30,7 +30,8 @@ filters:
     status: true
     weight: 0
     settings:
-      dcftable: '1'
+      dcftable: true
+      dcfblockquote: true
   filter_html:
     id: filter_html
     provider: filter
@@ -47,6 +48,7 @@ filters:
     weight: 0
     settings:
       title: true
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media

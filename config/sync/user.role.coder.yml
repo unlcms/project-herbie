@@ -15,6 +15,7 @@ dependencies:
     - field_css
     - field_ui
     - file
+    - file_delete
     - filter
     - google_tag
     - group
@@ -83,6 +84,8 @@ permissions:
   - 'authorize salesforce'
   - 'bypass pages password protection'
   - 'create group_subsite group'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'load twig templates from file system'
   - 'moderated content bulk draft'
