@@ -58,7 +58,7 @@ class RequestSubscriber implements EventSubscriberInterface {
     $entity_form = $request->attributes->get('_entity_form');
     $node = $request->attributes->get('node');
     $roles_to_check = ['editor', 'administrator', 'super_administrator', 'coder', 'site_admin'];
-    $image_upload_route = false;
+    $image_or_link_upload_route = false;
 
     // Check if logged in user is referenced on the Person page.
     $curent_user_is_referenced = function () use ($node, $roles_to_check, $current_user_roles, $user, $entity_form, $route_name, $request) {
@@ -77,8 +77,8 @@ class RequestSubscriber implements EventSubscriberInterface {
     $curent_user_is_referenced = $curent_user_is_referenced();
 
     // User adding an image to an image field on a node.
-    if ($route_name === "image.style_public") {
-      $image_upload_route = true;
+    if ($route_name === "image.style_public" || $route_name === "system.entity_autocomplete") {
+      $image_or_link_upload_route = true;
     }
 
     // Display the edit/view tabs for all roles as defined in the configuration file (except Authenticated).
@@ -101,7 +101,7 @@ class RequestSubscriber implements EventSubscriberInterface {
         $role_exists = !array_diff($role_to_check, array_values($current_user_roles));
         if ($role_exists && $curent_user_is_referenced !== true) {
           // Remove the temporary role from the user, but keep any existing roles if they're on an image upload route, as they could potentially be uploading an image for a person page.
-          if ($user && $image_upload_route === false) {
+          if ($user && $image_or_link_upload_route === false) {
             $user->removeRole($this->temporary_editor);
             $user->save();
           }
