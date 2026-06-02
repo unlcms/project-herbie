@@ -2,11 +2,11 @@
 
   {% for item in items %}
     {% if '/option/' in current_path %}
-      <a href="tel:+1{{ item.content['#context'].value|replace({'-':''}) }}" aria-label="{{ item.content['#context'].value|replace({'-': '.'})|split('')|join(' ') }}">
+      <a href="tel:{{ item.content['#context'].value|replace({'-':''}) }}">
         {{ item.content['#context'].value }}
       </a>
     {% else %}
-      <a class='unl-cream' href="tel:+1{{ item.content['#context'].value|replace({'-':''}) }}" aria-label="{{ item.content['#context'].value|replace({'-': '.'})|split('')|join(' ') }}">
+      <a class='unl-cream' href="tel:{{ item.content['#context'].value|replace({'-':''}) }}">
         {{ item.content['#context'].value }}
       </a>
     {% endif %}
