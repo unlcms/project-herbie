@@ -334,7 +334,8 @@
                 "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch",
                 "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch",
                 "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch",
-                "3412420 - BlockContentAccessControlHandler requires access block library permission for create": "patches/3412420-BlockContentAccessControlHandler-remove-perm.patch"
+                "3412420 - BlockContentAccessControlHandler requires access block library permission for create": "patches/3412420-BlockContentAccessControlHandler-remove-perm.patch",
+                "2918537 - Cannot save unpublished versions of published content for users without manage book privileges": "patches/2918537-92.patch"
             },
             "drupal/ai_image_alt_text": {
                 "3476380 - Add support for other image based widgets": "patches/3476380-support-other-image-widgets.diff"
