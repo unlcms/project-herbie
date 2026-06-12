@@ -22,3 +22,4 @@ required:
   - linkit.linkit_profile.content_linkit_profile
   - image.style.ai_image_alt_text
   - key.key.azure_key
+  - external_entities.external_entity_type.unl_directory_entry

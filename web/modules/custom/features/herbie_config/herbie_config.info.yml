@@ -2,9 +2,10 @@ name: 'Herbie config'
 description: 'A bundle of miscellaneous configuration files, mainly to override default configuration in modules or other settings. '
 type: module
 core_version_requirement: '^10 || ^11'
-version: 1.7.0
+version: 1.8.0
 package: Herbie
 dependencies:
+  - ':external_entities'
   - 'ai:ai'
   - 'ai_image_alt_text:ai_image_alt_text'
   - 'ai_provider_azure:ai_provider_azure'
