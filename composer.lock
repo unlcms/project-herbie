@@ -15645,16 +15645,16 @@
         },
         {
             "name": "unlcms/unl_access",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unlcms/unl_access.git",
-                "reference": "b614a50dc0e9dfe55bda832a49d7237a9e7f609a"
+                "reference": "48d75897726c3c4266f91a294ff5f9ab078322d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unlcms/unl_access/zipball/b614a50dc0e9dfe55bda832a49d7237a9e7f609a",
-                "reference": "b614a50dc0e9dfe55bda832a49d7237a9e7f609a",
+                "url": "https://api.github.com/repos/unlcms/unl_access/zipball/48d75897726c3c4266f91a294ff5f9ab078322d3",
+                "reference": "48d75897726c3c4266f91a294ff5f9ab078322d3",
                 "shasum": ""
             },
             "require": {
@@ -15678,9 +15678,9 @@
             "description": "Allows content viewing restriction based on UNL affiliations.",
             "support": {
                 "issues": "https://github.com/unlcms/unl_access/issues",
-                "source": "https://github.com/unlcms/unl_access/tree/1.1"
+                "source": "https://github.com/unlcms/unl_access/tree/1.2"
             },
-            "time": "2026-05-05T19:08:42+00:00"
+            "time": "2026-06-12T21:39:13+00:00"
         },
         {
             "name": "unlcms/unl_breadcrumbs",
