@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.aggregator_html
     - filter.format.html_code
     - filter.format.webform_email
   module:
@@ -24,6 +25,7 @@ dependencies:
     - node
     - paragraphs
     - protected_pages
+    - queue_ui
     - replicate_ui
     - salesforce
     - salesforce_mapping
@@ -49,6 +51,9 @@ permissions:
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access unl webform options'
+  - 'administer aggregator_feed display'
+  - 'administer aggregator_feed fields'
+  - 'administer aggregator_feed form display'
   - 'administer block content'
   - 'administer blocks'
   - 'administer content types'
@@ -90,9 +95,11 @@ permissions:
   - 'moderated content bulk save content'
   - 'moderated content bulk unpin'
   - 'moderated content bulk unpublish'
+  - 'process aggregator_feeds queue'
   - 'replicate entities'
   - 'schedule publishing of nodes'
   - 'select own theme'
+  - 'use text format aggregator_html'
   - 'use text format html_code'
   - 'use text format webform_email'
   - 'view salesforce mapping'
