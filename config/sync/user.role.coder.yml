@@ -6,6 +6,7 @@ dependencies:
     - filter.format.html_code
     - filter.format.webform_email
   module:
+    - aggregator
     - asset_injector
     - block
     - block_content
@@ -62,6 +63,7 @@ permissions:
   - 'administer key configuration overrides'
   - 'administer keys'
   - 'administer meta tags'
+  - 'administer news feeds'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'

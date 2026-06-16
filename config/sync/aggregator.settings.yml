@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: Zk2vSGKw0tg4Xqk-9Zh-Q4t2tG6143YimSRsdqeFdZo
+fetcher: aggregator
+parser: aggregator
+processors:
+  - aggregator
+items:
+  expire: 9676800
+source:
+  list_max: 3
+normalize_post_dates: false

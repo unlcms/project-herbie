@@ -6,6 +6,7 @@ module:
   admin_toolbar_tools: 0
   administerusersbyrole: 0
   adv_varnish: 0
+  aggregator: 0
   ai: 0
   ai_image_alt_text: 0
   ai_provider_azure: 0

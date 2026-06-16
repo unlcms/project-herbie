@@ -26,6 +26,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - aggregator
     - ai_image_alt_text
     - asset_injector
     - block
@@ -120,6 +121,7 @@ permissions:
   - 'administer keys'
   - 'administer main menu items'
   - 'administer meta tags'
+  - 'administer news feeds'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'
