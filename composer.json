@@ -292,6 +292,7 @@
             "cd web && patch -p1 < ../patches/custom-htaccess-noindex-test-domain.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-session-slash.patch",
+            "cd web && patch -p1 < ../patches/custom-robots-allow-oembed-paths.patch",
             "cd web && patch -p1 < ../patches/custom-unl_multisite-example.sites.php.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
