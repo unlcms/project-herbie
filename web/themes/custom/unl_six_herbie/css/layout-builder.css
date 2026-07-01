@@ -158,6 +158,15 @@
 .layout-builder-block.unl-bg-cream {
   background-color: var(--bg-body) !important;
 }
+.layout-builder-block.unl-bg-dark-gray {
+    background-color: var(--dark-gray) !important;
+}
+.layout-builder-block.unl-bg-lighter-gray {
+    background-color: var(--bg-lighter-gray) !important;
+}
+.layout-builder-block.unl-bg-lightest-gray {
+    background-color: var(--bg-lightest-gray) !important;
+}
 .layout-builder-block.unl-bg-scarlet {
   background-color: var(--bg-brand-alpha) !important;
 }
