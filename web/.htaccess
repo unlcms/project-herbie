@@ -370,10 +370,6 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^empowerment\.unl\.edu$
   RewriteRule ^(.*)$ https://cehs.unl.edu/empowerment/ [R=301,L]
 
-  # gogosgroup
-  RewriteCond %{HTTP_HOST} ^gogosgroup\.unl\.edu$
-  RewriteRule ^(.*)$ https://cehs.unl.edu/gogos/ [R=301,L]
-
   # hrtm
   RewriteCond %{HTTP_HOST} ^hrtm\.unl\.edu$
   RewriteRule ^(.*)$ https://cehs.unl.edu/hrtm/ [R=301,L]
@@ -455,6 +451,10 @@ AddEncoding gzip svgz
   # era
   RewriteCond %{HTTP_HOST} ^era\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/era/$1 [R=301,L]
+
+  # gogosgroup
+  RewriteCond %{HTTP_HOST} ^gogosgroup\.unl\.edu$
+  RewriteRule ^(.*)$ https://cefs.unl.edu/gogos/ [R=301,L]
 
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
