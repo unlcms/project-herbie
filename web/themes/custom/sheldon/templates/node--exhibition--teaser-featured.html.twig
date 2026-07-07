@@ -25,9 +25,7 @@
             {{ title_prefix }}
             <h2 class="exhibition-heading">
               <a href="{{ url }}">
-                {% if is_upcoming and node.ongoing.value != '1' %}
-                  Upcoming:
-                {% endif %}{{ label }}
+                {{ label }}
               </a>
             </h2>
             {{ title_suffix }}
