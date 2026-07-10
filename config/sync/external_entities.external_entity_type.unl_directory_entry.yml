@@ -288,7 +288,7 @@ data_aggregator:
             single: {  }
 data_aggregator_notes: ''
 language_settings: {  }
-persistent_cache_max_age: 3600
+persistent_cache_max_age: -1
 annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null

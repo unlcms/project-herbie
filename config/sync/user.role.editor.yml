@@ -28,7 +28,6 @@ dependencies:
     - filter.format.simple
     - filter.format.standard
     - filter.format.webform
-    - media.type.file
     - media.type.image
     - media.type.remote_video
     - media.type.video
@@ -91,7 +90,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'access user profiles'
-  - 'access users overview'
   - 'access webform overview'
   - 'add any content to books'
   - 'add content to books'
@@ -109,7 +107,6 @@ permissions:
   - 'create content block content'
   - 'create cta block content'
   - 'create embed block content'
-  - 'create file media'
   - 'create hero block content'
   - 'create icon_links block content'
   - 'create image media'
@@ -139,7 +136,6 @@ permissions:
   - 'delete any content block content'
   - 'delete any cta block content'
   - 'delete any embed block content'
-  - 'delete any file media'
   - 'delete any hero block content'
   - 'delete any icon_links block content'
   - 'delete any image media'
@@ -164,7 +160,6 @@ permissions:
   - 'delete own archive_page content'
   - 'delete own book content'
   - 'delete own builder_page content'
-  - 'delete own file media'
   - 'delete own files'
   - 'delete own image media'
   - 'delete own news content'
@@ -184,7 +179,6 @@ permissions:
   - 'edit any content block content'
   - 'edit any cta block content'
   - 'edit any embed block content'
-  - 'edit any file media'
   - 'edit any hero block content'
   - 'edit any icon_links block content'
   - 'edit any image media'
@@ -207,7 +201,6 @@ permissions:
   - 'edit own archive_page content'
   - 'edit own book content'
   - 'edit own builder_page content'
-  - 'edit own file media'
   - 'edit own image media'
   - 'edit own news content'
   - 'edit own person content'

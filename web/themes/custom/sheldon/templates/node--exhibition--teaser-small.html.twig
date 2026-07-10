@@ -5,12 +5,12 @@
       <a href="{{ url }}" class="art-image">{{ content.small_image }}</a>
     </div>
     <div class="bp465-grid-col-two-thirds">
+      {% if is_upcoming and node.ongoing.value != '1' %}
+        <div class="sheldon-pill">Upcoming</div>
+      {% endif %}
       {{ title_prefix }}
       <h3{{ title_attributes.addClass('exhibition-heading') }}>
         <a href="{{ url }}">
-          {% if is_upcoming and node.ongoing.value != '1' %}
-            Upcoming:
-          {% endif %}
           {{ label }}
         </a>
       </h3>

@@ -235,6 +235,10 @@
   RewriteCond %{HTTP_HOST} ^era\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/era/$1 [R=301,L]
 
+  # gogosgroup
+  RewriteCond %{HTTP_HOST} ^gogosgroup\.unl\.edu$
+  RewriteRule ^(.*)$ https://cefs.unl.edu/gogos/ [R=301,L]
+
   # mem
   RewriteCond %{HTTP_HOST} ^mem\.unl\.edu$
   RewriteRule ^(.*)$ https://engineering.unl.edu/mem/$1 [R=301,L]

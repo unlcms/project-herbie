@@ -1,0 +1,22 @@
+uuid: f2be4818-18c6-4aa2-a28c-688bfb243451
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aggregator
+_core:
+  default_config_hash: EOAU2Z6s8M-f-u5Tlpnu8rVXJGGIRwWFZvg08R0FrZs
+name: 'Aggregator HTML'
+format: aggregator_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      allowed_html: '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'
+      filter_html_help: true
+      filter_html_nofollow: false

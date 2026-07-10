@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^10 || ^11'
 dependencies:
   - 'administerusersbyrole:administerusersbyrole'
+  - 'aggregator:aggregator'
   - 'ai_image_alt_text:ai_image_alt_text'
   - 'asset_injector:asset_injector'
   - 'drupal:block'
@@ -49,6 +50,7 @@ dependencies:
   - 'moderated_content_bulk_publish:moderated_content_bulk_publish'
   - 'paragraphs:paragraphs'
   - 'protected_pages:protected_pages'
+  - 'queue_ui:queue_ui'
   - 'rabbit_hole:rabbit_hole'
   - 'redirect:redirect'
   - 'replicate_ui:replicate_ui'

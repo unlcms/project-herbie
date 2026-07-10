@@ -22,12 +22,13 @@
         <div class="grid-set">
           <div class="bp752-grid-col-one-half bp956w666h-grid-col-full">
             <h1 class="tab-heading text-hidden">Featured Exhibition</h1>
+            {% if is_upcoming and node.ongoing.value != '1' %}
+              <div class="sheldon-pill">Upcoming</div>
+            {% endif %}
             {{ title_prefix }}
             <h2 class="exhibition-heading">
               <a href="{{ url }}">
-                {% if is_upcoming and node.ongoing.value != '1' %}
-                  Upcoming:
-                {% endif %}{{ label }}
+                {{ label }}
               </a>
             </h2>
             {{ title_suffix }}

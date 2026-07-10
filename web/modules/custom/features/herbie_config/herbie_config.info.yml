@@ -5,6 +5,7 @@ core_version_requirement: '^10 || ^11'
 version: 1.8.0
 package: Herbie
 dependencies:
+  - ':external_entities'
   - 'ai:ai'
   - 'ai_image_alt_text:ai_image_alt_text'
   - 'ai_provider_azure:ai_provider_azure'

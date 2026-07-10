@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.webform_default
   module:
+    - aggregator
     - external_entities
     - file
     - file_delete
@@ -21,6 +22,7 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access news feeds'
   - 'access protected page password screen'
   - 'bypass honeypot protection'
   - 'delete files immediately'

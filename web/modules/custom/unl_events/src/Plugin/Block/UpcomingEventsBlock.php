@@ -23,7 +23,7 @@ class UpcomingEventsBlock extends BlockBase {
   public function defaultConfiguration() {
     return [
       'quantity' => 6,
-      'url' => '',
+      'url' => 'https://events.unl.edu/',
     ];
   }
 
@@ -33,10 +33,19 @@ class UpcomingEventsBlock extends BlockBase {
   public function blockForm($form, FormStateInterface $form_state) {
     $form['quantity'] = [
       '#type' => 'select',
-      '#title' => $this->t('Items to display'),
+      '#title' => $this->t('Number of items to display'),
       '#options' => [
+        '2' => 2,
         '3' => 3,
+        '4' => 4,
+        '5' => 5,
         '6' => 6,
+        '7' => 7,
+        '8' => 8,
+        '9' => 9,
+        '10' => 10,
+        '11' => 11,
+        '12' => 12,
       ],
       '#required' => TRUE,
       '#default_value' => $this->configuration['quantity'],
@@ -45,7 +54,7 @@ class UpcomingEventsBlock extends BlockBase {
       '#type' => 'url',
       '#title' => $this->t('Calendar URL'),
       '#required' => TRUE,
-      '#description' => $this->t('The URL of the UNL Events calendar'),
+      '#description' => $this->t('The URL of the UNL Events calendar. Example: https://events.unl.edu/career_services'),
       '#default_value' => $this->configuration['url'],
     ];
 

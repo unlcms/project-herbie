@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.node.builder_page.default
+    - filter.format.aggregator_html
     - filter.format.archive
     - filter.format.block_body
     - filter.format.html_code
@@ -26,6 +27,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - administerusersbyrole
+    - aggregator
     - ai_image_alt_text
     - asset_injector
     - block
@@ -56,6 +58,7 @@ dependencies:
     - paragraphs
     - path
     - protected_pages
+    - queue_ui
     - rabbit_hole
     - redirect
     - replicate_ui
@@ -108,6 +111,9 @@ permissions:
   - 'access webform submission log'
   - 'add any content to books'
   - 'add content to books'
+  - 'administer aggregator_feed display'
+  - 'administer aggregator_feed fields'
+  - 'administer aggregator_feed form display'
   - 'administer block content'
   - 'administer blocks'
   - 'administer book outlines'
@@ -121,6 +127,7 @@ permissions:
   - 'administer keys'
   - 'administer main menu items'
   - 'administer meta tags'
+  - 'administer news feeds'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'
@@ -253,6 +260,7 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'perform search and replace'
   - 'perform search only'
+  - 'process aggregator_feeds queue'
   - 'rabbit hole bypass media'
   - 'rebuild node access permissions'
   - 'reorder book pages'
@@ -272,6 +280,7 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition unpublish'
+  - 'use text format aggregator_html'
   - 'use text format archive'
   - 'use text format block_body'
   - 'use text format html_code'

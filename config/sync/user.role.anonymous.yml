@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - aggregator
     - entity_share_server
     - external_entities
     - media
@@ -16,6 +17,7 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - 'access news feeds'
   - 'access protected page password screen'
   - entity_share_server_access_channels
   - 'view media'

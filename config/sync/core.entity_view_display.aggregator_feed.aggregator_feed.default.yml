@@ -1,0 +1,41 @@
+uuid: b5819804-194f-4780-b41e-e605e0f48f26
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+_core:
+  default_config_hash: RTDtRKHBQAxLXzLLfR4oBteItTh2Lou1GZpsDmiq0Qw
+id: aggregator_feed.aggregator_feed.default
+targetEntityType: aggregator_feed
+bundle: aggregator_feed
+mode: default
+content:
+  checked:
+    type: timestamp_ago
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  description:
+    weight: 3
+    region: content
+  feed_icon:
+    weight: 5
+    region: content
+  image:
+    weight: 2
+    region: content
+  items:
+    weight: 0
+    region: content
+  link:
+    type: uri_link
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  more_link: true
