@@ -6,10 +6,11 @@ id: production
 label: Production
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/production
 module: {  }
 theme: {  }
-blacklist: {  }
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: true
+complete_list: {  }
+partial_list: {  }

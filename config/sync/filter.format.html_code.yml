@@ -14,7 +14,7 @@ filters:
     status: false
     weight: 0
     settings:
-      dcftable: '0'
+      dcftable: false
   filter_html:
     id: filter_html
     provider: filter

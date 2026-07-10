@@ -68,5 +68,5 @@ dependencies:
   - 'webform:webform'
   - 'webform:webform_node'
   - 'webform:webform_submission_log'
-version: 2.6.1
+version: 2.7.0
 package: Herbie

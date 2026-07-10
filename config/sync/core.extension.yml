@@ -18,7 +18,6 @@ module:
   block: 0
   block_content: 0
   block_form_alter: 0
-  block_type_templates: 0
   book: 0
   breakpoint: 0
   cas: 0
@@ -97,7 +96,6 @@ module:
   image_class: 0
   image_effects: 0
   imagemagick: 0
-  infotext: 0
   inline_block_title_automatic: 0
   inline_entity_form: 0
   js_cookie: 0
@@ -204,7 +202,6 @@ module:
   unl_views: 0
   unl_webform: 0
   user: 0
-  variationcache: 0
   views_block_placement_exposed_form_defaults: 0
   views_bulk_operations: 0
   views_data_export: 0

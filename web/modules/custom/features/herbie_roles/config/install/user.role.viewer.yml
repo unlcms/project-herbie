@@ -13,6 +13,7 @@ dependencies:
     - contextual
     - entity_usage
     - file
+    - file_delete
     - media
     - node
     - paragraphs
@@ -34,6 +35,8 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'bypass unl access grant'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'view any unpublished content'
   - 'view archive_page revisions'

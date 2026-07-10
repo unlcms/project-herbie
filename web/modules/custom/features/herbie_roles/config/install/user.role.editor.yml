@@ -50,6 +50,7 @@ dependencies:
     - entity_usage
     - external_entities
     - file
+    - file_delete
     - filter
     - group
     - layout_builder
@@ -87,6 +88,7 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'
+  - 'add any content to books'
   - 'add content to books'
   - 'administer book outlines'
   - 'administer main menu items'
@@ -149,6 +151,8 @@ permissions:
   - 'delete archive_page revisions'
   - 'delete book revisions'
   - 'delete builder_page revisions'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete news revisions'
   - 'delete own archive_page content'
   - 'delete own book content'
@@ -212,6 +216,8 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'perform search only'
   - 'rabbit hole bypass media'
+  - 'rebuild node access permissions'
+  - 'reorder book pages'
   - 'replicate entities'
   - 'revert archive_page revisions'
   - 'revert book revisions'

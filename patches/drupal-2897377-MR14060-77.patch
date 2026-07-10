@@ -1,8 +1,8 @@
 diff --git a/core/lib/Drupal/Core/Form/FormBuilder.php b/core/lib/Drupal/Core/Form/FormBuilder.php
-index 023a66151e..e6555b9a43 100644
+index 08b9f556e6f8d09949fde1ca145f181075c3a90e..aca720cf692db51fc2c6fe6af9584834b8f3ce0c 100644
 --- a/core/lib/Drupal/Core/Form/FormBuilder.php
 +++ b/core/lib/Drupal/Core/Form/FormBuilder.php
-@@ -796,6 +796,9 @@ public function prepareForm($form_id, &$form, FormStateInterface &$form_state) {
+@@ -848,6 +848,9 @@ public function prepareForm($form_id, &$form, FormStateInterface &$form_state) {
          '#type' => 'hidden',
          '#value' => $form_id,
          '#id' => Html::getUniqueId("edit-$form_id"),
@@ -12,7 +12,7 @@ index 023a66151e..e6555b9a43 100644
          // Form processing and validation require this value. Ensure the
          // submitted form value appears literally, regardless of custom #tree
          // and #parents being set elsewhere.
-@@ -804,6 +807,8 @@ public function prepareForm($form_id, &$form, FormStateInterface &$form_state) {
+@@ -856,6 +859,8 @@ public function prepareForm($form_id, &$form, FormStateInterface &$form_state) {
      }
      if (!isset($form['#id'])) {
        $form['#id'] = Html::getUniqueId($form_id);
@@ -21,7 +21,7 @@ index 023a66151e..e6555b9a43 100644
        // Provide a selector usable by JavaScript. As the ID is unique, it's not
        // possible to rely on it in JavaScript.
        $form['#attributes']['data-drupal-selector'] = Html::getId($form_id);
-@@ -985,11 +990,6 @@ public function doBuildForm($form_id, &$element, FormStateInterface &$form_state
+@@ -1041,11 +1046,6 @@ public function doBuildForm($form_id, &$element, FormStateInterface &$form_state
        // possible to rely on it in JavaScript.
        $element['#attributes']['data-drupal-selector'] = Html::getId($unprocessed_id);
      }
@@ -30,14 +30,35 @@ index 023a66151e..e6555b9a43 100644
 -      // possible to rely on it in JavaScript.
 -      $element['#attributes']['data-drupal-selector'] = Html::getId($element['#id']);
 -    }
- 
+
      // Add the aria-describedby attribute to associate the form control with its
      // description.
+diff --git a/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5TestBase.php b/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5TestBase.php
+index e60801c04738b61bf096f4c680b584a61a117005..335d420cf81ec97a09fa11167b5454ce3104d328 100644
+--- a/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5TestBase.php
++++ b/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5TestBase.php
+@@ -169,7 +169,7 @@ protected function assertHtmlEsqueFieldValueEquals($field, $value, ?TraversableE
+    */
+   protected function assertNoRealtimeValidationErrors(): void {
+     $assert_session = $this->assertSession();
+-    $this->assertSame('', $assert_session->elementExists('css', '[data-drupal-selector="ckeditor5-realtime-validation-messages-container"]')->getHtml());
++    $this->assertSame('', $assert_session->elementExists('css', '#ckeditor5-realtime-validation-messages-container')->getHtml());
+   }
+
+ }
 diff --git a/core/modules/layout_builder/src/Form/ConfigureBlockFormBase.php b/core/modules/layout_builder/src/Form/ConfigureBlockFormBase.php
-index 696506e75e..a1142d932b 100644
+index 6974d97a99b2f46de3cf55373b4024f7e382cb48..6015e57ffbdbf3b3989a971992b4de6ceef4d558 100644
 --- a/core/modules/layout_builder/src/Form/ConfigureBlockFormBase.php
 +++ b/core/modules/layout_builder/src/Form/ConfigureBlockFormBase.php
-@@ -181,15 +181,6 @@ public function doBuildForm(array $form, FormStateInterface $form_state, Section
+@@ -2,7 +2,6 @@
+
+ namespace Drupal\layout_builder\Form;
+
+-use Drupal\Component\Utility\Html;
+ use Drupal\Component\Uuid\UuidInterface;
+ use Drupal\Core\Ajax\AjaxFormHelperTrait;
+ use Drupal\Core\Block\BlockManagerInterface;
+@@ -180,15 +179,6 @@ public function doBuildForm(array $form, FormStateInterface $form_state, ?Sectio
      ];
      if ($this->isAjax()) {
        $form['actions']['submit']['#ajax']['callback'] = '::ajaxSubmit';
@@ -51,16 +72,52 @@ index 696506e75e..a1142d932b 100644
 -      //   workaround in https://www.drupal.org/node/2897377.
 -      $form['#id'] = Html::getId($form_state->getBuildInfo()['form_id']);
      }
- 
+
      // Mark this as an administrative page for JavaScript ("Back to site" link).
+diff --git a/core/modules/layout_builder/src/Form/ConfigureSectionForm.php b/core/modules/layout_builder/src/Form/ConfigureSectionForm.php
+index 38e57cdb10a64f0aa2e2909e3084f3ad377d7a88..718b0b238f59fa00a147a18799e9cf5ad6508616 100644
+--- a/core/modules/layout_builder/src/Form/ConfigureSectionForm.php
++++ b/core/modules/layout_builder/src/Form/ConfigureSectionForm.php
+@@ -2,7 +2,6 @@
+
+ namespace Drupal\layout_builder\Form;
+
+-use Drupal\Component\Utility\Html;
+ use Drupal\Core\Ajax\AjaxFormHelperTrait;
+ use Drupal\Core\Form\FormBase;
+ use Drupal\Core\Form\FormStateInterface;
+@@ -155,15 +154,6 @@ public function buildForm(array $form, FormStateInterface $form_state, ?SectionS
+     ];
+     if ($this->isAjax()) {
+       $form['actions']['submit']['#ajax']['callback'] = '::ajaxSubmit';
+-      // @todo static::ajaxSubmit() requires data-drupal-selector to be the same
+-      //   between the various Ajax requests. A bug in
+-      //   \Drupal\Core\Form\FormBuilder prevents that from happening unless
+-      //   $form['#id'] is also the same. Normally, #id is set to a unique HTML
+-      //   ID via Html::getUniqueId(), but here we bypass that in order to work
+-      //   around the data-drupal-selector bug. This is okay so long as we
+-      //   assume that this form only ever occurs once on a page. Remove this
+-      //   workaround in https://www.drupal.org/node/2897377.
+-      $form['#id'] = Html::getId($form_state->getBuildInfo()['form_id']);
+     }
+     $target_highlight_id = $this->isUpdate ? $this->sectionUpdateHighlightId($delta) : $this->sectionAddHighlightId($delta);
+     $form['#attributes']['data-layout-builder-target-highlight-id'] = $target_highlight_id;
 diff --git a/core/modules/settings_tray/src/Block/BlockEntitySettingTrayForm.php b/core/modules/settings_tray/src/Block/BlockEntitySettingTrayForm.php
-index 243e907ccd..e9feafd348 100644
+index 243e907ccd3ffe0663c96235dfb4cab42cb9b25b..f8f166a3d6f781687b8dd533fb1fe809a2dc40e8 100644
 --- a/core/modules/settings_tray/src/Block/BlockEntitySettingTrayForm.php
 +++ b/core/modules/settings_tray/src/Block/BlockEntitySettingTrayForm.php
-@@ -128,17 +128,6 @@ public function buildForm(array $form, FormStateInterface $form_state) {
+@@ -4,7 +4,6 @@
+
+ use Drupal\block\BlockForm;
+ use Drupal\block\BlockInterface;
+-use Drupal\Component\Utility\Html;
+ use Drupal\Core\Ajax\AjaxFormHelperTrait;
+ use Drupal\Core\Ajax\AjaxResponse;
+ use Drupal\Core\Ajax\RedirectCommand;
+@@ -128,17 +127,6 @@ public function buildForm(array $form, FormStateInterface $form_state) {
      ];
      $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
- 
+
 -    // static::ajaxSubmit() requires data-drupal-selector to be the same between
 -    // the various Ajax requests. A bug in \Drupal\Core\Form\FormBuilder
 -    // prevents that from happening unless $form['#id'] is also the same.
@@ -74,15 +131,15 @@ index 243e907ccd..e9feafd348 100644
 -
      return $form;
    }
- 
+
 diff --git a/core/tests/Drupal/Tests/Core/Form/FormBuilderTest.php b/core/tests/Drupal/Tests/Core/Form/FormBuilderTest.php
-index d2b4903672..eff9c1e756 100644
+index cbfe7049c7822b8fdea8d32ec80ae68fe0af6b42..0ab6a0e8681945b62699650e650f6536c3a332f7 100644
 --- a/core/tests/Drupal/Tests/Core/Form/FormBuilderTest.php
 +++ b/core/tests/Drupal/Tests/Core/Form/FormBuilderTest.php
-@@ -291,6 +291,33 @@ public function testBuildFormWithObject() {
+@@ -352,6 +352,33 @@ public function testBuildFormWithObject(): void {
      $this->assertArrayHasKey('#id', $form);
    }
- 
+
 +  /**
 +   * Tests that the 'data-drupal-selector' attribute is property set.
 +   */
@@ -113,29 +170,3 @@ index d2b4903672..eff9c1e756 100644
    /**
     * Tests whether the triggering element is properly identified.
     *
-@@ -946,6 +973,25 @@ public function validateForm(array &$form, FormStateInterface $form_state) {}
-   public function submitForm(array &$form, FormStateInterface $form_state) {}
- 
- }
-+
-+class TestFormWithDataDrupalSelector implements FormInterface {
-+
-+  public function getFormId() {
-+    return 'test_form_data_drupal_selector';
-+  }
-+
-+  public function buildForm(array $form, FormStateInterface $form_state) {
-+    $form = test_form_id();
-+    $form['#attributes']['data-drupal-selector'] = 'test-value123';
-+    return $form;
-+  }
-+
-+  public function validateForm(array &$form, FormStateInterface $form_state) {}
-+
-+  public function submitForm(array &$form, FormStateInterface $form_state) {}
-+
-+}
-+
- class TestFormInjected extends TestForm implements ContainerInjectionInterface {
- 
-   public static function create(ContainerInterface $container) {
