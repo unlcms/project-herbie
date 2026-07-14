@@ -25,11 +25,12 @@ dependencies:
   - 'external_entities:external_entities'
   - 'field_group:field_group'
   - 'herbie_builder_page:herbie_builder_page'
+  - 'herbie_config:herbie_config'
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
   - 'svg_image:svg_image'
   - 'svg_image:svg_image_responsive'
-version: 1.5.0
+version: 1.6.0
 package: Herbie

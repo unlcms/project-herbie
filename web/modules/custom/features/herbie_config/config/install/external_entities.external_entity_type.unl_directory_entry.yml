@@ -1,69 +1,404 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - external_entities_pathauto
+    - external_entities_unldirectory
+third_party_settings:
+  external_entities_pathauto:
+    generate_aliases: false
 id: unl_directory_entry
 label: 'UNL Directory Entry'
 label_plural: 'UNL Directory Entries'
+base_path: unl_directory_entry
 description: 'Data from directory.unl.edu.'
+content_class: Drupal\external_entities\Entity\ExternalEntity
 read_only: true
-generate_aliases: false
-field_mapper_id: simple
-field_mapper_config:
-  field_mappings:
-    id:
-      value: uid
-    title:
-      value: displayName
-    ee_unldir_imageurl:
-      value: imageURL
-    ee_unldir_knowledgepresentations:
-      value: knowledge/presentations
-    ee_unldir_knowledge_bio:
-      value: knowledge/bio
-    ee_unldir_knowledge_courses:
-      value: knowledge/courses
-    ee_unldir_knowledge_education:
-      value: knowledge/education
-    ee_unldir_knowledge_grants:
-      value: knowledge/grants
-    ee_unldir_knowledge_honors:
-      value: knowledge/honors
-    ee_unldir_knowledge_papers:
-      value: knowledge/papers
-    ee_unldir_knowledge_performances:
-      value: knowledge/performances
-    ee_unldir_mail:
-      value: mail
-    ee_unldir_primaryaffiliation:
-      value: eduPersonPrimaryAffiliation
-    ee_unldir_telephonenumber:
-      value: telephoneNumber
-    ee_unldir_title:
-      value: title
-    ee_unldir_uid:
-      value: uid
-    ee_unldir_unldirectoryaddress:
-      value: unlDirectoryAddress
-    ee_unldir_unlhrprimarydepartment:
-      value: unlHRPrimaryDepartment
-storage_client_id: unldirectory
-storage_client_config:
-  endpoint: 'https://directory.unl.edu'
-  response_format: json
-  pager:
-    default_limit: '10'
-    page_parameter: ''
-    page_parameter_type: null
-    page_size_parameter: ''
-    page_size_parameter_type: null
-  api_key:
-    header_name: ''
-    key: ''
-  parameters:
-    list: {  }
-    single: {  }
+debug_level: 0
+field_mappers:
+  ee_unldir_imageurl:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: imageURL
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_bio:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/bio
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+        format:
+          id: ''
+      debug_level: 0
+  ee_unldir_knowledge_courses:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/courses
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_education:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/education
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_grants:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/grants
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_honors:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/honors
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_papers:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/papers
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledge_performances:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/performances
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_knowledgepresentations:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: knowledge/presentations
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_mail:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: mail
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_primaryaffiliation:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: eduPersonPrimaryAffiliation
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_telephonenumber:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: telephoneNumber
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_title:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: title
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_uid:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: uid
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_unldirectoryaddress:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: unlDirectoryAddress
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  ee_unldir_unlhrprimarydepartment:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: unlHRPrimaryDepartment
+            required_field: false
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  id:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: uid
+            required_field: true
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+  title:
+    id: generic
+    config:
+      property_mappings:
+        value:
+          id: direct
+          config:
+            mapping: displayName
+            required_field: true
+            main_property: true
+            data_processors:
+              -
+                id: default
+                config:
+                  datatype: ''
+                  default: null
+            description: ''
+      debug_level: 0
+field_save_order: null
+field_mapping_notes: ''
+data_aggregator:
+  id: single
+  config:
+    storage_clients:
+      -
+        id: unldirectory
+        config:
+          endpoint: 'https://directory.unl.edu'
+          response_format: json
+          pager:
+            default_limit: '10'
+            page_parameter: ''
+            page_parameter_type: ''
+            page_size_parameter: ''
+            page_size_parameter_type: ''
+            type: pagination
+            page_start_one: 0
+            always_query: 0
+          api_key:
+            header_name: ''
+            key: ''
+            type: none
+          parameters:
+            list: {  }
+            single: {  }
+            list_param_mode: query
+            single_param_mode: query
+          endpoint_options:
+            single: ''
+            count: ''
+            count_mode: entities
+            cache: 0
+            limit_qcount: '0'
+            limit_qtime: '0'
+            concurrency: '5'
+            requests_by_user: false
+            dynamic_count: 0
+          data_path:
+            list: ''
+            single: ''
+            keyed_by_id: 0
+            count: ''
+          http:
+            headers: ''
+          filtering:
+            drupal: 0
+            basic: 0
+            basic_fields: {  }
+            list_support: none
+            list_join: ''
+data_aggregator_notes: ''
+language_settings: null
 persistent_cache_max_age: -1
 annotation_entity_type_id: null
 annotation_bundle_id: null
 annotation_field_name: null
-inherits_annotation_fields: false
+annotation_inherited_fields: {  }
+locks: {  }

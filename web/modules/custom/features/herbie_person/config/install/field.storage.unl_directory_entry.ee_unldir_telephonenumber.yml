@@ -1,4 +1,3 @@
-uuid: 3526c599-e58a-47e7-9c0c-efacefed0ba4
 langcode: en
 status: true
 dependencies:
@@ -6,17 +5,15 @@ dependencies:
     - external_entities.external_entity_type.unl_directory_entry
   module:
     - external_entities
-id: unl_directory_entry.ee_unldir_unldirectoryaddress
-field_name: ee_unldir_unldirectoryaddress
+    - telephone
+id: unl_directory_entry.ee_unldir_telephonenumber
+field_name: ee_unldir_telephonenumber
 entity_type: unl_directory_entry
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: telephone
+settings: {  }
+module: telephone
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

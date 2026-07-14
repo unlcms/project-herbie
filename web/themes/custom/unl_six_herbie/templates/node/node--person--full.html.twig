@@ -94,28 +94,22 @@
                                 <span itemprop="addressLocality">{{node.n_person_address[i].value}},</span>
                               {% endif %}
                               {% if i == 2 %}
-                                <abbr title="Nebraska" itemprop="addressRegion">{{node.n_person_address[i].value}}</abbr>
+                                <abbr itemprop="addressRegion">{{node.n_person_address[i].value}}</abbr>
                               {% endif %}
                               {% if i == 3 %}
                                 <span itemprop="postalCode">{{node.n_person_address[i].value}}</span>
                               {% endif %}
-                              {% if i == 4 %}
-                                <abbr class="dcf-d-none" itemprop="addressCountry">{{node.n_person_address[i].value}}</abbr>
-                              {% endif %}
                             {% endfor %}
                           {% else %}
-                            {% for i, addressFields in node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress.value[0] %}
-                              {% if i == 'street-address' %}
-                                <span itemprop="streetAddress">{{addressFields.value}}</span><br/>
-                              {% endif %}
-                              {% if i == 'locality' %}
-                                <span itemprop="addressLocality">{{addressFields.value}},</span>
-                              {% endif %}
-                              {% if i == 'region' %}
-                                <abbr title="Nebraska" itemprop="addressRegion">{{addressFields.value}}</abbr>
-                              {% endif %}
-                              {% if i == 'postal-code' %}
-                                <span itemprop="postalCode">{{addressFields.value}}</span>
+                            {% for item in node.n_person_unldirectoryreference.entity.ee_unldir_unldirectoryaddress %}
+                              {% if loop.index0 == 0 %}
+                                <span itemprop="streetAddress">{{item.value}}</span><br/>
+                              {% elseif loop.index0 == 1 %}
+                                <span itemprop="addressLocality">{{item.value}},</span>
+                              {% elseif loop.index0 == 2 %}
+                                <abbr title="Nebraska" itemprop="addressRegion">{{item.value}}</abbr>
+                              {% elseif loop.index0 == 3 %}
+                                <span itemprop="postalCode">{{item.value}}</span>
                               {% endif %}
                             {% endfor %}
                           {% endif %}
