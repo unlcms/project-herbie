@@ -20,16 +20,22 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
+    region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
-  book_navigation: true
   entitygroupfield: true
