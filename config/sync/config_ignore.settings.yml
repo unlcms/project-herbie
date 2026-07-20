@@ -51,6 +51,7 @@ ignored_config_entities:
   - ~block.block.unl_herbie_admin_primary_local_tasks
   - ~block.block.unl_herbie_admin_secondary_local_tasks
   - ~block.block.unl_six_herbie_booknavigation
+  - ~block.block.unl_six_herbie_booknavigation_herbie
   - ~block.block.unl_six_herbie_branding
   - ~block.block.unl_six_herbie_breadcrumbs
   - ~block.block.unl_six_herbie_contactinfo

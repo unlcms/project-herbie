@@ -1,0 +1,27 @@
+uuid: 71c87813-3c64-488c-8f6e-afbc831cc06a
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+  theme:
+    - unl_six_herbie
+id: unl_six_herbie_booknavigation_herbie
+theme: unl_six_herbie
+region: sidebar_second
+weight: 0
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book navigation'
+  label_display: '0'
+  provider: book
+  block_mode: 'book pages'
+  show_top_item: true
+  use_top_level_title: false
+  cache:
+    esi: 0
+    ttl: '0'
+    cachemode: '2'
+visibility: {  }
