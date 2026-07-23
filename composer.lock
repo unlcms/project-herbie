@@ -15699,11 +15699,11 @@
         },
         {
             "name": "unl/wdntemplates",
-            "version": "5.3",
+            "version": "6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "5.3"
+                "reference": "6.0"
             },
             "type": "library"
         },
