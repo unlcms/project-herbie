@@ -2,17 +2,18 @@
 
 namespace Drupal\unl_person\EventSubscriber;
 
+use Drupal\block\Entity\Block;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\node\Entity\Node;
+use Drupal\path_alias\AliasManagerInterface;
+use Drupal\user\Entity\User;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Contracts\EventDispatcher\Event;
-use Drupal\Core\Session\AccountProxyInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\user\Entity\User;
-use Drupal\path_alias\AliasManagerInterface;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Drupal\node\Entity\Node;
-use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Event Subscriber to listen to the kernel.request event.
@@ -50,6 +51,11 @@ class RequestSubscriber implements EventSubscriberInterface {
    *   The event object.
    */
   public function onRequest(Event $event) {
+    // Nothing to do for anonymous users.
+    if (!$this->currentUser->isAuthenticated()) {
+      return;
+    }
+
     $user = User::load($this->currentUser->id());
     $current_user_roles = $user->getRoles();
     $request = $event->getRequest();
@@ -60,8 +66,8 @@ class RequestSubscriber implements EventSubscriberInterface {
     $roles_to_check = ['editor', 'administrator', 'super_administrator', 'coder', 'site_admin'];
     $image_or_link_upload_route = false;
 
-    // Check if logged in user is referenced on the Person page.
-    $curent_user_is_referenced = function () use ($node, $roles_to_check, $current_user_roles, $user, $entity_form, $route_name, $request) {
+    // Check if user is referenced on the Person page.
+    $current_user_is_referenced = function () use ($node, $roles_to_check, $current_user_roles, $user, $entity_form, $route_name, $request) {
       if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== FALSE) {
         if ($node && $node instanceof Node && $node->getType() === 'person' && empty(array_intersect($roles_to_check, $current_user_roles))) {
           if ($node->hasField('n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
@@ -74,7 +80,7 @@ class RequestSubscriber implements EventSubscriberInterface {
         }
       }
     };
-    $curent_user_is_referenced = $curent_user_is_referenced();
+    $current_user_is_referenced = $current_user_is_referenced();
 
     // User adding an image to an image field on a node.
     if ($route_name === "image.style_public" || $route_name === "system.entity_autocomplete") {
@@ -84,64 +90,62 @@ class RequestSubscriber implements EventSubscriberInterface {
     // Display the edit/view tabs for all roles as defined in the configuration file (except Authenticated).
     // This restores the default block configuration if there were any changes made to it.
     $block_id = \Drupal::config('system.theme')->get('default') . '_local_tasks';
-    $block = \Drupal\block\Entity\Block::load($block_id);
-    if($block) {
+    $block = Block::load($block_id);
+    if ($block) {
       $visibility = $block->getVisibility();
     }
 
-    if (isset($visibility) && isset($visibility['user_role']['roles']['authenticated'])) {
+    if (isset($visibility['user_role']['roles']['authenticated'])) {
       unset($visibility['user_role']['roles']['authenticated']);
       $block->setVisibilityConfig('user_role', $visibility['user_role']);
       $block->save();
     }
-    // If user is authenticated and has the temporary role, remove the temporary role.
-    if ($user->isAuthenticated()) {
-      if ($current_user_roles) {
-        $role_to_check = [$this->temporary_editor];
-        $role_exists = !array_diff($role_to_check, array_values($current_user_roles));
-        if ($role_exists && $curent_user_is_referenced !== true) {
-          // Remove the temporary role from the user, but keep any existing roles if they're on an image upload route, as they could potentially be uploading an image for a person page.
-          if ($user && $image_or_link_upload_route === false) {
-            $user->removeRole($this->temporary_editor);
-            $user->save();
-          }
+    // If user has the temporary role, remove the temporary role.
+    if ($current_user_roles) {
+      $role_to_check = [$this->temporary_editor];
+      $role_exists = !array_diff($role_to_check, array_values($current_user_roles));
+      if ($role_exists && $current_user_is_referenced !== true) {
+        // Remove the temporary role from the user, but keep any existing roles if they're on an image upload route, as they could potentially be uploading an image for a person page.
+        if ($user && !$image_or_link_upload_route) {
+          $user->removeRole($this->temporary_editor);
+          $user->save();
         }
       }
-      // Check if the route is a "node" page (view or edit)
-      if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== FALSE) {
-        // Get the node from the request.
-        if ($node && $node instanceof Node) {
-          $role_to_check = [$this->temporary_editor];
-          $role_exists = !array_diff($role_to_check, array_values($current_user_roles));
-          if ($curent_user_is_referenced === true) {
-            // Check if node is a person content type and if the user does not have any of the editor/admin roles.
-            $roles_to_check = ['authenticated', $this->temporary_editor];
-            $roles_exist = !array_diff($roles_to_check, array_values($current_user_roles));
-            if (!isset($visibility['user_role']['roles']['authenticated'])) {
-              // Assign the temporary role to the user, provided the role is not already assigned.
-              if ($user && empty($role_exists)) {
-                $user->addRole($this->temporary_editor);
-                $user->save();
-                $this->reload_page = true;
-              }
-              // Display the edit/view tabs for authenticated users.
-              if ($current_user_roles === ['authenticated'] || $roles_exist) {
-                $visibility['user_role']['roles']['authenticated'] = 'authenticated';
-                $block->setVisibilityConfig('user_role', $visibility['user_role']);
-                $block->save();
-              }
+    }
+    // Check if the route is a "node" page (view or edit)
+    if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.')) {
+      // Get the node from the request.
+      if ($node && $node instanceof Node) {
+        $role_to_check = [$this->temporary_editor];
+        $role_exists = !array_diff($role_to_check, array_values($current_user_roles));
+        if ($current_user_is_referenced) {
+          // Check if node is a person content type and if the user does not have any of the editor/admin roles.
+          $roles_to_check = ['authenticated', $this->temporary_editor];
+          $roles_exist = !array_diff($roles_to_check, array_values($current_user_roles));
+          if (!isset($visibility['user_role']['roles']['authenticated'])) {
+            // Assign the temporary role to the user, provided the role is not already assigned.
+            if ($user && empty($role_exists)) {
+              $user->addRole($this->temporary_editor);
+              $user->save();
+              $this->reload_page = true;
+            }
+            // Display the edit/view tabs for authenticated users.
+            if ($current_user_roles === ['authenticated'] || $roles_exist) {
+              $visibility['user_role']['roles']['authenticated'] = 'authenticated';
+              $block->setVisibilityConfig('user_role', $visibility['user_role']);
+              $block->save();
+            }
 
-              // Add a warning message to the user when they are on the edit page and navigate to another UNL page.
-              if ($entity_form == 'node.edit' && strpos($route_name, 'entity.node.') !== FALSE) {
-                $this->messenger->addWarning('Leaving this page and navigating to another logged-in UNL webpage will require a page refresh upon return to regain edit and save access. Please make sure to save your changes before leaving this edit page, or keep a backup of any modifications in another location.');
-              }
+            // Add a warning message to the user when they are on the edit page and navigate to another UNL page.
+            if ($entity_form == 'node.edit' && strpos($route_name, 'entity.node.')) {
+              $this->messenger->addWarning('Leaving this page and navigating to another logged-in UNL webpage will require a page refresh upon return to regain edit and save access. Please make sure to save your changes before leaving this edit page, or keep a backup of any modifications in another location.');
             }
           }
         }
       }
-      if ($this->reload_page === false) {
-        $this->removeSessionKey($session, 'page_reloaded');
-      }
+    }
+    if (!$this->reload_page) {
+      $this->removeSessionKey($session, 'page_reloaded');
     }
   }
 
