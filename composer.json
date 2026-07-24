@@ -29,11 +29,11 @@
             "type": "package",
             "package": {
                 "name": "unl/wdntemplates",
-                "version": "5.3",
+                "version": "6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/unl/wdntemplates.git",
-                    "reference": "5.3"
+                    "reference": "6.0"
                 }
             }
         },
@@ -221,7 +221,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "ractoon/jquery-text-counter": "0.9.0",
         "robinherbots/jquery.inputmask": "5.0.5",
-        "unl/wdntemplates": "^5.3",
+        "unl/wdntemplates": "^6.0",
         "unlcms/external_entities_unldirectory": "^3.0",
         "unlcms/features_readonly": "^1.0-alpha3",
         "unlcms/project-herbie-composer-plugin": "^1.0",
