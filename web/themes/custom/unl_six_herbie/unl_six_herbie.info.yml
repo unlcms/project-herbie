@@ -1,11 +1,12 @@
 name: UNL 6.1 Project Herbie
 type: theme
-description: 'Subtheme for unl_six.'
+description: 'Subtheme for unl_six. This should be set as the Default theme.'
 core_version_requirement: ^10 || ^11
 base theme: unl_six
 
 libraries:
   - unl_six_herbie/global-styling
+  - unl_six_herbie/webform
 
 ckeditor_stylesheets:
   - css/media.css

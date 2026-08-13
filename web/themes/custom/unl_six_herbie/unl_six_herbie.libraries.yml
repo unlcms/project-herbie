@@ -6,12 +6,16 @@ global-styling:
       css/media.css: {}
       css/wdn-overrides.css: {}
   js:
-      js/remove_redundant_aria_required.js: {}
+    js/remove_redundant_aria_required.js: {}
 
 layout-builder:
   css:
     component:
       css/layout-builder.css: { weight: -500, preprocess: false }
+
+webform:
+  js:
+    js/webform.js: {}
 
 major:
   version: VERSION
