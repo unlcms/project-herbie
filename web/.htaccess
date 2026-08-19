@@ -225,6 +225,10 @@ AddType image/webp .webp
   # Redirects involving active CMS sites
   # See section below for sites that "Moved away from the CMS"
 
+  # academictech
+  RewriteCond %{HTTP_HOST} ^academictech\.unl\.edu$
+  RewriteRule ^(.*)$ https://its.unl.edu/departments/academic-technologies/$1 [R=301,L]
+
   # appliedscience
   RewriteCond %{HTTP_HOST} ^appliedscience\.unl\.edu$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.appliedscience\.unl\.edu$ [OR]
