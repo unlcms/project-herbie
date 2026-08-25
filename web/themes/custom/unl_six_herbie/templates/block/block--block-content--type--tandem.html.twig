@@ -140,14 +140,14 @@
       {% set tandem_image_wrapper = create_attribute() %}
 
       {% set basic_tandem_text_wrapper = ['dcf-sticky', 'dcf-as-center', unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
-      {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
+      {% set basic_tandem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
 
       {% if content.b_tandem_image_position.0['#markup'] == 'left' %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd']) %}
-        {% set basic_tadem_image_wrapper =  basic_tadem_image_wrapper|merge(['dcf-1st']) %}
+        {% set basic_tandem_image_wrapper =  basic_tandem_image_wrapper|merge(['dcf-1st']) %}
       {% else %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd', 'dcf-1st@md']) %}
-        {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
+        {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
       {% endif %}
 
       <div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-d-grid dcf-grid-cols-2@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
@@ -185,9 +185,9 @@
         </div>
 
         {% if content.b_tandem_add_image_shadow.0['#markup'] == 'yes' %}
-          {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-d-grid', 'unlcms-tandem-basic-img-grid']) %}
+          {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-d-grid', 'unlcms-tandem-basic-img-grid']) %}
 
-          <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper)}}>
+          <div {{ tandem_image_wrapper.addClass(basic_tandem_image_wrapper)}}>
             {% set shadow_background_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-0'] %}
 
             {% set shadow_position_wrapper_attribute = create_attribute() %}
@@ -225,7 +225,7 @@
 
             <div {{ shadow_position_wrapper_attribute.addClass(shadow_position_wrapper).addClass('dcf-w-100% dcf-h-100% dcf-16x9') }}>
         {% else %}
-          <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper) }}>
+          <div {{ tandem_image_wrapper.addClass(basic_tandem_image_wrapper) }}>
             <div class="dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl dcf-w-100% dcf-h-100% unl-scroll-fx-fade-in">
         {% endif %}
           {{content.b_tandem_image}}
