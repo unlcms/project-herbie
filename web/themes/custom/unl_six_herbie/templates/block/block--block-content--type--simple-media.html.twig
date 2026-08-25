@@ -11,25 +11,25 @@
   {% block content %}
     {% if content.b_simple_media_frame_or_shadow.0['#markup'] == 'shadow' %}
       {% set simple_media_image_attribute = create_attribute() %}
-      {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unlcms-simple-media-img'] %}
+      {% set basic_tandem_image_wrapper = ['dcf-as-center', 'unlcms-simple-media-img'] %}
 
       {% if content.b_simple_media_shadow_position.0['#markup'] == 'left' %}
-        {% set basic_tadem_image_wrapper =  basic_tadem_image_wrapper|merge(['dcf-1st']) %}
+        {% set basic_tandem_image_wrapper =  basic_tandem_image_wrapper|merge(['dcf-1st']) %}
       {% else %}
-        {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
+        {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
       {% endif %}
 
       {% set animation_style = [ "unl-scroll-fx-fade-in", "unl-scroll-fx-move-left", "unl-scroll-fx-move-right", "unl-scroll-fx-move-up"] %}
 
       {% for value in animation_style %}
         {% if content.b_simple_media_animation.0['#markup'] == value %}
-          {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge([value]) %}
+          {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge([value]) %}
         {% endif %}
       {% endfor %}
 
-      {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-d-grid', 'unlcms-simple-media-img-grid']) %}
+      {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-d-grid', 'unlcms-simple-media-img-grid']) %}
 
-      <div {{ simple_media_image_attribute.addClass(basic_tadem_image_wrapper) }}>
+      <div {{ simple_media_image_attribute.addClass(basic_tandem_image_wrapper) }}>
         {% if content.b_simple_media_aspect_ratio.0['#markup'] == '1x1_ris' %}
           {% set shadow_background_wrapper = ['dcf-1x1', 'dcf-z-0'] %}
           {% set shadow_position_wrapper = ['dcf-1x1', 'dcf-z-1'] %}
