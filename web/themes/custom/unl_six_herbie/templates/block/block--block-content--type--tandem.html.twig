@@ -140,7 +140,7 @@
       {% set tandem_image_wrapper = create_attribute() %}
 
       {% set basic_tandem_text_wrapper = ['dcf-sticky', 'dcf-as-center', unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
-      {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
+      {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
 
       {% if content.b_tandem_image_position.0['#markup'] == 'left' %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd']) %}
@@ -192,7 +192,7 @@
 
             {% set shadow_position_wrapper_attribute = create_attribute() %}
             {% set shadow_background_wrapper_attribute = create_attribute() %}
-            {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-1'] %}
+            {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-1', 'unl-scroll-fx-fade-in'] %}
             {# set field to required if shadow color is selected in herbie theme. change field name and add radio button. shadow position syule need to be image_  #}
 
             {% set shadow_style =
@@ -226,7 +226,7 @@
             <div {{ shadow_position_wrapper_attribute.addClass(shadow_position_wrapper).addClass('dcf-w-100% dcf-h-100% dcf-16x9') }}>
         {% else %}
           <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper) }}>
-            <div class="dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl dcf-w-100% dcf-h-100%">
+            <div class="dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl dcf-w-100% dcf-h-100% unl-scroll-fx-fade-in">
         {% endif %}
           {{content.b_tandem_image}}
         </div>
