@@ -1,0 +1,7 @@
+name: UNL Bulk Alt Text Update
+type: module
+description: Bulk change alt text on images.
+package: UNL
+core_version_requirement: ^11
+dependencies:
+  - ai_image_alt_text:ai_image_alt_text

@@ -181,6 +181,7 @@ module:
   unl_archive_page_import: 0
   unl_blocks: 0
   unl_breadcrumbs: 0
+  unl_bulk_alt_text: 0
   unl_cas: 0
   unl_config: 0
   unl_contenthub: 0
