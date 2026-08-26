@@ -96,7 +96,7 @@
         {% set fade_wrapper = fade_wrapper|merge(['unlcms-tandem-fade-text-r']) %}
       {% endif %}
 
-      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray" style="--bg-color: var(--bg-lighter-gray);">
+      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray unl-scroll-trigger-container" style="--bg-color: var(--bg-lighter-gray);">
         <div {{ tandem_style_wrapper.addClass(fade_wrapper) }}>
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
             <header class="dcf-mb-4">
@@ -129,7 +129,7 @@
             </ul>
           {% endif %}
         </div>
-        <div class="unlcms-tandem-fade-img dcf-relative dcf-w-100% dcf-h-100% dcf-16x9">
+        <div class="unlcms-tandem-fade-img dcf-relative dcf-w-100% dcf-h-100% dcf-16x9 unl-scroll-fx-fade-in">
           {{content.b_tandem_image}}
         </div>
       </div>
