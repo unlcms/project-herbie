@@ -241,10 +241,12 @@ class AltTextFixer extends FormBase {
             //  2) is less than ten chars OR
             //  3) starts with "image" (such as "Image of...") OR
             //  4) starts with "photo" (such as "Photo of...") OR
-            if (empty($entity->{$field['field']}->alt)
+            if (
+              (empty($entity->{$field['field']}->alt)
               || strlen($entity->{$field['field']}->alt) < 10
               || str_starts_with(strtolower($entity->{$field['field']}->alt), 'image',)
               || str_starts_with(strtolower($entity->{$field['field']}->alt), 'photo',)
+              )
               && !empty($item->entity)) {
               $missing_alt_text[] = [
                 'entity' => $item->entity,
