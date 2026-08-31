@@ -238,10 +238,10 @@ function unl_six_herbie_preprocess_field(&$variables) {
       case 'b_cta_link':
         foreach ($variables['items'] as $key => $item) {
           if (is_array($block_background) && (in_array('block_background_style_brand', $block_background) || in_array('block_background_style_dark', $block_background))) {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary dcf-d-block unlcms-cta-link-width';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-inverse-primary';
           }
           else {
-            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary dcf-d-block unlcms-cta-link-width';
+            $variables['items'][$key]['content']['#options']['attributes']['class'][] = 'dcf-btn dcf-btn-primary';
           }
         }
         break;
