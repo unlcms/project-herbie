@@ -68,7 +68,7 @@ class RequestSubscriber implements EventSubscriberInterface {
 
     // Check if user is referenced on the Person page.
     $current_user_is_referenced = function () use ($node, $roles_to_check, $current_user_roles, $user, $entity_form, $route_name, $request) {
-      if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== FALSE) {
+      if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== false) {
         if ($node && $node instanceof Node && $node->getType() === 'person' && empty(array_intersect($roles_to_check, $current_user_roles))) {
           if ($node->hasField('n_person_unldirectoryreference') && !$node->get('n_person_unldirectoryreference')->isEmpty()) {
             $person_unldirectoryreference_data = $node->get('n_person_unldirectoryreference')->getValue()[0]['target_id'];
@@ -113,7 +113,7 @@ class RequestSubscriber implements EventSubscriberInterface {
       }
     }
     // Check if the route is a "node" page (view or edit)
-    if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.')) {
+    if ($entity_form == 'node.edit' || strpos($route_name, 'entity.node.') !== false) {
       // Get the node from the request.
       if ($node && $node instanceof Node) {
         $role_to_check = [$this->temporary_editor];
@@ -137,7 +137,7 @@ class RequestSubscriber implements EventSubscriberInterface {
             }
 
             // Add a warning message to the user when they are on the edit page and navigate to another UNL page.
-            if ($entity_form == 'node.edit' && strpos($route_name, 'entity.node.')) {
+            if ($entity_form == 'node.edit' && strpos($route_name, 'entity.node.') !== false) {
               $this->messenger->addWarning('Leaving this page and navigating to another logged-in UNL webpage will require a page refresh upon return to regain edit and save access. Please make sure to save your changes before leaving this edit page, or keep a backup of any modifications in another location.');
             }
           }
