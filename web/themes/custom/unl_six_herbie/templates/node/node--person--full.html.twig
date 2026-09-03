@@ -299,7 +299,6 @@
               <!-- Bio, Education, Additional... -->
               {% if (node.n_person_bio.value or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not iterable or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable )
                 and page and view_mode == 'full' %}
-
                 <!-- Bio -->
                 {% if node.n_person_bio.value is not empty or node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_bio.value is not empty %}
                   <div class="dcf-mt-6 dcf-pt-4 dfc-bt-1 dcf-bt-solid unl-bt-light-gray unlcms-grid-person-detail-bio">
@@ -310,10 +309,10 @@
                     {% endif %}
                   </div>
                 {% endif %}
+              {% endif %}
 
-                <!-- Education -->
-                {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable and node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not empty or node.n_education.value %}
-
+              <!-- Education -->
+              {% if node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not iterable and node.n_person_unldirectoryreference.entity.ee_unldir_knowledge_education.value is not empty or node.n_education.value and page and view_mode == 'full' %}
                   {% if node.n_education.value %}
                     <div class=" unl-bt-light-gray unlcms-grid-person-detail-bio">
                       <h2>
@@ -333,7 +332,6 @@
                       </ul>
                     </div>
                   {% endif %}
-                {% endif %}
               {% endif %}
 
               <!-- Additional -->
