@@ -17,7 +17,7 @@ dependencies:
     - path
     - scheduler
     - scheduler_content_moderation_integration
-    - select2
+    - tagify
     - text
 third_party_settings:
   field_group:
@@ -125,14 +125,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   s_n_site_organization_tags:
-    type: select2_entity_reference
+    type: tagify_entity_reference_autocomplete_widget
     weight: 11
     region: content
     settings:
-      width: 100%
-      autocomplete: true
       match_operator: CONTAINS
       match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+      parent_selection: 0
     third_party_settings: {  }
   scheduler_settings:
     weight: 50

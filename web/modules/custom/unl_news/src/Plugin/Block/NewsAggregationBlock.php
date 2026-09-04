@@ -9,7 +9,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
+use Drupal\taxonomy\Entity\Term;
 /**
  * Provides a News Aggregation block.
  *
@@ -64,7 +64,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     return [
       'quantity' => 8,
       'tag' => [],
-      'nebraska_today_tag' => [],
+      'nebraska_today_tags' => [],
     ];
   }
 
@@ -86,34 +86,35 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       '#default_value' => $this->configuration['quantity'],
     ];
 
-
     $form['tag'] = [
-      '#type' => 'select2',
+      '#type' => 'entity_autocomplete_tagify',
       '#target_type' => 'taxonomy_term',
       '#title' => $this->t('Tag'),
       '#description' => $this->t('Tag to optionally filter the displayed news items.'),
       '#tags' => TRUE,
-      '#selection_handler' => 'default',
+      '#selection_handler' => 'default:taxonomy_term',
       '#selection_settings' => [
         'target_bundles' => ['site_organization_tags'],
       ],
       '#multiple' => TRUE,
       '#autocomplete' => TRUE,
-      '#default_value' => $this->configuration['tag'],
+      '#default_value' => Term::loadMultiple($this->configuration['tag'] ?? []),
+      '#autocreate' => FALSE,
     ];
     $form['nebraska_today_tags'] = [
-      '#type' => 'select2',
+      '#type' => 'entity_autocomplete_tagify',
       '#target_type' => 'taxonomy_term',
       '#title' => $this->t('Nebraska Today Tag'),
       '#description' => $this->t('For imported Nebraska Today tag, optionally filters the displayed news items.'),
       '#tags' => TRUE,
-      '#selection_handler' => 'default',
+      '#selection_handler' => 'default:taxonomy_term',
       '#selection_settings' => [
         'target_bundles' => ['nebraska_today_tags'],
       ],
       '#multiple' => TRUE,
       '#autocomplete' => TRUE,
-      '#default_value' => $this->configuration['nebraska_today_tag'],
+      '#default_value' => Term::loadMultiple($this->configuration['nebraska_today_tags'] ?? []),
+      '#autocreate' => FALSE,
     ];
 
     return $form;
@@ -124,8 +125,8 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
-    $this->configuration['tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['tag'];
-    $this->configuration['nebraska_today_tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['nebraska_today_tags'];
+    $this->configuration['tag'] = !empty($form_state->getValue('tag')) ? array_column(json_decode($form_state->getValue('tag'), TRUE), 'entity_id') : [];
+    $this->configuration['nebraska_today_tags'] = !empty($form_state->getValue('nebraska_today_tags')) ? array_column(json_decode($form_state->getValue('nebraska_today_tags'), TRUE), 'entity_id') : [];
   }
 
   /**
@@ -139,7 +140,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     }
     $selected_tags = array_filter(array_merge(
       (array) ($this->configuration['tag'] ?? []),
-      (array) ($this->configuration['nebraska_today_tag'] ?? [])
+      (array) ($this->configuration['nebraska_today_tags'] ?? [])
     ));
     $view->selected_tags = $selected_tags ?: NULL;
 

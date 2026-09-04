@@ -5,7 +5,7 @@ namespace Drupal\unl_person\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
-
+use Drupal\node\Entity\Node;
 /**
  * Provides a Person List block.
  *
@@ -64,18 +64,17 @@ class PersonBlock extends BlockBase {
     //     ];
 
     $form['persons'] = [
-      '#type' => 'select2',
+      '#type' => 'entity_autocomplete_tagify',
       '#title' => $this->t('Person nodes to display'),
       '#description' => $this->t('A person needs to exist as a <a href="/admin/content" target="_blank">Person node on the site</a> to be referenced here. People can be created through the <a href="/node/add" target="_blank">Add content</a> page.'),
-      '#default_value' => $this->configuration['persons'],
+      '#default_value' => Node::loadMultiple($this->configuration['persons']),
       '#required' => TRUE,
-      '#multiple' => TRUE,
-      '#autocomplete' => TRUE,
       '#target_type' => 'node',
-      '#selection_handler' => 'default',
+      '#selection_handler' => 'default:node',
       '#selection_settings' => [
         'target_bundles' => ['person'],
        ],
+      '#autocreate' => FALSE,
      ];
 
     $view_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', 'person');
@@ -103,7 +102,7 @@ class PersonBlock extends BlockBase {
 
     // Can't use $form_state->getValue('persons') as it gives the values sorted
     // in a numerically ascending manner, not respecting user sorting.
-    $this->configuration['persons'] = $form_state->getCompleteFormState()->getUserInput()['settings']['persons'];
+    $this->configuration['persons'] = !empty($form_state->getValue('persons')) ? array_column(json_decode($form_state->getValue('persons'), TRUE), 'entity_id') : [];
   }
 
   /**
