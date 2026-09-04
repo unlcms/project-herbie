@@ -126,7 +126,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
     $this->configuration['tag'] = !empty($form_state->getValue('tag')) ? array_column(json_decode($form_state->getValue('tag'), TRUE), 'entity_id') : [];
-    $this->configuration['nebraska_today_tag'] = !empty($form_state->getValue('nebraska_today_tag')) ? array_column(json_decode($form_state->getValue('nebraska_today_tag'), TRUE), 'entity_id') : [];
+    $this->configuration['nebraska_today_tag'] = !empty($form_state->getValue('nebraska_today_tags')) ? array_column(json_decode($form_state->getValue('nebraska_today_tags'), TRUE), 'entity_id') : [];
   }
 
   /**
