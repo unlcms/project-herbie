@@ -64,7 +64,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     return [
       'quantity' => 8,
       'tag' => [],
-      'nebraska_today_tags' => [],
+      'nebraska_today_tag' => [],
     ];
   }
 
@@ -113,7 +113,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       ],
       '#multiple' => TRUE,
       '#autocomplete' => TRUE,
-      '#default_value' => Term::loadMultiple($this->configuration['nebraska_today_tags'] ?? []),
+      '#default_value' => Term::loadMultiple($this->configuration['nebraska_today_tag'] ?? []),
       '#autocreate' => FALSE,
     ];
 
@@ -126,7 +126,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['quantity'] = $form_state->getValue('quantity');
     $this->configuration['tag'] = !empty($form_state->getValue('tag')) ? array_column(json_decode($form_state->getValue('tag'), TRUE), 'entity_id') : [];
-    $this->configuration['nebraska_today_tags'] = !empty($form_state->getValue('nebraska_today_tags')) ? array_column(json_decode($form_state->getValue('nebraska_today_tags'), TRUE), 'entity_id') : [];
+    $this->configuration['nebraska_today_tag'] = !empty($form_state->getValue('nebraska_today_tag')) ? array_column(json_decode($form_state->getValue('nebraska_today_tag'), TRUE), 'entity_id') : [];
   }
 
   /**
@@ -140,7 +140,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     }
     $selected_tags = array_filter(array_merge(
       (array) ($this->configuration['tag'] ?? []),
-      (array) ($this->configuration['nebraska_today_tags'] ?? [])
+      (array) ($this->configuration['nebraska_today_tag'] ?? [])
     ));
     $view->selected_tags = $selected_tags ?: NULL;
 
