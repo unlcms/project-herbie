@@ -167,6 +167,8 @@ module:
   svg_image_responsive: 0
   syslog: 0
   system: 0
+  tagify: 0
+  tagify_user_list: 0
   tamper: 0
   taxonomy: 0
   telephone: 0
