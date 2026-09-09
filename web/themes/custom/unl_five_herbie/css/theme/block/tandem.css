@@ -61,6 +61,7 @@
 
     .unlcms-tandem-stack {
       grid-template-rows: minmax(4.21em, 1fr) auto minmax(4.21em, 1fr);
+      overflow-y: clip;
     }
 
     .unlcms-tandem-stack-text-c {
@@ -69,6 +70,14 @@
       flex-direction: column;
       grid-area: 2 / 2 / 3 / -2;
       text-align: center;
+    }
+
+    .unlcms-tandem-stack-text-l {
+      grid-area: 2 / 2 / -2 / 10;
+    }
+
+    .unlcms-tandem-stack-text-r {
+      grid-area: 2 / 6 / 3 / -2;
     }
 
     .unlcms-tandem-stack-text-c .unlcms-tandem-stack-text-card {
@@ -86,16 +95,14 @@
       grid-area: 1 / 1 / -1 / -1;
     }
 
-  }
-
-  @media only screen and (min-width: 56.12em) {
-
-    .unlcms-tandem-stack-text-l {
-      grid-area: 2 / 2 / -2 / 10;
-    }
-
-    .unlcms-tandem-stack-text-r {
-      grid-area: 2 / 6 / 3 / -2;
+    .unlcms-tandem-stack-img .media-entity-bundle--image {
+      bottom: 0;
+      height: calc(100% + 20vh);
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
   }
@@ -131,7 +138,6 @@
 
     .unlcms-tandem-stack {
       max-height: 42.09em;
-      overflow-y: hidden;
     }
 
   }
@@ -238,8 +244,7 @@
 
 /**************** Other changes ******************************/
   .unlcms-tandem-fade-img .media-entity-bundle--image,
-  .unlcms-tandem-basic-img .media-entity-bundle--image,
-  .unlcms-tandem-stack-img .media-entity-bundle--image {
+  .unlcms-tandem-basic-img .media-entity-bundle--image {
     margin-bottom: 0;
     /* .dcf-ratio-child */
     bottom: 0 !important;

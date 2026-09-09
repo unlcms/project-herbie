@@ -77,8 +77,10 @@
             {% endif %}
           </div>
         </div>
-        <div class="dcf-relative unlcms-tandem-stack-img">
-          {{content.b_tandem_image}}
+        <div class="unlcms-tandem-stack-img">
+          <div class="dcf-h-100% dcf-w-100% dcf-relative unl-parallax-1">
+            {{content.b_tandem_image}}
+          </div>
         </div>
       </div>
 {############### Tandem Fade ###############}
@@ -94,7 +96,7 @@
         {% set fade_wrapper = fade_wrapper|merge(['unlcms-tandem-fade-text-r']) %}
       {% endif %}
 
-      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray" style="--bg-color: var(--bg-lighter-gray);">
+      <div class="dcf-bleed dcf-d-grid unlcms-grid-cols unlcms-tandem unlcms-tandem-fade unl-bg-lighter-gray unl-scroll-trigger-container" style="--bg-color: var(--bg-lighter-gray);">
         <div {{ tandem_style_wrapper.addClass(fade_wrapper) }}>
           {% if content.b_tandem_subhead.0 or content.b_tandem_overline.0 or (content.b_tandem_subhead.0 and content.b_tandem_overline.0) %}
             <header class="dcf-mb-4">
@@ -127,7 +129,7 @@
             </ul>
           {% endif %}
         </div>
-        <div class="unlcms-tandem-fade-img dcf-relative dcf-w-100% dcf-h-100% dcf-16x9">
+        <div class="unlcms-tandem-fade-img dcf-relative dcf-w-100% dcf-h-100% dcf-16x9 unl-scroll-fx-fade-in">
           {{content.b_tandem_image}}
         </div>
       </div>
@@ -137,15 +139,15 @@
       {% set tandem_text_wrapper = create_attribute() %}
       {% set tandem_image_wrapper = create_attribute() %}
 
-      {% set basic_tandem_text_wrapper = ['dcf-as-center', 'unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
-      {% set basic_tadem_image_wrapper = ['dcf-as-center', 'unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
+      {% set basic_tandem_text_wrapper = ['dcf-sticky', 'dcf-as-center', unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
+      {% set basic_tandem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
 
       {% if content.b_tandem_image_position.0['#markup'] == 'left' %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd']) %}
-        {% set basic_tadem_image_wrapper =  basic_tadem_image_wrapper|merge(['dcf-1st']) %}
+        {% set basic_tandem_image_wrapper =  basic_tandem_image_wrapper|merge(['dcf-1st']) %}
       {% else %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd', 'dcf-1st@md']) %}
-        {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
+        {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-1st', 'dcf-2nd@md']) %}
       {% endif %}
 
       <div class="dcf-bleed dcf-wrapper dcf-pt-9 dcf-pb-9 dcf-d-grid dcf-grid-cols-2@md dcf-col-gap-vw dcf-row-gap-7 unlcms-tandem unlcms-tandem-basic">
@@ -183,14 +185,14 @@
         </div>
 
         {% if content.b_tandem_add_image_shadow.0['#markup'] == 'yes' %}
-          {% set basic_tadem_image_wrapper = basic_tadem_image_wrapper|merge(['dcf-d-grid', 'unlcms-tandem-basic-img-grid']) %}
+          {% set basic_tandem_image_wrapper = basic_tandem_image_wrapper|merge(['dcf-d-grid', 'unlcms-tandem-basic-img-grid']) %}
 
-          <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper)}}>
+          <div {{ tandem_image_wrapper.addClass(basic_tandem_image_wrapper)}}>
             {% set shadow_background_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-0'] %}
 
             {% set shadow_position_wrapper_attribute = create_attribute() %}
             {% set shadow_background_wrapper_attribute = create_attribute() %}
-            {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-1'] %}
+            {% set shadow_position_wrapper = ['dcf-16x9', 'dcf-1x1@md', 'dcf-4x3@lg', 'dcf-16x9@xl', 'dcf-z-1', 'unl-scroll-fx-fade-in'] %}
             {# set field to required if shadow color is selected in herbie theme. change field name and add radio button. shadow position syule need to be image_  #}
 
             {% set shadow_style =
@@ -223,8 +225,8 @@
 
             <div {{ shadow_position_wrapper_attribute.addClass(shadow_position_wrapper).addClass('dcf-w-100% dcf-h-100% dcf-16x9') }}>
         {% else %}
-          <div {{ tandem_image_wrapper.addClass(basic_tadem_image_wrapper) }}>
-            <div class="dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl dcf-w-100% dcf-h-100%">
+          <div {{ tandem_image_wrapper.addClass(basic_tandem_image_wrapper) }}>
+            <div class="dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl dcf-w-100% dcf-h-100% unl-scroll-fx-fade-in">
         {% endif %}
           {{content.b_tandem_image}}
         </div>

@@ -4,7 +4,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'dcf-mb-0 unl-bg-cream@dark unlcms-li-logo',
+    'dcf-mb-0 unl-bg-cream@dark unl-scroll-trigger-container unlcms-li-logo',
   ]
 %}
 {% set url_obj = content.p_b_logo_cloud_link[0]['#url'] %}
@@ -31,7 +31,7 @@
   <li{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}
-        <a href="{{url}}" {{ rel_attribute ? rel_attribute : '' }}>
+        <a class="unl-scroll-fx-fade-in" href="{{url}}" {{ rel_attribute ? rel_attribute : '' }}>
       {% endif %}
         {{ content.p_b_logo_cloud_image }}
       {% if content.p_b_logo_cloud_link[0]['#url'] %}

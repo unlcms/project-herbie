@@ -248,3 +248,12 @@ div.unlcms-tandem div.media-entity {
   .unlcms-tandem-basic-img-translate-xy-tl { grid-area: 1 / 1 / 3 / 3; }
   .unlcms-tandem-basic-img-translate-xy-br { grid-area: 2 / 2 / 4 / 4; }
   .unlcms-tandem-basic-img-translate-xy-bl { grid-area: 2 / 1 / 4 / 3; }
+
+  /* md 898 */
+  @media only screen and (min-width: 56.12em) {
+
+    .unlcms-tandem-basic-text {
+      top: 1em;
+    }
+
+  }
