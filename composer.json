@@ -332,12 +332,16 @@
             "drupal/feeds": {
                 "Custom (gh#365) - Remove Url creation from feeds_install which breaks site installation on prod": "patches/unlcms-365-feeds-remove-url-creation.patch"
             },
+            "drupal/field_css": {
+                "3588491 - Use category ID \"general\" instead of legacy translatable label ": "patches/3588491-field_css.diff"
+            },
             "drupal/google_tag": {
                 "Custom (gh#938) - Remove gtag.ajax to avoid jQuery dependency moving jQuery to the head": "patches/3213116-googe_tag-remove_jquery.patch"
             },
             "drupal/group": {
                 "2815971 - More contexts needed": "patches/2815971-merge-request-159.diff",
-                "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch"
+                "2774827 - Get a token of a node's parent group to create a pathauto pattern": "patches/group-2774827-90-gnode-tokens-updated-for-3.0.x-dev.patch",
+                "3421138 - Fix field category deprecation": "patches/3421138-fix-field-category-deprecation.patch"
             },
             "drupal/paragraphs": {
                 "3090200 - Paragraphs do not render: access check for view fail when using layout builder": "patches/3084934-13_combine_3090200-22-update_0.patch"
