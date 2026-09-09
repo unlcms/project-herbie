@@ -74,9 +74,10 @@ dependencies:
   - 'scheduler_content_moderation_integration:scheduler_content_moderation_integration'
   - 'select2:select2'
   - 'svg_image:svg_image'
+  - 'tagify:tagify'
   - 'twig_ui:twig_ui'
   - 'unl_news:unl_news'
   - 'webform:webform'
   - 'webform:webform_submission_log'
-version: 1.17.0
+version: 1.17.1
 package: Herbie
