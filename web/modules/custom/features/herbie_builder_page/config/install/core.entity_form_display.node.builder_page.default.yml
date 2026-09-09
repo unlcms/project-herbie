@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.builder_page.body
     - field.field.node.builder_page.layout_builder__layout
     - field.field.node.builder_page.s_n_hero
+    - field.field.node.builder_page.s_n_metatags
     - field.field.node.builder_page.s_n_page_options
     - field.field.node.builder_page.s_n_site_organization_tags
     - node.type.builder_page
@@ -14,6 +15,7 @@ dependencies:
     - entitygroupfield
     - field_group
     - inline_entity_form
+    - metatag
     - path
     - scheduler
     - scheduler_content_moderation_integration
@@ -117,6 +119,14 @@ content:
       collapsed: false
       revision: true
       removed_reference: optional
+    third_party_settings: {  }
+  s_n_metatags:
+    type: metatag_firehose
+    weight: 56
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   s_n_page_options:
     type: options_buttons

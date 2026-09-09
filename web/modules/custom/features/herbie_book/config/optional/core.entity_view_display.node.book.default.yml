@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.s_n_metatags
     - node.type.book
   module:
+    - metatag
     - text
     - user
 id: node.book.default
@@ -33,6 +35,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  s_n_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
   entitygroupfield: true

@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.s_n_metatags
     - node.type.book
     - workflows.workflow.editorial
   module:
     - content_moderation
     - entitygroupfield
+    - metatag
     - path
     - scheduler
     - scheduler_content_moderation_integration
@@ -76,6 +78,14 @@ content:
     weight: 53
     region: content
     settings: {  }
+    third_party_settings: {  }
+  s_n_metatags:
+    type: metatag_firehose
+    weight: 56
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   scheduler_settings:
     weight: 50

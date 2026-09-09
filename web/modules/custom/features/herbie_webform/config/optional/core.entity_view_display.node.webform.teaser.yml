@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.webform.body
+    - field.field.node.webform.s_n_metatags
     - field.field.node.webform.webform
     - node.type.webform
   module:
@@ -34,4 +35,5 @@ content:
     region: content
 hidden:
   entitygroupfield: true
+  s_n_metatags: true
   webform: true

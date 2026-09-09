@@ -11,11 +11,13 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_metatags
     - field.field.node.news.s_n_nebraska_today_tags
     - field.field.node.news.s_n_site_organization_tags
     - node.type.news
   module:
     - link
+    - metatag
     - text
     - user
 id: node.news.default
@@ -113,6 +115,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 7
+    region: content
+  s_n_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   s_n_nebraska_today_tags:
     type: entity_reference_label

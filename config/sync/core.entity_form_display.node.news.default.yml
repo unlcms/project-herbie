@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.n_news_image_cutline
     - field.field.node.news.n_news_related_links
     - field.field.node.news.n_person_reference
+    - field.field.node.news.s_n_metatags
     - field.field.node.news.s_n_nebraska_today_tags
     - field.field.node.news.s_n_site_organization_tags
     - node.type.news
@@ -22,6 +23,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - metatag
     - path
     - scheduler
     - scheduler_content_moderation_integration
@@ -206,6 +208,14 @@ content:
     weight: 53
     region: content
     settings: {  }
+    third_party_settings: {  }
+  s_n_metatags:
+    type: metatag_firehose
+    weight: 56
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   s_n_nebraska_today_tags:
     type: select2_entity_reference
