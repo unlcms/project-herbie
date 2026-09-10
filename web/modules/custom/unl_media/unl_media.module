@@ -25,6 +25,14 @@ function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
       $updated_hero_block = $entity->get('s_n_hero');
       $original_hero_block = $original_entity->get('s_n_hero');
 
+      if ($updated_hero_block) {
+        \Drupal::logger('unl_media')->notice('Entered hero block cache invalidation branch 1 for node @node_id. Cache tags: @cache_tags.', [
+          '@node_id' => $entity->id(),
+          '@cache_tags' => implode(', ', $entity->getCacheTagsToInvalidate()),
+        ]);
+        \Drupal::service('cache_tags.invalidator')->invalidateTags($entity->getCacheTagsToInvalidate());
+      }
+
       if ($updated_hero_block && $original_hero_block) {
         if ($updated_hero_block->referencedEntities()) {
           $updated_hero_block_values = $updated_hero_block->referencedEntities()[0];
@@ -49,9 +57,14 @@ function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
         // Check if object position field value has changed
         if (isset($updated_object_position_field_value) && isset($original_object_position_field_value) && ($updated_object_position_field_value !== $original_object_position_field_value)) {
           if ($hero_block_hero_iamge) {
+            \Drupal::logger('unl_media')->notice('Entered hero image cache invalidation branch 2 for node @node_id: object position changed from @original_position to @updated_position.', [
+              '@node_id' => $entity->id(),
+              '@original_position' => $original_object_position_field_value,
+              '@updated_position' => $updated_object_position_field_value,
+            ]);
             $hero_image_field = $updated_hero_block_values->get('b_hero_image');
             $hero_media_entity = $hero_image_field->referencedEntities()[0];
-            $cacheTags = $hero_media_entity->getCacheTagsToInvalidate()[0];
+            $cacheTags = $hero_media_entity->getCacheTagsToInvalidate();
             // Clear the cache entry of the media item associated only with the hero block.
             \Drupal::service('cache_tags.invalidator')->invalidateTags([$cacheTags]);
           }
@@ -61,6 +74,28 @@ function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
   }
 }
 
+function unl_media_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'node' && $entity->bundle() == 'builder_page') {
+
+    if ($entity->hasField('s_n_hero')) {
+      $updated_hero_block = $entity->get('s_n_hero');
+      if (isset($updated_hero_block)) {
+        $hero_media_entity = $updated_hero_block->referencedEntities()[0];
+        $cacheTags = $hero_media_entity->getCacheTagsToInvalidate();
+
+        \Drupal::logger('unl_media')->notice('Hero cache invalidation requested in entity_update for node @node_id. Referenced entity: @entity_type @entity_id; cache tag: @cache_tag.', [
+          '@node_id' => $entity->id(),
+          '@entity_type' => $hero_media_entity->getEntityTypeId(),
+          '@entity_id' => $hero_media_entity->id(),
+          '@cache_tag' => implode(', ', $cacheTags),
+        ]);
+        // Clear the cache entry of the media item associated only with the hero block if entity_presave did not already clear it.
+        \Drupal::service('cache_tags.invalidator')->invalidateTags($cacheTags);
+        \Drupal::service('cache_tags.invalidator')->invalidateTags($entity->getCacheTagsToInvalidate());
+      }
+    }
+  }
+}
 /**
  * Implements hook_form_alter().
  */
