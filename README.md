@@ -219,39 +219,5 @@ brew install imagemagick
 brew install ghostscript
 ```
 
-For more information regarding installation go to https://imagemagick.org/script/download.php
+For more infromation regaridng installation go to https://imagemagick.org/script/download.php
 
-## Updating wdn template version
-- in composer.json, update the hardcode WDN template and unl_six versions here
-  - "repositories": [
-       {
-            "type": "package",
-            "package": {
-                "name": "unl/wdntemplates",
-                "version": "(update here)",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/unl/wdntemplates.git",
-                    "reference": "(update here)"
-                }
-            }
-        },
-  - "required": [
-      "unl/wdntemplates": (update here: the version of wdntemplates at repositories)
-      "unlcms/unl_six": (update here: copy the version stated in grey/ wdntemplates)
-
-- in composer.lock, update the hardcode WDN template and unl_six (if not updated) versions here
-  - "packages": [
-        {
-            "name": "unl/wdntemplates",
-            "version": "(update here: same value as in composer.json)",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unl/wdntemplates.git",
-                "reference": "(update here: same value as in composer.json)"
-            },
-            "type": "library"
-        },
-        {
-            "name": "unlcms/unl_six",
-            "version": "(update here: same value as in composer.json)",
