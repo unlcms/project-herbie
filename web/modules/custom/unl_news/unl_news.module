@@ -216,7 +216,7 @@ function unl_news_preprocess_views_view_field(&$variables) {
     // Get the node object
     $node = $variables['row']->_entity;
     // Hide edit operations button if news item is imported from UNL_News
-    if ($node->bundle() == 'news') {
+    if ($node instanceof NodeInterface && $node->bundle() == 'news') {
       if ($node->get('n_news_foreign_key')->getString()) {
         unset($variables['output']);
       }
