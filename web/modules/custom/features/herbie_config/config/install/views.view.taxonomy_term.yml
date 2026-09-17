@@ -593,7 +593,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: string
-          default_action: empty
+          default_action: ignore
           exception:
             value: all
             title_enable: false
@@ -626,11 +626,12 @@ display:
           case: none
           path_case: none
           transform_dash: false
-          break_phrase: false
+          break_phrase: true
           add_table: false
           require_value: false
       defaults:
         title: false
+        group_by: false
         relationships: false
         arguments: false
         header: false
@@ -646,6 +647,7 @@ display:
           plugin_id: node_term_data
           required: true
           vids: {  }
+      group_by: true
       display_description: ''
       header: {  }
       display_extenders: {  }

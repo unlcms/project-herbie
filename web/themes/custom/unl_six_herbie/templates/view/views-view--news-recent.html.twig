@@ -39,7 +39,12 @@
         </div>
       {% if display_id == 'block_1' %}
         <div class="dcf-d-flex dcf-jc-flex-end">
-          <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{file_url('news')}}/">More news</a>
+          {% if view.selected_tag_names is not empty %}
+            {% set href_value = '/tag/' ~ view.selected_tag_names|join('+') ~ '/news' %}
+          {% else %}
+            {% set href_value = "{{file_url('news')}}/" %}
+          {% endif %}
+          <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{href_value}}">{{view.more_news_text}}</a>
         </div>
       </div>
       {% endif %}
