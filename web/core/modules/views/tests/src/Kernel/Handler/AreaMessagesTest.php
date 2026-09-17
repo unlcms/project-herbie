@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\Tests\views\Kernel\Handler;
+
+use Drupal\Tests\views\Kernel\ViewsKernelTestBase;
+use Drupal\views\Views;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
+
+/**
+ * Tests the messages area handler.
+ *
+ * @see \Drupal\views\Plugin\views\area\Messages
+ */
+#[Group('views')]
+#[RunTestsInSeparateProcesses]
+class AreaMessagesTest extends ViewsKernelTestBase {
+
+  /**
+   * Views used by this test.
+   *
+   * @var array
+   */
+  public static $testViews = ['test_area_messages'];
+
+  /**
+   * Tests the messages area handler.
+   */
+  public function testMessageText(): void {
+    \Drupal::messenger()->addStatus('My drupal set message.');
+
+    $view = Views::getView('test_area_messages');
+
+    $view->setDisplay('default');
+    $this->executeView($view);
+    $output = $view->render();
+    $output = \Drupal::service('renderer')->renderRoot($output);
+    $this->setRawContent($output);
+    $this->assertText('My drupal set message.');
+  }
+
+}
