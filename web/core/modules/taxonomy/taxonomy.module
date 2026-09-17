@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Hook\TaxonomyThemeHooks;
+
+/**
+ * Prepares variables for taxonomy term templates.
+ *
+ * Default template: taxonomy-term.html.twig.
+ *
+ * By default this function performs special preprocessing to move the name
+ * base field out of the elements array into a separate variable. This
+ * preprocessing is skipped if:
+ * - a module makes the field's display configurable via the field UI by means
+ *   of BaseFieldDefinition::setDisplayConfigurable()
+ * - AND the additional entity type property
+ *   'enable_base_field_custom_preprocess_skipping' has been set using
+ *   hook_entity_type_build().
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the taxonomy term and any
+ *     fields attached to the term. Properties used:
+ *     - #taxonomy_term: A \Drupal\taxonomy\TermInterface object.
+ *     - #view_mode: The current view mode for this taxonomy term, e.g.
+ *       'full' or 'teaser'.
+ *   - attributes: HTML attributes for the containing element.
+ *
+ * @deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. Use \Drupal::service(TaxonomyThemeHooks::class)->preprocessTaxonomyTerm($variables) instead.
+ * @see https://www.drupal.org/node/3542527
+ */
+function template_preprocess_taxonomy_term(&$variables): void {
+  @trigger_error(__FUNCTION__ . ' is deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. Use \Drupal::service(TaxonomyThemeHooks::class)->preprocessTaxonomyTerm($variables); instead. See https://www.drupal.org/node/3542527', E_USER_DEPRECATED);
+  \Drupal::service(TaxonomyThemeHooks::class)->preprocessTaxonomyTerm($variables);
+}
+
+/**
+ * Returns whether the current page is the page of the passed-in term.
+ *
+ * @param \Drupal\taxonomy\Entity\Term $term
+ *   A taxonomy term entity.
+ *
+ * @deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. There is no
+ * @deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. There is no
+ *   replacement, check the view mode instead during rendering.
+ *
+ * @see https://www.drupal.org/node/3542527
+ */
+function taxonomy_term_is_page(Term $term) {
+  @trigger_error(__FUNCTION__ . '() is deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. There is no replacement, check the view mode instead during rendering. See https://www.drupal.org/node/3542527', E_USER_DEPRECATED);
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $page_term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    return $page_term_id == $term->id();
+  }
+  return FALSE;
+}
+
+/**
+ * @addtogroup taxonomy_index
+ * @{
+ */
+
+/**
+ * Builds and inserts taxonomy index entries for a given node.
+ *
+ * The index lists all terms that are related to a given node entity, and is
+ * therefore maintained at the entity level.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   The node entity.
+ */
+function taxonomy_build_node_index($node): void {
+  // We maintain a denormalized table of term/node relationships, containing
+  // only data for current, published nodes.
+  if (!\Drupal::config('taxonomy.settings')->get('maintain_index_table') || !(\Drupal::entityTypeManager()->getStorage('node') instanceof SqlContentEntityStorage)) {
+    return;
+  }
+
+  $status = $node->isPublished();
+  $sticky = (int) $node->isSticky();
+  // We only maintain the taxonomy index for published nodes.
+  if ($status && $node->isDefaultRevision()) {
+    // Collect a unique list of all the term IDs from all node fields.
+    $tid_all = [];
+    $entity_reference_class = 'Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem';
+    foreach ($node->getFieldDefinitions() as $field) {
+      $field_name = $field->getName();
+      $class = $field->getItemDefinition()->getClass();
+      $is_entity_reference_class = ($class === $entity_reference_class) || is_subclass_of($class, $entity_reference_class);
+      if ($is_entity_reference_class && $field->getSetting('target_type') == 'taxonomy_term') {
+        foreach ($node->getTranslationLanguages() as $language) {
+          foreach ($node->getTranslation($language->getId())->$field_name as $item) {
+            if (!$item->isEmpty()) {
+              $tid_all[$item->target_id] = $item->target_id;
+            }
+          }
+        }
+      }
+    }
+    // Insert index entries for all the node's terms.
+    if (!empty($tid_all)) {
+      $connection = \Drupal::database();
+      foreach ($tid_all as $tid) {
+        $connection->merge('taxonomy_index')
+          ->keys(['nid' => $node->id(), 'tid' => $tid, 'status' => $node->isPublished()])
+          ->fields(['sticky' => $sticky, 'created' => $node->getCreatedTime()])
+          ->execute();
+      }
+    }
+  }
+}
+
+/**
+ * Deletes taxonomy index entries for a given node.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $node
+ *   The node entity.
+ */
+function taxonomy_delete_node_index(EntityInterface $node): void {
+  if (\Drupal::config('taxonomy.settings')->get('maintain_index_table')) {
+    \Drupal::database()->delete('taxonomy_index')->condition('nid', $node->id())->execute();
+  }
+}
+
+/**
+ * @} End of "addtogroup taxonomy_index".
+ */
