@@ -1,0 +1,15 @@
+diff --git a/menu_admin_per_menu.module b/menu_admin_per_menu.module
+index dbe4a2b8f71aed52c5cb98e131bbbe24bf975118..d56cf88e40e912ee18295021acd8eb5f7d8bd864 100644
+--- a/menu_admin_per_menu.module
++++ b/menu_admin_per_menu.module
+@@ -98,6 +98,10 @@ function menu_admin_per_menu_filter_parent_options(AccountInterface $account, ar
+ 
+   foreach ($options as $key => $option) {
+     [$menu] = explode(':', $key, 2);
++    // Add support for group_menu_content module.
++    if (str_starts_with($menu, 'group_menu_link_content-')) {
++      continue;
++    }
+     if (!in_array($menu, $allowed_menus)) {
+       unset($options[$key]);
+     }
