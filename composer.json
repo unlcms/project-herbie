@@ -202,6 +202,7 @@
         "drupal/scheduler_content_moderation_integration": "^3.0",
         "drupal/select2": "^2.0",
         "drupal/svg_image": "^3.2",
+        "drupal/tagify": "^2.0",
         "drupal/theme_per_user": "1.0.x-dev@dev",
         "drupal/token": "^1.0",
         "drupal/twig_tweak": "^3.4",

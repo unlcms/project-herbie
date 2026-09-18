@@ -1,5 +1,7 @@
 <?php
+
 use Drupal\user\Entity\Role;
+
 /**
  * Implements hook_install_tasks().
  *
@@ -134,5 +136,62 @@ function herbie_update_8107(&$sandbox) {
   if ($role && $role->hasPermission($permission)) {
     $role->revokePermission($permission);
     $role->save();
+  }
+}
+
+/**
+ * Update/migrate widgets from using select2 to tagify for custom content types created by developers.
+ */
+function herbie_update_8108(&$sandbox) {
+  if (\Drupal::service('module_handler')->moduleExists('tagify')) {
+
+    $storage = \Drupal::entityTypeManager()->getStorage('entity_form_display');
+    $display_ids = $storage->getQuery()->execute();
+
+    foreach ($storage->loadMultiple($display_ids) as $form_display) {
+      $components = $form_display->getComponents();
+
+      foreach ($components as $field_name => $component) {
+        if (!empty($component['type']) && $component['type'] === 'select2_entity_reference') {
+
+          $field_definitions = \Drupal::service('entity_field.manager')
+            ->getFieldDefinitions(
+              $form_display->getTargetEntityTypeId(),
+              $form_display->getTargetBundle()
+            );
+
+          $field_definition = $field_definitions[$field_name];
+
+          if (isset($field_definitions[$field_name])) {
+            if ($field_name === 'uid') {
+              $plugin_id = 'entity_reference_autocomplete';
+            } else {
+              $plugin_id = 'tagify_entity_reference_autocomplete_widget';
+            }
+
+            $widget_manager = \Drupal::service('plugin.manager.field.widget');
+
+            $plugin = $widget_manager->createInstance($plugin_id, [
+              'field_definition' => $field_definition,
+              'settings' => [],
+              'third_party_settings' => [],
+            ]);
+
+            $default_settings = $plugin->getSettings();
+
+            if ($plugin_id === 'tagify_entity_reference_autocomplete_widget') {
+              $default_settings['parent_selection'] = 0;
+            }
+
+            $form_display->setComponent($field_name, [
+              'type' => $plugin_id,
+              'settings' => $default_settings,
+            ] + $component);
+
+            $form_display->save();
+          }
+        }
+      }
+    }
   }
 }
