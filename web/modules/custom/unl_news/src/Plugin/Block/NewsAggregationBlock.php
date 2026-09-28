@@ -9,6 +9,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Provides a News Aggregation block.
@@ -65,6 +66,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       'quantity' => 8,
       'tag' => [],
       'nebraska_today_tag' => [],
+      'more_news_text' => 'More News',
     ];
   }
 
@@ -116,6 +118,14 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       '#default_value' => $this->configuration['nebraska_today_tag'],
     ];
 
+    $form['more_news_text'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('More News Label'),
+      '#description' => $this->t('Overrides the "More News" button label.'),
+      '#default_value' => $this->configuration['more_news_text'],
+      '#maxlength' => 30,
+    ];
+
     return $form;
   }
 
@@ -126,6 +136,7 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
     $this->configuration['quantity'] = $form_state->getValue('quantity');
     $this->configuration['tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['tag'];
     $this->configuration['nebraska_today_tag'] = $form_state->getCompleteFormState()->getUserInput()['settings']['nebraska_today_tags'];
+    $this->configuration['more_news_text'] = $form_state->getValue('more_news_text');
   }
 
   /**
@@ -163,8 +174,15 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
         $query->addTable('taxonomy_index', 'node_field_data', $join);
         $query->addWhere('taxonomy_filter_group', 'taxonomy_index.tid', $selected_tags, 'IN');
         $query->distinct = TRUE;
+
+        $selected_tag_names = array_map(
+          fn($term) => $term->label(),
+          Term::loadMultiple($selected_tags)
+        );
       }
     }
+    $view->selected_tag_names = $selected_tag_names ?: NULL;
+    $view->more_news_text = $this->configuration['more_news_text'] ?: 'More News';
 
     // Set items per page from configuration.
     $view->setItemsPerPage($this->configuration['quantity']);
