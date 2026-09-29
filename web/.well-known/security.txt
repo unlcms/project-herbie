@@ -2,7 +2,7 @@
 Contact: mailto:abuse@nebraska.edu
 Contact: tel:+1-402-472-5700
 
-Expires: 2026-05-21T00:00:00z
+Expires: 2027-09-20T00:00:00z
 Preferred-Languages: en
 
 Policy: https://nebraska.edu/offices-policies/its/vulnerability-disclosure-program
