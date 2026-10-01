@@ -27,15 +27,6 @@ class MediaImageClass extends Plugin {
         componentFactory.create(
           'drupalElementStyle:imageClass:frame_quad'
         ),
-        // componentFactory.create(
-        //   'drupalElementStyle:imageClass:medium'
-        // ),
-        // componentFactory.create(
-        //   'drupalElementStyle:imageClass:large'
-        // ),
-        // componentFactory.create(
-        //   'drupalElementStyle:imageClass:full'
-        // ),
       ];
 
       buttons.forEach((button) => button.set({ withText: true }));
