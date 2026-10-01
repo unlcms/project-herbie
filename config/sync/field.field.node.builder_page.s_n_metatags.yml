@@ -1,0 +1,21 @@
+uuid: f014bba2-b5a7-41a1-9816-13c4d8ce2b0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.s_n_metatags
+    - node.type.builder_page
+  module:
+    - metatag
+id: node.builder_page.s_n_metatags
+field_name: s_n_metatags
+entity_type: node
+bundle: builder_page
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

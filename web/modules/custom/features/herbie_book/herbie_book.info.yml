@@ -3,9 +3,11 @@ description: 'Provides Book page content type and related configuration. <em>Boo
 type: module
 core_version_requirement: '^10 || ^11'
 dependencies:
+  - 'drupal:field'
   - 'drupal:node'
   - 'herbie_builder_page:herbie_builder_page'
   - 'herbie_webform:herbie_webform'
+  - 'metatag:metatag'
   - 'pathauto:pathauto'
-version: 1.6.0
+version: 1.7.0
 package: Herbie

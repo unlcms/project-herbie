@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/Field/FieldType/CssItem.php b/src/Plugin/Field/FieldType/CssItem.php
+index c65377aefb76ebee93bba192ccfd7ba344fe92fa..2091e07208ae18ee0b50e817c7156151a20ff924 100644
+--- a/src/Plugin/Field/FieldType/CssItem.php
++++ b/src/Plugin/Field/FieldType/CssItem.php
+@@ -12,7 +12,7 @@ use Drupal\Core\TypedData\DataDefinition;
+  * @FieldType(
+  *   id = "css",
+  *   label = @Translation("CSS"),
+- *   category = @Translation("General"),
++ *   category = "general",
+  *   default_widget = "css",
+  *   default_formatter = "css"
+  * )

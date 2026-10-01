@@ -15,7 +15,8 @@ dependencies:
   - 'herbie_media_types:herbie_media_types'
   - 'herbie_roles:herbie_roles'
   - 'linkit:linkit'
+  - 'metatag:metatag'
   - 'pathauto:pathauto'
   - 'webform:webform'
-version: 1.6.0
+version: 1.7.0
 package: Herbie

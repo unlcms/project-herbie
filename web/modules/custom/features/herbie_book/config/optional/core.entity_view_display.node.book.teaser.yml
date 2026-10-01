@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.book.body
+    - field.field.node.book.s_n_metatags
     - node.type.book
   module:
     - text
@@ -32,3 +33,4 @@ content:
 hidden:
   book_navigation: true
   entitygroupfield: true
+  s_n_metatags: true
