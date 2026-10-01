@@ -1,0 +1,20 @@
+.ck-content .drupal-media[data-image-class="unl-frame-quad"] img {
+  clip-path: polygon(
+    0 0,
+    0 100%,
+    2px 100%,
+    2px 2px,
+    calc(100% - 2px) 2px,
+    calc(100% - 2px) calc(100% - 2px),
+    2px calc(100% - 2px),
+    2px calc(100% - 5px),
+    calc(100% - 5px) calc(100% - 5px),
+    calc(100% - 5px) 5px,
+    5px 5px,
+    5px calc(100% - 5px),
+    2px calc(100% - 5px),
+    2px 100%,
+    100% 100%,
+    100% 0
+  );
+}

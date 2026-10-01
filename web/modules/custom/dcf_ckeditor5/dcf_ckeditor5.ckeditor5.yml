@@ -1,0 +1,37 @@
+dcf_ckeditor5_media_image_class:
+  ckeditor5:
+    plugins:
+      - drupalMedia.DrupalElementStyle
+      - mediaImageClass.MediaImageClass
+
+    config:
+      drupalElementStyles:
+        imageClass:
+          - name: 'none'
+            title: 'None'
+            isDefault: true
+            modelElements: [ 'drupalMedia' ]
+
+          - name: 'frame_quad'
+            title: 'Frame (Quad)'
+            attributeName: 'data-image-class'
+            attributeValue: 'unl-frame-quad'
+            modelElements: [ 'drupalMedia' ]
+
+      drupalMedia:
+        toolbar:
+          - '|'
+          - 'mediaImageClassDropdown'
+          - '|'
+
+  drupal:
+    label: 'Media image class'
+    library: dcf_ckeditor5/media_image_class
+    elements:
+      - <drupal-media data-image-class>
+    conditions:
+      plugins:
+        - media_media
+    toolbar_items:
+      mediaImageClassDropdown:
+        label: 'Image styles'

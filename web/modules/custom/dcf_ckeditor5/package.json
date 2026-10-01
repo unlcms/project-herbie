@@ -1,0 +1,13 @@
+{
+  "name": "dcf_ckeditor5-ckeditor5",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "ckeditor5": "^44.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
