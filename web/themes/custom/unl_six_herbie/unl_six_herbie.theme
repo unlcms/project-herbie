@@ -612,10 +612,10 @@ function unl_six_herbie_preprocess_media(&$variables) {
 
       if ($field_name == "b_photohero_image" && $media->bundle() == 'image') {
         // This for the div that wraps the  responsive image tag.
-        $variables['attributes']['class'][] = "unlcms-display-banner-img dcf-relative dcf-16x9 dcf-mb-0 dcf-overflow-hidden dcf-w-100% dcf-h-100%";
+        $variables['attributes']['class'][] = "unlcms-display-banner-media unlcms-display-banner-img dcf-col-span-full dcf-row-start-1 dcf-row-span-1 dcf-mb-0 dcf-overflow-hidden";
       }
       elseif ($field_name == "b_photohero_image" && $media->bundle() == 'video') {
-       $video_tag_classes = ['dcf-16x9', 'dcf-obj-fit-cover'];
+       $video_tag_classes = ['dcf-16x9', 'dcf-h-100%', 'dcf-w-100%', 'dcf-obj-fit-cover'];
 
        if ($object_position_field) {
           $object_position_field_value = $parent_block->__get('b_photohero_img_obj_pos')->getValue()[0]['value'];
@@ -679,7 +679,7 @@ function unl_six_herbie_preprocess_media(&$variables) {
         $variables['content']['media_video_file'][0]['#attributes']->addClass($video_tag_classes);
 
         // Adding class for the div that wraps the video tag.
-        $variables['attributes']['class'][] = "unlcms-display-banner-video dcf-autoplay-video dcf-16x9 dcf-w-100% dcf-h-100% dcf-relative dcf-overflow-hidden";
+        $variables['attributes']['class'][] = "unlcms-display-banner-media unlcms-display-banner-video dcf-autoplay-video dcf-col-span-full dcf-row-start-1 dcf-row-span-1 dcf-mb-0 dcf-overflow-hidden";
       }
     }
 
@@ -782,10 +782,10 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
       if ($field_name == "b_hero_image" || $field_name == "b_photohero_image") {
 
         if ($field_name == 'b_hero_image') {
-          $hero_image_classes = ['dcf-obj-fit-cover'];
+          $hero_image_classes = ['dcf-h-100%', 'dcf-w-100%', 'dcf-obj-fit-cover'];
           $object_position_field = $parent_block->__get('b_hero_img_obj_pos')->getValue();
         } else if ($field_name == 'b_photohero_image') {
-          $hero_image_classes = ['dcf-16x9', 'dcf-obj-fit-cover'];
+          $hero_image_classes = ['dcf-16x9', 'dcf-h-100%', 'dcf-w-100%', 'dcf-obj-fit-cover'];
           array_push($hero_image_classes, "unlcms-slow-zoom-in");
           $object_position_field = $parent_block->__get('b_photohero_img_obj_pos')->getValue();
         }
@@ -887,9 +887,9 @@ function unl_six_herbie_preprocess_responsive_image_formatter(array &$variables)
         $tandem_style = $parent_block->__get('b_tandem_style')->getValue()[0]['value'];
         // If style is Basic
         if($tandem_style == 3) {
-          $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl";
+          $variables['responsive_image']['#attributes']['class'][] = "dcf-h-100% dcf-w-100% dcf-obj-fit-cover dcf-16x9 dcf-1x1@md dcf-4x3@lg dcf-16x9@xl";
         } else {
-          $variables['responsive_image']['#attributes']['class'][] = "dcf-obj-fit-cover";
+          $variables['responsive_image']['#attributes']['class'][] = "dcf-h-100% dcf-w-100% dcf-obj-fit-cover";
         }
       }
     }

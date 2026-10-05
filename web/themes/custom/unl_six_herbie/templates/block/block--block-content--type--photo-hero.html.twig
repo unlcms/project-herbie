@@ -1,7 +1,7 @@
 {{ attach_library('unl_six_herbie/photo_hero') }}
 
-<div {{attributes.addClass('unlcms-display-banner', 'unlcms-component-spacer')}}>
-  <div class="dcf-d-grid dcf-row-gap-4 unlcms-display-banner-grid">
+<div {{attributes.addClass('unlcms-display-banner', 'unlcms-component-spacer', 'dcf-ct-inline-size')}}>
+  <div class="dcf-d-grid unlcms-display-banner-grid">
 
     {{ title_prefix }}
     {{ title_suffix }}
@@ -19,33 +19,35 @@
       {% set buttonPositionClass = ['unlcms-display-banner-btn-group-r'] %}
     {% endif %}
 
-    {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-wrapper', 'dcf-z-1', 'dcf-w-100%', 'dcf-max-w-lg', 'unlcms-display-banner-text']).addClass(textPositionClass) %}
-    {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('dcf-wrapper', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-gap-3', 'dcf-z-1', 'dcf-w-100%', 'dcf-max-w-lg', 'unlcms-display-banner-btn-group').addClass(buttonPositionClass) %}
+    {% set photohero_inner_wrapper_attr = photohero_inner_wrapper_attr.addClass(['dcf-z-1', 'unlcms-display-banner-text']).addClass(textPositionClass) %}
+    {% set photohero_button_wrapper_attr = photohero_button_wrapper_attr.addClass('dcf-d-flex', 'dcf-flex-wrap', 'dcf-gap-3', 'dcf-mt-5', 'unlcms-display-banner-btn-group').addClass(buttonPositionClass) %}
 
     {% block content %}
-
-      <div {{ photohero_inner_wrapper_attr }}>
-
-        {% if content.b_photohero_subhead.0 or content.b_photohero_title.0 %}
-          <header class="unlcms-display-banner-header">
-            {{ content.b_photohero_subhead }}
-            {{ content.b_photohero_title }}
-          </header>
-        {% endif %}
-
-        {{ content.b_photohero_body }}
-
-      </div>
 
       {% if content.b_photohero_image.0 %}
         {{ content.b_photohero_image }}
       {% endif %}
 
-      {% if content.b_photohero_links.0 %}
-        <div {{photohero_button_wrapper_attr}} role="group">
-          {{ content.b_photohero_links }}
+      <div {{ photohero_inner_wrapper_attr }}>
+        <div class="unlcms-display-banner-text-box">
+
+          {% if content.b_photohero_subhead.0 or content.b_photohero_title.0 %}
+            <header class="unlcms-display-banner-header">
+              {{ content.b_photohero_subhead }}
+              {{ content.b_photohero_title }}
+            </header>
+          {% endif %}
+
+          {{ content.b_photohero_body }}
+
+          {% if content.b_photohero_links.0 %}
+            <div {{photohero_button_wrapper_attr}} role="group">
+              {{ content.b_photohero_links }}
+            </div>
+          {% endif %}
+
         </div>
-      {% endif %}
+      </div>
 
     {% endblock %}
 
