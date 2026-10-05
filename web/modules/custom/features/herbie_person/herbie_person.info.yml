@@ -30,7 +30,8 @@ dependencies:
   - 'herbie_news:herbie_news'
   - 'image_class:image_class'
   - 'pathauto:pathauto'
+  - 'select2:select2'
   - 'svg_image:svg_image'
   - 'svg_image:svg_image_responsive'
-version: 1.6.0
+version: 1.6.1
 package: Herbie

@@ -545,8 +545,10 @@ function unl_six_herbie_preprocess_layout(&$variables) {
  * Implements template_preprocess_views_view.
  */
 function unl_six_herbie_preprocess_views_view(&$variables) {
-  // Add preprocessed total rows to taxonomy_term view (tagged_news_items_block)
-  // since total rows only counts current page, not total tagged items.
+  // Add preprocessed totals to taxonomy_term view (tagged_news_items_block)
+  // to determine when to display the "More" link for each content type.
+  // Count tagged items separately for news, people, and regular content,
+  // rather than counting all types together or only the current page.
   if ($variables['view']->id() === 'taxonomy_term' && $variables['view']->current_display === 'tagged_news_items_block') {
     try {
       // Load a fresh instance of the view.
@@ -566,6 +568,33 @@ function unl_six_herbie_preprocess_views_view(&$variables) {
       $full_view->execute();
       // Add results to template variables to be used in Twig.
       $variables['preprocessed_total_rows'] = $full_view->total_rows ?: count($full_view->result);
+    } catch (\Exception $e) {
+      \Drupal::logger('unl_six_herbie_preprocess_views_view')->error('Error processing view: @message', ['@message' => $e->getMessage()]);
+    }
+  }
+
+  // Add preprocessed totals to taxonomy_term view (tagged_person_list_block)
+  // to determine when to display the "More" link for people.
+  // Count only and all tagged person items, rather than items across all content types or only those on the current page.
+  if ($variables['view']->id() === 'taxonomy_term' && $variables['view']->current_display === 'tagged_person_list_block') {
+    try {
+      // Load a fresh instance of the view.
+      $full_view = Views::getView('taxonomy_term');
+      if (!$full_view) {
+        return;
+      }
+      // Set the display and remove pagination limit.
+      $full_view->setDisplay('tagged_person_list_block');
+      $full_view->setItemsPerPage(0);
+      // Pass any contextual arguments from the original view.
+      if (!empty($variables['view']->args)) {
+        $full_view->setArguments($variables['view']->args);
+      }
+      // Execute the view.
+      $full_view->preExecute();
+      $full_view->execute();
+      // Add results to template variables to be used in Twig.
+      $variables['preprocessed_total_rows_people'] = $full_view->total_rows ?: count($full_view->result);
     } catch (\Exception $e) {
       \Drupal::logger('unl_six_herbie_preprocess_views_view')->error('Error processing view: @message', ['@message' => $e->getMessage()]);
     }
