@@ -28,6 +28,7 @@
 .unlcms-li-logo .media-entity {
   align-items: center;
   display: flex;
+  height: 100%;
   justify-content: center;
   margin-bottom: unset;
   padding: .75em;
