@@ -12,6 +12,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\unl_utility\UNLUtilityTrait;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_block_alter().
@@ -190,3 +191,23 @@ function unl_blocks_query_entity_query_alter(AlterableInterface $query) {
   }
 }
 
+// Remove the delete link from contextual links for builder pages/nodes during view mode.
+function unl_blocks_contextual_links_alter(array &$links, $group, array $route_parameters) {
+  if ($group !== 'node' || empty($route_parameters['node'])) {
+    return;
+  }
+
+  $node = Node::load($route_parameters['node']);
+
+  if (!$node || $node->bundle() !== 'builder_page') {
+    return;
+  }
+
+  $remove_route = 'entity.node.delete_form';
+
+  foreach ($links as $key => $link) {
+    if ($link['route_name'] === $remove_route) {
+      unset($links[$key]);
+    }
+  }
+}
