@@ -6,11 +6,13 @@
 .unlcms-li-logo {
   flex: 0 0 10em;
 }
+
 .unlcms-li-logo img[src$=".jpg"],
 .unlcms-li-logo img[src$=".png"] {
   filter: unset !important;
   mix-blend-mode: multiply;
 }
+
 /* Duplicate .dcf-obj-fit-contain since it is difficult to apply classes to image tags. */
 .unlcms-li-logo img,
 .unlcms-li-logo svg {
@@ -24,9 +26,9 @@
 }
 
 .unlcms-li-logo .media-entity {
-  margin-bottom: unset;
   align-items: center;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  margin-bottom: unset;
   padding: .75em;
 }
