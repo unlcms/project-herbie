@@ -318,7 +318,8 @@
                 "2897377 - data-drupal-selector is set to random value": "patches/drupal-2897377-MR14060-77.patch",
                 "3060504 - Media Library widget does not render svg images": "patches/media-library-widget-does-not-render-svg-images-3060504-1.patch",
                 "2755791 - Ajax error ajax.$form.ajaxSubmit() is not a function": "patches/drupal-2755791-36.patch",
-                "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch"
+                "3315678 - strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25": "patches/strnatcasecmp-Passing-null-to-parameter-2of-type-string-is-deprecated-3315678-25.patch",
+                "3080606 - Enable layout sections reordering": "patches/3080606-128-11.1.x.patch"
             },
             "drupal/ai_image_alt_text": {
                 "3476380 - Add support for other image based widgets": "patches/3476380-support-other-image-widgets.diff"
