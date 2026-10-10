@@ -3,3 +3,19 @@ dcf_ckeditor5:
   css:
     theme:
       dcf_ckeditor5.theme.css: {}
+
+media_image_class:
+  css:
+    theme:
+      css/media-image-class.css: {}
+  js:
+    js/build/mediaImageClass.js: { minified: true }
+  dependencies:
+    - ckeditor5/internal.drupal.ckeditor5.media
+
+media_image_class_frontend:
+  js:
+    js/media-image-class.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
