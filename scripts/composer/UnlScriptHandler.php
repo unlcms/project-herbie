@@ -35,6 +35,23 @@ class UnlScriptHandler {
     $io->write("Excecuting git pull at " . $composerRoot . "/vendor/unl/wdntemplates");
     system("cd $composerRoot/vendor/unl/wdntemplates; git pull");
 
+    // Check if Node.js is installed and meets the WDN requirement.
+    if (empty(exec("which node"))) {
+      $io->write("Node.js is not installed");
+      return;
+    }
+
+    $wdnPackageJson = $composerRoot . '/vendor/unl/wdntemplates/package.json';
+    $wdnPackage = json_decode((string) file_get_contents($wdnPackageJson), TRUE);
+    $nodeRequirement = $wdnPackage['engines']['node'] ?? NULL;
+    if (is_string($nodeRequirement)) {
+      $nodeVersion = exec("node --version");
+      if (!Semver::satisfies(ltrim($nodeVersion, 'v'), $nodeRequirement)) {
+        $io->writeError("<error>Node.js {$nodeRequirement} is required in your environment. Please install node { $nodeRequirement } </error>");
+        return;
+      }
+    }
+
     // Check if NPM is installed.
     if (empty(exec("which npm"))) {
       $io->write("NPM is not installed");
@@ -45,17 +62,9 @@ class UnlScriptHandler {
     $io->write("Installing Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
     system("cd $composerRoot/vendor/unl/wdntemplates; npm ci");
 
-    // Run Grunt default task.
-    $io->write("Running Grunt default task at " . $composerRoot . "/vendor/unl/wdntemplates");
-
-    // Check if Grunt CLI is installed globally.
-    if (!empty(exec("which grunt"))) {
-      system("cd $composerRoot/vendor/unl/wdntemplates; grunt");
-    }
-    else {
-      $io->write("Grunt CLI is not installed globally. Executing from NPM binary.");
-      system("cd $composerRoot/vendor/unl/wdntemplates; ./node_modules/grunt-cli/bin/grunt");
-    }
+    // Build NPM project.
+    $io->write("Running npm run build for Node project at " . $composerRoot . "/vendor/unl/wdntemplates");
+    system("cd $composerRoot/vendor/unl/wdntemplates; npm run build");
   }
 
   /**
