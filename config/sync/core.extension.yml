@@ -130,6 +130,9 @@ module:
   metatag_open_graph: 0
   metatag_twitter_cards: 0
   metatag_verification: 0
+  migrate: 0
+  migrate_source_csv: 0
+  migrate_tools: 0
   moderated_content_bulk_publish: 0
   mysql: 0
   node: 0
@@ -138,6 +141,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  path_redirect_import: 0
   phpass: 0
   protected_pages: 0
   queue_ui: 0
