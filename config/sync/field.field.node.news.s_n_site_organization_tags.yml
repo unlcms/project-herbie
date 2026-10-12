@@ -11,7 +11,7 @@ field_name: s_n_site_organization_tags
 entity_type: node
 bundle: news
 label: 'Site organization tags'
-description: ''
+description: "Any tags added here will include this item on an aggregate page located at /tag/EXAMPLE-TAG-NAME.\r\n\r\nTo display only news items associated with a specific tag, use /tag/EXAMPLE-TAG-NAME/news.\r\n\r\nTo display news items associated with multiple tags on a single page, separate the tag names with commas, as shown here: /tag/EXAMPLE-TAG-1,EXAMPLE-TAG-2,EXAMPLE-TAG-3/news."
 required: false
 translatable: true
 default_value: {  }

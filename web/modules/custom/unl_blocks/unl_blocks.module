@@ -55,6 +55,12 @@ function unl_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id)
     ) {
     $form['#attached']['library'][] = 'codemirror_editor/codemirror';
   }
+
+  if (isset($form['publish_on']) || isset($form['unpublish_on'])) {
+    // If we want to add description to the field instead.
+    // $form["publish_on"]["widget"][0]["value"]["#description"] = t('');
+    $form['scheduler_settings']['#description'] = t('<strong>Note:</strong> Scheduled content may take up to 30 minutes after the specified time to be published or unpublished.');
+  }
 }
 
 /**
@@ -189,4 +195,3 @@ function unl_blocks_query_entity_query_alter(AlterableInterface $query) {
     $query->condition('block_content_field_data.type', $excluded_types, 'NOT IN');
   }
 }
-
