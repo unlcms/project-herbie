@@ -166,12 +166,51 @@ class SettingsForm extends ConfigFormBase {
       if ($this->tagsRefresh()) {
         $cache = $this->cache->get(static::CACHE_NAME);
         $options = $cache->data;
-      }
-      else {
+      } else {
         $options = [];
         $tag_ids_disabled = TRUE;
       }
     }
+
+    $form['description'] = [
+      '#markup' => '
+          <p>
+            UNL News is a service that retrieves news articles from the <a href="https://news.unl.edu/">Nebraska Today</a> or <a href="https://ianrnews.unl.edu/">IANR News</a> website
+            and imports them into your site based on your selected tags. You can select
+            one or more tags to automatically import articles associated with those tags.
+          </p>
+
+          <p><strong>How to Use This Service</strong></p>
+
+          <ol>
+            <li>
+              <strong>Select Tags:</strong> Choose one or more tags from the list below.
+              If a tag is missing or has recently been created, click the
+              <strong>"Refresh Tags"</strong> button to update the available tags.
+            </li>
+            <li>
+              <strong>Save Your Selection:</strong> Review your selected tags, then
+              scroll to the bottom of the page and click <strong>"Save Configuration"</strong>
+              to save your changes.
+            </li>
+            <li>
+              <strong>Automatic Updates:</strong> Drupal automatically checks for new
+              articles associated with your selected tags every 3 to 4 hours and
+              imports them into your site. No manual action is required once your
+              tags are saved. If you are using this service for the first time and
+              do not want to wait for the next automatic update, you can manually
+  retrieve and import articles by following step 4 below.
+            </li>
+            <li>
+              <strong>Manually Import Articles (Optional):</strong> To import articles
+              immediately, click <strong>"Retrieve Items from API"</strong> to fetch
+              articles associated with your selected tags. Once retrieval is complete,
+              click <strong>"Process Remaining Items"</strong> to import the articles
+              into your site.
+            </li>
+          </ol>',
+      '#weight' => -100,
+    ];
 
     $form['tags'] = [
       '#type' => 'fieldset',
@@ -180,14 +219,14 @@ class SettingsForm extends ConfigFormBase {
 
     $current_tags = [];
     foreach ($config->get(static::SETTINGS_TAGS_NAME) as $id) {
-      $current_tags[] = '<span class="unl-news-tag">'.$options[$id].'</span>';
+      $current_tags[] = '<span class="unl-news-tag">' . $options[$id] . '</span>';
     }
     $tag_text = 'None';
     if (!empty($current_tags)) {
       $tag_text = implode(', ', $current_tags);
     }
     $form['tags']['current_tags'] = [
-      '#markup' => '<p><strong>'.$this->t('Currently selected tags:').' </strong>'.$tag_text.'</p>',
+      '#markup' => '<p><strong>' . $this->t('Currently selected tags:') . ' </strong>' . $tag_text . '</p>',
     ];
 
     $form['tags']['tag_ids'] = [
@@ -283,12 +322,14 @@ class SettingsForm extends ConfigFormBase {
       $this->tagsRefresh();
       return;
     }
-    elseif ($triggering_element == 'manual-batch') {
-      $this->manualBatch();
-      return;
-    }
+    // Retrieve Articles
     elseif ($triggering_element == 'manual-api-pull') {
       unl_news_cron();
+      return;
+    }
+    // Process Remaining items
+    elseif ($triggering_element == 'manual-batch') {
+      $this->manualBatch();
       return;
     }
 
@@ -334,13 +375,11 @@ class SettingsForm extends ConfigFormBase {
       $this->cache->set(static::CACHE_NAME, $options);
       $this->messenger->addMessage('Tags successfully refreshed from the News API.');
       return TRUE;
-    }
-    catch (GuzzleException $e) {
+    } catch (GuzzleException $e) {
       $message = 'Guzzle exception: ' . get_class($e) . '. Error message: ' . $e->getMessage();
       $this->logger->error($message);
       $this->messenger->addError('Unable to retrieve tags from the News API.');
       return FALSE;
     }
   }
-
 }
