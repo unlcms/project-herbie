@@ -139,8 +139,8 @@
       {% set tandem_text_wrapper = create_attribute() %}
       {% set tandem_image_wrapper = create_attribute() %}
 
-      {% set basic_tandem_text_wrapper = ['dcf-sticky', 'dcf-as-center', unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
-      {% set basic_tandem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
+      {% set basic_tandem_text_wrapper = ['dcf-sticky', 'dcf-as-center', 'unlcms-tandem-text', 'unlcms-tandem-basic-text'] %}
+      {% set basic_tandem_image_wrapper = ['dcf-as-center', 'unl-scroll-trigger-container', 'unlcms-tandem-img', 'unlcms-tandem-basic-img'] %}
 
       {% if content.b_tandem_image_position.0['#markup'] == 'left' %}
         {% set basic_tandem_text_wrapper = basic_tandem_text_wrapper|merge(['dcf-2nd']) %}
