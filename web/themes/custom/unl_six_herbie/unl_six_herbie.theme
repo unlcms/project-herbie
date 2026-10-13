@@ -15,7 +15,8 @@ use Drupal\link\Plugin\Field\FieldType\LinkItem;
  */
 function unl_six_herbie_preprocess_html(&$variables) {
   $route_match = \Drupal::routeMatch();
-  if ($route_match->getRouteObject()->getOption('_layout_builder')) {
+  $route = $route_match->getRouteObject();
+  if ($route && $route->getOption('_layout_builder')) {
     // Add Layout Builder specific CSS settings.
     $variables['#attached']['library'][] = 'unl_six_herbie/layout-builder';
   }
