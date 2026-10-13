@@ -2,6 +2,15 @@
 {% set attributes = attributes ?: create_attribute() %}
 {% set social_media_classes = ['unlcms-component-spacer dcf-pt-8 dcf-pb-8 unlcms-socialmedia-component unl-bg-scarlet dcf-d-flex dcf-flex-wrap dcf-ai-center dcf-jc-center dcf-row-gap-5 dcf-col-gap-8'] %}
 
+{% if content.b_social_media_links_facebook[0]['#context']['value']
+  or content.b_social_media_links_twitter[0]['#context']['value']
+  or content.b_social_media_links_bluesky[0]['#context']['value']
+  or content.b_social_media_links_youtube[0]['#context']['value']
+  or content.b_social_media_links_instagram[0]['#context']['value']
+  or content.b_social_media_links_linkedin[0]['#context']['value']
+  or content.b_social_media_links_pinterest[0]['#context']['value']
+  or content.b_social_media_links_snapchat[0]['#context']['value'] %}
+
 <div{{ attributes.addclass(social_media_classes) }}>
   {{ title_prefix }}
   {{ content.b_social_media_links_title }}
@@ -99,3 +108,4 @@
     </ul>
   </address>
 </div>
+{% endif %}
