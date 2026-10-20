@@ -12,8 +12,29 @@
   margin-bottom: 0;
 }
 
+@container (max-width: 42.09em) {
+  .unlcms-cta-wrap {
+    flex-direction: column;
+  }
+
+  .unlcms-cta-wrap,
+  .unlcms-cta-title {
+    justify-content: center;
+  }
+}
+
 @container (min-width: 42.09em) {
   .unlcms-cta-wrap {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex-wrap: nowrap;
+  }
+
+  .unlcms-cta-title,
+  .unlcms-cta-summary {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .unlcms-cta-btn-group {
+    flex: 0 0 auto;
   }
 }
