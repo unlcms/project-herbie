@@ -1,3 +1,11 @@
+.unlcms-cta-wrap {
+  padding: 1.78em 2.37em;
+}
+
+.unlcms-section-edge-to-edge .unlcms-cta-wrap {
+  padding: 0;
+}
+
 /* dcf-mb-0 */
 .unlcms-cta-title > :last-child,
 .unlcms-cta-summary > :last-child {
