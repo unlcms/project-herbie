@@ -4,12 +4,12 @@
 {{ attach_library('unl_six_herbie/cta') }}
 
 <div{{ attributes.addclass(call_to_action_classes) }}>
-  <div class="unlcms-cta-wrap dcf-d-grid dcf-ai-center dcf-col-gap-vw dcf-row-gap-4">
+  <div class="unlcms-cta-wrap dcf-d-flex dcf-ai-center dcf-col-gap-vw dcf-row-gap-4">
 
     {{ title_prefix }}
     {{ title_suffix }}
     {% block cta_title %}
-      <div class="unlcms-cta-title dcf-d-flex dcf-ai-center dcf-jc-center">
+      <div class="unlcms-cta-title dcf-d-flex dcf-ai-center">
         {{ content.b_cta_title }}
       </div>
     {% endblock %}
