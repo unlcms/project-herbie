@@ -21,6 +21,10 @@
   .unlcms-cta-title {
     justify-content: center;
   }
+
+  .unlcms-cta-title {
+    text-align: center;
+  }
 }
 
 @container (min-width: 42.09em) {
