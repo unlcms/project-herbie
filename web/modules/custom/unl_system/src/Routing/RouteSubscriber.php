@@ -12,6 +12,14 @@ class RouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('theme_per_user.theme_select')) {
       $route->setOption('_admin_route', TRUE);
     }
-  }
 
+    if ($route = $collection->get('system.site_maintenance_mode')) {
+      // Override the Core System module's maintenance mode enabler permission
+      // so anyone who is an administrator can use it.
+      $requirements = $route->getRequirements();
+      unset($requirements['_permission']);
+      $route->setRequirements($requirements);
+      $route->setRequirement('_role', 'super_administrator+administrator');
+    }
+  }
 }

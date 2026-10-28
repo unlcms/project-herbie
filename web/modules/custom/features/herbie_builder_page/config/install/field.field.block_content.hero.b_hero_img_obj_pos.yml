@@ -11,7 +11,7 @@ field_name: b_hero_img_obj_pos
 entity_type: block_content
 bundle: hero
 label: 'Hero image object position'
-description: 'The horizontal and vertical percent values of the hero image position.'
+description: 'The first percentage refers to the horizontal alignment of the object or image within its container. The second percentage controls the vertical alignment. For hero images, only changes to the vertical alignment typically have a visible effect. For example, setting it to 50% 100% would shift the image toward the bottom of the container. 50% 0% would move the image towards the top of its container.'
 required: false
 translatable: false
 default_value: {  }

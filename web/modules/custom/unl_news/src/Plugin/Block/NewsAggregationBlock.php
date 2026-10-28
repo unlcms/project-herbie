@@ -6,6 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -105,7 +106,10 @@ class NewsAggregationBlock extends BlockBase implements ContainerFactoryPluginIn
       '#type' => 'select2',
       '#target_type' => 'taxonomy_term',
       '#title' => $this->t('Nebraska Today Tag'),
-      '#description' => $this->t('For imported Nebraska Today tag, optionally filters the displayed news items.'),
+      '#description' => $this->t('Optionally filter displayed news items by Nebraska Today tags. This filter is only applicable when news articles have been imported to the site using the 
+        <a href=":url" target="_blank" rel="noopener noreferrer">UNL News service</a>.', [
+        ':url' => Url::fromRoute('unl_news.settings')->toString(),
+      ]),
       '#tags' => TRUE,
       '#selection_handler' => 'default',
       '#selection_settings' => [
