@@ -232,22 +232,28 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $current_user = \Drupal::currentUser();
 
   if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
-    // Only users with the 'bypass content access control' permission can
-    // see Nebraska Today-related fields.
+    // Only users with the 'bypass content access control' permission,
+    // or Administrator or Developer roles can see Nebraska Today-related fields.
     /** @var \Drupal\Core\Session\AccountProxyInterface */
     $current_user = \Drupal::service('current_user');
-    if ($current_user->hasPermission('bypass node access')) {
-      // Nebraska Today import-related fields are always disabled.
-      $form['n_news_canonical_url']['widget']['#disabled'] = TRUE;
+    if ($current_user->hasPermission('bypass node access') || $current_user->hasRole('administrator') || $current_user->hasRole('coder')) {
+      // Allow setting a canonical URL if the field isn't being used by
+      // a Nebraska Today imported item.
+      $node = $form_state->getFormObject()->getEntity();
+      if (!$node->get('n_news_foreign_key')->isEmpty()) {
+        $form['n_news_canonical_url']['widget']['#disabled'] = TRUE;
+      }
       $form['n_news_foreign_key']['widget']['#disabled'] = TRUE;
       $form['s_n_nebraska_today_tags']['widget']['#disabled'] = TRUE;
-    } else {
+    }
+    else {
       unset($form['#fieldgroups']['group_nebraska_today']);
       unset($form['n_news_canonical_url']);
       unset($form['n_news_foreign_key']);
       $form['s_n_nebraska_today_tags']['widget']['#disabled'] = TRUE;
     }
-  } else if ($form_id == "taxonomy_overview_vocabularies") {
+  }
+  elseif ($form_id == "taxonomy_overview_vocabularies") {
     if (!empty($form['vocabularies'])) {
       foreach ($form['vocabularies'] as $vid => $row) {
         if ($vid === $restricted_vid) {
@@ -258,7 +264,8 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         }
       }
     }
-  } else if (in_array($form_id, ["field_group_add_form", "taxonomy_term_form", "taxonomy_term_add_form", "taxonomy_overview_terms", "entity_form_display_edit_form", "entity_view_display_edit_form"])) {
+  }
+  elseif (in_array($form_id, ["field_group_add_form", "taxonomy_term_form", "taxonomy_term_add_form", "taxonomy_overview_terms", "entity_form_display_edit_form", "entity_view_display_edit_form"])) {
     $vocabulary = \Drupal::routeMatch()->getParameter('taxonomy_vocabulary');
     if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
       if ($vocabulary && $vocabulary->id() === $restricted_vid) {
@@ -266,11 +273,13 @@ function unl_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $form['#access'] = FALSE;   // This gives a clean 403 Access Denied
       }
     }
-  } else if (in_array($form_id, ["taxonomy_term_nebraska_today_tags_delete_form"])) {
+  }
+  elseif (in_array($form_id, ["taxonomy_term_nebraska_today_tags_delete_form"])) {
     if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
       $form['#access'] = FALSE;
     }
-  } else if ($form_id == "taxonomy_term_nebraska_today_tags_form") {
+  }
+  elseif ($form_id == "taxonomy_term_nebraska_today_tags_form") {
     if (!$current_user->hasRole('super_administrator') && !$current_user->hasRole('administrator')) {
       $form['#access'] = FALSE;
     }
@@ -353,7 +362,7 @@ function unl_news_form_taxonomy_overview_terms_alter(&$form, FormStateInterface 
   if (!$vocabulary || $vocabulary->id() !== $restricted_vid) {
     return;
   }
-  if($current_user->hasRole('administrator') || $current_user->hasRole('super_administrator')) {
+  if ($current_user->hasRole('administrator') || $current_user->hasRole('super_administrator')) {
     return;
   }
 
@@ -384,8 +393,12 @@ function unl_news_preprocess_node__news(&$variables) {
     if (strpos($canonical_url, 'ianrnews.unl.edu') !== FALSE) {
       $variables['publication'] = 'IANR News';
     }
-    else {
+    elseif (strpos($canonical_url, 'news.unl.edu') !== FALSE) {
       $variables['publication'] = 'Nebraska Today';
+    }
+    else {
+      $domain = parse_url($canonical_url, PHP_URL_HOST);
+      $variables['publication'] = $domain;
     }
   }
   else {
