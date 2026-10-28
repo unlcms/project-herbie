@@ -3,3 +3,7 @@ description: Custom filter to add or modify date editor's text area.
 type: module
 package: DCF
 core_version_requirement: ^9 || ^10 || ^11
+dependencies:
+  - drupal:ckeditor5
+  - drupal:media
+  - drupal:media_library
