@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
+    - field.field.node.person.s_n_site_organization_tags
     - node.type.person
     - responsive_image.styles.medium__square
   module:
@@ -190,3 +191,4 @@ hidden:
   n_education: true
   n_person_affiliation: true
   n_person_social_bluesky: true
+  s_n_site_organization_tags: true

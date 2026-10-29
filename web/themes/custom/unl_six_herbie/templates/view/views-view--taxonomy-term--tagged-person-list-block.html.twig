@@ -1,0 +1,52 @@
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'dcf-mt-8',
+    'dcf-mb-8'
+  ]
+%}
+
+{{ attach_library('unl_six_herbie/person') }}
+
+<div{{ attributes.addClass(classes).setAttribute('id', 'person-' ~ dom_id) }}>
+{{ title_prefix }}
+{{ title }}
+{{ title_suffix }}
+{% if header %}
+  {{ header }}
+{% endif %}
+{{ exposed }}
+{{ attachment_before }}
+{% if rows -%}
+  <h3> People </h3>
+  <ol {{ attributes.addClass(['dcf-d-grid', 'unlcms-teaser-person-list', 'dcf-col-gap-vw', 'dcf-row-gap-8', 'dcf-mb-9']) }} role="list">
+    {% for row in rows[0]['#rows'] %}
+      {% set node = row['#node'] %}
+      {{ drupal_entity('node', node.id(), 'teaser') }}
+    {% endfor %}
+  </ol>
+{% elseif empty -%}
+  {{ empty }}
+{% endif %}
+
+{{ pager }}
+{{ attachment_after }}
+
+{% if preprocessed_total_rows_people > 12 and more %}
+  <div class="dcf-d-flex dcf-jc-flex-end">
+    <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{ more['#url'].toString }}people/">More people</a>
+  </div>
+{% elseif preprocessed_total_rows_people > 12 %}
+  <div class="dcf-d-flex dcf-jc-flex-end">
+    <a class="dcf-btn dcf-btn-secondary dcf-capitalize" href="{{ path('<current>') }}people/">More people</a>
+  </div>
+
+{% endif %}
+{% if footer %}
+  {{ footer }}
+{% endif %}
+</div>

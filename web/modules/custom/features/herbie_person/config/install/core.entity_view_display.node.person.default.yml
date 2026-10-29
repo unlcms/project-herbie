@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.person.n_person_social_youtube
     - field.field.node.person.n_person_unldirectoryreference
     - field.field.node.person.n_person_website
+    - field.field.node.person.s_n_site_organization_tags
     - node.type.person
     - responsive_image.styles.large__square
   module:
@@ -38,26 +39,26 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   n_additional:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   n_education:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   n_person_address:
     type: string
@@ -65,7 +66,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   n_person_affiliation:
     type: string
@@ -73,21 +74,21 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
   n_person_bio:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   n_person_email:
     type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   n_person_phone:
     type: telephone_link
@@ -95,7 +96,7 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   n_person_photo:
     type: responsive_image
@@ -112,7 +113,7 @@ content:
     third_party_settings:
       image_class:
         class: ''
-    weight: 17
+    weight: 18
     region: content
   n_person_position:
     type: string
@@ -120,7 +121,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   n_person_social_bluesky:
     type: string
@@ -128,7 +129,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 19
+    weight: 20
     region: content
   n_person_social_fb:
     type: string
@@ -136,7 +137,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   n_person_social_instagram:
     type: string
@@ -144,7 +145,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   n_person_social_linkedin:
     type: string
@@ -152,7 +153,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   n_person_social_pinterest:
     type: string
@@ -160,7 +161,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   n_person_social_snapchat:
     type: string
@@ -168,7 +169,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   n_person_social_twitter:
     type: string
@@ -176,7 +177,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   n_person_social_youtube:
     type: string
@@ -184,7 +185,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   n_person_unldirectoryreference:
     type: entity_reference_entity_view
@@ -193,7 +194,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   n_person_website:
     type: link
@@ -205,7 +206,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
+    region: content
+  s_n_site_organization_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 21
     region: content
 hidden:
   entitygroupfield: true
