@@ -5,13 +5,14 @@
  * This is the module provides media functionality.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Cache\Cache;
 
 /**
  * Implements hook_entity_presave().
  */
-function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+function unl_media_entity_presave(EntityInterface $entity) {
 
   if ($entity->getEntityTypeId() === 'node' && $entity->bundle() == 'builder_page') {
     // Check if node is being updated/edited
@@ -74,12 +75,17 @@ function unl_media_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
   }
 }
 
-function unl_media_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->getEntityTypeId() === 'node' && $entity->bundle() == 'builder_page') {
+/**
+ * Implements hook_entity_update().
+ */
+function unl_media_entity_update(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'builder_page' && $entity->hasField('s_n_hero')) {
+    $updated_hero_block = $entity->get('s_n_hero');
 
-    if ($entity->hasField('s_n_hero')) {
-      $updated_hero_block = $entity->get('s_n_hero');
-      if (isset($updated_hero_block)) {
+    if (!$updated_hero_block->isEmpty()) {
+      $hero_entities = $updated_hero_block->referencedEntities();
+
+      if (!empty($hero_entities)) {
         $hero_media_entity = $updated_hero_block->referencedEntities()[0];
         $cacheTags = $hero_media_entity->getCacheTagsToInvalidate();
 
@@ -96,6 +102,7 @@ function unl_media_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
     }
   }
 }
+
 /**
  * Implements hook_form_alter().
  */
