@@ -1,9 +1,14 @@
-.unlcms-cta-wrap {
+:where(
+  .unlcms-cta-wrap:is(
+    [class*=" unl-bg-"],
+    [class^="unl-bg-"]
+  )
+) {
   padding: 1.78em 2.37em;
 }
 
 .unlcms-section-edge-to-edge .unlcms-cta-wrap {
-  padding: 0;
+  padding: 0 5.62vw;
 }
 
 /* dcf-mb-0 */
@@ -32,7 +37,10 @@
     flex-wrap: nowrap;
   }
 
-  .unlcms-cta-title,
+  .unlcms-cta-title {
+    flex: 0 1 auto;
+  }
+
   .unlcms-cta-summary {
     flex: 1 1 auto;
     min-width: 0;
