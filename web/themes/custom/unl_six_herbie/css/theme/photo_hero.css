@@ -33,7 +33,7 @@
 
   .unlcms-display-banner-grid {
     grid-template-columns: 5.62vw 1fr 5.62vw;
-    min-height: 75svh;
+    min-height: 63svh;
   }
 
   .unlcms-display-banner-media {
