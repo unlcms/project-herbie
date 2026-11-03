@@ -1,14 +1,17 @@
-:where(
-  .unlcms-cta-wrap:is(
-    [class*=" unl-bg-"],
-    [class^="unl-bg-"]
-  )
+.unlcms-cta-wrap {
+  padding-block: 1.78em;
+}
+
+.unlcms-cta-wrap:is(
+  [class*=" unl-bg-"],
+  [class^="unl-bg-"]
 ) {
-  padding: 1.78em 2.37em;
+  padding-inline: 2.37em;
 }
 
 .unlcms-section-edge-to-edge .unlcms-cta-wrap {
-  padding: 0 5.62vw;
+  padding-block: 0;
+  padding-inline: 5.62vw;
 }
 
 /* dcf-mb-0 */
