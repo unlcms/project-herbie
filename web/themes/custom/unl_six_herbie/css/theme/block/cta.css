@@ -1,15 +1,15 @@
-.unlcms-cta-wrap {
+.unlcms-cta-block {
   padding-block: 1.78em;
 }
 
-.unlcms-cta-wrap:is(
+.unlcms-cta-block:is(
   [class*=" unl-bg-"],
   [class^="unl-bg-"]
 ) {
   padding-inline: 2.37em;
 }
 
-.unlcms-section-edge-to-edge .unlcms-cta-wrap {
+.unlcms-section-edge-to-edge .unlcms-cta-block {
   padding-block: 0;
   padding-inline: 5.62vw;
 }
